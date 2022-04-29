@@ -1,0 +1,431 @@
+Cost Estimation Governance Approach to Enhance Information Systems (IS) Projects Success 
+
+Abstract, IS projects comprise many challenges and difficulties with high risks of such projects end in failure. Really, IS projects have high failure rate, it appears to linger around 65% for major IS projects. Concurrently, project cost estimation is considering one of the main development activities engenders IS projects failure. IS project governance is a new born theory and a nascent field of research, it can provide a comprehensive and consistent method of controlling IS project and ensuring its success. So, cost estimation governance is a serious effort to enhance IS projects success by improving the performance of development activities and addresses the projects’ failures and defects. This research also, introduces the Comprehensive Cost Estimation Model (CCEM) to conquer the problems of depending on one cost estimation methodology.     
+Key words: Project Cost Estimation, IS projects governance, IS projects success, Comprehensive Cost Estimation Model. 
+1. Introduction:
+IS projects development is a complex processes encompasses many risks and challenges. It’s often perceived as troubled venture and high percentages of such projects end in failure. Failure rate for major projects appears to linger around 65% (Pan et al, 2008). Also, Standish Group survey proved that 65% of IS projects which started in 2006 were failed (Cerpa and Verner, 2009). Project failure can take many forms. It has consistently been defined in terms of projects that could not be completed on time or within budget. Projects that did not meet stakeholders’ expectations, and others that were cancelled (Yan et al, 2009). In general completing IS projects on time, within budget, and quality is a major challenge (Mahaney and Lederer, 2010). Cost estimation is crucial to software projects development success. It’s vital for the effective control and management of the whole software development process. It affects almost all activities of software project development (Li et al, 2008). 
+ In early days of computing, IS projects were relatively much simpler and the entire software development cost were often less than $5000. Today, software exceeds 25 million source code statements. Also, Software development organizations require technical staff of more than 1000 personnel, and development costs of such software projects may be exceed more than many millions of dollars. Hence, errors in software cost estimation produce high failure loses. Moreover, cost estimation is important for budgeting, risk analysis, project planning and software improvement analysis. In the other hand, Current software cost estimation models have been experiencing increasing difficulties in estimating the costs of software, as new software development methodologies and technologies are emerging very rapidly. Generally, most of software cost estimation models rely on such inputs as estimates of lines of source code, delivered sets of instructions, function points and experience levels to produce cost estimates. So, accurate cost estimation is more significant for the following consequences (Zia et al., 2011)
+    • It can help to classify and prioritize development projects with respect to an overall business plan.
+    • It can be used to determine what resources to commit to the project and how well these resources will be used.
+    • It can be used to assess the impact of changes and support re-planning.
+    • Projects can be easier to manage and control when resources are better matched to real needs.
+    • Customers expect actual development costs to be in line with estimated costs.
+This paper is organized as follows: Section two investigates the importance of cost estimation process as one of the main critical success factors for IS projects. Section three illustrates the meaning of IS project governance. Section four explains the application of cost estimation governance through implementing the main bases of project governance, and Section five conclusions with suggestions for the future research.
+2. Importance of Project Cost Estimation 
+Project cost estimation is one of the most important pre-development activities that causes the failure of IS projects (Hamada et al, 2011)b. It’s difficult and predictable development activity, but It always play a critical role and a substantial challenge to influence success or failure of the IS project. Generally, Software cost estimation is the process of predicting the amount of effort required to build a software system. (Li et al, 2008). It refers to the prediction of the likely amount of effort, staffing level, time, and materials necessary to accomplish the required development activities at an early stage of a project’s life cycle. Effort prediction of software cost estimation is concerned with the prediction of the person-hour required to accomplish the project activities. It is a recurring process in which the quality of outputs is heavily dependent on the quality of inputs. Estimates of a project’s budget, resources, and schedule which represent the outputs need to be updated periodically as more and more information about a project’s cost-drivers which represent the inputs (Malik and Boehm, 2011).
+There are numerous of cost estimation methods, but Constructive Cost Model (COCOMO) is the famous analytical method to estimate the project cost estimation which depends on many parameters that are derived from project initial (Zheng, 2009). Generally, there are four essential elements that must be existed to fulfill proper project cost estimation:
+    1- Estimate the project size; this generally ends up in either Lines of Code (LOC) or Function Points (FP), or other possible units of measure. 
+    2- Estimate the effort in person /months or person /hours.
+    3- Estimate the schedule in calendar months.
+    4- Estimate the project cost in dollars (or local currency) 
+So, three important coefficients can determine the quality of project cost estimation; Efforts, Time, and project Scope in the other word "Cost estimation is a function of efforts, Time, and project scope as the following equation;
+ C = f (E, T, S),   Whereas (C) indicates to Cost, (E) efforts, (T) time and (S) project scope. Taken into account, accurate cost estimation helps to complete a project on-budget, on time. Over- or under-estimation of software costs may result in costly errors such as projects are rejected as too expensive; projects may omit important features; projects are abandoned. Accurate project estimation can reduce these unnecessary costs and increase the organization's efficiency and effectiveness. In Table :(1) Park Robert at the Institute of Software Engineering (ISE) listed thirty-nine beneficial reasons to achieve accurate project cost estimation (Park Robert, 1995). 
+ Furthermore, there are two software sizing measurements that are widely used, source lines of code (SLOC) and function points (FP). (SLOC) is software metric used to measure the amount of code in a program. It is typically used to estimate the amount of effort that will be required to develop a software project, as well as to quantify productivity or effort once the software is produced. Function points, measure the delivered functionality in a way that is independent of the technology used to develop the system. It computes size by counting functional components (inputs, outputs, external interfaces, files, and inquiries) (Galorath and Evans, 2006). 
+The most commonly used metric of software size is the number of source lines of code (SLOC), so one of the main inputs to software development effort is software size. If the project’ size is estimated correctly, the estimation effort will be realistic and will be translated into realistic duration and schedule. SLOC is the oldest metric for calculating project’ efforts and SLOC is the primary input for the most types of cost estimation models. Constructive Cost Model (COCOMO) is the famous analytical method to estimate the project cost estimation, it’s based on SLOC and uses parameters that derived from the projects initiation (Zheng, 2009). The main reason leads to the popularity of COCOMO model is no other measure is well understood or as easy to collect as SLOC. Estimation of SLOC for any software project can be obtained from the prior experience, the size of previous systems, and the size of a competitor’s system. Also, breaking down the system into smaller pieces and estimating the SLOC of each piece (Zia et al., 2011)
+3. IS Project Governance
+Governance is a multi-dimensional concept, encompassing elements of organizational stewardship, accountability, risk management, compliance, control, propriety, functional oversight, resource allocation and capability. It tends to be defined from one of two perspectives functionally, in terms of what governance does (e.g., assigning and administering decision rights, responsibilities and accountabilities) or; structurally, in terms of what it looks like (a framework of interrelated boards, councils, and committees (Bannerman, 2009). It’s considered with respect to mechanisms for achieving efficiency over the product life cycle in new product development. Governance of projects concerns those areas of governance project activities (Williams et al, 2010). Project governance provides a comprehensive, consistent method of controlling the project and ensuring its success. Also, it provides the structure through which the objectives of the project are set, the means of attaining those objectives are planned, and the means of monitoring performance are determined.
+IS Project governance is a newborn theory and plays an important role in IS project improvement, Lambert defined project governance as a series of structures, systems and processes about a project, which can ensure the effective delivery and achievement of the due utility and benefit (Du and Yin, 2010). So, Project governance provides a comprehensive, consistent method of controlling the project and ensuring its success and the project governance approach should be described in the project plan. 
+In the fact, there is no generally accepted definition existed for IS project governance, but many efforts are done to define the project governance wherever it’s a set of management systems, rules, protocols, relationships and structures that provide the framework within which decisions are made for project development and implementation to achieve the intended business or strategic motivation (Bekker and Steyn, 2007). Also, Muller defines project governance as “the value system, responsibilities, processes and policies that allow projects to achieve organizational objectives and foster implementation that is in the best interests of all the stakeholders”  Its overall aim is “a consistent and predictable delivery of projects and programs in accordance with their planned contribution to corporate strategy and stakeholder expectations” (Bannerman, 2010).
+Table: 1 Importance of project cost estimation, Institute of Software Engineering, (Park Robert, 1995)
+  No
+Reasons for IS project cost Estimation
+No
+Reasons for IS project cost Estimation
+1
+To help plan the necessary steps for completing a project
+21
+To avoid underestimating the magnitude and complexities of software projects
+2
+To provide a basis for successful risk management
+22
+To evaluate the consequences of internal and external constraints
+3
+To explore alternative system concepts
+23
+To establish achievable objectives
+4
+To explore alternative design concepts
+24
+To establish a basis for quality service
+5
+To set priorities
+25
+To establish commitments
+6
+To identify key design elements
+26
+To bound the risk of commitments
+7
+To identify key process parameters
+27
+To prepare successful proposals
+8
+To identify key assumptions
+28
+To explore the affordability of a system
+9
+To evaluate proposals from competing bidders
+29
+To balance levels of risk against customer needs
+10
+To inform a customer of the potential cost of services from a fee-for-service organization
+30
+To provide a quantitative basis for presenting proposed costs and schedules to customers
+11
+To scope proposed software tasks
+31
+To identify uncertainties and quantify risks
+12
+To explore alternative proposals for enhancements and upgrades
+32
+To identify key cost drivers, so they can be properly managed
+13
+To plan for staffing profiles and manpower buildups that meet project needs
+33
+To support independent reviews of proposed projects (independent cost estimates)
+14
+To identify tasks and their relationships
+34
+To predict life-cycle costs
+15
+To assess schedule feasibility
+35
+To establish baselines for project tracking
+16
+To identify and evaluate cost and schedule tradeoffs
+36
+To provide information for establishing business strategies
+17
+To identify and manage major risk items
+37
+To serve as a basis for negotiating cost agreements
+18
+To allocate and schedule resources
+38
+To predict returns on investments
+19
+To establish budgets
+39
+To assess an organization's ability to perform within targeted costs
+20
+To get funding
+
+
+In the fact, Good governance framework ensures that relevant, sustainable alternatives are chosen and can be delivered efficiently. This indicates that there are three main goals can be achieved as result to implement IS project governance that are; choosing the right projects, delivering the chosen projects efficiently and ensuring projects are sustainable. The second goal, delivering the projects efficiently is important to avoid wasting in public resources and investments. Choosing the right projects means the context in which the critical decisions are made by achieving the right objectives (Williams et al., 2010). In this research IS project governance means the process of using governance mechanisms such as (Arrangements, structures, best practices, strategies, controls, rules, relationship, protocols, guidelines and standards) (Hamada et al, 2011)a to improve the performance of projects development activities which leads to improve the project success and addressing their defects. As well it can be described as an encapsulated component contains four bases as the following:-
+    1. Best practices of executing the project cost estimation.
+    2. Practices to be avoided during the project cost estimation.
+    3. Setting proper check controls within the project cost estimation.
+    4. Define the expected delivered from the project cost estimation.  
+Virtually, there are many motivations to adopt  governance for IS projects development activities, which the main purpose of governance is to enhance the project success through achieving the intended business and the strategic motivation and sustain the performance of executing the development activities. Additionally it can introduce the following features;     
+    1. Provide a comprehensive, consistent method of controlling the project and ensuring its success
+    2. Increase the behaviors of accountability and responsibility of project environment
+    3. provide a structure to determine the project objectives and monitoring performance 
+    4. Ensuring that setting objectives are attained
+    5. Improve the added value of IS projects and manage IT risks
+    6. It considers critical success factor for IS projects delivery and can improve the quality of delivered project.
+    7. It can realize the value of the project through the existence of limited resources.
+    8. Can achieve strategic alignment between business objectives and IT 
+    9. It considers a standard process and best practices for proper management of IS projects
+    10. It provides quality documentations which support IS projects development
+4. Application of Cost Estimation Governance 
+The application of cost estimation governance can be realized through the implementation of the four governance principles which illustrated in figure (1), and represent the main structure of cost estimation governance approach.
+
+Figure (1) the structure of cost estimation governance 
+4.1. Best practices of executing the project cost estimation.
+Project cost estimation is a systematic process comprises a set of consistent procedures summarized in Table: (2), which exhibits the optimal scenario to carry out the project cost estimation. It should start with determining the project scope definition and finishes to validate and reconcile the project estimates, budget, and schedule. COCOMO, Analogy, Expert judgment, Top-down Estimation, Bottom-up estimation, and parametric models are common methodologies that can be used to perform the project cost estimation (Galorath and Evans, 2006), (Malik and Boehm, 2011), (Zia et al., 2011).
+Table: 2, Main steps to execute IS project cost estimation
+No.,
+Process
+Description
+Step 1:
+Project Scope definition
+the process by which the project is defined and prepared for execution
+Step 2:
+project requirements elicitation and analyze the project functions 
+Determining the needs of stakeholders and clarify project requirements by  analyzing the project functions through the formal descriptions of the requirements such as the customer’s requirements specification or request for proposal, and software requirements specification
+Step 3:
+Develop work breakdown structure  (WBS)
+Breakdown a project into manageable chunks that can be effectively estimated and helps to define the total work scope of the project
+Step 4:
+Determine size of the project 
+Estimate size of project in Source Lines of Code (SLOC) or function point by using one or more of cot estimation methodologies.
+Step 5:
+Convert project size into efforts 
+Calculate the project effort in person-months (PM)
+Project effort =
+Step 6:
+Add Project Supplemental effort
+Add the efforts of project Supplemental activities to the total project effort after it calculated
+Step 7:
+Project time schedule
+Determine length of time needed to complete the project effort
+Step 8:
+Estimate Project Costs 
+Estimate the total cost of the software project to provide the work elements and  procurements of the WBS
+Step 9:
+Assess the Impact of project Risks
+Identify project risks, to assess their impact on the project cost estimation
+Step 10:
+Adjust the project cost to risks   
+Add the cost of project risks to the total project cost estimation 
+Step 11:
+Validate and verify project estimates, budget, and schedule with estimate documentation 
+Review and confirm the integrity of the estimate, ensuring the estimate was performed properly with respect to the project-imposed budget and schedule and resolve the differences. 
+4.2. Practices to be avoided during the project cost estimation
+Avoidance strategy must be taken into our consideration during implementation project cost estimation as a guidance control to avoid the problems and defects that can cause the projects failure. This strategy can due to reduce the failure rates and enhance IS project success. This avoidance strategy based on many critical success factors, and many of lessons learned from the previous researches in areas of project cost estimation. It includes  lots of warning instructions (cautions) that must be considered and avoided during the project development process, within the project cost estimation, IS projects developers must avoid the following issues; 
+    1. Perform cost Estimate upon imprecise and unrealistic requirements
+    2. Estimate depending on one estimation methodology 
+    3. Failure to keep the estimate current and updated  
+    4. Gather insufficient project requirements  
+    5. Ignore estimate the project supplemental activities 
+    6. Failure to list the project risks 
+    7. Failure to estimate the cost of project risks 
+    8. Failure to spend sufficient time on software sizing
+    9. Failure to use clear definitions of project size
+    10. Failure to use the estimation methodologies
+    11. Failure to expect project requirements changes 
+    12. Failure to consider size growth in estimates or reducing size estimates to achieve desired costs.
+    13. Ignore building database to store historical estimation data 
+    14. Unconsidered the frequent user change requests
+    15. Amplified the project requirements at the late of project life-cycle 
+    16. Hardware and software persons are not integrated and not harmonized 
+    17. Ignore any task and activity included in project scope (excluded from) the estimation 
+    18. Ignoring historical estimates as basis for analogy due to differences in languages and methodologies
+    19. Improper assessment of staffing levels and skills
+    20. Inability to estimate accurately size a software project
+    21. Inability to build consistent and appropriate project work breakdown structure WBS
+    22. Insufficient user/analyst communication and understanding
+    23. Lack of appropriate planning detail with insufficient review
+    24. Lack of methodology or guidelines
+    25. Lack of or misuse of historical estimation data 
+    26. Lack of setting and review of standards
+    27. Limited software experience for the project staff
+    28. Not all project’ stakeholders  involved in project plan development
+    29. Inconsistent  between desired capabilities to available budgets, schedules, and skilled
+    30. Less estimation competencies  for project leadership and management 
+    31. Bad estimating with overlooked tasks
+    32. Software staff not included in early planning and design decisions
+    33. The included tasks and activities in the estimate are not consistent with the objectives of the estimate
+    34. the schedule and effort allocations are not consistent with historical experience
+    35. Unproven design tools selected with limited time for analysis
+    36. Using limited perspectives to estimate software size, cost, and schedule
+4.3. Setting check controls during the project cost estimation execution 
+Sitting governance controls within the project cost estimation is an essential requirement to verify and validate the accuracy of cost estimation process and make it more realistic. Two main governance controls are introduced, Comprehensive Cost Estimation Model (CCEM) to conquer the problems of depending on one cost estimation methodology, and Critical Success Estimation Factors (CSEF) to produce a realistic cost estimation. 
+4.3.1. Comprehensive Cost Estimation Model (CCEM)
+In the fact, in the case of predicting the project cost estimation according to one estimation methodology, means the project cost estimation is not accurate and unrealistic in high percentage. So, Comprehensive Cost Estimation Model (CCEM) based on calculates the project cost estimation through a mixture of estimation methodologies and considers the Source Line of Code (SLOC) as a project size metric. These hybrids of estimation methodologies can generate a new model contributes to make project cost estimation more accurate and more realistic. The following procedures explain the main steps to develop CCME depending on five estimation methodologies which are:-   
+    1- Top down methodology is a hierarchical decomposition of the project into progressively smaller components to estimate the project size (Galorath and Evans, 2006)
+    2- COCOMO , the constructive Cost Model  is the famous analytical method to estimate the project cost estimation which uses the Effort Equation to estimate the number of Person/Months required to develop a project. 
+EFFORT = 
+Where A is proportionality constant and B represents economy or diseconomy of scale. B depends on the development mode. The estimate of a project's size is in SLOC. (Agarwal et al., 2001)
+    3- Analogy compares the software project under consideration with a few similar historical projects  which the estimation process based on the actual experiences (i.e. projects with known characteristics, effort and schedule
+    4- Expert Judgment, Consult with one or more experts, it based on the accumulated experience of team of experts’ judgment.
+    5- Program Evaluation and Review Technique (PERT), a technique that uses optimistic estimation which the best case, pessimistic estimation which is the worst case, and realistic estimation ‘most likely’ to calculate the expected time or size for a particular activity. (Saunders, 1990)
+
+Where
+EV = expected estimation Value
+OE = optimistic estimation
+PE = pessimistic estimation
+RE = realistic estimation “most likely”
+Main steps of Comprehensive Cost Estimation Model (CCEM)
+Step 1: Determine the project scope definition, boundaries, main edges, and state the main constrains.    
+Step 2: According to Top down methodology, divide the project into main activities through specifying the project requirements and analysis, examples of dividing project activities are:
+    • Elicit the project requirements 
+    • Refine project requirements
+    • Software Analysis 
+    • Software Design 
+    • Software Coding 
+    • Interface Specification
+    • Software Testing 
+    • Other activities such as project risk management 
+    • Project support and software quality
+    • Software Quality Assurance 
+Step 3: Building work breakdown structure (WBS) which is a method of organizing project elements into a hierarchy that simplifies the tasks of budget estimation and control, it can be designed as the following structures:- 
+    • “Project Control Work Breakdown Structure” (PCWBS) is the hierarchical structure which shows the overall components of project main deliverable or subject.
+    • “Functional Work Breakdown Structure” (FWBS) which shows the scope of functions and operations that should be performed to achieve the main subject or deliverable of project
+    • “Relational Work Breakdown Structure” (RWBS) which represents the relationships between the components of PCWBS and FWBS
+Step 4: Estimate the size of all project activities in source line of code (SLOC) according to WBS and the partitioning activities by using:-
+    A- Analogy methods to estimate the size of all project activities 
+    B- PERT equation to calculate the size of all project activities in SLOC, 
+
+    C- Calculate the average of A and B for all project activities 
+    D- Calculate the total Average size of project activities in SLOC
+Step 5: Transfer the total SLOC for the project into Work/Hours depending on Expert Judgment consultants 
+Example: if one SLOC= 0.2 W/hours 
+Then,
+ Total W/h for the project = Total SLOC for the project activities* 0.2
+Step 6: Estimate the work productivity per month (WPM)
+WPM= Actual work hours per day * Actual days per week * Weeks per Month 
+WPM= 7.5*5*4 = 150 W/h    (Approximation value)
+Step 7: Estimate the project effort = 
+Step 8:  Estimate the additional efforts per month for the supplemental project activities through the Expert Judgment consultants as a percentage to the project effort 
+Example:-
+Project management                                                           add 7% from the project effort
+Project change configuration management		        add 5%
+Administration and Support Costs			        add 10% 		
+Project maintenance for first three years 		        add 13%	and so on 
+Step 9:  Calculate the total project effort 	 
+Total project efforts = Estimate the project effort + Estimate the additional efforts
+Step 10:  Calculate the Project Duration 
+Project Duration = 
+Step 11: Assess the Impact of project Risks
+    A. Identify the software project risks and Assess risks impact on the cost estimation
+    B. Transfer project risks into costs by calculate the risk reserve or estimate a percentage by Expert Judgment consultants
+Step 12: Calculate the Total Project Cost 
+    A. Project labor cost =  
+    B. Calculate the additional project costs such as hardware and software purchases, travel for meeting or testing purposes, telecommunications (e.g., long distance phone calls, video-conferences, dedicated lines for testing, etc.), training courses, office space, and so on.
+    C. Calculate the Total Costs by the following equation 
+Total Project Cost = Project labor cost + Additional project costs+ Costs of project Risks 
+Figure (2) shows the algorithm explains the comprehensive methodology to calculate the project cost estimation by using Comprehensive Cost Estimation Model (CCEM).
+
+Figure (2) Algorithm for Comprehensive Cost Estimation Model (CCEM)
+
+
+4.3.2. Critical Success Estimation Factors (CSEF)
+Actually, good application of cost estimation methodologies is not sufficient to achieve accurate project cost estimation, but there are many critical success factors must be established and considered to produce realistic cost estimation. Table (3) explains the main critical success factors that must be verified and validated during implement the project cost estimation. IS projects developer must review the following issues.    
+Table (3) Main success factors for implementing the project cost estimation.  
+No
+Critical Success Estimation Factors
+Exist 
+Not exist
+1
+Use more than one cost estimation methodology to verify the accuracy of estimation process   
+
+
+2
+the project tasks have been sized appropriately and clearly identified
+
+
+3
+The organization has a historical database for organizing and retaining the estimation data 
+
+
+4
+Consistent between WBS and the project activities without any conflict 
+
+
+5
+Estimation of supplemental project activities are done 
+
+
+6
+Information on completed projects is captured and entered into the historical database
+
+
+7
+Sufficient time is provided to conduct a proper project estimate
+
+
+8
+The purpose and objectives of each estimate are clearly understood by all project stakeholders which they are involved  
+
+
+9
+Included the cost of project risks into cost estimation 
+
+
+10
+Re-estimate the project several times throughout its lifecycle
+
+
+11
+Clearly description for the project scope and objectives that are produced 
+
+
+12
+Establish good documentation that derived from the previous projects data 
+
+
+13
+Analogy estimation data must be updated currently
+
+
+14
+Experts from related and different projects or disciplines must be involved in the estimating process
+
+
+15
+Estimate the project efforts must be implemented according to accurate sizing 
+
+
+16
+The results of estimates are integrated with project planning and tracking
+
+
+17
+Create a standardized estimation procedure that all involved can understand 
+
+
+18
+Potential cost and schedule impacts are estimated for all identified risks
+
+
+19
+Factors that affect the estimate are identified and explained
+
+
+20
+Caution steps must be taken to ensure the integrity of the estimating process
+
+
+21
+As much as possible Use at least one software estimation tool
+
+
+22
+Building cost estimation via gathering complete and sufficient requirements 
+
+
+23
+Estimated costs and schedule must be consistent with the previous successful projects
+
+
+4.4-  Define the expected delivered from the project cost estimation
+Project cost estimation outputs are significant to determine the size of project investment, estimation output provide vital information to all project stakeholders for instance;
+    • Introduce a prediction cost estimate to support bids competing 
+    • Facilitate the achievement of project schedule 
+    • Help to determine project resource availability 
+    • Knowing the expected duration of a project 
+    • Be useful in bid evaluation
+So, the following outputs must be established as a project documentations to support all project’ development phases. The optimal project cost estimation outputs should include:-  
+    1. Refined project requirements and constraints
+    2. Refined software functional requirements
+    3. Software architecture hierarchy 
+    4. Project-work breakdown structure (WBS) including attributes of the work elements
+    5. Project Risks List
+    6. Methods used to estimate software size
+    7. Estimation of Software sizing for each function and activities in SLOC
+    8. Methods used to estimate software development Efforts
+    9. Software Development Effort of each function adjusted in work-months
+    10. Complete Software Effort estimates for all work elements of the WBS (in work-months)
+    11. Total project Effort estimation
+    12. Schedule including all work elements of the WBS
+    13. Methods used to estimate cost
+    14. Cost of project procurements
+    15. Costs of additional project activities
+    16. Cost estimates for project risks
+    17. Total cost estimation (in dollars)
+    18. Methods used to validate the estimates
+    19. Validated and revised size, effort, schedule, and cost estimates with improved Accuracy
+    20. Problems that are founded through the project cost estimation
+5-Concloution 
+IS projects have high failure rates. Project cost estimation is one of the main development activities that can cause the projects fail. Governance is new born theory that can introduce more benefits and advantages in the area of IS projects development through eliminate its defects and faults. Governance of project cost estimation based on four bases. First, what must be done for the project cost estimation which explains the optimal scenario to perform the project cost estimation. Second, what must be avoided during the project cost estimation which includes the main avoidance to assure accurate cost estimation. Third, setting governance controls within the project cost estimation by implementing Comprehensive Cost Estimation Model (CCEM) and Critical Success Estimation Factors (CSEF) to guarantee realistic project cost estimation. Fourth, recommended output from the project cost estimation. Governance the other critical pre-development activities of IS projects such as; risk management, requirement elicitation and project activities schedule is the future work.  
+6-References
+    1- Agarwal R., Manish Kumar t, Yogesh, S. Mallick, RM. Bharadwaj, D. Anantwar, (2001), “Estimating software projects”, Software Engineering Notes, Vol., 26 No 4, pp: 60-67
+    2- Bannerman Paul (2009) “Software development governance: A meta-management perspective” IEEE, Workshop on Software Development Governance, SDG '09, ICSE , pp: 3-8 
+    3- Bannerman Paul (2010)" Managing Structure-Related Software Project Risk: A New Role for Project Governance", IEEE, Software Engineering Conference (ASWEC2010), pp:129-138
+    4- Bekker M.C, Steyn H., (2007) “Defining ‘project governance’ for large capital projects” IEEE,AFRICON2007, Digital Object Identifier:10.1109/AFRCON.2007.4401604, pp:1-13 
+    5- Cerpa Narciso ,  Verner  M. June (2009),” Why Did Your Project Fail?” Communications of the ACM, vol., 52, No. 12, pp: 130-134.
+    6- Du Yaling, Yin Yilin (2010) "Effect of governance on management in public project" IEEE,  International Conference on Logistics Systems and Intelligent Management, Vol.,1, pp: 230 - 234 
+    7- Galorath Daniel D, Evans  Michael W.,(2006), “Software Sizing, Estimation, and Risk Management” Auerbach Publications, Taylor & Francis Group, USA.
+    8- Hamada Mohamed A., Mazen Sherif A., Hassanein Ehab E., (2011)a, “Towards to Specific Approach for Information Systems (IS) Projects Governance” (ICICIS 2011), Fifth International Conference on Intelligent Computing and Information Systems, July 2011, Faculty of Computer &Information Science (FCIS), Ain Shams University, Egypt, pp: 213-219.
+    9- Hamada Mohamed A., Mazen Sherif A., Hassanein Ehab E., (2011)b, “The Role of the Pre-development Activities in Information Systems Projects’ Failure” The 46th Annual Conference on Statistics, Computer Science, and Operations Research, ISSR, Cairo University, Egypt, December, 26 -29, 2011. 
+    10- Li Y.F., Xie M., Goh T.N., (2008) “Optimization of Feature Weights and Number of Neighbors for Analogy Based Cost Estimation in Software Project Management”, IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2008. pp: 1542 – 1546
+    11- Mahaney C. Robert , Lederer L. Albert, (2010) “ The role of monitoring and shirking in information systems project management” International Journal of Project Management, Vol., 28 pp: 14–25
+    12- Malik A. Afzal, Boehm Barry (2011), “Quantifying requirements elaboration to improve early software cost estimation” Information Sciences Journal, Vol, In Press,, Issue: 13, pp: 2747-2760
+    13- Pan Gary, Hackney Ray, Pan Shan (2008) “Information Systems implementation failure: Insights from prism” International Journal of Information Management, Vol., 28, pp: 259–269
+    14- Park Robert E., (1995), “Checklists and Criteria for Evaluating the Cost and Schedule Estimating Capabilities of Software Organizations”, Software Engineering Institute, Carnegie Mellon University, Research Access, Inc., USA
+    15- Saunders R. G., (1990), “Project management in R&D: the art of estimating development project activities” Project Management Journal, Vol 8, No 1, pp:45-50
+    16- Williams Terry , Klakegg O. Jonny, Magnussen O. Morten, Glasspool Helene (2010) “An investigation of governance frameworks for public projects in Norway and the UK” International Journal of Project Management Vol., 28 pp: 40–50
+    17- Yan B., Benslimane Y., Yang Z., (2009), “IS Development Activities and Methodologies in Practice: A Survey of the IT Sector in China” IEEE, Issue Date: 8-11 Dec., 2009, Print ISBN: 978-1-4244-4869-2, pp: 598 - 602 
+    18- Zheng-Wei Huang, (2009) “Cost Estimation of Software Project Development by Using Case-Based Reasoning Technology with Clustering Index Mechanism” IEEE, Fourth International Conference on Innovative Computing Information and Control (ICICIC), pp: 1049 – 1052.
+    19- Zia A., Rashid K., Zaman, (2011) “Software cost estimation for component based fourth-generation-language software applications”, IET Software, Vol. 5, Iss. 1, pp: 103–110

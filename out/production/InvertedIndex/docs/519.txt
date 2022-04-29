@@ -1,0 +1,309 @@
+A Multimedia Micro-University
+ S. K. Chang, E. Hassanein and C. Y. Hsieh
+Knowledge Systems Institute
+3420 Main Street, Skokie, IL 60076 USA  {changsk,ehab,cyhsieh}@ksi.edu
+
+Abstract
+A multimedia micro-university is a multimedia information system designed to support the  education programs and management operations of a small academic institution.  It is a multimedia education tool, an efficient management tool and an effective advertising tool, all integrated into a single system to support a virtual university. The micro-university concept is based upon the vision of  combining theoretical and applied knowledge while maintaining the small-classroom advantage even for a virtual university.  We describe its important components which are implemented on personal computers using C, Java and CGI programs and also becoming available on the Web:  (a) a virtual library,  (b) an intelligent distance learning system and (c) visualization and planning tools for the school’s management operations.  The assessment plan to evaluate the micro-university is discussed.
+
+1. Introduction
+This paper describes  how a multimedia micro-university is incorporated into the education programs and management operations at Knowledge Systems Institute which is a private graduate school of computer science and management information systems dedicated to the education and training of professionals.  The micro-university concept is based upon the education philosophy of the school, and its  purpose is not only to increase efficiency, but also to empower a geographically and temporally dispersed group of educators, administrators and students to participate in a  dynamic learning organization effectively, without losing the small-classroom advantage.
+Knowledge Systems Institute was originally established in 1978 for research and profes­sional education.  The school's excellence is maintained by its dedicated faculty and distinguished advi­sors, its low student-to-faculty ratio, and the philosophy of granting ample opportunity for students to combine theory with practice. Besides learning advanced theories and concepts of computer and information sciences, students at KSI learn to translate theory into practical applications by conducting research projects under the guidance of faculty advisors. Through such projects, students gain technical excellence, improve their abilities to do applied re­search and develop a critical appreciation of the engineering/scientific/management aspects of the computer profession in the course of developing new and specialized knowledge.
+The combination of theoretical and applied knowledge is fundamental to the education philosophy at KSI. This educational approach is both sound and meaningful for professionals seeking advanced education relevant to their jobs.  As an institute dedicated to graduate education in computer science and management information systems, KSI differs substantially from most other universities in its size.  The Institute offers a master of science degree program and a certificate program in computer and information sciences.  In 1998 KSI has an enrollment of close to one hundred  full-time and part-time graduate students. The Founder of KSI, Dr. Shi-Kuo Chang, believes that small is beautiful. He believes that a small institute, dedicated to advanced research and high quality science and engineering education, will provide the best training for computer scientists and knowledge engineers.  Another unique feature of Knowledge Systems Institute is that most of its courses are offered dur­ing the evenings or weekends and also available through distance learning. On the one hand, this arrangement is ideal for working professionals who can devote their own time to the pursuit of knowledge. On the other hand, this opens the door for KSI to bring in talented and experienced people as part-time teachers.   KSI is thus a model learning organization where knowledge is continuously being accumulated, created, exchanged and disseminated by the knowledge agents comprising the students, faculty and administrators.
+Because of these unique characteristics,  the school is developing its own multimedia information system [6] - the micro-university - to support its education programs and management operations. There are several important components of this multimedia micro-university:  (a) a virtual library,  (b) an intelligent distance learning system [10], and (c) visualization and planning tools for the school’s management operations. It is important to emphasize that these components do not exist in isolation, but are becoming available on the Web and integrated into a  virtual university [5] and accessible to students, faculty and administrators, thus creating synergy.  In what follows we will describe each component of the micro-university, and then discuss how this micro-unversity is being implemented and evaluated to serve as KSI’s new  paradigm for  professional education.
+2. A Virtual Library
+KSI has developed its own Virtual Library to provide students and faculty an easy-to-access library information system.  The Virtual Library follows the What-You-See-Is-What-You-Get (WYSIWYG) principle, and is implemented both on the Web and on the PC to support the keyword-based retrieval and  direct visualization of titles in the (physical) library at KSI.  The user can first perform a keyword-based search of the title on the PC or the Web, or browse through the titles on the Web.  After the user has found a title, the location of the title is also shown on the shelves of the Virtual Library, as shown in Figure 1.  This enables the user to easily locate the book on the (physical) bookshelf.   More advanced features are being added to the Virtual Library, so that a user can be informed of other users who share a common interest in some titles.   This is accomplished through the creation of an active index system which supports the dynamic monitoring of objects (in this case, titles)  [1-3].  It should be noted that a normal library may not be able to offer such advanced features due to the diversified user population it serves.  KSI, being a small graduate school, has a more homogeneous user population, so that such service can be offered with users’ consent.  The Web version of the Virtual Library is available through KSI’s home page www.ksi.edu.
+
+Figure 1.  The Virtual Library.
+
+3. An Intelligent Distance Learning System
+KSI’s Intelligent Distance Learning System KSIDL is an intelligent communication  “channel” between two parties: the source being the author of distance learning materials and the destination a cooperative recipient.  With the Internet a communcation channel can be established between any two Internet users, but the main problem now is  how to facilitate the interaction and cooperation among the users - in our case, the teacher and the students. Our solution is to organize the communication process at a higher level of abstraction.  By developing a knowledge base to model the educational process and using Web-savvy multimedia tools (i.e., tools that can easily be incorporated into the Web),  we designed the KSIDL system.
+The KSIDL system is designed such that it can pinpoint those areas upon which a student needs to focus his/her study in order to help the student to understand difficult concepts. The system suggests that the student review those areas that a complex concept is dependent on and then if any area is not very well understood the system will suggest more review topics recursively, until the student reaches those areas that cause confusion. The system relies heavily on questioning the student. That is the reason that we need a cooperative recipient. A casual internet surfer may not be willing to participate in that difficult exercise.
+                                                                             Figure 2.  Intelligent Distance Learning System.
+The KSIDL is a complex finite state machine. As shown in Figure 2, there are four application programs that interpret this state. Each application program is designed for a different entity with a different view of the knowledge base and with a different purpose for using the system. These entities communicate among themselves by changing the state of the system. The four entities are: the Student, the Teacher, the course material’s Author [9] and the school Administrator. The four corresponding  application programs are the Tutor, the Advisor, the Publisher and  the Administrator . 
+3.1. The Tutor
+The Tutor is the application program that is used by the student. It is composed of  one principal Java applet which communicates with other Java applets and a number of CGI programs.  It delivers to the student the material he/she needs to study. It gives a short quiz after each section and sends the results to the system knowledge base where it is stored. It also shows the student the homework assignments and their due dates and receives the answers from the student and stores them to be graded by the teacher. It allows the student to send and receive mail to and from the teacher and the school administration. 
+3.2. The Advisor
+The Advisor is an application program that is used by the teacher. It is also composed of one main Java applet which communicates with many CGI programs. The reason for relying on CGI programs is to protect the privacy and the integrity of the information in the system.
+The Advisor notifies the teacher of new mail and allows the teacher to send replies to the senders. It also directs the teacher to newly submitted homeworks with their due date and their submission date. The teacher corrects the homework and sends it back to the student with the grade. 
+Many problems are hard to explain in writing. In these cases audio messages can be sent to the students and in some cases demo programs or video clips to illustrate these complex concepts.
+3.3. The Administrator
+The Administrator is an application program that is used by a school administrator. The school administrator’s purpose is to mediate and facilitate the logistics of the education process. The Administrator is composed of two components: a server-based application program that is used to create the initial components necessary to add a new student to one course in the system, and a remote client-based Java applet that checks the records of each student to verify the student’s compliance with school policy.
+
+3.4. The Publisher
+The Publisher is an application program that is used by the author of the course materials. It is composed of one main Java application which communicates with  other CGI programs. Its main purpose is to transfer the files from a remote machine, probably a PC, to the server. The files must be transferred to their correct position and  the necessary directories must be created.  The system state must also be changed by creating or modifying the relevant system tables and property lists.  The structure of the  Publisher is illustrated in Figure 3.
+
+Figure 3.  Structure of the Publisher.
+One of the most important aspects of the Publisher is that it is course-independent; i.e., it does not set  rigid requirements on the author as long as the modules are html files. The author may choose any style and any size, and inclusion of in-line gif and jpg figures are allowed.  The Publisher is an expert system that asks the author a series of questions to set the section dependency graph with the proper relative weights. 
+3.5. System Architecture
+In Figure 4 the architecture of the KSIDL system is shown. The rectangular boxes represent directories and are designed containers that encapsulate the properties and the state of the different objects  and classes of the system.  The black  boxes represent the system programs that implement  the system and the four different user interfaces of the system. They are implemented as Java applets, CGI or Java applications. The oval gray figures are composed of tables and property Lists. They are used to save the state of the system. Their location is used to add semantics to their meaning; i.e., profile of Student i has a different meaning than profile of Student j. They are mainly made up of three categories: system related, student related and course related.
+Figure 4. Architecture of the KSIDL system.
+As shown by Figure 4 the architecture of the KSIDL system follows object-oriented design principles and is easily expandable.  A special feature of KSIDL is the decomposition of the student profiles into general profile and special profiles.  Therefore, even if the special profiles are unspecified, the general profile already provides some information on the students as a whole.  As the system gradually accumulates more knowledge about the students, the special profiles can be incrementally updated.
+ 
+4. An Intelligent Tutoring Example
+
+Figure 5 illustrates a portion of the table of contents of a C Programming course. The corresponding dependency diagram is given in Figure 6 to illustrate the complexity of relating sections of the course that are essential for the understanding of the course materials. The KSIDL will use this diagram, which exists as a part of its knowledge base, to identify the areas of misunderstanding for a student.
+
+
+    I. Introduction
+    II. 	Types, Operators and Expressions		
+        A. Variable Names
+        B. Data Types and Sizes
+        C. Constants
+        D. Operators 
+        E. Expressions
+    III. Control Flow	
+        A. if-else		
+        B. Loops 
+            1. while 
+            2. for	
+            3. do-while	
+    IV. Functions and Program Structures
+        A. Functions
+            1. Functions Returning Values
+            2. Function Arguments
+        B. Scope Rules	
+    V. Pointers and Arrays
+        A. Pointers 	
+            1. 	Pointer Declarations
+            2. Pointers as  Function Arguments
+            3. Address Arithmetic
+            4. Character Pointers and Functions
+        B. Arrays
+            1. Array Declarations
+            2. Array Referencing
+            3. Multi-Dimensional Arrays	
+    VI. Structures
+        A. struct Declaration
+        B. struct as a Function Argument
+        C. Arrays of Structures
+        D. Pointers to Structures
+        E. Examples
+            1. Simple Example
+            2. Advanced Examples
+
+Figure 5.  The table of contents for some course materials.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 6.  The corresponding  (partial) dependency graph.
+
+
+The  initial page of the distance learning module is illustrated in Figure 7. The following is the text of the program shown in Figure 7, which performs student gpa computations:
+#include <stdio.h>
+struct student{
+	char name[24];
+	float gpa;
+};
+struct Class{
+	int num;
+	struct student st[20];
+};
+void setStudent(struct student * st,char * n,float gpa){	
+	strcpy(st->name,n);
+	st->gpa=gpa;
+}
+void getData(struct Class * c){
+	char * str[24];
+	float gpa;
+	c->num=0;
+	scanf("%s %f",str,&gpa);
+	while(gpa>0){	
+		setStudent(&c->st[c->num++],str,gpa);		
+		scanf("%s %f",str,&gpa);
+	}
+}
+main(){
+	int i;
+	struct Class cis321;
+	getData(&cis321);
+	for(i=0;i<cis321.num;i++)
+		printf("%10s %10.3f\n",cis321.st[i].name, cis321.st[i].gpa);
+}
+
+
+Figure 7.  Initial page of the distance learning module for C programming.
+
+After pressing the "I DO NOT UNDERSTAND" button the following dialog box appears in Figure 8:
+
+Given the following struct:
+struct person{
+       char name[20];
+       char tel[10];
+};
+How can you declare "p" an array of 20 elements of type  “person”?
+1) person p[20];
+    2)  struct p person [20];
+    3)  struct person p[20];
+
+
+
+Figure 8.  Dialog between student and KSIDL system.
+
+If the question is answered correctly, the following dialog box will appear in Figure 9:
+Given the following struct:
+struct person{
+char name[20];
+int id;
+} p [20];
+	In order to set the first person id to 50
+	1)   p[0].id = 50
+    2)   p[1].id = 50
+    3)   p.id[0] = 50
+
+
+
+
+
+Figure 9.  Dialog between student and system.
+
+If questions are answered incorrectly several times (this parameter is set manually by the instructor depending on the degree of difficulty of the topic), KSIDL will identify the area(s) of misunderstanding, and the student is requested to study the course  materials that will correct his/her misconception(s). The correct answers are prestored in the knowledge base of KSIDL.
+
+
+5. An E-Book for Java Distance Learning 
+
+The KSIDL distance learning system is accompanied by multimedia E-books. As an example, KSI’s    Java distance learning course is both available on the Web as an E-book and also published in our Classnotes Series [7].  This E-book adopts the following approach for page design:
+
+5.1. Page Frame
+
+Page frame is based on the idea of cooperating with the function  of  the web browser to achieve easy navigation, and to provide a uniform page frame for all E-book materials. For this purpose, four buttons are added: Audio_Play button, Index_Page button, Previous_Page button and Next_Page button. The Audio_Play button enables the student to play the audio parts of the text at the student’s own pace. The Index_Page button links to the index page of the course. The Previous_Page button links to the previous page of the text. The Next_Page button links to the next page of the text.
+
+5.2. Organization of the Page Hierarchy
+
+Pages are organized into four levels: The topic page, the exploration page, the dynamic page and the source page. Level one is the topic-page. The topic page briefly lists and defines the key issues of each page and provides links to the second level exploration page.  The exploration page provides detailed description, explanation,  static graphics, screen dumps and links to the third level dynamic page for real time demonstration, as shown in  Figure 10.
+
+
+
+Figure 10. The Exploration Page.
+
+The dynamic page demonstrates the execution of the program code on the fly. Side by side with the real time demonstration are the links to the fourth level source-page.  The source page is the program source code in its original format before compilation. 
+
+5.3. Comparative Presentation
+
+In certain time-oriented or event-oriented cases,  a student can get a better understanding if the page  supplies two or more comparative results of different times or different events on the same page simultaneously.  The multiple screen dumps of the separate executions are carefully merged side by side to give this kind of comparative view as shown in Figure 11, where a program called TwoThreadTest is executed twice. The two screen dumps of the result are combined for comparative examination.
+
+
+
+Figure 11. The Comparative Presentation.
+
+
+5.4. Adding Interactivity to a Page
+
+The level three dynamic page demonstrates the real time execution of the code. Moreover, if the progress of the code can be temporarily suspended, a student will also be able to study the outcome for each suspension and compare the results with the source code. The suspension can be done by clicking on the Applet area of the screen. For example, Figure 12 demonstrates a rotating 3-D sphere represented by some randomly created oval dots with different sizes, colors and phases. As the student suspends the screen temporarily, he/she can have a better view of the details, and then  resume the execution as he/she wants.
+
+
+Figure 12: Adding interactivity to a page.
+
+
+6. Visualization and Planning Support for Management
+
+An institution such as Knowledge Systems Institute has a small number of dedicated administrators and staff.  KSI’s organizational structure is flat, and each administrator or staff has multiple responsibilities.  It is therefore important for the administrators and staff  to easily visualize the current status of the school without relying on a lot of memos, notes, reports and meetings.  This  will be accomplished through the Visualization Support and Planning Support for the  Micro-University.
+
+6.1. Visualization Support
+
+Just as the education programs are supported by the distance learning system and the library by the virtual library, KSI’s management is supported by visualization tools for the direct visualization of every aspect of the school such as enrollment status, class schedule and enrollment, laboratories’ status, air conditioners’ and heaters’ status, etc.
+The Visual Micro-University is being developed at KSI.  Once fully implemented, it will allow an administrator from the Administration Office to visualize and control the status of air conditioning units and furnaces; class schedules;  on-off status of computers and printers in various laboratories, lighting in classrooms, laboratories and gym; office schedule for the faculty; schedule of staff; scheduling of meetings; student tuition payments; accounts receivable, accounts payable, etc.  Similar to the smart house  that provides the total management of a house through the integration of sensors, microcomputers and local area network, the Visual Micro-university will support the total management of a small school.  It not only saves resources and reduces costs, but also facilitates the communication among faculty, staff and students.  The micro-university is Web-savvy, so that the administrators and staff can easily visualize and control the school from their desktops.  The Visual Micro-University furthermore  provides planning support, to be described in the following section.
+
+6.2. Planning Support
+
+Our approach to planning is through the continuous creation, update and evaluation of a structured collection of knowledge tables [4]. The knowledge table (KT) is the functional unit of planning and has  five columns, namely, GOALS, PLANS, EXPECTED_OUTCOMES, STATUS and RELATED_PLANS. Each KT consists of a number of knowledge slices. A knowledge slice (ks) is the fundamental unit of planning and evaluation. It is not merely a row in a table. In fact, the  knowledge slice itself may again be a knowledge table. We will then have nested knowledge tables that can become a complex,  rich structure.
+The Plan is a structured collection of knowledge tables, each knowledge table being itself the  embodiment of a plan or a subplan. Each plan consists of a number of knowledge slices, where each knowledge slice is the embodiment of some goal, the plan to reach this goal, the expected outcomes, the current status and the related plans. Since all plans are related, the Plan is a structured collection of these knowledge tables.
+The planning process essentially consists of the continuous creation, update, evaluation and revision of knowledge tables by the key administrators responsible for the plans (the knowledge tables). Although the planning process can be continuous, it is more realistic to talk about a planning cycle, whose length is determined by how often the organization engages in the exercise of creating, updating, evaluating and revising a plan or a subplan (a knowledge table in either case). For KSI the planning cycle is one year.  
+Each knowledge table (or plan) is owned by a knowledge agent, which in the most general case can be a person, a computer program or a group of agents (notice this definition is also recursive). In practice, the knowledge agents are the administrators, including the chancellor, the academic dean, the department chairs, the executive director, the development office and the research director. The knowledge agent who owns a plan is responsible for its creation, update, evaluation and revision. Because the knowledge tables are interrelated, the knowledge agent will interact with the knowledge agents owning the related knowledge tables so that they can collectively improve the plan.
+The above described planning process model adequately accommodates evolutionary changes and incremental improvements. However, it is also possible to accommodate revolutionary changes where even the Master Plan can be completely overhauled.  
+In practice, we have developed a number of such knowledge tables (or plans) as WWW pages. The top-level  knowledge table is the Master Plan.  It is related to a number of second-level knowledge tables, one for each strategic area. Low-level knowledge tables can also be defined for specific areas. In an evolutionary situation, the knowledge tables will not change drastically overnight.  During each  planning cycle, the administrators will inspect the knowledge tables to fill in missing entries, correct some entries, and perform an evaluation. If they are happy with the progress and the evaluation, no major changes of the knowledge tables (the plans) will be necessary.  If they detect major problems, then the affected knowledge table, its parent knowledge table and other related knowledge tables, all need to be examined carefully, so that the administrators can decide whether these knowledge tables (plans) require major changes.   (Since the knowledge tables, which are WWW pages, reside at the individual directories of the administrators, distributed updates are possible.)  Based upon this Master Plan, the second level strategic plans are developed.  These second level  knowledge tables are owned by key administrators or faculty committees. An example Master Plan and the Equipment Strategic Plan are presented in Figure 13.
+
+MASTER STRATEGIC PLAN (owned by Chancellor)
+GOALS	PLANS	EXPECTED_OUTCOMES	STATUS	RELATED_PLANS
+Attain academic	(1) improve curriculum 	updated curriculum		curriculum 	CURRICULUM PLAN
+excellence 		suitable for 21st century				revised Sept 1995
+		(2) improve library		student can access		Virtual Library	LIBRARY PLAN
+					any library in the world	in use June 1995
+		(3) improve equipment 	maintain state-of-art 		ongoing		EQUIPMENT PLAN
+		laboratories
+		(4) recruit faculty		increase full-time 		start recruiting
+					faculty			1998
+
+Maintain financial 	(5) recruit more 		more local 			ongoing 		STUDENT
+stability 		students 			professional students 				RECRUITING PLAN
+		(6) develop research 		closer cooperation 		ongoing 		RESEARCH PLAN
+		center  with industry
+		(7) fund drive		more donations 		start 1997 		FUND RAISING PLAN
+(and other knowledge slices)
+
+EQUIPMENT STRATEGIC PLAN (owned by Equipment Committee)
+GOALS	PLANS	EXPECTED_OUTCOMES	STATUS	RELATED_PLANS
+Improve 		Purchase 			Maintain state-of-art 		ongoing
+equipment 		more equipment 		laboratories
+(and other knowledge slices)
+
+Figure 13. Examples of (partial) knowledge tables.
+
+The above described planning process model is a distributed intelligence  model in the sense that intelligent agents (humans or computer prgrams) cooperate to accomplish the objectives of the enterprise.  The administrators know exactly what knowledge tables they are responsible for, and know with whom to interact in  order to achieve certain goals.  Therefore, the decision-making process is interactive and spontaneous. This also means the Plan can be implemented and improved incrementally. We are developing the  computer tool to support the KT-based planning and evaluation process.  Basically, the tool is a  Knowledge Table Editor (KTED) which allows the administrator to easily manipulate the knowledge  tables. The kowledge table (plan) can be associated with visualization tools so that the administrator can keep track of the evaluation and planning activities owned by him/her.
+Our major concern is security: how to put the KTs on the Web and yet at the same time prevent certain sensitive information to be accessed by the general public.  Our solution is to enhance the HTML to a Tele-Action-Object Markup Language (TAOML, see www.cs.pitt.edu/~chang/365/vpl.html and an example in www.cs.pitt.edu/~chang/365/w5.txt), and to provide a TAOML Interpretor to generate HTML pages from TAOML pages dynamically using the MICE tool (Multimedia Information Custom Engineering, see www.cs.pitt.edu/~jung/README.IC.html).  Conceptually, this is somewhat similar to the concept of database views, so that different users can view the WWW pages differently.
+
+7. Implementation and Evaluation
+
+As mentioned in the Introduction, KSI is a model learning organization where knowledge is continuously being accumulated, created, exchanged and disseminated by the knowledge agents comprising the students, faculty and administrators. Because of these unique characteristics,  the school is developing its own multimedia information system - the multimedia micro-university - to support its education programs and management operations.  The purpose of the multimedia micro-university is not only to increase efficiency, but also to empower a geographically and temporally dispersed group of educators, administrators and students to participate in a dynamic learning organization effectively, while preserving the small-classroom tradition at KSI, thus facilitating the continued accumulation of knowledge and serving as KSI’s educational paradigm for the Twenty First century.  
+As the name suggests, the multimedia micro-university is designed for the special needs of a small educational institute and consists of several important components: (a) a virtual library, (b) an intelligent distance learning system and (c) visualization and planning tools for the school’s management operations.   The virtual library was implemented on PC and became operational in 1996.  It currently has over 2000 titles and provides daily service to KSI’s students and faculty.  The Administrator part of KSIDL was implemented using CGI programs and WebBase, became operational in 1997 and is in daily use now.  The Intelligent Tutor part of KSIDL is being developed in JAVA and tested in class. The distance learning E-books are being added to our website one by one.  For example, the Java E-book was created in 1997 and currently in use by our students.  The KT system was implemented using the TAOML pages and active index system [1-3] and became operational in August 1998.  It is currently being tested.
+
+To evaluate the effectiveness of micro-university, we need to measure the academic achievement of graduate students with the following intended student outcomes, which include the ability to solve problems related to computer and information systems, design and carry out innovative research projects, explore and exploit new knowledge, demonstrate basic knowledge, and communicate effectively in written and oral forms. KSI’s student achievement assessment program was designed to measure these outcomes quantitatively [8]. In other words, micro-university cannot be evaluated in isolation and must be considered as part of an overall assessment program. This assessment program is administered by KSI’s academic dean and discussed and evaluated continually at the faculty meetings. Alumni surveys and the institution-wide Faculty-Student Round Table are used to evaluate the student academic achievement assessment program as well as every other aspect of our academic programs, leading to continual institutional improvements. Although a comprehensive evaluation of the micro-university is yet to be done, our self-assessment [8] indicates the micro-university components already implemented  are contributing to the  learning processes at KSI.
+
+References:
+
+[1] H. Chang, S. K. Chang, T. Hou and A. Hsu, "The Management and Applications of Tele-Action Objects", ACM Journal of Multimedia Systems, Springer Verlag, Volume 3, Issue 5-6, 1995, 204-216.
+
+[2] S. K. Chang, "Towards a Theory of Active Index", Journal of Visual Languages and Computing, Vol. 6, No. 1, March 1995, 101-118.
+
+[3] S. K. Chang, "Extending Visual Languages for Multimedia", IEEE Multimedia Magazine, Fall 1996, Vol. 3, No. 3, 18-26.
+
+[4] S. K. Chang and C. S. Ho, "Knowledge Table as a Unified Knowledge  Representation for Office Information System Design", the Newsletter of IEEE TC on Office Automation, Vol. 3, No. 1, February 1989, 12-25.
+
+[5] H. Freeman, T. Routen,  D. Patel, S. Ryan and B. Scott, The Virtual University: The Internet and Resource-based Learning, The Open and Distance Learning Series, Stylus Pub. Llc,  April 1998.
+
+[6] W. Grosky, R. Jain and R. Mehrotra (eds.), The Handbook of Multimedia Information Management, Prentice-Hall PTR,  1997.
+
+[7] C. Y. Hsieh, Electronic Enterprise Engineering using Java, KSI Classnotes Series, Volume 1, Knowledge Systems Institute, Skokie, Illinois, June 1997 (ISBN 0-9641699-7-5).
+
+[8] Knowledge Systems Institute, A Revised Plan For Assessing Student Academic Achievement,  Knowledge Systems Institute, Skokie,  December 23, 1996.  
+
+[9] E. Roger, G. Gilles and F. Claude, “CREAM-Tools: An authoring environment for curriculum and course building in an intelligent tutoring system”, in Lecture Notes in Computer Science, Vol. 1108, Third International Conference, CALISCE’96, July 1996, pp. 186-194.
+
+[10] E. Wenger, Artificial Intelligence and Tutring Systems, Morgan Kaufmann, Los Altos, CA, 1987.
+
+Biographical Sketches
+
+S. K. Chang received M.S. and Ph.D. from University of California, Berkeley, USA in 1966 and 1969, respectively.  He is the Founder and Chancellor of Knowledge Systems Institute, a private graduate school of computer and information sciences.  He is also Professor of Computer Science and Electrical Engineering of the University of Pittsburgh, where he served as Chairman of the Department of Computer Science from 1986 to 1992. Prior to that he was Professor and Chairman of the Department of Electrical and Computer Engneering  of Illinois Institute of Technology from 1982 to 1986, and Professor of Information Engineering of University of Illinois from 1975 to 1982. He published over two hundred papers and eleven books in visual languages,  image information systems, multimedia systems and knowledge-based information systems. Dr. Chang is a Fellow of IEEE.
+
+E. Hassanein  received the M.Sc. and Ph.D. in computer science from  Northwestern University,  Evanston , IL, USA in 1989 and 1992 respectively. Currently, he is an Assistant Professor, at the Computer Science Department at the Institute of Statistical Studies and Research (ISSR), Cairo University, Egypt. He was an Assistant professor in the Knowledge Systems Institute from 1995 to 1997. His current research interests include distributed databases, knowledge engineering, deductive object-oriented databases and logic programming. 
+
+C.Y. Hsieh Education: received Ph.D. from Dept. of Electrical and Computer Engineering, Illinois Institute of Technology in 1987.  He is currently Professor and chairman , Dept. of Computer and Information Sciences, Knowledge Systems Institute. His technical interests include networking and distributed application development..
+

@@ -1,0 +1,1313 @@
+Smart Environments Concepts, Applications, and Challenges
+
+    Authors
+    Authors and affiliations
+
+    Doaa Mohey El-DinEmail authorAboul Ella HassaneinEhab E. Hassanien
+
+    Doaa Mohey El-Din
+        1Email author
+    Aboul Ella Hassanein
+        2
+    Ehab E. Hassanein
+        1
+
+    1.Information Systems Department, Faculty of Computers and Artificial Intelligence, Scientific Research Group in EgyptCairo UniversityCairoEgypt
+    2.Faculty of Computers and Artificial Intelligance, Scientific Research Group in EgyptCairo UniversityCairoEgypt
+
+Chapter
+First Online: 15 December 2020
+
+ 
+
+Part of the Studies in Big Data book series (SBD, volume 77)
+Abstract
+
+This chapter presents the clear definition of a smart environment, its advantages, previous motivations in various applications, and open research challenges. These challenges are classified into two parts, artificial intelligence, and internet-of-things. They are powerful for researchers and students to select a research topic. This chapter also removes the blurred idea of a smart environment that is limited to the vision of a smart environment definition just interprets with the internet-of-things. It presents the importance of recently used smart environments such as smart homes, smart farming, smart city, smart education, or smart factory. The recent statistics refer to the predication of used smart devices for constructing the smart environments that reach to nine double of a population around a world by 2025. This chapter presents a proposed criterion of building a good smart environment for any domain with respect to two dimensions data and security.
+Keywords
+Smart environment Internet-of-Things Artificial intelligence IoT devices Sensors 
+Access to this content is enabled by Egyptian Knowledge Bank
+Download chapter PDF
+1 Introduction
+
+A smart environment (SA) refers to the simulation management system for the real environment such as smart city or smart parking [1, 2]. It improves decision making remotely and concurrently [3, 4]. There is a blurred defining of a smart environment that refers to the limit on the internet-of-things [5, 6]. However, the real meaning of a smart environment is illustrated in the combination of artificial intelligence and internet-of-things [7, 8]. It means Interconnected several sensors and Internet-of-things devices via the internet. This connection causes of huge data that are required interpreting and processing. The smart key of any smart environment is data [9]. The good interpreting and processing data lead to making good decisions simultaneously.
+
+Internet-of-things (IoT) is a technology supports a new idea for tracking objects, sensing devices, and monitoring things of each environment [10]. IoT allows specific sensors for a specific environment to communicate with other devices such as smart-phones via Bluetooth or Wi-Fi to transmit enormous amounts of data to the network. It allows users to have a better meaning of the environment’s objects cases, conditions, and problems. It faces several obstacles and challenges in network security, reliability, and consistency.
+
+Artificial intelligence (AI) refers to the intelligence of a machine that can understand and interpret the input data by several algorithms or techniques to support making decisions [11, 12, 13]. It is known as a cognitive technology, generates a technology that enables machines to work intelligently for simulating the real environments. However, the powerful of usage of AI, it has many challenges in several decision levels that makes getting the data is hard. Although recent researches try to solve some AI challenges, it is faced with open research challenges until now.
+
+This chapter presents a definition of smart environment technology and the importance of using it. It discusses the relationship between Smart environment, artificial intelligence, and internet-of-things. It shows many smart environment’s application in various domains. It also introduces its benefits and challenges to the usage of a smart environment and how to reach a good criterion to construct a new smart environment.
+
+The rest of this chapter is organized as follows. Section 2 examines the smart environment definition and its main architecture and structure. Section 3 presents the importance of the smart environment. Section 4 discusses the benefits of smart environments. Section 5 introduces a comparison between the real smart environment’s applications. Section 6 presents the smart environments’ challenges. Section 7 introduces a discussion and generated criteria to create a smart application. Finally, the conclusion and future work of this work in Sect. 8.
+2 Smart Environment
+
+Recently, there is a confusing definition of a smart environment that is limited to the internet-of-things. It causes a blurred understanding of the smart environment and how to construct it. So, there is a need to discuss the real meaning of a smart environment and how to construct it.
+
+Smart Environment (SA) is defined by that any environment based on the interconnection of IoT sensors to support the interpretation processing of big data extracted from multiple IoT sources [3, 4, 5]. These data may be the same type or variant data types. These data are captured from Different media depending on the target environment. They are required to make processing Data classification, clustering, fusion, and outliers. Another formal definition of a smart environment is an intelligent agent that perceives the state of the resident and the physical surroundings using sensors and acts on the environment using controllers in such a way that the specified performance measure is optimized  [7]. It is an automated management environment that is based on the continuous communication between sensors connects via the internet [8].
+2.1 Smart Environment Architecture
+The essential architecture for constructing any smart environment consists of five levels, sensors devices, Internet-of-things connections, cloud networks, and extracting big data from the sensory devices as shown in Fig. 1.
+Open image in new windowFig. 1
+Fig. 1
+
+Smart environment architecture
+
+The Smart environment gets a benefit from artificial intelligence to interpret and fuse the extracted data to improve analytics for improving the making decisions.
+2.2 Smart Environment Structure
+The smart environment relies on the specific context, each context has a specific number of sensors 𝑆1𝑡𝑜𝑆𝑛
+, sensor’s types, features, and conditions. to understanding, processing and extracting the data as shown in Fig. 2. These sensors may be cameras, built-in sensors on devices such as on smart-phones, wearable sensors, or IoT devices for specific domain such as LADAR. That causes of extracting big data with variant types 𝐷1𝑡𝑜𝐷𝑛
+and different targets. These data may be images, videos, text or signals. Each data type has several algorithms or techniques This connection requires to be reliable continuously. There are some types of network connection that depends on the target, the number of users and security level. Distributed, centralized, semi-centralized, or Blockchain are types of cloud network. That also requires getting the good and big servers to guarantee the consistency and integrity of these huge data. These data require some processing and cleaning for fusing in the same structure for reaching the target. Many challenges have faced fusing and interpreting sensory data.
+Open image in new windowFig. 2
+Fig. 2
+
+A detailed smart environment structure
+3 The Importance of Smart Environment
+The importance of the smart environment is declared in Making decisions, monitoring controlling, saving things, and dealing with outliers. Recently, the new trend of the industry goes forward to implement a real smart environment. According to Statista, the current usage of 2020, the expected communicated sensors through the internet for smart domains reach 30 billion sensors [39]. According to Statista, this statistic increases to 75 sensors in 2025 [40]. So, smart environment becomes important for research to try solving the problems of the real smart environment implementation (Fig. 3).
+Open image in new windowFig. 3
+Fig. 3
+
+The statistics between number of Populations around the world and number of used IoT sensors
+The result of evolution usage of sensors is concluded in that the statistics of a number of used IoT sensors are bigger than the number of Population world.
+#𝑁𝑜.𝑜𝑓𝑢𝑠𝑒𝑑𝐼𝑜𝑇𝐷𝑒𝑣𝑖𝑐𝑒𝑠>#𝑁𝑜.𝑜𝑓𝑃𝑜𝑝𝑙𝑢𝑡𝑖𝑜𝑛
+(1)
+
+So, the usage of IoT is increasing in the industry to help the automated management control and put values for the extracted big data.
+4 Smart Environment Benefits
+Smart technology for simulating the real environment has main six benefits for users and the real-world, like the following, Effective Data-Driven, Improved Making Decisions, Trust communities, Reduce Negative impact for real environments, Communicate many smart environments with each other, and Open economic development chances (Fig. 4).
+Open image in new windowFig. 4
+Fig. 4
+
+Smart environment benefits
+
+The effective data-driven is very powerful for tracking data or objects and previous status for any object. Data-driven [12, 13]. These data are valuable in the industry that can use in analytics, marketing, or sales. It also improves the decision making though following the real status for each object. That is very effective in the market [14]. There are several companies try to get or buy this information to improve the marketing section and people’s targets. Trust communities are provided based on the confidence of the network of Internet-of-things [15]. the reliable connection between objects reaches trust users, data, communications, and decisions concurrently. İt reduces a negative impact on real environments. The real data provides real decisions, and making a good decision that can save lives, things simulations [16]. So, that reduces the negative effects on real environments such as save lives in fire events in monitoring forests or fainting patient cases in smart health. The connect communication network provides new researches and industry to try communicating several smart environments with each other’s to see the full vision in various dimensions [17]. For example, smart parking and smart vehicles connection support management system to see the full vision of streets and around available parking areas and the peak time of traffic congestion. The future trend of research and industry to simulate a full Smart city which includes smart vehicles, smart homes, smart health, smart education, smart parking, and smart factory. The investment in large scale implementation such as smart transportation, smart city, or smart factory is increasing continuously that reaches millions of dollars to construct infrastructure and tasks [18]. So, that opens new economic development chances and jobs opportunities for improving decision making and making several automated systems. That also requires several research to support the integration, efficiency, and consistency between data analytics, sensors, and decision making in smart environments.
+5 Smart Environment Applications
+This section presents a comparison between the real smart environment applications and their various objectives, characteristics and conditions that use for making decisions as Table 1. It also presents a comparison between the advantages and current limitation for each smart environment as Tables 2 and 3.
+Table 1
+
+A comparison study between several researches in smart grid environment
+
+Chapter No.
+	
+
+Domain
+	
+
+Characteristics
+	
+
+Objectives
+	
+
+Conditions
+	
+
+Number of users (SıoT)
+	
+
+Advantages
+	
+
+Disadvantages
+
+[19]
+	
+
+Smart Grid
+	
+
+İncludes several characteristics: Communication networks, Cybersecurity, Distributed energy resources, Distribution grid management, Electric transportation, Energy storage, Wide-area monitoring, and Advanced metering infrastructure (AMI)
+	
+
+İmprove usage of electricity and low reliability for the national institute of standards and technology
+	
+
+İnteroperability challenge for fusing several multiple sensors and develop the smart meters
+	
+
+Few as managers
+	
+
+Improve accuracy and reliability
+	
+
+Less security a fusion problem
+
+[20]
+	
+
+Smart Grid
+	
+
+Real-time readings of electric data as every 15 min, this leads to about 77 billion
+	
+
+Enhance the performance and reduce the cost
+	
+
+Working consistence on the real-time monitoring to be more reliable
+	
+
+Few as managers or grid reader men
+	
+
+Better performance
+	
+
+Unreliability due to the lack of efficient monitoring, fault diagnostic, and automation techniques
+
+Inflexibility network
+
+[21]
+	
+
+Smart Grid
+	
+
+Quantitative and qualitative dimensions
+	
+
+Reduce usage power control and improve management system
+	
+
+Low power usage condition
+	
+
+Few as managers or grid reader men
+	
+
+Improve quality control
+	
+
+Improving performance
+
+[22]
+	
+
+Smart whether smart meter
+	
+
+İmproving the efficiency of education in regard to smart meters
+	
+
+High efficiency
+	
+
+Fusion multiple sensors data
+	
+
+Few
+	
+
+Improves 92% of electricity meters reduced CO2 emissions and cost savings for electricity customers and utility companies
+	
+
+Requires integrating with variant smart environments to show the impact on other environments.
+
+Lack of privacy security of this environment
+Table 2
+
+A comparison study between several researches in smart agriculture Environment
+
+Chapter No.
+	
+
+Domain
+	
+
+Characteristics
+	
+
+Objectives
+	
+
+Conditions
+	
+
+Number of users (SioT)
+	
+
+Advantages
+	
+
+Disadvantages
+
+[23]
+	
+
+Smart Agriculture
+	
+
+Maximizing crop production and provide guidance to researchers and engineers
+	
+
+İmproving crop yield
+	
+
+Requires high security, good storage, robust infrastructure
+	
+
+Few
+	
+
+Improving accuracy
+	
+
+Improving performance time
+
+[24]
+	
+
+Smart Agriculture
+	
+
+Improves agriculture based on real sensors
+	
+
+İmproves farming management system
+	
+
+the roles of agriculture to providing farming
+	
+
+Few
+	
+
+High accuracy
+	
+
+Lack of real datasets
+
+[25]
+	
+
+Smart Agriculture
+	
+
+Get data from several sensors motion detector, light sensor, humidity sensor, temperature sensor, room heater, cooling fan
+	
+
+Targets improve agriculture in real-time
+	
+
+Remote sensing and control irrigation system
+	
+
+Few
+	
+
+Improve the yield of the crops
+	
+
+High cost and deployment of sensor under the soil which causes attenuation of radio frequency (RF) signals
+
+[26]
+	
+
+Smart Farming
+	
+
+Smart farming based on managing business processes and managing the stakeholders
+	
+
+ Provide predictive insights in farming operations, drive real-time operational decisions, and redesign business processes 
+	
+
+Getting real-time data from multiple Sensors
+	
+
+Many that is between several companies
+	
+
+Improves decision making
+	
+
+Increased uptake of Big Data applications and Big Data governance
+
+[27]
+	
+
+Smart Weather
+	
+
+Cost-effective, solar-powered automated weather station
+	
+
+Enhance food production in their rural communities
+	
+
+Sensors records in varient weather
+	
+
+Few
+	
+
+Reduced the cost of obtaining accurate, localized scientific weather information
+	 
+
+[28]
+	
+
+Smart Water
+	
+
+Proactive asset maintenance and realtime optimization, smart water systems
+	
+
+Dynamic and rapidly evolving in real-time
+	
+
+Measures the water consumption
+	
+
+Few
+	
+
+Enable varying levels of autonomous decision-making capabilities
+	
+
+Infrastructure security capability limitations
+Table 3
+
+A comparison study between several researches in smart Traffic Environment
+
+Chapter No.
+	
+
+Domain
+	
+
+Characteristics
+	
+
+Objectives
+	
+
+Conditions
+	
+
+Number of users (SioT)
+	
+
+Advantages
+	
+
+Disadvantages
+
+[29]
+	
+
+Smart Vehicle
+	
+
+Traffic prediction vehicle prediction model in real-time
+	
+
+Optimize management systems
+	
+
+Extracts predictive Traffic crowd in metropolitan in real-time
+	
+
+Many
+	
+
+Improve predication vehicle prediction
+	
+
+Security and integrity system. And the hardness of the interpretation big data concurrently
+
+[30]
+	
+
+Smart Vehicle
+	
+
+Traffic congestion prediction for detecting specific paths
+	
+
+Using Neural Networks in prediction (Logistic Regression) model
+	
+
+Using hybrid techniques for improving the accuracy
+	
+
+Many
+	
+
+Reaches to 99% accuracy
+	
+
+Integration with various smart environments
+
+[31]
+	
+
+Smart Traffic
+	
+
+It works to predict the traffic congestion that depends on big GPS database in Tunisia
+	
+
+It uses the neural networks model to recognize the speed rate on the roads
+	
+
+Tries to take care of several parameters to be more dynamic system and improve accuracy results.
+	
+
+Many
+	
+
+Reaches to 94% using neural networks approach with respect to 17 hidden layers
+	
+
+Requires enhancing accuracy and performance time
+
+[32]
+	
+
+Smart driving
+	
+
+Interpret behavior of drivers by tracking mobiles
+	
+
+Automated driving
+	
+
+Can recognize driver profile
+	
+
+Few
+	
+
+Automated driving cars based on car sensors
+
+Improve performance
+	
+
+Combine car, driver’s biologic, psychological, and environmental data
+
+[33]
+	
+
+Smart parking
+	
+
+It execution based on utilizing the sensor circuitry and cloud server
+	
+
+Providing the reservation parking process from mobile application simultaneously
+	
+
+Requires several sensors and the hardness of ensuring the same people park in the reservation places
+	
+
+Many
+	
+
+Enhancing the parking control
+	
+
+Integration with smart traffic that will enhance the parking management system
+
+[34]
+	
+
+Smart traffic lights
+	
+
+Traffic density using IR sensors and accomplishes dynamic timing slot with different time slots
+	
+
+Monitoring traffic congestion and deal with lights automatically
+	
+
+Deals with traffic jams and congestion. The hardness of remote monitoring
+	
+
+Many users
+	
+
+Reduce grid electricity and realize green operation
+	
+
+Improves performance
+
+[35]
+	
+
+Smart traffic light system
+	
+
+İt includes two parts
+
+GSM system (Global System for Mobile Communications) is connected to Arduino UNO
+	
+
+Deals with traffic crowd
+	
+
+Reducing waiting time in traffic congestion
+	
+
+Many
+	
+
+Reduces traffic congestion in four lanes based on three lights
+
+GSM has better results than UNO
+
+Using infrared in emergency cases
+	
+
+Improves accuracy
+From previous comparisons, finding the motivations try to build various smart environments that are based on fusion multiple sensors on objects or devices for real environments. More than one user that requires interpreting and ordering management for each user. Each user has screen with several conditions, each screen has multiple data targets, conditions, and factors. For example, smart health refers to the observed patients hold determined disease (such as diabetes) that needs observing from physicians or nurses as in Tables 4,  5 and 6.
+Table 4
+
+A comparison study between several researches in Smart Health Environments
+
+Chapter no.
+	
+
+Domain
+	
+
+Characteristics
+	
+
+Objectives
+	
+
+Conditions
+	
+
+Number of users (SioT)
+	
+
+Advantages
+	
+
+Disadvantages
+
+[36]
+	
+
+Smart Health
+	
+
+Monitoring patients remotely
+	
+
+Visualize patient cases graphically
+	
+
+İnterpertation big data
+	
+
+Few
+	
+
+Visualize patient cases graphyically
+	
+
+Noisy data and redundant features
+
+[37]
+	
+
+Smart Health
+	
+
+It is based on creating surgical prediction multi-model for patients
+	
+
+Visualize and remote control in medical surgeries
+	
+
+Secure network and integrity information
+	
+
+Few
+	
+
+95% accuracy results
+	
+
+Lack of information (requires to expert people)
+
+[38]
+	
+
+Smart Health
+	
+
+Support monitoring healthcare
+	
+
+İnterprerting disease information from online tweets
+	
+
+Manage diseases remotely and simultaneously
+	
+
+Few
+	
+
+İmprove accuracy 9%
+	
+
+Improving reliability and integrity
+
+[39]
+	
+
+Smart Medical
+	
+
+İmporves the hospital recommendations
+	
+
+Hospital recommendation based on surveies
+	
+
+Based on 19 recommendation
+	
+
+Few
+	
+
+Enhance patient monitoring
+	
+
+Requires enhancing the accuracy
+
+[40]
+	
+
+Smart Health
+	
+
+Monitoring patients
+	
+
+IoT-based information system
+	
+
+It employs pedestrian dead reckoning, thresholding, and decision trees
+	
+
+Few
+	
+
+İmporves patient monitoring
+	
+
+Requires improving accuracy
+
+[41]
+	
+
+Smart Health
+	
+
+Monitoring patients
+	
+
+IoT-based information system
+	
+
+It employs pedestrian dead reckoning, thresholding, and decision trees
+	
+
+Few
+	
+
+Recognize 4parts: falls, lying, standing, sitting and walking activities
+	
+
+Hardness of fusion with various data types
+Table 5
+
+A Comparison study between several researches in various Smart Applications Environments in Smart City Environment
+
+Chapter No.
+	
+
+Domain
+	
+
+Characteristics
+	
+
+Objectives
+	
+
+Conditions
+	
+
+Number of users (SioT)
+	
+
+Advantages
+	
+
+Disadvantages
+
+[42]
+	
+
+Smart City
+	
+
+Management system
+	
+
+Masdar city-Abu Dhabi
+	
+
+Management remotely
+	
+
+Many
+	
+
+Improves management system
+	
+
+Requires optimization system
+
+[43]
+	
+
+Smart City
+	
+
+It supports saving energy and management control
+	
+
+Amsterdam city
+	
+
+Management remotely online
+	
+
+Many
+	
+
+It requires to train the same in several application and cities. Requires more security system
+	
+
+Requires improving accuracy in real-time
+
+[44]
+	
+
+Smart City
+	
+
+Provide more efficient services to citizens
+	
+
+Monitor and optimize existing infrastructure, to increase collaboration among different economic actors,
+	
+
+Smart city management system
+	
+
+Many
+	
+
+Improve urban performance
+	
+
+Lack of integrity
+
+[45]
+	
+
+Smart city
+	
+
+Management system in real-time
+	
+
+Intellectual ability
+	
+
+Reduces Co2
+	
+
+Many
+	
+
+Raise innovation based on knowledgeable and creative human capital.
+	
+
+Lack of real data
+
+[46]
+	
+
+Smart Tourism
+	
+
+A conceptual model of Tourism management system
+	
+
+Management system
+	
+
+It includes multiple layers
+	
+
+Many
+	
+
+Competitive and comparative advantages
+	
+
+Lack of real data
+
+[47]
+	
+
+Smart Education
+	
+
+A smart education framework
+
+It uses mobile application system
+	
+
+Three sub-systems: electronic bookshelves, virtual white space, AND social network with an integrated innovation database
+	
+
+Electronic book-based library,
+	
+
+Many
+	
+
+Adaptive system
+	
+
+Hardness of integration data
+
+[48]
+	
+
+Smart Pollution
+	
+
+İt takes care of the air pollution
+
+It has two gas sensors namely MQ135 and MQ7, as well as DHT11 which is a dedicated temperature-humidity sensor
+	
+
+advantage of temperature and humidity readings
+	
+
+It monitors the levels of CO, CO2, smoke, alcohol, NH3, temperature and humidity
+	
+
+Few
+	
+
+Monitor pollution management system
+	
+
+Hardness of fusion from multiple sensors
+
+[49]
+	
+
+Smart Military
+	
+
+Tracking military based on wearable t-shirts
+	
+
+İmprove management remotely
+	
+
+Tracking soldiers and military objects
+	
+
+Many
+	
+
+Monitoring the sky-running race
+	
+
+Inefficiency
+
+[50]
+	
+
+Smart Military
+	
+
+Wearable military management system based on solar energy
+	
+
+Management army remotely
+	
+
+Measure oxygenation level once a minute
+	
+
+Many
+	
+
+Monitoring army through electronic connection
+
+Low power and flexible energy
+	
+
+Hardness of integration data
+
+[51]
+	
+
+Smart Factory
+	
+
+Creating prototype for smart factory
+	
+
+High defective
+	
+
+Improves management system
+	
+
+Many
+	
+
+Improve adoption system for smart factory and reduces defects problem
+	
+
+Requires high investigation for adding value for factory’s objects
+Table 6
+
+A comparison study between several researches in Smart Home Environment
+
+Chapter no.
+	
+
+Domain
+	
+
+Characteristics
+	
+
+Objectives
+	
+
+Conditions
+	
+
+Number of users (SıoT)
+	
+
+Advantages
+	
+
+Disadvantages
+
+[52]
+	
+
+Smart Home
+	
+
+It works in real-time stream, remotely management, and safety system
+	
+
+It works in real-time stream, remotely management, and safety system
+	
+
+Guaranteeing reliability
+	
+
+Few
+	
+
+Automated system control
+	
+
+Fusion big data with various data types
+
+[53]
+	
+
+Smart Home
+	
+
+It is based on the specific application for managing the home. It does not connect the internet continually
+	
+
+It is based on the specific application for managing the home. It does not connect the internet continually
+	
+
+It provides home automation and safety alarms system
+	
+
+Few
+	
+
+Big data analytics
+	
+
+Requires improving controlling multiple users
+
+[54]
+	
+
+Smart Home
+	
+
+Automated extracted sensors for multiple dataset
+	
+
+Managing dataset
+	
+
+Manage automated devices for smart home
+	
+
+Few
+	
+
+Big data analytics concurrently
+	
+
+Requires improving controlling multiple users
+
+[55]
+	
+
+Smart Home
+	
+
+Describing Frugal Labs IoT Platform (FLIP) for construct smart home
+	
+
+Improve living standard, security and safety
+	
+
+Controlling lighting, home appliances, computers, security camera
+	
+
+Few
+	
+
+Monitoring and controlling Smart Home environment for high flexible
+	
+
+Needs to high security
+6 Smart Environment Challenges
+The challenges of smart environment are classified into two dimensions data and security. Each dimension has several challenges and problems that requires solving to create a smart environment (Fig. 5).
+Open image in new windowFig. 5
+Fig. 5
+
+The smart environment challenges with respect two dimensions data and security
+
+The Data dimension has five challenges level as the following.
+6.1 Big Data Analytics
+
+Data Analytics is defined by stratifying an algorithmic process for extracting ideas. The extracted data from IoT sensors and devices have several characteristics as volume, value, variety, and velocity [56, 57]. The volume of data expresses huge data for each device in each minute or second with respect to the conditions of context domains. The variety refers to the problem of various data type formats. The velocity means the speed changes the data by minutes or seconds. The value means in each record, the data value may be changed at any time. So, they need to create several solutions to improve accuracy and performance in any smart environment.
+6.2 Preprocessing Data
+
+The big sensory data with various formats that require to clean with missing data, error data, or outliers. So, many researchers refer to outlier detection and data cleaning processes as the current open researches [58, 59]. Data cleaning is considered the correction process for data and the validation of it. İt makes purifying and tuning for the missing data, conflicting data or validating the data quality. Outlier detection refers to find fault readings from sensors that require classifying if it is just an error or a sudden action requires solving [60].
+6.3 Data Fusion
+
+Data Fusion has a vital role in understanding the data and combines the parts of meanings to reach the target through several inputs. İt is very important for many applications in various domains [61]. Multi-sensor data fusion refers to the fusing observations from multiple sensors and IoT devices to provide a powerful and perfect description of each sensor [62]. The main problem has faced the research and industry on how to fuse many sensor’s data with variant data types. There are two main types of fusion, the same data types, and variant data types. Till now, the main obstacle of data fusion, there is no unification technique that can suitable to more than context whether the same data type or variant data type.
+In other words, multi-sensor data fusion is considered a specific domain. It also differs from multiple targets (Fig. 6).
+Open image in new windowFig. 6
+Fig. 6
+
+Multi-sensor data fusion types
+6.4 Data Interpretation (Such as Classification Segmentation, or Clustering)
+
+The interpretation process of data is significant for improving the meanings of data and accuracy results [63]. İt includes several operations on data such as classification, segmentation, or clustering. Data classification means the organizing data in retrieving, sorting or categorizing it to be more powerful and efficient. İt improves the confidability, integrity, and availability. Data segmentation is the operation of getting the data and select the suitable parameters for making processing on it such as image segmentation to determine the tumor. Data clustering is a function of collecting the data in several groups of objects that are known as a cluster.
+6.5 Data Visualization
+Data Visualization refers to draw a graphical vision for data and its relationships. it is very powerful for visualizing the big data and their relationships that are extracted from multiple sensors [64]. Till now, there are several motivations to enhance the automatic tools for data visualization. That includes several problems such as context domain, each context has several characteristics and several users for the same application with various applications. Other problems must be taken into the consideration for constructing applications such as the type of graph, the color of the graph, the explanation details levels (high, medium, or low), the alert types when happening the data outliers (Fig. 7).
+Open image in new windowFig. 7
+Fig. 7
+
+Data visualization challenges
+
+The Security dimension faces many challenges that are classified into six types like the following,
+6.6 Reliable Connection Continually
+
+Any smart application requires communicating with IoT devices and sensors and being connecting the internet continuously. So, that is very important to be a reliable and robust connection to be online all the time. İt also requires checking on the availability and charging of each IoT device and sensor.
+6.7 Information Integrity
+
+It means the data protection in any connection between sensors devices in the internet-of-things [65]. It aims to prevent the data corruption and avoid failures in the extracted sensory data. On other hand, that means guaranteeing the safety data and reach from the source to another one right, correct, the same size and type and holding the trust data. Encryption is considered the main technique uses for making integrity of the data that prevent the data sensitivity. Data integrity provides solutions for improving the reliability and consistency of data. Data integrity includes two types, physical and logical. Physical integrity takes care of fetching and storing right data. Logical Integrity takes care of curing the faults or errors in logical meaning for each specific context.
+6.8 Prevent Hacks
+
+The network security requires ensuring the consistency of based on no hacks included [66] whether stealing information or Impersonate personal accounts.
+6.9 Privacy Control and Confidentiality
+
+Protecting the Privacy for any smart environment system requires scanning logs for determining any attacks or secret peoples that are offensive on the network. İt also requires guaranteeing the privacy and security of users. İt prevents cyberattacks types. The cyberattack refers to electronic attacks in systems and networks [67]. Several attack types consist of physical cyber-attacks, network attacks, software attacks, software attacks, and encryption attacks. These attacks can impersonate and steal information through some encryption.
+6.10 The Authentication Privacy
+
+It aims to protect the personal information for users for example their profiles and password [68]. It takes care of data quality and users verification. There are three types of authentication that are saving profiles through verification applications of questions, passwords quality, image passwords, or CAPTHCA technique. All motivations in authentication target prevent users’ profiles from attacks.
+6.11 Social Internet-of-Things (SIoT)
+
+Social internet-of-things refers to the number of users that use the same smart environment [69, 70]. It is a new research trend for research due to search for solutions for conflicting decisions from various users or different decisions orders at the same time. Each user has confidential issues and control panels that may be different from others. For example, many users in smart home, that may give a decision to open the light or TV, and another user in the same home decides to off TV. How can order the decisions. Another example another in smart home, if user decides to open the conductor and other user decides to close it. How can solve the conflicting and ordering of decisions from several users with respect to the authorizes and priorities.
+
+The combination of data analytics and Internet-of-things has a big value for improving management control with high accuracy results. The essential significant in any smart environment concludes in the data and how to get it and interpret it.
+7 The Proposed Criteria for Construct Robust and Reliable Smart Environment
+Previous researches refer to important dimension that should take in the consideration when constructing any smart environments, such as shown in a comparison between thirty chapters in Tables 1, 2. That drives to generate general criteria for constructing any smart environment. These criteria include five steps as shown in Fig. 8.
+Open image in new windowFig. 8
+Fig. 8
+
+The generated criteria for building any smart environment
+
+The combination of data analytics and Internet-of-things has a big value for improving management control with high accuracy results. The essential significant in any smart environment concludes in the data and how to get it and interpret it. The detailed steps of the proposed criteria are illustrated as the following, as Fig. 8. Five steps grantee constructing any smart environment with good quality in various domains, checking the WIFI connection availability all 24 h every second, ensuring the clients’ profiles authorized through studying their behaviors, interpreting the extracted big data detection, determining noisy data or anomalies, and information integrity.
+8 Conclusion and Future Work
+
+This chapter introduces new research dimensions that require several motivations until now to serve the industry and research. İt removes a blurred ide about the smart environment and a definition discusses it. A smart environment refers to the combination of artificial intelligence and internet-of-things. The main value of a smart environment appears in data. The smart environment challenges are classified into two dimensions data and network security that includes eleven research challenges to reach a reliable and consistent smart environment. No smart environment can neglect these phases and their challenges. However, each research targets one or more challenges to build a smart environment. So, this chapter presents the consistency criteria to reach a good smart environment.
+References
+
+    1.
+    Bessis, N., Dobre, C.: Big Data and Internet of Things: A Roadmap for Smart Environments. Studies in Componential İntelligence, vol. 546. Springer (2014)Google Scholar
+    2.
+    Alberti, A.M., et al.: Platforms for smart environments and future ınternet design: a survey. IEEE Access 4, 1–33 (2016)CrossRefGoogle Scholar
+    3.
+    Cook, D., Das, S.K.: Smart Environments: Technology, Protocols, and Applications. Wiley Series on Parallel and Distributed Computing (2005)Google Scholar
+    4.
+    Alberti, A.M., et al.: Platforms for smart environments and future internet design: a survey. IEEE Access 7, 165748–165778 (2019)CrossRefGoogle Scholar
+    5.
+    Camarinha-Matos, L.M., Afsarmanesh, H.: Collaborative systems for smart environments: trends and challenges. In: PRO-VE 2014: Collaborative Systems for Smart Networked Environments, pp. 3–15 (2014)Google Scholar
+    6.
+    Shahrestani, S.: İnternet-of-Things and Smart Environments. Assistive Technologies for Disability, Dementia, and Aging. Springer (2017)Google Scholar
+    7.
+    Atziori, L., Iera, A., Morabito, G.: The Internet of Things: a survey. Comput. Netw. 54(15), 2787–2805 (2010)CrossRefGoogle Scholar
+    8.
+    Bhayani, M., Patel, M., Bhatt, C.: Internet of things (IoT): ın a way of smart world. In: Proceedings of the International Congress on Information and Communication Technology, Advances in İntelligent Systems and computing Book Series, vol. 438, pp. 343–350 (2016)Google Scholar
+    9.
+    Ahmed, E., et al.: Internet-of-things-based smart environments: state of the art, taxonomy, and open research challenges. IEEE Wirel. Commun. 23(5), 10–16 (2016)CrossRefGoogle Scholar
+    10.
+    Chin, J., Callaghan, V., Allouch, S.B.: The Internet-of-Things: reflections on the past, present and future from a user-centered and smart environment perspective. J. Ambient Intell. Smart Environ. 11, 45–69 (2019)CrossRefGoogle Scholar
+    11.
+    Naik, P.: Importance of artificial intelligence with their wider application and technologies in present trends. Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol. (IJSRCSEIT) 1(3), 1–9 (2016)Google Scholar
+    12.
+    Kibria, M.G., et al.: Big data analytics and artificial intelligence in next-generation wireless networks. arXiv:1711.10089v3 [cs.IT] (2018)
+    13.
+    Vimal Jerald, A., Rabara, S.A., Bai, T.D.P.: Internet of Things (IoT) based smart environment integrating various business applications. Int. J. Comput. Appl. 128(8), 0975–8887 (2015)Google Scholar
+    14.
+    Ephzibah, E.P., Dharinya, S.S., Remya, L.: Decision making models through AI for Internet of Things. In: Internet of Things for Industry 4.0, pp. 57–72 (2019)Google Scholar
+    15.
+    Rebort: IoT for Smart Living Environments, Alliance for Internet of Things Innovation (AIOTI) (2019)Google Scholar
+    16.
+    Sotala, K.: Advantages of artificial intelligences, uploads, and digital minds. Int. J. Mach. Conscious. 4(1), 275–291 (2012)CrossRefGoogle Scholar
+    17.
+    Chowdhury, M., Sadek, A.W.: Advantages and limitations of artificial intelligence. In: Artificial Intelligence Applications of Critical Transportation Issues: Why Artificial Intelligence? The National Academies Press (2012)Google Scholar
+    18.
+    Hemlata, P.G.: Big Data analytics, research. J. Comput. Inf. Technol. Sci. 4(2), 1–4 (2016)Google Scholar
+    19.
+    Ghasempour, A.: Internet of Things in smart grid: architecture. Appl. Serv. Key Technol. Chall. Inventions 4(22), 1–12 (2019)Google Scholar
+    20.
+    Jaradat, M., Jarrah, M., Bousselham, A., Jararweh, Y., Al-Ayyoub, M.: The internet of energy: smart sensor networks and big data management for smart grid. In: The International Workshop on Networking Algorithms and Technologies for IoT (NAT-IoT 2015), vol. 56, pp. 592–597 (2015)Google Scholar
+    21.
+    Li, Y., et al.: Smart choice for the smart grid: narrowband: internet of things (NB-IoT). IEEE Internet Things J. 2327–4662 (2017)Google Scholar
+    22.
+    Wang, Q., Lewandowski, S.: Examining whether smart meters have been used smartly: a case study of residential electricity customers in Vermont. Int. J. Sustainable Green Energy 6(5), 76–83 (2017)CrossRefGoogle Scholar
+    23.
+    Ayaz, M.: Internet-of-Things (IoT) based smart agriculture: towards making the fields talk. IEEE Access, 1–34 (2019)Google Scholar
+    24.
+    N.Suma, et al.: IOT based smart agriculture monitoring system. Int. J. Recent Innov. Trends Comput. Commun. 5(2), 177–181 (2017)Google Scholar
+    25.
+    Gondchawar, N., Kawitkar, R.S.: IoT based smart agriculture. Int. J. Adv. Res. Comput. Commun. Eng. 5(6), 838–842 (2016)Google Scholar
+    26.
+    Wolfert, S., et al.: Big data in smart farming – a review. Agric. Syst. 153, 69–80 (2017)CrossRefGoogle Scholar
+    27.
+    Adoghe, A.U., et al.: Smart weather station for rural agriculture using meteorological sensors and solar energy. In: Conference: 2017 IAENG WCE International Conference of Electrical and Electronics Engineering, vol.2017 (2017)Google Scholar
+    28.
+    Rasekh, A., et al.: Smart water networks and cyber security. J. Water Resour. Plann. Manage 142 (7), 1–3 (2016)Google Scholar
+    29.
+    Stojov, V., Koteli, N., Lameski, P., Zdravevski, E.: Application of machine learning and time-series analysis for air pollution prediction. In: 15th International Conference on Informatics and Information Technologies (CiiT) (2018)Google Scholar
+    30.
+    Devi, S., Neetha, T.: Machine learning based traffic congestion prediction in IoT based Smart City. Int. Res. J. Eng. Technol. (IRJET) 4(5), 3442–3445 (2017)Google Scholar
+    31.
+    Elleuch, W., Wali, A., Alimi, A.M.: Towards and efficient traffic congestion prediction method based on neural networks and big GPS data. IIUM Eng. J. 20(1), 108–118 (2019)CrossRefGoogle Scholar
+    32.
+    Karaduman, M., Eren, H.: Smart driving in smart city. In: 5th International Istanbul Smart Grid and Cities Congress and Fair (ICSG) (2017)Google Scholar
+    33.
+    Shruthi, M., Shreya, A., Sujay, M., Chaitanya, K.J.: IoT based smart car parking system. IJSART. 5(1), 270–272 (2019)Google Scholar
+    34.
+    Gazal, B., et al.: Smart traffic light control system. In: Third International Conference on Electrical, Electronics, Computer Engineering and their Applications (EECEA) (2016)Google Scholar
+    35.
+    Thaar Kareem, T.A., Jabbar, M.K.: Design and implementation smart traffic light. Iraqi J. Comput. Inform. 44(2), 1–5 (2018)Google Scholar
+    36.
+    Galletta, A., Carnevale, L., Bramanti, A., Fazio, M.: An innovative methodology for Big Data Visualization for telemedicine. IEEE Trans. Ind. Inform. 15, 490–497 (2018)CrossRefGoogle Scholar
+    37.
+    Radovic, M., Ghalwash, M., Filipovic, N., Obradovic, Z.: Minimum redundancy maximum relevance feature selection approach for temporal gene expression data. BMC Bioinform. 18(9), 1–14 (2017)Google Scholar
+    38.
+    Kuang, S., Davison, B.D.: Learning word embeddings with chi-square weights for healthcare tweet classification. Appl. Sci. 7, 846 (2017)CrossRefGoogle Scholar
+    39.
+    Khoie, M.R., Sattari Tabrizi, T., Khorasani, E.S., Rahimi, S., Marhamati, N.: A hospital recommendation system based on patient satisfaction survey. Appl. Sci. 7, 966 (2017)CrossRefGoogle Scholar
+    40.
+    Dziak, D., Jachimczyk, B., Kulesza, W.J.: IoT-based ınformation system for healthcare application: design methodology approach. Appl. Sci. 7, 596 (2017)CrossRefGoogle Scholar
+    41.
+    Sundaravdivel, P., et al.: Everything you wanted to know about smart health care: evaluating the different technologies and components of the ınternet of things for better health. IEEE Consum. Electron. Mag. 7(1), 18–28 (2018)CrossRefGoogle Scholar
+    42.
+    Governament of Abu Dhabi: The Abu Dhabi economic vision 2030. Abu Dhabi: Abu Dhabi Council for Economic Development and others (2008)Google Scholar
+    43.
+    Lee, J.H., Hancock, M.: Toward a framework for smart cities: a comparison of Seoul. Research Chapter. Yonsei University and Stanford University, San Francisco (2012)Google Scholar
+    44.
+    Marsal-Llacuna, M.L., Colomer-Llinàs, J., Meléndez-Frigola, J.: Lessons in urban monitoring taken from sustainable and livable cities to better address the Smart Cities initiative, Technological Forecasting and Social Change (2014)Google Scholar
+    45.
+    Zygiaris, S.: Smart city reference model: assisting planners to conceptualize the building of smart city ınnovation ecosystems. J. Knowl. Econ. 4(2), 217–231 (2013)CrossRefGoogle Scholar
+    46.
+    Koo, C., et al.: Conceptualization of smart tourism destination competitiveness. Asia Pac. J. Inf. Syst. 26(4), 367–384 (2016)Google Scholar
+    47.
+    Salah, A.M., Lela, M., Al-Zubaidy, S.: Smart education environment system. GESJ: Comput. Sci. Telecommun. 4(44), 21–26 (2014)Google Scholar
+    48.
+    Abba, S., Beauty, P.: Smart framework for environmental pollution monitoring and control system using IoT-based technology. Sens. Transducers 229(1), 93 (2019)Google Scholar
+    49.
+    Perego, P., Moltani, A., Andreoni, G.: Sport monitoring with Smart Wearable System (2012)Google Scholar
+    50.
+    Jokic, P., Magno, M.: Powering smart wearable systems with flexible solar energy harvesting. In: IEEE International Symposium on Circuits and Systems (ISCAS) (2017)Google Scholar
+    51.
+    Lee, H.K., Kim, T.: Prototype of IoT enabled smart factory. ICIC Int. 7(4), 955–960 (2016)Google Scholar
+    52.
+    Shouran, Z., Ashari, A., Priyambodo, T.: Internet of Things (IoT) of smart home: privacy and security. Int. J. Comput. Appl. 182(39), 0975–8887 (2019)Google Scholar
+    53.
+    Kodali, R.K., Jain, V., Bose, S., Boppana, L.: IoT based smart security and home automation system. In: International Conference on Computing, Communication and Automation (ICCCA) (2016)Google Scholar
+    54.
+    Malche, T., Maheshwary, P.: Internet of Things (IoT) for building smart home system. In: International Conference on I-SMAC (IoT in Social, Mobile, Analytics and Cloud) (I-SMAC) (2017)Google Scholar
+    55.
+    Hsu, Y.-L., et al.: Design and ımplementation of a smart home system using multi-sensor data fusion technology. Sensors 17, 1–21 (2017)CrossRefGoogle Scholar
+    56.
+    Rihai, Y.: Big data and big data analytics: concepts. Types Technol. Int. J. Res. Eng. 5(9), 524–528 (2018)Google Scholar
+    57.
+    Ajah, I.A., Nweke, H.F.: Big data and business analytics: trends, platforms, success factors and applications. Big Data Cogn. Comput. 3, 32 (2019)Google Scholar
+    58.
+    Alsharif, M.H., Kelechi, A.H., Yahya, K., Chaudhry, S.A.: Machine learning algorithms for smart data analysis in ınternet of things environment: taxonomies and research trends. Symmetry 12(1), 88 (2020)CrossRefGoogle Scholar
+    59.
+    Zimek, A., Schubert, E., Kriegel, H.P.: A survey on unsupervised outlier detection in high-dimensional numerical data. Stat. Anal. Data Min. 5(5), 363–387 (2012)MathSciNetCrossRefGoogle Scholar
+    60.
+    Wang, J., et al.: A survey on data cleaning methods in cyberspace. In: IEEE Second International Conference on Data Science in Cyberspace (DSC) (2017)Google Scholar
+    61.
+    El Faouzi, N.-E., Klein, L.A.: Data fusion for ITS: techniques and research needs. Transp. Res. Procedia 15, 495–512 (2016)CrossRefGoogle Scholar
+    62.
+    Andò, B., Baglio, S.: A multisensor data-fusion approach for ADL and fall classification. IEEE Trans. Instrum. Measur. 65, 1960–1967 (2016)CrossRefGoogle Scholar
+    63.
+    Khalifa, N.E.M., et al.: Deep Iris: deep learning for gender classification through ıris patterns. Acta Inform. Med. 27(2), 96–102 (2019)CrossRefGoogle Scholar
+    64.
+    Zheng, J.G.: Data visualization for business intelligence. In Global Business Intelligence, Chap. 6. Taylor & Francis (2017)Google Scholar
+    65.
+    El-Din, D.M., Hassanien, A.E. and Hassanien, E.E.: Information ıntegrity for multi-sensors data fusion in smart mobility. In: Toward Social Internet of Things (SIoT): Enabling Technologies, Architectures and Applications (2020)Google Scholar
+    66.
+    Deogirikar, J., Vidhate, A.: Security attacks in IoT: a survey. In: International conference on I-SMAC (IoT in Social, Mobile, Analytics and Cloud) (2017)Google Scholar
+    67.
+    Bendovschi, A.: Cyber-attacks – trends, patterns and security countermeasures. Procedia Econ. Finan. 28, 24–31 (2015)CrossRefGoogle Scholar
+    68.
+    Oladimeji Biodun, S., Chukwudebe, G., Agbakwuru, A.O., Efe, O.C.: Comparative study of multi-factor authentication systems. İnt. J. Adv. Res. Sci. Eng. Technol. 6(4), 8785–8791(2019)Google Scholar
+    69.
+    Dutta, D., et al.: Social İnternet of Things (SIoT): transforming smart object to social object. In: Conference NCMAC (2015)Google Scholar
+    70.
+    Atzori, L., et al.: The social Internet of Things (SIoT) – when social networks meet the Internet of Things: concept, architecture and network characterization. Comput. Netw. 56(16), 3594–3608 (2012)CrossRefGoogle Scholar

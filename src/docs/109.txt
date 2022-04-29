@@ -1,0 +1,96 @@
+
+Web services Orchestration Centralization in Implementing MIS
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+August 2011
+
+
+
+Abstract
+
+Web services are considered as self-contained, self-describing applications that can be published, located, and invoked across the Web. 
+Nowadays, an increasing amount of companies and organizations implement their core business only, and outsource other application services over Internet. Thus, the ability to efficiently and effectively select and integrate services on the Web is an important step towards the development of the Web service applications. In particular, if no single Web service can satisfy the functionality required by the user, there should be a possibility to combine existing services together in order to fulfill the request. So, the need to orchestrate and compose web services became more interesting research area.
+    1. Related work:
+
+        1.1 Introduction:
+
+Web services make information and software available programmatically via the Internet and may be used as building blocks for applications, Web services encapsulate information, software or other resources, and make them available over the network via standard interfaces and protocols [5]. A composite web service is one that is built using multiple component web services and is typically specified using a language such as BPEL4WS [7], [8], [9] or WSIPL [10]. It expresses a business process, which captures a particular intra (or inter) enterprise workflow [2], [6]. Once its specification has been developed, the composite service may be orchestrated either in a centralized or in a decentralized fashion.
+
+        1.2 Web Services Composition Framework:
+
+Adapted from A Survey of Automated Web Service Composition Methods[4]
+
+This framework is in high-level abstraction, without considering a particular language, platform or algorithm used in composition process. The aim of the framework is to give the basis to discuss similarities and differences of the available service composition methods.
+
+Many papers work on orchestrating composite web services either in a centralized or in a decentralized fashion:
+
+        1.3 General orchestrating composite web services:
+
+            1.3.1 Centralized orchestration:
+
+In [1] a composite web service specification is executed by a single coordinator node. It receives the client requests, makes the required data transformations and invokes the component web services as per the specification; refer to this mode of execution as centralized orchestration.
+The coordinator node is responsible for coordination of all data and control flow between the components, and hence becomes a performance bottleneck. All data is transferred between the various components via the coordinator node instead of being transferred directly from the point of generation to the point of consumption.
+This leads to unnecessary traffic on the network. In addition, it is possible that a web service generates a lot of data that is irrelevant to the composite service, yet this data will be transferred to the coordinator node where it is discarded, thereby putting unnecessary load on the network. These factors lead to poor scalability and performance degradation at high loads.
+
+Centralized orchestration from [1]
+
+            1.3.2 Decentralized orchestration:
+
+In [1], the data and control dependences between the components can be analyzed and the code can be partitioned into smaller components that execute at distributed locations, refer to this mode of execution as decentralized orchestration. 
+In decentralized orchestration, there are multiple engines, each executing a composite web service specification (a portion of the original composite web service specification but complete in itself) at distributed locations. The engines communicate directly with each other (rather than through a central coordinator) to transfer data and control when necessary in an asynchronous manner. It may appear that the introduction of additional engines in the execution path would adversely affect performance; however decentralized execution brings performance benefits for the following reasons:
+
+    • There is no centralized coordinator which can be a potential bottleneck.
+    • Distributing the data reduces network traffic and improves transfer time.
+    • Distributing the control improves concurrency.
+    • Asynchronous messaging between engines brings benefits of better throughput and graceful degradation.
+
+Furthermore, decentralized orchestration might be the only way to compose web services in constrained data flow environments (e.g. business-to-business scenarios) where data might flow only in a given direction due to business constraints. While decentralization brings performance benefits, it also increases the complexity of the system and poses many build time and runtime challenges. It requires modifications to the infrastructure to execute the service, build time and runtime support for error handling and recovery, and techniques/tools for code partitioning. 
+
+Decentralized orchestration from [1]
+
+
+        1.4 Orchestrating composite web services under data flow constraints:
+
+            1.4.1 Centralized orchestration:
+
+In [3] in centralized orchestration, all data is routed through the central coordinator, and it has access to the input and output data of the entire component web services. However, in certain scenarios web services may apply restrictions on the source and/or destination of the data received or sent, as part of a policy, these restrictions known as business defined data flow constraints. These data flow constraints, thus, present obstacles in the orchestration of composite web services by a central coordinator. Several mechanisms for handling security issues exist in the distributed computing world. These include various methods of authentication and encryption. 
+
+Centralized orchestration with data flow constraints violation	 from [3]
+
+            1.4.2 Decentralized orchestration:
+
+In [3] in decentralized orchestration, a composite web service is broken into a set of partitions, one partition per component web service. The partitions are collocated with the web service. Each partition acts like a proxy that processes, transforms and manages all incoming and outgoing data at the component web service as per the requirements of the composite service. The partitions execute independently and interact with each other directly using asynchronous messaging without any centralized control. Since a partition is colocated with a component web service, it has the same access rights as the web service. Thus it is possible to overcome data flow constraints by ensuring that all constrained data reads and writes are performed within the permitted domains. This is done by automatically decentralizing a composite web service [2].
+
+
+Decentralized orchestration with no data flow constraints violation from [3]
+
+
+Decentralized orchestration with data flow constraints violation from [3]
+
+
+
+
+
+
+    2. Research plan
+
+As web services are a very interesting area of research and the orchestration centralization issue became more interesting nowadays, the proposed work is to identify the similarities, differences, advantages, disadvantages and ways of implementing centralized and decentralized orchestration web services. The objective of my research is to decide the suitable technique from centralized and decentralized orchestrating web services in implementing Management Information Systems
+As Management Information Systems involve three primary resources: technology, information, and people, information here means business requirements so, when transforming these requirements into web services any changes in the business requirements will affect in the way of the implementation, My plan is to examine the effect of changes in requirements in both centralized and decentralized orchestration web services and evaluate the result in two cases also I want to evaluate the result with respect to security in two cases and this is to identify suitable framework with either centralized or decentralized in implementing MIS .
+

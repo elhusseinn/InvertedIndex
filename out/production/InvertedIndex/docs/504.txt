@@ -1,0 +1,548 @@
+An Automatic Detection of Military Objects and Terrorism Classification System Based on Deep Transfer Learning
+
+    Authors
+    Authors and affiliations
+
+    Doaa Mohey El-DinEmail authorAboul Ella HassaneinEhab E. Hassanien
+
+    Doaa Mohey El-Din
+        1Email author
+    Aboul Ella Hassanein
+        2
+    Ehab E. Hassanien
+        1
+
+    1.Information Systems Department, Faculty of Computers and Artificial IntelligenceCairo UniversityCairoEgypt
+    2.Information Technology Department, Faculty of Computers and Artificial IntelligenceCairo UniversityCairoEgypt
+
+Conference paper
+First Online: 24 March 2020
+
+    1k Downloads 
+
+Part of the Advances in Intelligent Systems and Computing book series (AISC, volume 1153)
+Abstract
+
+This paper presents an automated detection of military objects and terrorism classification system based on deep transfer learning. It constructs a new structure of neural networks based on AlexNet pre-trained transfer learning model. This network is designed by six neural networks for six spectrums (Intensified visual images, Near-infrared spectroscopy (NIR) images, thermal images, LWIR (long wave infrared images), DHV, and RGB). It uses for detecting objects and actions in various spectrums in night mode depends on two sensory data types of images and videos. The system proposes an automated description layer for improving the classification domain whether military or terrorism domain. The detection and classification result reaches 92% for objects and actions detection and classifying the compatible domains whether terrorism or military. The experiments are applied to three datasets due to the lack of critical data (images or videos) in these domains. This dataset reaches 7992 images in multiple spectrums.
+Keywords
+Object detection Classification Spectrums Military objects Terrorism actions Sensors 
+Access to this content is enabled by Egyptian Knowledge Bank
+Download conference paper PDF
+1 Introduction
+
+Terrorism is defined by the illegal use of violence and threat, especially against civilians, in the tracking of political objectives [1]. Terrorism becomes spreading in many countries, however it poses a threat to any country, especially in remote areas in the country such as Sinai in Egypt [2]. According to real statistics, this average number of victims from terrorism’s attacks are increasing annually [3]. In 2017, terrorism is caused by 26,445 death people annually in the world. Victims have been rising year on year for the past three years, from 11 deaths in 2017, 26 deaths in 2018, to 77 deaths by the end of September 2019 [4]. The military is responsible to save lives and protect the country. Till now, the military finds an obstacle to discover all terrorists and their actions because terrorists use some methods to disappear and hide the weapons. So, the military goes forward to use weapons holding various spectrum sensors, such as infrared, that provide them in detecting any strange objects or actions.
+
+Object detection, segmentation, classification are the main uses tasks of transfer learning [5]. Deep transfer learning uses for improving the performance of tasks’ challenges or applications by reusing the pre-trained models [6]. The power of transfer learning is represented with hierarchical architecture and a large-scale training set that usually contains millions of images. However, in military and terrorism domains, object detection is faced a big challenge due to the hardness of finding enough training or real data whether in actions or objects such as types of snippers, weapons. So, the output will not reach enough accuracy and performance [7]. There is also a blurred classification between terrorism and military domains.
+
+This paper proposes an automatic detection and classification system of military and terrorism in objects and actions. This system consists of three layers (1) The automated detection uses the Alexnet transfer neural network model. The neural network is designed based on six neural networks for six spectrums, (Intensified visual images, Near-infrared spectroscopy (NIR) images, thermal images (long-wave infrared images), DHV, and RGB) in night mode. (2) This system creates a description layer to improve the quality of datasets and classification results. (3) The automated classification uses to remove the blurred vision between two domains terrorism and military based on creating the description layer. The proposed system improves the classification between objects and actions and between military and terrorism domains.
+
+The rest of this paper is organized as follows. Section 2 examines the background and previous related works about classification, object detection, and transfer learning. Section 3 presents automatic terrorism and military System. Section 4 introduces the experiments and discusses the results. Finally, conclusion and future works of this work in Sect. 5.
+2 Background and Related Works
+This section discusses previous motivations in object detection invariant data types as shown in Table 1. It also demonstrates the examination study of classification importance for improving the accuracy results in the military domain as shown in Table 2. Some motivations aim to solve data augmentation and overfitting.
+Table 1.
+
+A comparison between previous motivations of classification in the military domain
+
+Paper no.
+	
+
+Classification
+	
+
+Used technique
+	
+
+Dataset type
+	
+
+Results
+
+[7]
+	
+
+Radio access technologies (RAT)
+	
+
+Traditional Machine learning and CNN
+	
+
+Signals
+	
+
+CNN achieved 100%
+
+[8]
+	
+
+Automatic object detection in military and space images
+	
+
+Convolutional Neural Network (CNN)
+	
+
+Images
+	
+
+95.6%
+
+[9]
+	
+
+Classify military objects from images
+	
+
+Deep transfer learning
+	
+
+Images
+	
+
+Approximately more than 95%
+
+[10]
+	
+
+Convolutional Long Short-term Deep Neural Network (CLDNN), and a deep Residual Network (ResNet)
+	
+
+Automatic modulation classification
+	
+
+Images
+	
+
+Around 90%
+
+[11]
+	
+
+Faster RNN algorithm
+	
+
+Classify objects based on a combination of human visual salience and visual psychology
+	
+
+Images
+	
+
+90.7% improve accuracy by 27 to 33%
+Table 2.
+
+A comparison between motivations using deep transfer learning.
+
+Paper
+	
+
+Use
+	
+
+Target
+	
+
+Dataset
+	
+
+Results
+
+[9]
+	
+
+Alexnet
+	
+
+Image classification
+	
+
+Alcoholism Identification
+	
+
+97%
+
+[15]
+	
+
+VGG 16
+	
+
+Yelp Restaurants
+	
+
+Image classification Kaggle
+	
+
+60%
+
+[16]
+	
+
+VGG 19
+	
+
+Image classification
+	
+
+Gender classification in age estimation
+	
+
+98%
+
+[17]
+	
+
+Inception V3
+	
+
+Image classification
+	
+
+CIFAR-10
+	
+
+70%
+
+[18]
+	
+
+Xception
+	
+
+Image classification
+	
+
+Microsoft Malware Dataset
+	
+
+99%
+
+[19]
+	
+
+ResNet-34
+	
+
+Brain Abnormally Image
+	
+
+MRI Images
+	
+
+100%
+
+[20]
+	
+
+AlexNet
+	
+
+Ear Recognition
+	
+
+Ear Image dataset
+	
+
+100%
+
+[21]
+	
+
+ResNet
+	
+
+Classify military objects
+	
+
+Small dataset
+	
+
+90%
+2.1 Detection and Classification in Multi-specrtal
+
+The object detection challenge is considered one of computer vision challenges that have several motivations to detect the objects related to the specific domain [6, 7]. Multi-Spectral is a hot area of research, especially in night mode [8]. There are several spectrum types of vision such as RGB, DHV, Thermal, or infrared. Image and video classifications are complex interpretation and processing to reach the object’s classes. So, there are several techniques to reach a suitable accuracy for the classification. Previous researches are discussed in Table 1.
+
+There are several motivations in image or video classifications as shown in Table 1. Researchers in [7, 8, 9], reach high accuracy results through using neural network approaches in various data types (signals, and images) and domains. Other researches as [10, 11] achieve less accuracy results for automatic classification that require improving. It has several methods for training based on previous training to improve future training on various datasets or limited datasets [10, 11, 12, 13, 14]. In Table 2, previous motivations are shown in a comparison between classification problems using transfer learning functions with different targets and domains. Transfer learning includes several algorithms [9, 15, 16, 17, 18, 19, 20, 21].
+
+The essential objective of transfer learning is to learn a target predictive function for an objective task with support to the target domain and other domains for various tasks. Previous motivations refer to finding a challenge of object detection and classification in small datasets, overfitting, and non-expert training domains such as military and terrorism. These challenges lead the accuracy results to small value and inefficiency. This research targets solving these open challenges to reach good accuracy in terrorism and military domains.
+3 The Military Detection and Terrorism Classification System
+
+The proposed solution is automated detection of military objects and terrorism classification system based on deep transfer learning. İt uses for improving accuracy results however, its disadvantage appears in adapting the model on the new tasks.
+3.1 The Proposed Terrorism Classification System Neural Network
+The input includes two format types of images and videos for several objects and actions, such as fire, or armed attack, in six spectrums in night mode [22]. This network is designed by six neural networks for six spectrums (Intensified visual images, Near-infrared spectroscopy (NIR) images, thermal images, LWIR (long wave infrared images), DHV, and RGB). It uses for detecting objects and actions in various spectrums in night mode depends on two sensory data types of images and videos [23]. Each neural network includes two neural networks as shown in Fig. 1. The proposed neural network for detecting objects and another one for detecting actions extracted from images and videos. The experiment’s results can be achieved to high performance and high accuracy by utilizing this type of network. The system consists of the following steps, as shown in Fig. 2, Constructing the six neural networks based on AlexNet, AlexNet pre-trained model acts as a feature extractor, Freezing the weights of all the other layers, Deleting the last layer of the network and replacing it with our classifier, Training the network normally, The Accuracy assessment, and deploying results.
+Open image in new windowFig. 1.
+Fig. 1.
+
+Alexnet transfer learning model for terrorism and military detection and classification system
+Open image in new windowFig. 2.
+Fig. 2.
+
+A detailed transfer learning architecture
+The Alexnet pre-trained model is based on Convolutional neural networks (CNN). The following study, the constructed topology of the CNN architecture to discover a convenient model, declaration image classification through Transfer Learning that consists of four layers like the following.
+
+    1.
+
+    Convolutional layer
+    Convolution has a great performance in object detection, semantic segmentation, and feature extraction. In this layer, all weights are trainable. The process is interpreted as,
+    𝑥𝐿𝐽=(∑𝑖∈𝑀𝐽𝑦𝐿−1𝐼⊗𝐾𝑙𝑖𝑗+𝑏𝑙𝑗)
+
+(1)
+In which 𝑥𝐿𝐽
+is the input of the jth feature map in the l layer, 𝑦𝐿−1𝐼 is the output of the i the feature map in the l−1 layer. 𝐾𝑙𝑖𝑗 is the convolutional kernel between the two feature maps and 𝑏𝑙𝑗 is the corresponding bias. F(*) is the active function and using RELU in the network. It extracts from the following form,
+𝑓(𝑥)=max(𝑥,0)
+(2)
+ 
+2.
+
+Down-sampling layer
+After convolution, the number of feature maps and their dimensions increases rapidly. The down-sampling layer is constructed to prevent this problem. It can minimize the dimension of the features and enhance the strong to rotation or other geometrical translation while maintaining the information contained in the authentic feature at the same time. The process of down-sampling can be described as,
+𝑥𝑙𝑗=f (𝛽𝑙𝑗𝑔𝑑𝑜𝑤𝑛(𝑥𝑙−1𝑗)+𝑏𝑙𝑗)
+(3)
+
+𝑔𝑑𝑜𝑤𝑛(∗)
+
+    Represents the down-sampling function, which describes an area of n × n in the former feature maps. Therefore, the output will be 1/n of the original input.
+     
+    3.
+
+    Fully connected layer
+
+    Every unit in the fully connected layer is connected to all the units in the feature maps of former layer, and the output layer. The transfer learning process includes two steps. The first step, the network requires to train on big dataset to enable learning the ability to extract common characteristics. Then, the connections have several weights that should be tuned to learn the specific characteristics of military objects with a small training set. The phase of Supervised pre-training, the neural network is trained with a large dataset ImageNet which includes more than 1,000,000 images about 1000 classes with image-level annotations for common object classification. When the input layer receives a training sample. The AlexNet can enhance the terrorism classification model with high accuracy results.
+     
+    4.
+
+    Create two neural networks
+
+    This system presents two neural networks in each AlexNet pertained neural network for classifying objects and actions in each image or video’s frame. That also improves the classifying domains whether military or terrorism. The domain Classification is an important and complex process for classifying the domain based on extracting features, especially in multi-model system.
+
+    The proposed system works on a supervised classification to enhance the accuracy of classifiers and utilize training samples which known as the ground truth. The spectral signatures of the training areas are used to inspect for similar signatures in the remaining pixels of the image. This system classifies by AlexNet transfer neural network and construct and description layer for is used in this study for improving the results.
+     
+
+3.2 A Description Layer
+
+This system extracts the terrorism domain with actions and objects from a set of military datasets due to the lack of information in this domain. The description layer is created to fill the gap between military and terrorism domains with interpreting a description for images and videos. For example, the different description of armed people whether a terrorist or the army. It is designed based on targeting the semantic features and processing images and videos more adaptive to many objects features. It requires constructing a new annotated lexicon for improving the descriptions. This lexicon enhances the accuracy percentage of domains’ classification.
+3.3 Data Augmentation
+
+The lack of training data of military and terrorism domains is a still challenge that is faced in applying the neural network. This system introduces a solution for this challenge through increasing the number of images used for training to reduce the overfitting of the small datasets. It applies the label-preserving transformations. It uses four data augmentation techniques used in this research are: (a) Reflection around the X-axis, (b) Reflection around the Y axis, (c) Reflection around the X−Y axis, and (d) gaussian. The used techniques of augmentation can be adaptive to increase the number of images by a factor of 6 times compared with the original dataset. The dataset increased a training dataset and testing phases. The proposed system was developed using a software package (Matlab). The implementation was graphical processing unit (GPU) specific.
+4 Experiment and Results
+4.1 Dataset
+The experiments are applied to three datasets; however, it suffers from a lack of critical data (images or videos) in military or terrorism domains. The used dataset makes depends on 1332 images that is enlarged by six times for reaching 7992 images and videos for six spectrums. It provides the classification between objects and actions (Tables 3 and 4).
+Table 3.
+
+The used datasets includes six spectrums for objects and actions
+
+Dataset
+	
+
+Ref
+	
+
+Description
+	
+
+Dataset Size
+
+TNO Image Fusion
+	
+
+[24]
+	
+
+Visual (0.4–0.7 μm), near-infrared (NIR, 0.7–1.0 μm) and long-wave infrared (LWIR, 8–14 μm)
+	
+
+579 images
+
+Gun objects dataset
+	
+
+[25]
+	
+
+Images dataset in real images
+	
+
+333 images
+
+Multi-spectral images
+	
+
+[26]
+	
+
+Dataset of seven objects into three spectrums: visible, near-infrared and thermal spectrum
+	
+
+420 images
+Table 4.
+
+The accuracy measurements
+ 	
+
+Relevant
+	
+
+Non-relevant
+
+Retrieved
+	
+
+TP
+	
+
+FP
+
+Not retrieved
+	
+
+FN
+	
+
+TN
+𝑅𝑒𝑐𝑎𝑙𝑙=𝑇𝑃𝑇𝑃+𝐹𝑁
+(4)
+𝑃𝑟𝑒𝑐𝑖𝑠𝑖𝑜𝑛=𝑇𝑃𝑇𝑃+𝐹𝑃
+(5)
+𝐹-𝑚𝑒𝑎𝑠𝑢𝑟𝑒=2𝑅𝑒𝑐𝑎𝑙𝑙⋅𝑃𝑟𝑒𝑐𝑠𝑖𝑠𝑖𝑜𝑛𝑅𝑒𝑐𝑎𝑙𝑙+𝑃𝑟𝑒𝑐𝑖𝑠𝑖𝑜𝑛
+(6)
+4.2 Results
+The system improves the accuracy of detection and classification by applying the Eqs. 4, 5, and 6 [27]. The classification accuracy results rough 75% for two spectrums (NIR and VIS) and thermal spectrum reaches 89% approximately for thermal spectrum, 91% for LWIR and DHV spectrums, RGB reaches around 92%. Table 5 shows the precisions, recall, and F1-score for the accuracy computation in object detection and classification.
+Table 5.
+
+Performance metrics of classified spectrums
+
+Metrics/Model
+	
+
+NIR
+	
+
+VIS
+	
+
+Thermal
+	
+
+LIWR
+	
+
+DHV
+	
+
+RGB
+
+Precision
+	
+
+74.5%
+	
+
+75%
+	
+
+89.3%
+	
+
+91.4%
+	
+
+90.3%
+	
+
+92.8%
+
+Recall
+	
+
+75.2%
+	
+
+74.6
+	
+
+91.2%
+	
+
+92.2%
+	
+
+90.4%
+	
+
+91.7%
+
+F1-score
+	
+
+75.1%
+	
+
+75.6%
+	
+
+89%
+	
+
+91.9%
+	
+
+91.1%
+	
+
+92.1%
+5 Conclusion and Future Work
+
+The proposed military detection and terrorism classification system is designed based on three steps, (1) constructing six AlexNet transfer neural network learning. They use for classifying six spectrums in night mode. Each neural has two neural for detecting objects and classifying actions. They also classify the domain whether terrorism or military. (2) A description layer is generated for combining extracting features and interpretation description for information in the image to strengthen the ability of classification and differing between variant domains. (3) the Evaluation accuracy of classification depends on precision, recall, and f-measure assessments. The experiments are applied to three datasets for six spectrums in night mode. These datasets include objects and actions in videos and images. Using data augmentation, for improving the classification with enlarging the dataset by six times. The classification accuracy result reaches 92%. The future work refers to build a fusion system that works on multiple sensory data with variant data types to improve the accuracy of detection and classification results. It can make up the lack of datasets to draw the full vision of data for improving the classification accuracy.
+References
+
+    1.
+    Gohar, F., Haider, W., Qamar, U.: Terrorist group prediction using data classification. In: The International Conference on Artificial Intelligence and Pattern Recognition (AIPR 2014). Asia Pacific University of Technology and Innovation (APU) (2014)Google Scholar
+    2.
+    Tinguria, D., Kumar, B.: Detecting terror- related activities on the web using neural network. Orient. J. Comput. Sci. Technol. 3(2), 331–336 (2010)Google Scholar
+    3.
+    Ritchie, H., Hasell, J., Appel, C., Roser, M.: Terrorism. OurWorldInData.org (2019). https://ourworldindata.org/terrorism
+    4.
+    Institute for Economics and Peace: Global Terrorism Index 2019, Measuring the Impact of Terrorism, Sydney (2019). http://visionofhumanity.org/reports
+    5.
+    Felzenszwalb, P.F., Girshick, R.B., McAllester, D., Ramanan, D.: Object detection with discriminatively trained part-based models. IEEE Trans. Pattern Anal. Mach. Intell. 32(9), 1627–1645 (2010)CrossRefGoogle Scholar
+    6.
+    Nascimento, I., et al.: Deep learning in RAT and modulation classification with a new radio signals dataset. In: Simpósio brasileiro de telecomunicações e processamento de sinais - sbrt, 16–19 de setembro de 2018Google Scholar
+    7.
+    Yang, J., et al.: Hyperspectral image classification using two-channel deep convolutional neural network. In: Proceedings of the 2016 IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Beijing, China, pp. 5079–5082 (2016)Google Scholar
+    8.
+    Mormont, R., Geurts, P., Mar, R.: Comparison of deep transfer learning strategies for digital pathology. In: IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW) (2018)Google Scholar
+    9.
+    Patil, C.J., Shinde, S.V.: Object detection in military and space image by deep learning with convolutional neural network. Int. J. Comput. Sci. Eng. 6(11), 363–368 (2018)Google Scholar
+    10.
+    Yang, Z., et al.: Deep transfer learning for military object recognition under small training set condition. Neural Comput. Appl. 31(10), 6469–6478 (2018)CrossRefGoogle Scholar
+    11.
+    Remjee, S., Yang, D., Elgamal, A.: Fast deep learning for automatic modulation classification. arXiv:1901.05850v1 (2019)
+    12.
+    Wu, Y., Ji, Q.: Constrained deep transfer feature learning and its applications. In: The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pp. 5101–5109 (2016)Google Scholar
+    13.
+    Liu, X., Liu, Z.-T., Wang, G.: Ensemble transfer learning algorithm. IEEE Access 6, 2389–2396 (2017)CrossRefGoogle Scholar
+    14.
+    Wang, S., et al.: Alcoholism identification based on an AlexNet transfer learning model. Front. Psychiatry 10, 205 (2019)CrossRefGoogle Scholar
+    15.
+    Singh, D., Garzon, P.: Using Convolutional Neural Networks and Transfer Learning to Perform Yelp Restaurant Photo Classification (2018)Google Scholar
+    16.
+    Smith, P., Chen, C.: Transfer learning with deep CNNs for gender recognition and age estimation. arXiv:1811.07344v1 (2018)
+    17.
+    Hussain, M., Bird, J.J., Faria, D.R.: A study on CNN transfer learning for image classification. In: 18th Annual UK Workshop on Computational Intelligence (UKCI), Nottingham (2018)Google Scholar
+    18.
+    Kwan, H.K., Lee, C.K.: A neural network approach to pulse radar detection. IEEE Trans. Aerosp. Electron. Syst. 29(1), 9–21 (1993)CrossRefGoogle Scholar
+    19.
+    Talo, M., et al.: Application of deep transfer learning for automated brain abnormality classification using MR images. Cogn. Syst. Res. 54, 176–188 (2018)CrossRefGoogle Scholar
+    20.
+    Almisreb, A.A., Jamil, N., Din, N.Md.: Utilizing AlexNet deep transfer learning for ear recognition. In: Fourth International Conference on Information Retrieval and Knowledge Management (CAMP) (2018)Google Scholar
+    21.
+    Signoroni, A., et al.: Deep learning meets hyperspectral image analysis: a multidisciplinary review. J. Imaging 5, 52 (2019)CrossRefGoogle Scholar
+    22.
+    Zhan, Y., et al.: Hyperspectral band selection based on deep convolutional neural network and distance density. IEEE Geosci. Remote Sens. Lett. 14, 2365–2369 (2017)CrossRefGoogle Scholar
+    23.
+    Zhao, W., et al.: On combining multiscale deep learning features for the classification of hyperspectral remote sensing imagery. Int. J. Remote Sens. 36, 3368–3379 (2015)CrossRefGoogle Scholar
+    24.
+    Toet, A., Pinkus, A.R., Hogervost, M.A.: The TRICLOBS dynamic multi-band image data set for the development and evaluation of image fusion. PLoS ONE 11, e0165016 (2016)CrossRefGoogle Scholar
+    25.
+    Chandan, J.G., et al.: Real time object detection and tracking using Deep Learning and OpenCV. In: International Conference on Inventive Research in Computing Applications (ICIRCA) (2018)Google Scholar
+    26.
+    Zukal, M., et al.: Interest points as a focus measure in multi-spectral imaging. Radio Eng. 22(1), 68–81 (2013)Google Scholar
+    27.
+    Khalifa, N.E.M., et al.: Deep iris: deep learning for gender classification through iris patterns. Acta Informatica Medica 27(2), 96–102 (2019)CrossRefGoogle Scholar

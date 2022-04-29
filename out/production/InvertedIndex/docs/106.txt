@@ -1,0 +1,19 @@
+A Proposed Fault Tolerance Model for Cloud
+System Based on the Distributed Shared
+Memory
+Mohamed A. Elsharkawey, Hosam E. Refaat
+Dept. of Information System Faculty of Computers and Informatics
+Suez Canal University, Egypt
+melshrkawey1964@yahoo.com, hosam.refaat@ci.suez.edu.eg
+Abstract
+Nowadays, the cloud computing appears as a magic solution for a lot of companies and
+scientific problems to have extendable resources with a suitable budget. The increasing of the
+utilization of cloud computing in different fields creates challenge in the reliability and
+availability of the system. In this paper, a middle layer is proposed to increase the reliability.
+This layer places between the application layer and the virtualization layer in cloud system. It
+aims to handles the failure of the nodes. This layer monitors the system resources and
+periodically updates the status of all the virtual machine functionality. Based on these
+statuses, when the failure is occurred, the appropriate virtual machine will be selected to
+handle object failure. Moreover, the failure is handled in two cases, firstly, when the failure
+occurred in one of the running virtual machine, secondly, when the failure is occurred at the
+virtual machine management.

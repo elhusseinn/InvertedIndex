@@ -1,0 +1,43 @@
+Faculty of Computers and Artificial Intelligence
+Cairo University
+A Framework for Monitoring Road
+Traffic using Fog Computing
+By:
+Ahmed Ramzy Ahmed Ahmed Negm
+Under Supervision of:
+Prof. Ehab E. Hassanein
+Assoc. Prof. Ahmed H. Awad
+Abstract
+Total number of vehicles in most of the cities around the world has
+increased during past decade along with the population growth. Traffic
+monitoring in this situation is a big challenge. Various traffic monitoring
+approaches have been researched and developed to handle this increase in
+traffic density. Also various Traffic Monitoring Services (TMS) have been
+proposed to provide strong and encompassing online platform to observe
+the roads and the traffic status and predict the arrival time of the driver.
+Arrival time prediction provided by most of navigation systems is
+affected by several factors, such as road condition, travel time, weather
+condition, vehicle speed, etc. Systems that provide near real-time road
+condition updates, e.g. Google Maps, depend on crowdsourcing GPS data
+from vehicles or mobile devices on the road. GPS data thus has a long journey
+to travel from their sources to the analytics engine on the cloud before a
+status update is sent back to the client. Between the time taken for GPS data
+to be broadcast, received and processed, significant changes in road
+conditions can take place and would still be unreported, leading to wrong
+decisions on the route to choose.
+Road condition, especially average speed of vehicles, monitoring is of
+a local and continuous nature. It needs to be accomplished near GPS stream
+data sources to reduce latency and increase the accuracy of reporting.
+Solutions based on geo-distributed road monitoring, using the Fog-
+computing paradigm, provide lower latency and higher accuracy than
+centralized (cloud-based) approaches. Yet, they require a heavy investment
+VIIand a large infrastructure, which might be a limit for its utility in some
+countries, e.g. Egypt. In this thesis, we propose a more dynamic approach to
+continuously update average speed on the road. The computation is done
+locally on the client device, e.g. the traveling vehicle or the mobile device of
+the traveler. Our implementation protects the privacy of the participating
+vehicle drivers and don’t store the identity and the travel history of the
+mobile device owner. We compare, through simulation, our proposed
+approach to the fog-computing-based traffic monitoring. Simulation result
+give an empirical evidence on the correctness of our results compared to fog-
+based speed calculation.

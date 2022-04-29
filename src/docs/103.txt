@@ -1,0 +1,101 @@
+MACHINE LEARNING APPROACH FOR
+CHILDREN DISORDER UNDERSTANDING
+By
+Mariam Mostafa Mahmoud Hassan
+A Thesis Submitted to the
+Faculty of Computers and Artificial Intelligence
+Cairo University
+in Partial Fulfillment of the
+Requirements for the Degree of
+MASTER
+in
+Information System
+Under the Supervision of
+Prof. Hoda Mokhtar Omar Mokhtar
+Department of Information System
+Faculty of Computers and Artificial Intelligence, Cairo University
+
+Abstract
+Autism spectrum disorder (ASD) is a neurodevelopmental disorder that causes
+deficits in cognition, communication and social skills. ASD, however, is a highly
+heterogeneous disorder. This heterogeneity has made identifying the etiology of ASD
+a particularly difficult challenge, as patients exhibit a wide spectrum of symptoms
+without any unifying genetic or environmental factors to account for the disorder.
+For better understanding of ASD, it is paramount to identify potential genetic and
+environmental risk factors that are comorbid with it. Identifying such factors is of
+great importance to determine potential causes for the disorder, and understand its
+heterogeneity. Existing large-scale datasets offer an opportunity for computer
+scientists to undertake this task by utilizing machine learning to reliably and
+efficiently obtain insights about potential ASD risk factors, which would in turn
+assist in guiding research in the field. Moreover, the large sample size of these
+datasets helps to avoid the pitfalls and biased results associated with studying a
+heterogeneous disorder through a small sample size. The purpose of this research is
+to address these issues. In this research work, the main contribution is to investigate
+the effect of different risk factors, including patient medical history and Family
+Medical History, in the Autism domain. In addition, it is to examine differences
+in gender, as the disparity in ASD diagnosis between males and females suggest
+differences in underlying etiology. Because the Autism research has demonstrated
+remarkable growth in the last 10 to 15 years, far outpacing research growth in
+other comparable fields, thus planning and investment in ASD research should be
+guided by clear objectives that account for the current state of the science and
+the identification of critical research gaps, that’s why building Autism ontology
+that represents the knowledge in Autism Spectrum Disorders in different aspects
+including results from this study can help in clinical decision support and annotation
+process to assist in guiding research by shedding light on gaps and opportunities.
+The following methodology has been applied; composed of data capturing, data
+pre-processing, machine learning implementation and building Autism ontology.
+Data capturing include querying National Database for Autism Research (NDAR)
+for Subject and Family Medical History where subjects are previously diagnosed
+using trusted Autism diagnostic instrument, then using these datasets towards
+building a database schema to facilitate mapping records and generate new datasets.
+Data pre-processing handles the generated raw data to be more effectively and easily
+processed by machine learning algorithms, which include data cleaning, unifying
+terminologies and handling missing values using various python functions. Scikit-
+learn a python machine learning library was used for constructing features and
+patterns using DecisionTreeClassifier function. The algorithm performance was
+measured using numerous matrices and measures. Results have been evaluated using
+close datasets that covered similar medical conditions to the ones covered in the
+datasets used in this study. To further validate the ASD associations obtained in
+this study, 10 datasets were randomly generated from Family and Subject Medical
+History datasets, with a ratio of 1:1 ASD and non-ASD. This subsampling technique
+strategy was utilized to ameliorate the problem of significantly unbalanced classes.
+xviResults were finally validated using medial studies. Finally, building the Autism
+ontology to store the constructed features and patterns in a machine understandable
+format to enable reusing it in decision support and annotation.
+The results of the applied methodology identified eleven diagnosis rules and ten
+medical conditions out of sixty nine used in the analysis that were highly associated
+with ASD diagnoses in patients; furthermore, the analysis was extended to the
+Family Medical History of patients and reported twelve rule sets and ten potentially
+hereditary medical conditions from eighty one input conditions associated with
+ASD. Associations reported had a 90% accuracy. Meanwhile, gender comparisons
+highlighted conditions that were unique to each gender and others that overlapped.
+Those findings were validated by medical studies in the Autism domain, thus opening
+the way for new directions for the use of machine learning algorithms to further
+understand the etiology of Autism. The second contribution in this study was
+developing a domain Autism ontology that formally conceptualizes both domain
+and clinical Autism knowledge, and facilitates access to precise Autism knowledge
+for both decision support and annotation purposes. To construct and build such
+ontology, many clinical and medical research works have been investigated in various
+Autism areas. The ontology was build using existing ontologies, relevant articles,
+standard textbooks, and clinical studies. Such sources were used to link key concepts
+and build a semantic map among classes. Focusing on classes, properties between
+classes and properties between classes and their instances. Ontology sub classes were
+extended based on clinical cases and pilot studies. The ontology main contribution
+in this work, is enable reusing knowledge extracted from classification approaches
+in clinical decision support systems. The Autism ontology was implemented using
+Protégé, an ontological framework, formatted by Web Ontology Language (OWL)
+and Semantic Web Rule Language (SWRL). The ontology bring an opportunity
+for researchers to have a panoramic view of Autism domain topics, assign their
+knowledge into the ontology, compare it with other related work done in the same
+topic and finally reasoning it over class individuals. Such knowledge can be used
+and evaluated in clinical decision systems.
+The experimental results show the effectiveness of the proposed approach. ASD
+related factors and gender differences identified in this study can shed light on
+areas for future research and investigation concerning the etiology of ASD, and
+potential venues for prevention and treatment. This knowledge is stored in a machine
+understandable format to enable reusing it in decision support and annotation. Using
+ontology classes and SWRL rules provide numerous benefits to the domain users as
+human or machine. The Autism ontology in this study will not only store constructed
+patterns and rules but will help in conceptualization of knowledge, unification of
+terminology, easy access to information, while assisting in expert decision making.
+xvii

@@ -1,0 +1,238 @@
+Early Development of Graphical User Interface (GUI) in Agile Methodologies
+
+Caroline Samy Labib
+Information Systems Department, Faculty of Computers and Information, Cairo University, Giza, Egypt
+caroline_samy@yahoo.com
+
+Ehab Ezzat Hasanein
+Information Systems Department, Faculty of Computers and Information, Cairo University, Giza, Egypt
+admin@drehab.net
+
+Abstract
+
+	The Agile methodologies have shown success over plan-driven methodologies especially in web development due to their ability to adapt to new requirement changes. Agile methodologies are based on a set of values, principles and practices. However, the development of Graphical User Interface (GUI) is not well addressed in the agile methodologies.  In this paper we introduce a practice that aims at early development of GUI in agile methodologies. The proposed practice supports agile principles and values by helping in getting early customer feedback on the user interface
+
+1 	INTRODUCTION
+
+Plan-driven methodologies are adopted to achieve better development process. However they have shown some disadvantages concerning software development [1-6], especially for web development. 70% of web projects fail to deliver on the agreed functions [7].
+
+The huge and rapid changes in web requirements hinder the adoption of these types of methodologies that requires “stick to the plan”. Also facing high level of uncertainty of system requirements make it difficult to find a particular design that satisfy customer needs. Problems are not identified except until the testing stage. 
+Thus, plan-driven methodologies are too inflexible, taking into consideration the overhead of plan and documentation. 
+
+All these drawbacks on plan driven methodologies result in moving away to an-other type of methodologies: Agile [8-10]. Agile was a significant departure of heavy- weight plan-driven methodologies [11].
+
+Agile has shown success in Software development especially in web development because, in agile small working units can be made available to the users without having to wait for the whole system to be developed. Also the nature of web requirements that change continuously can be handled through agile development which is based on adaptability. [9, 12] 
+
+Currently, there are several agile methodologies [13]. Some of these are: Extreme Programming (XP) [14], Scrum [15, 16], Feature Driven Development (FDD) [17], 18], Dynamic Systems Development Method (DSDM) [19, 20].
+
+GUI is an important part of most of software applications. GUI consists about as about half of the code of the whole system [21, 22]. Defects in GUI can give bad impression for the whole system [23]. The early development of GUI will help in getting earlier customer feedback, thus earlier detection of GUI defects. However GUI has not been sufficiently addressed in the current agile methodologies [24]. 
+
+In this paper we propose an improvement to emphasize the early development of GUI in agile methodologies.
+
+2 	GENERAL OVERVIEW OF AGILE
+
+In this section, we give an overall view of agile and explain the general process of agile development methodologies.
+
+2.1 	What is Agile?
+
+As shown in figure 1, the core of any agile methodology is the ability to respond to continuous changes. Above this, lies a set of agile values and principles that any agile methodology should meet. In 2001 agile experts have produced manifesto that determines the main agile values and principles. One of the most important agile principals is “to satisfy the customer through early and continuous delivery of valuable soft-ware.” This requires the definition of what is really important and valuable to the customer. Agile principles and values are fully defined in the Agile Manifesto (http://www.agilemanifesto.org).
+
+
+
+Figure 1: Overview on Agile [25].
+
+Finally, agile methodologies use some practices which define in details how to achieve the agile principles and values. Some of these practices are Test-Driven Development (TDD) [26], Pair Programming [27], Continuous Integration [28], and Retrospectives [29].
+
+Theses practices have shown positive effect on agile principles as shown on the next table. 
+
+Table 1: Positive experiences due to agile practices [25].
+Positive Experience
+Practices
+
+Improved communication and feedback
+Achieved via short iterations, pair programming and open office space
+Project Visibility (Status)
+Information Radiators  
+Daily Standup Meetings
+
+Quality of Code
+Test driven Development, short iterations
+Requirements can change
+Adaptive planning and Refactoring
+Developer Satisfaction
+Pair Programming, Empowerment and XP in overall
+Customer Satisfaction
+Short Cycles
+Management Satisfaction
+Daily Standup Meetings
+Information Radiators and Tacking
+Better customer collaboration
+Short iterations
+
+
+2.2		General Agile Process
+
+Agile methodologies depend on iteration. Small teams work together with the customers to determine the project feasibility and define the problem to be solved. Then the project is decomposed into small iterations. Each iteration is planned in detail, executed and reviewed by the customer. At the end, a complete working release is produced. Then a new iteration starts and so on. This general process is shown in figure 2.
+
+
+Figure 2: General Agile Process [11].
+
+
+3		Related Work
+
+Different agile methodologies have been discussed in [10-13]. Each agile methodology focuses on certain aspects of development and uses certain practices to achieve these aspects.
+
+Agile Methodologies
+  Some of these methodologies are: 
+- Extreme programming [14] which focuses on development aspects through several practices such as pair programming, testing and refactoring and continuous integration. 
+
+- Scrum [15, 16] focuses on both management and development aspects. In scrum, projects are decomposed into iterations that take 30 days (called sprints).Also, a 15-minute daily team management meeting called a ‘scrum’ is conducted to manage the project progress. 
+
+- FDD [17, 18] methodology is based on defining a list of prioritized features. It works through five steps: Develop an overall object model, Build a list of prioritized features, Plan (by feature), Design (by feature) and Build (by feature).  
+
+- DSDM [19, 20] is based on RAD methodology. In RAD, time and resources are estimated according to the required requirements. However, in agile, time and resources are fixed and requirements are delivered according to the fixed time and resources.
+The existence of different agile methodologies has caught the attention of Abrahamssona et al. [30]. They conducted a comparative analysis to organize, analyze and makes sense out of the dispersed field of agile methodologies. Also, Begel and Nagappan [31] have conducted an empirical study on agile development and its perception by people in development, testing and management. This study has been done at Microsoft (traditional, professional software development organization).  
+
+Agile practices
+ Each methodology use different practices to reach to its goal in development. The practices of XP are explained in [14], Scrum in [16], FDD in [17], and DSDM in [20].
+
+ Researches are conducted to make the best use of agile practices. For example, Paige et al. [32] proposed a combination between selected XP practices, UML and Enterprise Java Beans (EJB) to allow developers to use UML and EJB in a light weight manner.
+
+4	  	EUID Practice
+
+In order to address the aspect of GUI development in agile methodologies we propose a practice to the current set of agile practices. The new practice is called “Early User Interface Development” (EUID). According to the proposed practice, the GUI is not only designed at an early stage of agile iteration but the GUI is actually developed and presented to the customer for feedback before starting a new iteration with a set of new requirements. This feedback is not only for the look of the GUI design but also for the behavior of using the GUI. Hence designers and customers work together to produce the actual required user interface (UI). 
+
+The new proposed practice supports the agile principles in two ways:
+- Early customer feedback which resulted from the early UI development.
+- Quick development since part of GUI code will be developed leaving the developers to focus on application logic development.
+
+The EUID process is illustrated on figure 3.
+
+
+
+
+
+
+
+Figure 3: EUID Process.
+
+At the beginning of the process, a subset of the requirements is used to produce the relevant GUI to achieve these requirements. Then a UI prototype is developed and presented to the customer. The customer can propose new changes, and then a new prototype is developed according to these changes. Once the UI is accepted by the customers, the output (UI prototype) is given to the programmers to use for designing and developing the application. Note: the prototype is not thrown away but is actually part of developed code after refactoring. At the end of the process, a release is provided to the customer with the previously accepted UI and complete working functionalities. The customer then evaluates the release and may add or modify new requirements and thereafter a new iteration starts.
+
+The outputs of “Develop UI prototype” are explained in section 4.1 and the advantages and limitations of EUIP are discussed in section 4.2.
+
+4.1 	The UI Prototype 
+
+The UI prototype represents all the windows in the UI of the current release. Each window is represented by: GUI Structure and GUI Behaviour Description.
+
+GUI Structure
+
+We mean by GUI Structure the top layer of any application (the visual windows and widgets). The GUI Structure is represented by HTML. It includes all widgets with their properties (color, location…). 
+
+An example a designed window is shown in figure 4. Part of the HTML developed for that window is shown in Figure 5.  Each window or widget must be given an ID or name. This name will be used later in the second output
+
+
+
+
+Figure 4: Example of GUI Structure.
+
+
+…
+<form action="">
+Search
+<select name="CB_search">
+<option >Search for a certain person</option>
+</select>
+Name
+<input type="text" name="TB_name" >
+Phone
+<input type="text" name="TB_phone" >
+Email
+<input type="text" name="TB_email">
+…
+…
+<input type="button" value ="Add">
+<input type="button" value ="Delete">
+<input type="button" value ="Save">
+</form>
+      …
+Figure 5: Example of GUI Structure code.
+
+GUI Behavior Description 
+
+GUI Structure contains static information. On the other hand, the dynamic features (active events and the actions performed by the GUI) are described in GUI Behavior Description file. For each window structure produced, a GUI Behavior Description file is produced. The GUI Behavior Description file should describe all the events that should be implemented with a description about each event’s behavior. Under each event description, a list of input widgets from which values are read is defined and also a list of output widgets to which changes occur is defined. In addition a description defining the process that should be implemented in this event is represented including GUI changes and application logic. 
+
+<CB_search type=”ComboBox”>
+  <event>  Onchange </event>
+  <input> 
+ < search_name type = “DropDownBox”/>  
+  </input>
+  <output>
+< TB_name type=”TextBox”/> 
+< TB_phone type=”TextBox”/>
+< TB_email type=”TextBox”/>
+< TB_address type=”TextBox”/>
+< TB_city type=”TextBox”/>
+< TB_state type=”TextBox”/>
+< TB_country type=”TextBox”/>
+  </output>
+  <description> In this event,  the contact details of 
+   the person selected from CB_search are retrieved 
+   into the output textboxes. 
+  </description>
+</CB_search>
+…
+<BT_new type=”Button”>
+  <event> OnClick </event>
+  …
+  <description> All textboxes on the page are set to  
+    null.  </description>
+</BT_new>
+...
+Figure 6: Example of GUI Behavior Description file.
+Figure 6 shows a part of the GUI Behavior Description file of window in figure 4. In figure 6, two events are represented. The first event relates to a combo box called CB_search. When the combo box value is changed the event is triggered. The function that should be implemented is to search for the contact details of the person selected in the combo box. Thus the value of the combo box is taken as an input and the output is retrieved in the textboxes: TB_name, TB_phone, TB_email, TB_address, TB_city, TB_state and TB_country.
+
+4.2 		Advantages and Limitations of EUID
+ 
+The main advantage of EUIP is the early development of GUI which involves early customer feedback, thus supporting the agile principles. Another advantage is that the programmers will concentrate on developing the application logic explained on GUI Behaviour Description file and not worry about UI design and development. 
+
+EUIP is suitable for information system applications which are usually single-threaded applications. On the other hand, EUIP may not be best when the GUI is multi-threaded and highly graphical, which is the case in games and other 3D applications.
+
+5   		CONCLUSION AND FUTURE WORK
+
+In this paper we discussed agile in general and various agile methodologies that use various agile practices to achieve agile values and principles. We introduce a practice called “Early User Interface Development”. This practice has two main benefits: getting early customer feedback which support the agile values and principles and helping developers to focus on application logic development. 
+We are currently working on developing a tool that will automate the EUIP process. Another future work we are working on is a tool that provides the common UI templates in Information systems, such that the UI designer will build the UI from these templates more rapidly.
+
+6		References
+[1] 	Fruhling, A.; and Vredde, G. Field Experiences with   eXtreme Programming: Developing an Emergency Response System, Journal of Management Information Systems, Vol. 22, No. 4, pp. 39–68, Spring 2006.
+[2]	 Biffl, S.; Aurum, A.; Boehm, B.; Erdogmus, H.; and Grünbacher P. (eds). Value-Based Software Engineering. Berlin: Springer-Verlag, 2005.
+[3]	 Boehm, B.W. Get ready for agile methods with care. IEEE Computer, 35, 1, 2002, 64–69.
+[4]	 Grünbacher, P.; Halling, M.; Biffl, S.; Kitapci, H.; and Boehm, B.W. Integrating collaborative processes and quality assurance techniques: Experiences from requirements negotiation. Journal of Management Information Systems, 20, 4,  Spring 2004, 9–29.
+[5]	 Sommerville, I. Software Engineering. Boston: Addison-Wesley, 2004.
+[6]	 Watson, R.T.; Kelly, G.G.; Galliers, R.D.; and Brancheau, J.C. Key issues in information systems management: An international perspective. Journal of Management Information Systems, 13, 4, Spring 1997, 91–115.
+[7]	 Johnson, J.; Boucher, K.D.; Connors, K.; and Robinson, J. Collaborating on Project Success. Software Magazine, 2001.
+[8]	 Avison, D.E.; and Fitzgerald, G. Where Now for Development Methodologies. Communications of the ACM, vol. 46, No. 1, 2003.
+[9] 	Jazayeri, M. Some Trends in Web Application Development. Future of Software Engineering, IEEE, 2007.
+[10]	 Capiluppi, A.; Fernandez-Ramil, J.; Higman, J.; Sharp, H.C.; and Smith, N. An Empirical Study of the Evolution of an Agile-Developed Software System. Proceedings of the 29th International Conference on Software Engineering, May 20-26, 2007, p.511-518.
+[11]	Serena, 2007, Found at: www.serena.com/docs/repository/solutions/intro-to-agile-devel.pdf
+[12]	 Avison, D.; and Fitzgerald, G. Information Systems Development: methodologies, techniques and tools, MCGraw-Hill Education. Berkshire, 4th edition, 2006.
+[13]	 Abrahamsson, P.; Outi, S.; Ronkainen, J.; and Warsta, J. Agile software development methods - Review and analysis, VTT Electronics. Finland, 2002, P. 112.
+[14] 	Beck, K. Embracing Change With Extreme Programming. IEEE Computer, vol. 32, pp. 70-77, 1999.
+[15]	Schwaber, K. Scrum Development Process. OOPSLA'95 Workshop on Business Object Design and Implementation, 1995.
+[16] 	Schwaber, K.;  and Beedle, M. Agile Software Development With Scrum. Upper Saddle River, NJ: Prentice-Hall, 2002.
+[17] 	Palmer, S.R.;  and Felsing, J.M.  A Practical Guide to Feature-Driven Development. Upper Saddle River, NJ, Prentice-Hall, 2002.
+[18]	Coad, P.; LeFebvre, E.; and Luca, J.D. Java Modeling In Color With UML: Enterprise Components and Process. Prentice Hall, 2000.
+[19] 	Ashford, E. Dynamic Systems Development Method,  DSDM Consortium, version 3, 1997.
+[20] 	Stapleton, J. Dynamic systems development method -The method in practice. Addison Wesley, 1997. 
+[21]	Myers, B.A.; Hollan, J.D.; and Cruz, I.F. Strategic directions in human-computer interaction. A CM Computing Surveys, 28, 4,  Dec. 1996, p. 794-809.
+[22] 	Memon, A.M.. GUI testing: Pitfalls and process. IEEE Computer, 35, 8, August 2002, p.90–91.
+[23] 	McMaster, S.; and Memon, A.  Call Stack Coverage for GUI Test-Suite Reduction. IEEE Transactions on Software Engineering archive, Volume 34 ,  Issue 1, 2008, Pages 99-115.
+[24] 	Hamill, P. Agile User Interface Development, 2004. Found at: http://www.w3.org/TR/html4/loose.dtd
+[25]	Sidky, A. Introduction to Agile. Agile Egypt, Egypt, 2008. Found at: http://www.agileegypt.com/presentations_March2008/IntroToAgile_AgileEgypt.pdf
+[26] 	Beck, K. Test Driven Development: By Example, The Addison-Wesley Signature Series, 2003.
+[27] 	Williams, L.; and Kessler, R. Pair Programming Illuminated, Addison-Wesley Longman Publishing. Boston, 2002.
+[28] 	Continious Integration Practice: Martin fowler. Found at: http://www.martinfowler.com/articles/continuousIntegration.html
+[29] 	Kerth, N.L. Project Retrospectives: A Handbook for Team Reviews, Dorset House Publishing. NY, 2001.
+[30]	Abrahamssona, P., Warstab, J., Siponenb, M.T., Ronkainena, J. New Directions on Agile Methods: A Comparative Analysis. Proceedings of the International Conference on Software Engineering, Portland, Oregon, USA, 2003.
+[31] 	Begel, A.; and  Nagappan, N. Usage and Perceptions of Agile Software Development in an Industrial Context: An Exploratory Study. Empirical Software Engineering and Measurement, Madrid, Spain, 2007.
+[32] 	Paige, R.; Agarwal, P.; and Brooke, P. Combining Agile Practices with UML and EJB: a Case Study in Agile Development. Springer Berlin / Heidelberg, vol. 2675/2003, 2003.
+	

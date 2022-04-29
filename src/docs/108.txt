@@ -1,0 +1,369 @@
+
+
+
+
+
+
+
+
+
+
+
+Cairo University
+Faculty of Computer and information 
+Information Systems Department
+
+
+
+
+Multi-Organization Business Intelligence on the Cloud 
+ 
+Thesis Submitted to Department of Information Systems in Partial Fulfilment of the Requirements for Obtaining the Degree of
+M.sc in Information Systems
+ 
+
+Submitted by 
+Mai Mahmoud Salaheldin Mohamed Kasem
+
+ 
+Supervised by
+
+Dr. Ehab E. Hassanein
+Department of Information Systems
+Faculty of Computers & Information
+
+
+
+2016, Cairo
+Approval Sheet
+
+
+Multi-Organization Business Intelligence on the Cloud
+
+
+Submitted by
+Mai Mahmoud Salaheldin Mohamed Kasem
+
+
+This Thesis Submitted to Department of Information Systems, Faculty of Computer and Information, Cairo University, has been approved by:
+
+Name	Signature
+Prof. Dr. Ehab E. Hassanein
+…..……………………………..
+Prof. Dr. 
+…..……………………………..
+Prof. Dr. 
+…..……………………………..
+Prof. Dr. 
+…..……………………………..
+
+
+
+2016, Cairo
+
+
+
+Chapter One: Introduction
+						 		
+        1.1 Background
+Cloud computing opens many doors across all industries, and it has a new, profound effect on the business intelligence (BI) industry as well. BI helps companies analyze data and turn it into valuable business information [1]. It is about getting the right information, to the right decision makers, at the right time [2]. As more data and applications migrate into the cloud, numerous new data sources are being created. Nowadays, BI providers are aiming to change their tools to cope with this new reality, and successful organizations should be aware of that and act upon this opportunity [1].
+One of the most important aspects to keep the success of the businesses make it more profitable and competitive is to have a good knowledge about the business environment. When knowing the environment of the organization's business very well, it will be easy to make the appropriate actions to address trends in the market and to catch the best available opportunities for your business [3]. Organizations are trying to search for ways to do more with the same resources to be more profitable [2]. To ensure that organizations know about the business environment, it is valuable to make utilization of Business Intelligence to produce and process data about the business from inside and outside the organization.
+This research aims to enhance the BI tools by using not only the data from inside the organization but also from outside the organization to help in making better decisions, with keeping these data safe and secured as well.
+The proposed framework in this research can share data with other companies and organizations so that the decision-making process can be extended beyond the enterprise boundaries. The main idea is enabling users to connect with other organizations via the BI system on the cloud and get their results based on their own data and other connected organizations data. 
+        1.2 Problem Statement
+The organizations need to access other organization’s data that is available on the cloud while maintaining cross-organizational privilege rules and security. Currently, the BI researchers focus on how to collect the largest amount of data from multiple data source of multiple systems through an organization to empower decision-makers, allowing them to make better and faster decisions. But they don’t cover the case where the required data needed for the BI application is scattered and exist in different organizations. As we live in an interconnected world, information from the organization itself is not enough, and information from other organizations must be considered to make right decisions. Leveraging the diversity of data from different organizations allow them to make the right decision. The issue here is how to obtain data and information from multi-organization in order to make right decisions, maintain the security and confidentiality required for accessing this data from outer organizations.
+
+        1.3 Objective
+Our main objective is to create a framework to use the shared data between the organizations via Software as a Service (SAAS) BI to make better decisions. We introduce a new level of Business Intelligence on the cloud, where each party can get business decisions, using its own private data, its own shared data, and other parties shared data as well. 
+        1.4 Research Questions
+The research question that we are aiming to answer throughout this research is:
+    • How can we collect and integrate data from different organizations to answer their questions? 
+
+        1.5 Scope
+Our research is about finding a solution to collect the shared data between the organizations using the Collaborative Business Intelligence (CBI) application on the cloud for improving the decisions making process. This new level of Business Intelligence enables each registered organization to get business decisions, using its own private data, its own shared data, and other organizations shared data as well. And that's in a way that only provides suggested decisions, with keeping all data secured behind the cloud.
+        1.6 Research Methodology
+We follow these steps in our research:
+    1. Survey about:
+        ◦ Business Intelligence.
+        ◦ Cloud Computing.
+        ◦ Collaborative Business Intelligence.
+    2. Gathering data and learn the technologies that help in performing the gathering and answering techniques.
+    3. Design the Collaborative BI framework on the cloud to handle the mapping between different schemata and reformulate the queries to fit each schema and then integrate the result data. 
+    4. Give examples to check the accuracy of the framework
+    5. Evaluate the proposed framework according to some related work.
+
+        1.7 Solution Statement
+Our research introduces a framework called “Collaborative Business Intelligence on the Cloud (CBIC),” which enables BI functionalities to be shared on the cloud between different organizations. Although the registered organizations may operate in different geographical and business contexts, they can have mutual benefits in agreed upon way. 
+
+        1.8 Thesis Outline
+Chapter two: is talking about the basic concepts of the research topic. Firstly, an introduction to Business Intelligence and Cloud Computing will be presented. The architecture of the BI with the main components will be illustrated. Benefits and challenges of the BI will be listed, and a comparison between public and private cloud for BI will be presented
+Chapter three: is talking about collaboration and its role in business environments. The concept of Collaborative Business Intelligence will be discussed, and the Business Intelligence Network framework will be illustrated with its benefits and challenges.
+Chapter four: is focusing on the proposed framework called Collaborative Business Intelligence in the Cloud. All phases of the proposed framework are described with their design details. 
+Chapter five: is discussing the conclusions of all points covered during the research. Also, future work that can be done as an extension of the presented work in this research is described.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter two: Business Intelligence on the Cloud
+        2.1 Introduction
+Over recent years, the business landscape has witnessed rapid evolution. Each organization has tended to become more scalable, flexible and intelligent, using new Business Intelligence (BI) solutions. For businesses to make better decisions and take more appropriate action, it is important to apply data analysis techniques to their information. This will help them to define a strategy to improve their business and identify the issues that could affect their business development in order to become a dynamic business that can meet today’s challenges [3]. Using business intelligence increases the knowledge of the business environment and helps in making better plans for the future.
+Nowadays, cloud computing is considered one of the most important technologies, and many experts expect that cloud computing will have a great impact on information technology (IT) processes and the IT marketplace. The cloud provides flexibility, scalability and enables organizations to react faster to the needs of their business. One of the primary benefits of the cloud is supporting organizations with a business agility that enables them to respond quickly and effectively to the ever-changing business environment [4].
+Cloud computing affects most current industries, including having a significant impact on the business intelligence industry. BI helps organizations in analyzing their data and turning it into valuable business information that could help them in making better decisions [1]. Organizations tend to invest more in BI solutions based on cloud computing, called Cloud BI or Software as a Service BI, because investing in traditional BI solutions become unpractical and unattractive [5]. Although using BI on the cloud has a number of benefits, it also comes with a number of risks. It is critical to have a thorough understanding of the nature of cloud computing, and know the benefits and risks of using BI tools in the cloud [6].
+        2.2 Definitions
+    • Cloud Computing
+Gartner defines cloud computing as “a style of computing where massively scalable IT-related capabilities are provided ‘as a service’ using Internet technologies to multiple external customers” [7].
+The National Institute of Standards and Technology (NIST) defines cloud computing as “a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g. networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction” [8].
+B. Furht describes cloud computing as “a new style of computing in which dynamically scalable and often virtualized resources are provided as a service over the Internet” [9].
+G. Yuvraj and R. Vijay propose a new definition of cloud computing: “Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms, and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This pool of resources is typically exploited by a pay- per-use model in which guarantees are offered by the Infrastructure Provider by means of customized SLAs.” [10].
+    • Business Intelligence
+Gartner defines business intelligence as “an umbrella term that includes the applications, infrastructure, and tools, and best practices that enable access to and analysis of information to improve and optimize decisions and performance” [11].
+Moss, L. T., and Atre, S. define it as follows: “BI is neither a product nor a system. It is an architecture and a collection of integrated operational as well as decision-support applications and databases that provide the business community easy access to business data” [12].
+B. Patrick and C. Bob define business intelligence as “getting the right information, to the right decision makers, at the right time” [11]. It provides businesses with a solution to access and analyze data sources and get useful information to make informed and intelligent business decisions [3]. 
+    • Cloud Business Intelligence
+Cloud BI is a revolutionary concept of delivering business intelligence capabilities as a service using a cloud-based architecture that comes at a lower cost yet has faster deployment and flexibility [12]. ”Software as a Service business intelligence (SaaS BI) is a delivery model for business intelligence in which applications are typically deployed outside of a company’s firewall at a hosted location and accessed by an end user with a secure Internet connection.” [13].
+        2.3 History of Business Intelligence
+In a 1958 article, IBM researcher Hans Peter Luhn used the term business intelligence. He defined intelligence as: “the ability to apprehend the interrelationships of presented facts in such a way as to guide action towards a desired goal.” [14]. Business Intelligence was born in the early 90s to help organizations in analyzing data in order to understand the situation of their business and to make better decisions. In the mid-90s, BI became an important topic for the academic world, and ten years of research managed to transform a bundle of naive techniques into a well-founded approach to information extraction and processing [15].
+        2.4 Why is BI is critical to Business Decision Makers
+The problems that face organizations without BI solutions:
+    • Generating reports takes a lot of time and effort and requires examining unstructured data like working on spreadsheets and text files.
+    • Lack of consistency and accuracy of the manually generated reports.
+    • Including and relating different types of data manually into one single report is very prone to errors, especially if data relates to different departments.
+    • An organization’s data can only be accessed via individual communication, which may lead to inflexibility and confusion.
+BI Solutions can provide the following features: 
+    • Automating reports and solution generation, saving time, effort and reducing human errors.
+    • Giving the ability to build and run complex reports and make strategic decisions.
+    • Extracting data from multiple sources and formats, and generating reports easily at any time when needed in a single informative view.
+    • Tracking an organization’s revenue and plan for future growth. 
+    • Tracking an organization’s progress and identifying areas that need further enhancement by analyzing historical data.
+    • Finding opportunities to make the organization better by analyzing the current and future needs, and helping in setting realistic goals for the organization.
+    • Reducing wasted time and resources spent in correcting wrong manual reports and decisions made based on wrong data.
+    • Helping organizations to take advantage of trends and new opportunities as they come up, and making accurate predictions about where the business is going.
+    • Getting more visibility on organizational behavior and turning that into valuable knowledge.
+    • Improving an organization’s decision making by building a big informative picture of the existing data.
+
+        2.5 Problems in traditional BI
+    • Cost: Organizations need to pay for hardware, maintenance, software licensing and installation, which are very expensive.  
+    • Setup: To run the BI application, the organization has to set up software and system platforms that could be complex.
+    • Usability: Most traditional BI applications are too difficult for most users to operate.
+    • Mobile Accessibility: Traditional BI has limited access via the browsers running on mobile devices.
+    • Reporting: Traditional BI tools are not designed for cooperative reporting; cooperation can only be obtained by emailing the reports via the organization managers then starting a discussion over mail threads. This could cause redundant data and conflict in decisions.
+    • Feedback: With traditional BI, it is difficult to measure the usability or conduct effective auditing.
+
+        2.6 Using BI as a Service
+Gartner research [16] mentions some considerations that must be taken into account when deciding to use BI as a service. Firstly, the organization needs to know whether there is a predefined BI as a service that fits its requirements or whether it will need some customization. When the service contract has expired, the organization has to make the decision about signing another rental contract or having the BI application shut off. Also, there are some hidden fees that could be added to the service offering, such as fees for additional information sources or fees for integration services to third-party applications. Most of BI as a service applications are hosted applications, which means data will not be on-site. This implies that the organization needs to know its clients’ concerns, as they might have serious concerns or contractual terms about storing their information on a third-party server. The organization has to define clear process integrity that ensures that the business process delivers the expected outcome. Since most of the business processes reside outside the organization, ensuring process integrity will become more difficult. Finally, the outages of the internet must be taken into account because, if the internet is down with a hosted BI as a service solution, the application may also be down.
+        2.7 BI Phases
+    • Collecting data
+The first and most important stage in Business Intelligence is collecting data from business data sources. Organizations have a lot of data stored in various databases across all their departments, which may seem unrelated.
+    • Convert business data to information
+Business intelligence is responsible for gathering and converting the data into information and helping the decision makers to find the important pieces of information and the relationships between them.
+    • Linking databases
+Data is integrated and linked from one or more disparate sources in the data warehouse. Data warehouses store current as well as historical data. Often BI applications use data gathered from a data warehouse; however, not all business intelligence applications require a data warehouse.
+    • Performing Queries
+Organizations can make a good business analysis based on multilayer queries. With the queries results, the organization can know its business needs and can plan for future growth.
+    • Reports creation
+The final step is acting on the collected data, and deciding how to represent it to the organization’s managers. Representing data through reports enables decision makers to see the big picture of their business needs and make better decisions.
+        2.8 BI Components
+All business intelligence systems require specific components to produce business intelligence [17]. Some of these components are data warehouses, ETL (extract, transform, and load, three database functions that are combined into one tool to pull data out of one database and place it into another database) tools, multidimensional analysis, data mining, and visualization [18].
+            2.8.1 Data Warehouses
+A data warehouse is a database used for reporting and data analysis. It is a central repository of data which is created by integrating data from one or more disparate sources. Data warehouses are used for creating trending reports for senior management reports, such as annual and quarterly comparisons [19].
+
+
+            2.8.2 ETL tools
+ETL tools and processes are responsible for the extraction of data from one or many source systems, as they transform data from many different formats into a common format and then load that data into a data warehouse [17].
+            2.8.3 Multidimensional Analysis
+OLAP, Online Analytical Processing, is an example of multidimensional analysis. It allows users to analyze database information from multiple database systems at one time [20]. While relational databases are considered to be two-dimensional, OLAP data is multidimensional, which means that it enables users to analyze multidimensional data interactively from multiple perspectives.
+            2.8.4 Data mining
+Data mining techniques are designed to identify relationships and rules within a data warehouse, and then create a report of these relationships and rules [17].
+            2.8.5 Visualization
+It is concerned with presenting data in a pictorial or graphical format [21, 22]. The main goal of data visualization is to communicate information clearly and effectively through the graphical presentation. As more and more data is collected and analyzed, decision makers at all levels welcome it; data visualization software enables them to see analytical results presented visually, communicate concepts and hypotheses to others, and even predict the future [21]. 
+        2.9 Business Intelligence Architecture
+The basic architecture needed to run a business intelligence solution in the cloud is illustrated in Fig 1 [10]. The lower layers are formed by hardware and software systems. The minimum elements that have to be offered by the cloud computing provider are:
+Hardware: This refers to processing, storage, and networks. An important aspect is the processing speed of the hardware on which the data will be physically stored.
+Software: This refers to the operating systems and drivers required to handle the hardware.
+Data integration: This refers to the tools needed to perform the ETL and data cleansing processes. 
+Database: This refers to the relational or multidimensional database systems that contain the data. 
+Data warehousing tools: They are the set of applications that allow the creation and maintenance of the data warehouse. 
+BI tools: They are the set of front-end applications that read and analyze data that has been previously stored in a data warehouse.
+
+Fig 1: BI on the Cloud Architecture
+        2.10 Benefits of Business Intelligence on the Cloud
+There are many benefits of Business Intelligence on the Cloud. Listed below are some of its benefits.
+    • Lower Cost: In BI on the cloud, you only pay for what you need, which reduces the total cost of your BI system through reducing overhead resources. The cloud also reduces maintenance and administration costs.
+    • Scalability: Cloud BI systems have greater scalability than hosting and operating them locally. It enables the organization to react faster and more efficiently to the business needs, making it easier to upscale or downscale the needed resources.
+    • Flexibility: Since Cloud BI systems are not dependent on local hardware resources, they provide more flexibility to the users. Users can access analyzed information and reports anytime and from anywhere.
+    • Disaster recovery: Cloud systems provide the ability to back up data offsite in multiple locations, which allows for disaster recovery. This makes the cloud BI solution more reliable than the on-site BI solution.
+        2.11  Challenges of Business Intelligence on the Cloud
+However, while there are many benefits of using cloud-based business intelligence, there are also many risks. The following is a discussion of the cloud-based BI challenges.
+    • Security: Concerning the risks of Cloud Computing integration, approximately 75% of the Chief Information Officers and IT specialists consider security as the number one risk [5]. With cloud computing, data is stored and accessed via the internet. For some businesses, it is essential to keep the data on the premises as their data is confidential. There are several solutions to secure data including encryption, but it is the organization’s responsibility to encrypt the data appropriately on the cloud. Although the virtualization process is essential in any cloud technology, it might cause highly technical security breaches as the data will be stored forever on virtual hardware even when its index is deleted [6].
+    • Data Recovery: Since the data is saved in the cloud, there will be a probability of data violation, the recovery process will be difficult, and it will take a long time due to dependence on third parties.
+    • Availability: The cloud BI availability depends on the third party’s server availability. If the server is down, the cloud BI users could lose control of their data.
+    • Incompatibility: One of the most important features of BI is the ability to import and export data from various data sources to be reused with other enterprise applications. The incompatibility with other enterprise applications can occur because of the separation of BI tools from other departments of the organization.
+    • Challenges of data transfer: If an organization has a lot of data, moving it over the internet in a reasonable time will be a challenge. If the network is slow, moving data will take a lot of time. The organization also may have some concerns about the confidentiality of its data, so the process of moving data needs to be more secure.
+    • Performance: If storage resources are separate from server resources, there may be considerable latency in accessing data, especially when accessing large amounts of data [10].
+    • Choosing the right vendor: The organization needs to know more about the vendor’s offerings and choose the most suitable one for its business. This process may be difficult as there are many cloud BI vendors with many offers.
+    • Total Cost: It is difficult to calculate the whole budget of the needed resources as their costs are variable.
+        2.12 Comparison between Public and Private Cloud for BI
+To make the best decision for business, the differences between public and private cloud need to be clarified. Table 1 shows the strong and weak points in both of them.
+Features
+Public Cloud
+Private Cloud
+Dedication
+Shared
+Dedicated
+Pricing
+Variable (Pay per use)
+Fixed
+Uses
+Variable or low workload
+High workload
+Control
+Low
+High 
+Security
+Low 
+High 
+Performance
+Low 
+High 
+Scalability
+Yes, servers can be automatically scaled according to the workload
+Yes, servers and storage can be added and scaled based on need
+Maintenance
+No maintenance
+IT expertise needed for maintenance
+Time saving
+Yes 
+No 
+
+Table 1: Public vs. Private Cloud
+Public cloud is a shared cloud, so a careful choice is required to avoid the noisy neighbors’ effect from sharing. In public cloud, a pay-as-you-go model can be used, which means you pay only for what you need. This is preferred for variable or low workload business like development and testing websites or pay-per-use applications. In public cloud, organizations have little control over their resources as all the resources will be on the cloud not on-site. Security is an outstanding question in cloud systems especially in the public shared cloud because all the data is stored and accessed via the internet. Public cloud does not require maintenance or need time changing or updating the software, because the software is not on-site and because the cloud provider is responsible for it. This means that internal IT employees are not required for maintaining the servers, which translates into saving time and resources.
+There are many Cloud service providers (such as Amazon, Google, Informatica, etc.). Amazon, GoGrid, Google, Sun Microsystems, and Rackspace do not provide Cloud BI; Informatica provides only data integration of BI in Cloud using Amazon EC2 cloud; IBM has private BI Cloud called Blue Insight; RightScale provides BI Cloud using data processing and business intelligence tools, partnering with database firm Vertica, open source business intelligence maker, Jaspersoft, and data integration specialist, Talend. [23].
+Here is a comparison between BI cloud providers with their features [24]:
+RightScale: It is a public BI cloud, which means that it is publically available not just to their organization. It is not open source which means that the source code of BI cloud is not available. It is a full BI cloud which means that all functions of Business Intelligence are addressed. Common functions of business intelligence technologies are reporting, online analytical processing, analytics, benchmarking, predictive analytics and data mining. The data management technique that is used by it is Specialized Analytic Databases. It does not support forecasting; however, it is scalable and flexible.
+IBM (Blue Insight): It is a private BI cloud and is not open source. The data management technique that is used by it has more than a petabyte of data storage. It not only supports forecasting, but it is also scalable and flexible.
+Salesforce.com (Sales Cloud 2): It is a public BI cloud and is not open source. The data management technique it uses is Automated Data Management. It supports forecasting but it is not flexible, and it has low scalability.
+Salesforce.com (Service Cloud 2): It is a public BI cloud and is not an open source. It is not using any data management technique. It not only supports forecasting, but it is also not flexible, and it has low scalability.
+Informatica: It is a public BI cloud and is not open source. The data management technique that is used by it is Data Migration, Replication, and Archiving. It not only supports forecasting but it is also not flexible, and it has low scalability.
+This comparison concludes that RightScale BI Cloud is better among available Public BI Clouds whereas Private BI Cloud has been implemented only by IBM [24].
+
+
+
+
+
+
+
+
+
+
+
+Chapter three: Collaborative Business Intelligence
+
+    1. 
+    2. 
+    3. 
+        3.1. Introduction
+Nowadays, information is considered the most important asset for most of the organizations to make business decisions. Business Intelligence (BI) can give the decision makers useful information from a group of data and technologies, to raise the company's productivity and profitability [25]. BI is now considered one of the top-most priorities of many companies [26], and the users need to have a system that provides them with the desired information from anywhere and to be integrated on the fly [27]. One of these systems is Collaborative Business Intelligence. In collaborative business intelligence, the decisions can be obtained not only from the local information but also from the information outside the company boundaries.
+Collaboration is how to work together to achieve certain goals. Undoubtedly, companies now consider the collaboration as one of the most important means for increasing efficiency and competitiveness to be able to cope with the changing market [27]. The organizations should understand their business processes, manage their operations efficiently, and know who are their customers and the customer demands to be successful. Improving the future of an organization depends not only on getting high-quality data but also on making analysis, reports, forecasts and real-time data management [25].
+One of the important technologies these days too is cloud computing. The main advantage of the cloud is providing companies with business agility that helps them to deal with the changing business need in an effective way [10]. Cloud computing has started to merge with a number of current industries, including business intelligence. Organizations tend to use and improve business intelligence applications based on cloud computing, as using traditional BI applications doesn't fit most of the organizations needs [28].
+Collaborative Business Intelligence (CBI) on the cloud is a new concept that will integrate the benefits of the cloud and the benefits of collaboration in the collaborative BI tools. Organizations need to focus on improving their future by controlling the market and taking the best decisions based on inside and outside information; that’s what it is supposed to get from CBI on the cloud. Now, there is a framework called Business Intelligence Network that applies the idea of collaborative BI between different organizations.
+        3.2. Why Collaboration is important to your Business
+Collaboration in the working environment in all its types can be useful to your company [29]. Merging more than one experience, business and infrastructure will result in getting more effective problem solving [26]. Sharing information and knowledge using collaborative platforms helps employees to interact and benefit from each other [30] and help the organizations to make better decisions and enhance their future development. Collaboration makes your company become a continuous learning organization, as each time the company collaborates with others, even if they are different in specialty or business, it will improve and stretch the limits of the organization [26].
+        3.3. The Role of Collaboration in the Business Environment
+Wayne Eckerson assesses the role of collaboration in the BI environment and surveys BI experts about their interest in collaborative abilities [31].
+Key findings
+The role of collaboration in the BI environment
+Attitudes
+87% of BI experts think that collaboration tools can enhance analysis and decision-making process.
+Product selection criteria
+More than have of BI experts decide to take collaboration features into account when buying their next BI tools, however up to 16% have already chosen their current BI tools based on its collaborative abilities.
+Usage
+25% of Collaborative BI stakeholders don't benefit from the collaboration capabilities in the BI systems.
+Traditional approaches
+The common types of collaboration are gatherings, emails, and telephone calls.
+Favourite features
+There are some features that BI experts are looking for in Collaborative BI like annotations with sixty-seven percent, threaded discussion with sixty-two percent and shared workspaces with sixty percent.
+Table 2: The Role of Collaboration in the Business Environment
+        3.4. Collaboration and Business Intelligence
+Traditional business intelligence systems are mainly serving individual companies and do not suppose to run over networks so they cannot support inter-company cooperation [32]. Collaborative Business Intelligence is a combination of BI software and collaboration tools like social and web 2 technologies to enhance the decision-making process [33].
+The main goal of using BI systems is getting the needed information for the appropriate decision makers at the right time so they can make more efficient decisions. Not only the people at the top management are responsible for the decision making but also there are many decision makers at all levels of the organization that may have valuable information for the decision-making process [34]. Collaborative BI can be achieved efficiently using data warehouse integration techniques [27]. Data warehouse is implemented by integrating data from different data sources, and it is used for data reporting, analysis, and it is considered an important aspect of business intelligence environment [19][35].
+        3.5. Data Integration Techniques
+Data warehouses have many techniques to integrate data from different data sources. Rizzi S. discussed three categories of data warehouse integration approaches [27]:
+    • Warehousing approaches, Warehousing is responsible for data cleaning and integration [35]. In these approaches, the integrated data need to be stored physically in the data warehouse using a global schema that has the main business functions of the organization. These approaches assumed that all integrated components have the same schema or there is a global schema given, that's why it supports the static scenarios only. Warehousing approaches are convenient to the organizations that have the same business or share their business view with each other.
+    • Federated approach, integrate data to meet any new change requests or business needs using all possible resources [36]. In this approach, the data warehouses integrated virtually that gives a clear access to all functions of the organization. The integrated data does not need to be stored physically in the data warehouse that makes the query management process more complex but enables more flexible architectures where new component data warehouses can be dynamically inserted.  
+    • Peer-to-Peer approach, different from the previous approaches as it does not need a global schema to integrate between data warehouses. In this approach, the data is distributed over different peers rather than centralized. Each peer can add, edit or delete its information and can join or leave the system at any time. Mapping the local schema at each peer is considered one of the challenges of this approach.
+        3.6. Business Intelligence Network
+Golfarelli M., Mandreoli F., Penzo W., Rizzi S. and Turricchia, E. described a framework called Business Intelligence Network (BIN) with its benefits and challenges in [32][37]. BINs collaborate between companies through networks using business intelligence capabilities. However their different location or business specialty of each company, they can have mutual benefits by working in agreed upon way. A BIN consists of a network of peers; each peer represents a participating company. Each peer has its BI platform that represents the company functionalities and shares business information to support the decision-making process. Since the BIN based on Peer-to-Peer approach, it does not rely on a shared schema and each peer can set or edit the shared information and its own schema. The BIN architecture has many advantages like decentralization and scalability to fit with different business functions with unknown number of peers and user workload that can change at any time.
+            3.6.1. BIN Architecture
+The BIN architecture illustrated in Fig 2 [37] shows its main components:
+    • User interface: This is a web-based component that is responsible for communicating with users. Using this interface, users can send OLAP queries to the local multidimensional schema and get the required results.
+    • Query Handler: This component is responsible for receiving the OLAP query from the user interface or from the other peers on the network and then sending it to the OLAP adapter to get an answer locally. Finally, reformulates the answers and send them to the asked peers.
+    • Data Handler: This component is responsible for collecting the query results from the OLAP adapter and the source peers, integrates them then sends them back to the user interface if the query formulation done locally. If the query formulation done on other peers, the data handler will be responsible for collecting the query results from the OLAP adapter and send them back to the target peer.
+    • OLAP Adapter: It is responsible for adapting queries comes from the query handler to the querying interface.
+    • Multidimensional Engine: This component is responsible for managing the local data warehouse depending on the multidimensional schema that shows the business view of each peer and giving query answering functionalities.
+
+Fig 2: BIN Architecture
+            5.2.1. How BIN work
+The main idea of a BIN is helping users to benefit from the business information distributed over the network. BIN works as follows:
+Firstly, the user accesses the local multidimensional schema that exposed by her peer p for formulating OLAP query q. After processing the query q locally on the data warehouse of peer p, q will be forwarded to the network. The query q will be processed locally by each peer's data warehouse and get the results to p. Finally, the user gets the integrated.
+            5.2.2. The Benefits and Challenges of the BIN Approach
+The main advantages of the BIN are:
+    • Helping to build relationships between organizations even if they are different in location and business context.
+    • Managing processes between the collaborated companies in an efficient way with securing the shared management information.
+    • Enabling companies to monitor and control the market changes especially if the collaborated companies belong to the same market and share some business information that helps in making better decisions.
+Although there are many benefits of BIN approach, there are some open issues like:
+    • Answering the user query needs to be done through a unified and integrated view of the different business information.
+    • Because the BIN is a network of heterogeneous peers with different schemas, the user could get the result of his query that does not comply with his schema.
+    • The BIN need to have techniques for assuring the data source and quality to give the users the information that can rely on.
+    • The BIN needs advanced techniques for security in order to secure the information of the participant organizations as well as approaches for keeping the undesired information away.
+    • The effort that needed to done to run the queries on each peer and the number of exchanged messages to get the queries results could be very resource consuming.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter Four: Collaborative Business Intelligence on the Cloud
+4.1 Introduction
+We are introducing a framework called collaborative business intelligence on the cloud (CBIC). In the CBIC framework, the organisation can share data with other companies and organisations so that the decision-making process can be extended beyond the enterprise boundaries.
+
+The idea of CBIC framework is enabling users to connect with other organisations via the BI system on the cloud and get their results based on their own data and other connected organisations data.
+
+The CBIC will be exposed as a cloud service, where organisations (we will call them subscribers) can register their data warehouses. Each organisation will have the option to either add its schemata as public or private. The data in the public schemas will be shared anonymously with other organisations, while the data in the private schemata can only be used by the organisation that owns it.
+
+The following is a typical interaction sequence:
+    1. A user accesses the front end interface, provided by the cloud services, to formulate and submit BI queries.
+    2. The CBIC system forwards the query to all the subscribed organisations, including the user’s organisation.
+    3. Each subscriber will then process the query locally on its data warehouse and returns the data to the CBIC system.
+    4. The CBIC system finally integrates the returned results and returns it to the user.
+
+4.2 The Collaborative BI on the Cloud Architecture
+
+Fig 3: CBIC Architecture 
+CBIC architecture components are:
+    1. User Interface: A web-based component that manages the interaction with users and explores query results.
+    2. Query Orchestrator: This layer is responsible for reading the semantic mapping of the subscribed data warehouses schemata and identifying the connected subscribers with the system.  
+    3. Query Re-formulator: This component receives the query from the Query Orchestrator and reformulates it according to the identified mapping of each subscriber, it then returns the reformulated query to the Query Orchestration
+    4. Multidimensional Engine: It provides MDX-like query answering functionalities.
+
+
+
+
+
+

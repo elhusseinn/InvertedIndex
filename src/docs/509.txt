@@ -1,0 +1,1376 @@
+Chapter 1
+
+1.1 Introduction
+
+The early developed computer applications were built without using any explicit methodologies. The focus was on how to solve technical programs (programming aspects). Thus, the developers focus on learning computer technologies rather than understanding the business context of the developed system. As time goes, the developed systems become more complex and the need of a methodology became a vital task to organize and manage the development process. 
+A methodology was defined as a set of stages, procedures, rules, techniques, tools, documentation, management aspects, and training used to develop a system. The main objective of using a methodology is to produce better product using better development process. Each organization uses the methodology that suits its goals. Some use a single methodology and others blend two or more methodologies while others build their own methodology. 
+Through time, new challenges have been invoked on the development process. For example, the requirements are changing all the time especially with using the internet, the requirements are not well defined and also the development time becomes a critical point for customers. These challenges caused a debate on whether to use a methodology or not, and if yes, which methodology can cope with these new requirements.          
+Agile methodologies have caught the attention of many software engineers and researchers. Agile – denoting “the quality of being agile; readiness for motion; nimbleness, activity, dexterity in motion” (http://dictionary.oed.com). This is especially the case with the rapidly growing and volatile Internet software industry.
+In general agile development is characterized by four attributes: 
+    • Incremental: Agile focuses on producing a complete working release within a certain interval time.
+    • Cooperative: Agile depends on customer collaboration to achieve better customer satisfaction. 
+    • Straightforward: Agile methodology is easy to learn, to use and to modify accordingly to the requirements. 
+    • Adaptive: The core of any agile methodology is the ability to adapt react to last moment changes.
+Because of these characteristics, Agile methodologies are found suitabe for developing web-based information system applications which are characterized with undefined and volatile requirements. 
+An important research field in agile is how to define requirements and how to represent them to customers to justify. The best way is developing the actual GUI itself. In fact, the customers can not express their requirements but can judge on what they use whether that they want or not. The GUI is the gate through which the customers accept the developed release or not. Thus, generating the actual GUI at early stage of the development to get early customer feedback becomes an attractive research problem field.     
+
+1.2 Problem Definition
+
+GUI is an important part of most of software applications. GUI code is about half the code of the whole system. 
+Defects in GUI can give bad impression for the whole system. This is because the customers judge the applications through what they see from using the application. Thus if the application does not act as they required then the team has failed in meeting their requirements, even if the application logic is correct. 
+Also, customers do not know totally what their requirements are. Thus the team usually uses techniques to explore these requirements like UML which are difficult to be understood by customers or case stories which give only general view over the requirements. 
+One way to reduce GUI defects and get better understanding of the customers’ requirements is to express the requirements through building the GUI itself which is the thing the customers can understand in the development process. However, the team usually delays the development of the GUI to the end which will lead to the late customer feedback and in turn GUI defects. Thus building the GUI at the beginning of the development will help in getting early customer feedback on the application. This early feedback will help in exploring the actual customers’ requirements and in turn earlier detection of GUI defects. This will lead at the end in reducing the development time and cost.
+
+1.3 Objectives
+
+In order to address the importance of early development of GUI in agile development, a new agile practice is required to address the aspects of developing the GUI at early stages. This practice should:
+    • Ensure customer collaboration to build the required GUI.
+    • Help in developing the actual GUI code, i.e. not only design but develop the GUI. 
+    • Show how the GUI will actually behave according to the customer interaction with the GUI.
+    • Employ a mechanism of how to adapt changes posed by the customers
+Also, another important point is how to automate the process of the practice to simplify its usage. The automation process should:
+    • Simplify the analyst job for designing the user interface.
+    • Help the developer to focus on what will be developed.
+    • Support the adoption of the customer changes.
+    • Ensure consistency between all pages of the developed application.
+    • Rapid the process of developing the GUI at early stage of the development.
+
+1.4 Proposed Solution
+This research focuses on how to develop GUI at early stage of the development and use the developed GUI as a detection of the customers’ requirements. That is why we propose a new agile practice that aims at developing the GUI at the beginning of the release. The practice is called “Early User Interface Development” (EUID). It supports the agile in that it allows getting customer feedback earlier and faster, i.e. getting better understanding of the customers’ requirements, thus less future changes and faster development. According to the EUID practice, each page is represented by two files:
+    • GUI Structure representing the static structure of the page (HTML form).
+    • GUI Behavior Description File representing how the page should act according to the action fired by the users (XML form).
+Another objective of the research is how to achieve consistency between pages of the same application and consistency in developing the GUI.  Accordingly, each page is defined as a composition of several components. Component is a group of controls that serve one objective for example “Search component” which consists of several controls to search by the received data from the customer. We have defined four main components: Search component, One Record component, Multi Record component and Navigator component. The concept hat each page is defined b its components allows that all pages are constructed in the same way, which in return achieve consistency.
+To simplify the EUID process while maintaining consistency we have built a prototype tool that aims automating the generation of the two outputs of the EUID practice. The tool takes the analyst through step-by-step instructions to generate the EUID outputs. The first step is to define the components for the current page being developed. Then, the analyst will specify the controls in each component. This will generate the GUI structure file. The next step is to define, for each component the events that will fire from the customer interaction with the interface. Each event is defined by the action itself that should be implanted and the input and the output controls used by that action. The definition of all actions for all components for the corresponding page constructs the GUI Behavior Description file.
+1.5 Thesis Organization
+
+	The structure of this thesis is as follows: Chapter 2 starts with a survey on methodologies and which are the best for web based information systems and then gives an introduction of the importance of GUI and the need of automating the generation of GUI. Chapter 3 is a survey on agile methodologies including the agile values and principles. Five agile methodologies are described and for each some practices are discussed. Chapter 4 describes the proposed agile “Early User Interface Development” practice and then describes the tool architecture that aims at simplifying the practice process and achieve consistency. Chapter 5 illustrates the EUID practice practically and shows by two case studies the feasibility of the proposed tool. Chapter 6 concludes with an overview of the interesting contributions of this work and our plans for future research.
+
+
+Chapter 2: Background on Methodologies and GUI
+
+2.1 Methodologies
+
+During the year 1946, the ENIAC helped programming to become an activity of intellect and economy.  Ever since that time, many have prioritized the creation of software programs that can be relied on as much as the computer hardware they are being used with.  The manufacturing of software is different from most products, since the programs must undergo near-constant upgrades and redesigning.  This is due to the fact that the computer is always changing and utilizing new applications.  When these needs are changed and newly developed, the software must follow closely to be able to meet the demands.  During the last fifty years, incredible advances in technology have made it possible for trustworthy software to be built reliably.  The leading trusted models in software developing will be reviewed here.
+
+
+2.1.1  Build-and-Fix Model
+
+One of the models that has been constructed with many of the themes from early hardware developing is the build-and-fix method.  Although this model is tried-and-true, its success will ultimately depend on those customers who depend completely on your products and wait with much faith and patience.  This goes for software as well.  However, in this method, the quality of your product will not actually be scrutinized.  Only certain issues with the development are criticized for improvement.  Another down side to this method is the lack of ability to return feedback to the designers with constructive criticism.  Any corrections that may arise are simply returned into the market as removal of bugs, service packs, or even a new upgrade of the product as a form of damage control.  Therefore, there is very little room for true learning and improvement in the developing process.  It is due to this fact that the build-and-fix model is one of reaction only.  By the elevated standards of today's technology, the build-and-fix method is actually not one of development after all.  Figure 2.1 will demonstrate.
+
+
+
+Figure 2.1: Build-and-Fix Model.
+
+2.1.2  Waterfall Model
+
+During the 1970s, Win Royce at Lockheed brought the classic waterfall method into the picture.  As far as disciplined engineering, this method was considered an innovation in developing software.  Figure 2.2 shows the single-level feedback routes.  They were not included in the original work, but were subsequently added on to the later upgrades.  This model would satisfy if a few basic criteria were met.  First, if the required elements in the design were perfected prior to manufacturing the design, implementing the program, and testing the program.  Second, if, during the initial tests, no problems were detected in the coding before the product was put in the hands of the users.  Finally, the method could be satisfactory if the users themselves did not have ever-changing needs.  Unfortunately, none of the aforementioned criteria is met.
+
+Situations where most appropriate: 
+1. Projects that are costly, time-consuming and labor intensive. 
+2. Projects which are clearly laid out in terms of objective and solution. 
+3. Projects in which there is very little emphasis on immediately implementing the design. 
+4. Projects in which each requirement has the stability to remain unchanging for the duration of its developments. 
+5. Projects in which the target users will be familiar with the product's basic usage and application. 
+6. Projects in which the members involved may not be experienced. 
+7. Projects which require approval at strictly-observed intervals during production. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.2: Waterfall Model.
+
+2.1.3  Incremental Model
+
+In the incremental method, it is recognized that the steps taken during the software's development are not hidden.  Rather, Build 0, the prototype, is worked on to improve its functions.  It will then become Build 1.  Build 1 will become Build 2 and so forth.  The Builds are only prototypes.  Therefore, they will not be given to the public.  They are only mock-ups of the systems in their various levels of completion and functioning.  If the creators are not prepared to make these builds, or if their program fails testing, it is a sign of a serious problem.  As seen in Figure 2.3, the incremental method is simply a variation on methods such as the waterfall and rapid prototype methods.  However, there is one advantage to this method.  This advantage is that the method is flexible.  This is an invaluable characteristic, as it can respond quickly to any change needed as per the criticism received during its development.  Yet another advantage is the fact that the programmers can review small areas of the project at one time.  The negative aspect to this method is that the production can be limited.  The learning and research required for such a method can become a product which exceeds the allotted time and money limits.  Even worse, it may never reach completion at all.  Unfortunately, this happens with increasing frequency.  This is due to the fact that each program in development is a new product which has never been done before, or at least never undertaken by the particular programmers.  However, if the creators are careful to maintain good management skills and focus on the requirements, this stumbling block does not necessarily need to be an obstruction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.3: Incremental Model.
+
+Situations where most appropriate:
+      1. Projects of considerable size in which the criteria are not completely grasped, or in which the requirements are subject to changes in expectation, budget or technology itself.  
+2. Event-centered and Web Information Systems (WIS).
+3. Projects in which the application must be highly interactive 
+
+2.1.4  Rapid Prototyping Model 
+Typically utilized for developing one-off programs, rapid prototyping is a common method that is based on the pilot plant of a chemical engineer.  In recent times, the method has been employed to prototype large systems in two variations.  The first variation is the throwaway model.  The second is the operational model, a system that is part of the incremental method.  In these processes, programs which function in some typical way for the end product will be developed.  With the throwaway method, the idea is to test the implementing methods, languages and acceptability by the target users.  If the result is positive, the prototype might become the model for the final product.  However, it is typically just a vehicle for means of arriving at a secure milestone in terms of function and development.  This is shown in Figure 2.4.  From this point, the rest of the processes are much like the waterfall method.  There is one large difference between this method and the waterfall method, the difference being that it must be conducted as quickly as possible.  This is why the method is termed rapid prototyping.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.4: Rapid Prototyping Model.
+
+Situations where most appropriate: 
+1. Projects of smaller size and duration.  
+         2. Projects in which all of the requirements are well-defined and focused.
+3. Projects in which the functioning components are clear and visible in the users' interface. 
+4. Projects with system requirements that are uncertain.
+   5. Projects with existing data (whether complete or partial) and data reports.
+  6. Projects in which the team of developers is well-equipped to make crucial decisions with little reliance on a superior's input. 
+
+2.1.5  Spiral Model
+
+Produced with the help of Doctor Barry Boehm from TRW, the spiral method is just another enhanced version of the waterfall and rapid prototyping models.  However, in the spiral method, each stage in the process is preceded by a risk analysis.  Figure 2.5 will demonstrate this.  The spiral method has been used with fair success in internally developing large systems.  It has proved to be especially helpful if the goal is to reuse the software, and also when there are designated qualities involved which must be incorporated.  Its success is partially dependent upon accurate risk analysis during the entire developing process, and being able to control all factors completely as well as reduce all exogenous influence.  This method will also add feedback to the program's early stages, much like the waterfall method's various versions.  This method has been used for years in developing software programs and similar projects, so it has been well documented by Doctor Boehm and other users.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.5: Spiral Model.
+
+Situations where most appropriate:
+1. Real time systems or projects in which safety is crucial. 
+2. Avoiding unnecessary risks is highly prioritized.  
+3. Minimal consumption of resources is not a primary concern.  
+4. A project in which the manager has all necessary experience and skills. 
+5. A project in which it is crucial to have exacting accuracy.  
+6. Prioritizing implementation rather than functioning, which is to be added subsequently.
+
+2.1.6  Agile Methodoloy
+
+In the agile method of developing software, risks are reduced by producing the program in small time boxes, which are referred to as iterations.  These iterations are generally made to last up to one month.  Each of these iterations represents a small program.  Each one contains specific tasks to finish a step of a program's functionality. After each iteration, the development team will re-evaluate their priorities within the program.  
+A smaller development team will typically work as closely as possible with their clients, in order to resolve any potential problems easily.  The projects can be broken down into a series of iterations, with each one reviewed and completely detailed by the client.  After this process, a completed, working program can be released, and the new sets of iterations given.  This will continue on until completion, as shown by Figure 2.6.
+
+
+
+
+
+
+
+
+
+
+Figure 2.6: Agile Model.
+
+Situations where most appropriate:
+1. A project of medium size in which the requirements may change frequently. 
+2. The clients and targeted users will participate actively in the process of development. 
+3. Changes made to the requirements are easily handled. 
+    4. Developing the program is the team's main focus, rather than documenting the process and working on the models. 
+     5. The managing developers and team members are skilled and experienced. 
+
+2.2 Web Development Methodologies
+
+In the world of Internet developing, some significant differences have been found by experience between Internet applications and those from traditional softwares.  Various experts, including Mendes and Mosley, see this to be a new discipline for exploration.  However, some experts such as Kappel believe it to be just a new branch of engineering.  They all tend to concur, however, that Internet applications do have some of their own distinct qualities rather than just being examples of traditional distributed systems.  The dynamism involved in these modern Internet applications requires for new implementing and production techniques to be put into place. 
+
+2.2.1 Evolution of web application
+
+2.2.1.1 Static web page
+Made widely available during the 1990s, the Internet was first established as a way to consistently and simply obtain information from anywhere.  Its target audience consisted largely of scientists, physicists and other professionals who generated enormous amounts of data and required an easier way to share the information.  The Internet was developed in Geneva, Switzerland by CERN.
+Hypertext was designed to be a simpler way of allowing documents to be accessed and linked together.  The HTTP protocol has been designed in such a way that a client's computer can be allowed to request information from a server's machine, and make these documents accessible to each user of the client's computer.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.7: Static webpage.
+
+In this way, the Internet   was seen by most as an enormous store of data that could give access to a great deal of its users. 
+
+2.2.1.2 Dynamic web page
+Over time, it has been observed by many that the web address thought to be a source of information from the server could actually be a program with the ability to return results to clients.  These days, an address may involve the use of a sophisticated Internet application.
+When an Internet server gets requests for dynamic pages, it will pass them to an application server.  This is a specialized software program which will finish the page.  It will read the page's coding, finish the page as per the coded requirements, and remove the coding from the page.  The results of these actions come in the form of static pages.  A static page will be returned to the Internet server from the application.  From there, it will be sent to the browser which requested the information.  The browser will receive HTML when it loads these pages.
+
+
+
+Figure 2.8: Dynamic webpage.
+
+2.2.1.3 Rich Internet Application (RIA) 
+RIAs, or Rich Internet Applications, describe the cross between traditional desktop and Internet based applications.  With the former application, you will see an interface that is high-powered, intuitive and visually rich.  These qualities all make the experience of use more enriching, pleasant and inviting.  The latter application has a software deployment program which features a greatly extended outreach to anyone who has Internet access.  Rich Internet Applications utilizes the World Wide Web's massive communicating capabilities to provide connection to unmatched accessibility to data and users.  The following diagram will depict the workings of Rich Internet Applications and their methods of combining the best of desktop software programs, the Internet, and communicating technologies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.9: Rich Internet Applications.
+
+    • Comparison between RIA and traditional web application
+
+Table 2.1 shows 7 differences between RIA and traditional web applications.
+
+Table 2.1: Comparison between RIA and traditional web application. 
+Term
+RIA
+Traditional Web Applications
+Assets
+Interaction-Based
+Audio, Graphic, Video, State, Transition, and Effect
+Text-Based
+Text and few pictures
+User Experience
+how can users get more
+What can be provide to users
+Functionality
+Act more as desktop applications
+Poor functionalities
+Client Side
+Take the advantage of the growing power of client machine by installing a browser plug-in on the client side, and executes most of functions locally
+puts heavy workload on the server side while the client side is just a browser to display the final page
+Communication
+synchronous communication method: get the data from the server without the page reload
+synchronous communication method: send a HTTP request to the server, wait for the response back from the server, and refresh the page
+Security
+Poor (Running on client side)
+High (Server side security)
+SEO
+Poor
+Easy: Today’s major search engines are still Text-Driven
+
+
+    • Ajax
+
+RIA can be successfully built with a variety of different technology platforms.  Some of these include Macromedia Flash, Java and Ajax.  An acronym for Asynchronous Javascript and XML, AJAX is constructed with such technology as HTML, Javascript, DHTML and DOM in mind.  The acronym was not widely used until early 2005, although the technological components that AJAX is comprised of have been in use for quite some time.  Some of the more recognizable AJAX applications are Google Gmail and Google Maps.
+   There are a few noticeable differences when using AJAX.  Rather than loading an Internet page at the beginning of a session, browsers will load an AJAX engine.  The engine is written with JavaScript and typically stored in hidden frames.  It will oversee the rendering of the interfaces the users are interacting with and communicate with the servers for the user.  An AJAX engine will allow the interactions with applications to happen asynchronously.  This indicates its independence from the server, ensuring that users will not have to be frustrated with a blank browser and unmoving hourglass.
+   One of the comparisons that can be made between the processes done with traditional methods and AJAX methods is demonstrated in Figure 2.10.
+
+
+
+
+
+
+
+
+
+Figure 2.10: Comparison between traditional web applications (left) and the Ajax (right).
+
+2.2.2 Web Information System methodologies
+
+The Web Information Systems (WIS) are different than the traditional IS. Richard Vidgen 2002 has compared between traditional Information systems and Web Information Systems. Table 2.1 shows the result of this comparison.
+
+Table 2.2: Comparison between Traditional IS and Web IS
+Dimension
+Traditional IS
+Web IS
+Strategy
+The strategic dimension is abstract 
+The strategic dimension is tangible and visible and relates closely to business goals
+User
+The typical user is an employee 
+
+
+
+Users can be trained and consulted directly
+
+
+
+User needs can be understood through work 
+
+
+
+Job satisfaction is a key aim 
+The typical user is a customer who makes payment for goods and services
+
+System Usage is not mandatory and the customer
+use might be mandatory won’t attend training sessions
+
+User needs can be understood through
+studies sales and marketing methods
+
+Customer satisfaction is a key aim
+Design
+The development focus is on the internals of the design: the database, the programmes and 
+architecture (e.g. three-tier) 
+The development focus is on the Web site as a visual artefact. development cycle might start with a mock-up of the user interface
+
+ Most of the recent methods for developing websites tend to focus on the user interfaces.  However, they fail to address various angles of Internet based data systems, according to Howcroft & Carroll (2000).  Typical plan-driven methods show various disadvantages related to software.  The swift, sizable changes and updates to Internet requirements can slow the adaptation of methods which require a strict adherence to planning.  An uncertain understanding of a system's list of requirements can also impede finding a particular item that satisfies the need of a client.  Some problems may never even be detected until the stages of testing.  Plan-driven methods are too rigid, especially when considering the overhead of planning and documenting.  However, Agile methodologies has recently reported successful advancements in the development of software.
+According to a survey held by an Australian company, 
+    • Eighty-eight percent of organizations reported improvements in productivity.
+    • Eighty-four percent of organizations claimed improvements in the quality of their software.
+    • Forty-six percent of responders claimed that their developing costs remained the same when using Agile methodologies, although forty-nine percent stated that their expenses were decreased, some significantly.
+    • Eighty-three percent reported high business satisfaction, many significantly. 
+    • Forty-eight percent reported that the best feature of the agile methodologies was the ability to ‘respond to change rather than follow a predefined plan’.” (Shine Technologies, 2003)
+According to a second survey held by Reifer for thirty-two development organizations, fourteen of them were utilizing Agile for thirty-one projects.  The study's results show that these organizations that used Agile: 
+    • Improvements in productivity reaching about fifteen to twenty-three percent.
+    • Reduced costs of around five to seven percent. 
+    • Time-to-market compression of twenty-five to fifty percent. (Reifer, 2002)
+In addition to this, multiple Egyptian software companies such as Linkdev and Santeon have begun to introduce Agile into their programs. 
+The results are overwhelmingly showing that Agile methodologies can positively effect many aspects of developing software, and more specifically in Internet development. 
+
+2.3 GUI Generation
+
+For applications to enjoy the greatest success, their users need to be able to interact with them smoothly and easily.  A GUI, or graphical user interface, is a type of mechanism that allows users to have simpler interactions with their applications.  Although some reports have cited that about forty-eight percent of application source codes are focused on the interface, other studies have shown that a GUI stands for sixty percent of a program's total source coding..
+   Section 2.3.1 will give a brief overview of the GUI's evolution, while Section 2.3.2 will discuss the best qualities of a GUI.  In the remaining Section, 2.3.3, we will show how important automatic GUI generating is.
+
+2.3.1  GUI History
+
+Early developers of computers thought that GUIs, or graphic user interfaces, were just an unnecessary cost, even though they struggled to keep enough CPU power to conduct routine calculations.  During the 1960s and 1970s, CPU power saw some significant increase, and industrial engineers started studying mainframes' terminal entry programs.  This was done in order to avoid mistakes and optimize entry times.  Airline reservation systems were some of the first to utilize mainframe query protocols.  During this time, the goal of these processes was to pack the largest amount of data possible in the smallest command.  Operators had to be trained to interpret the computer languages mentally.
+  	Toward the end of the 1970s, a number of companies, some of which included IBM and Xerox, started researching what would become the next generation in computing.  Their idea was that more powerful computers could decline in price enough so that individual company members could use them independently.
+During the early 1980s, IBM's computer capable of running DOS emerged as the best-selling machine in computing.  DOS, one of the mainframes' descendants, was cryptic command-line interfaces.  The computer was severely limited in many respects, such as memory access and lack of standard regarding power and graphics.  However, it did see an amount of productivity which helped its unit sales rise into the millions.  Toward the end of the 1980s, Microsoft Corporation and IBM started a collaborative project for developing new graphic user interfaces to be used with IBM computers.  Microsoft was the creator of DOS and its related applications, as well as Macintosh.  However, this joint effort eventually died off.  Microsoft learned much about interfaces from the success of the Macintosh productions.  The company built a set of graphic shells which ran over DOS and mimicked various aspects of the Macintosh GUI.  Completely new graphic operating systems emerged. 
+During the middle of the 1990s, the Internet browser and Linux newly emerged into GUI design.  Internet browsers had extremely portable interfaces, but were limited in various ways, while Linux was a free version of Unix.
+Today, GUI is a crucial component in all applications.  The graphic user interface has lent influence to our generation of computer-literate technicians and communicators.  All computer users rely on this transparent layer.  In addition, GUI has also contributed to the development of an entire new industry of research, publishing and design.
+
+
+2.3.2  Common concepts in good GUIs 
+ 
+There are various similarities existing between good GUIs that have been based on traditional levels of cognitive psychology.  They have been proven with innumerable tests and hours of usage numbering into the billions.  Some of the most important similarities are stated below.  
+    • Consistency: As soon as a list of requirements is put into place for a GUI, it is crucial that different applications use the same method for activating the same feature (external consistency), and the application must share the same method in the same program (internal consistency). 
+ 
+    • Metaphor: Choosing similar real-life processes associated with the applications, such as managing files and applications on the desktop, can help to keep more difficult processes simpler to grasp and operate.  Using sounds, pictures and actions can help to back up the illusion and make it easier to understand. 
+ 
+    • User Centered:  In this situation, users will be in charge of all different levels of interactions.  These actions will be ordered and managed by the users.  The users will select an object for the action to affect, and see the instant result of their action, confirming their updates.  Users will be warned of any potential negative effects stemming from the action.  In an ideal situation, the users will never be wrong and can easily fix any error.  If a question arises within a new application's development, the users need to be the beneficiaries for which they are settled.  The specific needs of the users should always be a priority in development and research.  Users are not typically programmers, and even though they may make mistakes they are still the ones in charge. 
+ 
+    • WYSIWYG: In this situation, every thing can be made visible.  A particular feature may, however, be hidden by users.  For example, a word processor's tabs and settings will be visible until they are manually hidden.  Any item that exists in real life should resemble them.  This is even more important if it is an item which can be printed.  For example, an accountant's invoice. 
+ 
+    • Aesthetics and Environment: As humans, our eyes and brain have arrived at a state of evolution which allows us to find something sensible in the midst of chaos.  Yet, such a process can devour the mind's resources, such as in the case of a disordered screen design that can take a long period of time to grasp and operate.  Data ought to be organized into a simple list or grid system, arranged by importance and type.  Applications should have a pleasant look that will reinforce the idea of the craftsmanship involved in programming applications of the highest quality.  .
+ 
+2.3.4  Automatic GUI Generation 
+
+Well designed GUIs are needed to make programs easier to use. However these programs are difficult and time consuming to develop. Automatic Generation of GUI is one solution to this problem. Automatic Generation of GUI has been an interesting research field. These are some examples of generating GUI automatically. 
+    1. Automatic Generation of GUI from Source Code(2004)
+Programmers need not to specify many aspects of a user interface or cooperate with a GUI designer, but enrich the source code when they realize that a GUI element should be used for user interaction.
+Advantage:
+    • Programmers are not interrupted by GUI designers.
+    • Time to build GUI is reduced.
+Disadvantage:
+    • The absence of GUI designers is a big problem in many cases, as they are responsible to satisfy the customers in terms of GUI.
+    • One task usally is not coded by only one programmer. The contribution of different programmers will result in unconsistent DB.
+
+    2. Automatic Generation of GUI from Usecases(1994)
+Since Use Cases are widely used in the object oriented requirement analysis phase, they can be used to automatically generate a prototype that reflects the different viewpoints of users.
+Advantage:
+    • It helps in producing prototype to the user
+Disadvantage:
+    • It doesn’t simply the development of the system as it still requires building use cases.
+    • If there’s a modification in one of the use cases, the use case must first be modified.
+
+    3. Automatic Generation of GUI from XML(2004)
+Most of Database applications are XML-based Web Content Management System (WCMS) which includes 2 tasks: Defining DB schemas and Building GUI for data maintenance. However in this approach they introduce a technique for converting XML DB schemas into GUI automatically. 
+Advantage: 
+    •    Depending on XML format is a positive point as it’s understood by most of the clients.(javaSwing) 
+    • Building GUI based on DB schemas automatically reduces the effort of doing this manually
+Disadvantage:
+    • It requires to build first DB schemas (XML) 
+
+    4. Automatic Generation of GUI using Haskell templates
+They introduce a form as a GUI part, residing somewhere within a dialog with “OK” and “Cancel” buttons. When a form appears, users start reading and updating existing values; and at the end the user closes the dialog with one of the buttons. 
+Advantages:
+    • It’s a step forward to make Haskell GUI’s more programmers friendly.
+Disadvantages:
+    • It doesn’t reflect the different types of form needed in different application.
+    • The appearance of the generated is rough.
+
+    5. Automatic Generation of GUI using a parser generator
+The goal of this technique is to have consistent layout and behavior for GUI. This is done through factoring GUI (that was manually coded to provide overall layout and behavior desired) into an abstract superclass (shared), while the fields that contained tool-specific information were factored into subclass.
+Advantage:
+    • GUIs can be revised quickly and easy which simplify the maintenance
+    • GUIs are consistent in layout and behavior
+    • It can result in quick prototype to the clients.
+Disadvantage:
+    • Factoring the GUI into superclass and subclass is a complicated technique (TO make the factorization of one feature requires a big effort). 
+    • It works only for MJ and JML
+
+
+
+
+
+
+
+
+
+Chapter 3: Agile
+
+        3.1 Agile Overview
+
+The software industry's agile movement began to emerge during the year 2001, thanks to help from the Agile Software Development Manifesto (Beck et al. 2001; Cockburn 2002a).  The Manifesto was released by a team of software programmers and consultants.  The main values that are upheld by Agile are:
+- Individuals and interactions over processes and tools
+- Working software over comprehensive documentation
+- Customer collaboration over contract negotiation
+- Responding to change over following a plan
+
+Firstly, some of Agile's traditional values include emphasis on relationships and community between software development teams and clients, rather than just an institutional process made up of tools and lists.  In Agile's current practice, this is demonstrated by the amiable relationship between team members, communal working arrangements, and more.
+Secondly, one of the team's main focuses centers on releasing software that has been thoroughly tested for functionality.  New products are released on a regular basis, and sometimes even multiple releases per day though the norm is monthly.  The development teams are recommended to make the coding as simplistic and straightforward as possible, yet with all of the latest advances in technology.  This tactic is designed to keep the burdens of documentation minimal.  
+Thirdly, the cooperative relationship between developers and their customers is favored in a much higher way than a mere contract.  However, the importance carried by a professional contract should not be discounted as unnecessary to the project.  The actual process of negotiating ought to be used as the vehicle for obtaining and cultivating a positive relationship.  From a purely professional angle, Agile focuses on demonstrating value at the very start of a project, which significantly decreases any risk of an unfulfilled contract.
+Fourthly, the team of developers, which should encompass both software creation and customer service, ought to be able to competently handle any adjustments that may need to be conducted throughout the project's duration.  Everyone participating should be open to make a necessary change and realize that the existing contract allows for these updates to be submitted and acted upon.  
+
+Cockburn (2002a, p. xxii) takes Agile methodology to mean usage of easy, yet competent requirements regarding the rules of communicating and behavior within a project.  The Agile methodology fulfills these requirements and remains both workable and sufficiently competent.  These are some of the tactics he has proposed for enhancement and great success in development projects:
+- Two to eight people in one room
+    • Communication and community
+- Onsite usage experts
+    • Short and continuous feedback cycles
+- Short increments
+    • One to three months, allows quick testing and repairing
+- Fully automated regression tests
+    • Unit and functional tests stabilize code and allow continuous improvement
+- Experienced developers
+    • Experience speeds up the development time from 2 to 10 times compared to slower team members.
+
+        3.2 Agile characterization
+
+             Miller (2001) outlines these following characteristics of an agile process, which allows for the shortened life cycle of the project in question: 
+1. Modularity on development process level
+2. Iterative with short cycles enabling fast verifications and corrections
+3. Time-bound with iteration cycles from one to six weeks
+4. Parsimony in development process removes all unnecessary activities
+5. Adaptive with possible emergent new risks
+6. Incremental process approach that allows functioning application building in small steps
+7. Convergent (and incremental) approach minimizes the risks
+8. People-oriented, i.e. agile processes favor people over processes and technology
+9. Collaborative and communicative working style
+Favaro (2002) has talked about the newly emerged tactics designed to confront vague processes which feature ever-changing requirements.  He proposed an iterative development paradigm to be the common denominator in an agile process.  Any requirement can emerge, be updated or eradicated in subsequent iterations.  Again, an approach which includes changes to the requirements and a delay in its implementation should call for a revision in contractual convention.  This can mean a switch from a point-view contract, or ensuring that the specifications are met upfront, to a process-view contract.  The legal angles of a relationship's evolution ought to be considered as well (Poyhonen 2000).  However, these theoretical discussions of legality are still being developed, as well as the latest technicalities in contracts.
+In addition to this, a contract's framework, when joined in efficiency with a project's ordered requirements, can prove to be an accurate reflection of the business's ongoing software developments.  This in turn lends support to Agile methodologies (Warsta 2001).
+Highsmith and Cockburn (2001) have contributed reports that support the view that the software developing business is being affected by the ever-changing environments in the field.  According to these writers, satisfying the client upon project completion is given priority over the client's satisfaction at the project's beginning.  It is becoming crucial to learn how to deal with changes that may be submitted early on in projects as well as handle the amount of change which is almost sure to be submitted throughout the project's duration.  Furthermore, agile methodologies claim to:
+- produce the first delivery in weeks, to achieve an early win and rapid feedback
+- invent simple solutions, so there is less to change and making those changes is easier
+- improve design quality continually, making the next iteration less costly to implement, and
+- test constantly, for earlier, less expensive, defect detection. 
+Agile's basic values encompass a rigid honesty in work ethics, positive effect on team members working together in community, and strong priority given to teamwork.  These common sense tactics of agile methodologies have been proposed by Ambler (2002b) here: 
+- people matter
+- less documentation is possible
+- communication is a critical issue
+- modeling tools are not as useful as usually thought
+- big up-front design is not required.
+
+        3.3 Specific agile methodologies and their practices
+ 
+Throughout this section, a few tips will be given regarding some of the most well-known Agile processes and the practices used to obtain successful results.  These are just a few included here: Extreme Programming (Beck, 1999b), Scrum (Schwaber, 1995; Schwaber & Beedle, 2002), Crystal method family (Cockburn, 2002a), Feature Driven Development (Palmer & Felsing, 2002), a Rational Unified Process (Kruchten, 1996; Kruchten, 2000), and finally Adaptive Software Development (Highsmith, 2000).
+
+     3.3.1 Extreme Programming
+Extreme Programming, also referred to as simply XP, has emerged as a solution to the issues brought about by lengthy developing processes used with traditional methodologies (Beck, 1999a).  The method centers on angles in developmental processes in order to decrease the total time and budget used.  The Extreme Programming method was created over the theories of typical practices (Beck, 1999b).  Although Extreme Programming's individual practicing is not cutting-edge technology, they have been added to a collection in order to have a newer type of functioning with one another.  This forms a new methodology that can be utilized in developing software.  Extreme Programming is so called due to its methods of propelling common sense practice to extreme heights (Beck, 1999b).  Some of the practices include:
+
+Small/short releases: Simplistic systems are swiftly produced, with a new production coming out at least every two or three months.  Some are even released on a daily basis.  
+Simple design: Designing the most simplistic solvent that can be implemented is strongly emphasized.  Extra coding and superfluous difficulty are eradicated immediately.  
+Testing: Test-driven methods of developing software are employed.  Unit tests are conducted prior to the coding and are tested continually.  The client can dictate the functional testing. 
+Refactoring: Eradicating duplicate coding, making improvements in the field of communication, and improving flexibility are all important aspects of a restructured system. 
+Pair programming: A team of two development members work on the coding on the same machine.  
+Continuous integration: As soon as new codes are ready, they are integrated into the base.  With this tactic, systems can be integrated and constructed multiple times per day.  Testing is conducted, and must be passed in order for coding change to be accepted.  
+
+3.3.2 Scrum 
+Scrum methodology has been created as a way to manage a system's developing processes.  Scrum's basic idea involves the fact that developing a system will involve multiple variants in environments and technicalities.  Some of these will include project requirements, allotted time and budget, and technologies available.  These variables can change within the duration of these processes.  This can make the developing process difficult and requiring the system's development process to be flexible in order to properly respond to change (Schwaber, 1995).
+Scrum can help with improving an existing engineering practice, such as testing, within an organization.  It can involve frequent activity within management, targeting a consistent identification of a deficiency in the processes and practices being utilized.  Some of the practices include:
+
+Sprint: This is one of the procedures that can adapt to the revolving variables in environment, such as requirements, time, budget, skills, technologies and more.  Scrum is organized to release a new, working product with Sprint, which can last for about one month. 
+Daily Scrum meeting: The daily meeting takes about fifteen minutes.  These daily meetings are observed in order to monitor the team's progress continually.  They may also act as planning session in which crucial decisions can be made.  
+Sprint Review meeting: On Sprint's last day, the results are presented by the Scrum Master and the team to the managers, clients, users and the owner of the project.  This is all conducted through a casual meeting.  All participants will inspect the product and make necessary decisions.  
+
+3.3.3 Adaptive Software Development
+ASD's main focus is to center on the issues emerging from the development of large systems of sizable complexity.  This methodology strongly recommends a process of iterations and continual prototypes.  
+ASD suggests only a couple of practices to be used in daily software developing work.  The basic idea (Highsmith 2002) specifically lists three, which are iteration development, planning centered on components, and customer-focused group review.  One of the biggest problems with the ASD methodology is that its practices can be hard to identify.  It can also leave multiple details lacking.
+
+3.3.4 Feature Driven Development
+While the FDD methodology does not have coverage for the whole process of developing software, it does focus well on the phases of designing and construction (Palmer & Felsing, 2002).  However, it was built to work alongside other aspects of software developing (Palmer & Felsing, 2002).  It was made with the idea of clarifying lists of features with the highest priority.  It involves five steps, which are developing the overall object models, building a list of priorities, plan the features, design the features and build the features.  Some of FDD's methods involve:
+
+Developing by Feature: Development and tracking of the progress made with a list of prioritized functions according to the client's needs.  
+Feature Teams: Dynamic development teams in small numbers.
+ Inspection: Using cutting-edge error detection technology.  
+
+3.3.5 Crystal Family of Methodologies
+The CFM involves multiple methodologies used for finding the most compatible method for individual projects.  In addition to these methodologies, the CFM also contains the ability to tailor a method to fit the circumstance of an individual project.  Some of the practices utilized include: 
+Staging: This tactic involves planning the next stage of a system.  It ought to be on a schedule for releasing a working prototype every few months at the most (Cockburn, 1998).  
+Monitoring: Team progress is closely monitored for the duration of development (Cockburn, 1998). 
+User viewings: Multiple user inspections are recommended for Crystal Clear releases (Cockburn, 2002a).  In the case of Crystal Orange releases, a user's review should be scheduled three times per stage (Cockburn 1998).  
+
+3.4  Comparison of Agile Methodologies 
+
+As mentioned before in this section, all agile methodologies are built around the same principles.  They are made to handle instability in requirements with a variety of techniques.  They focus on cooperative work between the development team and the clients, supporting early product delivery that is a main difference from heavy plan-driven methodology.  Figure 3.1 will demonstrate the comparison made by M.A. Awad between Agile and heavy methodology.  
+
+Figure 3.1: Comparison between agile methodologies and heavy methodologies.
+
+Abrahamsson et al. ran a comparing analysis on agile methodologies.  Their research has shown that the multi-use agile developing methodology and cooperative relationships work harmoniously with their path of evolution.  This is demonstrated in Figure 3.2, which will also depict the methodologies that developers have contributed to the Agile Manifesto (http://www.agilemanifesto.org).
+
+Figure 3.2: Agile methodologies evolution.
+
+
+The result of their studies is clearly shown in Figure 3.3.  This figure will show the various phases of software developing and how they are backed up by the various Agile methodologies.  Each of these methodologies is separated into three sections.  The first section will identify if a suggested process will lend support to the project's managers.  The second section will indicate if a suggested process is listed in that particular method.  The third section will indicate if the method can describe all practices, activity and production that must be used under a variety of circumstances.   A grey area within a section will indicate that the method encompasses the life-cycle phases.  A white area will indicate a lack of any of these details available in the sections. 
+
+Figure 3.3: Software development life-cycle support.
+
+Agile methodologies approach the issues that software developers face, from multiple angles.  Multiple studies have been done which show comparison between the methodologies.  Figure 3.4 will summarize the aforementioned methodologies with three designated aspects, which are key points, special features and detected shortcomings.  
+
+Figure 3.4 General features of agile software development methodologies.
+
+
+Chapter 4: Early User Interface Development (EUID)
+
+4.1   Agile and GUI
+
+As explained in previous chapter and as shown in figure 4.1 that the main core of any agile methodology is the ability to respond to continuous changes. A set of agile values and principles (http://www.agilemanifesto.org) have been defined to ensure the visibility of the agile core. To achieve these values and principles each agile methodology has defined a set of practices that also serve the methodology’s objectives. 
+
+
+
+
+
+
+
+
+
+
+
+Fig. 4.1: Overview on Agile [25].
+
+Each practice serves a certain objective and poses a positive effect on the agile principles. Table 4.1 shows examples of some practices. 
+
+Table 4.1: Positive experiences due to agile practices [25].
+
+Positive Experience
+Practices
+
+Improved communication and feedback
+Achieved via short iterations, pair programming and open office space
+Project Visibility (Status)
+Information Radiators  
+Daily Standup Meetings
+
+Quality of Code
+Test driven Development, short iterations
+Requirements can change
+Adaptive planning and Refactoring
+
+Developer Satisfaction
+Pair Programming, Empowerment and XP in overall
+Customer Satisfaction
+Short Cycles
+Management Satisfaction
+Daily Standup Meetings
+Information Radiators and Tacking
+Better customer collaboration
+Short iterations
+
+However there are still some aspects in the agile practices that need to be considered one of these is the development of the GUI. And we mean by this not only design GUI but also develop GUI. If we succeeded in developing GUI in early stages, we will get earlier customer feedback, thus reduce the development cycle time and cost. 
+In fact GUI is a critical part in any Information System Application. It’s the gate through which the users build their opinion on how much the success of the application they use. If there are defects in what they see then the whole application fails, i.e. if the application meets all the functionalities required by the users but the way they implement their tasks is not as they want, then the application fails from their point of view. Another problem that’s related to GUI is that the changes in GUI are very expensive. Suppose the customer has agreed on the design proposed by the team that is responsible to develop the application, then the developers start their work and provide a release to the customer, however the customer makes changes on the GUI of the developed release. In fact this may result in small changes (simple changes on one page) to huge changes (changes in Database or re-development of the page) which at the end result in more time and higher cost. Thus if we can get earlier customer feedback on the GUI, we will be able to reduce the changes made in the future and in return reduce the time and the cost for developing the application. Thus we have proposed a new agile practice that aim at not only designing but also developing the GUI so that the customer will see and feel the GUI of the required pages at early stages and pose any changes earlier. The practice is called Early User Interface Development (EUID).  
+
+4.2 EUID Practice
+
+In order to address the aspect of GUI development in agile methodologies we propose a practice to the current set of agile practices. The new practice is called “Early User Interface Development” (EUID). According to the proposed practice, the GUI is not only designed at an early stage of agile iteration but the GUI is actually developed and presented to the customer for feedback before starting a new iteration with a set of new requirements. This feedback is not only for the look of the GUI design but also for the behavior of using the GUI. Hence designers and users work together to produce the actual required user interface (UI) that represent what the users want.
+
+
+
+
+4.2.1   EUID process
+
+Sine The EUID process is based on agile, then, as shown in figure 4.2 it must depend on producing a release and involving the customer through the whole process.
+
+
+
+
+Chapter 5: Case Study
+
+5.1 Introduction
+
+As we explained in previous chapter each agile methodology use a set of practices to achieve its goals. One of these practices is EUID (our proposed practice). In section 5.2, we will show how and where the proposed EUID practice can be used practically.
+The objective of the EUID practice is to develop GUI before writing code. Each page in the application is represented by two files: GUI static structure file (HTML) and GUI behavior description file (XML). We propose tool to simplify the generation of these files achieve consistency between them through the whole application. The tool presents each page as a set of components as explained in previous chapter. The analyst chooses a template for each component. According to the chosen template, the actions that should be implemented can be described. Two case studies have been used to verify these steps. Section 5.3 provides details on these two systems. 
+
+5.2 EUID in practice
+
+There are some issues still needs to be addressed to ensure that EUID practice can be practically used. To cover these issues, we will have first to show (in section 5.2.1) how agile process is used in practice. Then in section 5.2.2 will show how our practice can be used within this process.  
+
+5.2.1 Agile in practice
+
+Practically each organization chooses the methodology that fits its policy. It may also bundle several agile methodologies, selecting the best practices from each to use. The practical agile development process we follow is used in one of the big companies in Egypt and it is decomposed into six steps:
+
+First Step: Gathering requirement
+Project Owner is responsible for collecting requirements from clients through Face-to-Face communication. He or she should write down these requirements in any suitable defined format that can be used later by the team members to build storyboards. In that step usually the project scope, main functional requirements and non-functional requirements are defined. Through iterations, these requirements are explored in details through communication. 
+
+Second Step: Storyboards
+This step is a vital one. Requirements are discussed by the team members who usually conduct a meeting for writing the storyboards. Each storyboard is a story about a specific user requiring specific function. 
+
+Third Step: Iteration 0
+Before starting any iteration, there are some adjustments or tasks must be done. These tasks, in fact, don’t add business value to the clients but they are important to conduct business. For example: Setting up the environment, designing and implementing DB ... Also another important task involved in that step is defining which storyboard will be executed in which iterations. This choice is taken according to the prioritized customer’s requirements.
+Fourth Step: Conduct Iteration
+Here we are ready to start iteration. Each iteration is planned in detail, executed and reviewed by the customer.  
+                • Design Iteration: In that step the project team explores each story board that should be implemented in that iteration and decompose it to specific tasks that will be implemented by developer. Before starting implementation, creative teams design the User Interface which will be implemented later by UI Developer.  
+                • Implement Iteration: In that step, UI Developers start to build GUI (for example HTML format). Also, Implementers start developing the tasks defined for each story board.
+                • Test Product: Testers are responsible for testing the output generated from implementing iteration. They test the output according to test cases built at the beginning of the iteration. If there is any failure, a report is generated for that error and it can be solved through the same iteration or postponed to the next iteration.
+                • Refactoring: Code is checked and refactored to ensure that there is no redundancy.
+                • Retrospective: This is an important practice where the team evaluates their output and learns from their mistakes in that iteration. They also evaluate their internal work to solve any communication problems if exist.
+
+Fifth Step: Produce a Release
+Finally a complete release is produced and shown to the customer for feedback. The customer may modify or add new requirements that should be taken into consideration in later iterations.
+
+Sixth Step: Learn from last experience
+This step can also be called Release Retrospective. Usually a meeting between team members is conducted after a release to discuss the lessons learned from previous iteration.
+
+As shown from the above steps that GUI development comes later, which may result in some problems:
+                • The client may require modification in GUI which may result in complex development modifications.
+                • Developer may start in developing the code if UI developers are doing another task, which will result back in later modifications.
+                • Testers may stay idle in case UI development was late. 
+
+
+5.2.2 EUID in Practice
+
+According to the agile practical process that we have explained, we have shown that customer involvement is very important. As much as the early feedback is taken from customers, the fewer changes will be required later after development. For sure, our main objective of the EUID practice is to get early customer feedback on GUI, which is the thing the customer can understand. But there are some questions need to be answered to understand how our practice can work practically.
+
+When the agile team can use this practice? 
+EUID is suitable for Information System Applications where User Interface is the gate through which the users accomplish their tasks such as searching for or editing certain information. In these situations GUI is a reflection to what the users really want and should be consistent through the whole application.
+
+Where the practice can be used? 
+    • Iteration 0: From the beginning, at iteration 0, the agile team should consider if the nature of the project can be best handled using that practice or not. If the nature of the project based on Input-Output forms with similar functions then we recommend using the practice. If yes, then we move to the next step “Conduct Iteration”.
+    • Conduct Iteration: There will be some modifications in “Design Iteration” and “Implement Iteration”. The creative team will work with UI Developers to get out with the working UI prototype. Of course the customer is involved in that to give feedback. Also the developer or implementer should help in defining the description in GUI behavior description file.
+
+What are the positive effects resulted from using practice?
+ Now developers are ready to implement directly their tasks based on the outputs of our practice. The other steps are affected positively. For testing testers will test the GUI with the related task as one unit i.e. Testers won’t have to wait for UI interface developers to develop UI code as it will have to be developed earlier in design stage. Also the refactoring will be easier since the code becomes more consistent and easier to trace.
+		
+What are the Difficulties that can face using the practice?
+ Producing the two outputs of the practice is not an easy task. If the team failed to produce them correctly then the practice has failed to reach its objectives. For example what if the GUI team failed to write the input and output fields in GUI Behavior file? Or what if the GUI behavior file doesn’t describe the required task correctly? However for simplifying the outputs generation we propose a tool that will aid in producing the EUID outputs automatically. 
+
+
+5.2.3 Agile users’ evaluation for EUID practice
+
+During “Agile Egypt” conference, we have succeeded to meet Dr. Ahmed Sidky and David Hussman who have very high experience dealing with agile development. Both of them have assured that the EUID practice can benefit the agile development since it helps in getting earlier customer feedback, thus increase the customer satisfaction.
+
+Also we have met a senior agile developer in one of the best SW houses in Egypt. They said that the idea of producing GUI early is great since it will help them to get the customer feedback earlier on the interface. They declared that sometimes late changes in the interface of a certain page can cause redevelopment of that page. 
+5.3 Case Study
+
+	As we explained in previous chapter, we propose a tool to achieve consistency and automate the generation of EUID output. The tool is based on a representation framework in which each page in the developed information system application is composed of several components. These components define the static structure of the corresponding web page and also help later in generating the GUI behavior description file.  From our experience in web based information systems, we have defined four main components: search component, navigator component, one-record component and multi-record component.
+Two information system applications have been used as to verify this representation framework. Those systems are explained in next two subsections 5.3.1 and 5.3.2 in which, for each system, a description, problems that can be reduced by using our proposed tool and snapshots to show how these pages can be re-represented according to our representation framework are given.
+
+5.3.1 Case Study 1: Cultural offices
+
+5.3.1.1 Description
+The first system we have used to verify our GUI representation framework is a developed web-based information system for the Egyptian cultural offices, even those outside Egypt, related to the ministry of High education.
+The main objective of the development team was to achieve consistency between all pages of the application. Thus from the analysis of the system we found that there is three types of forms. The first type of forms is for inserting new data. The second type is for editing or deleting previous data. The last type is for generating reports according to the data entered by the customer.  
+
+
+
+5.3.1.2 GUI changes problems 
+The development team has said that most of the changes required by the users through using the GUI which in return result in GUI changes. These changes actually posse changes in database and the code as well. Thus they declared that getting the user feedback earlier before development will reduce the rate of changes, the complexity of changes and the time.   
+
+5.3.1.3 Case study snapshots 
+The following snapshots are given to show how these pages can be developed using our proposed tool. For each snapshot, we will declare the components that construct that page and then the template used for each component and at the end the actions that should be implemented for each component on that corresponding page.
+
+Snapshot 1 represents a page for inserting Egyptian students information (Name, Educational year, Religion, Gender, ID, Date of Birth, Place of Birth, Email)
+    1. Select Component
+
+Figure 5.1: Snapshot 1 of first case study.
+The page consists of just one component which is One Record component for inserting data for one student.
+    2. Select Template
+Insert_onerecord template is used for that component.
+    3. Describe Template attributes
+According to the chosen template, the user will define the required controls (Type, ID, Name …)  
+    4. Define Actions
+	According to the chosen template, there are two controls will cause behavioral changes when clicked.
+        ◦ Save Button
+Active: OnClick 
+Number of actions: One
+Action description: All the data entered in the component controls will be inserted in the database.
+Action Input Controls: Controls used to enter Name, Educational year, Religion, Gender, ID, Date of Birth, Place of Birth, Email.
+        ◦ Cancel Button
+Active: OnClick 
+Number of actions: One
+Action description: All the data entered in the component controls are set to null.
+Action Input Controls: Controls used to enter Name, Educational year, Religion, Gender, ID, Date of Birth, Place of Birth, Email.
+Action Output Controls: Controls used to enter Name, Educational, year, Religion, Gender, ID, Date of Birth, Place of Birth, Email.
+
+Snapshot 2 represents a page for editing data for those who will work temporarily in the office.  Some of these data are Nationality, Religion, Gender, ID, Date of Birth, Place of Birth, English Level, and Experience …
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Figure 5.2: Snapshot 2 of first case study.
+
+
+    1. Select Component
+The page consists of Two Components: Search component through which the name of one person is selected and One Record component in which the data for the selected person is presented for editing.  The analyst will select the first component. Then select the suitable template and specify template attributes. Then return back to do the same for the next component. 
+    2. Select Template
+For the first component Combobox_search template is used. While for the second component Edit_onerecord template is used with two buttons for editing or deleting data.
+    3. Describe Template attributes
+According to each chosen template, all the controls are defined as shown in the figure. 
+    4. Define Actions
+After finishing step 1, 2, and 3 for each component, the analyst is ready to define all the actions for that page. 
+For first component: Since the used template is Combobox_search then the search action should be fired once the user selects a name from the combobox control.
+        ◦ SelectName Combobox 
+Active: OnChange 
+Number of actions: One
+Action description: When the user select a name from the combobox, the data of that person will appear for editing or deleting.
+Action Input Controls: Combobox control in the first component.
+Action Output Controls: All the controls, except the buttons, in the second component.
+For second component: The used template includes two buttons one to save changes in database and the other to delete data from database.
+        ◦ Edit Button 
+Active: OnClick 
+Number of actions: One
+Action description: The data changed by the user should be saved in the database.
+Action Input Controls: All the controls, except the buttons, in that component.
+        ◦ Delete Button
+Active: OnClick 
+Number of actions: One 
+Action description: The data shown in the component should be deleted from the database.
+Action Input Controls: All the controls, except the buttons, in that component.
+
+Snapshot 3 represents a page for inserting stock taking information according to the material type.  
+
+
+
+
+ 
+
+Figure 5.3: Snapshot 3 of first case study.
+
+
+    1. Select Component
+The page consists of two Components: Search component through which the type of a material is selected, Multi Record component in which the user will insert the required information for all objects for the selected material and then click a button at the end to save all changed in database. As explained in the previous snapshot the analyst will select the first component. Then select the suitable template and specify template attributes. Then do the same with the second and the third component. 
+    2. Select Template
+For the first component Combobox_search template is used. While for the second component the Edit_multirecord template is used.
+    3. Describe Template attributes
+According to each chosen template, all the controls are defined as shown in the figure. 
+    4. Define Actions
+	The same will be done as previous examples. 
+For first component: 
+        ◦ SelectMaterial Combobox
+Active: OnChange 
+Number of actions: One
+Action description: When the user select a material the objects of that material is shown in the datagrid.
+Action Input Controls: Combobox control in the first component.
+Action Output Controls: Datagrid in the Multirecord component.
+For second component: The used template allows the usage of one button one to save changes in database and the other to delete data from database.
+        ◦ Edit Button
+Active: OnClick 
+Number of actions: One
+Action description: The data entered by the user in the datagrid should be saved in the database.
+Action Input Controls: Datagrid in that component.
+
+Snapshot 4 represents a page for viewing the “day off” for a certain person.  
+
+
+
+
+ 
+
+
+
+
+Figure 5.4: Snapshot 4 of first case study.
+
+    1. Select Component
+The page consists of two Components: Search component through which the type of a material is selected, Multi Record component in which the result of the search is presented. As explained in the previous snapshot the analyst will select the first component. Then select the suitable template and specify template attributes. Then do the same with the second and the third component. 
+
+
+    2. Select Template
+For the first component Button_search template is used. While for the second component the View_multirecord template is used.
+    3. Describe Template attributes
+According to each chosen template, all the controls are defined as shown in the figure. 
+    4. Define Actions
+	The same will be done as previous examples. 
+For first component: 
+        ◦ Search Button: 
+Active: OnClick 
+Number of actions: One
+Action description: When the user click the button a search is done using the inserted data and the result appear in the datagrid
+Action Input Controls: Job, year, personname textboxes in that component
+Action Output Controls: Datagrid in the second component
+For second component: The used template allows the usage of one button one to save changes in database and the other to delete data from database.
+        ◦ Edit Button: 
+Active: OnClick 
+Number of actions: One
+Action description: The data entered by the user in the datagrid should be saved in the database.
+Action Input Controls: Datagrid in that component.
+
+5.3.2 Case Study 2: Tele-communication Company
+
+5.3.2.1 Description
+The second system is a developed web-based information system for a one of the largest companies in tele-communication in Egypt. In terms of the size, this system is larger than the first one. In terms of functionalities, this system includes more variable and complex functional requirements than the cultural office system 
+The main objective of the development team was to deliver all the required functionalities in easy steps. This means that the user can accomplish a certain task through moving between the minimum number of pages, one page if possible.  Thus we found that most of the pages include many functions to serve that objective.
+
+5.3.2.2 GUI changes problems 
+As explained above, most of the pages of the system presents various functionalities, so the changes result from using the GUI usually mean change in the way the user use to accomplish a certain task,  which in return result in changes in database and the development code as well. If the user could see the GUI earlier before development, the team will get better understanding of how the user will accomplish his/her tasks, thus reduce the rate of changes, the complexity of changes and the development time.   
+
+5.3.2.3 Case study snapshots 
+The following snapshots are given to show how these pages can be developed using our proposed tool. As above, for each snapshot, we will declare the components that construct that page and then the template used for each component and at the end the actions that should be implemented for each component on that corresponding page.
+
+Snapshot 1 represents a page for managing all the buyers who should be evaluated by adding or deleting previous buyers.
+
+
+Figure 5.5: Snapshot 1 of second case study.
+
+    1. Select Component
+The page consists of four components which are:
+One Record component to add buyers
+Multi Record component to view and delete buyers
+Navigator component to save all changes in database
+Navigator component to cancel all changes done after last save
+The analyst will select the first component. Then select the suitable template and specify template attributes. Then return back to do the same for the next component and so on until specifying the four components.
+    2. Select Template
+Insert_onerecord template is used for the first component.
+Navigation_edit_multirecord template is used for the second component.
+Button template is used for the third component.
+Button template is used for the fourth component.
+    3. Describe Template attributes
+According to the chosen template, the user will define the required controls as shown in the snapshot.   
+    4. Define Actions
+For first component:  
+        ◦ Add Button 
+Active: OnClick 
+Number of actions: One
+Action description: Add the inserted buyer in the gatagrid
+Action Input Controls: Buyername
+Action Output Controls: Datagrid in second component
+			For second component 
+        ◦ Delete Navigator:
+Active: OnClick 
+Number of actions: One
+Action description: Delete the corresponding buyer 
+Action Input Controls: Corresponding row in the datagrid in that component
+Action Output Controls: Datagrid in that component
+For third component: 
+        ◦ Submit Button
+Active: OnClick 
+Number of actions: One
+Action description: Save changes in database
+Action Input Controls: Datagrid in the second component
+For fourth component: 
+        ◦ Cancel Button: 
+Active: OnClick 
+Number of actions: One
+Action description: Cancel all changes done after last save
+Action Output Controls: Datagrid in the second component
+
+
+Snapshot 2 represents a page for allowing the manager to view the evaluation and close it if success.
+
+Figure 5.6: Snapshot 2 of second case study.
+
+
+    1. Select Component
+The page consists of three components which are:
+Search component to select a certain evaluation 
+Multi Record component to view the result of evaluation
+OneRecord component to add any notes and save it to database
+The analyst will select the first component. Then select the suitable template and specify template attributes. Then return back to do the same for the second and third component.
+    2. Select Template
+Combobox_search template is used for first component.
+View_multirecord template is used for the second component.
+Insert_onerecord template is used for the third component.
+    3. Describe Template attributes
+According to the chosen template, the user will define the required controls as shown in the snapshot.   
+    4. Define Actions
+For first component: 
+        ◦ SelectEvaluation Combobox
+Active: OnChange 
+Number of actions: One
+Action description: When the user select an evaluation the evaluation result is shown in the datagrid.
+Action Input Controls: Combobox control in the first component.
+Action Output Controls: Datagrid in the second component.
+			
+For third component:  
+        ◦ Close Button 
+Active: OnClick 
+Number of actions: Two
+Action one description: Add the notes in the database
+Action Input Controls: evaluation textbox in first component, notes textbox in that component
+Action two description: Close that evaluation
+Action Input Controls: evaluation textbox in first component
+        ◦ Cancel Button
+Active: OnClick 
+Number of actions: One
+Action description: Unselect the evaluation 
+Action Input Controls: evaluation textbox in first component
+
+
+Snapshot 3 represents a page for allowing the manager to mange the evaluation rates.
+
+Figure 5.7: Snapshot 3 of second case study.
+
+
+    1. Select Component
+The page consists of four components which are:
+One Record component to add new rate
+Multi Record component to view and delete rates
+Navigator component to save all changes in database
+Navigator component to cancel all changes done after last save
+The analyst will select the first component. Then select the suitable template and specify template attributes. Then return back to do the same for the next component and so on until specifying the four components.
+    2. Select Template
+Insert_onerecord template is used for the first component.
+Navigation_edit_multirecord template is used for the second component.
+Button template is used for the third component.
+Button template is used for the fourth component.
+
+
+    3. Describe Template attributes
+According to the chosen template, the user will define the required controls as shown in the snapshot.   
+    4. Define Actions
+For first component:  
+        ◦ Add Button
+Active: OnClick 
+Number of actions: One
+Action description: Add the new rate name and its ranges in the gatagrid
+Action Input Controls: ratename, rangefrom and rangeto textboxes in that component
+Action Output Controls: Datagrid in second component
+For second component: 
+        ◦ Delete Navigator 
+Active: OnClick 
+Number of actions: One
+Action description: Delete the corresponding rate 
+Action Input Controls: Corresponding row in the datagrid in that component
+Action Output Controls: Datagrid in that component
+For third component 
+        ◦ Submit Button
+Active: OnClick 
+Number of actions: One
+Action description: Save changes in database
+Action Input Controls: Datagrid in the second component
+For fourth component: 
+        ◦ Cancel Button 
+Active: OnClick 
+Number of actions: One
+Action description: Cancel all changes done after last save
+Action Output Controls: controls of the first component, Datagrid in the second component
+
+ 
+
+
+
+
+
+
+
+
+
+Figure 4.2: EUID Process.
+
+The process includes five steps:
+        1. Receiving Requirements
+ The main project stakeholders (direct and indirect users, managers and senior managers) are the main official source of the requirements. Requirements are prioritized and then a set of requirements are defined, clarified, and verified to become the release requirements. There are several techniques to collect requirements such as:
+    • Active stakeholder participation where on-site customer is actively invoved in modeling their requirements.
+    • Face-to-face interviews or electronic using phone, video conference or even mails. 
+    • Legacy code analysis which involve analyzing the implemented code to determine what modules need to be implemented or updated. 
+    • Observation by watching how end users daily implemented their tasks.
+    • Reading existing documentations about the existed system or even documents justifying the projects or external information related to the developed system.
+
+        2. Develop UI Prototype (The core)
+Through this step the EUID practice output is produced. We called this output “UI Prototype” which is not thrown away but actually used as part of developed code. According to the defined requirements for the relevant release the designers, customer and developers enter in that task to produce the prototype. The UI prototype represents all the windows in the UI of the current release. Each window is represented by: GUI Structure representing the static structure of the page and GUI Behavior Description File representing how the page should act according to the action fired by the users. These two representations are explained in the next 2 sections.
+
+2.1   GUI Structure
+	The GUI Structure is used as the top layer of any application including all the visual widgets with their properties (color, location, name … etc.) of the corresponding page. The GUI Structure is represented by HTML.
+	 In fact choosing HTML is for several reasons. One of these is that HTML is considered simple for most web developer since it was used since the existence of the internet. Another reason is that HTML is compatible for almost all browsers. Since HTML is used by simple sites to complicated ones, the browser developers make sure that their browser can adapt HTML commands so it can be used by all users.  Besides its wide spread and its simplicity, Ajax can be a good combination with HTML, providing highly interactive interfaces, which is the case we aim at.
+	An example is given in figure 4.3 and 4.4 to illustrate the GUI Structure representation. Figure 4.3 shows how page interface looks like while figure 4.4 shows part of the HTML code developed for that page.  Each window will get a unique ID that identifies it. For each widget in that window will get a unique ID or name and a set of fixed properties that specify the look of that widget. For example in figure 5 the dropdown box has “CB_search” as a name. 
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4.3: Example of GUI Structure.
+
+…
+<form action="">
+Search
+<select name="CB_search">
+<option > Search for a certain Person </option>
+…
+</select>
+Name <input type="text" name="TB_name" >
+Phone <input type="text" name="TB_phone" >
+Email <input type="text" name="TB_email">
+…
+…
+<input type="button" value ="Add">
+<input type="button" value ="Delete">
+<input type="button" value ="Save">
+</form>
+  …
+Figure 4.4: Example of GUI Structure code.
+
+
+2.2   GUI Behavior Description File
+
+ The GUI Structure allows the production of the static structure of a particular web page but for how that page act as the user pose actions is still not defined. In fact this means that given that structure to web developers is not enough as it may result in behavioral misunderstanding, which later results in redeveloping the page. Thus, we need a type of representation for the page behavior resulted from the user interaction. We call this representation the GUI Behavior Description File which includes all the dynamic features (active events and the actions) resulted when the user poses an action on that page. For each window structure produced, a GUI Behavior Description file is produced. The GUI Behavior Description file should describe all the events that should be implemented with a description for each event’s actions that should be implemented. For each action, a list of input widgets from which values are read is defined and also a list of output widgets to which changes occur is defined. 
+The GUI Behavior Description file can be represented by XML. Figure 4.5 shows part of that file created for the page represented in figure 4.3.
+In fig. 6, two events are represented. The first event relates to a combo box called CB_search. When the combo box value is changed the event is triggered. The action that should be implemented is to search for the contact details of the person selected in the combo box. Thus the value of the combo box is taken as an input and the output is retrieved in the textboxes: TB_name, TB_phone, TB_email, TB_address, TB_city, TB_state and TB_country. The second event fires when a button, BT_new, is clicked that should set all the values of the textboxes in the page as null to allow the insertion of new values. Thus the input and output controls are the textboxes TB_name, TB_phone, TB_email, TB_address, TB_city, TB_state and TB_country.
+
+
+
+
+<CB_search type=”ComboBox”>
+  <event>  Onchange </event>
+  <input> 
+ < search_name type = “DropDownBox”/>  
+  </input>
+  <output>
+< TB_name type=”TextBox”/> 
+< TB_phone type=”TextBox”/>
+< TB_email type=”TextBox”/>
+< TB_address type=”TextBox”/>
+< TB_city type=”TextBox”/>
+< TB_state type=”TextBox”/>
+< TB_country type=”TextBox”/>
+  </output>
+  <description> 
+   In this event,  the contact details of  the person    
+   selected from CB_search are retrieved into the output 
+   textboxes. 
+  </description>
+</CB_search>
+…
+<BT_new type=”Button”>
+  <event> OnClick </event>
+  …
+  <description>
+ All textboxes on the page are set to null.  </description>
+</BT_new>
+...
+Fig. 4.5: Example of GUI Behavior Description file.
+
+        3. Design according to UI Prototype
+Once the programmers receive the GUI structure and the corresponding GUI behavior description file, the programmers start designing how they will implement their tasks.
+        4. Build according to UI prototype
+After designing the tasks that each programmer should implement, the programmer actually writes the code based on the GUI behavior description file. 
+        5. Producing a Release
+Then a UI prototype is developed and presented to the customer. The customer can propose new changes, and then a new prototype is developed according to these changes.
+	Before producing a release the code (GUI code and Application code) is moved through other processes like refactoring and testing. When the release is ready, it is provided to the customer with the previously accepted UI and complete working developed functionalities. The customer then evaluates the release and may add or modify new requirements and thereafter a new iteration starts.
+
+4.2.2   Benefits of EUID 
+
+One important feature involved in that practice is that it supports customer collaboration and involvement which is an important value proposed through the agile manifesto. This early customer feedback will reduce the amount of changes requested by the customers after writing the code, will in return reduce the development lifecycle. 
+Another important advantage for the EUID practice is that it fastens the development through developing part of the GUI code leaving the developers to focus on application logic development. The success in producing GUI code from the start will facilitate the work of developers who will have better understanding of the task they should implement and on the other hand this will facilitate the job of the testers as they will test the developed tasks as on unit (GUI code + Application code) .
+
+        4.3 EUID GUI representation Framework
+
+The main challenge that can face the EUID practice is how to produce the two outputs, GUI Structure and GUI Behavior Description file. If the team failed to produce them correctly then the practice has failed to reach its objectives.
+Suppose several GUI designers and programmers will collaborate to produce the EUID outputs. What we will get within few working days is some related inconsistent interfaces. This is a big problem to the customer who wants to see the same functions work the same way. Thus the customer will not be happy by what have done, thus the EUID practice has failed totally in achieving its benefits.
+To ensure the success of the EUID practice, we have proposed a GUI representation framework, represented in figure 4.6, which will simplify the production of EUID outputs and ensure the consistency of building the GUI Structure and the GUI Behavior Description File. 
+
+
+Figure 4.6: EUID GUI Representation Framework
+
+The framework, EUID GUI Representation Framework, is based on the scope of our research, Web-based Information System Applications.
+ As shown in figure 4.6, each web page can be viewed as a set of components. Each component is defined by a set of controls that serve a specific objective on the page. By defining each component’s controls, the GUI Structure for that corresponding page is created. Later each component is represented as a set of controls defining the structure of its corresponding page. We have defined four main components that can be found in a web Information system page. These components are explained in section 4.3.1. 
+For each component the active events and its actions are defined and described (explained in section4.3.2). The active events are those events that when triggered will cause at least one action to be executed, resulting in change in page behavior. By defining active event and their corresponding action, the GUI Behavior Description File can be created.
+
+            4.3.1  Components 
+
+From our exploration to several web information system application, we can find similarities between IS web pages. According to these similarities, we defined four main components that can be found in web IS page. Each component can be represented by different templates. The template defines the structure of the component. A web page may contain more than one component (may be of the same type). These components are:
+1.   Search component 
+Users of the web can make different type of searches on the net. They can search for information to use, search for old data to view, update or even delete, search for data to compare … etc. The search component is the one responsible for that task. This may come in different forms with different templates: for example
+    • Button_search template
+In that template a set of controls are given to allow the user to enter data for searching and a button is used to perform the search. Avery well known example for this is “Google search”. 
+
+    • Combobox_search template
+Another well known way for searching is using a combobox that allows the user to select data and according to that selection an action occurs. This action may result in producing an output to another combobox i.e. another search component. Thus we can get a series of depended comboboxes. 
+
+
+
+    • Tree_search template 
+Tree search is used in desktop application then lately proposed in web applications too. It allows the user to explore hierarchical data such as a table of content for a tutorial or a directory.  If the user clicked on a node, the dependent nodes appear and/or information related to that node appears in the other section of the page.
+
+2.   One record component
+Another important component that can be found in almost all information system applications is the one record component. It is used to allow the users to manipulate data for one single object. This manipulation can be for view only or for editing or for adding data. The one record component can be represented in columnar form. Some of the templates that can represent this component are:
+    • View_onerecord template
+This template is used when the objective is to allow users to explore data one by one. The user will not be able to edit in any field. There will be just buttons to allow the navigation between records.
+
+    • Edit_onerecord template
+For Edit_onerecord template, it is the same as View_onerecord template except it will allow users to edit the fields of the shown record. Also extra buttons will be allowed to add such as “save button” to save changes in databases and “cancel button” to cancel the changes made by the user before the last save.
+
+    • Insert_onerecord template
+Using databases involves insertion tasks. For insertion, most users prefer to insert data using columnar as it allow focusing on each field for just one record. The Insert_onerecord template is used for that task. Usually two buttons are there one to cancel the values inserted and the other for saving data in database.
+
+
+
+3.   Multi record component
+The Multi record component can be referenced to being a Datagrid where data is represented in tabular form.  It is similar to the one record component but it allows the manipulation of data for several records in the same time. It can be used for viewing data only or for editing or deleting. Some of the multi record templates that can be used are: 
+    • View_multirecord template
+Tasks like comparing data and checking the validation of data ca be represented using this template. The view_multirecord template allows the users to explore data without editing any field for any record. 
+
+    • Navigation_edit_multirecord template
+There are several ways to allow editing in multi record component. One of these is using navigators, i.e. links that when clicked actions occurs. Using this template, editing and deleting are done by adding edit and delete navigators for each record in the component. When edit navigator is clicked a new page is opened to allow editing the corresponding record. Also when the delete navigator is clicked the corresponding record is deleted. Two buttons are allowed to be used: one for saving changes and the other for canceling changes made after last save.
+
+4.   Navigator component
+There are several actions occurs when a link is clicked. For example, on clicking a link the user can move to another page or making changes on the same page. This link can come in the form of a word, sentence, paragraph, picture or even a button.
+
+            4.3.2 Components Illustrative Examples 
+
+Two examples are given to show how a web IS page can consist of several components explained in precious section. 
+The first example is shown in figure 4.7 which allow the user to manipulate the teams’ data. According to the explained components, the page consists of two components:
+ 1. Multi record component that shows all the teams with edit and delete links for editing or deleting any team. The navigation_edit_multirecord template is used to represent this component.
+2. Navigator component for adding a new team “Add new team”. A sentence is used to represent the navigator. When it is clicked a new page will be open to allow adding a new team record.
+
+Figure 4.7: Example 1.
+Second example includes adding a template with several questions for that template. The page consists of two components:
+
+    1. The page can be represented by other way in which two components are used: One record component that allows the user to add an evaluation template and its questions. Insert_onerecord template is used to represent that component.
+ 2.   Multi record component that shows all questions inserted by the user in that evaluation template. The navigation_edit_multirecord template is used to represent that component with delete navigator to allow deletion of questions. Also submit button is used to save all inserted date and cancel button to cancel last changes made after last submit. 
+
+The page can be represented by other way in which four components are used: 
+
+1.   One record component that allows the user to add an evaluation template and its questions. Insert_onerecord template is used to represent that component.
+ 2.   Multi record component that shows all questions inserted by the user in that evaluation template. The navigation_edit_multirecord template is used to represent that component with felete navigator to allow deletion of questions.
+ 3.   Navigator component which is “submit” button that save data into database. 
+ 4.   Navigator component which is “cancel” button that cancel all changes have been made since last submission.
+
+ 
+Figure 4.8: Example 2.
+            4.3.3 Active events and actions 
+
+The user performs tasks through the GUI structure of the web pages. The interaction with the GUI causes events  initiation that in turn execute actions through its handlers and this typically results in changes to the current GUI structure (either within the same page or a new page). 
+For each control in the component there may be active events that cause a change in page behavior. We mean here by active events are those which will really trigger actions that will cause behavioral changes. For example suppose we have a navigator component in the form of a word. The events on that control can be OnClick, OnMouseOver, OnMouseUp … The one that will contain actions causing behavioral changes is an active event. 
+		Each active event can trigger more than one action. For example, we have “Onclick” active event for a button that when clicked: 
+			1. Data is inserted into database 
+			2. A table in Multi record component is refreshed by the new data.
+Thus we have two actions for a single active event.
+	To describe an action we need to define certain aspects:
+        1. A description about what that action really does 
+        2. The input controls from which the action will take input
+        3. The output controls to which the action will send output
+		If we could succeed to represent the events and its actions, as explained before, we would have created the GUI Behavior Description file while maintaining consistence since all the events with its actions for all pages are described by the same way through the same framework.  
+
+            4.3.4 Active events and actions Illustrative Example
+ 
+	For instance, in example 2, the active event in the first component (one record component) is Onclick for button (button1) with caption “Add Question”. The action that has to be implemented for that event is adding the user’s questions into the table (table1). The input for that action is the controls in the one record component:
+	Textbox  tempname
+	Textbox  Questiontext
+The output for that action will be in the Multi record component Datagrid  table1
+	According to that classification the EUID GUI behaviour description file can be created. Part of the file is shown in figure 4.9.  
+
+
+
+<component type=”onerecord” id=”component1”>
+<active_event id=”event1” control=”button1” active=”onclick”>
+   <action id=”action1”>
+       <desc>
+        When  button1 is clicked the question inserted      
+        by the use will be added in a table for    
+        reviewing.
+       </desc>
+       <input> component1.textbox</input>
+       <output>component2.datgrid1</output>
+  </action>
+</active_event>
+…
+</component>
+<component type=”multirecord” id=”component2”>
+…
+</component>
+...
+Figure 4.9: Part of GUI Behavior Description File
+
+
+4.4 EUID GUI Generation Tool
+
+	To simplify the generation of EUID GUI while maintaining consistency, we propose a tool that aims at automating the production of GUI structure and its behavior description file. The tool is called EUID GUI Generation Tool.
+	As shown in figure … The tool will be used by the system analyst with the collaboration of the customer and programmer to produce a set of web pages related to each other. Each web page is defined by both HTML (GUI structure) and XML (GUI Behavior) code. We called the nest of these web pages the EUID GUI Representation.
+
+Figure 4.10: EUID GUI Generation Tool.
+
+Based on the EUID generation framework each web page is decomposed into several components, where each component consists of several active events which are used to define how the page will act through the actions described for the active events. Each action has a set of input controls that will be used as input parameters when the action is implemented by the programmer and a set of output controls which the programmer will use to show the output of the implemented action. A class diagram is shown in figure 4.11 to describe this presentation. 
+
+Figure 4.11: Class diagram for page presentation
+
+
+The EUID GUI Generation tool uses step-by-step wizard to guide the analyst to accomplish his/her work through a series of easy instructions. The tool approach is illustrated in figure 4.12.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4.12 EUID GUI Generation Tool Approach.
+
+As show in the figure, the analyst moves through four basic steps to generate the GUI of one web page. These steps are explained in the next four subsections.
+
+
+
+            4.4.1 Select Component
+As we declared above, we have defined four important components that can be found in almost all information system applications. When the tool user starts creating the GUI of a web page, he/she will be asked to specify the components (one by one) of the web page. Once a component is chosen, the user will be asked to give the component a name and a description about the objective of that component. Figure 4.13 shows a snapshot for this step.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4.13 EUID GUI Generation Tool – First step.
+
+            4.4.2 Select Template
+
+After specifying a component, the user will be asked through the wizard to specify the component, i.e. specify the component template. The user will be given a set of defined templates for that component. Each template poses certain constraints, for example: the event on a certain template will be related to a combobox event while on another template the event is related to a button. 
+
+
+            4.4.3 Describe Template attributes
+
+Once the user chooses the template, the wizard will help him/her in specifying the controls based on the template constraints. Once that step is finished the actual GUI structure has been defined for that component. The user will be asked to add another component. If the answer is “Yes”, the wizard will return to step1. If the answer is “No”, the wizard will move a forward step to allow defining actions.   
+
+4.4.4  Define Actions
+The last step is defining the actions that should be developed by the developers. On that step, the user will select one of the specified components as shown in figure 4.14.
+
+Figure 4.14 EUID GUI Generation Tool – Fourth step.
+
+According to this choice, a set of controls are given that can have active events. When the analyst selects a specific control, the default active event will be given with the flexibility to change if necessary. Accordingly, the analyst will be ready to add the actions for that active event.
+ 
+
+
+
+
+
+
+
+Figure 4.15 EUID GUI Generation Tool - Specify the number of input and output controls.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4.15 EUID GUI Generation Tool – Define an action.
+
+
+When the analyst clicks on “Add action”, he/she will be asked to define the number of input controls and output controls as shown in figure 4.15. Then the analyst will be able to define all the actions for that event by specifying:
+	- A description for that action.
+	- Input controls 
+	- Output controls 
+Figure 4.16 shows how an action can be defined. Later the analyst can add another action or view the actions defined for the chosen active event.
+
+
+
+
+
+
+
+
+
+
+Chapter 6
+
+6.1 Conclusion
+
+The Agile methodologies are suitable for the development of web-based information system applications because of two main reasons:   
+    1. The requirements of web-based information systems are not well defined: In agile the system is developed in form of small releases in which the requirements are explored in detail with the help of the customers (customer collaboration in agile is an important key).
+    2. The rate of requirements changes in web-based information systems is high:  Before each release the team get customer feedback on the release and adapt the customer changes in that release or declare it as a requirement for the next release (The core of agile is to adapt changes as fast as possible and not stick to the plan).
+The GUI is an important part of the development because its code is about half the code of the whole application and it is the true representation of the customers’ requirements as well. However GUI is not sufficiently addressed in agile.  
+Thus, we proposed a new agile practice “Early User Interface Development” (EUID) that aims at:
+    • Generate the GUI at early stage of the development.
+    • Get customer feedback earlier before the actual development which results in reduction of the cost of applying changes and time of development.
+    •  The developers will focus only on the application business logic without caring about the GUI.
+We also proposed a prototype tool to automate the process of the EUID practice and achieve consistency through the whole application pages as well. The tool takes the analyst through simple steps to generate, for each page, the GUI static structure (HTML) and the GUI behavior description file (XML) that explains the actions that should be implemented according to the customer interaction. These steps are:
+        1. Select Component: Each component is a group of controls that serve a single objective on the corresponding page. We have defined four components that are found in many information systems: Search component, One record component, Multi record component and Navigator component. 
+        2. Select template: Each component can be represented by different templates. The analyst selects the suitable one. 
+        3. Describe Template attributes: The analyst will define the controls according to the selected template. At the end of this step the static GUI structure for the corresponding page is generated. 
+        4. Define actions: At this step, the analyst with the help of the developers will define the active events that should be triggered due to the customer interaction with the GUI. For each active event, the actions that should be implemented are defined (action description, the input controls from which the action takes data and output controls to which the action send data). 
+
+6.2 Future Work
+
+
+

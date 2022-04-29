@@ -1,0 +1,791 @@
+The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+Syntactic open domain Arabic
+Question/Answering System for Factoid
+Questions
+Noha S. Fareed, Hamdy M. Mousa, and Ashraf B. Elsisi
+Computer Science dep., Faculty of Computers and Information
+Menofia University, Egypt
+{noha.elabyad@ci.menofia.edu.eg, hamdimmm@hotmail.com, ashrafelsisi@hotmail.com}
+Abstract- Information Retrieval systems have become a crucial
+part of any search engine, taking into consideration the increased
+number of pages and documents added to the World Wide Web
+every day. Question/Answering systems are specific to retrieve the
+most accurate answer among several documents; this paper will
+present an improved methodology and implementation of an open
+domain Arabic Question Answering System for factoid questions.
+The proposed system is based on Query Expansion ontology and
+an Arabic Stemmer. Basically the system mainly depends on
+AWN as a semantic Query Expansion and Khoja stemmer as a
+stemming system, to evaluate the system we used 56 translated
+CLEF and TREC questions, four types of test scenarios are
+performed. Four evaluation attributes were considered: Accuracy,
+Mean Reciprocal Rank, Answered Questions and recall; and
+encouraging results were reached with the proposed system.
+Index Terms – Question/Answering, Factoid questions, Query
+Expansion, Arabic WordNet, JIRS, Khoja stemmer.
+I.
+I NTRODUCTION
+Information Retrieval (IR) researches are concerned about
+storing and retrieving specific information from a large
+collection of documents. IR attempts to provide the user with
+the most accurate and precise answer for his query.
+Traditionally, the user enters a natural language query (like a
+normal question) then documents are retrieved based on that
+query. In many cases, the user will only be interested in a
+specific and concise piece of information inside the document
+rather than the entire document. In Q/A systems, the user enters
+a natural language question and Q/A systems try to come up
+with a concise answer to the user’s question. The question can
+be factoid or non-factoid. Factoid questions have simple facts
+as answers and these facts are retrieved from a single document
+like (when, who, where...) questions, for example ( ‫ؼئٍف‬ ‫هى‬ ٍِ
+‫()ٍصؽ؟‬Who is the president of Egypt?). Whereas non-factoid
+questions typically have longer pieces of readable information
+as answers which may come from single or multiple documents
+like (How, Why) questions, for example ( ‫اىؼاىٍَه‬ ‫اىسؽب‬ ‫اّعىؼد‬ ‫ىَاغا‬
+‫()األوىى؟‬Why did the First World War breakout?)[1].
+Significant progress has been achieved in the research field
+of Q/A especially for languages such as English and Latin-
+based languages but Arabic based Q/A systems didn’t reach the
+same level of maturity as English based Q/A systems, one
+major reason for that would be the extra complexity of the
+Arabic language morphological and grammar rules [2].
+Some of the challenges concerning Arabic language which
+facing developers in natural language processing (NLP)
+applications are: Morphology, Arabic language has a very
+complex morphology because it is a derivational and
+inflectional language. Diacritics, the same word with different
+diacritics can express different meanings, but when diacritics
+disappear, researchers face some challenges to determine the
+word meaning. Absence of capital letters, Capital letters are
+very important to recognize Named Entities (NE’s) when it is
+supported in the target language, but it is not the case for
+Arabic because Arabic does not support capital letters [3].
+Q/A systems are classified into two main categories,
+namely open-domain Q/A systems and closed-domain Q/A
+systems. Open-domain question answering deals with
+questions about nearly everything and can only rely on
+universal ontology and information such as the World Wide
+Web. On the other hand, closed-domain question answering
+deals with questions under a specific domain (music, weather
+forecasting etc.)[1].
+In this paper we will introduce a proposed design for an
+open-domain Arabic Q/A system or sometimes it is called Web
+based Q/A system. Our system is mainly depending on
+semantic Query Expansion (QE) which gives a high level of
+completeness (recall) when combined with the IR (Google SE)
+to retrieve passages by expanding each keyword to its
+semantically equivalent keywords; to do this task we have used
+the Arabic WordNet (AWN) ontology and get four types of
+relations (synonym, definition, subtype, and supertype) for
+each keyword; these new terms are used to increase the
+relativity between the search results and the question. Our
+system depends also on stemming which is used to get the stem
+forms for the Google SE returned passages, for this task we
+used a stemming system called Khoja stemmer. The proposed
+system is also depending on Java Information Retrieval System
+(JIRS) which is a structure based passage retrieval system used
+to re-rank the snippets returned by Google SE.
+The evaluation process of our proposed system considers
+four of the most known measures in the context of Q/A
+systems: the accuracy, Mean Reciprocal Rank, Answered
+Questions and Recall. This process uses a set of 56 TREC and
+CLEF questions manually translated to the Arabic language.
+The obtained results show an improvement in the accuracy, the
+MRR, the number of answered questions and Recall.
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-1The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+The rest of the paper is structured as follows: Section II
+describes the general architecture and a brief description of the
+existing Q/A systems; Section III gives a detailed description
+about the design of the proposed system; Section IV is devoted
+to the presentation of the experiments that we have conducted
+and it’s evaluation results; And section V finally draws some
+conclusions and future work to be done.
+II.
+L ITERATURE R EVIEW
+The generic architecture of a web based Q/A system is in
+Figure 1. Its main modules are: Question Analysis, Passage
+Retrieval (PR), and Answer Extraction (AE) [1].
+Question analysis is the module which identifies the focus
+of the question, classifies the question type, derives the
+expected answer type (EAT), and reformulates the question
+into semantically equivalent multiple questions.
+PR module is the core of any Q/A system. In this module;
+the reformulated queries from the first module are submitted to
+the information retrieval system such as Google Search Engine,
+which in turn retrieves a ranked list of relevant documents. The
+documents returned by the information retrieval system is then
+filtered and ordered. Therefore, the main goal of the PR
+module is to create a set of candidate ordered paragraphs that
+contain the answer(s) [1].
+IR can be either keyword based or structure based. In
+keyword based IR (such as Google, Yahoo, etc), the document
+is relevant if it contains one or more keyword similar to the
+question but the structure is not essential. In the other side,
+structure based IR cares about the structure of the question, not
+only just the existence of the keywords [5].Most Web based
+Q/A systems use Keyword based IR, while recent Q/A systems
+use keyword based and structure based IR.
+word or phrase that answers the submitted question through a
+set of heuristics. Third is to validate the answer by providing
+confidence in the correctness of the answer [1].
+There were only few attempts to build Arabic Q/A systems.
+Some of the available Arabic Q/A systems are:
+AQAS [6] is one of the earliest Arabic Q/A systems. It is
+knowledge based system that accepts Arabic queries that
+follow pre-defined rules and matches these against frames in a
+knowledge base but no experimental results have been reported
+for this system .
+QARAB [7] is a Q/A system that uses text extracted from
+the Arabic newspaper “Al-Raya” to answer natural language
+queries posed by users. It retrieves short passages that are
+likely to contain an answer to the user’s query rather than
+extracting the exact answer but no experimental results have
+been presented for this system.
+ArabiQA[8] is a factoid centered Arabic Q/A system. It
+uses a Java Information Retrieval System, a Passage Retrieval
+system, a Named Entities Recognition module and Answer
+Extraction module. The authors of this system report a
+precision of 83.3% over a manually created test dataset. It is
+designed for an open domain but has not been tested in such an
+environment.
+(Abouenour el al, 2008)[9] present a method for expanding
+natural language queries using Arabic wordnet in order to
+enhance the results of a Q/A system. They feed in the expanded
+and un-expanded forms of the query into the Google search
+engine, and demonstrate that using their query expansion
+module, the accuracy of the returned results are enhanced.
+They’ve used a set of translated TREC and CLEF questions to
+test their system.
+(Kanaan et al, 2009) [10] present another Arabic Q/A
+system which makes use of data redundancy rather than
+complicated linguistic analyses of either questions or candidate
+answers, to achieve its task. The author test their system using
+a collection of 25 documents gathered from the Internet, 12
+queries. The authors have not compared their results to any
+previously developed Arabic Q/A system
+At the end of 2009, Google launched its Beta Arabic
+question answering system Google’s Ejabat [11],[12]. The
+move came after observing that “many of its Arabic users'
+search attempts failed to turn up relevant results. Details of this
+system are not known, and neither is its performance.
+Generally, for Arabic, the existing Q/A systems fail when a
+complex question has to be processed.
+Fig. 1. Question answering system general architecture
+AE module is responsible for identifying, extracting and
+validating answers from the set of ordered paragraphs passed to
+it from the PR module. First is to identify the answer
+candidates within the filtered ordered paragraphs through
+parsing. Second is to extract the answer by choosing only the
+IDRAAQ [13] is a recent Arabic Question Answering
+system. It aims at enhancing the quality of retrieved passages
+with respect to a given question. Experiments have been
+conducted in the framework of the main task of
+QA4MRE@CLEF 2012 that includes this year the Arabic
+language. The Passage Retrieval (PR) module of this system
+presents multi-levels of processing in order to improve the
+quality of returned passage. The results obtained for IDRAAQ
+are encouraging.
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-2The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+III.
+P ROPOSED SYSTEM
+The architecture of our proposed Q/A system is shown in
+Figure 2 Its main components are:
+words are not required for the analysis process to be completed
+successfully and its removal do not have any effects on the
+result.
+TABLE 1
+A. Question analysis and classification module.
+B. Passage retrieval module. T YPES OF THE QUESTIONS PROCESSED
+C. Answer extraction module. Question type
+A. Question Analysis and Classification Module
+This is the first phase in the Q/A system [5]; it identifies the
+type of the question, the EAT, and the collection of queries
+equivalent to the question [14]. A Java program has been
+implemented to perform all the processing required by this
+phase.
+Each question consists of interrogative noun and the body
+of the question itself, like (“ ‫اىرؽظظاخ؟‬ ‫وزعج‬ ً‫ه‬ ‫)”ٍا‬ (“What is the
+unit of frequencies?”) In this question we can say that (“‫)”ٍاهى‬
+is the interrogative noun and this question is asking about
+quantity, so we can identify the EAT. Table 1 shows the
+Factoid questions handled in our system [15].
+After identifying the question type, the system must
+identify the main question keywords. In order to do so; the
+system will remove all the Stop Words, which are the common
+words that do not have useful meaning in a retrieval system.
+There are many reasons that stop-words should be removed
+from the question text. For example: they make the question
+text looks heavier and less important for analysts also the stop-
+Expected answer
+type (EAT)
+ٍِ(who) ‫شطص‬ (Person)
+ُ ‫ی‬ ‫أ‬ (Where) ُ‫ٍنا‬ (Location)
+‫ٍرى‬ (When) ُ‫ؾٍا‬ (Time)
+ٌ‫م‬ (how much) ‫مٍَه‬ (quantity)
+‫ٍاهى‬ - ‫ٍاهى‬ (what is) ‫شًء‬ (thing)
+Indeed, since there are many ways to formulate a question
+in natural language, a Query Expansion (QE) process can be
+used in order to overcome the situations where the PR process
+eliminates relevant passages containing other forms of the
+question keywords or words related to them. For example, if
+the question contains the keyword “‫”وظيفة‬ the query used by the
+PR process can be expanded to include its other morphological
+forms like " ‫وظائف‬ " or " ‫اىىظٍفح‬ " . A more advanced QE process
+relies also on semantic relations. For example, we can include
+keywords like " ‫ػَو‬ " or “‫”ٍهْح‬ since they have a similar meaning
+to the original keyword [5]. Enriched Ontology algorithms can
+do the previous operation. There is a popular implementation
+for such a process which is called Arabic wordnet (AWN) [16].
+Fig. 2. Proposed system
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-3The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+Fig. 3. AWN Database strcture
+A.1 Arabic WordNet ontology (AWN)
+The AWN ontology is a free lexical resource for modern
+standard Arabic [16]. It is based on Princeton WordNet and it
+can be mapped onto it as well as a number of other WordNets,
+enabling translation to and from dozens of other languages. It is
+also connected to SUMO (Super Upper Merged Ontology),
+which is an upper level ontology which provides definitions for
+general-purpose terms.
+system performance. Figure 4 shows the set of expanded
+questions for the above question using our system.
+In our system we have used AWN database (DB), shown in
+Figure 3, to get four types of relations for each keyword, which
+are synonyms, definition, supertypes, and subtypes. These
+relations are used to expand the question and get alternative
+queries for it. The AWN data are divided into four entities:
+Items, Word, Form, and Link.
+Let us consider the question (“ " ً‫مفاز‬ " ‫مراب‬ ‫ٍؤىف‬ ‫هى‬ ٍِ
+‫“()”؟‬Who is the author of “Kefahy” book?”), For example,
+which has as answer (“ ‫هريؽ‬ ‫“()”أظوىف‬Adolf Hitler”). After
+applying the Query Expansion process for the mentioned
+question, the result would be a set of alternative queries which
+based on AWN ontology and are equivalent to the original
+query. AWN four relations (synonym, definition, supertypes,
+subtypes) are extracted for each keyword and combinations of
+these keywords are generated, which form the queries.
+Our process will also generate irrelevant or less relevant
+terms which, if passed to the next phase, will produce
+irrelevant snippets. Thus, a threshold is to be set in order to
+avoid such undesired behavior. Preliminary experiments that
+we have conducted on 20 questions [4] showed a little
+difference noticed by using one level of expansion and using
+two level of expansion, so it is preferred to do one level of
+expansion because it saves time and enhanced the overall
+Fig. 4. Expanded queries for “ " ‫مفازى‬ " ‫مراب‬ ‫ٍؤىف‬ ‫هى‬ ٍِ ” question undertaken
+by our system
+B. Passage retrieval module.
+It is the core of any Q/A system [17]. This phase accepts
+queries from the previous phase and produces top ranked
+passages related to these queries [18]. We used Google search
+engine and get the first five snippets returned for each query. It
+is important to take into consideration the structure of the query
+and not only the existence of the keywords in the passages,
+because a document is relevant not only for the existence of the
+keywords inside it but also by containing other words with
+close meaning to the question. In order to complete this we use
+JIRS (Java Information Retrieval System), which is a structure
+based passage retrieval system. We used JIRS to improve the
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-4The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+rank of Google returned passages by re-ranking them according
+to the structure base.
+B.1 Java information retrieval system (JIRS)
+The Java Information Retrieval System (JIRS) [19] is a
+language independent PR system, implemented on the basis of
+the density model that has been adapted to work also with the
+Arabic language [17]. As shown in Figure 5 [7] The JIRS uses
+a Distance Density model to compare the n-grams extracted
+from the question and the passage to determine the relevant
+passages. The idea of this model is to give more weight to
+those passages where the question terms appear nearer to each
+other.
+One major drawback of JIRS is during the ranking process;
+because all the morphological relationships between the
+passage content and the question are not being considered.
+Since it is possible that some of the user’s question keywords
+may not be present in any of the document sentences in the
+same form as the question, so the use of a stemmer is obviously
+of high importance because it can figure out different
+morphological forms of the same stem.
+As seen in Figure 5 khoja stemmer is combined with JIRS
+to enhance its performance.
+computation. This stemmer is being used in AQYASYS [21]
+and more enhanced results are being retrieved. Now we don’t
+need to expand the keywords at the morphological level as
+well.
+Khoja's stemmer subtasks:
+• Removing the Definite Article ‫“اه‬al”
+• Removing the Conjunction Letter ‫“و‬w”
+• Removing Suffixes and Prefixes
+• Pattern Matching
+Two experiments are conducted in this phase. The first
+experiment scenario is as following:
+1. Passing the queries generated from first phase (shown in
+Figure 4) to Google Search Engine then retrieve the first 5
+snippets for each query.
+2. Create JIRS dataset using Google snippets.
+3. Queries from first phase are used to search inside the
+JIRS dataset.
+4. As a result we get a list of snippets as shown in Table 2.
+TABLE 2
+T HE S NIPPETS R ETURNED B Y JIRS A FTER Q UERING I T B Y Q UERIES W ITHOUT
+S TEMMING
+Similarity
+Fig. 5. Enhanced JIRS structure
+For example, if user enters the following question: (“ ‫هى‬ ٍِ
+‫اىريٍفؿٌىُ؟‬ ‫)”ٍنرشف‬ (“Who is the inventor of the television?”)
+And the text contains the sentence (“ ‫امرشف‬ ٍِ ُ‫أ‬ ‫اىَؼؽوف‬ ٍِ‫و‬
+‫تٍؽظ‬ ُ‫خى‬ ‫هى‬ ُ‫)”اىريٍفؿٌى‬ (“It is known that the TV is discovered by
+John Baird”) the last sentence is an exact answer to the posed
+question, however if stemming mechanism is not used, then
+this sentence may not appear as a potential answer. But by
+applying the stemming process the question will be: (“ ‫هى‬ ٍِ
+‫ذيفؿ‬ ‫)”مشف‬ (“who is invent television?”) And the sentence will
+be: (“‫ؼظظ‬ ُ‫خى‬ ‫هى‬ ‫ذيفؿ‬ ‫مشف‬ ٍِ ُ‫ا‬ ‫ػؽف‬ ٍِ”) (“It is know that TV is
+discover by John Baird”) so it can simply match the question.
+We used stemming system called Khoja stemmer [20].
+Stemming is the process of removing any affixes from the
+word and reducing these words to their roots. For example,
+stemming the English word computing produces the root
+compute. This is the same root produced by the word
+Snippets
+sim="88%" Oct 18 , 2009 - ‫ٍغيق‬ . ‫اىراؼٌص‬ ‫؟‬ " ً‫مفاز‬ " ‫مراب‬ ‫ٍؤىف‬ ٍِ
+‫اىؿٌاؼاخ‬ ‫ػعظ‬ 5 : ‫اإلخاتاخ‬ ‫ػعظ‬ : .. .
+sim="72.4%" Oct 18 , 2009 - ‫ٍغيق‬ . ‫اىراؼٌص‬ ‫؟‬ " ً‫مفاز‬ " ‫مراب‬ ‫ٍؤىف‬ ٍِ
+‫اىؿٌاؼاخ‬ ‫ػعظ‬ 5 : ‫اإلخاتاخ‬ ‫ػعظ‬ : .. .
+sim="53.3%" ‫اىَؤىف‬ ‫إىى‬ ‫تاإلضافح‬ ‫فٍٍْا‬ ‫وػَعج‬ ً‫اىَكٍس‬ ً‫االشرؽام‬ ‫اىسؿب‬
+ٍِ ٌ‫أّه‬ ‫ذىضر‬ ‫ٍطثىػح‬ ‫َّاغج‬ ‫ػيى‬ . ..... ‫ؼٌرشاؼظ‬ ً‫اىَىقٍق‬
+‫غىل‬ ‫ذثثد‬ ‫وثائق‬ ٌٌ‫ذقع‬ ‫إىى‬ ‫اىساخح‬ ُ‫ظو‬ ًّ‫أىَا‬ ‫أصو‬
+, ‫اىَؤىف‬ , ‫األصيٍح‬ ‫تاىيغح‬ ‫أو‬ ‫تاإلّديٍؿٌح‬ ُ‫اىؼْىا‬ , ‫اىؼْىاّثاىؼؽتٍح‬ .
+‫اىَْغ‬ ‫قثة‬ , ً‫األظت‬ ‫اىْىع‬ ... .
+sim="50.7" ‫اىقٍاظج‬ ‫ذسد‬ ‫ىيقراه‬ ٍِ‫ٍرطىػ‬ ‫إؼقاه‬ ‫هى‬ ‫اىدْؽاه‬ ‫فؼيه‬ ‫ٍا‬ ُ‫أ‬ ‫غٍؽ‬
+ُ‫اإلػال‬ ٌ‫ذ‬ ،‫اىكىفٍٍد‬ ‫ػيى‬ ً‫اىهدى‬ ٍِ . .... ‫أتقى‬ ‫وىنْه‬ ‫األىَاٍّح‬
+‫ذىٍشٍْنى‬ ‫اىَاؼشاه‬ ٍِ ‫ٍىقغ‬ ‫ػكنؽي‬ ‫ٍكرْع‬ ِ‫ػ‬ .. .
+sim="49.9%" ‫هتلر‬ ‫مرة‬ ‫زٍث‬ ً‫مفاز‬ ‫مراب‬ ً‫ف‬ ً ‫أٌضا‬ ‫اىثؽوذىمىالخ‬ ‫غمؽ‬ ٌ‫وذ‬
+‫مثٍؽ‬ ‫زع‬ ‫إىى‬ ‫كرََْع‬ ٍ ُ ‫اىٍهىظ‬ ‫ذاؼٌص‬ . .. ‫ذظهؽ‬ ‫اىثؽوذىمىالخ‬ ُ‫إ‬ "
+ٍِ ‫زقٍقٍح‬ ‫ٍطاوف‬ ‫هْاك‬ ُ‫وأ‬ ‫واىرؿوٌؽ‬ ‫األماغٌة‬ ‫ػيى‬ ...
+sim=“46.6%” Oct 18 , 2009 - ‫ٍغيق‬ . ‫اىراؼٌص‬ ‫؟‬ " ً‫مفاز‬ " ‫مراب‬ ‫ٍؤىف‬ ٍِ
+. .. : ‫اىؿٌاؼاخ‬ ‫ػعظ‬ 5 : ‫اإلخاتاخ‬ ‫ػعظ‬
+The second experiment scenario is as following:
+1. Passing the queries generated from first phase (shown in
+figure 4) to Google Search Engine then retrieve the first 5
+snippets for each query.
+2. Use the Khoja stemmer to get the stemmed snippets of
+the search results.
+3. Create JIRS dataset using stemmed snippets.
+4. Generate stemmed queries from first phase output
+(shown in Table 3) and use it to search inside the JIRS dataset.
+5. As a result we get a list of snippets as shown in Table 4.
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-5The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+TABLE 3
+S TEMMED Q UERIES F OR “ ‫مفازى‬ ‫مراب‬ ‫ٍؤىف‬ ‫هى‬ ٍِ ” Q UESTION A FTER E XPANSION
+‫ازى‬
+‫مف‬ ‫مرة‬ ‫أىف‬ ‫هى‬ ٍِ
+‫ازى‬
+‫مف‬ ‫طثغ‬ ‫أىف‬ ‫هى‬ ٍِ
+‫مفازى‬ ‫طثغ‬ ‫أىف‬ ‫هى‬ ٍِ
+‫ازى‬
+‫مف‬ ‫قْع‬ ‫أىف‬ ‫هى‬ ٍِ
+TABLE 4
+S NIPPETS R ETURNED B Y JIRS A FTER Q UERING I T B Y S TEMMED Q UERIES
+Similarity
+Snippets
+sim="86.5%" Oct 18 , 2009 - ‫ػعظ‬ ‫غيق‬ . ‫أؼش‬ ‫؟‬ " ً‫مفاز‬ " ‫مرة‬ ‫أىف‬ ٍِ
+‫ؾوؼ‬ ‫ػعظ‬ 5 : ً‫خث‬ : .. .
+sim="61.1%" .. ‫ؼهق‬ ‫ّىخ‬ ‫إىى‬ ٌ‫أى‬ ً‫قى‬ ٌَِ ‫إىى‬ ‫زىه‬ ‫هتلر‬ ‫ؼخغ‬ ً‫مفاز‬ ‫مرة‬ ً‫وف‬
+‫ذسف‬ ً‫ف‬ ‫ػؽض‬ ‫صىه‬ ً‫ف‬ ‫وخع‬ ‫ىىذ‬ ‫ظؼـ‬ ‫هى‬ ‫ؼزو‬ ٍِ ‫هعف‬ ُ‫ما‬ .
+‫طيق‬ ُ‫ما‬ ‫اىػي‬ .. .
+sim="60.6%" .. ) 2012 / 04 / 19 ،‫ػعا‬ ‫غيف‬ ‫ؼقأ‬ ( ‫هتلر‬ ‫ادولف‬ ‫ىـ‬، 1 ٌ‫ؼق‬ ‫طثغ‬ ،‫مفر‬
+‫ػيٍها‬ ً‫قؼ‬ ً‫اىر‬ ‫فؽقاي‬ ‫ػهع‬ ‫ماّد‬ ‫إغا‬ ،‫مثؽ‬ ‫ضطأ‬ ‫ضطأ‬ ‫ػيح‬ ‫ال‬ : ‫أىف‬ .
+ً‫هؿ‬ ‫ػقة‬ ‫ٍْا‬ .. .
+sim="55.8%" .... ً‫تق‬ ‫ىنْه‬ ٌ‫أى‬ ‫قىظ‬ ‫ذسد‬ ‫قرو‬ ‫طىع‬ ‫ؼقو‬ ‫هى‬ ‫خْؽاه‬ ‫فؼو‬ ‫ٍا‬ ُ‫أ‬ ‫غٍؽ‬
+‫ٍاؼشاه‬ ٍِ ‫وقغ‬ ‫ػكنؽ‬ ‫قْع‬ ِ‫ػ‬ ِ‫ػي‬ ٌ‫ٌر‬ ،ً‫وف‬ ‫ػيى‬ ٌ‫هد‬ ٍِ .
+‫ذىٍشٍْنى‬ .. .
+sim="49.4%" Oct 18 , 2009 - : ً‫خث‬ ‫ػعظ‬ ‫غيق‬ . ‫أؼش‬ ‫؟‬ " ‫مفر‬ " ‫مرة‬ ‫أىف‬ ٍِ
+‫ؾوؼ‬ ‫ػعظ‬ 5 : .. .
+Sim=”48.9%” Oct 18 , 2009 - ‫ػعظ‬ ‫غيق‬ . ‫أؼش‬ ‫؟‬ " ً‫مفاز‬ " ‫مرة‬ ‫أىف‬ ٍِ
+. .. : ‫ؾوؼ‬ ‫ػعظ‬ 5 : ً‫خث‬
+The previous experiments show that if we didn’t perform
+stemming for the queries or the snippets, as discussed in the
+first experiment, the answer will appear in the 5 th snippet with a
+similarity of “49.9%” as shown in Table 2. In the other hand if
+we look at the second experiment which used stemming for
+both the queries and the snippets, the answer will appear in the
+second snippet with a similarity of “61.1%” as shown in Table
+4.
+If we consider the previous mentioned question (“ ‫هى‬ ٍِ
+‫؟‬ " ً‫مفاز‬ " ‫مراب‬ ‫ٍؤىف‬ ”)(“Who is the author of “Kefahy” book?”),
+from the QA phase we can classify this question and identify
+the EAT which is a person.
+From Table 4, if we consider the first snippet which is “Oct
+18 , 2009 - ‫ؾوؼ‬ ‫ػعظ‬ 5 : ً‫خث‬ ‫ػعظ‬ ‫غيق‬ . ‫أؼش‬ ‫؟‬ " ً‫مفاز‬ " ‫مرة‬ ‫أىف‬ ٍِ : .. .”
+by searching for the EAT which is person, we didn’t find any
+person in this snippet so the answer isn’t in this snippet. By
+looking for the second snippet which is “ ‫هتلر‬ ‫ؼخغ‬ ً‫مفاز‬ ‫مرة‬ ً‫وف‬
+ً‫ف‬ ‫وخع‬ ‫ىىذ‬ ‫ظؼـ‬ ‫هى‬ ‫ؼزو‬ ٍِ ‫هعف‬ ُ‫ما‬ . .. ‫ؼهق‬ ‫ّىخ‬ ‫إىى‬ ٌ‫أى‬ ً‫قى‬ ٌَِ ‫إىى‬ ‫زىه‬
+‫طيق‬ ُ‫ما‬ ‫اىػي‬ ‫ذسف‬ ً‫ف‬ ‫ػؽض‬ ‫صىه‬ .. .” we can find “‫”هتلر‬as a person
+name so it is most likely the answer.
+But if we find more than person name in the snippet we
+should take the one which is close to the matched keywords in
+the snippet.
+IV.
+E XPEREMENTAL RESULTS
+A. Data Set
+In the Q/A field, researchers have two well-known
+international competitions where they can compare their
+systems: the TREC and CLEF. The test data provided by the
+two competitions cover a considerable variety of languages but
+doesn’t cover Arabic language. Therefore, a need of a
+translation into the Arabic language of the available data set is
+to be done. An earlier study [5] translated all TREC and CLEF
+questions into Arabic and put them available to researchers
+[22].
+In our system we have selected 56 different CLEF and
+TREC questions that were translated into Arabic [22]. Those
+questions are classified in different domains as shown in Table
+5. Each question is expanded to get its alternative questions,
+and we got 247 generated questions.
+TABLE 5
+C LASSIFIED Q UESTIONS U SED I N P ROPOSED S YSTEM B Y T RACK A ND D OMAIN
+The reason behind difficulties for finding the answer in the
+first experiment is that the answer may appear in a snippet but
+unfortunately this snippet didn’t get a high similarity with the
+query because the query keywords may appear in a different
+form in the snippet so this snippet will get a low similarity with
+the query.
+# questions Track
+Domain
+5 CLEF Location
+6 CLEF Person
+5 CLEF Time
+2 CLEF Measure
+In the second experiment we use Khoja stemmer for
+reducing inflected (or sometimes derived) words to their stem,
+base or root form. This process helps in finding the answer in
+snippets which have the same query keywords but in a different
+form, may be in a derivational or inflectional form. 4 CLEF Object
+1 CLEF Other
+5 TREC Location
+4 TREC Person
+C. Answer extraction module 5 TREC Time
+AE is the final component in Q/A system which responsible
+for analyzing the documents or passages returned by the
+previous unit and identify possibly a single answer (could be a
+ranked list of answers, too) to the question. 8 TREC Measure
+6 TREC Object
+2 TREC Count
+First step to get the answer is to identify the answer type
+which the question asks for; we have already noticed that
+during the Question analysis phase an EAT is formulated by
+most of the systems. 3 TREC Other
+56 Total
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-6The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+B. Evaluation Process and Measures
+The Accuracy, calculated according to the formula (2).
+To evaluate our system we have used a set of 56 questions
+collected from translated CLEF and TREC questions. QE is
+performed for each question using AWN and a set of
+equivalent queries are retrieved. Then we pass these queries to
+Google SE and get the first 5 snippets returned and pass these
+snippets to khoja stemmer to return stem form. The collections
+of stemmed snippets are used to make JIRS dataset. In the
+other side, stemming are performed to the queries from the first
+phase, then the stemmed queries are used to search for results
+in JIRS corpus and the results are arranged according to the
+highest similarity. sets.
+Firstly we calculated the Recall. Recall is one of the
+standard evaluation measures used in IR systems [23]. The
+recall can be calculated according to Formula (1). -Where k is a question belonging to the set s (CLEF or
+TREC), j is the passage rank.
+As shown in Table 6, we have calculated the recall in four
+different situations. The first was performed without using QE
+and stemming. The second was performed without QE but with
+stemming. Third one was performed with QE but not
+stemming. Fourth one was performed with QE and stemming.
+Recall QA
+number of correct answers
+=
+(1)
+number of questions to be answered
+TABLE 6
+F OUR E XPERIMENTS R ESULTS C ONCERNING R ECALL
+Experiments
+Total
+questions
+Number of
+correct
+answers
+Recall
+1. no expansion
+no stemming 56 38 67.86%
+2. no expansion
+with stemming 56 42 75%
+3. expansion with
+no stemming 56 44 78.57%
+56 47 83.93%
+4. expansion and
+stemming
+Acc =
+1
+N s
+V k,1
+(2)
+k ∈s
+-Where Ns is the number of questions of the question
+The Mean Reciprocal Rank, calculated as (3).
+1
+5
+MRR = Avg k∈s
+5
+j =1
+V k,j
+j
+(3)
+The number of Answered Questions (AQ), the number of
+questions we find the answer in at least one of the first five
+ranks, is calculated according to the formula (4).
+AQ =
+1
+N s
+max (V k,j )
+(4)
+k ∈s
+-Where k is a question belonging to the set s, Ns is the
+number of question contained in the set s and V k,j the value
+assigned to the five passages returned in response to the
+question k.
+We calculate the Acc, MRR, and AQ in Table 7 before and
+after using Khoja stemmer classified by domain, and in Table 8
+classified by track. The two tables are performed with one level
+of expansion for the keywords using AWN.
+The results obtained show that the performances in terms of
+Recall, Accuracy, MRR and Number of Answered Questions
+have been improved in our system by using QE and stemming,
+this is due to both question’s keywords expansion method and
+integration of root-based stemmer.
+T ABLE 7
+T HE O VERALL P ERFORMANCE C LASSIFIED B Y D OMAINS
+(our system)
+Using AWN with
+stemming
+(proposed system)
+using AWN without
+stemming
+The obtained results show good performance of our system
+in terms of recall. In fact, good recall performance is mainly
+due to both question’s keywords expansion method and
+integration of root-based stemmer.
+Most Q/A systems used three measures to evaluate their
+systems [5] which are: Accuracy (Acc), which is defined as the
+average of the questions where we find the answer in the first
+rank, Mean Reciprocal Rank (MRR), which is defined as the
+average of the reciprocal ranks of the results for a sample of
+queries (the reciprocal rank of a query response is the
+multiplicative inverse of the rank of the correct answer). And
+Answered Questions (AQ).
+Domain #Q Acc MRR AQ Acc MRR AQ
+Location 10 40.50% 16.60% 60.00% 38.50% 25.56% 66.00%
+Person 10 37.06% 15.85% 75.85% 35.89% 24.33% 75.17%
+Time 10 24.83% 14.20% 78.00% 31.33% 11.87% 74.50%
+measure 10 17.74% 12.76% 61.07% 21.15% 13.13% 68.25%
+Object 10 28.33% 16.92% 53.33% 31.67% 27.95% 65.00%
+Count 2 0.00% 4.13% 60.00% 10.00% 5.07% 60.00%
+Other 4 25.00% 17.13% 54.17% 50.00% 22.28% 58.33%
+Total 56 28.30% 15.00% 64.63% 32.24% 20.14% 68.62%
+A value V k,j is assigned to each question as follows: V k,j = 1
+if the answer to question k has been found in the passage
+having the rank j (j is between 1 and 5). And V k,j = 0 otherwise.
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-7The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+T ABLE 8
+REFERENCES
+[1]
+T HE O VERALL P ERFORMANCE C LASSIFIED B Y T RACK
+using AWN with
+stemming
+(proposed system)
+using AWN without
+stemming
+Track #Q Acc MRR AQ Acc MRR AQ
+CLEF 23 22.42% 10.76% 65.44% 22.78% 18.22% 67.32%
+TREC 33 32.39% 17.96% 64.06% 38.83% 21.48% 69.52%
+Total 56 28.30% 15.00% 64.63% 32.24% 20.14% 68.62%
+[2]
+[3]
+[4]
+There are some attempts in the Arabic Q/A field. One of
+them is what has been done by Abouenour et al. [5] ,which
+used translated CLEF and TREC questions also to evaluate
+their system. In Abouenour et al. system morphological and
+semantic query expansion using the Arabic WordNet are used
+combined with Yahoo search engine and JIRS passage retrieval
+system. They rank the passages based on distance density n-
+gram model. Also, they used Amine platform to score and rank
+the retrieved passages.
+Comparing to Abouenour et al., we have got an improved
+results as shown in Table 9. The improved results are because
+of using a stemming system and a QE technique.
+[5]
+[6]
+[7]
+[8]
+T ABLE 9
+C OMPARASION B ETWEEN A BOUENOUR ET AL . AND OUR P ROPOSED S YSTEM
+Abouenour et al Proposed system
+Acc 20.20% 32.24%
+MRR 9.22% 20.14%
+AQ 26.74% 68.62%
+[9]
+[10]
+[11]
+[12]
+V.
+C ONCLUSION A ND F UTURE W ORK
+The paper discussed a proposed design for an open domain
+Arabic Question Answering System for factoid questions. The
+system consists of 3 major components, mainly on integrating
+AWN ontology system, the Khoja Stemmer and JIRS. AWN is
+used to expand the user’s questions by including keywords
+synonyms, supertypes, subtypes and definition to the list of
+question original keywords. Khoja Stemmer Is used to match
+different morphological forms of the same stem. Also we used
+JIRS as a structure based passage retrieval system to re-rank
+the returned snippets by Google SE. A set of 56 CLEF and
+TREC questions classified in different domains are used to
+evaluate our system. Four experiments are conducted and show
+that when using QE with stemming we get better recall which
+was 83.93% by our system. Also we have calculated Accuracy,
+Mean Reciprocal Rank and Answered Question before and
+after stemming and get an improved results when using
+stemming. As a future work we plan to test our system on a
+larger data set of questions; also, we think that an integration of
+Named Entity Recognition module will definitely improve our
+system performance.
+[13]
+[14]
+[15]
+[16]
+[17]
+[18]
+[19]
+Ali Mohamed Nabil Allam and Mohamed Hassan Haggag, "The
+Question Answering Systems: A Survey," International Journal of
+Research and Reviews in Information Sciences (IJRRIS), vol. 2, no. 3,
+September 2012.
+Ahmed Magdy Ezzeldin and Mohamed Shaheen, "A Survey of Arabic
+Question Answering: Challenges, Tasks, Approaches, Tools, and Future
+Trends," 13th International Arab Conference on Information
+Technology ACIT', pp. 10-13, December 2012.
+Ali Farghaly and Khaled Shaalan, "Arabic natural language processing:
+Challenges and solutions," ACM Transactions on Asian Language
+Information Processing (TALIP), vol. 8, no. 4, p. 14, December 2009.
+Noha Shawky, Hamdy Mousa, and Ashraf Bahgat, "Enhanced Semantic
+Arabic Question Answering System Based on Khoja Stemmer And
+AWN," in 9th International Computer Engineering Conference,
+ICENCO, Cairo, Egypt, Dec 20-30, 2013.
+Lahsen Abouenour, Karim Bouzouba, and Paolo Rosso, "An evaluated
+semantic query expansion and structure-based approach for enhancing
+Arabic question/answering," International Journal on Information and
+Communication Technologies, vol. 3, no. 3, June 2010.
+F. A. Mohammed, Khaled Nasser, and H. M. Harb, "A knowledge-based
+Arabic Question Answering System (AQAS)," ACM SIGART Bulletin,
+pp. 21-33, 1993.
+Bassam Hammo, Hani Abu-Salem, and Steven Lytinen, "QARAB: A
+Question Answering System to Support," in the workshop on
+Computational approaches to Semitic languages, ACL, 2002, pp. 55-65.
+Yassine Benajiba, Paolo Rosso, and Abdelouahid Lyhyaoui,
+"Implementation of the ArabiQA Question Answering System's
+Components," in Workshop on Arabic Natural Language Processing,
+2nd Information Communication Technologies Int. Symposium, ICTIS,
+Fez, Morroco, 3-5 April, 2007.
+Lahsen Abouenour, Karim Bouzoubaa, and Paolo Rosso, "Improving
+Q/A Using Arabic Wordnet," in Int. Arab Conf. on Information
+Technology, ACIT, Hammamet, Tunisia, 16-18 December, 2008.
+Ghassan Kanaan, Awni Hammouri, Riyad Al-Shalabi, and Majdi
+Swalha, "A New Question Answering System for the Arabic Language,"
+American Journal of Applied Sciences, vol. 6, pp. 797-805, 2009.
+(2009) Google‟s Ejabat. [Online]. http://ejabat.google.com/ejabat/ , (last
+accessed 21 sep 2014)
+(2009)
+Google
+Unveils
+Ejabat.
+[Online].
+http://news.ebrandz.com/google/2009/2849-google-unveiled-egabat-
+arabic-version-of-question-answer-service-for-the-middle-east.html
+,
+(last accessed 21 sep 2014)
+Lahsen Abouenour, Karim Bouzoubaa, and Paolo Rosso, "IDRAAQ:
+New Arabic Question Answering System Based on Query Expansion
+and
+Passage
+Retrieval,"
+in
+CLEF
+(Online
+Working
+Notes/Labs/Workshop), Rome, Italy, 17-20 September, 2012.
+Lahsen Abouenour, Karim Bouzoubaa, and Paolo Rosso, "Structure-
+based evaluation of an Arabic semantic Query Expansion using the JIRS
+Passage Retrieval system," in Workshop on Computational Approaches
+to Semitic Languages, E-ACL, Athens, Greece, 2009.
+Wissal Brini et al., "Factoid and definitional Arabic Question Answering
+system," in Post-Proc. NOOJ, Tozeur, Tunisia, June, 2009, pp. 8-10.
+Sabri Elkateb William Black, Musa Alkhalifa Horacio Rodriguez, Piek
+Vossen, Adam Pease, and Christiane Fellbaum, "Introducing the Arabic
+WordNet Project," in third International WordNet Conference (GWC-
+06), South Jeju Island, Korea, 2006.
+Yassine Benajiba, Paolo Rosso, and Jos ́e Manuel G ́omez Soriano,
+"Adapting the JIRS Passage Retrieval System to the Arabic Language,"
+in A. F. Gelbukh, editor, CICLing 07, volume 4394 of Lecture Notes in
+Computer Science, 2007, pp. 530–541.
+Lahsen Abouenour, Karim Bouzoubaa, and Paolo Rosso, "Three-level
+Approach for Passage Retrieval in Arabic Question Answering
+Systems," in 3rd International Conference on Arabic Language
+Processing, Morocco, 2009.
+JIRS.
+[Online].
+http://sourceforge.net/projects/jirs/files/jirs_2_3_4/JIRS%202.2.4%20jd
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-8The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+[20]
+[21]
+[22]
+[23]
+k1.5%20%28tgz%29/jirs2.2.4_jdk1.5.tgz/download , (last accessed 21
+sep 2014)
+(1999)
+Khoja
+stemmer.
+[Online].
+http://zeus.cs.pacificu.edu/shereen/research.htm , (last accessed 21 sep
+2014)
+Smain Bekhti, Amjad Rehman, Al-Harbi Maryam, and Saba Tanzila,
+"AQUASYS: an Arabic Question-Answering System Based on
+Extensive Question Analysis and Answer Relevance Scoring,"
+International Journal of Academic Research, vol. 3, p. 45, July 2011.
+CLEF and TREC translated to Arabic questions. [Online].
+http://www.dsic.upv.es/~ybenajiba/downloads.html , (last accessed 21
+sep 2014)
+Jaspreet Kaur and Vishal Gupta, "Performance Analysis of Effective
+Arabic Language Question Answering System," International Journal of
+Advanced Research in Computer Science and Software Engineering,
+vol. 3 (4), pp. 891-902, April 2013.
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-9

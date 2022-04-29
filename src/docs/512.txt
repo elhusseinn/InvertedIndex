@@ -1,0 +1,278 @@
+Towards to Specific Approach for Information Systems (IS) Projects Governance
+Mohamed A. Hamada(1)                           Dr. Sherif A. Mazen(1)                    Dr. Ehab E. Hassanein(1)
+Mobile: 0103606673				Mobile: 0122105503			Mobile:0122164491
+ Mohamed_abohamada@yahoo.com         smazen@eun.eg                             admin@drehab.net
+(1) Department of Information Systems, Faculty of Computers and Information, Cairo University
+ABSTRACT
+IS projects comprise many challenges and difficulties in all development phases, with high risks of such projects end in failure. Failure rate for major IS projects appears to linger around 70%. IS project governance is a new born theory and a nascent field of research. Previous researches in the topic of IS project governance concentrated on high level project governance (general perspective meaning view the project as one block) they didn’t apply the project governance in particular perspective according to the project development phases and activities. Due to the continuity of high percentages of IS projects failure, specific governance approach for IS projects is a serious attempt to enhance IS projects success through addressing the projects’ failures and defects. This specific governance approach concentrates on all project’ phases and activates in details. Governance the activity of project feasibility study is introduced in this research as a sample for applying the specific governance approach for IS projects.     
+Keywords: IS projects, Feasibility Study Governance, IS project Governance, Governance as a specific approach. 
+1. INTRODUCTION: 
+IS projects have high failure rate, this failure for major systems appears to linger around 70% [17], it is considered a major problem because the happening of enormous costs and losses [25]. Recent studies of IS project failure reveal a number of interesting themes, for instance, failure could be caused by multiple factors, such as unrealistic expectations, lack of resources, uncooperative customers, and weak management of contractors. Failures could also be caused by the political rivalry in organizations; other themes also encompass the technical aspects of the system, such as failure in meeting predefined design objectives [20], [6]. Nevertheless, many IS studies indicate that failure is largely due to organizational and social, rather than technical factors [17]. This problem creates an obligation case to search for a new approaches as a solution to decrease the failure probability of IS projects and improve the percentage of IS projects success.  
+
+
+
+Governance is a multi-dimensional concept, encompassing elements of organizational stewardship, accountability, risk management, compliance, control, propriety, functional oversight, resource allocation and capability [3]. It can be depicted as an encapsulated component consists of four elements as showing in Figure1. That are;
+    • Purpose, is the anticipated outcome that is intended and motivates the actions of the unit.
+    • Structures, one or more organizational entities through which the work of the unit is enacted, such as a board, steering committee, council or working party.
+    • Processes, a collection of interrelated tasks that are enacted to accomplish the purpose of the unit.
+    • Relational mechanisms, Arrangements that support and enable the purpose of the unit by facilitating interaction and communication with stakeholders and interested parties.
+
+
+Figure 1: Governance as an encapsulated component 
+There is a considerable interest in IT governance because of its potential impact on IT investment returns and the growing significance of corporate governance and accountability within corporations. IT governance becomes even more important when one considers that companies with better than average governance earn at least 20% higher return on assets than organizations with weaker governance [24]. Effective IT governance helps ensure that IT supports business goals, optimizes business investment in IT, and appropriately manages IT-related risks and opportunities [13]. Most of researches proved that IT Governance aimed to attain the effective use of information technology in business organizations through increasing the revenue and maximizing the benefits with the balance of reducing the risks of information technology. 
+Nowadays, Interest in project governance is more recent than IT governance, but is not yet well-established as a stream of research or a formally prescribed discipline in practice. Its overall aim is “a consistent and predictable delivery of projects and programs in accordance with their planned contribution to corporate strategy and stakeholder expectations” [2].  Project governance provides a comprehensive, consistent method of controlling the project and ensuring its success.
+The objective of this paper is to introduce a specific approach for IS projects governance to enhance IS projects success by addressing defects of IS projects activities. This paper is organized as follows: section two investigates project governance and the needs of IS projects governance, section three illustrates governance as a specific approach, Section four explains the implementation of governance as specific approach for IS project through conducting governance of project feasibility study, Section five conclusions with suggestions for the future research.
+2. IS PROJECT GOVERNANCE 
+IS project governance is a newborn theory and plays a more important role in the improvement of IS project development, Lambert defined project governance as a series of structures, systems and processes about a project, which can ensure the effective delivery and achievement of the due utility and benefit [9]. So, project governance provides a comprehensive, consistent method of controlling the project and ensuring its success and the project governance approach should be described in the project plan.
+In the fact, there is no generally accepted definition existed for project governance, but, many efforts are done to define the project governance such as,  it’s a set of management systems, rules, protocols, relationships and structures that provide the framework within which decisions are made for project development and implementation to achieve the intended business or strategic motivation [4]. Also, Muller defines project governance as “the value system, responsibilities, processes and policies that allow projects to achieve organizational objectives and foster implementation that is in the best interests of all the stakeholders”  Its overall aim is “a consistent and predictable delivery of projects and programs in accordance with their planned contribution to corporate strategy and stakeholder expectations” [2].
+It must be perceived that IS project governance has emerged from the IT governance which has a potential impact on information systems development and ensure that IT supports business goals and its objectives. Figure:2, explains the relation between project activities governance and IT governance as a basic to apply the governance specific approach. It's a good opportunity that IS project governance has emerged from the IT governance, because IT Governance encompasses many features help to establish good projects governance such as: 
+    • IT governance can be deployed by using a mixture of structures, processes and relational mechanisms, Structures involve the existence of responsible functions such as IT executives and a diversity of IT committees. Processes refer to strategic decision making and monitoring. The relational mechanisms include business/IT participation strategic dialogue, shared learning and proper communication [7].
+    •  IT governance is the process and structure which ensure that organizations deploy their IT investments appropriately to ensure that the resulting activities, whether programs, projects or operations that they fund  are carried out properly and achieve the desired results 
+    • IT governance is a continuous process, requiring ongoing review and adjustment and involves several concepts, including risk management, security, business continuity, change management, and regulatory compliance amongst several others [19].
+
+Figure 2. Relation between Project Activities Governance and IT Governance
+2.1. Importance of IS Project Governance 
+Projects governance concerns those areas of governance project activities [23]. It provides a comprehensive, consistent method of controlling the project and ensuring its success through the mandatory condition to describe the project governance approach in the project plan [2]. Furthermore, it provides the structure, through which the objectives of the project are set, and the means of attaining those objectives that determined, with the means of monitoring performance.
+Virtually, Governance process offers many benefits in the area of IS projects development, these benefits reflect the necessity of adopting such of this approach to achieve the project success [1].  there are many motivations to adopt specific approach for IS project governance, in which the main purpose is to enhance the project success through achieving the intended business and the strategic motivation, so sustain the performance and the capability of doing the development activities [3]. Project governance gives the ability to gain the following features: 
+    1. provides a comprehensive, consistent method of controlling the project and ensuring its success
+    2. provides a structure for determining project objectives and monitoring performance to ensure that objectives are attained
+    3. Improve the added value of IS projects and manage IT risks
+    4. Realizing the value of the project existence of limited resources.
+    5. Sustain to achieve strategic alignment between the business and IT to make sure that money spent in IT is delivering value for the business
+    6. Increase the probability of project success through decreasing costs and idle time  
+Taking into account, benefits of project governance are associated with establishing a group of  governance characteristics and principles which depict the outline of project governance process these are; Participation, Rule of law, Transparency, Responsiveness,  Consensus oriented, Equity and inclusiveness, Effectiveness and efficiency and  Accountability  [1]. 
+3. Project Governance as Specific Approach 
+Governance of IS projects is considered relatively new and evolving field (it’s not yet well-established as a stream of research and It has been emerged from the IT governance arena. A small number of researches discussed IS project governance, surveying of these researches confirm to the lack of guidance and frameworks regarding IS projects governance [2], [3], [4], [8], [9], [14], [15]. Furthermore these researches concentrate on high level project governance (In general perspective) meaning view the project as one block; they did not implement project governance in a particular perspective according to the project development phases and activities.
+The concept of governance as specific approach depends on the execution of IS project governance in deeps according to project’ phases, and activities not view the project as one entity (as one block), by meaning analyze the project into their phases and divide each phase into activities. It is well known, there is unanimous agreement that IS project life cycle consists of five phases; initial phase, planning phase, execution phase, and closing phase [5], [11], [18], in this approach each project’ phases must be divided into consistent activities, Figure:3, explains the flow of the specific governance approach for IS projects. There are great anticipations that adopting the specific approach for IS project governance can contribute to enhance the IS projects success and decrease the projects failure rates through achievement the project intended objectives and improve the added value of IS projects and manage IT risks.
+     	
+
+
+
+
+
+Figure 3. The flow of the specific governance approach for IS projects 
+In addition to, after the process of partitioning the project phases, governance process is performed for each activity in details. It must be perceived that governance in this approach shouldn't be restricted to the embedded governance controls only such as (PRINCE2, COBIT, COSO, 6-Sigma, and CMM/ CMMI), but it must be integrated with installing the mixture of governance mechanisms which include (Arrangements, Structures, Best practices, Metrics, Policies, Strategies, Controls, Procedures, Rules, Relationship, Protocols, Architectures, Guidelines and Standards), by embedded the previous governance mechanisms, it can generate a new mode of project activities governance that have ability to eliminate the project defects and lead to enhance IS project success. 
+4. IMPLEMENTATION OF SPECIFIC PROJECT GOVERNANCE  
+Governance the activity of project feasibility study which belongs to the initial phase is introduced in this research as a sample to apply the specific governance approach. According to the importance of the initial and planning phases of IS project development, Table 1. explains the way to divide the two project phases (initial and planning phase). Partition the two project phases into activities generate the pre-development activities which are the main critical success factors for IS projects, they are beginning with the System Service Request (SSR) which initiates the projects and end with the developing the project plan that represents a road map to how the project will progress through all project phases and outlined objectives. 
+Table: 1. partition of the project phases (initial and planning phase) into activities
+Project phase 
+Partition of  project phases into activities
+Initial phase
+    1. System Service Request (SSR).
+    2. Project Scope Definition.
+    3. Project Feasibility study.
+    4. Commercial Off-The-Shelf (COTS).
+    5. Determine Initial Requirements (High level requirements)
+Planning phase
+    1. Develop a Statement of Work (SOW).
+    2. Work Breakdown Structure (WBS).
+    3. Project Cost Estimation 
+    4. Project Schedule 
+    5. Project Risk Management. 
+    6. Develop a Communication Plan.
+    7. Develop a Project Charter.
+    8. Develop a Project Plan.
+    9. Project Contract
+Project feasibility study is the main critical success factor for IS project, it’s basically a preliminary study to determine the viability of proceeding the project, and assists decision-makers in determining whether or not to implement a particular IS project, it allows the early cancellation of projects with the minimal costs. In the purpose of guarantee conducting governance the project feasibility study, the following procedures must be embedded to represent the governance outlines; 
+    1- What must be done for the project feasibility study  
+    2- What must be avoided during the project feasibility study  
+    3- Setting check controls within the project feasibility study  
+    4- Recommended output from the project feasibility study
+4.1. What must be done for the Project Feasibility study?
+4.1.1. Study the main characteristics of the present system which comprises;
+    • The present organizational system, including users, policies, functions, and objectives
+    • Performing the “PIECES” Framework which is the checklist for identifying problems with the existing information system include (performance, information, economic, controls, efficiency and services)
+    • Technical problems with the present system (inconsistencies, inadequacies in functionality, and performance)
+    • Objectives and other requirements for the new system (what needs to change?)
+    • Constraints, including nonfunctional requirements on the system 
+    • Availability of possible alternatives 
+4.1.2. Explain the Advantages and Disadvantages of the intended IS project.
+4.1.3. Assure the Objectives, Purpose and the Scope of the intended project
+4.1.4. Test the traditional Evaluation Techniques for the intended project that include; 
+    A. ROI, return on investment
+    B. IRR, internal rate of return 
+    C. Payback period
+    D. NPV, net present value
+4.1.5. Test the stability of the intended project with the following features: 
+    • The human and organizational mechanisms of investment decision making within organizations.
+    • Strategic objectives of the organization 
+    • Assess the political issues associated with capital budgeting and decision making.
+    • Assess the natures of IT/IS benefits (intangible, tangible; financial and non-financial).
+    • Identify, manage and control investment-related costs (direct and indirect).
+    • Appreciate the portfolio of investment appraisal techniques.
+    • Assess the ‘risks’ associated with different investment- related strategies.
+    • The scope and impact of developing IT infrastructure.
+    • Appreciate the complexity of evaluating incremental system development, integration and upgrades.
+    • Stakeholder’s definition, analysis and involvement.
+    • The qualitative benefits that the project brings. 
+    • Achieving the strategic, operational, technical, and financial benefits of investment.
+4.1.6. Performing the Fifth types feasibility for the intended project:
+    A. Economic Feasibility is the most frequently used method for evaluating the effectiveness of a new project, more commonly known as cost/benefit analysis, the procedure is to determine the benefits and savings that are expected from a candidate system and compare them with costs. When the benefits outweigh the costs, then the decision is made to implement the project. Quantifying Cost/Benefit Analysis requires determining the following variables:- 
+    B. Technical Feasibility is a measure of the practicality of a specific technical solution and the availability of technical resources and knowledge to achievement the project. 
+    C. Operational Feasibility is a measure of how well a proposed system solves the problems, and takes advantage of the opportunities identified during scope definition and how it satisfies the requirements identified in the requirements. 
+    D. Schedule Feasibility, is the measure of how reasonable the project timetable is. A project will fail if it takes too long to be completed before it is useful. 
+    E. Legal and Cultural Feasibility, is the measure of how well a solution can be implemented within existing legal and contractual obligations. In this stage, the project's alternatives are evaluated for their impact on the local and general culture. 
+4.2. What must be avoided during the project feasibility study?  
+In the purpose of reduce the IS project failure rates and enhance project success, Avoidance strategy must be taken into consideration during the execution of the project feasibility study as a guidance control to avoid the problems that can be caused the project failures. Within the project feasibility study developers must avoid the following issues; 
+    1. Start the projects upon inaccurate reasons and needs
+    2. Continue to proceed the project if it isn’t viable 
+    3. Disagreement between The project costs and the budget.
+    4. Ignorance the qualitative costs and benefits 
+    5. Ignorance the gap between technology and the existing ability
+    6. Failing to make accurate estimation for the project costs and benefits 
+    7. Inability to determine the technical and operational needs 
+    8. poor competencies, experiences and skill shortages
+    9. the higher costs of capital investment 
+    10. cowardice to cancel the project if it isn’t feasible 
+    11. Inability to distinguished the "black hole" projects
+    12. Inability to measure the feasibility of the project during the remind phases
+    13. Failure to recognize the financial appraisal techniques  
+4.3. Setting the Project Feasibility Controls 
+IS project controls are the cornerstone of the governance process, in the context of project feasibility governance; the following controls will be installed to ensure the accuracy of project feasibility study;
+    1. Quantified and Qualitative Cost/Benefit Analysis
+    2. Test the traditional appraisal techniques 
+    3. Feasibility Checkpoints
+4.3.1. Quantified and Qualitative Cost/Benefit Analysis 
+There are lots of quantitative and qualitative factors that must be considered during evaluation the feasibility of IS projects, qualitative benefits and costs must be quantified to ensure an equilibrium and comprehensive representative for all costs and benefits to creates a real Cost/Benefit Analysis. Quantifying the qualitative benefits and costs depend on weighing them as a percentage of any constant variable value associated to the project such as Capital Investment of the project.
+EX: when the new project achieves improve accuracy as an intangible benefits which can be estimated as 0. 2% from Capital Investment. If Capital Investment of the project = 200000 $
+Then, Improve Accuracy = 0. 2% * 200000 = 400$
+In the context of guarantee a realistic Cost/Benefit Analysis , all costs and benefits are listed and divided as shown in Table 2.      
+Table (4-1) types of all IS project Benefits and costs.
+Type
+Definition
+Example
+Monetary Benefits (MB)
+the actual revenue of the system in Cash Money 
+Increased revenue from additional sales of organizations products and services
+Increase cash flow 
+Tangible Benefits (TB)
+Benefits are easy quantified and translated into Monetary Benefits  
+Reduced operating costs
+Reduced personnel costs, staff reduction 
+Cost Savings
+Cost Avoidance
+Intangible Benefits (INTB)
+Benefits are difficult to translated into Monetary Benefits  and quantified  
+Improve accuracy 
+Improve competitive advantages 
+Improved quality of output
+Improved communication
+Improved decision-making and planning
+Reduced paperwork
+Reduced bottlenecks
+Customer service improvement 
+Direct Costs
+(DC)
+Costs that can be allocated to a particular service and have a direct relation to the project, 
+Hardware and software costs
+Operational costs
+Purchase costs for systems software and infrastructure 
+Hardware and software upgrade
+Training costs 
+System testing costs
+system maintenance costs
+Indirect Costs (INDC)
+Any additional overhead costs related to the project, which have indirect relation to the project. 
+System support and Vendor support
+Trouble shooting costs
+Cost of security breaches 
+Cost of data theft, loss of productivity
+Cost of  system damage and corporate trust
+Project costs for travel and living 
+Project costs for external consulting
+Cost of recruiting extra staff
+Hidden Costs (HC)
+Costs are difficult to load and anticipation. They occur as  unexpectedly  mode 
+Change management and workers 
+Software changes
+Work after testing
+Process rework 
+Overhead of average production time
+Cost of Lack appropriate skills
+Cost of redefining roles Lack of leadership
+According to the expression of all types of costs and benefits in Table 2. The following equations explain the way to calculate the Quantified and Qualitative Cost/Benefit Analysis:
+
+Cost/Benefit Analysis     
+ =                      [12],
+Then  Total Benefits  
+
+
+
+ Total Costs 
+
+
+
+
+So, Cost/Benefit Analysis   
+Where; 
+PV is the present value 
+, is the present value of estimated total Monetary Benefits of the project
+is the present value of estimated total Tangible Benefits of the project
+is the present value of estimated total Intangible Benefits of the project
+is the present value of estimated total Direct Costs of the project
+, is present value of the estimated total Indirect Costs of the project
+,  is the present value of estimated total Hidden Costs of the project
+R,  is the Rate of Interest, n is the number of time periods and A, indicate to the amount of Benefits and Costs.
+Decision: IF    
+Then, continue proceeding the project, 
+Else, project should cancelation or modified  
+4.3.2- Test Traditional Appraisal Techniques 
+Although, Traditional appraisal techniques are often unable to capture many of the qualitative benefits that IT brings. However, it’s very important to calculate it during project feasibility study to analyze the financial aspects of IS projects and explain the financial capacity of them. Main Traditional Appraisal Techniques are;   
+    A. ROI, return on investment
+    B. IRR, internal rate of return 
+    C. Payback period
+    D. NPV, net present value
+4.3.3. Feasibility Checkpoints 
+Feasibility checkpoints mean reassess the project feasibility at many points in all project phases during the project development, this because the project that is feasible at one point in time may become infeasible at a later point in time (should measure the feasibility of the project during the remind phases). 
+4.4. Feasibility Study Output  
+Feasibility Study Report is the main output from the project feasibility study which explains the decision of continue proceeding the project or not, furthermore it includes many details about the intended project such as the evaluation criteria, the study findings, and the recommendations. In the fact the feasibility study report must contain the following issues:
+    1. Define the project problem in clearly demonstrating way to be more understanding 
+    2. Clearly describe the project subject and scope.
+    3. Describe the technology that will be used in project development
+    4. State the project objectives and whether will be met or not.
+    5. List all the economic costs and benefits.
+    6. Provide a suggested time table for project implementation.
+    7. List a detailed feasibility assessment in the technical, economic, and operational aspects;
+    8. A brief description of business organization
+    9. Describe any critical risk factors, like economic stability and forecasts
+    10. Include an appendix that shows any flowcharts, Data Flow Diagrams, graphs.
+    11. Outline the final decision and recommendations for the intended project.
+5. CONCLUSIONS AND FUTURE WORK  
+In this research, new governance approach for IS projects is introduced in the purpose of decrease the projects’ failure rates through addressing the defects of projects’ activities development. So, this research explains the following issues; what is project governance means, main characteristics of project governance. Also, importance, principles and structures of project governance are Clearfield. This research introduced the governance application of project feasibility study, which considers one of the main critical activities in the project initial phase. Also, Comprehensive Cost/Benefit Analysis is developed to provide real cost/benefit analysis through incorporate the intangible costs and benefits. Project feasibility study governance is implemented according to these four producers; 1-what must be done for the project feasibility study? 2-What must be avoided during the project feasibility study? 3-Setting check controls within the project feasibility study. 4- Recommended output from the project feasibility study. Furthermore this research provides more significant results such as:-
+    1. Governance of IS projects is considered a new born theory, relatively new and evolving field (it’s not yet well-established as a stream of research). It has emerged from the IT governance arena
+    2. Previous researches in this topic concentrate on high level project governance (general perspective) view the project as one block
+    3. There is a great anticipation that specific perspective for IS project governance can contribute decrease the projects failure rates through addressing the project defects and achievement  the intended objectives 
+    4. There is a lack of frameworks and guidance regarding IS projects governance
+    5. IS project governance has emerged from the IT governance
+    6. Pre-development activities are critical success factors for IS project.
+    7. The main purpose of conducting the specific governance is to achieve the maximum benefits for IS projects, taking into account the project constraints which represent in:-
+    • Proceeding  the project to specification, within budget and on time
+    • Satisfy project sponsors, owners and contractors.
+    • Meet project expectation requirements and objectives.
+    • Output should attain a reasonable quality. 
+6. REFERENCES
+    [1]. Abednego P. Martinus, Ogunlana O. Stephen, "Good project governance for proper risk allocation in public–private partnerships in Indonesia" International Journal of Project Management Vol., 24, pp: 622–634, 2006.
+    [2]. Bannerman P.L." Managing Structure-Related Software Project Risk:A New Role for Project Governance", IEEE, Software Engineering Conference (ASWEC), Digital Object Identifier:10.1109/ASWEC. 2010.12 pp: 129 – 138, 2010.
+    [3]. Bannerman, P.L. “Software development governance: A meta-management perspective” IEEE, Workshop on Software Development Governance, 2009. SDG '09. ICSE, pp: 3 – 8, 2009. 
+    [4]. Bekker, M.C.; Steyn, H.; “Defining ‘project governance’ for large capital projects” IEEE,AFRICON 2007, Digital Object Identifier: 10.1109/AFRCON. 2007.4401604, pp: 1 – 13, 2007. 
+    [5]. Bekker, M.C.; Steyn, H.; “The impact of project governance principles on project performance”, IEEE. Portland International Conference on Management of Engineering & Technology, 2008. PICMET 2008, pp: 1324 – 1330, 2008. 
+    [6]. Cerpa Narciso, Verner M. June,” Why Did Your Project Fail?” Communications of the ACM, vol., 52, No. 12, pp: 130-134, 2009.
+    [7]. De Haes Steven, Grembergen Wim Van “IT governance structures, processes and relational mechanisms: achieving IT/business alignment in a major Belgian financial group”, IEEE, Proceedings of the 38th Hawaii International Conf. on System Sciences (HICSS), Object Identifier: 10.1109/HICSS.2005.362, pp: 237-247, 2005.
+    [8]. Ding Ronggui, Wang Yanwei “An Empirical Study on Critical Success Factors Based on Governance for IT Projects in China” 4th International Conference on Wireless Communications, Networking and Mobile Computing, 2008. WiCOM '08. Digital Object Identifier: 10.1109/WiCom.2008.1784 pp:1 -7, 2008. 
+    [9]. Du Yaling, Yin Yilin "Effect of governance on management in public project" IEEE,  International Conference on Logistics Systems and Intelligent Management, Vol.,1 Digital Object Identifier:10.1109/ICLSIM.2010.5461430 pp: 230 – 234, 2010. 
+    [10]. Hussain, S.J, Siddiqui, M.S., “Quantified Model of COBIT for Corporate IT Governance” Information and Communication Technologies, ICICT 2005,  First International Conference on Digital Object,Identifier:10.1109/ICICT.2005.1598575, pp: 158 – 163, 2005. 
+    [11]. Hvghes Bob, Cotterell Mike “Software Project Management” Tata Mc Graw-Hill, Third Edition, 2004. 
+    [12]. Iloiu Mirela, Iloiu Sorin “Economic Analysis of E-Business Investment Projects”, Annals of the University of Petroşani, Economics, Vol., 8 No., (1), pp: 267-272, 2008. 
+    [13]. IT Governance Institute, “Control Objectives for Information and related Technology (COBIT 4.1)”. USA, 2007, www.itgi.org.
+    [14]. Johnstone David, Huff Sid, Hope Beverley "IT Projects: Conflict, Governance, and Systems Thinking" IEEE,  39th Annual Hawaii International Conference, Vol., 8 Digital Object Identifier: 10.1109/HICSS.2006.235 pp: 1-9, 2006.
+    [15]. Kooper M.N., Maes R., Roos Lindgreen E. O., “On the Governance of Information: Introducing a New Concept of Governance to Support the Management of Information” International Journal of Information Management, Available online 12 June 2010, http://www.sciencedirect.com/science
+    [16]. Leslee N. Higgins, Debra T. Sinclair, “A New Look at IT Governance”, The Journal of Corporate Accounting & Finance, Vol.,19, Issue 5,  pp.31-36, 2008.
+    [17]. Pan Gary, Hackney Ray, Pan Shan “Information Systems implementation failure: Insights from prism” International Journal of Information Management, Vol., 28, pp: 259–269, 2008.
+    [18]. PMI, Project Management Institute “A guide to the Project Management Body of Knowledge PMBOK Guide”, An American National Standard, Fourth Edition, PA 19073-3299, 2008.
+    [19]. Posthumusa Shaun, Solms Rossouw  “IT oversight: an important function of Corporate Governance” Computer Fraud & Security journal, Vol., June 2005, Issue 6, pp: 11-17, 2005.
+    [20]. Stepanek George (2005) " Software Project Secrets: Why Software Projects Fail" Apress, ISBN 1-59059-550-5,September 2005
+    [21].  Teck-Yong, Wong Veronica “Governance mechanisms and relationship productivity in vertical coordination for new product development” Technovation Vol., 26 pp:761–769, 2006
+    [22]. Whitten, Jeffrey Bentley L., Lonnie D., “Systems Analysis and Design for the Global Enterprise” , MCGRAW HILL, ISBN  9780071107662, 2007.  
+    [23]. Williams Terry, Klakegg O. Jonny, Magnussen O. Morten, Glasspool Helene "An investigation of governance frameworks for public projects in Norway and the UK" International Journal of Project Management Vol., 28, pp: 40–50, 2010. 
+    [24]. Willson P., Carol P., “Exploring IT Governance in Theory and Practice in a Large Multi-National Organisation in Australia”, Information Systems Management, vol., 26, pp. 98–109, 2008.    
+    [25]. Zhang G. Peter, Keil Mark , Rai Arun, Mann Joan, “Predicting information technology project escalation: A neural network approach” European Journal of Operational Research Vol.,146 pp: 115–129, 2003.

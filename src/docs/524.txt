@@ -1,0 +1,552 @@
+Applying Service Oriented Architecture on Enterprise Resource Planning
+Environment
+Prepared By:
+Yahia Zakaria Rabie
+Teaching Assistant
+Department of Information Systems
+Faculty of Computers and Information
+Cairo University
+Cairo, Egypt
+Email(s): y.zakaria@fci-cu.edu.eg
+yahia.zakaria@itworx.com
+Cell: 0020101833781
+Topic area: Software Engineering.
+Ehab Hassanein
+Associate Professor
+Department of Information Systems
+Faculty of Computers and Information
+Cairo University
+Cairo, Egypt
+Email: admin@drehab.net
+Cell: 0020122164491
+Topic area: Software Engineering.
+ISCA 17th INTERNATIONAL CONFERENCE ON SOFTWARE
+ENGINEERING AND DATA ENGINEERING (SEDE 2008)Applying Service Oriented Architecture on Enterprise
+Resource Planning Environment
+Yahia Zakaria Rabie
+Teaching Assistant
+Department of Information Systems
+Faculty of Computers and Information
+Cairo University
+Cairo, Egypt
+y.zakaria@fci-cu.edu.eg
+yahia.zakaria@itworx.com
+Abstract
+Due to the heterogeneity of the
+existing platforms, IT Environments became
+very extremely complex, consequently the
+communication between the organizations
+more difficult. The service oriented
+architecture (SOA) claims that the interactions
+between different parities will be easier.
+1. Service Oriented Architecture (SOA)
+and Enterprise Resource Planning
+(ERP)
+1.1
+SOA Introduction
+The IT environments became very
+complicated and complex, each system has its
+hardware and software platforms with their
+own specific characteristics. Consequently,
+there is a problem that exists on the horizontal
+level when a system tries to talk or
+communicate with different system(s),
+furthermore there are different of problems
+that exist on the vertical level when the system
+is upgraded to other platforms and needs to use
+some functionality from legacy systems.
+SOA claims that it is able to deal with these
+kinds of heterogeneity; it provides approaches
+to deal with heterogeneity because it takes
+consideration the integration and independency
+rather than handling the technical issues only.
+So, SOA solution provides a wider approach to
+handle the heterogeneity by having some
+characteristics like Loosely Coupling, Location
+Transparency and Protocol independency.
+The SOA is an approach to Enterprise
+Architecture (EA) where its most important
+element is exposed as a service. The result is a
+distributed computing environment with a high
+level of interoperability between systems and
+platforms. "The SOA enables the enterprise
+architect to combine and recombine software
+elements without the necessity of spending
+substantial amounts of time or money,
+Ehab Hassanein
+Associate Professor
+Department of Information Systems
+Faculty of Computers and Information
+Cairo University
+Cairo, Egypt
+admin@drehab.net
+assuming
+it
+has
+been
+implemented
+intelligently." [2]
+Also the SOA applies the concept of
+reusability; the same function can be used
+across the different systems and platforms. The
+SOA is based on the principle of developing
+reusable business service and building
+applications instead of building specific
+business service on the current application [3].
+The SOA context in this paper is based on web
+services technology.
+1.2 SOA Elements and Interactions
+The basic elements of the SOA are:
+i. The Service: it is a piece of well defined
+functionality and it is assumed that it is
+independent from the context it works on.
+ii. The Service Provider: it is a party that is
+responsible for providing the abstract
+interface (or service definition) of the
+services for whoever wants to consume it.
+The language that describes these interfaces
+is called Web Service Definition Language
+or WSDL.
+iii. The Service Consumer: it is the party that
+consumes the services and it may acts as a
+service provider in the same time for another
+service consumer.
+iv. The registry: which contains the abstract
+definition of the services, it acts as a service
+repository which the service consumer can
+query it to obtain the desired service(s). The
+Universal Description, Discovery, and
+Integration (UDDI) acts as the registry of the
+services. "The UDDI provides a standards-
+based set of specifications for service
+description and discovery, as well as a set of
+Internet-based implementations, UDDI is
+based on existing standards, such as
+Extensible Markup Language (XML) and
+Simple Object Access Protocol (SOAP)"[4].
+There are some ongoing elements that should
+exist to govern the SOA such as the quality ofthe service, transactions management, security
+and policy [1].
+The collaboration between the elements of the
+SOA is based on "Find, Bind and Invoke"
+paradigm, first the service providers publish
+their service definitions on the registry then the
+service consumer tries to find the desired
+service on the registry, if it is found, the
+service consumer can bind and invoke the
+service which is located on the service
+provider side using Simple Object Access
+Protocol (SOAP) messages [5].
+1.3 The Service versus the Component
+There are many arguments about the
+differences between the service and component,
+see that the component level is finer grained
+from the service level. The component design
+concept is mapped to a business entity, but the
+service is mapped to a business function. For
+example if we are in a faculty environment, the
+student and the material are components
+because they are entities, so if we want to
+generate the GPA for a certain student, the
+student component should talk the material and
+the exam components to generate the final
+GPA. But if we are in the service level, it will
+be existed a service called GPAGenerator that
+is mapped to a business function rather than
+the business entities (i.e. it uses the
+components to generate the result) which
+makes the component is finer than the service.
+There is another point of view about
+differences between services and components.
+According to this point of view, the service
+design has "publish, find and invoke"
+properties which didn’t exist in the component
+design [6].
+So the component design is application
+oriented design without taking the integration
+with other applications into consideration,
+whereas the service design based taking the
+integration with other services from existing
+application or new ones into consideration.
+Consequently, the service design eliminates
+the problem arises from the integration
+between different platforms. Thus the
+granularity is not the only factor that makes
+difference between the component and the
+service design.
+“ERP system integrates various functional
+(operations, marketing, finance) information
+systems into a seamless suite of business
+applications across the company and thereby,
+allowed for streamlined processing of business
+data and cross-functional integration, ERP
+systems provide an enticing solution to
+managers
+who
+have
+struggles
+with
+incompatible information systems and
+inconsistent operations policies.” [7]
+The ERP is considered a unified system that
+handles all the transactions between all the
+modular functions in the organization. This
+system usually controls all the data flows, the
+internal operations and logistics from the
+customer order point to the after delivery
+period. It handles the customer invoice, the
+logistics, and the accounts until the delivery to
+the customer.
+So we need to list these modules of the ERP
+System in the next section.
+1.5 ERP System architecture
+The original architecture the ERP systems
+used be based on client/server architecture.
+This architecture evolves to be based on three
+tier then n tier architecture.
+The generic form of this architecture consists
+of three layers:
+The first layer is the presentation layer which
+is responsible for handling the user interface
+issues. This layer can be implemented by
+multiple user interface applications like the
+desktop, web or mobile interfaces.
+The second layer is the application layer:
+which contains the logic of the process inside
+the organization, it is considered the core of
+the ERP system, and it maps the organization
+policies and the workflow between the all ERP
+stakeholders.
+The Third layer is: the database layer, which
+contains the database management system to
+control the concurrent transactions.
+This logical arrangement helps the ERP user
+interface to run on the clients, the processing
+modules to run on the middle-tier application
+servers, and the database system to run on the
+database servers [8].
+1.4 Enterprise Resource Planning (ERP)
+1.6 ERP advantages and disadvantages
+The ERP system is considered a complex
+system because it handles a set of business
+modules as well as the integration between
+them. The ERP can be defined as follows:
+1.6.1
+ERP advantages
+There are some benefits of ERP
+systems, some advantages of ERP systems
+are [8]:i.Avoid data redundancy: where the
+information is stored one time and it is
+used by all the modules can use these
+centralized information.
+ii.Cost reduction: it saves time of generating
+reports, completing workflows and
+policies. Also the ERP system minimizes
+the error probability it tends to paperless
+system which can do cycle time reduction
+of the business processes.
+1.6.2 ERP disadvantages
+The ERP systems also have some
+disadvantages, the following section lists
+some disadvantages that can be solved by
+SOA may solve them, and these
+disadvantages are:
+i. Vendor dependencies: the components of
+the ERP can be from multiple vendors,
+where the configuration and the integration
+between them will be difficult issue.
+ii.Extending ERP: the old ERP systems are
+hard to extend it to be integrated with some
+systems like Supply Chain Management
+(SCM)
+and
+Customer
+Relationship
+Management (CRM) systems.
+In addition there is a common disadvantage
+to using the ERP system which is the change
+of a requirement in one module of the ERP
+system can affect other modules (e.g. the
+change of inventory module will affect the
+accounting module). So, in the next section a
+new approach for designing ERP system will
+be given in which the ERP will be based
+solidly on the SOA.
+So the ERP Systems are considered very
+complex. By applying SOA on these
+systems, the communication and the
+Business to Business transactions will be
+easier. The following sections discuss the
+ways of applying service oriented
+architecture on the ERP.
+Figure 1, Simple Procurement Scenario
+2 The Proposed architecture after applying
+SOA in ERP
+This section will suggest how SOA can
+be applied in the Enterprise Resource Planning
+Environment.
+First, a simple scenario will be described that
+occurs in many ERP Systems such as the
+procurement transaction in the ERP System
+shown in figure 1. In this scenario, we assume
+that there are two parties, the first is the
+supplier side and the other is the client side
+(the client is be side who owns the ERP
+System). First the procurement department
+requests some products by sending request for
+proposal (RFP) to the suppliers. The suppliers
+send to the department the list of requested
+products with their prices, if the procurement
+manager accepts these prices for a specific
+supplier, then he sends a confirmation to the
+chosen supplier.
+After the confirmation, the procurement
+manager creates a purchase order with these
+products and their prices.
+Then, this purchase order is going to two
+directions, first it is saved into the database
+with its information, also the accountant
+generates the journals of this purchase order
+which will be considered as payable
+transaction (the organization will pay the
+supplier with these product prices). Second,
+after the purchase order is approved, the
+inventory manager (or the treasurer) approves
+creation of an item addition order (or
+document) to add the coming items into the
+proper inventory; also this item addition order
+is saved into the database. This addition order
+also is send to the accountant to generate the
+related
+journals
+of
+this
+transaction.
+The high level architecture of this scenario
+after applying this Service Oriented
+Architecture is described in Figure 2. The
+Clients have the ability to search over the
+UDDI about certain products and their prices,
+the suppliers also have the ability to publish
+their services definitions (e.g. the items and
+their prices) on UDDI Server which will be
+available to the clients to search and choose
+one or more of these services. If the client
+found the service that satisfies his needs, he
+begins to bind and invoke the purchase service
+to procure the desired products. For example,
+Client 2 (C2) found that the service that
+Supplier 1 (S1) has published satisfies his
+needs, so he has chosen this service to bind
+and invoke.Publishing items
+and their prices
+S3
+Querying
+Services
+C3
+UDDI
+C1
+S2
+S1
+C2
+Binding the chosen service
+Figure 2, the high level architecture after
+applying SOA on ERP.
+2.1 The
+Messaging
+components
+between
+ERP
+The ERP components are talking with
+each others, for each transaction in the ERP
+system; there exist some messages between
+some of ERP components to accomplish this
+transaction. For the procurement scenario
+described later, the procurement component
+talks to the accounting and the inventory
+components.
+The procurement component sends messages
+to their interacting components with specific
+parameters. For example, the purchase order is
+considered a message with some parameters
+(The supplier name, a list of products and their
+prices).
+So if the procurement component is
+implemented by a certain technology or
+programming language and the accounting
+component is implemented by another
+technology and platform, then there will be
+hard to send the purchase order from
+procurement component to the accounting
+component. The proposed solution for this
+problem is that designing the interfaces
+between the components by web services. The
+web services are independent of the
+implemented technology and the messaging
+technique is done by Simple Object Access
+Protocol (SOAP), this protocol is based on
+XML which is standard to all programming
+languages. The web service will expose its
+logic by an interface, this interface is based on
+Web Service Description Language (WSDL),
+and this language is an abstract interface that
+makes the web service able to bind to any
+programming language. So if the procurement
+component is implemented by Java and the
+accounting component is implemented by C-
+Sharp, so the purchase order will be exposed
+as a WSDL document that will be an abstract
+interface to the accounting component to
+interact with without respect of the used
+technology.
+In figure 1, The ERP functions that can be web
+services are labeled by “ws”, also the dashed
+messages are considered as SOAP messages
+between these web services.
+So, if we found that SAP produced a powerful
+procurement component, and Oracle produced
+a powerful accounting component, then there
+is no worry if we ensured that the services of
+these components are implemented as web
+services which will make no headache of the
+communication issues.
+3. Web services as ERP Arms
+Now, if we look to the external
+systems that deals with ERP, for example in
+the previous procurement scenario, the
+supplier systems is considered an external
+system which deals with ERP by sending and
+receiving documents “in a specific format”.
+This format should be understandable by the
+ERP system and the Supplier system even if
+this format is different from the two systems
+standards.
+So, if the Request for Proposal (RFP) and
+Request for Quotation (RFQ) are implemented
+by web services, then these documents will be
+exposed as WSDL where the two systems can
+use them without regard of the programming
+language that the two systems are using. This
+also will make the ERP System deals with
+more suppliers with the same logic and the
+same standards, where there is no creating
+documents for each supplier with his specific
+format and vice versa. Thus, the suppliers will
+be faster to market because the independency
+between their systems and their clients, which
+will be a competitive advantages to the
+organizations.
+3.1 The Role of UDDI when implementing
+ERP Arms
+The UDDI will be useful in this point;
+The organization that implemented the ERP
+system will be faster to reach its customers, as
+the ERP organization will publish its services
+on a UDDI Server which will be accessible to
+the customers who will able to query the
+desired services and invoke them.
+Also the ERP organization’s suppliers will be
+closer and faster to the ERP organization, the
+suppliers’ services will be published on the
+UDDI server where the ERP organization can
+query and filter the returned results.So, the UDDI acts as a broker to the customers
+and suppliers to choose between variety of
+services, and by this the UDDI facilitates the
+Business to Business (B2B) Transactions.
+Thus, one organization can be a service
+provider and service consumer in the same
+time.
+For example, an organization can act as a
+service provider to its customers, and acts as
+service consumer to the suppliers in the same
+time. The figure 2 shows that the suppliers can
+easily publish their services which will be
+available to the clients to query and navigate
+between them, so this will be shorter to reach
+the market.
+and vice versa. Also Service Oriented
+Architecture can serve the critical business
+decisions like the merger and acquisition
+process, where two or more Enterprise
+Resource Planning systems can be merged.
+6. References
+[1]
+[2]
+4. Web services in Merger and Acquisitions
+[3]
+On of the major advantage of using the
+proposed solution is to help organizations in
+merging and splitting. Merging is a trend for
+organizations that grows dynamically where
+buying another company besides improving its
+internal processes to grow organically (for
+example, when HP bought Compaq). This
+trend became popular for the organization
+needs a quantum shift of their profit. So, when
+organization A acquires organization B, then it
+will be a challenge to merge their information
+systems because each one of them has its own
+system design, implementation language,
+database design and file standards.
+If the core of the information system is
+implemented by a specific programming
+language, and the interfaces between the
+modules and components were described with
+WSDL, when merging the two information
+systems will decrease the overall risk, where
+the communication between these two
+information systems will be easier. If there are
+changes, they will be on the business logic of
+one of the information systems (or both) to
+apply the merger organization policies and
+standard on the target organization.
+5. CONCLUSION
+This paper discussed some of the
+issues that face the Enterprise Resource
+Planning systems in general. Applying Service
+Oriented Architecture on Enterprise Resource
+Planning systems can solve many issues, for
+example the requirements changes. There are
+many new features that the Enterprise
+Resource Planning systems will gain after
+applying Service Oriented Architecture.
+Also The Enterprise Resource Planning
+systems will be pushed to the internet age,
+which will reduce the business life cycle, the
+suppliers will be faster to reach their customers
+[4]
+[5]
+[6]
+[7]
+[8]
+M. Endrei, J. Ang, A. Arsanjani, S.
+Chua, P. Comte, P. Krogdahl, M. Luo,
+and T. Newling, Service Oriented
+Architecture and Web Services:
+International Business Machines
+Corporation, 2004.
+E. PULIER and H. TAYLOR,
+"Understanding Enterprise SOA,"
+2006.
+G. K. Behara, "BPM and SOA: A
+Strategic Alliance," 2006.
+T. Bellwood, "Understanding UDDI,"
+IBM Developer Works, July 2002.
+G. Wiehler, "Web Services and
+Service Oriented Architectures - The
+Impact on Business Applications,"
+2004.
+Z. Stojanovic and A. Dahanayake,
+"Service Oriented Software System
+Engineering," 2005.
+M. Gupta and A. Kohli, "Enterprise
+resource planning systems and its
+implications for operations function,"
+Science Direct, 2004.
+L. Hossain, J. D. Patrick, and M. A.
+Rashid,
+Enterprise
+Resource
+Planning: Global Opportunities &
+Challenges: Idea Group Publishing,
+2002.

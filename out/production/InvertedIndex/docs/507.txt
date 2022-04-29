@@ -1,0 +1,1107 @@
+
+
+Fifth Computing Paradigm
+Computing In the Clouds
+
+
+
+
+
+
+
+
+
+Prepared by: 
+
+                              Sahar Mohammed Abduljalil
+
+
+Supervised by: 
+
+                           Prof. Dr. Osman Hegazy.
+
+
+
+ July 2010
+
+
+
+
+
+Preamble
+
+At the right beginning of the premaster year it was difficult to stay focus and to decide what to do first. I was feeling like a kid who is left alone with a room full of colourful and amazing toys, having no idea what each of them is, while all were appealing and inviting to try and enjoy until I got myself in “Cloud Computing”. I remembered that I heard this term while attending a session about Freelancing in the FCI. The session was about doing applications and projects via web, and cloud computing was one of the related topics that were mentioned. My first impression was that the term is funny and I didn’t realize that it's going to be my research area one day.
+
+ Soon, it became clear that it is very challenging, though it is interesting field of research. What is really nice about it, its relation to all fields (Computer science, Information System, and Information Technology), it seems to be very interesting. However, when it comes to define it and understand its related problems, it is not as easy as it sounds. At this time, not many people are working on this field. Not many references are available, while lots of open research issues existed.
+
+I was lucky to be surrounded with people who shared the same interests, enthusiasms and found the topic worthwhile study. Their view on research revealed to me the importance and enormous potential of this field of research. It’s my pleasure to tell them, thanks for being there. Obviously; different views can be seen from different windows, depending on where they are located, how they are built and who is looking through. If time was allowing, many more things could have been done. However, this is also encouraging to know that this is not the end, it is just the beginning.
+
+
+
+
+
+
+Acknowledgement
+
+
+
+
+Thanks to Allah, who makes everything possible, who raised me up when I was down, who was with me when no one else was around, who took my hand and passed me through all days ahead. 
+
+And then, I would like to thank my supervisor, Prof. Dr. Osman Hegazy for giving me the opportunity to conduct my premaster research. His support while discussing and finding alternatives for any difficulties have been continuous encouragement and a sign for things to get better. Thank you.
+
+Dad and Mum, I wanted to write to you at the end to be able to write as much as I can. Now, I don't even know what to say. Without the hidden power of your daily prayers, I would never ever attend progress in my academic life. Your sacrifices, dedications, kindness, and supports are just few to mention. No words can express how grateful I am. I am in debt to you every day of my life. Many many thanks.
+
+
+
+
+
+
+
+
+Abstract
+
+Cloud Computing seems to have burst on the scene within the last year. There is an increasingly perceived vision that computing will one day be the 5th utility (after water, electricity, gas and telephony). This computing utility, like all other four existing utilities will provide the basic level of computing service that is considered essential to meet the everyday needs of general community. To deliver this vision, a number of computing paradigms have been proposed of which latest one is known as cloud computing.
+
+In this survey we explored the meaning of cloud computing and emphasizes on the advantages, disadvantages of Cloud Computing. Moreover, it discusses the unique characteristics of cloud computing that make it different from other computing paradigms. Yet, there are noticeable challenges faced in Cloud computing which are also further discussed. The survey is divided into five sections. Section (1) provides sufficient introduction that caused moving toward cloud computing paradigm. Section (2) introduces the cloud computing concepts. Architectural map of cloud are provided in section (3). Open issues are mentioned in section (4). A case study will be discussed in section (5).Finally the conclusion is in section (6).
+
+
+
+
+
+
+
+
+
+
+
+
+
+List Of Figures
+
+Figure 1: Cloud Computing	10
+Figure 2: Client Server Architecture	13
+Figure 3: Peer to peer	14
+Figure 4: Moving toward Cloud Computing	16
+Figure 5: Grid Computing	18
+Figure 6: Deduction on grid and cloud	19
+Figure 7: Three components make up a cloud computing	24
+Figure 8: The enabling and maturing technologies of cloud computing	29
+Figure 9 : Before Virtualization & After Virtualization	31
+Figure 10 : Cloud Stack	36
+Figure 11 : Software As A Service Advantages	38
+Figure 12 : Software As A Service Disadvantages	39
+Figure 13 : Components of PaaS	40
+Figure 14 : Platform As A Service Advantages	41
+Figure 15 : Platform As A service Disadvantages	41
+Figure 16 : Some Components of IaaS	43
+Figure 17: Infrastructure As A Service	43
+Figure 18 : Infrastructure As A service Disadvantages	44
+Figure 19: Cloud Models: public clouds, private clouds and hybrid clouds.	46
+Figure 20: Cloud computing Open Issues	55
+Figure 21: Transparent Cloud Protection	57
+Figure 22 : Moving an Application to Clouds	60
+Figure 23: Distributed Architecture of Cloud application	61
+Figure 24: Flow Of Guest Book Application	64
+Figure 25: Deployed Application In Google App Engine	65
+
+
+
+
+
+
+
+
+
+
+
+
+List Of Tables
+
+Table 1: Cloud Definitions	23
+Table 2: Cloud Characteristics	27
+Table 3: Before Virtualization and After Virtualization	31
+Table 4: Deployment Models	48
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contents
+
+Preamble	2
+Acknowledgement	3
+Abstract	4
+List Of Figures	5
+List Of Tables	6
+1.	Introduction	9
+1.1	Motivation	9
+1.2	Problem Definition	11
+1.3	Objective	11
+1.4	Related Work	12
+1.4.1	How did we get to the Fifth Computing paradigm?	12
+1.4.2	Different Types of Computing Paradigms	16
+2.	Cloud Computing	21
+2.1	Definitions of Cloud	21
+2.2	Cloud Computing Components	24
+2.2.1	Clients	24
+2.2.2	Distributed Servers	25
+2.2.3	Data Center	25
+2.3	Cloud Characteristics	26
+2.4	Why is Cloud computing distinct?	27
+2.5	Technologies behind Cloud Computing	29
+2.5.1	Virtualization technology	29
+2.5.2	Orchestration of service flow and workflow	32
+2.5.3	Web service and SOA	32
+2.5.4	Web 2.0	32
+2.5.5	World-wide distributed storage system	33
+2.5.6	Programming model	33
+3.	Architectural Map of the Cloud	35
+3.1	What’s Inside the Cloud?	35
+3.2	Stack Layers	35
+3.2.1	Human As A Service	37
+3.2.2	Software As A Service	37
+3.2.3	Platform As A Service	40
+3.2.4	Infrastructure As A Service	42
+3.3	Deployment Models	45
+3.3.1	Public	45
+3.3.2	Private	45
+3.3.3	Hybrid	46
+3.3.4	Community	47
+3.4	Benefits Of Cloud Computing	49
+3.5	Limitations of Cloud Computing	53
+4.	Cloud Computing Open Issues	55
+4.1	Cloud Security	56
+4.2	Cloud Privacy	58
+4.3	Cloud Applications	59
+5.	Case Study	62
+5.1	What is it for?	62
+5.2	The Sandbox	63
+5.3	Deploying an application practically in Google App Engine	63
+6.	Conclusion	66
+7.	References	67
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1. Introduction
+  
+True knowledge exists in knowing that you know nothing; and that makes you the smartest of all.
+Socrates (470 – 399 BC)
+        1.1 Motivation	
+	
+Cloud computing seems to have burst on the scene within the last year, and is rapidly gaining notice. But is cloud computing something truly new? Or is it just a renaming of existing distributed computing methods? Is cloud computing nothing more than grid computing with a shiny new marketing spin? Or is it truly a new approach? Are there unique characteristics of cloud computing that require new software engineering process to be used? Are there special issues in cloud services that we need to know? All these questions are samples that we will try to explore in this survey.
+
+The internet or online connectivity started out as a simple information exchange. Almost anything that users wanted to learn was possible because of the internet. They just go online, make a few searches and a minute or two, they will have the information they need. Personal communication became a lot easier as email was developed into one of the greatest innovations of the century. Instead of sending a snail mail which could take weeks, a single email could be read in a matter of seconds. Even with a simple connection, exchange of information could be done; chat and updates on new data can also be done through the internet. Although the same things could be done without internet, the experience that come from internet has become so much more. Through improvement of communications infrastructure, the internet was able to move away from the regular phone line and has a dedicated connection [26] . Because of the increasing capability of the internet, developers have looked beyond information sharing. Certain functions in desktop could now be done online. Office documents could be uploaded and extracted or even worked on at the same time online. Data processing is not limited anymore to your desktop as the increasing capacity of online connectivity has made it possible to emulate or even surpass local data processing. The rapid improvement of the capacity of online connectivity gave birth to cloud computing. 
+
+With the significance advances in information and communication technology over the last half century, there is an increasingly perceived vision that computing will one day be the fifth utility after water, electricity, gas, and telephone. This computing utility will provide the basic level of computing service that is essential to meet the everyday needs of the general community [2].
+
+Most of us are probably making use of the cloud without realizing that this is the case; whenever we access our Gmail or Hotmail accounts, or upload a photo to Face book, we are using the cloud. The potential benefits and risks, however, are more apparent. I will try and shed some light on defining cloud computing and then explore the opportunities and risks this adoption poses.
+
+
+Figure 1: Cloud Computing
+ Adapted from [3]
+
+
+
+
+
+
+        1.2 Problem Definition
+
+Suppose you are an executive in a large corporation, who is responsible for buying computers for all stuff, you also have to buy hardware, and software or software licenses to give employees the tools they require. If a new employee is hired then you have to buy more software or make sure your current software license allows this employee to use it. Instead of installing a suite of software for each computer, you would only have to load one application that will allow workers to log in to a web based service which host all the programs the user will need for their job. On the other hand when an organization needs a way to increase its capacity, temporal processing power or adding capabilities on the fly without investing any new infrastructure, and training new personnel, then cloud services are the solution.
+
+Cloud computing is a term used when we are no more talking about local machines that have to do all heavy lifting when running an application, rather it's all about remote machines in a network owned by another company that would run everything from email to word processing to complex data analysis programs. By this way, hardware and software demands on user side will decrease. The only thing that user will need is running the cloud computing systems interface software, which can be as simple as web browser.
+
+        1.3 Objective 
+
+As a researcher, I have the responsibility to tackle the problems facing my community. The majority of companies are facing a lot of problems. Some of these problems can be faced by adopting solutions offered by the cloud services. The main objective of this report is to provide an overview of cloud computing, highlights its importance, and provide some directives that facilitate cloud computing section. We started investigating the cloud computing concepts so it becomes easy to deal with cloud idea in the coming future. The methodology of this work is based on reviewing textbooks, papers, articles and websites related to the subjects of investigation.
+
+
+        1.4 Related Work
+            1.4.1   How did we get to the Fifth Computing paradigm? 
+
+Cloud computing has as its antecedents both client/server computing and  peer-to-peer distributed computing. It’s all a matter of how centralized storage facilitates collaboration and how multiple computers work together to increase computing power [4] .
+
+    • Client/Server:  Centralized Applications and Storage
+
+In the early days of computing (pre-1980), everything operated on the client/server model. All the software applications, all the data, and all the control resided on huge mainframe computers, otherwise known as servers. If a user wanted to access specific data or run a program, he had to connect to the mainframe, gain appropriate access, and then do his business. Users connected to the server via a computer terminal, sometimes called a workstation or client. This computer was sometimes called a dumb terminal because it didn’t have a lot memory, storage space, or processing power. It was merely a device that connected the user to and enabled him to use the mainframe computer. Users accessed the mainframe only when granted permission.
+
+Even on a mainframe computer, processing power is limited and the IT staffs were the guardians of that power. Access was not immediate, nor could two users access the same data at the same time. Beyond that, users pretty much had to take whatever the IT staff gave them with no variations. 
+
+The fact is, when multiple people are sharing a single computer, even if that computer is a huge mainframe, you have to wait your turn. There isn’t always immediate access in a client/server environment, and seldom is there immediate gratification. So the client/server model, while providing similar centralized storage, differed from cloud computing in that it did not have a user-centric focus; with client/server computing, all the control rested with the mainframe and with the guardians of that single computer. It was not a user-enabling environment [4].
+
+Figure 2: Client Server Architecture
+Adapted from [5]
+
+    • Peer-to-Peer: Sharing Resources
+
+The server part of the client/server system also created a huge bottleneck. All communications between computers had to go through the server first, however inefficient that might be. The obvious need to connect one computer to another without first hitting the server led to the development of peer-to-peer (P2P) computing. 
+
+P2P computing defines a network architecture in which each computer has equivalent capabilities and responsibilities. This is in contrast to the traditional client/server network architecture, in which one or more computers are dedicated to serving the others. (This relationship is sometimes characterized as a master/slave relationship, with the central server as the master and the client computer as the slave.) P2P was an equalizing concept.
+ 
+In the P2P environment, every computer is a client and a server; there are no masters and slaves. By recognizing all computers on the network as peers, P2P enables direct exchange of resources and services. There is no need for a central server; because any computer can function in that capacity when called on to do so. P2P was also a decentralizing concept. Control is decentralized, with all computers functioning as equals. Content is also dispersed among the various peer computers. No centralized server is assigned to host the available resources and services. Perhaps the most notable implementation of P2P computing is the Internet [4]. 
+
+Figure 3: Peer to peer
+Adapted from [5]
+
+    • Distributed Systems: Providing More Computing Power
+
+One of the most important subsets of the P2P model is that of distributed computing, where idle PCs across a network or across the Internet are tapped to provide computing power for large, processor-intensive projects. It’s a simple concept, all about cycle sharing between multiple computers. A personal computer, running full-out 24 hours a day, 7 days a week, is capable of tremendous computing power. Most people don’t use their computers 24/7, however, so a good portion of a computer’s resources go unused. Distributed computing uses those resources.
+
+When a computer is enlisted for a distributed computing project, software is installed on the machine to run various processing activities during those periods when the PC is typically unused. The results of that spare-time processing are periodically uploaded to the distributed computing network, and combined with similar results from other PCs in the project. The result, if enough computers are involved, simulates the processing power of much larger mainframes and supercomputers which is necessary for some very large and complex computing projects.
+
+For example, genetic research requires vast amounts of computing power. Left to traditional means, it might take years to solve essential mathematical problems. By connecting together thousands (or millions) of individual PCs, more power is applied to the problem, and the results are obtained that much sooner. Many distributed computing projects are conducted within large enterprises, using traditional network connections to form the distributed computing network [4]. 
+
+    • Collaborative Systems: Working as a Group
+
+From the early days of client/server computing through the evolution of P2P, there has been a desire for multiple users to work simultaneously on the same computer-based project. This type of collaborative computing is the driving force behind cloud computing, but has been around for more than a decade.
+
+Early group collaboration was enabled by the combination of several different P2P technologies. The goal is to enable multiple users to collaborate on group projects online, in real time. To collaborate on any project, users must first be able to talk to one another. In today’s environment, this means instant messaging for text-based communication, with optional audio/telephony and video capabilities for voice and picture communication. Most collaboration systems offer the complete range of audio/video options, for full-featured multiple-user video conferencing.
+
+In addition, users must be able to share files and have multiple users work on the same document simultaneously. Real-time white boarding is also common, especially in corporate and education environments. Early group collaboration systems ranged from the relatively simple (Lotus Notes and Microsoft NetMeeting) to the extremely complex (the building-block architecture of the Groove Networks system). Most were targeted at large corporations, and limited to operation over the companies’ private networks [4] .
+
+
+
+
+
+
+
+
+
+
+            1.4.2   Different Types of Computing Paradigms 
+
+
+Figure 4: Moving toward Cloud Computing
+Adapted from [6]
+
+    • Grid Computing
+
+Normally, a computer can only operate within the limitations of its own resources. There's an upper limit to how fast it can complete an operation or how much information it can store. Most computers are upgradeable, which means it's possible to add more power or capacity to a single computer, but that's still just an incremental increase in performance. Computer’s resources are such as:
+    • Central processing unit (CPU): A CPU is a microprocessor that performs mathematical operations and directs data to different memory locations. Computers can have more than one CPU.
+    • Memory: In general, a computer's memory is a kind of temporary electronic storage. Memory keeps relevant data close at hand for the microprocessor. Without memory, the microprocessor would have to search and retrieve data from a more permanent storage device such as a hard disk drive.
+    • Storage: In grid computing terms, storage refers to permanent data storage devices like hard disk drives or databases.
+
+But with grid computing systems many computer resources have been linked together in a way that lets someone use one computer to access and leverage the collected power of all the computers in the system. To the individual user, it's as if the user's computer has transformed into a supercomputer. Obviously, high performance computing resources that are expensive and hard to get access to, are used now as a federated resources from multiple geographically distributed institutions, and such resources are generally heterogeneous and dynamic. Grids focused on integrating existing resources with their hardware, operating systems, local resource management, and security infrastructure [7] .
+
+1"Grid computing is the combination of computer resources from multiple administrative domains for a common goal. Grid computing (or the use of a computational grid) is applying the resources of many computers in a network to a single problem at the same time usually to solve a scientific or technical problem that requires a great number of computer processing cycles or access to large amounts of data" .
+
+In order to set up a grid computing environment, several companies and organizations have to work together to create a standardized set of rules called protocols. Unfortunately, this means that two different grid computing systems may not be compatible with one another, because each is working with a unique set of protocols and tools.
+
+In general, a grid computing system requires:
+    1. Control Node or Dispatcher: At least one computer, usually a server, which handles all the administrative duties for the system. 
+    • It prioritizes and schedules tasks across the network. 
+    • It determines what resources each task will be able to access. 
+    • Monitor the system to make sure that it doesn't become overloaded.
+    • It makes sure that a user connected to the network doesn't experience a drop in his or her computer's performance, because a grid computing system should tap into unused computer resources without impacting everything else.
+
+    2. A network of computers running special grid computing network software: These computers act both as a point of interface for the user and as the resources the system will tap into for different applications. Grid computing systems can either include several computers of the same make running on the same operating system (called a homogeneous system) or a hodgepodge of different computers running on every operating system imaginable (a heterogeneous system). The network can be anything from a hardwired system where every computer connects to the system with physical wires to an open system where computers connect with each other over the Internet [31].
+
+    3. A collection of computer software called middleware: The purpose of middleware is to divide and apportion pieces of a program among several computers, sometimes up to many thousands. So without a middleware, communication across the system would be impossible. Grid is not owned by a single company, however it brings together many different groups that wish to share their computers with others in a collaborative manner and forms what is known as virtual organizations (VOs). These VOs may be formed to solve a single task and may then disappear just as quickly. Grids are usually used for solving scientific, technical or business problems that require a great number of computer processing cycles for processing large amounts of data [31]. 
+
+Figure 5: Grid Computing
+Adapted from [31]
+
+
+
+
+
+Figure 6: Deduction on grid and cloud
+
+
+
+
+
+
+
+
+
+
+    • Utility computing
+
+Some corporate executives are looking outside their companies for solutions. One potential approach is to use utility computing. Basically, utility computing is a business model in which one company outsources part or all of its computer support to another company. Support in this case doesn't just mean technical advice but it includes everything from computer processing power to data storage.
+ 
+2" Utility computing is the packaging of computing resources, such as computation and storage, as a metered service similar to a traditional public utility (such as electricity, water, natural gas, or telephone network). This system has the advantage of a low or no initial cost to acquire hardware; instead, computational resources are essentially rented."
+
+Thus, in order to meet market demand, the next natural step in evolution is the integration of these two trends into a new holistic approach that offers the following functionality:
+    • Scalable, flexible, robust and reliably physical infrastructure.
+    • Platform services that enable programming access to physical infrastructure through abstract interfaces.
+    • SaaS developed, deployed and running on a flexible and scalable physical infrastructure.
+All this is emerging in new online platforms referred to as Clouds and Cloud Computing. Cloud Computing is resulting from the convergence of Grid Computing [6].Utility Computing represents the increasing trend towards the external deployment of IT resources ,such as computational power ,storage or business applications, and obtaining them as services. It has the potential to disruptively change the X-as- a- Service products.
+
+
+
+    2. Cloud Computing
+
+It is wiser to find out than to suppose.
+Mark Twain (1835 – 1910)
+        2.1 Definitions of Cloud 
+
+In this section we will gather most of the available Cloud definitions to get an integrative definition as well as a minimum common denominator [8]. The Table below shows the definitions proposed by many experts.
+
+
+Author
+Definitions
+(M. Klems,2008)
+“You can scale your infrastructure on demand within minutes or even seconds, instead of days or weeks, thereby avoiding under-utilization (idle servers) and over-utilization (blue screen) of in-house resources.”
+(P. Gaw,2008)
+“Using the internet to allow people to access technology enabled services. Those services must be massively scalable.”
+(R. Buyya,2008 )
+“A Cloud is a type of parallel and distributed system consisting of a collection of interconnected and virtualized computers that are dynamically provisioned and presented as one or more unified computing resources based on service-level agreements established through negotiation between the service provider and consumers.”
+(R. Cohen,2008)
+“Cloud computing is one of those catch all buzz words that try to encompass a variety of aspects ranging from deployment, load balancing, provisioning, business model and architecture (like Web2.0). It’s the next logical step in software (software 10.0). For me the simplest explanation for Cloud Computing is describing it as, internet centric software.”
+(J. Kaplan,2008)
+“A broad array of web-based services aimed at allowing users to obtain a wide range of functional capabilities on a ’pay-as-you-go’ basis that previously required tremendous hardware/software investments and professional skills to acquire. Cloud computing is the realization of the earlier ideals of utility computing without the technical complexities or complicated deployment worries.”
+(D. Gourlay,2008)
+“The next hype-term building off of the software models that virtualization enabled.”
+
+(D. Edwards,2008)
+“What is possible when you leverage web-scale infrastructure (application and physical) in an on-demand way.”
+(B. de Haff ,2008)
+“There really are only three types of services that are Cloud based: SaaS, PaaS, and Cloud Computing Platforms. I am not sure being massively scalable is a requirement to fit into any one category.”
+(B. Kepes ,2008)
+“Put simply Cloud Computing is the infrastructural paradigm shift that enables the ascension of SaaS. It is a broad array of web-based services aimed at allowing users to obtain a wide range of functional capabilities on a pay-as-you-go basis that previously required tremendous hardware/software investments and professional skills to acquire.”
+(K. Sheynkman,2008)
+“Clouds focused on making the hardware layer consumable as on-demand compute and storage capacity. This is an important first step, but for companies to harness the power of the Cloud, complete application infrastructure needs to be easily configured, deployed, dynamically scaled and managed in these virtualized hardware environments.”
+(O. Sultan ,2008)
+“In a fully implemented Data Center 3.0 environment, you can decide if an app is run locally (cook at home), in someone elses data center (take-out) and you can change your mind on the fly in case you are short on data center resources or you having environmental/facilities issues. In fact, with automation, a lot of this can be done with policy and real-time triggers.”
+(J. Pritzker,2008)
+“Clouds are vast resource pools with on-demand resource allocation virtualized and priced like utilities.”
+(T. Doerksen,2008)
+“Cloud computing is the user-friendly version of Grid computing.”
+(T. von Eicken,2008)
+“Outsourced, pay-as-you-go, on-demand, somewhere in the Internet, etc” 
+(M. Sheedan,2008)
+“Cloud Pyramid’ to help differentiate the various Cloud offerings out there Top: SaaS; Middle: PaaS; Bottom: IaaS ”
+(A. Ricadela,2008)
+“Cloud Computing projects are more powerful and crash-proof than Grid systems developed even in recent years.”
+
+(I. Wladawsky Berger ,2008)
+“The key thing we want to virtualize or hide from the user is complexity, all that software will be virtualized or hidden from us and taken care of by systems and/or professionals that are somewhere else out there in The Cloud”
+
+(B. Martin ,2008)
+“Cloud computing encompasses any subscription-based or pay-per-use service that, in real time over the Internet, extends IT’s existing capabilities”
+
+
+(R. Bragg ,2008)
+“The key concept behind the Cloud is Web application a more developed and reliable Cloud. Many find it’s now cheaper to migrate to the Web Cloud than invest in their own server farm it is a desktop for people without a computer.”
+(G. Gruman and E. Knorr ,2008)
+“Cloud is all about: SaaS, utility computing, Web Services, PaaS, Internet integration and commerce platforms.”
+
+
+(P. McFedries ,2008)
+“Cloud Computing, in which not just our data but even our software resides within the Cloud, and we access everything not only through our PCs but also Cloud-friendly devices, such as smart phones, PDAs... the mega computer enabled by virtualization and software as a service. This is utility computing powered by massive utility data centers.”
+
+Table 1: Cloud Definitions
+Adapted from [8]
+
+
+
+        2.2 Cloud Computing Components 
+
+In a simple, topological sense, a cloud computing solution is made up of several elements: clients, data centres, and distributed servers. As shown in Figure 7, these components make up the three parts of a cloud computing solution. Each element has a purpose and plays a specific role in delivering a functional cloud based application [9].
+
+
+Figure 7: Three components make up a cloud computing
+ Adapted from [9]
+            2.2.1   Clients
+
+Clients are, in a cloud computing architecture, the exact same things that they are in a plain, old, everyday local area network (LAN). They are, typically, the computers that just sit on your desk. But they might also be laptops, tablet computers, mobile phones, or PDAs all big drivers for cloud computing because of their mobility.
+
+Clients are the devices that the end users interact with to manage their information on the cloud. Clients generally fall into three categories:
+    • Mobile: Mobile devices include PDAs or smart phones, like a Blackberry, Windows Mobile Smartphone or an iPhone.
+    • Thin Clients are computers that do not have internal hard drives, but rather let the server does all the work, but then displays the information.
+    • Thick Clients:  This type of client is a regular computer, using a web browser like Firefox or Internet Explorer to connect to the cloud. Thin clients are becoming an increasingly popular solution, because of their price and effect on the environment [9]. 
+
+            2.2.2   Distributed Servers
+
+But the servers don’t all have to be housed in the same location. Often, servers are in geographically disparate locations. But to you, the cloud subscriber, these servers act as if they’re humming away right next to each other. This gives the service provider more flexibility in options and security. For instance, Amazon has their cloud solution in servers all over the world. If something were to happen at one site, causing a failure, the service would still be accessed through another site. Also, if the cloud needs more hardware, they need not throw more servers in the safe room they can add them at another site and simply make it part of the cloud [9].
+            2.2.3   Data Center
+
+The data center is the collection of servers where the application to which you subscribe is housed. It could be a large room in the basement of your building or a room full of servers on the other side of the world that you access via the Internet. A growing trend in the IT world is virtualzing servers. That is, software can be installed allowing multiple instances of virtual servers to be used. In this way, you can have half a dozen virtual servers running on one physical server [9].
+
+
+
+
+
+
+
+
+
+
+
+        2.3 Cloud Characteristics
+
+Characteristics
+Definition
+
+
+
+On-demand self-service
+The cloud provider should have the ability to automatically provision computing capabilities, such as server and network storage, as needed without requiring human interaction with each service’s provider.
+
+
+Broad network access
+According to NIST, the cloud network should be accessible anywhere, by almost any device (e.g., smart phone, laptop, mobile devices, PDA).
+
+
+
+
+
+
+
+
+Resource pooling
+The provider’s computing resources are pooled to serve multiple customers using a multitenant model, with different physical and virtual resources dynamically assigned and reassigned according to demand. There is a sense of location independence. The customer generally has no control or knowledge over the exact location of the provided resources. Examples of resources include storage, processing, memory, network bandwidth and virtual machines.
+
+
+
+
+Rapid elasticity
+Capabilities can be rapidly and elastically provisioned, in many cases automatically, to scale out quickly and rapidly released to scale in quickly. To the customer, the capabilities available for provisioning often appear to be unlimited and can be purchased in any quantity at any time.
+
+
+Measured service
+Cloud systems automatically control and optimize resource use by leveraging a metering capability (e.g., storage, processing, bandwidth and active user accounts). Resource usage can be monitored, controlled and reported, providing transparency for both the provider and customer of the utilized service.
+
+Table 2: Cloud Characteristics
+Adapted from [10]
+
+        2.4 Why is Cloud computing distinct? 
+
+The Cloud computing distinguishes itself from other computing paradigms, in the following aspects:
+    1. User-centric interfaces: Cloud services should be accessed with simple and pervasive methods. In fact, the Cloud computing adopts the concept of Utility computing. In other words, users obtain and employ computing platforms in computing clouds as easily as they access a traditional public utility (such as electricity, water, natural gas, or telephone network). In detail, the cloud services have the following features:
+        ◦ The Cloud interfaces do not force users to change their working habits and environments, e.g., programming language, compiler and operating system. This feature differs cloud computing from Grid computing as Grid users have to learn new Grid commands and APIs to access Grid resources and services.
+        ◦ The Cloud client software which is required to be installed locally is lightweight. For example, the Nimbus Cloud kit client size is around 15MB.
+    • Cloud interfaces are location independent and can be accessed by some well established interfaces like Web services framework and Internet browser [11].
+
+    2. On-demand service provisioning: Computing Clouds provide resources and services for users on demand. Users can customize and personalize their computing environments later on, for example, software installation, network configuration, as users usually own administrative privileges [11].
+
+    3. Quality of service guaranteed offer: The computing environments provided by computing clouds can guarantee QoS for users, e.g., hardware performance like CPU speed, I/O bandwidth and memory size. The computing Cloud renders QoS in general by processing Service Level Agreement (SLA) with users – a negotiation on the levels of availability, serviceability, performance, operation, or other attributes of the service like billing and even penalties in the case of violation of the SLA [11].
+
+    4. Autonomous System: The computing Cloud is an autonomous system and it is managed transparently to users. Hardware, software and data inside clouds can be automatically reconfigured, orchestrated and consolidated to present a single platform image, finally rendered to users [11].
+
+    5. Scalability and flexibility:  The scalability and flexibility are the most important features that drive the emergence of the cloud computing. Cloud services and computing platforms offered by computing clouds could be scaled across various concerns, such as geographical locations, hardware performance, and software configurations. The computing platforms should be flexible to adapt to various requirements of a potentially large number of users [11].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        2.5 Technologies behind Cloud Computing 
+
+
+Figure 8: The enabling and maturing technologies of cloud computing
+Adapted from [12]
+            2.5.1   Virtualization technology
+
+The concept of virtualization was first devised in the 1960s. It was then implemented by IBM to help split large mainframe machines into separate ‘virtual machines’. The reason why this was done was to maximize their available mainframe computers efficiency. As I have mentioned previously, before virtualization was introduced, a mainframe could only work on one process at a time, becoming a waste of resources. Virtualization was introduced to solve this problem. It worked by splitting up a mainframe machine’s hardware resources into separate entities. Due to this fact, a single physical mainframe machine could now run multiple applications and processes at the same time [13].
+One of the most important ideas behind cloud computing is scalability, and the key technology that makes that possible is virtualization. Virtualization is the emulation of hardware within a software platform. This allows a single computer to take on the role of multiple computers. This type of virtualization is often referred to as full virtualization, allowing one physical computer to share its resources across a multitude of environments.
+
+It allows the simulation of hardware via software. For this to occur, some type of virtualization software is required on a physical machine. The most well known virtualization software in use today is VMware. VMware will simulate the hardware resources of an x86 based computer, to create a fully functional virtual machine. An operating system and associated applications can then be installed on this virtual machine, just as would be done on a physical machine. Multiple virtual machines can be installed on a single physical machine, as separate entities. This eliminates any interference between the machines, each operating separately [14].
+There are four main objectives to virtualization, demonstrating the value offered to organizations:
+    • Increased use of hardware resources: Virtualization resolved the problem of underutilization (hardware resources are not used to their full capacity). The problem was solved by allowing a physical server to run virtualization software in order for multiple servers to run on one physical server. Those multiple servers now are operating as virtual servers. Example: If an organization uses 5 different separate servers, these servers could be run on a single physical server that operates as virtual servers.
+    • Reduced management and resource costs: Using a virtualized infrastructure, businesses can save large amounts of money because they require far fewer physical machines.
+    • Improved Business Flexibility: Virtual machines can be easily setup. There are no additional hardware costs, no need for extra physical space and no need to wait around. Virtual machine management software also makes it easier for administrators to setup virtual machines and control access to particular resources, etc.
+    • Improved security and reduced downtime: In previous cases before virtualization, when a physical machine fails, usually all it's software content becomes inaccessible and unavailable. But with virtualization each virtual machine is considered as a separate entity from the others. So if one of the virtual machines failed or had a virus, then the others are completely isolated and this increased security and reduced downtime. On the other hand virtual machines are independent of the hardware, this means if there was a hardware failure then the virtual machines can be migrated to another machines [14].
+
+
+
+
+Figure 9 : Before Virtualization & After Virtualization
+Adapted from [15]
+
+Before Virtualization
+After Virtualization
+    • Single OS image per machine
+    •  Hardware-independence of operating system and applications
+    • Software and hardware tightly coupled
+    • Virtual machines can be provisioned to any
+    • System
+    • Underutilized resources
+    • Can manage OS and application as a single unit by encapsulating them into virtual machines
+    • Inflexible and costly infrastructure
+
+
+Table 3: Before Virtualization and After Virtualization
+Adapted from [15]
+
+
+
+
+
+            2.5.2   Orchestration of service flow and workflow
+
+Computing Clouds offer a complete set of service templates on demand, which could be composed by services inside the computing Cloud. Computing Clouds therefore should be able to automatically orchestrate services from different sources and of different types to form a service flow or a workflow transparently and dynamically for users [11].
+            2.5.3   Web service and SOA
+
+Computing Cloud services are normally exposed as Web services, which follow the industry standards such as WSDL, SOAP and UDDI. The services organization and orchestration inside clouds could be managed in a Service Oriented Architecture (SOA). A set of cloud services furthermore could be used in a SOA application environment, thus making them available on various distributed platforms and could be further accessed across the Internet [11].
+            2.5.4   Web 2.0
+
+Web 2.0 is an emerging technology describing the innovative trends of using World Wide Web technology and Web design that aims to enhance creativity, information sharing, collaboration and functionality of the Web. Web 2.0 applications typically include some of the following features/techniques [11]:
+    • CSS to separate of presentation and content.
+    • SemanticWeb technologies.
+    • XHTML and HTML markup.
+    • Syndication, aggregation and notification of Web data with RSS or Atom feeds.
+    • Mashups, merging content from different sources, client- and server-side.
+    • Weblog publishing tools.
+    • Wiki to support user-generated content.
+    • Tools to manage users’ privacy on the Internet.
+
+The essential idea behind Web 2.0 is to improve the interconnectivity and interactivity of Web applications. The new paradigm to develop and access Web applications enables users access the Web more easily and efficiently. Cloud computing services in nature are Web applications which render desirable computing services on demand. It is thus a natural technical evolution that the Cloud computing adopts the Web 2.0 technique [11].
+
+            2.5.5   World-wide distributed storage system
+
+A Cloud storage model should foresee:
+    • A network storage system, which is backed by distributed storage providers (e.g., data centers), offers storage capacity for users to lease. The data storage could be migrated, merged, and managed transparently to end users for whatever data formats. Examples are Google File System and Amazon S3. A Mashup is a Web application that combines data from more than one source into a single integrated storage tool. The SmugMug is an example of Mashup, which is a digital photo sharing Web site, allowing the upload of an unlimited number of photos for all account types, providing a published API which allows programmers to create new functionality, and supporting XML-based RSS and Atom feeds [11].
+    • A distributed data system which provides data sources accessed in a semantic way. Users could locate data sources in a large distributed environment by the logical name instead of physical locations. Virtual Data System (VDS) is good reference.
+            2.5.6   Programming model
+
+Users drive into the computing Cloud with data and applications. Some Cloud programming models should be proposed for users to adapt to the Cloud infrastructure. For the simplicity and easy access of Cloud services, the Cloud programming model, however, should not be too complex or too innovative for end users. The MapReduce is a programming model and an associated implementation for processing and generating large  data sets across the Google worldwide infrastructures. The MapReduce model firstly involves applying a “map” operation to some data records   a set of key/value pairs, and then processes a “reduce” operation to all the values that shared the same key. The Map-Reduce-Merge method evolves the MapReduce paradigm by adding a “merge” operation. Hadoop is a framework for running applications on large clusters built of commodity hardware. It implements the MapReduce paradigm and provides a distributed file system the Hadoop Distributed File System. The MapReduce and the Hadoop are adopted by recently created international Cloud computing project of Yahoo!, Intel and HP [11].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    3. Architectural Map of the Cloud
+
+You cannot teach a man anything; you can only help him find it within himself.
+Galileo Galilei (1564 – 1645)
+
+        3.1 What’s Inside the Cloud?
+
+When talking about cloud computing system it's better to divide it into two sections:
+    • Front end= client's computer and the application required to access the cloud computing system. Not all cloud computing systems have same interface, the user interface can be web browsers (Internet explorer or Firefox) or unique application.
+    • Back end= cloud=various computers + Servers + Data storage systems. The cloud includes any program you can imagine from data processing to video games. The control node administers the system, monitor the traffic and client demand to ensure everything runs smoothly. It follows a set of rules called protocols and use a special kind of software called middleware that allow network computers to communicate with each other. Cloud computing systems need twice the number of storage devices it requires to keep all clients' information stored; this is because these storage devices may break down. A cloud computing system must make a copy of all its client information and store it on other devices. The node server accesses the backup machines that contain the copies so that it will retrieve the data. Making copy of the data as a backup is called Redundancy. Those sections are connected through a network usually the internet [34].
+
+        3.2 Stack Layers
+
+Cloud computing is a model that support everything as a service (XaaS). Virtualized physical resources, virtualized infrastructure, as well as virtualized middleware platforms and business applications are being provided and consumed as services in the Cloud [16].
+
+A first architectural categorization of Cloud technologies was proposed as a stack of service types. This stack was inspired by the “everything as a service” (XaaS) taxonomy; Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS); and Human as a Service (HuaaS). Each layer encompasses one or more cloud services. Cloud services belong to the same layer if they have equivalent levels of abstraction, as evident by their targeted users. By composability, we classify one cloud layer to be higher in the cloud stack, if its services can be composed from the services of the underlying layer [17].The figure below shows the cloud layers.
+
+
+Figure 10 : Cloud Stack
+Adapted from [16]
+            3.2.1   Human As A Service
+
+Some services rely on massive-scale aggregation and extraction of information from crowd of people. Each individual in the crowd may use whatever technology or tools they it see fit to solve the task. We call this top-most layer in our stack Human as a Service (HuaaS). In some cases human intelligence is used to contribute arbitrary services, such as “newsworthy” video streams (YouTube), or on demand subtask solutions (Amazon Mechanical Turk). These tools belong to the Crowdsourcing (CS) category. Some human intelligence aggregation services are more controlled and more targeted at predicting events or promoting popular ideas. Examples include the Iowa Electronic Markets, which are mainly used to predict outcomes of political races, and Digg, which is used to promote popular news. We call this latter category of services Information Aggregation Services (IAS), since they all aim at producing a single aggregate number representing the popular opinion of the crowd in various ways [16].
+
+            3.2.2   Software As A Service
+
+The cloud application layer or SaaS is the most visible layer to the end-users of the cloud where applications are hosted by a service provider and made available to customers over the internet. The motivation behind generation of SaaS was that companies could not manage the complexities of software costs, running, upgrading, and managing the software as a product. So, it alleviates the customer's burden of software maintenance and reduces the expense of software purchases by on demand pricing. Consequently nothing is needed to be installed locally. 
+
+To sum up, all the applications that run on the Cloud and provide direct services to the customer are located in the SaaS layer. The application developers can either use the PaaS layer to develop and run their applications or directly use the IaaS infrastructure. Here we distinguish between Basic Application Services and Composite Application Services. Examples of Basic Application Services are Google Maps services. In the Composite Application Service category or the mash-ups support systems where cloud applications can be composed as a service from other cloud services offered by other cloud systems, using the concepts of SOA. Opensocial is a prominent example for mashups that allow entire social networks like MySpace to be used as Basic Services. We categorize Basic and Composite services into Application Services, which comprise the highest level building blocks for end-user applications running in the Cloud, such as Google Docs [16].
+
+“Software as a Service (SaaS) is the flavour which is also useful for end-users. Examples are web-based office applications like Google Docs or Calendar, but also the upcoming gaming service by Onlive. SaaS is usually build based on own or foreign IaaS and/or PaaS” [18].
+
+
+
+Figure 11 : Software As A Service Advantages
+
+
+
+
+Figure 12 : Software As A Service Disadvantages
+
+
+
+
+
+
+
+
+
+
+
+            3.2.3   Platform As A Service
+
+Platform-as-a-service is a complete platform, including application development, interface development, database development, storage, and testing, delivered through a remotely hosted platform to subscribers. Platform-as-a-service provides self-contained platforms with everything you need for application development and operational hosting.
+
+The services in PaaS level of the integrated stack are categorized into Programming Environments and Execution Environments. Example of the former is Sun’s project Caroline and the Django framework, and examples of the latter are Google’s App Engine, Microsoft’s Azure. You could potentially replace the Django framework in Google App Engine with your own Programming Environment and Microsoft Azure offers a wide range of alternative programming tools under the Azure runtime umbrella. This decoupling between execution and development environments is thus represented by having two categories in the stack model in figure 10 [16].
+
+“Platform as a Service (PaaS) means that the cloud operator offers an API which can be used by an application developer to develop applications or web applications with friendly user-interfaces. An example is Google's App Engine.” [18].
+
+
+Figure 13 : Components of PaaS
+
+Figure 14 : Platform As A Service Advantages
+
+
+
+Figure 15 : Platform As A service Disadvantages
+
+            3.2.4   Infrastructure As A Service
+
+On the lowest level of the infrastructure closest to the hardware we distinguish two types of services, Physical Resource Set (PRS) and Virtual Resource Set (VRS) services. Both of these service types provide a management front-end API for a set or pool of resources in order to allow higher level services to automate setup and tear-down, demand based scalability, fail-over and operating system hosting. Primary functionality includes starting and stopping individual resources, OS imaging, network topology setup, and capacity configuration. The PRS layer implementation is hardware dependent and therefore tied to a hardware vendor, whereas the VRS layer can be built on vendor independent hypervisor technology such as Xen or on top of a PRS service to run in multi-vendor Clouds such as the Open Cirrus testbed. Examples of PRS services include, Emulab while VRS services include Amazon EC2, Eucalyptus, Tycoon, Nimbus, and OpenNebula.The reason to split these Resource Set (RS) services into two types allows automated management of physical as well as virtual resources. Another reason for seperation is that different types of resources such as storage, network and compute node resources might need to be virtualized in different ways. However, they might still be able to have a common PRS interface.
+
+One level higher up in the stack but still in the IaaS category we distinguish three types of Basic Infrastructure Services (BIS), computational, storage, and network. Some examples are Map Reduce (computational), GoogleFS (storage), and OpenFlow (network). As the highest level in the IaaS stack we consider Higher Infrastructure Services (HIS). Amazon’s Dynamo, and Google’s Bigtable are examples of HIS [16].
+
+“Infrastructure as a Service (IaaS), provides low-level services like virtual machines which can be booted with a user-defined hard disk image, i.e. Amazon EC2. Virtual hard disks that can be accessed from different virtual machines are another example of infrastructure as a service” [18].  
+
+
+Figure 16 : Some Components of IaaS
+
+
+Figure 17: Infrastructure As A Service
+
+
+
+
+Figure 18 : Infrastructure As A service Disadvantages
+
+
+
+
+
+
+
+
+
+        3.3 Deployment Models
+            3.3.1   Public
+
+Public cloud computing is the most widely adopted class as well as the most thoroughly understood , it's often considered the standard model of cloud computing. In a public cloud, a service provider makes IT resources, such as collaboration, CRM or payroll applications, storage capacity, or server compute cycles, available to the general public via the Internet.
+Advantages:
+    • IT services are easily accessed by API.
+    • Scale up or down according to needed capacity (Elasticity and scalability).
+Limitations:
+    • Customers using public clouds must deal with the risk of hosting data in an offsite organization outside the legal and regulatory umbrella of their own organization. So security is a major concern in public cloud.
+    • As most public clouds leverage a worldwide network of data centers, it is difficult to document the physical location of data at any particular moment.
+    • Network performance issues [19].
+            3.3.2   Private
+This cloud computing environment resides within the boundaries of an organization and is used exclusively for the organization’s benefits. They are built primarily by IT departments within enterprises who seek to optimize utilization of infrastructure resources within the enterprise by provisioning the infrastructure with applications using the concepts of grid and virtualization. The customer can choose to offload the management functions to a cloud provider or third party and by doing so the organization is maintaining data under the control of the organization and gain the benefit of professional and dedicated management of third party resources. Consequently, by controlling all data locally, the organization will eliminate the security concerns that were associated when processing the information in a public cloud.
+Limitations: IT teams in the organization may have to invest in buying, building and managing the clouds independently [19].
+            3.3.3   Hybrid 
+
+This is a combination of both private (internal) and public cloud computing environments (public). It uses a combination of internal resources, which stay under the control of the organization, and external resources delivered by a cloud service provider. Like the private model, a hybrid cloud lets an organization continue to use their existing data center equipment and keep sensitive data secured on the organization's own network. And like the public cloud, a hybrid model lets an organization take advantage of a cloud's almost unlimited scalability. It's a way to solve some of the trust issues of the public cloud while getting the public cloud's benefits. Example: Amazon's Virtual Private Cloud (VPC) [19].
+
+
+Figure 19: Cloud Models: public clouds, private clouds and hybrid clouds.
+Adapted from [19]
+
+
+
+            3.3.4   Community
+
+A community cloud may be established where several organizations have similar requirements and seek to share infrastructure so as to realize some of the benefits of cloud computing. With the costs spread over fewer users than a public cloud (but more than a single tenant) this option is more expensive but may offer a higher level of privacy, security and/or policy compliance.
+Deployment Model
+Description
+To be considered
+Private
+• Operated solely for an organization.
+• May be managed by the organization or a third party.
+• Built to maximize value of underutilize resources.
+• Cloud services with minimum risk
+• May not provide the scalability and agility of public cloud services
+Community
+• Shared by several organizations
+• Supports a specific community that has shared mission or interest.
+• May be managed by the organizations or a third party.
+• May reside on-premise or off-premise
+• Same as private cloud, plus:
+• Data may be stored with the data of competitors.
+Public
+• Made available to the general public or a large industry group.
+• Owned by an organization selling cloud services (Cloud providers).
+•Built to cope with limitation of scale, scope, and expertise of in house IT.
+• Same as community cloud, plus:
+• Data may be stored in unknown locations and may not be easily retrievable.
+•More loose security and compliance requirements.
+Hybrid
+A composition of two or more clouds (private, community or public) that remain unique entities but are bound together by standardized or proprietary technology that enables data and application portability (e.g., cloud bursting for load balancing between clouds)
+• Aggregate risk of merging different deployment models
+• Classification and labeling of data will be beneficial to the security manager to ensure that data are assigned to the correct cloud type.
+
+Table 4: Deployment Models
+Adapted from [10]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        3.4 Benefits Of Cloud Computing 
+    1. Lower-Cost Computers for Users
+
+You don’t need a high-powered (and accordingly high-priced) computer to run cloud computing web-based applications. Because the application runs in the cloud, not on the desktop PC, that desktop PC doesn’t need the processing power or hard disk space demanded by traditional desktop software. Hence the client computers in cloud computing can be lower priced, with smaller hard disks, less memory, more efficient processors, and the like. In fact, a client computer in this scenario wouldn’t even need a CD or DVD drive, because no software programs have to be loaded and no document files need to be saved.
+    2. Improved Performance
+
+When a desktop PC doesn’t have to store and run a ton of software-based applications and the applications are run from the cloud, instead. With fewer programs hogging the computer’s memory, users will see better performance from their PCs. Put simply; computers in a cloud computing system will boot up faster and run faster, because they’ll have fewer programs and processes loaded into memory.
+    3. Lower IT Infrastructure Costs
+
+In a larger organization, the IT department could also see lower costs from the adoption of the cloud computing paradigm. Instead of investing in larger numbers of more powerful servers, the IT staff can use the computing power of the cloud to supplement or replace internal computing resources. Those companies that have peak needs no longer have to purchase equipment to handle the peaks; peak computing needs are easily handled by computers and servers in the cloud.
+
+
+
+
+
+    4. Fewer Maintenance Issues
+
+Speaking of maintenance costs, cloud computing greatly reduces both hardware and software maintenance for organizations of all sizes. First, the hardware, with less hardware (fewer servers) necessary in the organization, maintenance costs is immediately reduced. As to software maintenance, remember that all cloud apps are based elsewhere, so there’s no software on the organization’s computers for the IT staff to maintain. 
+    5. Lower Software Costs
+
+ Instead of purchasing separate software packages for each computer in the organization, only those employees actually using an application need access to that application in the cloud. Even if it costs the same to use web-based applications as it does similar desktop software (which it probably won’t), IT staffs are saved the cost of installing and maintaining those programs on every desktop in the organization.
+As to the cost of that software, it’s possible that some cloud computing companies will charge as much to “rent” their apps as traditional software companies charge for software purchases. However, early indications are that cloud services will be priced substantially lower than similar desktop software. In fact, many companies (such as Google) are offering their web-based applications for free which to both individuals and large organizations is much more attractive than the high costs charged by Microsoft and similar desktop software suppliers.
+    6. Instant Software Updates
+
+Another software-related advantage to cloud computing is that users are no longer faced with the choice between obsolete software and high upgrade costs. When the app is web-based, updates happen automatically and are available the next time the user logs into the cloud. Whenever you access a web-based application, you’re getting the latest version without needing to pay for or download an upgrade.
+    7. Increased Computing Power
+
+ When you’re tied into a cloud computing system, you have the power of the entire cloud at your disposal. You’re no longer limited to what a single desktop PC can do, but can now perform supercomputing-like tasks utilizing the power of thousands of computers and servers. In other words, you can attempt greater tasks in the cloud than you can on your desktop.
+    8. Unlimited Storage Capacity
+
+Similarly, the cloud offers virtually limitless storage capacity. Consider that when your desktop or laptop PC is running out of storage space. Your computer’s 200GB hard drive is peanuts compared to the hundreds of petabytes (a million gigabytes) available in the cloud so whatever you need to store, you can.
+    9. Increased Data Safety
+
+That’s because data in the cloud is automatically duplicated, so nothing is ever lost. That also means if your personal computer crashes, all your data is still out there in the cloud, still accessible. In a world where few individual desktop PC users back up their data on a regular basis, cloud computing can keep data safe.
+    10. Improved Compatibility between Operating Systems
+
+In the cloud, operating systems simply don’t matter. You can connect your Windows computer to the cloud and share documents with computers running Apple’s Mac OS, Linux, or UNIX. In the cloud, the data matters, not the operating system.
+    11. Improved Document Format Compatibility
+
+You also don’t have to worry about the documents you create on your machine being compatible with other users’ applications or operating systems. In a world where Word 2007 documents can’t be opened on a computer running Word 2003, all documents created by web-based applications can be read by any other user accessing that application. There are no format incompatibilities when everyone is sharing docs and apps in the cloud.
+
+
+
+    12. Easier Group Collaboration
+
+Sharing documents leads directly to collaborating on documents. To many users, this is one of the most important advantages of cloud computing the ability for multiple users to easily collaborate on documents and projects. Imagine that you, a colleague in your West Coast office, and a consultant in Europe all need to work together on an important project. Before cloud computing, you had to email or snail mail the relevant documents from one user to another, and work on them sequentially. Not so with cloud computing.
+Now each of you can access the project’s documents simultaneously; the edits one user makes are automatically reflected in what the other users see onscreen. It’s all possible, of course, because the documents are hosted in the cloud, not on any of your individual computers. All you need is a computer with an Internet connection, and you’re collaborating.
+Of course, easier group collaboration means faster completion of most group projects, with full participation from all involved. It also enables group projects across different geographic locations. No longer does the group have to reside in a single office for best effect. With cloud computing, anyone anywhere can collaborate in real time. It’s an enabling technology [4].
+    13. Latest Version Availability
+
+ When you edit a document at home, that edited version is what you see when you access the document at work. The cloud always hosts the latest version of your documents; you’re never in danger of having an outdated version on the computer you’re working on.
+    14. Removes the Tether to Specific Devices
+
+Finally, here’s the ultimate cloud computing advantage you’re no longer tethered to a single computer or network. Change computers, and your existing applications and documents follow you through the cloud. Move to a portable device, and your apps and docs are still available. There’s no need to buy a special version of a program for a particular device, or save your document in a device-specific format. Your documents and the programs that created them are the same no matter what computer you’re using [4].
+
+        3.5 Limitations of Cloud Computing
+    • Requires a Constant Internet Connection
+Cloud computing is, quite simply, impossible if you can’t connect to the Internet. Because you use the Internet to connect to both your applications and documents, if you don’t have an Internet connection, you can’t access anything, even your own documents. A dead Internet connection means no work, period and in areas where Internet connections are few or inherently unreliable, this could be a deal breaker [4]. 
+    • Can Be Slow
+Even on a fast connection, web-based applications can sometimes be slower than accessing a similar software program on your desktop PC. That’s because everything about the program, from the interface to the document you’re working on, has to be sent back and forth from your computer to the computers in the cloud. If the cloud servers happen to be backed up at that moment, or if the Internet is having a slow day, you won’t get the instantaneous access you’re used to with desktop apps[4].
+    • Features Might Be Limited
+Compare, for example, the feature set of Google Presentations with that of Microsoft PowerPoint; there’s just a lot more you can do with PowerPoint than you can with Google’s web-based offering. The basics are similar, but the cloud application lacks many of PowerPoint’s advanced features [4]. 
+    • Stored Data Might Not Be Secure
+With cloud computing, all your data is stored on the cloud. That’s all well and good, but how secure is the cloud? Can other, unauthorized users gain access to your confidential data? These are all important questions, and well worth further examination [4]. 
+    • If the Cloud Loses Your Data, You’re Screwed
+Theoretically, data stored in the cloud is unusually safe, replicated across multiple machines. But on the off chance that your data does go missing, you have no physical or local backup. (Unless you methodically download all your cloud documents to your own desktop, of course which few users do). Put simply, relying the cloud puts you at risk if the cloud lets you down [4].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    4. Cloud Computing Open Issues
+
+Not everything that can be counted counts and not everything that counts can be counted.
+Albert Einstein (1879-1955)
+
+
+
+Figure 20: Cloud computing Open Issues
+Adapted from [21]
+Cloud technologies and models have not yet reached their full potential and many of the capabilities associated with clouds are not yet delivered and researched to a degree that allows their exploitation to the full degree, respectively, meeting all requirements under all potential circumstances of usage. Many aspects are still in an experimental stage where the long-term impact on provisioning and usage is as yet unknown. Furthermore, plenty of unforeseen challenges arise from exploiting the cloud capabilities to their full potential, involving in particular aspects deriving from the large degree of scalability and heterogeneity of the underlying resources. We can thereby distinguish between technological gaps on the one hand, that need to be closed in order to realize cloud infrastructures that fulfil the specific cloud characteristics and non-technological issues on the other hand that in particular reduce uptake and viability of cloud systems [21].
+
+        4.1 Cloud Security 
+
+Perhaps the biggest concerns about cloud computing is security. The idea of handing over important data to another company worries some people. Corporate executives might hesitate to take advantage of a cloud computing system because they can't keep their company's information under lock and key. The counterargument to this position is that the companies offering cloud computing services live and die by their reputations. It benefits these companies to have reliable security measures in place. Otherwise, the service would lose all its clients. It's in their interest to employ the most advanced techniques to protect their clients' data.
+
+Cloud computing is growing in popularity and analysts predict its further diffusion, but security concerns might slow down its adoption and success. Clouds are inherently more vulnerable to attacks given their size and management complexity. As a consequence, increased protection of such systems is a challenging task. It becomes crucial to know the possible threats and to establish security processes to protect services and hosting platforms from attacks.
+
+Virtualization is already leveraged in clouds. It allows better use of resources via server consolidation and better load balancing via migration of virtual machines (VMs). Virtualization can also be used as a security component e.g. to provide monitoring of VMs, allowing easier security management of complex cluster, server farms and cloud computing Infrastructure. However, it can also create new potential concerns with respect to security [1]. 
+
+
+Figure 21: Transparent Cloud Protection
+Adapted from [1]
+The core set of requirements to be met by a security monitoring system for clouds is the following
+    • RQ1: Effectiveness: the system should be able to detect most kinds of attacks.
+    • RQ2: Guest Maintenance Tolerance: the system should be able to (ideally) avoid false positives; that is, mistakenly detecting malware attacks where authorized activities are taking place.
+    • RQ3: Transparency: the system should minimize visibility from VMs; that is, potential intruders should not be able to detect the presence of the monitoring system.
+    • RQ4: Immunity to attacks from the Guest: the host system and the sibling guests should be protected from attacks proceeding from a compromised guest;
+    • RQ5: Deploy ability the system should be installable on the vast majority of available middleware.
+    • RQ6: Dynamic Reaction: the system should detect an intrusion attempt over a guest and, if required by the security policy, take appropriate actions against the attempt or against the compromised guest and/or notify remote middleware security-management components [1].
+
+
+
+
+
+
+        4.2 Cloud Privacy
+
+Privacy is another matter. If a client can log in from any location to access data and applications, it's possible the client's privacy could be compromised. Cloud computing companies will need to find ways to protect client privacy. One way is to use authentication techniques such as user names and passwords. Another is to employ an authorization format; each user can access only the data and applications relevant to his or her job.
+
+Cloud services' users access data on machines that they do not own nor operate so this introduce privacy issues, and give low control for those users to the data. However, it should be made clear that every developer has a responsibility to follow a minimum set of development practices to avoid basic design and implementation flaws that can create privacy problems. A privacy impact assessment should be initiated early in the design phase, and it's output fed into the design process in an iterative manner [22].
+Storage security involves storage media physical security and data security. As general network storage, the security of cloud storage includes certification, authority, audit and encryption [25].
+Top six recommended privacy practices for cloud system designers, architects, developers and testers are as follows:
+    1. Minimize personal information sent to and stored in the cloud: Analyze the system to access how only the minimal amount of personal information can be collected and stored. This is important because by minimizing collection of personal data, it may not be necessary to protect data during storage and processing. For example minimization is done by using obfuscation technique.
+    2. Protect personal information in the cloud: Safeguard should be used that prevent unauthorized access, disclosure, copying and modification of personal information. Tamper resistant hardware might be used during transfer and storage to protect data via hardware-based encryption and provide further assurance about the integrity of the process.
+    3. Maximize user control: giving individual controls over their personal information engenders trust but this can be difficult in cloud computing. One approach is to permit users to state preferences for the management of their personal information.
+    4. Allow user choice: opt in- opt out mechanisms are the main ways currently used to offer choice.
+    5. Specify and limit the purpose of data usage: personal information should be associated with conditions and constraints about how the information should be treated, so when information is processed it should adhere to those conditions and constraints. Mechanisms that can achieve this are Digital Right Management (DRM) and enforceable sticky privacy policies.
+    6. Provide feedback: Design human interface to indicate privacy functionality and design GUI that gives hints to users such as administrators what's going on [22].
+
+
+
+        4.3 Cloud Applications 
+ 
+Applications typically consist of three layers: a presentation layer, logic layer and a resource layer. Basically the presentation layer is in charge of communicating with the requestor of the services offered by the application, the logic layer implements the domain logic of the various services and the resource layer manages the resources ( i.e. data etc) accessed by the logic layer. In practice, the different layers of an application run in different environments. So those layers run in different clouds making use of different (*aaS) environments. Position of those layers of an application with in different clouds may change dynamically during run time .For example if we need the logic layer of an application to be moved from the private cloud of the hosting company into public cloud to serve unforeseen peak loads, and back from the public cloud to the private cloud when the load of the application become normal again [23, 30, 35].
+
+Figure 22 : Moving an Application to Clouds
+Adapted from [23]
+
+A composite application uses individual functions offered as a service by other applications as implementation of the activities of the business process specifying the composition. This business process is hosted in the composite as a service layer which makes use of services provided by various providers in different clouds and composes them into a new service. So the application as a whole is distributed across different clouds hosted in different environments. As a conclusion the overall resulting configuration underlying a composite application is very complex, which results in many problems that should be solved in the area of service levels, compliance and monitoring [23, 30, 35].
+
+
+Figure 23: Distributed Architecture of Cloud application
+Adapted from [23]
+As applications in the cloud are used by many different consumers, those consumers have different requirements on the application in terms of functional and non functional properties that’s why cloud applications have to be widely customizable , i.e. they have to be able to be adapted according to the consumer  requirement .Because of the fact that there is no application that can support arbitrary amount of requirements , so the creator of the application have to define the kind of adaptability that can be supported by the application ,consequently they have to specify the corresponding points of variability (POV) and their mutual dependencies. However customizing such an application correctly and considering all dependencies between the point of variability is very complex because the user while customizing an application should not violate such dependencies [23, 30, 35].
+
+
+
+
+
+
+
+
+    5. Case Study
+
+
+What we have to learn to do, we learn by doing.
+Aristotle (384 – 322 BC)
+
+Many companies are now surfing the cloud in order to generate renewed interest in their companies [33].Cloud computing becomes more popular day by day. The “dream” of users to “to get rid” of administrators, huge investments on expensive hardware and human resources becomes true. The explosion of Cloud computing propaganda has forced many companies to quickly move towards this new technology [28]. In this part a presentation of a general overview of the new coming service offered by Google company - Google App Engine. “What is it for?”, “What can I do with the system?” and “How does it work?” are some of the questions that will be answered. In this Section we are going to focus on Paas technology and a major example of PaaS vendors are Google App Engine.
+
+        5.1 What is it for?
+
+So what is Google App Engine? According Kevin Gibbs which is App Engine Tech Lead, Google App Engine is “a system that exposes various pieces of Google’s scalable infrastructure so that you can write server-side applications on top of them”. Simply this is a platform which allows users to run and host their web applications on Google’s infrastructure.
+
+These applications are easy to build, easy to maintain and easy to scale whenever traffic and data storage needed. By using Google’s App Engine, there are no servers to maintain and no administrators needed. The idea is user just to upload his application and it is ready to serve its own customers. User has a choice either his product to be served by the free domain appspot.com or to allow Google Apps to serve it from domain chosen by the customer. Google also provide the user with the option to limit the access of the application within the members of his own organization or to share it with the rest of the world. The starting packet is free of charge and additional obligation. All the user have to do is to sign up for a free account, and then to develop and publish his own application. The starting package includes up to 500MB of storage and enough CPU power and bandwidth to serve 5 million page views per month [24].
+
+        5.2 The Sandbox
+
+All user applications operate in a secure environment. This environment has a limited access to the underlying operating system. Because of these limitations, App Engine is able to distribute application’s web requests across various servers, which allows starting and stopping the servers to meet traffic demand. The sandbox separates the application in its own protected and reliable environment which is independent of the operating system, hardware or the physical location of the web server. Here are some of the restrictions which are included in the sandbox environment:
+    • An application can only access other computers on the Internet through the provided URL fetch and email services and APIs. Other computers can only connect to the application by making HTTP (or HTTPS) requests on the standard ports.
+    • An application cannot write to the file system and can read files, but only files uploaded with the application code. The application must use the App Engine datastore for all data that persists between requests.
+    • Application code only runs in response to a web request, and must return response data within 30 seconds. A request handler cannot spawn a sub-process or execute code after the response has been sent [32].
+
+        5.3 Deploying an application practically in Google App Engine
+	
+Here, am going to introduce an early look at java language support on Google App Engine, where a simple guestbook application is built from creation to deployment. I used the Eclipse IDE, the environment have been extended with a Google plugin for eclipse providing support for Google Web Toolkit and app engine. When creating a project, you will notice that it's like a standard J2EE type servlet project that can be run on any J2EE container.  You will find a source directory which contains java source files as expected, app engine, and virtual machine SDK libraries and finally, a web archive or web archive or war directory. App Engine uses a standard java web archive directory as it's deployment directory. We have to put all files we want to deploy to App Engine into this directory, including static files, JSPs, and the compiled class files. In the source directory that we mentioned above, we'll notice that there is a standard java servlet file, which responds to the HTTP requests and responds correspondingly. But in order to do that we need a server. Luckily, App Engine is shipped with a development web server that mimics the production environment. In this way, it enabled us to just download the SDK and immediately start developing on our local machine.
+The Guest Book Application consists of 3 basic source files:
+    • Guestbook.jsp file that contains the HTML form for creating a new entry.
+    • GuestBookServlet: JSP file will post to the GuestBookServlet, which will accept the form variables and create a GuestBookEntry object.
+    • This object will finally be saved to the datastore, and redirected again to the JSP page.
+    • As a result the JSP page will list out all the GuestBook entries in the datastore.
+
+
+Figure 24: Flow Of Guest Book Application
+
+App Engine's data store is one of the services provided by App Engine which is built on top of Big Table, a scalable, distributed storage platform. In addition to low-level datastore APIs, there is standards-based APIs in the form of Java Data Objects (JDO) and Java Persistence API (JPA). Those JDO and JPA are java standards for persisting plain java objects to a datastore. They're datastore agnostic, mapping to relational databases, XML, or in our case, the App Engine datastore. This means that we can write a java class without having to read and write specific fields to and from a table. In this practical experiment, JDO is used. In order to store the GuestBookEntry objects, we have to annotate the class GuestBookEntry that the stored object will be created from. JDO then performs a step called "enhancement" where it modify the bytecode of the class so that it can persist to the datastore.  JDO uses a class called Persistence Manager for querying from and to the datastore. We get a JDOPersistence Manager using a PersistenceManagerFactory which resembles a database connection pool.
+
+By now, we have a fully functioning guest book application, and we want to share it with the world by deploying it to Google's App Engine. App Engine will compile the java source code, then package everything up in my web archive folder and send it up to the cloud. There is a lot more to be done on the App Engine environment indeed incomparision to what I did, such as authentication, using Google Web Toolkit to create AJAX frontends.
+Visit this link: http://compuitngdemo.appspot.com/ 
+
+
+
+Figure 25 :Deployed Application In Google App Engine
+
+
+
+
+
+    6. Conclusion
+
+Cloud computing is the latest technology evolution and potential silver bullet, and there is both great expectation and fear to what consequences these technologies might cause [27].Cloud computing evolved from different computing paradigm. It's defining characteristics are virtualization, elasticity, and pay-as-you go pricing. Clouds make use of virtualization technologies like virtual machines and web services technology. Clouds are exploited as private, public, and hybrid as a combination of both. The services offered by clouds can be grouped into four major layers: infrastructure as a service, software as a service, platform as a service, and human as service. Applications today are typically structured in three layers: presentation layer, logic layer, and resource layer, which implies that these layers of an application should be able to run in different clouds, hosted by different *aaS layers, consequently many research problems merged from this issue. This further complicates the structure of composite applications in the cloud, opening up another thread of research questions- such as monitoring, compliance service levels, and component mobility. On the other hand, many questions of trusts arised that have not been answered so far. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    7. References
+
+    1. F. Lombardi, Di Pietro, Roberto, "Transparent security for cloud," in SAC '10: Proceedings of the 2010 ACM Symposium on Applied Computing Sierre, Switzerland: ACM, 2010, pp. 414--415.
+
+    2. R. a. Y. Buyya, Chee Shin and Venugopal, Srikumar and Broberg, James and Brandic, Ivona, "Cloud Computing and Emerging IT Platforms: Vision, Hype and Reality for Delivering Computing as the 5th Utility," in Future Generation Computer Systems. vol. 25: Elsevier Science Publishers B. V, 2009, pp. 599—616
+
+    3. N. R. N. K. Srinivasa Raov, Ekusuma Kumari "Cloud Computing: An Overview," Theoretical and Applied Information Technology, 2009.
+
+
+    4. M. Miller, Cloud Computing: Web-Based Applications That Change the Way You Work and Collaborate Online: Que Publishing Company, 2008.
+
+    5. W. Roshen, SOA-Based Enterprise Integration: A Step-by-Step Guide to Services-based Application: McGraw-Hill, Inc, 2009.
+
+    6. K. W. Stanoevska-Slabeva, Thomas; Ristol, Santi Grid and Cloud Computing A Business Perspective on Technology and Applications: Springer, 2010.
+
+    7. I. a. Z. Foster, Y. and Raicu, I. and Lu, S., "Cloud Computing and Grid Computing 360-Degree Compared," in Grid Computing Environments Workshop, 2008. GCE'08: IEEE, 2008, pp. 1--10.
+
+    8. L. M. a. R.-M. Vaquero, Luis and Caceres, Juan and Lindner, Maik, "A break in the clouds: towards a cloud definition," SIGCOMM Comput. Commun. Rev, vol. 39, pp. 50--55, 2009.
+
+    9. T. a. V. Velte, Anthony and Elsenpeter, Robert, Cloud Computing, A Practical Approach, 1594816 ed.: McGraw-Hill, Inc, 2010.
+
+    10. J. D. P. A. Jeff Spivey, Geir Arild Engh-Hellesvik, David Lang, H. Peet Rapp, Jim Reavis, Ben Rothke, Joel Scambray,Ward Spangenberg, "Cloud Computing: Business Benefits With Security, Governance and Assurance Perspectives," in An ISACA Emerging Technology, 2009.
+
+    11. J. T. Lizhe Wang , Marcel Kunze , Alvaro Canales Castellanos , David Kramer , Wolfgang Karl, "Scientific Cloud Computing: Early Definition and Experience," in High Performance Computing and Communications, 10th IEEE International Conference on. vol. 0: IEEE Computer Society, 2008, pp. 825-830.
+
+    12. E. E. Jamil, "What really is SOA. A comparison with Cloud Computing, Web 2.0, SaaS, WOA, Web Services, PaaS and others," in Service oriented Architectue Libraries, 2009.
+
+    13. C. Matthews, Coady, Yvonne, "Virtualized recomposition: Cloudy or clear?," in CLOUD '09: Proceedings of the 2009 ICSE Workshop on Software Engineering Challenges of Cloud Computing: IEEE Computer Society, 2009, pp. 38--43.
+
+    14. I. a. B. Menken, Gerard, "Cloud Computing Virtualization Specialist Complete Certification Kit: Study Guide Book and Online Course," Emereo Pty Ltd, 2009.
+
+    15. V. Inc., "Virtualization Overview," 2006
+
+    16. A. a. K. Lenk, Markus and Nimis, Jens and Tai, Stefan and Sandholm, Thomas, "What's inside the Cloud? An architectural map of the Cloud landscape," CLOUD '09: Proceedings of the 2009 ICSE Workshop on Software Engineering Challenges of Cloud Computing, pp. 23--31, 2009.
+
+    17. M. B. L. Youseff, D. Da Silva, "Towards a Unified Ontology of Cloud Computing," in Grid Computing Environments Workshop: GCE 08, November, 2008, pp. 1-10.
+
+    18. M. a. N. Fouquet, Heiko and Carle, Georg, "Cloud computing for the masses," U-NET '09: Proceedings of the 1st ACM workshop on User-provided networking: challenges and opportunities, pp. 31--36, 2009.
+
+    19. M. Koopmans, "Refining the cloud stack," A whitepaper on first lessons learned in the NEON project, 2010.
+
+    20. N. Inc., "Cloud Computing Overview and Primer," 2009.
+
+    21. R. a. P. Buyya, Suraj and Vecchiola, Christian, "Cloudbus Toolkit for Market-Oriented Cloud Computing," CloudCom '09: Proceedings of the 1st International Conference on Cloud Computing, pp. 24--44, 2009.
+
+    22. S. Pearson, "Taking account of privacy when designing cloud computing services," in CLOUD '09: Proceedings of the 2009 ICSE Workshop on Software Engineering Challenges of Cloud Computing: IEEE Computer Society, 2009, pp. 44--52.
+
+    23. S. Frankm Leymann, "Cloud Computing :The Next Revolution in IT  " 2009
+
+    24. A. Zahariev, "Google App Engine," Seminar on Internetworking, 2009
+
+    25. W. a. Z. Zeng, Yuelong and Ou, Kairi and Song, Wei, "Research on cloud storage architecture and key technologies," Proceedings of the 2nd international Conference on interaction Sciences: information Technology, Culture and Human    vol. 403, pp. 1044--1048, 2009.
+
+    26. E. Inc, "Cloud Computing Basics," 2000.[Online]. Available: http://www.exforsys.com/tutorials/cloud-computing/cloud-computing-basics.html. [Accessed  Jan. 19, 2010]
+
+    27. R. G. a. S. a. r. Lennon, Lars Arne and Udnaes, Morten and Berre, Arne Jorgen and Zeid, Amir and Roman, Dumitru and Landre, Einar and van den Heuvel, Willem-Jan, "Best practices in cloud computing: designing for the cloud," in OOPSLA '09: Proceeding of the 24th ACM SIGPLAN conference companion on Object oriented programming systems languages and applications Orlando, Florida, USA: ACM, 2009, pp. 775--776.
+
+    28. A. J. o. r. a. R. Berre, Dumitru and Landre, Einar and van den Heuvel, Willem-Jan and Skar, Lars Arne and Udnes, Morten and Lennon, Ruth and Zeid, Amir, "Towards best practices in designing for the cloud," in OOPSLA '09: Proceeding of the 24th ACM SIGPLAN conference companion on Object oriented programming systems languages and applications Orlando, Florida, USA: ACM, 2009, pp. 697--698.
+
+    29. K. S. Ashraf Aboulnaga , Ahmed A. Soror,  Umar Farooq Minhas ,Peter Kokosielis , Sunil Kamath, "Deploying Database Appliances in the Cloud," in Bulletin of the Technical Committee on Data Engineering. vol. 32: IEEE, 2009, pp. 13-20.
+
+    30. R. M. a. F. L. a. M. P. Papazoglou, "Defining Composite Configurable SaaS Application Packages Using SCA, Variability Descriptors and Multi-tenancy Patterns," in Internet and Web Applications and Services, International Conference on. vol. 0: IEEE Computer Society, 2008, pp. 156-161.
+
+
+    31. J. Strickland, "How Grid Computing Works,” October 2008.[Online]. Available:
+http://communication.howstuffworks.com/grid-computing.htm [ Accessed Jan.30, 2010]
+
+    32. G. Inc., "Google App Engine," 2010. [Online].Available : http://code.google.com/intl/ar-EG/appengine/docs/whatisgoogleappengine.html [ Accessed June.19, 2010]
+
+    33. R. G. a. S. a. r. Lennon, Lars Arne and Udnaes, Morten and Berre, Arne Jorgen and Zeid, Amir and Roman, Dumitru and Landre, Einar and van den Heuvel, Willem-Jan, "Best practices in cloud computing: implementation and operational implications for the cloud. ," in OOPSLA '09: Proceeding of the 24th ACM SIGPLAN conference companion on Object oriented programming systems languages and applications Orlando, Florida, USA: ACM, 2009, pp. 753--754.
+
+    34. M. Doernhoefer, "Surfing the net for software engineering notes," in SIGSOFT Softw. Eng. Notes. vol. 34: ACM, 2009, pp. 9--16.
+
+    35. D. K. Ralph Mietzner, Frank Leymann, "Business Grid: Combining Web Services and the Grid," in Transactions on Petri Nets and Other Models of Concurrency II: Springer Berlin / Heidelberg, 2009.
+
+
+

@@ -1,0 +1,894 @@
+
+
+
+
+
+Securely Orchestrating Workflow Processes in Cloud Services
+
+By
+
+Sahar Mohammed Abduljalil
+A Thesis Submitted to the
+Faculty of Computers & Information
+Cairo University
+In Partial Fulfillment of the Requirements for the Degree of
+Master of Science
+In
+Information System
+
+Under the Supervision of
+
+Prof. Osman Hegazy			      		 Dr. Ehab Hassanein
+
+
+
+
+CERTIFICATION
+
+	I certify that this work has not been accepted in substance for any academic degree and is not being concurrently submitted in candidature for any other degree. Any portion of this thesis for which I am indebted to other sources are mentioned and explicit references are given.
+Student Name: Sahar Mohammed Abduljalil
+Signature: 
+
+
+
+
+
+
+
+
+
+
+
+ACKNOWLEDGEMENT
+
+	First and foremost, thanks to Allah for helping and guiding me to read about and write this thesis and thanks to Allah all the time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABSTRACT
+
+The rapid advances in cloud computing has introduced a variety of security issues; each requires certain skills and knowledge.  While developing business services requires conducting analysis and design for the business activities that does not include common security functions for these services. Currently there is no framework existing from the logical level for securely orchestrating of cloud services in a heterogeneous environment. We are addressing in this thesis a clear separation of concerns between the “business logic” and the “security logic” in order for any service implementing the proposed security service to be considered a high level secured service in terms of access and communication in order for it to be widely used and acceptable. A development model is proposed to write secured services without burdening the developer of continuously rewriting security routines.
+ The rest of the thesis is organized as follows. In section 2, various related approaches and works in this direction have been looked at, and in section 3 a detailed explanation of the proposed architecture and working of the model have been explained. In section 4, the relative merits of the scheme have been mentioned. Finally, implementation and evaluation in section 5 followed by conclusion and future work.
+
+
+
+
+
+
+
+
+
+
+
+List of Figures
+Figure 1. 1: Security logic code is repeated in each service.	10
+Y
+Figure 2. 1: Cloud Computing Services	15
+Figure 2. 2: Schematic Virtualization Overview	20
+Figure 2. 3:  Challenges anticipated from adoption of cloud computing (NIST, 2009)	22
+
+Figure 3. 1: Block cipher	28
+Figure 3. 2: Key Expansion	29
+Figure 3. 3: AES, substitution Permutation network	29
+Figure 3. 4: Shift Row Transformation.	30
+Figure 3. 5: Mix Coloumn	30
+Figure 3. 6: The RSA public key encryption technique	32
+Figure 3. 7: Message digest computation process/ adapted from  (Station)	33
+Figure 3. 8: Message Digest Encryption/ adapted from  (Station)	33
+Figure 3. 9: Digital Signature – Process at Sender’s and Receiver’s End/ adapted from  (Station)	35
+Figure 3. 10: Composite Serivces/ adapted from (Hobbs, 2006)	37
+Figure 3. 11: Service Model.	39
+Figure 3. 12: Web service Stack/ adapted from  (F. Leymann, 2002)	43
+
+Figure 4. 1: Before Proposed Model was applied.	45
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TABLE OF CONTENTS
+
+By	1
+Under the Supervision of	1
+CERTIFICATION	2
+ACKNOWLEDGEMENT	3
+ABSTRACT	4
+TABLE OF CONTENTS	5
+1.	INTRODUCTION	7
+1.1	Motivation	8
+1.2	Problem Statement	9
+1.3	Objectives	9
+1.4	Contribution	10
+1.6	Thesis outline	11
+2. BACKGROUND	12
+2.1	Cloud Computing	12
+2.2	Service Models	14
+2.3	Deployment Models:	17
+2.4	Virtualization	18
+2.5	Cloud Computing Security Concerns	20
+3.	RELATED WORK	26
+3.1	Security Algorithms:	26
+3.1.1	The Advanced Encryption Algorithm (AES), Symmetric Algorithm	26
+3.1.2	RSA Public Key Algorithm	29
+3.1.3	Digital Signature	30
+3.2	Service Orchestration	33
+3.3	What is a Service?	36
+3.4	Web Service Model	36
+3.5	Web Service Related Standards	38
+3.5.1	Web Services standards emerging as technology of choice for SOA	40
+4.	PROPOSED MODEL	43
+4.1	Theoretical	43
+4.2	Architecture and working of the proposed model	44
+4.3	Internal Working Steps of the proposed model:	46
+5.	IMPLEMENTAION AND EVALUTION	49
+5.1	Google App Engine	49
+5.2	Migrating the proposed model to GAE	50
+5.2.1 Project Description and Environment Used	50
+5.2.2 Building SOAP Server on GAE	51
+5.2.3 Building a SOAP Client on GAE Using JAX-WS	55
+6.	Analysis Results	58
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1. INTRODUCTION
+
+Organizations nowadays are progressively moving towards Cloud Computing as a replacement revolutionary technology promising to chop the price of development and maintenance and still reach extremely reliable services. The Cloud technology could be a growing vogue and remains undergoing voluminous experiments. Cloud guarantees vast price advantages, speed and improvement in business.  All business information and computer code are keep on servers at a foreign location brought up as information centers. Information center setting permits enterprises to run applications much quicker, with easier ways to manage few maintenance efforts, and additional promptly scale resources like servers, storage, and networking to satisfy daily fluctuating business desires. The data center in cloud environment holds valid information’s that end-users would conventionally have stored on their computers. This raise issues concerning user privacy protection because users should must their information. The movement of information to centralized services may have an effect on the privacy and security of users‟ interactions with the files keep in cloud cupboard space. Data integrity is outlined because the accuracy and consistency of keep information, in absence of any alteration to the information between two updates of a file or record. Cloud services ought to guarantee information integrity and supply trust to the user privac. Though outsourcing information into the cloud is economically appealing for the price and complexness of long-run large-scale information storage, it’s lacking of giving robust assurance of information integrity and convenience may impede its wide adoption by each enterprise and individual cloud users. Cloud computing poses privacy concerns primarily, as a result of the service supplier at any point in time, might access the information that's on the cloud.  
+ The Cloud service supplier may accidentally or deliberately alter or delete some information from the cloud server. Hence, the system should have some style of mechanism to make sure the safety of the information integrity. The present Cloud security model relies on the idea that the user/customer ought to trust the supplier. , this is usually  ruled by a Service Level Agreement (SLA) that normally defines mutual supplier and user expectations and obligations. In order to make sure the integrity and convenience of information in Cloud and enforce the standard of cloud storage service, Efficient ways that change on-demand information correctness verification on behalf of cloud users ought to be designed. However, the actual fact that users do not have physical possession of information within the cloud prohibits the direct adoption of ancient ++ primitives for the aim of information integrity protection. Hence, the verification of cloud storage correctness should be conducted while not express data of the whole information files. The information kept within the cloud may not be uniquely accessed however even be frequently updated by the users, as well as insertion, deletion, modification, appending, etc. Thus, it's conjointly imperative to support the combination of this dynamic feature into the cloud storage correctness assurance that makes the system style even more difficult[ CITATION Reg13 \l 2057 ].
+        1.1 Motivation
+
+The problem of duplication of security logic across multiple cloud services gets even more aggravated when a user decides to use multiple cloud service providers, so his data get duplicated and stored across multiple cloud vendors. [ CITATION Aye12 \l 2057 ] So every cloud service, the customer needs to exchange his/her authentication information with each cloud service provider. 
+These redundant actions can introduce vulnerability. This is a security concern because identification and credentials information are used to uniquely identify a user which can 
+help in targeting attacks against this specific user. This in turn can be used to infringe on the privacy of the customers which have greater significance. So our model has been designed to 
+offer a comprehensive and single point of reliance for all the security needs. In other words, gathering security functionality as Security Management service to allow them to be located 
+and used as needed by more than one service, and allow security to be adapted without having to change the service logic itself. Both the cloud service users and providers can 
+avail the services as per demand through an account created with our proposed security management model. This problem is clarified in figure 1.
+
+Figure 1. 1: Security logic code is repeated in each service.
+
+Publishes service security policy so that clients can discover dynamically what credentials and mechanisms are needed to establish trust with the service.  
+
+        1.2 Problem Statement
+
+Adaptability concerns any software systems that operate with in a changing environment. Effective security concerns does not revolve around messages and users only, but it also focus on the capacity of adapting to continuous changing in the business environment. So the emergence of new standards and identification of new threats require a different way of engineering security .Interrelated mechanisms such as authentication and encryption need to be checked and reviewed .Reviewing of one mechanism affect the other due to crosscutting, as a result , code gets scattered all over the system and becomes difficult to localize and maintain.
+
+        1.3 Objectives
+
+This thesis satisfies the following objectives:
+    • Studying and understanding Cloud Computing and Security Algorithm and how they can integrate with each other to solve the problem of processing vast amount of data.
+    • Proposing an efficient Security architecture based on webservices that utilizes cryptographic algorithms.
+    • Illustrating how the proposed architecture can be migrated to Cloud Computing and what are the benefits that can be gained?
+
+        1.4 Contribution
+
+    • To promote a clear separation between the business logic of the cloud service which specifies the process by which users functional requirements are met, and the management logic security concern .In other way we are decoupling security concerns from the cloud service business logic . All mechanisms related for instance to security are confined and factored out into a cloud service and are not scattered over the rest of the other services.
+
+    • We provide a generic architecture upon which security mechanisms are deployed in a plug and play manner.
+
+    • Implement the proposed architecture based on Vmplayer hypervisor and Linux (CentOS 5.5).
+
+    • Evaluation: experiments are done locally on a single processor and on the other hand done on Google App Engine platform, 
+
+
+        1.5 Publication
+
+    • Published a paper named, “A Novel Approach for Handling Security in Cloud Computing Services”, International Journal of Computer Applications 69(5):9-14, May 2013. Published by Foundation of Computer Science, New York, USA.
+
+
+        1.6 Thesis outline
+The remaining content of this thesis is organized as follows:
+	Chapter 2 presents a background of concepts related to this thesis: Cloud Computing, Virtualization, and Cloud Computing Security concerns.
+	Chapter 3 shows related work from three directions:
+    1. Security Algorithms focusing on Symmetric AES, and Asymmetric RSA, and Hashing MD5 algorithms which have been implemented.
+
+    2. Service Orchestration as all security algorithms mentioned in step 1 are combined as a ser­vice where it can be used by developers  to create a higher-level or orches­trated service that typically implements a particular business process,
+
+
+    3. Migrating different types of systems to CloudComputing. This gives the researcher the migration steps and the critical points that should be taken into account when the migration decision is taken.
+Chapter 4 presents the proposed algorithm and performance evaluation of the proposed model.
+Chapter 5 describes migration steps of the proposed algorithm to CloudComputing, and showing experimental evaluation.
+Chapter 6 concludes the thesis and discusses the future work.
+
+
+
+
+
+
+
+
+
+2. BACKGROUND
+
+        2.1 Cloud Computing
+
+The term Cloud Computing has been defined in many ways by analyst firms, academics, industry practitioners, and IT companies. Table 2.2 shows how selected analyst firms define or describe Cloud Computing[ CITATION Kat10 \l 2057 ].
+
+Table 2. 1: Cloud Computing definitions by selected analyst firms (Source: [ CITATION Kat10 \l 2057 ]).
+
+There is little consensus on how to define the Cloud[ CITATION SYS \l 2057 ]. Other definitions are added below:
+	Cloud Computing is a large-scale distributed computing paradigm that is driven by economies of scale, in which a pool of abstracted virtualized, dynamically-scalable, managed computing power, storage, platforms, and services are delivered on demand to external customers over the Internet [ CITATION Ian \l 2057  ].
+	Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized SLAs [ CITATION Lui08 \l 2057 ].
+	Cloud Computing is a set of network enabled services, providing scalable, QoS guaranteed, normally personalized, inexpensive computing platforms on demand, which could be accessed in a simple and pervasive way [ CITATION Liz08 \l 2057 ].
+In this thesis, the definition below is preferred by the researcher to define the Cloud Computing:
+	Cloud Computing is a new style of computing in which dynamically scalable, on-demand, and often virtualized resources, applications, and/or services are provided as a service over the internet. Users need not have knowledge of, expertise in, or control over the technology infrastructure on the Cloud.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        2.2 Service Models
+
+Cloud Computing can be viewed as a collection of services which can presented as a layered cloud computing architecture as shown below in Figure 2.1.
+
+Figure 2. 1: Cloud Computing Services
+
+These services in cloud computing referred as it: 
+(a) Software –as-a–Services (SaaS) which in the top of figure it's allows to users to run own applications remotely from the cloud.
+(b) Platform –as-a- Services (PaaS) is middleware between users applications and Infrastructure where includes on operating systems and required services for a particular application. 
+(c)  Infrastructure–as–a-Services (IaaS) it's refers to computing resources as a service which includes virtualized computers with guaranteed processing power and reserved bandwidth for storage, and internet access. 
+On the other hand, the cloud computing architecture divided into four layers, the hardware/datacenter layer, the infrastructure layer, the platform layer, and the application layer [ CITATION LCQ10 \l 2057 ],[ CITATION LaB08 \l 2057 ], [ CITATION RBu11 \l 2057 ] . 
+
+
+The Hardware Layer 
+The hardware layer contains physical hardware, which it considered the backbone of the cloud providers (e.g., servers, switches, routers, power and cooling systems). The layer is implemented in the big enterprise with a huge datacenters infrastructure.  It is responsible for all of the management and monitoring processes of the physical hardware[ CITATION LCQ10 \l 2057 ], [ CITATION LaB08 \l 2057 ].  
+The Infrastructure Layer 
+The infrastructure layer also called virtualization layer. It partitions the physical pool in terms of  VMs using virtualization technology such as, Xen, VMware, and Virtulabox[ CITATION RBu11 \l 2057 ]. This layer provides the virtualized resources (e.g., computational resources, data storages and communications). It provides infrastructure as a service. The IaaS is an on-demand provisioning servers which run different OS to customize the software. Data centers provide IaaS to minimize the operating cost such as power consumption and cooling. It offers self management and migration for computing resources. These resources are provided as a flexible and elastic service. The IaaS allows the users to see bare bones machine with just an operating system and gets full flexibility in installing and configuration software on this machine[ CITATION AAS09 \l 2057 ]. The more popular commercial examples for IaaS are Amazon EC2, GoGrid and Flexiscale[ CITATION LCQ10 \l 2057 ]. According to the work in this thesis, this layer will be considered.   
+The Platform Layer 
+The platform layer deploys the cloud software environment layer.  It consists of operating systems and applications framework[ CITATION LaB08 \l 2057 ] . This layer offers platform as a service to users in order to deploy their applications. The PaaS provides a set of Application Programming Interface (APIs) to support users’ created-applications. Also, it provides the interactions between the cloud and the deployment applications by using Integrated Development Environment (IDE) (e.g., editor, compiler and builder). The examples of PaaS providers are Google App Engine Microsoft, Windows Azure and Force[ CITATION LCQ10 \l 2057 ].     
+
+The Software Layer 
+ The software layer is the lightest and top layer in cloud hierarchy. It is also known as application layer , which is the most visible layer to the cloud end-user[ CITATION LCQ10 \l 2057 ], [ CITATION LaB08 \l 2057 ]. It includes cloud applications and offers the software as a service. The SaaS allows the users to run cloud applications remotely from their desktops with automatic scaling, on-demand provisioning software [ CITATION RBu11 \l 2057 ]. It transfers users’ computational work from their machines to datacenters infrastructure, where the cloud applications are deployed. The examples of cloud application provider are Google Apps and Salesforce Customer Relationships Management (CRM) [ CITATION LCQ10 \l 2057 ], [ CITATION LaB08 \l 2057 ].  
+A summary definition for cloud computing layers and the associated services which are provided from each layer in terms of provider view and the user view is presented in Table 2-1.
+
+Table 2. 2: Examples of Cloud Computing Layers and Service Models.
+
+
+        2.3 Deployment Models:
+
+A Cloud environment can include either a single cloud or multiple clouds. In the single cloud environment there are two types of clouds (Public and Private) based on who the owner of the cloud datacenters is. In the multiple clouds environment there are also two types of clouds (Hybrid and Federated) based on which types of clouds (public or private) are combined[ CITATION Sta10 \l 2057 ], [ CITATION Lin10 \l 2057 ] [ CITATION Buy09 \l 2057 ][6, 20, 16].
+Public Clouds vs. Private Clouds
+
+    • Public Clouds
+        ◦ Public cloud is data center hardware and software run by third parties, e.g. Google and Amazon, which expose their services to companies and consumers via the Internet in a pay-as-you-go manner. In the rest of this research, when the Cloud or Cloud Computing is mentioned, Public Cloud is meant unless another type was specified.
+
+    • Private Clouds
+        ◦ Private cloud refers to an internal data center of a company or other organization, the private cloud is fully owned by a single company who has total control over the applications, the infrastructure, and the people or organizations using it.
+        ◦ The key advantage of private cloud is to gain all advantages of virtualization and Cloud services, while retaining full control over the infrastructure and run on a secure environment that use an internal firewall
+
+Hybrid Clouds vs. Federated Clouds
+
+    • Hybrid Clouds
+        ◦ Hybrid clouds combine public and private clouds and allow an organization to run some applications on an internal cloud infrastructure and others in a public cloud. This way, companies can benefit from scalable IT resources offered by external cloud providers while keeping specific applications or data inside the firewall.
+
+    • Federated Clouds
+        ◦ Federated clouds are a collection of single clouds (Public or Private) that can interoperate, i.e. exchange data and computing resources through defined interfaces. According to basic federation principles, in a federation of clouds each single cloud remains independent, but can interoperate with other clouds in the federation through standardized interfaces. At present, a federation of clouds seems still to be a theoretical concept as there is no common cloud interoperability standard.
+
+
+        2.4 Virtualization
+ 
+Virtualization is an ubiquitous architectural pattern in the ﬁeld of computer science. It is found in many components of modern computers at both software and hardware levels. The virtualization pattern is related to the concepts of abstraction and emulation in that a higher level layer imposes obligations on a lower level layer, regardless of how it is implemented. A typical example is memory virtualization in which the illusion of nearly unlimited, contiguous memory is presented to a program running on an operating system. By removing the burden of complex memory management from the application, the software becomes less error prone and also enables the operating system to use the limited ram resources more eﬃciently. Other examples that are commonplace are virtualization of i/o devices (e.g., mounting an image of a cd-rom without actually writing it to a cd) and virtualization of entire platforms. Already long before the advent of present day cloud computing, virtualization of platforms has been used in large mainframes in the 1950s. Only in the last decade has large-scale virtualization taken ﬂight, forming a cornerstone of the concept of cloud computing. In literature, authors generally discern between three levels of cloud computing, namely software as a service (SAAS), platform as a service (PAAS), and infrastructure as a service (IAAS). These three degrees deal with cloud computing at diﬀerent abstraction levels, and each degree has its own particular use cases. However, only the lowest level of these, iaas, deals with virtualization directly. Considering that this thesis focuses on infrastructure solutions, we will not discuss paas or saas any further, though we note that these concepts can be utilized on top of the iaas foundations provided in this thesis.
+
+Figure 2. 2: Schematic Virtualization Overview
+
+A hypervisor1 is a software layer that multiplexes hardware resources among one or more guest operating systems, in analogy to how a supervisor multiplexes resources among applications inside an operating system. Although there exist a variety of diﬀerent virtualization technologies, usually a distinction is made between type-i and type-ii hypervisors (Fig. 2.1). This distinction between hypervisor categories goes back to Goldberg, who already discussed this subject in times long before the present day virtualization techniques. The type-i hypervisors are also called bare-metal hypervisors, since they run directly on the hardware without an intervening layer of an os. Examples of this category are Xen, Hyper-v, and Vmware esx. Some of the type-i designs, most notably Xen, make use of a “management vm” to perform tasks such as device emulation inside a special vm instead of doing these in the hypervisor. An oft-cited argument in favour of type-i hypervisors, is that a small, dedicated hypervisor beneﬁts isolation between VMs, improving security.
+
+
+
+The type-ii hypervisors are a somewhat broader category because the more ﬂexible architecture allows for a wider variety of virtualization solutions. This category includes virtualization software such as Virtual box, kvm, or Vmware Player which run inside the host OS as an application. Therefore, a type-ii hypervisor is also referred to as a hosted hypervisor. One the one hand, this means that type-ii virtualization software can optionally beneﬁt from a convenient integration with other applications running in the host. On the other hand, the hypervisor is not isolated but is exposed to a large environment, making it more diﬃcult to reason about the security of the hypervisor. Nevertheless, we remark that the type distinction between hypervisors is only an indicator and that the reader must be careful in making too strong generalizations. For example, while type-ii hypervisors usually have some performance overhead by not running on the hardware directly, this is not always the case. Consider for instance the type-ii kvm hypervisor which runs as a Linux kernel module. By being part of the kernel, kvm has complete access to the hardware and can achieve performance in the range of contemporary type-i hypervisors[ CITATION Hug12 \l 2057 ].
+
+        2.5 Cloud Computing Security Concerns
+
+The National Institute of Standards and Technology (NIST) took a survey and tried to rate  challenges anticipated from the adoption of cloud computing  and rated security with  a 74.6%  ranking, as shown in the figure below, which was  higher than  all other factors (including  performance, availability etc).
+
+Figure 2. 3:  Challenges anticipated from adoption of cloud computing (NIST, 2009)
+
+The figure above clearly shows that organizations are most worried about the surrounding of the implementation of security in cloud computing. Gartner, leading information technology research and advisory company conducted an investigation regarding the information security issues that should be considered when dealing with Cloud computing. The following lists some security issues by Gartner that organizations and key decision makers, as a prerequisite, need to consider with any Cloud computing vendor: 
+ 
+ • Privileged access: Who has specialized or privileged access to data? Who decides about the hiring and management of administrators? 
+ • Regulatory compliance: Is the cloud vendor willing to undergo external audits and/or security    certifications? 
+• Data location: Does the cloud vendor allow for any control over the location of data? 
+• Data segregation: Is encryption available at all stages, and were these encryption schemes designed and tested by experienced professionals? 
+• Investigative Support: Does the vendor have the ability to investigate any inappropriate or   illegal activity? 
+• Data availability: Can the cloud vendor move all their clients‟ data onto a different       environment should the existing environment become compromised or unavailable?
+The ISO 7498-2 standard produced by the International Standards Organization (ISO) states that Information Security in an organization needs take both a preventive, detect and eliminate control measure to minimizing threats. In Cloud computing, the same principle can be applied, however, due to the nature of the cloud a prevent and detect mechanism might be more difficult[ CITATION Ony11 \l 2057 ].
+The following section explores some of the major security issues that cloud computing faces today: [ CITATION Mat11 \l 2057 ], [ CITATION SSu11 \l 2057 ], [ CITATION Roh11 \l 2057 ], [ CITATION Qai12 \l 2057 ], [ CITATION Dav10 \l 2057 ], [ CITATION FLo10 \l 2057 ][2, 3, 4, 5, 6, 7].
+
+Table 2. 3: Security Issues
+Security Issue
+Explanation
+Data Security
+Encryption, fine grained authorization.
+Network Security
+All data flow over the network needs to be secured in order to prevent leakage of sensitive information.
+Traditional network security issues:
+Man in the middle
+IP spoofing
+Port scanning
+Packet sniffing
+
+Encryption techniques such as:
+Secure Socket layer [SSL]
+Transport Layer Security [TLS]
+
+
+Data locality
+Due to compliance and data privacy laws in various countries, location of data is of utmost importance in many enterprise architecture
+Data integrity
+-Data integrity is easily achieved in a standalone system with a single database.
+- Data integrity in such a system is maintained via database constraints and transactions. Transactions should follow ACID (atomicity, consistency, isolation and durability) properties to ensure data integrity.
+-In distributed environment, there should be central global transaction manager.
+-Can be achieved by 2 phase commit protocol.
+Data Segregation
+As a result of multi-tenancy multiple users can store their data using the applications provided by SaaS. In such a situation, data of various users will reside at the same location, so Intrusion of data of one user by another becomes possible in this environment.
+This intrusion can be done either by hacking through the loop holes in the application or by injecting client code  into the SaaS system.
+A client can write a masked code and inject into the application. If the application executes this code without veriﬁcation, then there is a high potential of intrusion into other’s data.
+- handcrafting parameters that bypass security checks and access sensitive data of other tenants.
+A SaaS model should therefore ensure a clear boundary for each user’s data. The boundary must be ensured not only at the physical level but also at the application level. The service should be intelligent enough to segregate the data from different users[ CITATION SSu11 \l 2057 ]. 
+Data Access
+Data access issue is mainly related to security policies provided to the users while accessing the data.
+The SaaS model must be ﬂexible enough to incorporate the speciﬁc policies put forward by the organization (e.g policies based on access rights of employees). The model must also be able to provide organizational boundary within the cloud because multiple organization will be deploying their business processes within a single cloud environment.
+Data Breaches
+Breaching into cloud environment where various users and business organizations lie together.
+Web application security
+Solutions such as network firewall, intrusion detection systems and prevention systems do not adequately address security challenges in SaaS applications, because when we talk about SaaS security we are not only concerned with introducing security risks at the network level, but application level as well.
+Virtualization Vulnerability
+Major tasks in virtualizations are:
+-Ensuring isolation of different instances running on the same physical machine [Current VMMs (Virtual Machine Monitor) do not offer perfect isolation].
+-Controlling host and guest operating system by the administrator.
+-VMM should be root secured, i.e no privilege within the guest virtualized environment permits interface with the host system. Vulnerabilities have been found in virtualization softwares which can be exploited by malicious where they bypass certain security restrictions and gain privileges. 
+-Example: 
+-Microsoft Vulnerability: A guest OS can run a code on the host or another guest OS.
+Xen Vulnerability: Input validation error where root users of the guest domain can execute commands via special crafted entries when guest system is booted.
+Availability
+SaaS applications need to provide it’s service around the clock and this will be ensured by 2 ways:
+-Making some architectural changes at the application and infrastructural level for scalability and availability.
+-Adopting a multitier architecture supported by a load balancer farm.
+-Resilience to hardware and software failures and denial of service attacks.
+-Considering an appropriate action plan for business continuity and disaster recovery.
+-Mitigation techniques for distributed denial of service.
+-Automatically locking user accounts after successive incorrect credentials, but incorrect configuration and implementation of some features can be used by malicious users and do denial of service.
+Backup
+Sensitive enterprise data should be backed up for recovery in case of disasters.
+Using strong encryption techniques to protect backup data.
+-Data at rest stored in S3 in Amazon are not encrypted by default.
+
+Identity Management and sign on process.
+The pure identity paradigm.
+The user access (log-on) paradigm:
+The service paradigm.
+Models for Identity management and sign on services:
+-Independent IdM stack: All data (user account, passwords) is maintained with the SaaS vendor.
+-Credential Sychronization: Users do not need to remember multiple passwords.
+-Federated IdM : Users do not need to remember multiple passwords .
+-No separate integration with enterprise directory.
+-Low security risk value as compared to credential synch
+
+
+
+
+
+
+
+
+
+
+
+
+    3. RELATED WORK
+
+        3.1 Security Algorithms:
+            3.1.1  The Advanced Encryption Algorithm (AES), Symmetric Algorithm
+
+The Rijndael algorithm is selected by National Institute of Standards and technology (NIST) as a new Advanced Encryption Standards (AES). It converts data to an unintelligible form called cipher text; decrypting the cipher text converts the data back into its original form, called plain text. (AES) algorithm is capable of using cryptographic keys of 128, 192, and 256 bits to encrypt and decrypt data in blocks of 128 bits. As the AES algorithm may be used with three different key lengths, these three different ‘‘flavors’’ are generally referred to as ‘‘AES-128’’, ‘‘AES-192’’, and ‘‘AES-256’’[ CITATION Ama13 \l 2057 ].
+
+
+Figure 3. 1: Block cipher
+
+The AES algorithm takes the Master Key K, and performs a Key Expansion routine to generate a key schedule. The Key Expansion generates a total of 11 sub-key arrays of 16 words of 8 bits, denoted by taking into account that the first sub-key is the initial key. To calculate every  (except) the routine uses the previous and two tables, RCon and S-Box[ CITATION Sey10 \l 2057 ].
+
+Figure 3. 2: Key Expansion
+
+
+ The algorithm operates in eleven rounds. The first round performs only the AddRoundKey transformation, while the middle 9 rounds perform all four transformations.  The final round performs the ByteSub, ShiftRow, and AddRoundKey transformations, omitting the MixColumn operation.[ CITATION Meh02 \l 2057 ]
+The algorithm scales to accommodate different key size either 128, 192, 256 bits, and 128-bit data blocks.  The algorithm requires 11 rounds.  Each round operates on the state, a 4 x 4 matrix of 8-bit values.  Each round involves up to four basic transformations[ CITATION Abh13 \l 2057 ]: 
+    • Byte Substitution (ByteSub) 
+The SubByte transformation is a non linear byte Substitution, using a substation table (s-box), which is constructed by multiplicative inverse and affine transformation.
+
+    • ShiftRow  
+In the ShiftRow transformation, the bytes in the last three rows of the State are cyclically shifted over 1, 2 and 3 bytes, respectively. The first row is not shifted. The offset of the left shift varies from one to three bytes.
+
+Figure 3. 4: Shift Row Transformation.
+
+    • MixColumn 
+
+Figure 3. 5: Mix Coloumn
+
+
+
+
+    • AddRoundKey 
+The AddRoundKey Transformation performs an operation on the State with one of the sub-keys. The operation is a simple XOR between each byte of the State and each byte of the sub key. This transformation is its own inverse. 
+
+
+            3.1.2   RSA Public Key Algorithm
+
+The most popular public key algorithm is the RSA (named after their inventors Rivest, Shamir and Adleman). Let n be the modulus for the victim's RSA cryptosystem where n = pq for large secret primes p and q (say 100 digits each, making n 200 digits); and let e and d be the public and private exponents respectively, where e and d are multiplicative inverses mod 4~(n) = (p - 1}(q - 1). The public exponent e is used to encipher and validate signatures; the private exponent d to decipher and sign messages. To send the user a secret message M, the sender enciphers M by computing C = M e mod n; the user deciphers the cipher text C by computing C a mod  n = M. Similarly, the user signs a message M by computing S = M d mod n; the receiver validates the signature S by computing S e rood n = M. The security of the system rests on the assumption that a cryptanalyst cannot determine the factors p and q of n[ CITATION NSa12 \l 2057 ].
+Key features of the RSA algorithm are given below:
+-Public key algorithm that performs encryption as well as decryption based on number theory
+-Variable key length; long for enhanced security and short for efficiency (typical 512 bytes)
+-Varible block size, smaller than the key length
+-The private key is a pair of numbers (d, n) and the public key i also a pair of numbers(e,n)
+-Choose two large primes p and q (typically around 256 bits)
+-Compute n= pxq and z = (p-1) x (q-1)
+-Choose a number d relatively prime to z 
+-Find e such that e x d mod (p-1) x (q-1) =1
+-For encryption: C=Pe(mod n)
+-For decryption: P=Cd(mod n)[ CITATION Esh12 \l 2057 ]
+
+
+Figure 3. 6: The RSA public key encryption technique
+
+
+            3.1.3 Digital Signature
+Digital Signature is one of the most widely misunderstood terms in the area of computer security. People often either confuse it with scanning a manually signed paper, or just know that somehow something happens mysteriously and we can obtain a digital signature! Let us understand what digital signatures are.
+A message digest (or hash) is a fixed-length value obtained on some message. This message digest value is always guaranteed to be the same for the same message. If we change
+the message even by a single bit, the message digest would change. Hence, message digests can be used to ascertain the fact that a message has not been changed or tampered with, since it was created. However, it suffers from two problems:
+    1. An attacker can modify both the original message and the computed message digest. Therefore, the receiver has no way of knowing
+if this is the case, or indeed the original message and the message digest have been the same as what the sender had initially sent.
+    2. A message digest does not prove if the message was indeed sent by the sender, or by someone else. After all, a message digest algorithm can be run by anyone, even by an attacker. So, if a bank receives an instruction to transfer USD 1,000 from Account A to Account B, the bank has no way of knowing if this instruction is genuine, or fake. Just because the payment instruction accompanies with a message digest does not prove (or disprove) this. All it says is whether a message was changed since it was first created.
+More specifically, we want to deal with two problems. The first one is to ensure message integrity (check if the message has been tampered with) and the second one is to ensure non-repudiation (ensure that the sender of the message cannot refuse having sent it).
+Using a message digest as the base, how can we achieve this? Well, we cannot. And this is where a digital signature steps in. A digital signature can be used to guarantee, beyond doubt, the validity of message integrity and that of non-repudiation. Let us understand this now. For this purpose, let us quickly review the message digest computation process, shown in the diagram below[ CITATION Pra12 \l 2057 ].
+
+Figure 3. 7: Message digest computation process/ adapted from [ CITATION Sof12 \l 2057 ] 
+We know that the main problem in this scheme is that the attacker can easily alter the original message and rerun the same message digest algorithm on the altered message. This can lead to the modified message digest, thus making it difficult for us to catch the attacker. How can we prevent this? If we can modify the above process by hiding the message digest, or if not hiding it, making it almost impossible to change it, we can fulfill our objective. The simplest way in which this can be done is to encrypt it. This is shown in the diagram below.
+
+Figure 3. 8: Message Digest Encryption/ adapted from [ CITATION Sof12 \l 2057 ]
+Therefore, what we are saying now is that the message digest must be encrypted before it is sent to the receiver. The receiver would simply reject the message if a message digest, which is not encrypted, accompanies it. Of course, the whole point here is that:
+    a. The genuine sender should be somehow able to perform this encryption operation, and the genuine receiver should be able to verify this encryption operation; but
+    b. An attacker should not be able to perform this encryption operation
+Note that the attacker would still be able to perform the operation of computing the message digest. But the attacker must not be able to encrypt the message digest thus obtained. How can this be possible? Very clearly, we must have a scheme whereby only the genuine sender and the genuine receiver share some secret. This secret can be used as the key for encrypting the message digest. However, in real life situation, sharing secrets beforehand is not always possible.
+Imagine, for example, that we are ordering books online in India using a site hosted in America. The bookseller and we have no prior relationship or agreement. How can we share secrets?This is where the concept of public key cryptography (also called as asymmetric key cryptography) comes into picture, this have been explored in section 3.1.
+On the sending side, the sender would encrypt the message digest with her private key. The sender must secretly hold the private key at all times.
+    a. The output of this process is called as the digital signature for this particular message.
+    b. The sender sends the original message and the digital signature to the receiver.
+    c. The receiver verifies (decrypts) the digital signature using the sender’s public key, which is available very openly. This should give the receiver a message digest, say MD-1.
+    d. The receiver also computes a fresh message digest on the original message, say MD-2.
+    e. If MD-1 = MD-2, we achieve both message integrity (message has not been tampered with, because the attacker does not know the sender’s private key) and non-repudiation (the message is proven to be sent by the sender, since only she knows the private key corresponding to this public key)[ CITATION Sof12 \l 2057 ].
+
+Figure 3. 9: Digital Signature – Process at Sender’s and Receiver’s End/ adapted from [ CITATION Sof12 \l 2057 ]
+
+        3.2 Service Orchestration
+
+Over the last decade, companies have seen the automation of business-to-busi­ness applications as a means of reduc­ing costs, both among departments with­in an enterprise and between interacting enterprises. To support this automation, various standards under the generic title of “Web Services” were devised to nor­malize the transfer of information. With these standards and associated tools in place, companies realized that a change in IT architecture could not only reduce the costs of interacting but could also support the rapid deployment of new services[ CITATION FLe02 \l 2057 ].
+Service-Oriented Architectures (SOAs) grew out of this need to build and deploy services quickly, often by combining services that already existed. Web Services provide the interaction standards required in a SOA, and SOA provides the framework within which Web Services may be developed and deployed in a fast, but controlled, man­ner.
+Because SOAs have evolved with input from different groups and organiza­tions, some terms (e.g., “governance”) have several different and conflicting meanings, and some concepts (e.g., “cli­ent” and “consumer”) have several differ­ent terms to describe them. In our research, we have adopted the termi­nology in the SOA reference model issued by the Organization for the Advancement of Structured Information Standards (OASIS).
+In the OASIS terminology as in (OASIS), SOAs are centered on providers that offer capabili­ties (sometimes called enablers). When a consumer invokes one of these capabilities through an interac­tion with the provider, some real-world effect occurs. As an example, when the consumer interacts with the hotel booking service, a room is booked – a real-world effect. A capability together with its specifica­tion, contract, and real-world effect is known as a service. Typically, services are implemented separately from a wrap­per, which adds the necessary security to them – the term exposed service is sometimes used to represent the imple­mented service and wrapper. This service has a contract, interface specification, and suffi­cient security to ensure that it is used only by authorized consumers.
+Providers have to make their services visible to allow potential consumers to discover them. They do this by publishing (exposing) a service description contain­ing information about three aspects of the service: its behavior, its interface, and its policies and contracts. For example, the potential suppliers of weather forecasting services advertise the service description of their services, allowing consumers to discover them and interact with them. The interface description includes the specific protocols, commands, and information exchange by which actions are initiated that result in the real-world effects, as specified through the service functionality portion of the service descrip­tion. Service providers and service con­sumers are together known as service participants.
+Once a service has been made visible, it can be combined with other visible ser­vices to create a higher-level or orches­trated service that typically implements a particular business process, as shown in Error: Reference source not found.
+In addition to orchestration, new higher-level services can be created from simpler ones through choreography. Although there are several differences between orchestration and choreography, the primary outward difference lies in where the state of the flow is held: in the case of orchestration, it is held in a central controller; in the case of choreography, it is held in each invoked service.
+ 
+
+Figure 3. 10: Composite Serivces/ adapted from[ CITATION Hob06 \l 2057 ]
+
+The interactions of the type shown in Error: Reference source not found (invoke service X and if that fails or if it is, say, a Tuesday, then invoke service Y, then invoke service Z, and so on) are typically drawn using a graphical editor and then converted into a formal language: in the case of orchestration, it could be the Business Process Execution Language (BPEL); and in the case of cho­reography, it could be the Choreography Description Language (CDL).
+Many companies writing desktop or AJAX (shorthand for Asynchronous JavaScript + XML) applications (office suites, email clients, etc.) are hiding the actual invocation of services from end users by invoking them without the appli­cation user being aware. 
+To illustrate these concepts further, consider Amazon’s well-known S3 service – a simple storage service (hence “S3”) that can be used by any of Amazon’s subscribers to store, and subsequently retrieve, digital information (photographs, documents, etc.). Here, the capability is resilient digital storage. Amazon issues a contract specifying such things as the amount users must pay and the guar­antees that Amazon offers, as well as a specification defining the interface used to store or retrieve information. Amazon makes this service visible by publishing the contract and specification on its web site where consumers can discover it. Indeed, several companies are making use of Amazon’s S3 service as a compo­nent in orchestrated services to satisfy particular business flows. Moreover, to allow non-technical users to access the underlying S3 service, various vendors have written applications, such as the S3Fox plug-in for the Firefox browser.
+        3.3 What is a Service?
+
+The terminology described above revolves around the underlying concept of a ser­vice. Indeed, the whole concept of SOA revolves around this concept. Therefore, it is important to define what we mean by a service in a SOA context. The essential characteristics of a SOA-based service are that:
+    • It is discoverable by consumers, shar­ing its service description with potential consumers;
+    • It remains loosely coupled from its consumers, interacting only through the exchange of documents; and
+    • It abstracts its implementation and does not expose underlying logic or implemen­tation to the consumer.
+Three secondary properties can be de­rived from these essential characteristics:
+    • A service can be composed into higher-level composite services as in Error: Reference source not found, through orchestration or choreography as previously described;
+    • A service is reusable, being stripped of specific business logic or usage in order to be generic. 
+    • A service’s interaction with a consumer is stateless, the interaction state being discarded when the task is complete.
+
+        3.4 Web Service Model
+
+Any service-oriented environment is expected to support several basic activities:
+1. Web Service creation
+2. Web Service description
+3. Web Service publishing to Intranet or Internet repositories for potential users to locate
+4. Web Service discovery by potential users
+5. Web Service invocation, binding
+6. Web Service unpublishing in case it is no longer available or needed, or in case it has to be updated to satisfy new requirements.
+In addition to these basic activities there are some other activities that need to take place
+in order to take full advantage of the Web Service architecture. Such activities include Web Service composition, management and monitoring, billing and security. However, we consider that the Web Service model (figure 1) requires at least the following basic activities: describe, publish/unpublished/update, discover and invoke/bind, and contains 3 roles: service provider, service requester and service broker[ CITATION Jul08 \l 2057 ].
+
+
+Figure 3. 11: Service Model.
+
+Service Provider. A service provider is the party that provides software applications for
+speciﬁc needs as services. Service providers publish, unpublished and update their services so that they are available on the Internet. From a business perspective, this is the owner of the service. Froman architectural perspective, this is the platform that holds the implementation
+of the service.
+
+Service Requester. A requester is the party that has a need that can be fulﬁlled by a service
+available on the Internet. From a business perspective, this is the business that requires
+certain function to be fulﬁlled. From an architectural perspective, this is the application
+that is looking for and invoking a service. A requester could be a human user accessing the
+service through a desktop or a wireless browser; it could be an application program; or it
+could be another Web Service. A requester ﬁnds the required services via a service broker and binds to services via the service provider.
+Service Broker. This party provides a searchable repository of service descriptions where
+service providers publish their services and service requesters ﬁnd services and obtain
+binding information for these services. Such examples of service brokers are UDDI (Universal Description, Discovery, and Integration) and X methods. It is clear that since the service provider, the service broker and the service requester interact with each other they should use standard technologies for service description, communication and data formats. This reliance on standards allows developers to implement Web Services in a language and platform independent way.[ CITATION Aph02 \l 2057 ]
+
+        3.5 Web Service Related Standards
+
+As mentioned earlier, SOAs build on Web Services interaction standards and SOAs cannot be fully understood without at least a basic knowledge of standards that define protocols to allow two computers to exchange documents. The standards are known collectively as WS-* and include WS-Security, WS-Transaction, WS-Coordination, WS-Addressing, and many, many others. The two characteristics of a Web Service are that its specification is made visible in a language called Web Services Description Language (WSDL), and the main protocol used to carry documents between computers is an XML-based pro­tocol called SOAP, which originally stood for Simple Object Access Protocol. SOAs require such protocols so that a provider may interact with the registry, and a con­sumer may interact with the registry and provider.
+ 
+REST: an alternative to the Web Services pro­tocols for passing information between computers that is also commonly used in SOAs is Representational State Transfer (REST). There is much heated techni­cal discussion in the industry between those who support the simplicity of REST (and who are known affectionately as RESTafarians) and supporters of the so­phistication of Web Services. As with orchestration and choreogra­phy, while the differences between Web Services and REST are many and subtle, the main superficial differ­ence is REST’s greater use of Uniform Resource Identifiers (URIs) to address particular entities. Google, for ex­ample, offers both a REST and a Web Services interface to its search engine. Using the REST interface to search for the terms “SOA” and “success,” for example, a browser is directed to the URI:
+http://www.google.ca/search?hl=en&q=SOA+success&btnG=Search&meta= within which the search terms are embedded. By contrast, a Web Services request for the same search would send a document containing the search terms to a much simpler URI.
+The simple object access protocol (SOAP): is a standard for sending messages and making remote procedure calls over the Internet. It is independent of the programming language, object model, operating system and platform. It uses HTTP as the transport protocol and XML for data encoding. However, other transport protocols may also be used such as FTP, SMTP or even raw TCP/IP sockets. SOAP deﬁnes two types of messages, Request and Response, to allow service requesters to request a remote procedure and to allow service providers to respond to such requests. A SOAP message consists of two parts, a header and the XML payload. The header differs between transport layers, but the XML payload remains the same. The XML part of the
+SOAP request consists of three main portions:
+• The Envelope deﬁnes the various namespaces that are used by the rest of the SOAP message.
+• The Header is an optional element for carrying auxiliary information for authentication, transactions and payments. Any element in a SOAP processing chain can add or delete items from the Header; elements can also choose to ignore items if they are unknown. If a Header is present, it must be the ﬁrst child of the Envelope.
+• The Body is the main payload of the message. When SOAP is used to perform an RPC call, the Body contains a single element that contains the method name, arguments and Web Service target address. If a Header is present, the Body must be its immediate sibling; otherwise it must be the ﬁrst child of the Envelope.
+A SOAP response is returned as an XML document within a standard HTTP reply. The XML document is structured just like the request except that the Body contains the encoded method result.
+
+
+
+
+            3.5.1 Web Services standards emerging as technology of choice for SOA
+
+Web Services provide high-level ab­straction mechanisms that hide most of the low-level efforts that traditionally go into building a networked or distributed architecture. As such, Web Services will be instrumental in implementing Service-Oriented Architectures (SOAs), which enable software and systems to be loosely coupled in an interoperable fashion, promoting reuse and rapid ser­vice creation and deployment. 
+Core Web Services technology is being standardized in the Organization for the Advancement of Structured Information Standards (OASIS), an international consortium that drives the development, convergence, and adoption of e-business standards (www.oasis-open.org), and the World Wide Web Consortium (W3C), an international forum developing interoperable technolo­gies (specifications, guidelines, software, and tools) to lead the web to its full po­tential.
+Through these groups, the industry has invested considerable effort in an attempt to standardize a Web Services stack. The Web Services Interoperability (WS-I) group (www.ws-i.org) was estab­lished to develop profiles that ensure the interoperability of Web Services. Based on a layered WS-I reference model, the simplified diagram, Error: Reference source not found, here represents the current industry agreement on the scope of standardization in this area, covering some of the main standards. 
+At the lowest layers (transport and invocation), the stack uses SOAP, which originally stood for Simple Object Access Protocol and is a generic Extensible Markup Language (XML) message ex­change protocol that usually runs on top of the Hypertext Transfer Protocol (HTTP) to enable applications to exchange infor­mation. Above these layers, the description layer uses Web Services Description Language (WSDL) and directory services such as Universal Description, Discovery, and Integration (UDDI). WSDL is an XML format developed by W3C for describing network services as a set of endpoints operating on messages that contain either document-oriented or procedure-oriented information. The operations and messages are described abstractly, and then bound to a concrete network proto­col and message format to define an end­point. UDDI was developed by OASIS to define a standard method for enterprises to dynamically discover and invoke Web Services. 
+At the messaging layer, the stack defines endpoint identification, using WS-Addressing, which is a standard being de­fined by W3C to allow services to specify and interact with service endpoints. At the composable service elements layer, the stack defines security, reliable messaging, and transactions standards as add-ons to the SOAP protocol that enable a reliable and secure interaction based on Web Services.
+
+Figure 3. 12: Web service Stack/ adapted from [ CITATION FLe02 \l 2057 ]
+Although there are many standards covering all aspects of Web Services interactions, Web Services security standards most recently have received the lion’s share of attention from the stan­dards community. OASIS has positioned itself as the key body addressing Web Services security standards, offering an open environment where companies can submit their work to be standardized in a relatively short time frame. Typically, a standard can be developed within about 18 months from the date of submission.  Web service Stack, shows some of these standards.
+Above this layer, the business process orchestration layer enables services to be composed and orchestrated. Here, the main standards are:
+    • Web Services Business Process Execution Language (WSBPEL), which has been developed by OASIS to standardize Web Services orchestration; 
+    • Web Services Choreography Description Language (WSCDL), which is being developed by W3C to enable the relationships between lower-level services to be composed and described.
+The stack also provides additional specifications that could be used for management and portals. At the man­agement level, OASIS is developing the Web Services Distributed Management (WSDM) standard, which defines web services architecture to manage distrib­uted resources. At the portal level, OASIS has developed Web Services for Remote Portlets (WSRP), which is standardizing presentation-oriented Web Services for use by aggregating intermediaries, such as portals. In addition to standards associated with the Web Services stack, OASIS has also developed the SOA Reference Model to guide and foster the creation of specific Service-Oriented Architectures.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    4. PROPOSED MODEL
+        4.1 Theoretical
+
+Secure operation requires that applications [ CITATION Jea10 \l 2057 ] and services be capable of supporting a variety of security functionality, such as authentication, authorization, credential conversion, auditing, and delegation. Interaction between services requires to have a range of security requirements and mechanisms. These mechanisms and requirements are likely to evolve over time as new mechanisms are developed or policies change. According to the needs of the cloud users, they can appropriately choose the solutions available for their identity and access requirements, trust and privacy needs. Similarly, cloud providers can register to the proposed model and ensure their security requirements. The following section explains in details how the model works and renders the appropriate service to both the cloud service consumer and provider.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        4.2 Architecture and working of the proposed model
+
+The working of the cloud security manager model involves four phases: Enrolment phase, Credential processing service phase, authorization service phase using Java Authentication Authorization Service (JAAS), and finally Service rendering phase. 
+-Enrolment phase: Users need to enrol themselves with the Cloud Security Service, this is, to the cloud service consumer, and cloud service provider, but the enrolment procedure for both are totally different with respect to the data collected. For example a cloud service provider that provides a cloud storage service is generally priced on two factors: how much data is to be stored on the cloud service provider’s server, and how long this data will be stored for some period of time[ CITATION Yas11 \l 2057 ]. To sum up, each service provider is associated with a service level of agreement that a service consumer adheres to. This service level agreement in the example is the cost of providing storage service per unit of stored data. If the user is a service provider, then the SAAS services provided by this provider need to be registered in the service registry this helps mediate the brokering process, as well as applying human readable naming conventions such as ID or URI to easily identify a particular service. While for the cloud service user, login credentials data are collected, and a passphrase is needed for every user, moreover, all this login data will be stored encrypted by a generated one time public and private key, using RSA algorithm.
+-Credential Processing Service: This service validates the details of processing and validates authenticated tokens. Different authentication mechanisms can be used classified as cryptography or biometric based, but as for the implementation part I have used cryptography.
+-Authorization Service using JAAS: A service that evaluates policy rules regarding the decision to allow the attempted actions based on information about the requestor (identity, attributes, etc.), the target or service accessed (identity, policy, attributes, etc.), and details of the request. The Java Authentication and Authorization Service (JAAS) is a set of application program interfaces (APIs) that can determine the identity of a user or computer attempting to run Java code and ensure that the entity has the right to execute the functions requested. In this context, authentication is the process of determining whether or not an entity is who or what it declares itself to be; authorization is the process of giving an entity permission to do, use, or obtain something according to credential based mechanism which use trustworthy information being held by a subject. 
+-Service rendering: The service rendering phase explains how the cloud users and CPSs are significantly leveraging the benefits of the Security Management Service for cloud security. The registered users can avail the service by entering the passphrase they have chosen during the enrolment phase.
+The high level architecture of the proposed scenario is clarified in figure 4, as far as services need to be added {S1, S2, S3, .......Sn}, those services need to implement the Security Abstract Service which act like a controller, this service has two registries, one for the services registered associated with its providers, and the other for the consumers invoking and binding the service. The Security Abstract Service uses a Security Manager Service to provide the security functionality.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+        4.3 Internal Working Steps of the proposed model:
+In our proposed model we have worked with the following security algorithms:- 
+    • RSA algorithm for secured communication  
+    • AES for Secured file encryption
+    • MD5 hashing for password security.  
+    • One time password for authentication.  
+
+Web services are characterized by three factors
+    • What they do (the business functionality they expose) shown in the figure below. 
+    • Where they are (the web site which exposes that functionality) deployed in GAE as we are going to see in section 5.
+    • How they can be accessed (the set of published interfaces necessary to use the exposed functionality) as we are going to see in section 5.
+
+We assumed the following scenario that a  service consumer wants to store the data 
+
+    1. In the proposed security model one time password has been used for authenticating the user. The password is used to keep the user account secure and secret from the unauthorized user. But the user defined password can be compromised. To overcome this difficulty one time password is used in the proposed security model. Thus whenever a user login in the system, he/she will be provided with a new password for using it in the next login. This is usually provided by the system itself. This password will be generated randomly. Each time a new password is created for a user, the previous password for that user will be erased  from the system. New password will be updated for that particular user. A single password will be used for login only once. The password will be sent to the users authorized mail account. Therefore at a same time a check to determine the validity of the user is also performed. As a result only authorized user with a valid mail account will be able to connect to the cloud system. By this system, existence of unauthorized user or a user with an invalid mail account will be pointed out. The newly generated password is restored in the system after md5 hashing. The main purpose of MD5 hashing is that this method is a one way system and unbreakable. Therefore it will be difficult for an unauthorized or unknown party for retrieving the password for a selected user even if gained access to the system database.
+    2. First, a client sends over his account name and password to the main server. 
+    3.  So the system will first check if this user is an authenticated one and whether to grant the permission. 
+    4. Next what security services are authorized to be given to this service consumer. 
+    5.  A query will be sent to the database to retrieve authorization information. 
+    6. If authorized successfully, the main server will provide the client with the requested services. 
+    7. Let’s assume that this user is authorized to encrypt data before storing it, moreover to do  digital signature step, in order to validate message integrity and ensure that the sender has sent the message, and this message have not been tampered at by an attacker at the middle. 
+    8. Save encrypted message.
+    9. During the service time, Auditing server will record all of the service usage, this have not been covered in implementation part yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    5. IMPLEMENTAION AND EVALUTION
+
+In this chapter, Google App Engine on the Cloud has been introduced, and the proposed model has been migrated to and evaluated on the Cloud in terms of scalability and speed-up. Results show efficiency and capability to run on the Cloud.
+
+        5.1 Google App Engine
+
+Google App Engine is a PaaS solution, which presents its developers with a platform to run web applications that support Java, Python and Google Go languages. Unlike EC2, Google App Engine offers sand-box environment and takes care of tuning the VM and running the code in the most appropriate and optimal mode.
+Generally PaaS is considered to be the best solution for smaller applications and developers with little to no prior cloud experience, because it takes care of the system administration and scaling challenges that might be faced when the SaaS application grows. But Google App Engine lacks many of the features that I would like to see in a PaaS.
+First of all, it supports only three languages, so it will not even run some of the python modules that are written in C. It also doesn’t support Node.js, one of the most popular platforms for network applications and server-side JavaScript in general. Google App Engine provides read-only access to the file system, which means that you won’t even be able to save your log.
+Google App Engine services are free, as long as application uses small amount of resources and also  offers extra features like email, task queue and datastore. But comparing to other PaaS providers on the market, there are not many of them.
+Google App Engine also restricts your application to use HTTP only, so you can’t use any of the IMAP3, POP4, XMPP5 or other communication protocols. So if you’re looking for a PaaS.
+
+
+
+
+        5.2 Migrating the proposed model to GAE
+
+The ideas presented in this thesis have been translated to a functional implementation based on the Vm player hypervisor. In this chapter we discuss two main topics. First, we first briefly name and describe the services involved in this implementation. Second, we describe the steps involved in bootstrapping the caas design. In this chapter I’m going to demonstrate the methodology proposed above, by developing a SaaS application and deploying it on Google PaaS. I will not focus on providing a wide range of functionality; instead, I will show how to use technologies to make a service that will be easily extendable. I will also implement a browser client to test that service.
+
+5.2.1 Project Description and Environment Used
+
+    • A SOAP based web service for Security Manager class is created with webmethods ‘encryptAES’, ‘decryptAES’, ‘encryptRSA’, ‘decryptsRSA’, ‘digitalSignature’, ‘authenticateJAAS’.
+
+    • We then create a Security web service and at the same time consume the Security Manager web service. So it is a service consumer, and provider, where it consumes the Security Manger webservice, and provides a direct service for any other services to be securely deployed webservice.
+
+    • Testing the proposed model by implementing SecuredExamService that uses Security Service.
+
+    • Experimental evaluation was done on eclipse-SDK-App Engine 1.8.0. Also, each one was run on different input sizes: 10kb, 20kb, 40kb and 80kb. The comparison (uniprocessor) running time and running time on the cloud was done by calculating the Speed-Up Ratio. Speed-Up Ratio is defined as the ratio of mean processing time on a single processor to the mean processing time on the cloud.  Each algorithm was run multiple times with each input size and the mean value was used for calculations in each case.
+5.2.2 Building SOAP Server on GAE
+
+    • Creating an App engine service with the methods that are exposed through SOAP.
+    • Running wsgen on the annonated file.
+
+    • Generating the WSDL file and the JAX-B POJOs that will be of use to us in our SOAP server. As of version 1.4.2 Google App Engine does not support the use of JAX-WS in a SOAP server. (It is supported in a SOAP client.) As we'll see below, in order to complete the SOAP server we will have to directly use javax.xml.soap and JAX-B.
+
+    • Wsdl and the associated XML schema document are generated, plus POJOs with JAX-B annotations corresponding to the request and response for each of the methods in SecurityManager and SecurityService that we annoted with @WebMethod are generated.
+
+
+
+    • Put the SOAP request URL into the generated SecurityManagerService.wsdl file.
+
+    • Write an adapter class to adapt between a signature that uses the JAX-B POJOs that were generated by wsgen and the signature of your real business logic methods. This step would not be necessary if JAX-WS for SOAP servers were supported on App Engine, but it currently is not. 
+    • SOAP Handler class which handles the SOAP request where it accepts a SOAP message, representing a request for one of the methods annoted with @WebMethod, use JAX-B to generate the appropriate POJO, and forward the call on to the appropriate method in Adapter.
+    • Deploy the application to Google App Engine. Make sure to use the same app ID that was specified in the WSDL file.
+
+
+
+
+5.2.3 Building a SOAP Client on GAE Using JAX-WS
+    • Create another new App Engine Java Web Application project.
+    • Run wsimport to generate client-side JAX-WS classes from a WSDL file.
+
+
+
+    • Deploy the application to Google App Engine. 
+    • Test the client. 
+
+
+
+
+
+
+
+
+
+
+    6. Analysis Results 
+
+Performance of encryption algorithm is evaluated considering the following parameters.  
+  Computation Time 
+The encryption time is considered the time that an encryption algorithm takes to produces a cipher text from a plain text. Encryption time is used to calculate the throughput of an encryption scheme is calculated as the total plaintext in bytes encrypted divided by the encryption time. Comparisons analyses of the results of the selected different encryption scheme are performed. Experimental result for Encryption algorithm AES and RSA are shown in table 1, which shows the comparison of two algorithm AES and RSA using text file for four experiments. By analyzing the table 1, we noticed that time taken by RSA algorithm is much higher compare to the time taken by AES algorithm.
+    I. Execution Time recorded when requesting AES from Security Service.
+File Size
+Server GAE, Client Local host
+Server GAE, Client GAE
+10 kilobytes
+1229 ms
+33 ms
+20 kilobytes
+1865 ms
+33 ms
+40 kilobytes
+3499 ms
+83 ms
+80 kilobytes
+8378 ms
+101 ms
+
+    II. Execution Time recorded when requesting RSA from Security Service.
+File Size
+Server GAE, Client Local host
+Server GAE, Client GAE
+10 kilobytes
+1971 ms
+618
+20 kilobytes
+4209 ms
+908
+40 kilobytes
+7145 ms
+865
+80 kilobytes
+14,792 ms
+747
+
+
+
+
+
+
+REFRENCES
+    1. A. A. Soror, U. F. (2009). Deploying Database Appliances in the Cloud. IEEE Data Eng. Bull , 13-20.
+    2. Abha Sachdev, M. B. (April 2013). Enhancing Cloud Computing Security using AES Algorithm. International Journal of Computer Applications , 67.
+    3. Amanpreet Kaur, G. R. ( March 2013 ). Secure Broker Cloud Computing Paradigm Using AES And Selective AES Algorithm. International Journal of Advanced Research in Computer Science and Software Engineering .
+    4. Aphrodite Tsalgatidou, T. P. (2002). An Overview of Standards and Related Technology in Web Services. Distributed and Parallel Databases , 135–162.
+    5. Ayesha Malik, M. M. ( 2012). Security Framework for Cloud Computing Environment: A Review. Journal of Emerging Trends in Computing and Information Sciences .
+    6. Bernstein, D., & Vij, D. (2010). Intercloud Security Considerations. IEEE International Conference on Cloud Computing Technology and Science .
+    7. Buyya R., Y. C. (2009). Cloud Computing and Emerging IT Platforms: Vision, Hype, and Reality for Delivering Computing as the 5th Utility. International Journal of Future Generation Computer Systems , 599-616.
+    8. Charles, O. ( July 6, 2011). Methodology for Deploying Secure Applications in the Cloud Computing.
+    9. Deepa Krishnan, M. C. (2012). Cloud Security Management Suite- Security as a Service. IEEE .
+    10. Esh Narayan, M. M. (Sep. 2012 ). To enhance the data security of cloud in cloud computing using RSA algorithm. International Journal of Software Engineering .
+    11. F. Leymann, D. R.-T. (2002). Web services and business process management. IBM SYSTEMS JOURNAL .
+    12. F. Lombardi, D. P. (2010). Transparent security for cloud. ACM Symposium on Applied Computing Sierre , 414--415.
+    13. Hobbs, C. a. (2006). Time-sensitive Service-Orient. Nortel Technical Journal .
+    14. Ian Foster, Y. Z. (2008). Cloud Computing and Grid Computing 360-Degree Compared. [8] Foster I., Zhao Y., Raicu I., & Lu S. (2008). Cloud Proceeding of theIEEE Conference on Gird Computing Environments Workshop. , 1-10.
+    15. Ideler, H. a. (December 2012). Cryptography as a service in a cloud computing environment.
+    16. Jean Bacon, D. E. (2010). Enforcing End-to-end Application Security in the Cloud. International Conference on Middleware, (pp. 293-312).
+    17. Julie Street, H. G. (2008). Software Architectural Reuse Issues in Service-Oriented Architectures. Proceedings of the 41st Hawaii International Conference on System Sciences .
+    18. Katarina Stanoevska-Slabeva, T. W. (2010). Grid and Cloud Computing. New York: Springer.
+    19. L. a. B. Youseff, M. a. (2008). Toward a Unified Ontology of Cloud Computing. Proceedings of the Grid Computing Environments Workshop , 1-10.
+    20. L. C. Qi Zhang, R. B. (May 2010). Cloud computing: state-of-the-art and research challenges. Journal of Internet Services and Applications , 7-18.
+    21. Lizhe Wang, J. T. (2008). Scientific Cloud Computing: Early Definition and Experience. Proceeding of the 10th IEEE International Conference on High Performance Computing and Communications , 825 – 830.
+    22. Luis M. Vaquero, L. R.-M. (2008). A Break in the Clouds: Towards a Cloud Definition. ACM SIGCOMM Computer Communication Review , 1-6.
+    23. Mathisen, E. ( 2011). Security Challenges and Solutions in Cloud Computing. International Conference on Digital Ecosystems and Technologies. 
+    24. Mehboob Alam, W. B. (2002). A Novel Pipelined Threads Architecture for AES Encryption Algorithm. IEEE , 296 - 302 .
+    25. N. Saravanan, A. M. (October 01, 2012). An Implementation of RSA Algorithm using Cloud SQL. Research Journal of Applied Sciences, Engineering and Technology , 3574-3579.
+    26. Pradeep Bhosale, P. D. (October - 2012). Enhancing Data Security in Cloud Computing Using 3D Framework & Digital Signature with Encryption. International Journal of Engineering Research & Technology .
+    27. Qaisar, S., & Khawaja, K. F. (2012). CLOUD COMPUTING: NETWORK/SECURITY THREATS AND COUNTERMEASURES. INTERDISCIPLINARY JOURNAL OF CONTEMPORARY RESEARCH IN BUSINESS .
+    28. R. Buyya, J. B. (2011). Cloud Computing Principles and Paradigms: Wiley Publishing.
+    29. Regil V Raju, M. U. (May 2013). Data Integrity Using Encryption in Cloud Computing. Journal of Global Research in Computer Science. 
+    30. Rohit Bhadauria, R. C. (2011). A Survey on Security Issues in Cloud Computing. IEEE .
+    31. S, L. D. (2010). Cloud computing and SOA convergence in your enterprise: a step-by-step guide. Upper Saddle River, NJ, Addison-Wesley .
+    32. Seyed Hossein Kamali, M. H. (2010). A New Modified Version of Advanced Encryption Standard Based Algorithm for Image Encryption. International Conference on Electronics and Information Engineering .
+    33. Stanoevska-Slabeva K., W. T. (2010). Grid and Cloud Compuitng. Springer .
+    34. Station, S. D. (n.d.). What are Digital Signatures? Compute and Verify a Digital Signature Using Java. Retrieved November 20, 2012, from IndicThreads: http://www.indicthreads.com/1480/what-are-digital-signatures-compute-and-verify-a-digital-signature-using-java/
+    35. Subashini, S., & Kavitha, V. (2011). A survey on security issues in service delivery models of cloud computing. Journal of Network and Computer Applications , 1-11.
+    36. SYS-CON Media Inc. (n.d.). Twenty Experts Define Cloud Computing. Retrieved from http://cloudcomputing.sys-con.com/node/612375/print
+    37. Yashaswi Singh, F. K. (2011). A Secured Cost-effective Multi-Cloud Storage in Cloud Computing. IEEE INFOCOM .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

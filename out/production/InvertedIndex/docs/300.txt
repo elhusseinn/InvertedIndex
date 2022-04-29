@@ -1,0 +1,1571 @@
+Behaviour-Driven Requirements Engineering for
+Agile Software Product Lines using Kanban method
+Heba Elshandidy, Sherif Maze, Ehab Ezat Eman Nasr
+Department of Information Systems
+Faculty of Computers and Artificial Intelligence
+Cairo University, Cairo, Egypt
+helshandidy@pg.cu.edu.eg, {s.mazen, e.ezat}@fci-
+cu.edu.eg Independent Researcher
+Cairo, Egypt
+nasr.eman.s@gmail.com
+Abstract— Requirements engineering in agile product line en-
+gineering has not yet addressed properly in the research commu-
+nity in spite of its critical role in the success of a project. This
+paper proposes a novel systematic flexible requirement engineer-
+ing approach that enables agile-based organisation to establish
+and maintain software product lines. The approach is mainly
+based on behavior-driven development and the Kanban method.
+We tested the approach empirically in an 8 years real-life indus-
+trial case study and the results are encouraging. The findings
+suggest the following: the approach is easy and quick to learn;
+using specification by example yields consistent and up-to-date
+user requirements and documentation; and the time-to-market is
+substantially decreased. These results indicate that Kanban
+method along with behaviour-driven development considerably
+improved the requirements engineering process in agile product
+line engineering.
+Index Terms—Requirements engineering, behaviour driven
+development, Kanban, agile product line engineering, empirical
+study, agile software development
+I. I NTRODUCTION
+Requirements engineering (RE) is the process of defining,
+documenting, and maintaining customers’ needs [1,2]. Accord-
+ing to the studies of Linda Westfall [3] and the Standish Group
+reports [4], eleven factors (see Fig. 1) leading to the success of
+a software project were investigated and identified; eight of
+them are RE-related. Thus, a good RE process producing a
+complete, consistent, correct, and unambiguous user require-
+ments highly increases the probablility of successfully deliver-
+ing software projects on time. Ten of those identified factors,
+on the other hand, exemplify the values of agile software de-
+velopment (ASD). ASD is a group of software development
+methodologies that is based on incremental and iterative deliv-
+ery [5]. Unlike traditional development, ASD believes in reac-
+tive iterative and incremental development in order to deliver
+quick clean a working piece of software while involving stake-
+holders throughout the different phases of development [5].
+The overlapping of RE and agile factors, as shown in Fig. 1,
+underlines their conformity in a sense that RE answers the
+question of what needs to be done to have a successful project
+while ASD offers the how.
+Another notable advancement in software engineering is
+software reuse [6]. Instead of building products from scratch,
+assets from previous software projects can be refined and
+reused. This has proven success in terms of productivity and
+quality in software product lines (SPLs) [7]. A SPL is a set of
+software-intensive systems, where their set of common
+features targets specific needs of a particular business domain
+while the variations of the same product are treated as a
+product family [8]. SPLs use commonalities to increase the
+level of software reusability and mass customisation while
+decreasing costs and delivery time. This systematic
+development of a product family considerably improves the
+delivered quality when compared to individual customised
+application [8]. Realising the advantages of ASD, as an
+iterative paradigm, and SPL engineering, as a reuse paradigm,
+in addition to the importance of RE in a project’s success,
+made the need to investigate whether and how an effective RE
+approach can be achieved to develop and maintain SPLs in an
+agile-based environment indispensable. In this paper, we
+describe a novel approach that enables agile-based
+organisations to develop and manage SPLs in a systematic
+lightweight fashion without risking the agility of their values
+and practices. The work in this paper proposes a flexible
+iterative incremental approach that reacts to unplanned
+changes at any time of the project’s lifecycle. We evaluated
+the feasibility of this approach, through a real-life empirical
+study, in order to investigate its strengths and weaknesses.
+Fig. 1. A Project’s success factors in relation to agile practices and RE
+activitiesIn the following section, we briefly discuss agile product
+line engineering, behaviour-driven development, and the
+Kanban method. Section 3 presents relevant literature while
+Section 4 discusses the proposed approach. Followed by
+Section 5 that presents the real-life empirical study and finally
+Section 6 concludes the paper and addresses the future work.
+II. B ACKGROUND
+A. Agile product line engineering
+Agile product line engineering (APLE) is the resulting ap-
+proach of integrating SPLE and ASD; the term was formally
+coined in the first APLE’06 workshop in the 2006 SPL con-
+ference [9]. In this workshop, it was acknowledged that both
+ASD and SPLE approaches share several common goals, such
+as managing changes in requirements, promoting product
+quality, and reducing both cost and time-to-market, albeit
+through different strategies [9]. Though there is a synergy be-
+tween the two approaches, addressing each other’s weakness-
+es, there exists difficulties in their integration. For example,
+the strategy used to handle requirements changes, the degree
+of focus on documentation, the level of user involvement re-
+quired, or the different development roles involved [10].
+A typical SPL has two phases: domain engineering (DE)
+and application engineering (AE) [8]. While the former phase
+focuses on conducting a comprehensive domain analysis to
+specify scope, core assets, and variations, the latter focuses on
+building individualised products based on the defined core
+assets and the identified variation points for that specific prod-
+uct [11]. When building a SPL, there are three widely recog-
+nised approaches, with respect to investment in cores assets, to
+choose from; proactive, reactive, and extractive [ 12 ]. Unlike
+the term reactive in ASD, the PL reactive approach does not
+treat each undertaken product as a new and relatively unique
+product [12]. It still treats it as a part of the already planned
+products in the family but instead of implementing the whole
+family at the beginning, the family is built in increments. SPL
+reactive approach does not react to the changes of the custom-
+er’s requirements [12]. Generally, SPLs use core assets to in-
+crease the level of software reusability and mass customisation
+while decreasing costs and delivery time. This systematic de-
+velopment of a product family considerably improves the de-
+livered quality when compared to individual customised appli-
+cations [8].
+B. Behaviour-Driven Development
+Behaviour-driven development (BDD) is a software
+development process that encourages collaboration between
+different stakeholders (i.e. developers, testers, and non-
+technical/business personnel) of a software project [13]. It was
+created to overcome the shortcomings of test-driven
+development (TDD) such as the starting point of testing, what
+to test and what not to test, how much to test in one iteration,
+how to understand why a test fails, as well as the lack of
+naming conventions for tests [13]. BDD combines the general
+methods and practices of TDD with concepts from domain-
+driven design and objected-oriented analysis and design. Thus,
+a shared process and understanding to all the involved
+stakeholders, is provided to successfully collaborate on
+software development with well-defined outputs [13]. BDD
+delivers working and tested software while managing
+traceability between the different artefacts [13].
+BDD has six main characteristics: ubiquitous language
+[14], iterative decomposition process [15], plain text
+description for user story and scenario templates [16],
+executable acceptance tests (EATs) with mapping rules
+[13,17], readable behaviour oriented specification code [13],
+and cross-cutting the different activities of software
+development [13]. BDD emphasises the production of a
+concise clear user requirements and a live documentation
+while efficiently maintaining traceability relations in an agile-
+based product line. This is achieved through the use of
+specification by example (SBE). According to Gojko Adzic
+[18], “SBE is a set of process patterns that facilitate change in
+software products to ensure that the right product is delivered
+efficiently”. In BDD, SBE is used to illustrate the behaviour of
+the system; they are written before writing the code using the
+ubiquitous language. They also can be used as a direct input
+into building automated tests reflecting the business domain.
+Automated testing makes it feasible to run the tests as many
+times as needed against the written code to verify and validate
+a feature completion.
+C. The Kanban Method
+Kanban is a lean workflow management method that is de-
+signed to help visualise work, maximise efficiency, and be
+agile [19]. It started as a scheduling system for lean manufac-
+turing originating from the Toyota Production System. It is an
+incremental evolutionary method which adopts the pull system
+approach (i.e. production is based on the customer’s demand).
+This minimises wasting activities without sacrificing produc-
+tivity while creating more value for the customer without gen-
+erating more costs. Kanban has four core principles: (1) start
+with what you do now; (2) agree to pursue incremental evolu-
+tionary change; (3) respect the current process, roles, and re-
+sponsibilities; and (4) encourage acts of leadership at all levels
+[19]. It, also, adopts six practices: (1) visualise your workflow;
+(2) limit work in progress; (3) manage flow; (4) make process
+policies explicit; (5) feedback loops through stand-up, service
+delivery review, operations review, and risk review meetings;
+and (6) improve collaboratively using models and the scien-
+tific method [19]. The simplest form of applying Kanban is
+sticky notes on a white board. Modern-day Kanban, however,
+uses software tools to allow easy access for remote team
+members, perform flow analytics, and automate workflow in
+addition to the ability of integration with other tools.
+III. R ELATED W ORK
+The research instrument used for this section is literature
+review. To guarantee high quality work, papers were fetched
+only from electronic databases such as Inspec, IEEE Xplore,
+SpringerLink, SpringerLink, ScienceDirect, ACM Digital
+Library, and ISI Web Knowledge. The main focus of the
+search was the proceedings of Software Product Line
+Conference, Agile Conference, eXtreme ProgrammingConference, Agile Product Line Engineering Workshop, and
+Requirements Engineering Conference.
+In spite of the rich APLE literature [20-41], none was able
+to address RE in an all-inclusive manner [42-46]. Nearly all
+the work in the literature focused on one or two RE activities
+such as: scoping [20], planning [21,22], modelling [23], PL
+architecture design [24,25], traceability and management [26-
+30], and variability identification and management [31-35].
+Only the work of the authors in [36,37] proposed a holistic
+framework called APLE-RE. That framework recommends a
+set of RE techniques and process patterns based on the nature
+and the characteristics of a given project. APLE-RE is com-
+posed of two phases: a) knowledge acquisition where expertise
+is collected from researchers and practitioners using agile and
+PL RE techniques; and b) process repository where a set of
+process patterns, based on the collected expertise, is offered to
+requirements engineers to choose from or tailor a pattern for
+the respective agile PL project. Despite the potentiality of the
+APLE-RE, it was an unrealistic framework. For example, the
+framework was domain-specific with no general data source.
+In addition, the authors were able to validate only 2 out of 171
+process patterns, they originally identified, due to time and
+cost concerns. Not to mention that that validation did not de-
+pend on any formal methods; it was subjective. Furthermore,
+data was collected from project managers only rather than all
+the involved stakeholders, which is not only in a direct contra-
+ry to the agile principles but also did not reflect the complete
+and comprehensive perspective of the involved participants.
+Another effort in the literature is accredited to the authors
+of [38-41] where they presented a reactive variability man-
+agement framework to lower the adoption barrier of SPLs in
+agile environments. The authors highlighted the importance of
+having a systematic approach to reactively define commonali-
+ty, variability, and software reuse in SPLs while guaranteeing
+high quality by validating the finished work through executa-
+ble acceptance test and test-driven development. Nonetheless,
+the proposed framework was not tested in a real project but
+was rather rested through academic case studies. As a further
+of matter, the work was not even tested in a holistic manner in
+order to be able to report how the different components of the
+framework interplays. And lastly, the robustness and effec-
+tiveness of the framework were not tested in a large-scale en-
+vironment.
+Unlike the presented literature, except for the work pre-
+sented in [38-41], our proposed approach places emphasis on
+developing SPL in an agile environment and not the other way
+around where some agile practices are adopted in an already
+existing SPL environment. Additionally, none of the efforts
+presented in this section covered all the phases of RE, or con-
+ducted real-life empirical studies to validate their work, or
+attempted the use of BDD and the Kanban method to develop
+and maintain an agile-based PL. While these contributions are
+interesting attempts to address RE in APLE, their focus is dif-
+ferent from ours. The work presented in this paper focuses on
+using BDD and the Kanban method to produce a comprehen-
+sive lightweight RE approach. That approach reactively and
+incrementally establishes and manages SPLs in agile-based
+organisations regardless of the level of their SPL domain ex-
+perience. To the best of our knowledge, this research focus is
+original and has not been previously discussed in the literature.
+IV. T HE P ROPOSED A PPROACH
+Producing a concrete, complete, and unambiguous
+requirements has always been a hard task to achieve in SPLs.
+Though bringing ASD into the scene made the task more
+feasible, there is still few challenges: (1) efficiently and
+effectively eliciting and communicating cores assets and
+variability to stakeholders; (2) traceability of core assets and
+variability from the requirements to the core; (3) managing
+and tracking cores assets across different products in the
+family; and (4) having an up-to-date documentation. In this
+paper, we introduce a RE approach addressing the
+aforementioned challenges. This idea was initially introduced
+in our previous work in [47]. The approach is based on BDD
+and the Kanban method. It covers the five activities of the RE
+process for functional and non-functional requirements. This
+section describes how RE, the Kanban method, and BDD
+interplay.
+A. Implementing requirements engineering within behaviour-
+driven development
+The RE process relies on the notion that business goals are
+already identified. Business goals (functional and non-
+functional) are usually derived from the business need to find-
+ing solutions for a specific business problem. The discussion
+to follow assumes that business goals are available for the
+team to start their RE process. Fig. 2. offers an in-depth look
+of how the BDD set of process patterns are implemented
+throughout the five activities of the RE process. For each ac-
+tivity, the inputs and outputs are presented while highlighting
+which role does what task. Each RE activity is addressed in
+further details as follows:
+• Step 1: Requirements elicitation: this is the first step in
+the RE process where the work starts outside-in. The
+customer’s representatives and the development team
+conduct collaborative meetings to brainstorm solutions
+achieving the requested business goals. Collaborative
+meetings intend to get everyone involved in the prod-
+uct to share their perspective, have a common under-
+standing, and feel ownership. After these meetings, the
+development team uses low/high fidelity prototyping to
+examine the validity of the proposed set of solutions
+hypotheses. After negotiations and reaching a consen-
+sus on the relevant solutions set, stakeholders conduct
+collaborative meetings for scoping. Scoping is the pro-
+cess of determining the set of features reflecting the
+system goals. In this paper, we use the term feature to
+refer to an independent functionality in the system de-
+livering a business value [48]. There are no constraints
+on the size of a feature as long as the customer consid-
+ers it an added value to the delivered system. Internal-
+ly, however, product owners in collaboration with de-
+velopers often choose to slice down feature into sub-
+features. Thus, making it more manageable, testable,
+and releasable within a cycle time. The development•
+•
+team has to make sure, however, that the slicing did not
+affect the behaviour of the original feature. The initial
+set of features, that should be developed in the next cy-
+cle time, is determined after negotiations in collabora-
+tive meetings where all the stakeholders are encour-
+aged to attend.
+Step 2: Requirements analysis: the new elicited fea-
+tures along with existing features, from previous prod-
+ucts in the family, are further analysed and negotiated
+to identify potential core assets and variabilities. These
+negotiations take place through the specifications
+workshops (aka Three Amigos meeting). The Three
+Amigos are the business analyst (BA), the quality as-
+surance (QA) personnel, and the developer. Though
+other stakeholders are encouraged to attend these
+workshops but only the Three Amigos are responsible
+and accountable of the features from their definition to
+their delivery. During these workshops, features are
+examined to determine their relevancy and clarity. If a
+missing requirement or an irrelevant/unclear feature is
+determined, the process goes back to the first step for
+further understanding. Otherwise, the process proceeds
+to requirements modelling. The Three Amigos use a
+ubiquitous language and a domain vocabulary (a glos-
+sary is maintained if required) to establish a common
+understanding of the requirements; this helps them lo-
+cating differences and conflicts. The output of this ac-
+tivity is a set of user stories for each feature. A user
+story describes an activity that is done by a user in a
+given role. When the word “optional” is added to the
+description of a user story, it means that that user story
+represents a variability rather than a core asset feature.
+Step 3: Requirements modelling: in addition to using
+diagrams to model the requirements, the developing
+team uses examples to elaborate the user stories pro-
+duced from the previous step. In this step, each identi-
+fied user story is illustrated with a set of examples rep-
+resenting real cases. Examples are written in the form
+of a scenario with actual values. A scenario describes
+how the system should behave when it is in a specific
+state for a specific feature and a specific event happens.
+Scenarios exemplify the behaviour of the system while
+acting as the acceptance criteria of that system. The
+development team continues to discuss examples until
+reaching an agreement on the set of examples covering
+the expected behaviour of each feature. These scenari-
+os should represent 5 or 6 key examples, 1 – 3 end-to-
+end flows, in addition to the edge cases, so that it is
+clear what is expected from each feature. Using actual
+values in scenarios help identifying the variants of each
+variation point in a product line. After negotiations, the
+development team produce the initial set of scenarios;
+in case a perplexing core asset or variant is identified,
+the team decides whether they need to go back to the
+requirements analysis activity, for further investigation,
+or to proceed to the next step.
+•
+•
+Step 4: Requirements verification and validation: the
+three Amigos meet again to refine the developed key
+example scenarios based on their relevancy and im-
+portance. To ensure that a scenario passes, all the test
+cases for that scenario must pass. In order to achieve
+that, one need to be precise in writing the examples. If
+an example turns to be complex, it can be sliced into
+simpler examples. Focus should always be on the busi-
+ness rather than the technical perspective. Following
+the standardised mapping rules of BDD, when map-
+ping from scenarios to test cases, guarantees a better
+traceability management. Scenarios should consider
+both negative and positive conditions while specifying
+any additional business rules if needed. Non-functional
+scenarios – addressing performance, security, usability,
+etc. – should be covered as well if they reflect a busi-
+ness value for the customer. All these examples are ne-
+gotiated and discussed with the customer in order to be
+filtered to only those in which the customer is interest-
+ed. In case an anomaly is detected in this activity, the
+three amigos may decide to go back to the require-
+ments modelling or to the initial requirements elicita-
+tion activity. After deciding the final set of scenarios,
+the development team automates them; this is done
+through wiring the specifications to the system under
+test. Each automated specification represents an ac-
+ceptance criterion of the system that is linked to an ex-
+ample of the behaviour of that system. That connection
+helps later on with managing traceability between the
+different artefacts of the system. The output of this step
+is the actual implementation of variation points and
+variants at the code level.
+A cross-cutting step: Requirements management: re-
+quirements are maintained and managed throughout
+Fig. 2. The implementation of the five RE activities in BDDeach activity of the RE process. Executable specifica-
+tions, in particular, benefit requirements management
+in multiple aspects. For one, it produces an evolving
+live documentation where all the core assets, variabili-
+ties, and the associated variants are documented and ef-
+ficiently managed. Secondly, it delivers a continuously
+validated system that is constantly evolving to meet the
+required business goals. Finally, it allows to test and
+integrate the frequent software increments as many
+times as needed in a lightweight manner. When a
+change (e.g. adding/removing a feature/user sto-
+ry/scenario) is introduced into the system, it is checked
+against the business goals to determine its validity. The
+steps in Fig. 2 are carried out in an iterative and incre-
+mental fashion.
+B. Implementing the Kanban method within behaviour-driven
+devlopment
+Kanban and BDD advocate the same core principles of in-
+cremental iterative development and starting with what need to
+be done in the next cycle time. They also share the common
+fundamentals of delivering value to customers as fast as possi-
+ble, ensuring that everyone shares a common understanding
+and well-aware of the process policies, boosting collaboration
+and productivity, and bringing flexibility on board. Bringing
+Kanban and BDD together gets the team to be more responsive
+while reinforcing the involvement of customers from the be-
+ginning of the project until it is finished. Furthermore, Kanban
+allows the team to (1) locate and alleviate bottlenecks in the
+workflow as early as possible; (2) prevent overloading the
+work processes; and (3) prevent constant context switching
+between work items. Using Kanban boards allow the team to
+explicitly state the mapping rules and the ubiquitous language
+of BDD in the process policies. Thus, offers a quick easy refer-
+ence/reminder for stakeholders whenever needed. Using Kan-
+ban software tools also allow team members in large scale pro-
+jects to communicate effectively regardless of their location.
+Even when a team member misses one of the feedback meet-
+ings, they can still know the latest updates in the project by
+visiting the Kanban board at any time. Kanban and BDD com-
+plements each other to deliver the most value to the customer at
+the nearest possible time.
+V. E VALUATION : A R EAL -L IFE E MPIRICAL S TUDY
+In the previous section, we presented a methodology to
+produce and manage RE using BDD and the Kanban method.
+Here, we present an evaluation to investigate the feasibility and
+usefulness of our proposed approach. The research instruments
+used in this real-life empirical study varied from direct obser-
+vation, structured observation, observer participant, to discus-
+sion groups based on our level of understanding and familiarity
+with the product under study. We tested the proposed approach
+in a small-sized start-up agile-based company with an intensive
+experience in agile development. The company adopts both the
+Kanban and the Scrum agile methods. The company focus on
+the main practices of iterative and incremental development,
+refactoring, automated testing, short iterations, self-organising
+cross-functional teams, pair programming, continuous deploy
+Fig. 3. A feature file in Cucumber
+Fig. 4. Steps Definition
+ment, progressive discovery, user story maps, and Objectives
+and Key Results (OKRs). The product under study, Revosuite,
+is an AI-enabled CRM/CLM/BI system for pharmaceutical and
+life sciences businesses; it is a Business-to-Business Enterprise
+SaaS. The Revosuite team embraced our proposed approach as
+it adds no burden on them since it shares the same essence of
+their already existing agile practices.
+As BDD is the core of the proposed approach, we consid-
+ered a common tool to write and run SBE called Cucumber
+[49, 50]. Cucumber is a supporting toolkit for BDD; it uses a
+language called Gherkin to define test cases. Gherkin is a hu-
+man readable non-technical language that provides a script for
+automated testing [49]. This facilitates the production of a sim-
+ple documentation of the code under test [49]. This means that
+the system's specifications are maintained alongside the system
+codebase in the same version control repository. As shown in
+Fig. 3, each feature contains a list of scenarios; hence, each
+feature will have more than one automated specification/testing
+case. In Cucumber, each feature under test along with its op-
+tional description and the associated list of scenarios are stored
+in a file called a feature file. To link these test cases to the actu-
+al code, Cucumber uses a step definition. A steps definition file
+stores the mapping between each step of the scenario defined in
+the feature file with the code of the function to be executed. As
+shown in Fig. 4, when Cucumber executes a step of a scenario,
+it scans the step definition file and figures out which function is
+to be called. In this empirical study, Kanban was implemented
+using the Trello software [51].
+A. Goal
+The goal of this empirical study is to examine the applica-
+bility of the proposed approach in a real-life industrial case
+study. The elements to be studied are deduced from the essence
+of BDD and the Kanban method. In particular, we are examin-TABLE I.
+T ABLE 1. T HE STUDY ELEMENTS AND THE REQUIRED
+OBSERVATIONS
+Element
+Required Observation
+Evolution We will observe whether the participant will be able
+to start a feature and integrate new changes as they
+arise. The final state of the feature should be
+consistent with the behaviour expected by the
+customer
+Learnability We will observe if the participants will be able to:
+• use the BDD ubiquitous language to write features,
+user stories, and scenarios;
+• use specifications by example as the building units
+of the proposed approach; and
+• use mapping rules to relate automated tests to the
+respective scenarios and user stories.
+Coherence We will observe whether the participant will be able
+to effectively communicate and share a consistent
+output compared to the demanded business goals.
+Restrictions/
+Conflicts We will observe if the participant will be able to
+deduce all explicit and implicit restrictions and
+conflicts from the automated specifications by
+example.
+Readability We will observe whether the participant will be able
+to understand the code in the system’s
+documentation.
+ing five elements: learnability, evolution, consistency, re-
+strictions/conflicts, and readability. Error! Reference source not
+found. lists these elements and the required observations for
+each one of them to this study. The participants in this study
+were selected from the pool of people who worked on the de-
+velopment and maintenance of Revosuite except for the partic-
+ipants representing customers. The total number of participants
+is 23 categorised as follows: 5 business analysts, 10 developers,
+and 5 testers, and 3 customer’s representatives. Of course, the
+development team worked interchangeably but they witnessed
+the changes and differences in development throughout the
+lifetime of the Revosuite product family. After explaining the
+proposed approach to the participants, they were offered a
+training on how to implement BDD along with Kanban. To
+observe the performance of the participants, they took part in
+multiple pilot projects, varying in complexity, throughout the
+lifetime of Revosuite. We, also, developed a questionnaire ad-
+dressing the elements listed in Error! Reference source not
+found. in further details and asked our participants to fill it in.
+B. Pilot Projects Results
+The performance of the participants was measured by the
+time they spent on each feature and the consistency of their
+outcome compared to that expected by the business goals. Nat-
+urally, pilot projects with higher complexities took more time
+from the participants. The consistency of their outcomes, how-
+ever, was mostly the same except for the participants represent-
+ing customers; they had some difficulties with complexed fea-
+tures. In low-medium complexed pilot projects, we observed
+that more than 80% of the participants were able to start a fea-
+ture that eventually evolve into either a core asset or a variabil-
+ity. They were able to integrate changes as they come where
+the final state of a feature was consistent with the behaviour
+expected by the customer. For learnability and coherence, all
+the development participants were able to achieve the three
+aspects under learnability and having consistent output with
+minor differences. Customers’ participants, on the other hand,
+were above average at the second and third aspects of learnabil-
+ity while they excelled in using the BDD ubiquitous language
+and producing consistent output to that of the expected one by
+the business goals. Though all the participants were able to
+detect explicit constraints and underline conflicts, only 70% of
+them were able to spot implicit restrictions. Nevertheless, all
+participants were able to easily read and understand the docu-
+mentation. For high complexed pilot projects, the observation
+was reasonably in-line with the one of low-medium complexed
+pilot projects except that more time was needed on each feature
+and the performance of the customers’ participants was de-
+creased by nearly 20%.
+C. Questionnaire Results
+Due to the diversity background of the participants, every
+one answered from their perspective. Error! Reference source
+not found. presents the responses to the Likert-scale questions.
+A collaborative opinion was reached that: a) requirements were
+concise, complete, and unambiguous; b) everyone understood
+better what is being developed; c) developers were able to bet-
+ter track the development progress; d) testers had a clearer un-
+derstanding about what is being tested as they were involved
+from the beginning and had a role in the design; e) a quality
+product is produced from the beginning; and f) documentation
+was read by everyone and was constantly up-to-date. Repre-
+senting the system features using SBE, however, was confusing
+and out of the comfort zone of some of the customer represent-
+atives, analysts, and testers.
+VI. C ONCLUSIONS AND F UTURE W ORK
+The paper contributed a novel approach to requirements
+engineering in agile software product lines. The approach ena-
+bles agile organisation to systematically and effectively devel-
+op and manage agile-based product lines.
+Fig. 5. The questionnaire Likert-scale responsesThe authors introduced the collaboration of behavior-driven
+development and the beginning through fostering early-on
+collaboration and communication. Thus, a lot of resources -
+such as time and money - are spared compared to the conven-
+tional product line development methods. The proposed ap-
+proach is tested and validated in a real-life industrial case
+study. The empirical study that spanned over 8 years reported
+very promising and positive results. The main findings of the
+study were the feasibility to produce well-defined concrete
+R EFERENCES
+[1] Kontonya, G., Sommerville, I.: Requirements Engineering:
+Processes and Techniques. John Wiley & Sons. (1998).
+[2] Chemuturi, M.: Requirements Engineering and Management
+for Software Development Projects. Springer Publishing
+Company. (2012).
+[3] Westfall, L.: Software Requirements Engineering: What, Why,
+Who, When and How?. Retrieved from
+http://www.westfallteam.com/Papers/The_Why_What_Who_
+When_and_How_Of_Software_Requirements.pdf, last ac-
+cessed 2018/11/12
+[4] Standish Group, The CHAOS Report 2015, Retrieved from
+https://www.standishgroup.com/sample_research, last accessed
+2015/10/2
+[5] Williams, L., Cockburn, A.: Agile Software Development: It’s
+About Feedback and Change. Computer 36(6), 39–43 (2003).
+[6] Jacobson, I., Griss, M., Johnson, P.: Software Reuse: Architec-
+ture, Process and Organization for Business success. ACM
+Press. USA (1997)
+[7] Mili, H., Mili, F., Mili, A.: Reusing Software: Issues and Re-
+search Directions. IEEE Transactions on Software Engineering
+21(6), 528–562 (1995).
+[8] Clements, P., Northrop, L.: Software Product Lines: Practices
+and Patterns. Addison-Wesley. USA (2001).
+[9] Cooper, K., Franch, X.: APLE First International Workshop on
+Agile Product Line Engineering. IEEE Computer Society. pp.
+205–206. Silver Spring, USA (2006).
+[10] Hanssen, G.k., Fægri, T.E.: Process Fusion: An Industrial
+Case Study on Agile Software Product Line Engineering.
+Journal of Systems and Software 81(6), 843–854 (2008).
+[11] Pohl, K., Böckle, G., Linden, F.: Software Product Line Engi-
+neering: Foundations, Principles and Techniques. Springer.
+Germany (2005).
+[12] Mcgregor, J.:Agile Software Product Lines, Deconstructed.
+Journal of Object Technology 7(8), 7 – 19 (2008).
+[13]
+Behavior
+Driven
+Development,
+https://en.wikipedia.org/wiki/Behavior-driven_development,
+last accessed 2018/1/1
+[14] Evans, E.: Domain-Driven Design: Tackling Complexity in
+the Heart of Software. Addison-Wesley Professional. Germany
+(2003)
+[15]
+North,
+D.:
+Introducing
+BDD.
+Available
+at:
+http://dannorth.net/introducing-bdd (2006)
+[16] Chelimsky, D., Astels, D., Helmkamp, B., North, D., Dennis,
+Z., and Hellesoy, A.: The RSpec Book: Behaviour Driven De-
+velopment with Rspec, Cucumber, and Friends. 1st ed. Prag-
+matic Bookshelf. (2010)
+[17] Astels, D.: A new look at test driven development.
+http://techblog.daveastels.com/files/BDD_Intro.pdf, last ac-
+cessed 2019/3/1
+user requirements for an agile software product line while cut-
+ting cost and time-to-market. Future work includes conducting
+an empirical research to further investigate the industrial case
+study presented in this paper.
+A CKNOWLEDGMENT
+The authors would like to thank Revosuite company for
+their cooperation and guidance.
+[18] Adzic, G.: Specification by Example: How Successful Teams
+Deliver the Right Software. Manning Publications. (2011)
+[19] Hammarberg, M., Sunden, J.: Kanban In Action. Manning
+Publications. (2014)
+[20] Noor, M.A., Rabiser, R., Grünbacher, P.: A Collaborative
+Approach for Reengineering-Based Product Line Scoping. In:
+1st International Workshop on Agile Product Line Engineering
+(In conjunction with SPLC), USA (2006)
+[21] Noor M.A., Rabiser, R., Grünbacher, P.: Agile Product Line
+Planning: A Collaborative Approach and a Case Study. Journal
+of Systems and Software 81(6), 868–882 (2007)
+[22] Noor, M.A., Grünbacher, P., Hoyer, C.: A Collaborative
+Method for Reuse Potential Assessment in Reengineering
+Based Product Line Adoption. In: Balancing Agility and For-
+malism in Software Engineering. LNCS, vol. 5082, pp. 69–83.
+Springer, Heidelberg (2008)
+[23] Trinidad, P., Benavides, D., Durán, A., Ruiz-Cortés, A., Toro,
+M.: Automated Error Analysis for the Agilization of Feature
+Modeling. Journal of Systems and Software 81(6), 883–896
+(2008)
+[24] Paige, P., Wang, X., Stephenson, Z., Brooke, P.: Towards an
+Agile Process for Building Software Product Lines. In: Pro-
+ceedings of the 7th International Extreme Programming and
+Agile Processes in Software Engineering, pp.198–199. Spring-
+er, Heidelberg (2006)
+[25] Kakarontzas, G., Stamelos, I., Katsaros, P.: Product Line Var-
+iability with Elastic Components and Test-Driven Develop-
+ment. In: Proceedings of the 2008 International Conference on
+Computational Intelligence for Modelling Control and Auto-
+mation, pp. 146–151. IEEE Computer Society, Austria (2006)
+[26] Raatikainen, M., Rautiainen, K., Myllärniemi, V., Männistö,
+T.: Integrating Product Family Modeling with Development
+Management in Agile Methods. In: Proceedings of the 1st In-
+ternational Workshop on Software Development Governance,
+pp. 17–20. ACM, USA (2008)
+[27] Taborda, L.: The Release Matrix for Component-Based Soft-
+ware Systems. In: Proceedings of Component-Based Software
+Engineering, LNCS, vol. 3054, pp. 100–113, Springer, Heidel-
+berg (2004)
+[28] Kurmann, R.: Agile SPL-SCM Agile Software Product Line
+Configuration and Release Management. In: 1st International
+Workshop on Agile Product Line Engineering (In conjunction
+with SPLC). USA (2006)
+[29] Carbon, R., Lindvall, M., Muthig, D., Costa, P.: Integrating
+Product Line Engineering and Agile Methods: Flexible Design
+Up-Front VS. Incremental Design. In: Proceedings of the 1st
+International Workshop on Agile Product Line Engineering (In
+conjunction with SPLC). USA (2006)
+[30] Carbon, R., Knodel, J., Muthig, D., Meier,G.: Providing
+Feedback from Application to Family Engineering – The
+Product Line Planning Game at the Testo AG. In: Proceedings
+of the 12th International Software Product Line Conference,
+IEEE Computer Society, pp. 180–189. IEEE, Ireland (2008)[31] O’Leary, P., Babar, M.A., Thiel, S., Richardson, I.: Product
+Derivation Process and Agile Approaches: Exploring the Inte-
+gration Potential. In: Proceedings of the 2nd IFIP Central and
+East European Conference on Software Engineering Tech-
+niques, pp. 166–171 (2007)
+[32] O’Leary, P., Babar, M.A., Thiel, S., Richardson, I.: Towards
+Agile Product Derivation in Software Product Line Engineer-
+ing. In: Proceedings of the 4th International Workshop on Rap-
+id Integration of Software Engineering Techniques, pp. 19–32
+(2007)
+[33] O’Leary, P., Thiel, S., Botterweck, G., Richardson, I.: To-
+wards a Product Derivation Process Framework. In: Proceed-
+ings of the 3rd IFIP TC2 Central and East European Confer-
+ence on Software Engineering Techniques, pp. 189–202 (2008)
+[34] O’Leary, P., McCaffery, F., Richardson, I., Thiel, S.: Towards
+Agile Product Derivation in Software Product Line Engineer-
+ing. In: Proceedings of the 16th European Conference on
+Software Process Improvement, pp. 81–86 (2009)
+[35] O’Leary, P., Rabiser, R., Richardson, I., Thiel, S.: Important
+Issues and Key Activities in Product Derivation: Experiences
+from Two Independent Research Projects. In: Proceedings of
+the 13th International Software Product Line Conference, pp.
+121–130 (2009)
+[36] Feng, K., Lempert, M., Tang, Y., Tian, K., Cooper, K.,
+Franch, X.: Developing a Survey to Collect Expertise in Agile
+Product Line Requirements Engineering. In: Agile 2007 Con-
+ference. International Research-in-Progress Workshop on Ag-
+ile Software Engineering. pp. 1–4 (2007)
+[37] Feng, K.: Towards an Agile Product Line Requirements Engi-
+neering Framework: Knowledge Acquisition and Process Def-
+inition, Ph.D. Dissertation, The University of Texas at Dallas
+(2009)
+[38] Ghanam, Y., Park, S., Maurer, F.: A Test-Driven Approach to
+Establishing and Managing Agile Product Lines, In: Proceed-
+ings of the 5th Software Product Lines Testing Workshop in
+conjunction with SPLC’08, pp. 151–156 (2008)
+[39] Ghanam, Y., Maurer, F.: An Iterative Model for Agile Product
+Line Engineering. In: The SPLC Doctoral Symposium, 2008 -
+in conjunction with the SPLC’08, pp. 377–384 (2008)
+[40] Ghanam, Y., Maurer, F.: Extreme Product Line Engineering:
+Managing Variability and Traceability via Executable Specifi-
+cations. In: Agile Conference, AGILE ’09, IEEE Computer
+Society, pp. 41–4 (2009)
+[41] Ghanam, Y., Maurer, F.: Extreme Product Line Engineering
+Refactoring for Variability: A Test-Driven Approach. In: Pro-
+ceedings of 11th International IV Conference on Agile Pro-
+cesses in Software Engineering and Extreme Programming,
+XP 2010, LNBIP, vol. 48, pp. 43–57, Springer, Heidelberg
+(2010)
+[42] Neiva, D.F.S.: RiPLE-RE: A Requirements Engineering Pro-
+cess for Software Product Lines, M.Sc. Dissertation, Univer-
+sidade Federal de Pernambuco, Brazil (2009)
+[43] Alves, V., Niu, N., Alves, C., Valença, G.: Requirements En-
+gineering for Software Product Lines: A Systematic Literature
+Review. In: Information and Software Technology, vol. 52(8),
+pp. 806–820 (2010)
+[44] Díaz, J., Pérez, J., Alarcón, P.P., Garbajosa, J.: Agile Product
+Line Engineering – A Systematic Literature Review. In: Soft-
+ware Practice and Experience, vol. 41(8), pp. 921–941 (2011)
+[45] da Silva, I.F. , Neto, P., O'Leary, P., de Almeida, E., de Lemos
+Meira, S.R.: Agile Software product lines: a systematic map-
+ping study, Software: Practice and Experience, vol. 41(8), pp.
+899–920 (2011)
+[46] Farahani, F. F., Ramsin, R.: Methodologies for Agile Product
+Line Engineering: A Survey and Evaluation. In: Proceedings
+of the 13th International Conference SoMeT_14, Amsterdam:
+IOS Press BV, pp.545-564 (2014)
+[47] Elshandidy, H.: Behaviour-Driven Requirements Engineering
+for Agile Product Line Engineering. In: 2019 IEEE 27th Inter-
+national Requirements Engineering Conference (RE). Jeju Is-
+land, Korea (South). 434-439 (2019)
+[48] Apel, S., Batory, D., Kstner, C., Saake, G., Feature-Oriented
+Software Product Lines: Concepts and Implementation.
+Springer Publishing Company. (2013)
+[49] Cucumber, https://cucumber.io/ , last accessed 2019/05/05
+[50] Wynne, M., Hellesoy, A., The Cucumber Book: Behaviour-
+Driven Development for Testers and Developers, Pragmatic
+Bookshelf (2012)
+[51] Trello: https://trello.com/
+Behaviour-Driven Requirements Engineering for
+Agile Software Product Lines using Kanban method
+Heba Elshandidy, Sherif Maze, Ehab Ezat Eman Nasr
+Department of Information Systems
+Faculty of Computers and Artificial Intelligence
+Cairo University, Cairo, Egypt
+helshandidy@pg.cu.edu.eg, {s.mazen, e.ezat}@fci-
+cu.edu.eg Independent Researcher
+Cairo, Egypt
+nasr.eman.s@gmail.com
+Abstract— Requirements engineering in agile product line en-
+gineering has not yet addressed properly in the research commu-
+nity in spite of its critical role in the success of a project. This
+paper proposes a novel systematic flexible requirement engineer-
+ing approach that enables agile-based organisation to establish
+and maintain software product lines. The approach is mainly
+based on behavior-driven development and the Kanban method.
+We tested the approach empirically in an 8 years real-life indus-
+trial case study and the results are encouraging. The findings
+suggest the following: the approach is easy and quick to learn;
+using specification by example yields consistent and up-to-date
+user requirements and documentation; and the time-to-market is
+substantially decreased. These results indicate that Kanban
+method along with behaviour-driven development considerably
+improved the requirements engineering process in agile product
+line engineering.
+Index Terms—Requirements engineering, behaviour driven
+development, Kanban, agile product line engineering, empirical
+study, agile software development
+I. I NTRODUCTION
+Requirements engineering (RE) is the process of defining,
+documenting, and maintaining customers’ needs [1,2]. Accord-
+ing to the studies of Linda Westfall [3] and the Standish Group
+reports [4], eleven factors (see Fig. 1) leading to the success of
+a software project were investigated and identified; eight of
+them are RE-related. Thus, a good RE process producing a
+complete, consistent, correct, and unambiguous user require-
+ments highly increases the probablility of successfully deliver-
+ing software projects on time. Ten of those identified factors,
+on the other hand, exemplify the values of agile software de-
+velopment (ASD). ASD is a group of software development
+methodologies that is based on incremental and iterative deliv-
+ery [5]. Unlike traditional development, ASD believes in reac-
+tive iterative and incremental development in order to deliver
+quick clean a working piece of software while involving stake-
+holders throughout the different phases of development [5].
+The overlapping of RE and agile factors, as shown in Fig. 1,
+underlines their conformity in a sense that RE answers the
+question of what needs to be done to have a successful project
+while ASD offers the how.
+Another notable advancement in software engineering is
+software reuse [6]. Instead of building products from scratch,
+assets from previous software projects can be refined and
+reused. This has proven success in terms of productivity and
+quality in software product lines (SPLs) [7]. A SPL is a set of
+software-intensive systems, where their set of common
+features targets specific needs of a particular business domain
+while the variations of the same product are treated as a
+product family [8]. SPLs use commonalities to increase the
+level of software reusability and mass customisation while
+decreasing costs and delivery time. This systematic
+development of a product family considerably improves the
+delivered quality when compared to individual customised
+application [8]. Realising the advantages of ASD, as an
+iterative paradigm, and SPL engineering, as a reuse paradigm,
+in addition to the importance of RE in a project’s success,
+made the need to investigate whether and how an effective RE
+approach can be achieved to develop and maintain SPLs in an
+agile-based environment indispensable. In this paper, we
+describe a novel approach that enables agile-based
+organisations to develop and manage SPLs in a systematic
+lightweight fashion without risking the agility of their values
+and practices. The work in this paper proposes a flexible
+iterative incremental approach that reacts to unplanned
+changes at any time of the project’s lifecycle. We evaluated
+the feasibility of this approach, through a real-life empirical
+study, in order to investigate its strengths and weaknesses.
+Fig. 1. A Project’s success factors in relation to agile practices and RE
+activitiesIn the following section, we briefly discuss agile product
+line engineering, behaviour-driven development, and the
+Kanban method. Section 3 presents relevant literature while
+Section 4 discusses the proposed approach. Followed by
+Section 5 that presents the real-life empirical study and finally
+Section 6 concludes the paper and addresses the future work.
+II. B ACKGROUND
+A. Agile product line engineering
+Agile product line engineering (APLE) is the resulting ap-
+proach of integrating SPLE and ASD; the term was formally
+coined in the first APLE’06 workshop in the 2006 SPL con-
+ference [9]. In this workshop, it was acknowledged that both
+ASD and SPLE approaches share several common goals, such
+as managing changes in requirements, promoting product
+quality, and reducing both cost and time-to-market, albeit
+through different strategies [9]. Though there is a synergy be-
+tween the two approaches, addressing each other’s weakness-
+es, there exists difficulties in their integration. For example,
+the strategy used to handle requirements changes, the degree
+of focus on documentation, the level of user involvement re-
+quired, or the different development roles involved [10].
+A typical SPL has two phases: domain engineering (DE)
+and application engineering (AE) [8]. While the former phase
+focuses on conducting a comprehensive domain analysis to
+specify scope, core assets, and variations, the latter focuses on
+building individualised products based on the defined core
+assets and the identified variation points for that specific prod-
+uct [11]. When building a SPL, there are three widely recog-
+nised approaches, with respect to investment in cores assets, to
+choose from; proactive, reactive, and extractive [ 12 ]. Unlike
+the term reactive in ASD, the PL reactive approach does not
+treat each undertaken product as a new and relatively unique
+product [12]. It still treats it as a part of the already planned
+products in the family but instead of implementing the whole
+family at the beginning, the family is built in increments. SPL
+reactive approach does not react to the changes of the custom-
+er’s requirements [12]. Generally, SPLs use core assets to in-
+crease the level of software reusability and mass customisation
+while decreasing costs and delivery time. This systematic de-
+velopment of a product family considerably improves the de-
+livered quality when compared to individual customised appli-
+cations [8].
+B. Behaviour-Driven Development
+Behaviour-driven development (BDD) is a software
+development process that encourages collaboration between
+different stakeholders (i.e. developers, testers, and non-
+technical/business personnel) of a software project [13]. It was
+created to overcome the shortcomings of test-driven
+development (TDD) such as the starting point of testing, what
+to test and what not to test, how much to test in one iteration,
+how to understand why a test fails, as well as the lack of
+naming conventions for tests [13]. BDD combines the general
+methods and practices of TDD with concepts from domain-
+driven design and objected-oriented analysis and design. Thus,
+a shared process and understanding to all the involved
+stakeholders, is provided to successfully collaborate on
+software development with well-defined outputs [13]. BDD
+delivers working and tested software while managing
+traceability between the different artefacts [13].
+BDD has six main characteristics: ubiquitous language
+[14], iterative decomposition process [15], plain text
+description for user story and scenario templates [16],
+executable acceptance tests (EATs) with mapping rules
+[13,17], readable behaviour oriented specification code [13],
+and cross-cutting the different activities of software
+development [13]. BDD emphasises the production of a
+concise clear user requirements and a live documentation
+while efficiently maintaining traceability relations in an agile-
+based product line. This is achieved through the use of
+specification by example (SBE). According to Gojko Adzic
+[18], “SBE is a set of process patterns that facilitate change in
+software products to ensure that the right product is delivered
+efficiently”. In BDD, SBE is used to illustrate the behaviour of
+the system; they are written before writing the code using the
+ubiquitous language. They also can be used as a direct input
+into building automated tests reflecting the business domain.
+Automated testing makes it feasible to run the tests as many
+times as needed against the written code to verify and validate
+a feature completion.
+C. The Kanban Method
+Kanban is a lean workflow management method that is de-
+signed to help visualise work, maximise efficiency, and be
+agile [19]. It started as a scheduling system for lean manufac-
+turing originating from the Toyota Production System. It is an
+incremental evolutionary method which adopts the pull system
+approach (i.e. production is based on the customer’s demand).
+This minimises wasting activities without sacrificing produc-
+tivity while creating more value for the customer without gen-
+erating more costs. Kanban has four core principles: (1) start
+with what you do now; (2) agree to pursue incremental evolu-
+tionary change; (3) respect the current process, roles, and re-
+sponsibilities; and (4) encourage acts of leadership at all levels
+[19]. It, also, adopts six practices: (1) visualise your workflow;
+(2) limit work in progress; (3) manage flow; (4) make process
+policies explicit; (5) feedback loops through stand-up, service
+delivery review, operations review, and risk review meetings;
+and (6) improve collaboratively using models and the scien-
+tific method [19]. The simplest form of applying Kanban is
+sticky notes on a white board. Modern-day Kanban, however,
+uses software tools to allow easy access for remote team
+members, perform flow analytics, and automate workflow in
+addition to the ability of integration with other tools.
+III. R ELATED W ORK
+The research instrument used for this section is literature
+review. To guarantee high quality work, papers were fetched
+only from electronic databases such as Inspec, IEEE Xplore,
+SpringerLink, SpringerLink, ScienceDirect, ACM Digital
+Library, and ISI Web Knowledge. The main focus of the
+search was the proceedings of Software Product Line
+Conference, Agile Conference, eXtreme ProgrammingConference, Agile Product Line Engineering Workshop, and
+Requirements Engineering Conference.
+In spite of the rich APLE literature [20-41], none was able
+to address RE in an all-inclusive manner [42-46]. Nearly all
+the work in the literature focused on one or two RE activities
+such as: scoping [20], planning [21,22], modelling [23], PL
+architecture design [24,25], traceability and management [26-
+30], and variability identification and management [31-35].
+Only the work of the authors in [36,37] proposed a holistic
+framework called APLE-RE. That framework recommends a
+set of RE techniques and process patterns based on the nature
+and the characteristics of a given project. APLE-RE is com-
+posed of two phases: a) knowledge acquisition where expertise
+is collected from researchers and practitioners using agile and
+PL RE techniques; and b) process repository where a set of
+process patterns, based on the collected expertise, is offered to
+requirements engineers to choose from or tailor a pattern for
+the respective agile PL project. Despite the potentiality of the
+APLE-RE, it was an unrealistic framework. For example, the
+framework was domain-specific with no general data source.
+In addition, the authors were able to validate only 2 out of 171
+process patterns, they originally identified, due to time and
+cost concerns. Not to mention that that validation did not de-
+pend on any formal methods; it was subjective. Furthermore,
+data was collected from project managers only rather than all
+the involved stakeholders, which is not only in a direct contra-
+ry to the agile principles but also did not reflect the complete
+and comprehensive perspective of the involved participants.
+Another effort in the literature is accredited to the authors
+of [38-41] where they presented a reactive variability man-
+agement framework to lower the adoption barrier of SPLs in
+agile environments. The authors highlighted the importance of
+having a systematic approach to reactively define commonali-
+ty, variability, and software reuse in SPLs while guaranteeing
+high quality by validating the finished work through executa-
+ble acceptance test and test-driven development. Nonetheless,
+the proposed framework was not tested in a real project but
+was rather rested through academic case studies. As a further
+of matter, the work was not even tested in a holistic manner in
+order to be able to report how the different components of the
+framework interplays. And lastly, the robustness and effec-
+tiveness of the framework were not tested in a large-scale en-
+vironment.
+Unlike the presented literature, except for the work pre-
+sented in [38-41], our proposed approach places emphasis on
+developing SPL in an agile environment and not the other way
+around where some agile practices are adopted in an already
+existing SPL environment. Additionally, none of the efforts
+presented in this section covered all the phases of RE, or con-
+ducted real-life empirical studies to validate their work, or
+attempted the use of BDD and the Kanban method to develop
+and maintain an agile-based PL. While these contributions are
+interesting attempts to address RE in APLE, their focus is dif-
+ferent from ours. The work presented in this paper focuses on
+using BDD and the Kanban method to produce a comprehen-
+sive lightweight RE approach. That approach reactively and
+incrementally establishes and manages SPLs in agile-based
+organisations regardless of the level of their SPL domain ex-
+perience. To the best of our knowledge, this research focus is
+original and has not been previously discussed in the literature.
+IV. T HE P ROPOSED A PPROACH
+Producing a concrete, complete, and unambiguous
+requirements has always been a hard task to achieve in SPLs.
+Though bringing ASD into the scene made the task more
+feasible, there is still few challenges: (1) efficiently and
+effectively eliciting and communicating cores assets and
+variability to stakeholders; (2) traceability of core assets and
+variability from the requirements to the core; (3) managing
+and tracking cores assets across different products in the
+family; and (4) having an up-to-date documentation. In this
+paper, we introduce a RE approach addressing the
+aforementioned challenges. This idea was initially introduced
+in our previous work in [47]. The approach is based on BDD
+and the Kanban method. It covers the five activities of the RE
+process for functional and non-functional requirements. This
+section describes how RE, the Kanban method, and BDD
+interplay.
+A. Implementing requirements engineering within behaviour-
+driven development
+The RE process relies on the notion that business goals are
+already identified. Business goals (functional and non-
+functional) are usually derived from the business need to find-
+ing solutions for a specific business problem. The discussion
+to follow assumes that business goals are available for the
+team to start their RE process. Fig. 2. offers an in-depth look
+of how the BDD set of process patterns are implemented
+throughout the five activities of the RE process. For each ac-
+tivity, the inputs and outputs are presented while highlighting
+which role does what task. Each RE activity is addressed in
+further details as follows:
+• Step 1: Requirements elicitation: this is the first step in
+the RE process where the work starts outside-in. The
+customer’s representatives and the development team
+conduct collaborative meetings to brainstorm solutions
+achieving the requested business goals. Collaborative
+meetings intend to get everyone involved in the prod-
+uct to share their perspective, have a common under-
+standing, and feel ownership. After these meetings, the
+development team uses low/high fidelity prototyping to
+examine the validity of the proposed set of solutions
+hypotheses. After negotiations and reaching a consen-
+sus on the relevant solutions set, stakeholders conduct
+collaborative meetings for scoping. Scoping is the pro-
+cess of determining the set of features reflecting the
+system goals. In this paper, we use the term feature to
+refer to an independent functionality in the system de-
+livering a business value [48]. There are no constraints
+on the size of a feature as long as the customer consid-
+ers it an added value to the delivered system. Internal-
+ly, however, product owners in collaboration with de-
+velopers often choose to slice down feature into sub-
+features. Thus, making it more manageable, testable,
+and releasable within a cycle time. The development•
+•
+team has to make sure, however, that the slicing did not
+affect the behaviour of the original feature. The initial
+set of features, that should be developed in the next cy-
+cle time, is determined after negotiations in collabora-
+tive meetings where all the stakeholders are encour-
+aged to attend.
+Step 2: Requirements analysis: the new elicited fea-
+tures along with existing features, from previous prod-
+ucts in the family, are further analysed and negotiated
+to identify potential core assets and variabilities. These
+negotiations take place through the specifications
+workshops (aka Three Amigos meeting). The Three
+Amigos are the business analyst (BA), the quality as-
+surance (QA) personnel, and the developer. Though
+other stakeholders are encouraged to attend these
+workshops but only the Three Amigos are responsible
+and accountable of the features from their definition to
+their delivery. During these workshops, features are
+examined to determine their relevancy and clarity. If a
+missing requirement or an irrelevant/unclear feature is
+determined, the process goes back to the first step for
+further understanding. Otherwise, the process proceeds
+to requirements modelling. The Three Amigos use a
+ubiquitous language and a domain vocabulary (a glos-
+sary is maintained if required) to establish a common
+understanding of the requirements; this helps them lo-
+cating differences and conflicts. The output of this ac-
+tivity is a set of user stories for each feature. A user
+story describes an activity that is done by a user in a
+given role. When the word “optional” is added to the
+description of a user story, it means that that user story
+represents a variability rather than a core asset feature.
+Step 3: Requirements modelling: in addition to using
+diagrams to model the requirements, the developing
+team uses examples to elaborate the user stories pro-
+duced from the previous step. In this step, each identi-
+fied user story is illustrated with a set of examples rep-
+resenting real cases. Examples are written in the form
+of a scenario with actual values. A scenario describes
+how the system should behave when it is in a specific
+state for a specific feature and a specific event happens.
+Scenarios exemplify the behaviour of the system while
+acting as the acceptance criteria of that system. The
+development team continues to discuss examples until
+reaching an agreement on the set of examples covering
+the expected behaviour of each feature. These scenari-
+os should represent 5 or 6 key examples, 1 – 3 end-to-
+end flows, in addition to the edge cases, so that it is
+clear what is expected from each feature. Using actual
+values in scenarios help identifying the variants of each
+variation point in a product line. After negotiations, the
+development team produce the initial set of scenarios;
+in case a perplexing core asset or variant is identified,
+the team decides whether they need to go back to the
+requirements analysis activity, for further investigation,
+or to proceed to the next step.
+•
+•
+Step 4: Requirements verification and validation: the
+three Amigos meet again to refine the developed key
+example scenarios based on their relevancy and im-
+portance. To ensure that a scenario passes, all the test
+cases for that scenario must pass. In order to achieve
+that, one need to be precise in writing the examples. If
+an example turns to be complex, it can be sliced into
+simpler examples. Focus should always be on the busi-
+ness rather than the technical perspective. Following
+the standardised mapping rules of BDD, when map-
+ping from scenarios to test cases, guarantees a better
+traceability management. Scenarios should consider
+both negative and positive conditions while specifying
+any additional business rules if needed. Non-functional
+scenarios – addressing performance, security, usability,
+etc. – should be covered as well if they reflect a busi-
+ness value for the customer. All these examples are ne-
+gotiated and discussed with the customer in order to be
+filtered to only those in which the customer is interest-
+ed. In case an anomaly is detected in this activity, the
+three amigos may decide to go back to the require-
+ments modelling or to the initial requirements elicita-
+tion activity. After deciding the final set of scenarios,
+the development team automates them; this is done
+through wiring the specifications to the system under
+test. Each automated specification represents an ac-
+ceptance criterion of the system that is linked to an ex-
+ample of the behaviour of that system. That connection
+helps later on with managing traceability between the
+different artefacts of the system. The output of this step
+is the actual implementation of variation points and
+variants at the code level.
+A cross-cutting step: Requirements management: re-
+quirements are maintained and managed throughout
+Fig. 2. The implementation of the five RE activities in BDDeach activity of the RE process. Executable specifica-
+tions, in particular, benefit requirements management
+in multiple aspects. For one, it produces an evolving
+live documentation where all the core assets, variabili-
+ties, and the associated variants are documented and ef-
+ficiently managed. Secondly, it delivers a continuously
+validated system that is constantly evolving to meet the
+required business goals. Finally, it allows to test and
+integrate the frequent software increments as many
+times as needed in a lightweight manner. When a
+change (e.g. adding/removing a feature/user sto-
+ry/scenario) is introduced into the system, it is checked
+against the business goals to determine its validity. The
+steps in Fig. 2 are carried out in an iterative and incre-
+mental fashion.
+B. Implementing the Kanban method within behaviour-driven
+devlopment
+Kanban and BDD advocate the same core principles of in-
+cremental iterative development and starting with what need to
+be done in the next cycle time. They also share the common
+fundamentals of delivering value to customers as fast as possi-
+ble, ensuring that everyone shares a common understanding
+and well-aware of the process policies, boosting collaboration
+and productivity, and bringing flexibility on board. Bringing
+Kanban and BDD together gets the team to be more responsive
+while reinforcing the involvement of customers from the be-
+ginning of the project until it is finished. Furthermore, Kanban
+allows the team to (1) locate and alleviate bottlenecks in the
+workflow as early as possible; (2) prevent overloading the
+work processes; and (3) prevent constant context switching
+between work items. Using Kanban boards allow the team to
+explicitly state the mapping rules and the ubiquitous language
+of BDD in the process policies. Thus, offers a quick easy refer-
+ence/reminder for stakeholders whenever needed. Using Kan-
+ban software tools also allow team members in large scale pro-
+jects to communicate effectively regardless of their location.
+Even when a team member misses one of the feedback meet-
+ings, they can still know the latest updates in the project by
+visiting the Kanban board at any time. Kanban and BDD com-
+plements each other to deliver the most value to the customer at
+the nearest possible time.
+V. E VALUATION : A R EAL -L IFE E MPIRICAL S TUDY
+In the previous section, we presented a methodology to
+produce and manage RE using BDD and the Kanban method.
+Here, we present an evaluation to investigate the feasibility and
+usefulness of our proposed approach. The research instruments
+used in this real-life empirical study varied from direct obser-
+vation, structured observation, observer participant, to discus-
+sion groups based on our level of understanding and familiarity
+with the product under study. We tested the proposed approach
+in a small-sized start-up agile-based company with an intensive
+experience in agile development. The company adopts both the
+Kanban and the Scrum agile methods. The company focus on
+the main practices of iterative and incremental development,
+refactoring, automated testing, short iterations, self-organising
+cross-functional teams, pair programming, continuous deploy
+Fig. 3. A feature file in Cucumber
+Fig. 4. Steps Definition
+ment, progressive discovery, user story maps, and Objectives
+and Key Results (OKRs). The product under study, Revosuite,
+is an AI-enabled CRM/CLM/BI system for pharmaceutical and
+life sciences businesses; it is a Business-to-Business Enterprise
+SaaS. The Revosuite team embraced our proposed approach as
+it adds no burden on them since it shares the same essence of
+their already existing agile practices.
+As BDD is the core of the proposed approach, we consid-
+ered a common tool to write and run SBE called Cucumber
+[49, 50]. Cucumber is a supporting toolkit for BDD; it uses a
+language called Gherkin to define test cases. Gherkin is a hu-
+man readable non-technical language that provides a script for
+automated testing [49]. This facilitates the production of a sim-
+ple documentation of the code under test [49]. This means that
+the system's specifications are maintained alongside the system
+codebase in the same version control repository. As shown in
+Fig. 3, each feature contains a list of scenarios; hence, each
+feature will have more than one automated specification/testing
+case. In Cucumber, each feature under test along with its op-
+tional description and the associated list of scenarios are stored
+in a file called a feature file. To link these test cases to the actu-
+al code, Cucumber uses a step definition. A steps definition file
+stores the mapping between each step of the scenario defined in
+the feature file with the code of the function to be executed. As
+shown in Fig. 4, when Cucumber executes a step of a scenario,
+it scans the step definition file and figures out which function is
+to be called. In this empirical study, Kanban was implemented
+using the Trello software [51].
+A. Goal
+The goal of this empirical study is to examine the applica-
+bility of the proposed approach in a real-life industrial case
+study. The elements to be studied are deduced from the essence
+of BDD and the Kanban method. In particular, we are examin-TABLE I.
+T ABLE 1. T HE STUDY ELEMENTS AND THE REQUIRED
+OBSERVATIONS
+Element
+Required Observation
+Evolution We will observe whether the participant will be able
+to start a feature and integrate new changes as they
+arise. The final state of the feature should be
+consistent with the behaviour expected by the
+customer
+Learnability We will observe if the participants will be able to:
+• use the BDD ubiquitous language to write features,
+user stories, and scenarios;
+• use specifications by example as the building units
+of the proposed approach; and
+• use mapping rules to relate automated tests to the
+respective scenarios and user stories.
+Coherence We will observe whether the participant will be able
+to effectively communicate and share a consistent
+output compared to the demanded business goals.
+Restrictions/
+Conflicts We will observe if the participant will be able to
+deduce all explicit and implicit restrictions and
+conflicts from the automated specifications by
+example.
+Readability We will observe whether the participant will be able
+to understand the code in the system’s
+documentation.
+ing five elements: learnability, evolution, consistency, re-
+strictions/conflicts, and readability. Error! Reference source not
+found. lists these elements and the required observations for
+each one of them to this study. The participants in this study
+were selected from the pool of people who worked on the de-
+velopment and maintenance of Revosuite except for the partic-
+ipants representing customers. The total number of participants
+is 23 categorised as follows: 5 business analysts, 10 developers,
+and 5 testers, and 3 customer’s representatives. Of course, the
+development team worked interchangeably but they witnessed
+the changes and differences in development throughout the
+lifetime of the Revosuite product family. After explaining the
+proposed approach to the participants, they were offered a
+training on how to implement BDD along with Kanban. To
+observe the performance of the participants, they took part in
+multiple pilot projects, varying in complexity, throughout the
+lifetime of Revosuite. We, also, developed a questionnaire ad-
+dressing the elements listed in Error! Reference source not
+found. in further details and asked our participants to fill it in.
+B. Pilot Projects Results
+The performance of the participants was measured by the
+time they spent on each feature and the consistency of their
+outcome compared to that expected by the business goals. Nat-
+urally, pilot projects with higher complexities took more time
+from the participants. The consistency of their outcomes, how-
+ever, was mostly the same except for the participants represent-
+ing customers; they had some difficulties with complexed fea-
+tures. In low-medium complexed pilot projects, we observed
+that more than 80% of the participants were able to start a fea-
+ture that eventually evolve into either a core asset or a variabil-
+ity. They were able to integrate changes as they come where
+the final state of a feature was consistent with the behaviour
+expected by the customer. For learnability and coherence, all
+the development participants were able to achieve the three
+aspects under learnability and having consistent output with
+minor differences. Customers’ participants, on the other hand,
+were above average at the second and third aspects of learnabil-
+ity while they excelled in using the BDD ubiquitous language
+and producing consistent output to that of the expected one by
+the business goals. Though all the participants were able to
+detect explicit constraints and underline conflicts, only 70% of
+them were able to spot implicit restrictions. Nevertheless, all
+participants were able to easily read and understand the docu-
+mentation. For high complexed pilot projects, the observation
+was reasonably in-line with the one of low-medium complexed
+pilot projects except that more time was needed on each feature
+and the performance of the customers’ participants was de-
+creased by nearly 20%.
+C. Questionnaire Results
+Due to the diversity background of the participants, every
+one answered from their perspective. Error! Reference source
+not found. presents the responses to the Likert-scale questions.
+A collaborative opinion was reached that: a) requirements were
+concise, complete, and unambiguous; b) everyone understood
+better what is being developed; c) developers were able to bet-
+ter track the development progress; d) testers had a clearer un-
+derstanding about what is being tested as they were involved
+from the beginning and had a role in the design; e) a quality
+product is produced from the beginning; and f) documentation
+was read by everyone and was constantly up-to-date. Repre-
+senting the system features using SBE, however, was confusing
+and out of the comfort zone of some of the customer represent-
+atives, analysts, and testers.
+VI. C ONCLUSIONS AND F UTURE W ORK
+The paper contributed a novel approach to requirements
+engineering in agile software product lines. The approach ena-
+bles agile organisation to systematically and effectively devel-
+op and manage agile-based product lines.
+Fig. 5. The questionnaire Likert-scale responsesThe authors introduced the collaboration of behavior-driven
+development and the beginning through fostering early-on
+collaboration and communication. Thus, a lot of resources -
+such as time and money - are spared compared to the conven-
+tional product line development methods. The proposed ap-
+proach is tested and validated in a real-life industrial case
+study. The empirical study that spanned over 8 years reported
+very promising and positive results. The main findings of the
+study were the feasibility to produce well-defined concrete
+R EFERENCES
+[1] Kontonya, G., Sommerville, I.: Requirements Engineering:
+Processes and Techniques. John Wiley & Sons. (1998).
+[2] Chemuturi, M.: Requirements Engineering and Management
+for Software Development Projects. Springer Publishing
+Company. (2012).
+[3] Westfall, L.: Software Requirements Engineering: What, Why,
+Who, When and How?. Retrieved from
+http://www.westfallteam.com/Papers/The_Why_What_Who_
+When_and_How_Of_Software_Requirements.pdf, last ac-
+cessed 2018/11/12
+[4] Standish Group, The CHAOS Report 2015, Retrieved from
+https://www.standishgroup.com/sample_research, last accessed
+2015/10/2
+[5] Williams, L., Cockburn, A.: Agile Software Development: It’s
+About Feedback and Change. Computer 36(6), 39–43 (2003).
+[6] Jacobson, I., Griss, M., Johnson, P.: Software Reuse: Architec-
+ture, Process and Organization for Business success. ACM
+Press. USA (1997)
+[7] Mili, H., Mili, F., Mili, A.: Reusing Software: Issues and Re-
+search Directions. IEEE Transactions on Software Engineering
+21(6), 528–562 (1995).
+[8] Clements, P., Northrop, L.: Software Product Lines: Practices
+and Patterns. Addison-Wesley. USA (2001).
+[9] Cooper, K., Franch, X.: APLE First International Workshop on
+Agile Product Line Engineering. IEEE Computer Society. pp.
+205–206. Silver Spring, USA (2006).
+[10] Hanssen, G.k., Fægri, T.E.: Process Fusion: An Industrial
+Case Study on Agile Software Product Line Engineering.
+Journal of Systems and Software 81(6), 843–854 (2008).
+[11] Pohl, K., Böckle, G., Linden, F.: Software Product Line Engi-
+neering: Foundations, Principles and Techniques. Springer.
+Germany (2005).
+[12] Mcgregor, J.:Agile Software Product Lines, Deconstructed.
+Journal of Object Technology 7(8), 7 – 19 (2008).
+[13]
+Behavior
+Driven
+Development,
+https://en.wikipedia.org/wiki/Behavior-driven_development,
+last accessed 2018/1/1
+[14] Evans, E.: Domain-Driven Design: Tackling Complexity in
+the Heart of Software. Addison-Wesley Professional. Germany
+(2003)
+[15]
+North,
+D.:
+Introducing
+BDD.
+Available
+at:
+http://dannorth.net/introducing-bdd (2006)
+[16] Chelimsky, D., Astels, D., Helmkamp, B., North, D., Dennis,
+Z., and Hellesoy, A.: The RSpec Book: Behaviour Driven De-
+velopment with Rspec, Cucumber, and Friends. 1st ed. Prag-
+matic Bookshelf. (2010)
+[17] Astels, D.: A new look at test driven development.
+http://techblog.daveastels.com/files/BDD_Intro.pdf, last ac-
+cessed 2019/3/1
+user requirements for an agile software product line while cut-
+ting cost and time-to-market. Future work includes conducting
+an empirical research to further investigate the industrial case
+study presented in this paper.
+A CKNOWLEDGMENT
+The authors would like to thank Revosuite company for
+their cooperation and guidance.
+[18] Adzic, G.: Specification by Example: How Successful Teams
+Deliver the Right Software. Manning Publications. (2011)
+[19] Hammarberg, M., Sunden, J.: Kanban In Action. Manning
+Publications. (2014)
+[20] Noor, M.A., Rabiser, R., Grünbacher, P.: A Collaborative
+Approach for Reengineering-Based Product Line Scoping. In:
+1st International Workshop on Agile Product Line Engineering
+(In conjunction with SPLC), USA (2006)
+[21] Noor M.A., Rabiser, R., Grünbacher, P.: Agile Product Line
+Planning: A Collaborative Approach and a Case Study. Journal
+of Systems and Software 81(6), 868–882 (2007)
+[22] Noor, M.A., Grünbacher, P., Hoyer, C.: A Collaborative
+Method for Reuse Potential Assessment in Reengineering
+Based Product Line Adoption. In: Balancing Agility and For-
+malism in Software Engineering. LNCS, vol. 5082, pp. 69–83.
+Springer, Heidelberg (2008)
+[23] Trinidad, P., Benavides, D., Durán, A., Ruiz-Cortés, A., Toro,
+M.: Automated Error Analysis for the Agilization of Feature
+Modeling. Journal of Systems and Software 81(6), 883–896
+(2008)
+[24] Paige, P., Wang, X., Stephenson, Z., Brooke, P.: Towards an
+Agile Process for Building Software Product Lines. In: Pro-
+ceedings of the 7th International Extreme Programming and
+Agile Processes in Software Engineering, pp.198–199. Spring-
+er, Heidelberg (2006)
+[25] Kakarontzas, G., Stamelos, I., Katsaros, P.: Product Line Var-
+iability with Elastic Components and Test-Driven Develop-
+ment. In: Proceedings of the 2008 International Conference on
+Computational Intelligence for Modelling Control and Auto-
+mation, pp. 146–151. IEEE Computer Society, Austria (2006)
+[26] Raatikainen, M., Rautiainen, K., Myllärniemi, V., Männistö,
+T.: Integrating Product Family Modeling with Development
+Management in Agile Methods. In: Proceedings of the 1st In-
+ternational Workshop on Software Development Governance,
+pp. 17–20. ACM, USA (2008)
+[27] Taborda, L.: The Release Matrix for Component-Based Soft-
+ware Systems. In: Proceedings of Component-Based Software
+Engineering, LNCS, vol. 3054, pp. 100–113, Springer, Heidel-
+berg (2004)
+[28] Kurmann, R.: Agile SPL-SCM Agile Software Product Line
+Configuration and Release Management. In: 1st International
+Workshop on Agile Product Line Engineering (In conjunction
+with SPLC). USA (2006)
+[29] Carbon, R., Lindvall, M., Muthig, D., Costa, P.: Integrating
+Product Line Engineering and Agile Methods: Flexible Design
+Up-Front VS. Incremental Design. In: Proceedings of the 1st
+International Workshop on Agile Product Line Engineering (In
+conjunction with SPLC). USA (2006)
+[30] Carbon, R., Knodel, J., Muthig, D., Meier,G.: Providing
+Feedback from Application to Family Engineering – The
+Product Line Planning Game at the Testo AG. In: Proceedings
+of the 12th International Software Product Line Conference,
+IEEE Computer Society, pp. 180–189. IEEE, Ireland (2008)[31] O’Leary, P., Babar, M.A., Thiel, S., Richardson, I.: Product
+Derivation Process and Agile Approaches: Exploring the Inte-
+gration Potential. In: Proceedings of the 2nd IFIP Central and
+East European Conference on Software Engineering Tech-
+niques, pp. 166–171 (2007)
+[32] O’Leary, P., Babar, M.A., Thiel, S., Richardson, I.: Towards
+Agile Product Derivation in Software Product Line Engineer-
+ing. In: Proceedings of the 4th International Workshop on Rap-
+id Integration of Software Engineering Techniques, pp. 19–32
+(2007)
+[33] O’Leary, P., Thiel, S., Botterweck, G., Richardson, I.: To-
+wards a Product Derivation Process Framework. In: Proceed-
+ings of the 3rd IFIP TC2 Central and East European Confer-
+ence on Software Engineering Techniques, pp. 189–202 (2008)
+[34] O’Leary, P., McCaffery, F., Richardson, I., Thiel, S.: Towards
+Agile Product Derivation in Software Product Line Engineer-
+ing. In: Proceedings of the 16th European Conference on
+Software Process Improvement, pp. 81–86 (2009)
+[35] O’Leary, P., Rabiser, R., Richardson, I., Thiel, S.: Important
+Issues and Key Activities in Product Derivation: Experiences
+from Two Independent Research Projects. In: Proceedings of
+the 13th International Software Product Line Conference, pp.
+121–130 (2009)
+[36] Feng, K., Lempert, M., Tang, Y., Tian, K., Cooper, K.,
+Franch, X.: Developing a Survey to Collect Expertise in Agile
+Product Line Requirements Engineering. In: Agile 2007 Con-
+ference. International Research-in-Progress Workshop on Ag-
+ile Software Engineering. pp. 1–4 (2007)
+[37] Feng, K.: Towards an Agile Product Line Requirements Engi-
+neering Framework: Knowledge Acquisition and Process Def-
+inition, Ph.D. Dissertation, The University of Texas at Dallas
+(2009)
+[38] Ghanam, Y., Park, S., Maurer, F.: A Test-Driven Approach to
+Establishing and Managing Agile Product Lines, In: Proceed-
+ings of the 5th Software Product Lines Testing Workshop in
+conjunction with SPLC’08, pp. 151–156 (2008)
+[39] Ghanam, Y., Maurer, F.: An Iterative Model for Agile Product
+Line Engineering. In: The SPLC Doctoral Symposium, 2008 -
+in conjunction with the SPLC’08, pp. 377–384 (2008)
+[40] Ghanam, Y., Maurer, F.: Extreme Product Line Engineering:
+Managing Variability and Traceability via Executable Specifi-
+cations. In: Agile Conference, AGILE ’09, IEEE Computer
+Society, pp. 41–4 (2009)
+[41] Ghanam, Y., Maurer, F.: Extreme Product Line Engineering
+Refactoring for Variability: A Test-Driven Approach. In: Pro-
+ceedings of 11th International IV Conference on Agile Pro-
+cesses in Software Engineering and Extreme Programming,
+XP 2010, LNBIP, vol. 48, pp. 43–57, Springer, Heidelberg
+(2010)
+[42] Neiva, D.F.S.: RiPLE-RE: A Requirements Engineering Pro-
+cess for Software Product Lines, M.Sc. Dissertation, Univer-
+sidade Federal de Pernambuco, Brazil (2009)
+[43] Alves, V., Niu, N., Alves, C., Valença, G.: Requirements En-
+gineering for Software Product Lines: A Systematic Literature
+Review. In: Information and Software Technology, vol. 52(8),
+pp. 806–820 (2010)
+[44] Díaz, J., Pérez, J., Alarcón, P.P., Garbajosa, J.: Agile Product
+Line Engineering – A Systematic Literature Review. In: Soft-
+ware Practice and Experience, vol. 41(8), pp. 921–941 (2011)
+[45] da Silva, I.F. , Neto, P., O'Leary, P., de Almeida, E., de Lemos
+Meira, S.R.: Agile Software product lines: a systematic map-
+ping study, Software: Practice and Experience, vol. 41(8), pp.
+899–920 (2011)
+[46] Farahani, F. F., Ramsin, R.: Methodologies for Agile Product
+Line Engineering: A Survey and Evaluation. In: Proceedings
+of the 13th International Conference SoMeT_14, Amsterdam:
+IOS Press BV, pp.545-564 (2014)
+[47] Elshandidy, H.: Behaviour-Driven Requirements Engineering
+for Agile Product Line Engineering. In: 2019 IEEE 27th Inter-
+national Requirements Engineering Conference (RE). Jeju Is-
+land, Korea (South). 434-439 (2019)
+[48] Apel, S., Batory, D., Kstner, C., Saake, G., Feature-Oriented
+Software Product Lines: Concepts and Implementation.
+Springer Publishing Company. (2013)
+[49] Cucumber, https://cucumber.io/ , last accessed 2019/05/05
+[50] Wynne, M., Hellesoy, A., The Cucumber Book: Behaviour-
+Driven Development for Testers and Developers, Pragmatic
+Bookshelf (2012)
+[51] Trello: https://trello.com/
+

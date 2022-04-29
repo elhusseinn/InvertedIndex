@@ -1,0 +1,618 @@
+The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+Extracting N-gram Terms Collocation from
+Tagged Arabic Corpus
+Waseem Alromima
+Faculty of Computer and
+Information Science
+Ain Shams University, Egypt
+waseem.2020@yahoo.com
+Rania Elgohary
+Faculty of Computer and
+Information Science
+Ain Shams University, Egypt
+rania_elgohary@yahoo.com
+Abstract—Information Extraction (IE) is one of the most
+important Natural Language Processing (NLP) applications,
+which extracts information such as Named-Entities (NE) and
+collocation of terms from the corpus. Collocation is a sequence of
+terms that co-occur together in the corpus. In Arabic
+Information Extraction, there are many problems because of the
+complex of Arabic’s grammar and ambiguity. In general, in
+linguistics research, the more efficient corpus is the one
+annotated by Part of Speech Tagging (POST). In this paper, we
+propose a prototype that extracts collocation of N-gram words
+(from 2- 6 gram) based on the sequence of POST from Arabic
+Quran corpus. This approach extracts the collocation of N-gram
+words by matching the input structured pattern of Arabic
+language versus the Part of Speech Tagging of Quran corpus.
+The system enables users to select a sequence of tags (2-6 gram)
+and scope of the corpus source (whole Quran Corpus or specific
+Surah). To show how the system is beneficial for linguistic
+research, a set of experiments has been conducted in different
+scenarios.
+Keywords— Information Extraction; Arabic Phrases;
+Computational linguistics; n-gram; Part-of-Speech Tagging
+(POST)
+I. I NTRODUCTION
+Information extraction (IE) is one of the most important
+Natural Language Processing (NLP) applications, which
+extracts structured information such as Named-Entities (NE) or
+collocation of terms [14] from unstructured or semi-structured
+text. Generally, the term extraction (TE) process consists of
+two steps: (1) identifying term (either single or multi–word
+terms) from text, and (2) filtering through the candidates to sort
+out terms from non-terms [11]. Example for using TE is to
+extract the most important words from the text and using these
+words to summarize the content based on them. Moreover
+Arabic Natural Language Processing (ANLP) has gained an
+importance field and several state of the art systems have
+developed for a wide range of applications, including text
+summarization, Proper Noun Extraction [17]. ANLP still in its
+open research compared to the works have done in the Latin
+language, because there are some issues that slow down
+progress in ANLP [18] [19].
+These issues illustrate as the following:
+a. Arabic is highly inflectional and derivational, which
+makes morphological analysis a very complex task.
+Ibrahim F. Moawad
+Mostafa Aref
+Faculty of Computer and
+Faculty of Computer and
+Information Science
+Information Science
+Ain Shams University, Egypt Ain Shams University, Egypt
+ibrahim_moawad@cis.asu.edu.eg
+Aref_99@yahoo.com
+b.
+The absence of diacritics in the written text creates
+ambiguity and, therefore, complex morphological rules
+are required in order to identify the tokens and parse the
+text.
+c. Diacritics are not consistent or predictably marked with
+Arabic letters.
+d. The writing direction is from right-to-left and some of the
+characters change their shapes depending on their
+location in the word.
+e. Capitalization is not used in the Arabic language, which
+makes it hard to identify proper nouns and abbreviations.
+The collocation term is defined as a sequence of terms that co-
+occur together in the corpus. Other definition, it is the two or
+more words, which appear together and always seem as
+associated [9]. The collocations are important in many
+applications, such as, machine translation, information
+retrieval, information extraction, word sense disambiguation
+and lexicography.
+In general, in linguistic research, the more efficient corpus
+is the one annotated by Part of Speech Tagging (POST). The
+main usages of the corpus are statistical analysis, occurrences
+checking, and linguistic rules validating on a specific universal
+[13]. The tagged is assigned every word in the corpus by tag
+such as (noun, verb, adjective, etc.), so that the tag of the word
+gives important information about the word to understand the
+context. Moreover stop Words eliminations are improved the
+collocation while it’s improved in the Arabic text classification
+[21].
+In Arabic Information Extraction, there are many
+problems because of the complex of Arabic’s grammar and
+ambiguity, and hence this constitutes the difficulties of
+identifying the collocations. The Arabic Quran Corpus is
+annotated linguistic resource consisting of 77,430 words.
+According to the Quran project developed by Leeds University
+[3], it aims to provide morphological and syntactic annotations
+for researchers who want to study the language of the Quran.
+In this paper, we propose a prototype that extracts
+collocation of N-gram words (from 2- 6 gram) based on the
+pattern sequence of tags from the Arabic Quran corpus. This
+approach extracts the collocation of N-gram words by
+matching the input structured pattern of Arabic language versus
+the Part of Speech Tagging of Quran corpus. The system
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-10The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+enables the users to select the scope of corpus data source and
+the pattern sequence of tags, and then the system extracts and
+displays the collocations. To show how the system is beneficial
+for linguistic research, a set of experiments has been conducted
+in different scenarios.
+The rest of this paper is organized as follow: Section 2
+presents the Related Work briefly. Section 3 describes the
+System Architecture. Section 4 describes the System
+Methodology while section 5 presents the Implementation of
+the system with case studies. Section 6 shows the experiments
+conducted to extract set of n-gram collocations and their
+results. The paper is concluded and presented in section 7.
+II. R ELATED WORK
+In this section, we overview the related researches
+concerning to extract Single-Word Term (SWT), Multi-Word
+Term (MWT), and collection terms.
+There is little research available for single-word term
+extraction, which relies on frequency-related data. According
+to [10], the authors have used the TF-IDF method to extract
+single-word terms from three domains: financial management
+succession, stock market, and crime drug domain. They have
+mentioned that; the TF-IDF approach is really appealing for
+extracting single-word terms, yet though it failed to deliver
+particular data, relating to its efficiency.
+In another research work at [5], the authors have been
+coming up with a method to assign the weight to each
+candidate word according to a vector of four features (Term
+Frequency-Inverse Document Frequency (TF-IDF), Part-of-
+speech tagging (POST), relative position of first occurrence,
+and Square chine ( ) statistics). The method, starts an
+automatic sorting of the candidates according to their scores in
+order to select the characters of the highest rank Authors
+showed the experimental results of the effectiveness of the
+approach.
+Alkhateb K. et al. at [1] presented a hybrid approach to
+extract Multi-Word Terms (MWT) from Arabic corpus. The
+authors compound nouns as an important type of MWT and
+select a bi-gram terms. The approach depends on two main
+filtering, starts to linguistic filter (preprocessing, extract of
+noun sequence as well as noun connected by prepositional, and
+extract of bi-gram) and then statistical filter: rank the bi-gram
+based on Log-Likelihood Ratio (LLR) and C-value method.
+The dataset used in a specific domain for the environment. The
+combined two evaluating methods, Log-Likelihood Ratio
+(LLR) and C-Value in the ranking process, the results with the
+top 150 terms are 89%.
+The research work in [7] presented an approach to extract
+collocations terms from Arabic corpora. Depend on using a
+Gate tool, which is a software tool kit written in Java and
+widely used worldwide for NLP and IE especially those of
+Named Entities. Extract binary or ternary additional
+information about morphology. The POS by using a tagged
+corpus developed at Leeds University and wrote new Jape
+(Java Annotation Pattern Engine) rules. The authors evaluated
+the system text with a reference (hand-annotated) text. The
+testing for Noun-Adjective annotation, annotated manually the
+same documents that are annotated using Jape rules with Gate,
+then used AnnotationDiff to calculate F.Measure, it gives 0.66.
+We think it’s a good approach for extraction collocation, but
+the authors presented few forms of extraction with low result,
+but the authors stated that they are working on improving it.
+Ibrahim Bounhas et al. at [2] presented an approach to
+build a semi-automatic linguistic method for Multi-Word
+Terms (MWT) from a specialized domain in Arabic corpus.
+By using two filtering methods: linguistic rules and statistical.
+The linguistic is based on the morphological features and POS
+(Part of Speech) tags to parse documents and retrieve candidate
+terms. The statistical is a measure used to rank candidate terms
+according to the relevancy. The dataset used in a specific
+domain for the environment. This approach is relevant to
+building ontology more than to extraction multi words, because
+the terms in the domain too small to calculate MWT.
+The research work in [12] designed a multi-word term
+extraction program for Arabic language. They used a hybrid
+method to extract multi-word terminology from Arabic corpus.
+From linguistic respective, they used some linguistic
+information to extract and filter the candidates of multiword
+terminology. Their method uses the part-of-speech tagging of
+the corpus that has been assigned by the Diab et al [16], to use
+in the linguistic filtering. The linguistic filter is to identify the
+Arabic MWT patterns, such as, N ADJ, N N and N PREP N.
+Finally, the tagging terms in the Quran corpus is an important
+part in the extraction terms based on the tagging sequence.
+According to [3], the researcher developed a new project of the
+Holy Quran, which can be freely downloaded. The linguistic
+data has been manually verified by multiple annotated and
+machine of readable. The project is annotated linguistic
+resource depends on the Arabic grammar, syntax; morphology
+for each word in the Holy Quran. The corpus provides three
+levels of analysis: morphological, syntactical tree bank, and
+semantic ontology.
+The research work at [6] developed the Arabic part-of-
+speech tags and employ to analysis and annotation of
+traditional Arabic text especially in the Holy Quran text. The
+Hidden Markov Models (HMMs) based-on the Arabic sentence
+structure used to develop the approach. The system represents
+each tag in the state of the HMM and transitions between tags
+governed by the syntax of the sentence. The trial is to extract
+text from a corpus of book ALJAHEZ's book titled by
+"Albayan-WA-Tobin" (255 Hijri) and It is obtained from
+"Ashamila" library. The experiments not used complete the
+Holy Quran in this approach, but the experiment gives a good
+accuracy for SURAH name ALFatiha and show the accuracy
+rate. They are using a training set and testing set to give
+recognition rate 96%.
+III. S YSTEM A RCHITECTURE
+As shown in Figure (1), the system architecture consists of
+two phases. The first phase is the offline phase, which
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-11The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+preprocesses the corpus. The second phase is the online phase,
+which consists of two main modules: the User Interface
+Module and the Matching Engine Module.
+The offline phase objective is to preprocess the corpus, the
+Quran corpus stored in a semi-structured format (XML
+language) obtained online from Leeds University [3]. This
+phase transforms the semi-structured format into structured
+format (relational database). The corpus (dataset) used in our
+approach is the scripts of the Holy Quran dataset, which
+consists of (114) chapter (SURA). Also, the Quran contains a
+total of (6,236) verse (AYA), a total of (77,430) word. All
+words in the corpus annotated by part-of-speech tagging
+(POST). The tag set used is the tag set developed by Leeds
+University [3].
+On the other hand, the online phase consists of two main
+modules: User Interface Module and Matching Engine Module.
+The user interface module interacts with the end user to input
+the collocation pattern features such as (scope of data source,
+type of gram, and pattern tags). The Matching Engine module
+matches the pattern features to the Arabic Quran Corpus
+(Structured Tagged Corpus), and then extracts the collocation
+terms based on the boundary of the AYAH in the SURA.
+Finally, the user interface module displays the results of the
+collocation terms to the end user.
+Fig,1 System Architecture
+IV. N-GRAM COLLOCATION METHODOLOGY
+The methodology of the n-gram collocation extraction process
+is illustrated by the flowchart shown in figure (2).The main
+flowchart steps are:
+1. The user starts to select the source of data (Specific
+SURA, Whole Quran Corpus).
+2. The user selects the type of N-gram such as bi-gram, tri-
+gram, n-gram where n from 4-6
+3. The user selects the pattern sequence of tags depending on
+the gram type selected in step 2.
+4. The matching engine starts to match the input data versus
+the tagged Quran corpus, and then displays the results. The
+pseudo code of matching engine algorithm is shown in
+figure (3).
+Fig. 2 flowchart of the N-gram collocation methodology
+Input: scope_of_data, type_of_gram, Seq-tags ,
+Output: collocation _of_words
+Begin {
+Phrase_collocation =‖ ‖, i=0, count =0
+For i=0 to scope_of_data do
+If Type_ of_ gram is ―bi-gram‖ then
+If Seq-tag= tag (i) and Seq-tag1= tag (i+1)
+Count_match_collocation +=1
+Phrase =Pharse + Phrase_collocation
+End if
+Return Phrase
+Else if Type_ of_ gram is ‖tri-gram‖ then
+If Seq-tag =tag (i) and Seq-tag1= tag (i+1) and Seq-tag2= tag (i+2)
+Count_match_collocation +=1
+Phrase =Pharse + Phrase_collocation
+End if
+Return Phrase
+Else if Type_ of_ gram is ‖n-gram‖ then
+Input: n
+// 4 <= n <= 6
+Phrase = Function n-gram (n, scope-data, Seq-tags)
+End for
+Function n-gram (n,Seq-tage, scope_of_data)
+Switch (n)
+Case (n=4)
+If Seq-tag=tag (i) & Seq-tag1=tag (i+1) & Seq-tag2=tag(i+2)& Seq- tag3=tag
+(i+3)
+Count_match_collocation +=1
+Phrase =Pharse + Phrase_collocation
+Return phrase
+Else Return 0
+Case (n=5)
+If Seq-tag=tag (i) & Seq-tag1=tag (i+1) & Seq-tag2=tag (i+2) & Seq-tag3=tag
+(i+3) & Seq-tag4=tag (i+4)
+Count_match_collocation +=1
+Phrase =Pharse + Phrase_collocation
+Return phrase
+Else Return 0
+Case (n=6 :)
+If Seq-tag=tag (i) & Seq-tag1=tag (i+1) & Seq-tag2=tag (i+2) & Seq-tag3=tag
+(i+3)& Seq-tag4=tag (i+4) & Seq-tag5=tag (i+5)
+Count_match_collocation +=1
+Phrase =Pharse + Phrase_collocation
+Return phrase
+Else Return 0
+End if
+Default (―sorry, entered n value not equal from 4- 6”)
+End function
+Fig.3 Pseudo Code of the Matching Engine Algorithm
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-12The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+Figure (3) shows the pseudo code algorithm of the Matching
+Engine process, which matches the pattern features input from
+the end user (Scope of data source, type of gram, and sequence
+tags) to the Arabic Quran Corpus (Structured Tagged Corpus).
+It then validates the matching collocation terms, if exist, and
+displays the results. If the matching process does not succeed,
+it enables the user to insert another pattern features.
+V. IMPLEMENTATION AND C ASE STUDY
+We have designed and implemented the prototype of
+extraction n-gram collocation terms. The system has been
+implemented using the Visual Basic.Net and the database has
+been developed using SQL server. The system has been tested
+on a CORE i5 machine running Windows 7. The following two
+cases are illustrated briefly. The two cases are collocation
+extracting from specific SURA and from the whole Quran
+Corpus.
+ Case 1: Collocation Extraction from specific SURA
+In this case, the user would like to perform a collocation
+pattern tags such as N+ADJ (Noun +Adjective) from the
+specific SURA under the name ―ALKhahf‖ as shown in
+figure (4). The number of collocation terms is 28.
+Fig.5 Results of Collocation N+ADJ Pattern Sequence in the whole Quran
+Corpus
+VI. E XPERIMENTS
+By analyzing the Quran corpus by retrieving the number of
+frequency of different part of speech (POS), we found the
+Noun (N), Verb (V), Adjective (ADJ), Proper-Noun (PN), and
+Preposition (P) are the most frequently used in the Quran
+corpus. Table (1) shows the number frequency of those POS
+tags.
+Table (1) Frequency of most used tags in the Holly Quran corpus
+Fig.4 Results of Collocation Noun +Verb (N+V) Pattern Sequence from
+specific SURA ―ALKhahf‖
+ Case 2: Collocation Extraction from the whole Quran
+Corpus
+In this case, the user would like to perform a collocation
+pattern tags such as N+ADJ (Noun +Adjective) from the
+whole Quran Corpus. As shown in figure (5), the number
+of collocation terms is 1486.
+Tag Description Frequency
+N
+PN
+ADJ
+V
+P Noun
+Proper-Noun
+Noun
+Adjective
+Verb
+Preposition 24769
+3900
+1977
+19360
+7358
+In this section we have conducted three experiments to extract
+collocation terms based on select type of N-gram from the
+whole Quran corpus. The first experiment is bi-gram
+collocation, which may be composed of N, V, ADJ, and PN.
+The second experiment is the tri-gram collocation, which may
+be composed of N, V, and P. Final experiment is the n-gram
+collocation, which may be composed of the simple noun phase
+and verb phrase structures. In the following these experiments
+are illustrated in details.
+ Experiment 1: Bi-gram Collocation
+Table (2) shows a different sequence of parts of speech
+obtained from this experiment. We selected the probability of
+the tag sequences of N (noun), V (verb), ADJ (adjective), PN
+(proper noun), which is 24= 16 pattern sequences. The results
+of sequences are shown in figure (6).
+Table (2) Pattern Sequence of tags by the bi-gram
+Tag
+N
+V
+ADJ N
+N+N
+V+N
+ADJ+N V
+N+V
+V+V
+ADJ+V ADJ
+N+ADJ
+V+ADJ
+ADJ+ADJ PN
+N+PN
+V+PN
+ADJ+PN
+PN PN+N PN+V PN+ADJ PN+PN
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-13The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+As shown in figure (7), we conclude the results of V+P+N
+pattern sequence tags is the highest collocation value and most
+frequently in the Quran corpus, followed by N+N+N pattern
+sequence tags from the other tri-gram collocation. On the other
+hand, the collocation pattern sequence tags such as P+V+N and
+P+V+P as shown in the figure (7) have low frequency times
+results, because don’t widely use pattern of Arabic language.
+-
+-
+‫ٱن‬ ٌَ‫ى‬ ً ُ ‫يُمِي‬ ) (Verb+Noun)
+( َ‫ة‬ ‫ى‬ َٰ َ‫ه‬ ‫ص‬
+‫ق‬
+( ِ ‫ٱّلل‬
+‫ز‬ ْ ‫ر‬ ِّ ) (Noun+Proper-Noun)
+As shown in figure (6), we conclude the results of N+N pattern
+sequence tags is the highest collocation value and most
+frequently in the Quran corpus, followed by V+N pattern
+sequence tags from the other bi-gram collocation. On the other
+hand, the collocation pattern sequence tags such as ADJ+ V
+and V+ADJ as shown in the figure (6) have low frequency time
+results, because don’t widely use pattern of Arabic language.
+7000
+6500
+6000
+5500
+5000
+4500
+4000
+3500
+3000
+2500
+2000
+1500
+1000
+500
+0
+5000
+4500
+4000
+Tag-Sequences
+3500
+3000
+2500
+2000
+1500
+1000
+500
+0
+Tag Sequence
+Fig.7 Frequency of Tri-gram Collocation in the whole Quran Corpus
+Bi-gram Experiment Results
+Tri-gram Experiment Results
+Examples of these sequences are:
+- ( ‫ى‬ َ ‫خَمِي‬ ‫س‬ ْ ً ُ ‫ٱن‬ ْ ‫ط‬ َ ‫ر‬ َ َٰ ‫ص‬
+‫)ٱن‬ (Noun+Adjective)
+- ( ‫فَج‬ ‫س‬ ِ َُ ‫ل‬ ُ ‫بَا‬ ‫ج‬ ِ ‫ٱن‬ ) (Noun+Verb)
+Fig.6 Frequency of Bi-gram Collocation in the whole Quran Corpus
+ Experiment 2:Tri-gram Collocation
+Table (3) shows the different pattern sequence of the part of
+speech obtained from this experiment. We selected the
+probability of the tag sequences of N (noun), V (verb), and P
+(Proposition), which is 33= 27 pattern sequences. The results
+of sequences show in figure (7), where the tri-gram having a
+result of sequence less than 60 was ignored.
+Table (3) Pattern Sequence of tags by the tri-gram
+Sequence Pattern of Tags
+NNN NNV NNP NVN NVV NVP NPN NPV NPP
+VNN VNV VNP VVN VVV VVP VPN VPV VPP
+PNN PNV PNP PVN PVV PVP PPN PPV PPP
+Examples of these sequences are:
+- ( ٍ ِ ‫ٱندِّي‬ ‫و‬ ِ ْ‫يَى‬ ‫ك‬ ِ ِ‫ه‬ ‫ي‬ َ َٰ ) (Noun+Noun+Noun)
+- ( ٌ ِ ‫دَا‬ ‫ج‬ ُ ‫س‬ ْ َ‫ي‬ ‫ر‬ ُ ‫ج‬ َ ‫ش‬ َّ ‫ٱن‬ ‫و‬ َ ‫ى‬ ُ ْ‫ٱنَُّج‬ ‫و‬ َ )(Noun+Noun+Verb)
+- ( َ‫ت‬ ً َ ‫ك‬ ْ ‫ح‬ ِ ‫ٱن‬ ْ ‫و‬ َ ‫ب‬ َ َ‫خ‬ َٰ ‫ك‬ ِ ‫ٱن‬ ْ ‫ى‬ ُ ُ‫ه‬ ً ُ ِّ‫ه‬ ‫ع‬ َ ُ‫ي‬ ‫و‬ َ )(Verb+Noun+Noun)
+ Experiment 3: N-gram Phrases
+Table (4) shows a different sequence of parts of speech
+obtained from this experiment. We have selected N-gram
+where n=4 grams (4 tags). The Pattern Sequence of tags chosen
+is based on the Arabic noun phrase and verb phrase structures.
+Table (4) Results of Extracting Phrase by n-gram sequences n=4
+N-gram Sequence N-P-N-ADJ N-N-V-N V+P+N+ADJ
+Number Phrases 88 369 114
+Examples of these sequences are:
+- ( ‫ى‬ ِ ‫ي‬ ‫ح‬ ِ ‫ر‬ َّ ‫ٱن‬ ٍ ِ ً َ َٰ ْ‫ٱنرَّح‬ ٍَ ‫ي‬ ِّ ‫م‬ ٌ ‫ي‬ ‫ُس‬
+‫ح‬ ) ( Noun+P+Noun+ADJ)
+‫ار‬
+- (‫ا‬ ً َ ُ‫يَه‬ ‫د‬ ِ ‫ي‬ ْ َ‫أ‬ ‫ا‬ ۟ ‫ُى‬ ٓ ‫ع‬ ‫ط‬ َ ‫ل‬ ْ ‫فَٱ‬ ُ‫لَت‬ ‫ار‬
+‫س‬
+‫ٱن‬ ‫و‬ َ ‫ق‬
+‫ٱنس‬ ‫و‬ َ ) (NounNounVerbNoun)
+- ( ‫ج‬ َُِّ‫بَي‬ ‫ج‬ ٍۭ َ‫ي‬ َٰ ‫ا‬ ‫ء‬ َ ‫ك‬ َ ‫ي‬ ْ َ‫إِن‬ ٓ‫َُا‬ ‫َن‬ ْ ‫أََس‬ ) (Verb+P+Noun+ADJ)
+The structure of the phrase in the Arabic language depends on
+the type of phrases such as Noun Phrase (NP), Verb Phrase
+(VP), Preposition Phrase (PP), etc. The Noun Phrase (NP) is a
+phrase that has a noun in its head. NP can be composed of
+either a proper noun (PN) followed by one or more noun. The
+verb phrase can be located by checking the head verb of the
+phrase. The following examples show the collocation terms
+based NP and VP structure by n-gram where n=4 gram.
+
+Noun phrase structure with example:
+‫ي‬ َ َٰ ‫هُى‬ ‫ع‬ ْ ‫ي‬ َّ ‫ر‬ ٌ ُ‫ه‬ ‫ش‬ ْ َ‫أ‬ ُّ‫ج‬ ‫ح‬ َ ‫‖ٱن‬
+- (N+N+ADJ) ― ‫ج‬
+- (N+P+N+N) ― ‫ة‬ ِ ‫ر‬ َ ‫خ‬ ِ ‫ا‬ ‫ء‬ َ ْ‫ٱل‬ ‫و‬ َ َٰ‫ُونَى‬ ‫ٱْل‬ ْ ‫فِى‬ ‫د‬ ُ ً ْ ‫ح‬ َ ‫‖ٱن‬
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-14The 9th International Conference on Informatics and Systems (INFOS2014) – 15-17 December
+Natural Language Processing and Knowledge Mining Track
+
+Verb phrase structure:
+- (V+N+ADJ): ‫ى‬ َ ‫خَمِي‬ ‫س‬ ْ ً ُ ْ‫ٱن‬ َ‫ط‬ ‫ر‬ َ َٰ ‫ص‬
+‫ٱن‬ ‫ََا‬ ‫د‬ ِ ‫ه‬ ْ ‫ٱ‬
+- (V+P+N+N): ‫ك‬ ِّ ‫ح‬ َ ‫بِٱن‬ ‫ب‬
+‫ي‬ ْ َ‫ه‬ ‫ع‬ َ ‫ل‬ َ ‫س‬ َّ ََ
+َ‫خ‬ ‫ك‬ ِ ‫ٱن‬ ‫ك‬
+VII. CONCLUSIONS
+In this paper, we have presented a prototype of extracting N-
+gram collocation terms from a tagged Arabic Corpus (the Holly
+Quran). The prototype enables the user to select the scope of
+data source (whole Quran Corpus or specific SURA) and the
+sequence of tags based on the type of gram (from 2 to 6 gram).
+This approach extracts the n-gram collocation words by
+matching the input structured pattern of Arabic language versus
+the tags of words in the Quran corpus. These collocations will
+be used for the automatic extend the Query and construction of
+domain ontology. A set of experiments has been conducted in
+different scenarios to find different possible pattern sequences
+of the collocation terms in the Quran corpus.
+REFERENCE
+[1] K., AlKhateeb and A. Badarneh, "Automatic extraction of
+Arabic multi-word terms," in Computer Science and
+Information Technology (IMCSIT), Proceedings of the
+2010 International Multiconference on, Wisla, 2010.
+[2] I., Bounhas and Y., Slimani, "A hybrid approach for
+Arabic multi-word term extraction," in Natural Language
+Processing and Knowledge Engineering, 2009. NLP-KE
+2009. International Conference on, Dalian, 2009.
+[3] K. Dukes, E., Atwell, and AB., Sharaf, "Syntactic
+Annotation Guidelines for the Quranic Arabic
+Dependency Treebank," in Proceedings of the Seventh
+International Conference on Language Resources and
+Evaluation (LREC'10), Malta, 2010.
+[4] M., Sawalha and E., Atwell, "Linguistically Informed and
+Corpus Informed Morphological Analysis of Arabic," in
+Proceedings of the 5th International Corpus Linguistics
+Conference CL2009, Liverpool, 2009.
+[5] W. Liu and W. Li, "To Determine the Weight in a
+Weighted Sum Method for Domain-Specific Keyword
+Extraction," in Computer Engineering and Technology,
+2009. ICCET '09. International Conference on (Volume:1
+), Singapore, 2009.
+[6] Y.O. Elhadj, "Statistical Part-of-Speech Tagger for
+Traditional Arabic Texts," Journal of Computer Science,
+vol. 5, no. 11, pp. 794-800, 2009.
+[7] Zaidi. S., Laskri M., and Abdelali, A., "Arabic
+collocations extraction using Gate," in Machine and Web
+Intelligence (ICMWI), 2010 International Conference on,
+Algiers, 2010.
+[8] Abdelali, A., Cowie J. and Soliman H., "Building a
+modern standard Arabic corpus," in workshop on
+computational modeling of lexical acquisition. The split
+meeting. Croatia, 25th to 28th of july, Croatia, 2005.
+[9] A. M. Saif and M. J. A. Aziz, "An Automatic Collocation
+Extraction from Arabic Corpus," Journal of Computer
+Science, vol. 7, no. 1, pp. 6 - 11, 2011.
+[10] Xu, F. a. Kurz, D. a. Piskorski, Jakub, Schmeier and
+Sven, "A Domain Adaptive Approach to Automatic
+Acquisition of Domain Relevant Terms and their
+Relations with Bootstrapping.," in LREC, Las Palmas,
+2002.
+[11] A. M. Abed, S. Tiun and M. Albared, "Arabic Term
+Extraction Using Combined Approach On Islamic
+Document," Journal of Theoretical & Applied
+Information Technology, vol. 58, no. 3, pp. 601 - 608,
+2013.
+[12] B. S., B. Daille and D. Aboutajdine, "A multi-word term
+extraction program for Arabic language," in Proceeding
+of the 6th International Conference on Language
+Resources and Evaluation, Morocco, 2008.
+[13]CorpusLinguistics,http://en.wikipedia.org/wiki/Corpus_lin
+guistics (Accessed : Jan. 2014)
+[14]Informationextraction, http://en.wikipedia.org/wiki/Inform
+ationextraction, (Accessed : June. 2014)
+[15] http://www.ahewar.org/debat/show.art.asp?aid=109126
+‫انمىاييس‬ ‫في‬ ‫ويعانجخها‬ ‫انعربيه‬ ‫انهغه‬ ‫في‬ ‫انًخالزياث‬ , ٌ‫انًخًد‬ ‫ر‬ ‫ا‬ ‫انحى‬ "
+" ‫انهغه‬ ‫انثُائيه‬ (Accessed : June 2014)
+[16] M., Diab, K. Hacioglu and D. Jurafsky,‖Automatic
+tagging of Arabic text: From raw text to base phrase chunks‖.
+Proceeding of the NAACLHLT, Boston, USA, pp: 149152,
+2004
+[17] R., Al-Shalabi, Kanaan G, ‖ Proper Noun Extraction
+Algorithm for Arabic Language‖ international Conference on
+IT to celebrate S. Charmonment’s 72nd Birthad. March 2009,
+Thailand
+[18] K., Al-Daimi, Abdel-Amir, M. "The Syntactic Analysis
+of Arabic by Machine". Computers and Humanities, Vol. 28,
+No. 1, pp. 29—37, 1994.
+[19] A., Farghaly, and Shaalan K., "Arabic Natural Language
+Processing: Challenges and Solutions", ACM Transactions on
+Asian Language Information Processing (TALIP), vol. 8, no.
+4, New York, NY, USA, ACM, pp. 1-22, 2009.
+[20] S., Evert and K. Brigitte, Using small random samples for
+the manual evaluation of statistical association measures.
+Speech Language Spec. Issue Multiword Exp., 19: 450- 466.
+DOI: 10.1016/j.csl.2005.02.005
+[21] Al-Shargabi B., Olayah F., and Alromimah W., ‖An
+Experimental
+Study for the
+Effect of Stop Words
+Elimination for Arabic Text
+Classification Algorithms‖,
+International Journal of Information Technology and Web
+Engineering 6(2), 68-75, April-June 2011.
+Copyright© 2014 by Faculty of Computers and Information–Cairo University
+NLP-15

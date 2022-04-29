@@ -1,0 +1,462 @@
+
+using Sequitur Algorithm For Integer COMPRESSION
+Eman Essam Edeen ,Ehab Ezzat Hasanein
+Teacher Assistant, Cairo University,Cairo, Egypt
+emanessam@hotmail.com, ehabez@aol.com
+
+Keywords:	Inverted file index, sequitur, grammar compression, compression ratio, gamma coding.
+Abstract:	Encoding methods provides a large scale compression to huge numeric data files like in inverted files index. This type of index is mostly used in search engines because it allows fast query resolution and good memory utilization. There is always trade off between cost of storing the compressed index and cost of using it during query evaluating. Explained here a proposed technique made to enhance the compression ratio. This new technique based on sequitur algorithm that is used in mainly in grammar compression. 
+1	INTRODUCTION
+Indexing is essential for any search engine as the data to be retrieved is huge. That caused the size of indexes to increase so much that the size of the index itself became a performance bottleneck. So, a number of compression technique devised to be used to solve that problem. In order to provide an easy and fast retrieval facility; numeric data in the index are compressed. 
+SEQUITUR Index Compression, SIC, is a superior compression technique to reduce the size of the keyword index [12].
+The inverted files structure is composed of two elements: the lexicon, i.e. the list of all the index terms appearing in the collection, and the corresponding set of inverted lists, where each list is associated with a distinct term of the lexicon.[1,2,13] Each inverted list contains, in turn, a set of postings. Each posting collects information about the occurrences of the corresponding term in the collection’s documents.
+Inverted indexes are used to evaluate queries in all practical search engines. Compression of these indexes has three major benefits for performance.
+First: Compressed index requires less storage space, it was found that an uncompressed inverted index that stores the location of the indexed words in documents consumes more than 30% of the space required to store the uncompressed collection of documents. When the index is compressed the index size is reduced to between 10%-15% of that required to store the uncompressed collection. This size includes document numbers, in-document frequencies and word position within documents [2, 5]. Also in [7] it was shown by experiments that the space requirement averages 21%-25% of cost of storing uncompressed integers and the retrieval speed is 26-40% better than with uncompressed integers.
+Second: a compressed data makes better use of the available communication bandwidth so more information can be transferred per second than when the data is uncompressed. [5]
+Third: compression increased the likelihood that the part of the index required to evaluate a query is already cached in memory and thus avoiding a disk access. [5]
+When the index is too large to fit entirely within main memory then querying the uncompressed index is slower, it is up to twice as slow as the fastest compressed scheme [6]. Most of the time spent in answering a query is in the disk transfer so keeping the index compressed allow the transference of less data, without compression the time cost of retrieving inverted list is 
+Seek and Retrieve Time + Transfer Time
+This is the sum of the time taken to seek for and then retrieve the inverted lists from disk into memory plus the time taken to transfer the list from memory into the CPU cache before they are processed.
+While the time cost of retrieving compressed inverted list is determined by two factors:
+    • The computational effort required for decoding the compressed data.
+    • The time required to seek for and retrieve the compressed data from disk and to transfer it to the CPU cache before it is decoded.
+So for a compression scheme to allow faster access to inverted lists the total retrieval time and CPU processing cost should be less than the retrieval time of the uncompressed representation.
+Total retrieval time + CPU processing for compression < total retrieval time (for uncompressed index).
+CPU processing costs may exceed the saving in disk transfer time in the case of compression scheme but there are another factor makes compressing attractive which is compressing inverted lists increases the number of lists that can be cached in memory between queries. So in the context of a stream of quires the usage of compression will reduce the number of disk access.
+A major portion of index space is occupied by the document ID's (Doc ID's), the larger the collection the larger the number of bits used to represent each Doc ID's. At least 32 bits are needed to represent Doc ID in systems that crawls a large fraction of the billions of pages. [8]
+The easiest way to save space in storing Doc ID is to store them in increasing order and to store the first Doc ID in full and subsequently only the difference from the previous Doc ID. This is called the d-gap [8]. But how to encode these gaps in a variable numbers of bits so that a small gap costs for fewer bits than a Doc ID. There are two general classes of encoding schemes that are appropriate for storing inverted lists.
+    • Variable bit (bit wise) schemes.
+    • Byte wise schemes [5, 6, 7].
+Compression consists of two activities modeling and coding. A model for data to be compressed is a representation for the distinct symbols in the data includes information such as frequency about each symbol. Coding is the process of producing a compressed representation of data using model to determine a code for each symbol.
+
+1. 2. Proposed Algorithm 
+
+The goal of this research is to improve the compression value of d-gap lists of inverted index so it can enhance any search engine. We empirically evaluated that because of clustering the related documents together there are a lot of repeated sequences of numbers in the d-gap list, so if there is a way to represent those repeated patterns with a key, then the compression ratio (how small the index can be) will be improved for all techniques already known.
+
+2.2. Main Idea
+
+As shown in the preceding section the inverted file index consists of lists of d-gap for each term, these d-gaps consists of sequence of numbers that may be repeated many and several times. The main idea is to replace those repeated sequences by a smaller ID and store those ID’s in something like a look up table This idea has the advantage of taking into consideration all the d-gap lists of all words in order to chose only the most repeated sequence (patterns) from all of those lists.
+One way for extracting those patterns form the lists is the SEQUITUR Algorithm. This algorithm is mainly used in the grammar compression. It was selected to be applied as the first phase in the SIC technique.
+
+2.3. SEQUITUR Algorithm
+
+SEQUITUR is created by Nevil-Manning and Witten in 1997 [11]. It is an algorithm that infers a hierarchical structure from a sequence of discrete symbols by replacing repeated phrases with a grammatical rule that generates the phrase, and continuing this process recursively. The result is a hierarchical representation of the original sequence, which offers insights into its lexical structure.
+SEQUITUR forms rules from the repeated symbols in the phrase, each repeated pattern is replaced by a rule in the phrase this rule is called a non terminal symbol. The result must have two properties, diagram uniqueness and rule utility.
+Diagram uniqueness requires that no pair of adjacent symbols appears more than once in the grammar. As the algorithm reads in the data, it checks each new diagram against a diagram table of all current diagrams, the first time a diagram is repeated, SEQUITUR forms a new rule with the diagram as the right-hand side, when the same diagram appears again, it is replaced by a symbol representing the rule.
+Rule utility requires that each rule is used at least twice. The algorithm uses a count for each rule to count its usage, if a rule’s count goes to one that rule is eliminated, its one location is replaced by its right-hand side.
+For example consider the string “abcdbcabcdbc” as in [11] , the algorithm reads in the data, placing the input characters on the right hand side of the start rule, and storing the diagram in the diagram table. After five characters “abcdb” the grammar looks like:
+S→abcdb
+Then the algorithm reads c as a next symbol this will forms “bc” which is already in the table, then the algorithm creates a new rule:
+S→abcdbc     S→ aAdA
+A→bc
+Then reading the next symbol “a” will cause no action as the pair Aa is not found in the diagram, the following symbol “b” cause on action also, then comes “c” which forms the pair “bc” that is already right hand side of a rule then the grammar will be like this:
+S→ aAdAabc     S→ aAdAaA    		     		    A→bc
+This replacement cause “aA” to appear twice then it must me replaced by a rule so as to achieve diagram uniqueness the new rule will be:
+S→ aAdAabc     S→ BdAB
+A→bc                      A→bc				                  B→aA	
+Reading the successive symbol “d” caused another new rule formation:
+S→ BdABd       S→ CAC
+A→bc                 A→bc				  B→aA                 B→aA
+	   	 C→Bd
+But “B” rule appears only once on the right hand side of rules, this is a violation of rule utility, so the algorithm eliminates “B”
+S→ BdABd       S→ CAC
+A→bc                     A→bc		
+B→aA                    C→aAd
+C→Bd
+
+2.4 Proposed Algorithm
+
+The algorithm we propose uses SEQUITUR as a first step, it runs SEQUITUR on all the d-gap lists of the inverted file index and finds out the repeated patterns and its position in the lists, also number of rules will be created.  Number of challenges appears after applying SEQUITUR:
+Challenge 1: Choosing Suitable Rule ID
+To choose suitable rule id for the concluded rules we need to know the cost of using each rule and the cost of not using it.
+For a given list of d-gap numbers the cost of storing is the cost for coding the numbers in one of the previously known techniques. We took for an example the gamma coding technique [1,2]. Then the cost of using rule is cost of coding the rule id and cost of storing the rule in the rules file:
+Gamma(RuleID) * Rule Count + Gamma(RuleID)  +Gamma(Pattern)
+Rule count is the number of times the rule would be used. Gamma(RuleID) size in bits the rule id will be coded.
+Challenge 2: Choosing a Suitable Flag for Differentiation
+In decoding there must be a flag to determine if the number read is a d-gap number or a Rule ID number so when using Gamma for coding a bit 0 could be used and 1 could be coded in 00.
+For example if we have the posting list containing these values
+(1,5,10,12,15,20,21,28,29,42,62,63,75,95,99,105,118,138,139) 
+Then it is reduced to the set of d-gaps as follows 
+(1,4,6,2,3,5,1,7,1,13,20,1,12,20,4,6,13,20,1).
+After applying the sequitur algorithm:
+Rule 1 -> 4,6
+Rule 2 ->13,20,1
+Then index can be (1,1,2,3,5,1,7,1,2,12,20,1,2) (numbers in bold and underline format is Rule ID)
+The problem is how to identify whether 1 is a rule id or 1 is a d-gap number, one way to solve this problem is to code all in Gamma and then use 0 bit before rule id and to differentiate between 0 bit which is a flag and 0 bit which is the code of 1 we are going to code 1 in 00 bits.
+Applying this in the previous example the resulted coded index list will be:
+00  000  100  101  11001  00  11011  00  0100  1110100  11110100  000  0100
+This will cost 74 bit.
+Coding the previous example in gamma:
+0 11000  11010  100  101  11001  0  11011  0  111101  11110100   0  1110100  11110100  11000  11010  0  111101  11110100   0
+This will cost 85 bit.
+Another possibility: is to use another file contains the place of each ID. This file can be also compressed using any compression algorithm. Using the previous example there will be another file for position of rule id’s.
+Index d-gap coded file:
+0  0  100  101  11001  0  11011  0  0100  1110100  11110100  0  100
+Rule id position file d_gap: (2,7,2,1) coded in gamma to be:
+100  11011 100 0
+This will cost: 53 bits
+Another possibility: Is to dedicate a specific code for each couple starting with 1 so that this code should have two properties first is that: the code should be unique, in another word it should not appear in another place with another meaning. The second is that the code size should not be greater than the size of original code (here we are using gamma code). Table 2 shows the codes that could be used.
+Table 2 the codes for each possible combination starting with one
+Codeword
+Possible Couples Starting with one
+00        
+ 1,1 
+01 10     
+ 1,2
+01 11     
+ 1,3
+01 00 00   
+  1,number more than 7
+01 00 01   
+  1,ID
+01 00 10  
+  ID
+01 00 11  
+  1,4
+01 01 00  
+  1,5
+01 01 01  
+  1,6
+01 01 10  
+  1,7
+01 01 11  
+  1,more than 8 times
+In this case RuleID can be coded either in gamma, other coding technique or in binary with a specific number of bits. This number of bits can be calculated and we will show how later on in this section.
+Applying this to the another example  given the index after applying the sequitur algorithm (1,1, 2,3,5,1,7,1,2,12,20,1, 2) (numbers in bold and underline format is Rule ID)
+Coding Rule ID in gamma:
+01 00 01   0    100       101       11001        10 01 10     01 00 01  100   1110100  11110100  01 00 10   0   01 00 10   100    64 bit  
+Coding Rule ID in binary (2 bits for RuleID)
+01 00 01   00   100       101       11001        10 01 10     01 00 01  01   1110100  11110100  01 00 10   00  01 00 10   01    65 bits
+Using a static number of bits to code the Rule ID determines the maximum number of rules to use.  
+Challenge 3: Choosing Rules to Use
+A remaining problem faced us, what rules to be used and what rules to be ignored. This problem can be solved if we determine the cost of using each rule and the cost of not using that rule. Then the selected rule may be coded using any suitable coding technique. 	
+Cost of using rule = (Code size (RuleID) * Number of time the rule is used) + Cost of storing the RuleID in a lookup file.
+Cost of storing RuleID = Code size( Rule ID)  + Code size (pattern).
+Cost of not using RuleID = Code size (pattern).
+First our algorithm sorts the rule given from applying the sequitur algorithm according to the difference between these two costs in an ascending order so the rule which saves more will be first. And then the algorithm uses all rules as long as it saves bits and also did not exceed the maximum limit of the RuleID bit size.
+Challenge 4: Choosing suitable RuleID bit size 
+Using binary coding to code the RuleID leads to another problem which is what bit size is most suitable to use? Or in another word what is the bit size that will make more save in number of bits than the original coding.
+To solve this problem a function should be added. The function is as follows : First: Calculate the cost for every rule using a small id size (2 for example) then arrange the rule with the one save more bits first (as we said before). Second: Get the total difference between using the rule and not using it and increase the id size by one and recalculate the cost for each rule with this new id size and rearrange them once again and get the total difference. Third: Compare between the two total differences and if the second difference is greater then use the new id size. Continue to do this until the second difference is smaller than the preceding one, and uses that id size in all the preceding steps.
+A pseudo code for that function is as follows:
+ID_Size = 2 ;
+For (ID =1 ; ID< Max_ID ;  ID++)
+{
+                   Calculate Cost (Rule[ID], ID_Size);
+}
+Sort_Rule (Rule)
+For (ID =1 ; ID< Max_ID ;  ID++)
+{
+Total_Save1=Total_Save1 + (Rule[ID]. Rule_Cost – Rule[ID].Gamma_Cost)
+}
+ID_Size ++;
+For (ID =1 ; ID< Max_ID ;  ID++)
+{
+                   Calculate Cost (Rule[ID], ID_Size);
+}
+Sort_Rule (Rule)
+For (ID =1 ; ID< Max_ID ;  ID++)
+{
+       Total_Save2=Total_Save2 + (Rule[ID]. Rule_Cost – Rule[ID].Gamma_Cost)
+}
+While (Total_Save2 > Total_Save1)
+{
+ID_Sise ++;
+Total_Save1 = Total_Save2;
+Total_Save2 =0;
+For (ID =1 ; ID< Max_ID ;  ID++)
+{
+       Calculate Cost (Rule[ID], ID_Size);
+}
+Sort_Rule (Rule)
+For (ID =1 ; ID< Max_ID ;  ID++)
+{
+   Total_Save2=Total_Save2 + (Rule[ID]. Rule_Cost – Rule[ID].Gamma_Cost)
+}
+}
+ID_Size to use = ID_Size --; 
+
+3. Experiments and Results
+
+In this section several common encoding techniques were tested to examine how much improvement the SIC algorithm could provide. The encoding techniques used included Gamma, Delta [9], Golomb [1, 5, 6], Recursive Bottom Up, Complete (RBUC) [10] and Carryover-12 [3]. To test the SIC algorithm we used a d-gap list of size 390Kb, 12.7Mb, 25.8Mb and 103Mb from WBR-99 collection. WBR99 consists of 5,939,061 documents, about 22 GB uncompressed, representing a snapshot of the Brazilian Web (domains .br) as spider by www.todobr.com.br. It comprises about 2,700,000 different terms.
+First three ways of applying the flag for the RuleID were tested. This experiment is carried out on a 390Kb d-gap index by putting the RuleID location in another file and coding the RuleID with a bit 0 before and using 00 for coding 1 and finally we test the special codeword. 
+Table 3 shows the experimental results for these three different ways
+Table 3. shows the results for three different flag technique.
+Flag Techniques
+Index Size
+(390Kb)
+ID location file
+33 Kb
+Coding 1 with 00 
+36 Kb
+Special Codeword
+31.3Kb
+Experiments showed that finding a way to code all numbers starting with one, is an effective way to improve the size.
+Second more than one coding technique were tested on four different index size using the special codeword flag technique and a 4 bits for coding the Rule ID for the first file and 6 bits for the second and third file and 7 bits for the last file.
+Table 4 shows the experimental results for SIC algorithm,
+Table 4 shows the results for four d-gap file size
+Compression Technique
+390
+Kb
+12.7
+Mb
+25.8
+Mb
+103
+Mb
+Delta
+36.2
+ Kb
+961
+ Kb
+1.87
+Mb
+7.5
+Mb
+Golomb
+41.0 
+Kb
+1.27
+ Mb
+2.56
+Mb
+10.2
+Mb
+Recursive Multi-span
+33.8 
+Kb
+870
+ Kb
+1.69
+Mb
+6.78
+Mb
+Carryover-12
+39.7 
+Kb
+1.05 
+Mb
+2.11
+Mb
+8.45
+Mb
+SIC Algorithm
+31.3
+Kb
+811 
+Kb 
+1.58
+Mb
+6.13
+Mb
+As shown in table 4 SIC algorithm gives better results than the other compression techniques, also SIC algorithm performs too close and better than Gamma in this experiments by an average of (0.3% – 4.5%).
+The experiments showed that using a random number generator to generate a d-gap numbers with different distributions has resulted to a very significant improvement because there are many distributions where SIC algorithm significantly outperforms the Gamma in compression ratio. Gamma lacks an efficient representation of big numbers. Furthermore, SIC algorithm is much better when the rules are used more. These distributions are shown in figure 2 and 3.
+On the ongoing experiments, a random number generator were implemented and used to generate a d-gap numbers with different distributions. Random numbers are very much reflecting many situations in the real web search engines because there are a huge number of keywords in a huge number of web documents added every day; whereas sorting these documents is a very difficult and expensive task due to the size of the current documents, the rate they are added every day and due to the number enormous number of keywords exist. So we test the SIC against Gamma technique on these random numbers files.
+Experiments showed that the results extracted depended on four different factors:  D-gap Index File size, RuleID size, Distribution and total number of rules and number of rule used; this last factor depends on both the distribution factor and RuleID size. We took each factor and made experiments to show how much this factor affects on the improvement between the Gamma and SIC. The following sub-sections illustrate this factors, there experiments and results.
+
+Table 5 results for  Distribution 1
+File Size
+Dist.(1)
+60 MB
+Dist.(1)
+80 MB
+Dist.(1)
+100 MB
+Gamma
+41.769908 Mb
+55.701504 Mb
+69.622586
+ Mb
+SIC
+37.508421 Mb
+50.003674 Mb
+60.416846 
+Mb
+Number of all Rules:
+1478720
+2,018906
+2,537 879
+ID size
+19  bits
+19  bits
+20 bits
+Improvement percentage
+11.361%
+11.394%
+15.237%
+Number of rules used
+478788
+524288
+947940
+
+
+Figure 1 Compression results for three d-gap index size
+
+3.1. D-gap Index File Size
+
+D-gap index file size is a main factor that affects all compression techniques, so we show how much improvement made by the SIC algorithm as the file size increases, here we use a random number distribution as shown in Figure 2. This distribution reflects the situation where documents are not ordered and there are about 80% of the documents ID’s are far from there previous ID’s by about 3000-10000 document. Figure 2 shows this distribution with number range presents the d-gap in the file and its percentage. We generate three files from this distribution with three different sizes the first file with 60 MB has about 15 million d-gap number and the second 80MB has 20 million d-gap number and the third 100MB file has a 25 million d-gap number .
+
+
+Figure 2 First random number distribution
+
+
+
+Figure 3. Compression Results for Distribution (1)
+
+Table 5 and Figure 3 show that SCI code performs similar to Gamma code on small collections and better on large collections. The larger the collection is, the better it performs than Gamma code. The reason is that as the collection becomes larger, the support of many rules increases accordingly. Since the number of today’s Web pages is continuously increasing, this indicates a promising future for SIC code.
+
+3.2. Number of Rules Used
+
+There are a direct relation between the sequitur algorithm performance and the number of rules it produces. We show in the following experiments how the number of rules affects the SIC algorithm and its performance in return.
+We use in these experiments another distribution. This distribution is shown in figure 4 we run it three times and generate three different files with the same size. After applying the SIC algorithm each file gives three different results with three different number of rules, this experiment shows that as number of rules increases as compression by SIC performs better as shown in figure 5 and table 6.
+
+Figure 4 Second random number distribution 
+
+Table 6 shows results for  Distribution 1 and 2
+File Size
+Dist.(2)
+40 Mb
+Dist.(2)
+40 Mb
+Dist.(2)
+40 Mb
+Gamma
+26.886280 Mb
+26.889551 Mb
+26.885278 Mb
+SIC
+24.790828 Mb
+24.793577 Mb
+24.792558 Mb
+Number of all Rules:
+813,722
+814,369
+812,655
+ID size
+18  bits
+18  bits
+18  bits
+Improvement percentage
+8.452%
+8.4536%
+8.44%
+Number of rules used
+262144
+262144
+262144
+
+Table 7 shows results for  Distribution 1 and 2
+File Size
+Dist.3
+File 1
+4 Mb
+Dist.3
+File2
+4 Mb
+Dist.3
+File3
+4 Mb
+Dist.3
+File4
+4 Mb
+Gamma
+569.575 Kb
+670.6 Kb
+1037.226 Kb
+480.82 Kb
+SIC
+563.774 Kb
+662.52 Kb
+984.509 Kb
+474.311 Kb
+Number of all Rules:
+28314
+30793
+34806
+25815
+ID size
+9
+9
+11
+9
+Improvement percentage
+1.028%
+1.2206%
+5.354%
+1.372%
+Number of rules used
+512
+512
+2048
+512
+
+
+Figure 5 SIC Improvement 
+
+3.3. Rule ID Size
+ 
+	The following experiments shows how the rule id size used affects the compression ratio, we presents four different distributions with a file size of 4MB each. The first and second files represents documents that are to some extent ordered and has a small d-gap numbers in there indexes, file three and four represents indexes that contains documents with more d-gap size or in other words, documents ID’s are not close to each other.
+	Results shown in table 7 shows that file3 and file4 gives better improvement than file1 and file 2 this is because gamma leaks in large numbers and performs better when the document ID’s are close to each other or are ordered, but this is not always the case in real web search engines as we said before where there are a large number of documents with large number of keywords every day , that can not be easily reorder every time a new documents are added, even thought there are some cases where document ID’s are close to each other; when there are some events that makes a large number of documents points to a specific topic which makes documents ID’s took a sequence of id and makes the d-gap number small. But still this is not always the case.
+
+
+Figure 6 Third Random number Distribution
+
+
+Table 8 shows results for  Distribution 1 and 4
+File Size
+Dist.(1)
+80 Mb
+Dist.(4)
+80 Mb
+Gamma
+55.701504 Mb
+33350874
+SIC
+50.003674 Mb
+27854757
+Number of all Rules:
+2,018906
+548017
+ID size
+19  bits
+17bits
+Improvement percentage
+11.394%
+19.731%
+Number of rules used
+524288
+131072
+
+3.4 Distribution and Total number of rules
+	
+In the following experiments we compare between two extremely different distributions, the first one contains a percentage of small numbers less than the other file, as shown in figure 7 results reflects the idea previously discussed that with large numbers gamma performs less than the SIC that is because repeated patterns contains large numbers gives more chance to be chosen when compared to gamma than repeated patterns with small numbers. These lead to an increase in the number of rule used and therefore increase in the improvement and compression ratio. 
+
+As shown in figure 8 and table 8 index file with large d-gap numbers results in a better compression than with small numbers. In real large search engines large d-gap numbers in inverted index is more available than small numbers this is due to large numbers of documents with keywords in the web, also web pages is added frequently in search engines so adding this pages will lead to large d-gap numbers. Most search engines solve this problem by finding a way to sort and arrange documents so as to get small numbers of d-gap numbers but as shown SIC can perform well in large d-gap numbers.
+
+Figure 8 SIC results for Distribution 1 and 4
+
+
+Figure 7 Fourth Random number Distribution
+
+4. Conclusions and Future Work
+
+Experiments shows that SIC algorithm have the best results for the over all size, and as the d-gap size increase as the index size decreases.
+As a Future work SIC algorithm should be loaded in an information retrieval system and decompression speed should be measured and enhanced to obtain a more efficient performance to the algorithm.    
+A further improvement on determining the right rules to chose and the size of the rule Id can be achieved by providing intelligent methods that take into consideration the d-gap special characteristics.
+
+5. References
+ 
+    [1] Ian H. Witten, Timothy C. Bell, Alistair Moffat, Managing Gigabytes: Compressing and Indexing Documents and Images, Second Edition Morgan Kaufmann Inc., New York, 1999.
+    [2] Ricardo Baeza-Yates, Berthier Ribeiro-Neto, Modern Information Retrieval, Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1999.
+    [3] Vo Ngoc Anh and Alistair Moffat, “Inverted index compression using word-aligned binary codes,” Information Retrieval, vol. 8, pp. 151-166, 2005. 
+    [4] Vo Ngoc Anh, Alistair Moffat,” Index Compression Using Fixed Binary Codewords,” 15th Australasian Database Conference, pp.61-67, Dunedin, New Zealand, January 2004. 
+    [5]  Andrew Trotman, “Compressing inverted files,” Information retrieval, vol. 6, pp. 5-19, 2003.
+    [6] Falk Scholer, Hugh E. Williams, John Yiannis, Justin Zobel,”Compression of Inverted Indexes for Fast Query Evaluation,” ACM-SIGIR, pp.222-229, 2002.
+    [7] Hugh E. Williams, Justin Zobel,” Compressing Integers for Fast File Access,” vol. 42, no.3, pp. 193-201, 1999.
+    [8] Soumen Chakrabarti, Mining the Web: Discovering Knowledge from Hypertext Data, Morgan Kaufmann Publishers Inc, US, 2002.
+    [9]  Peter Elias,” Universal Codeword Sets and Representations of the Integers,” IEEE, vol. 21, no. 2, pp. 194-203, 1975.
+    [10] Alistair Moffat ,Vo Ngoc Anh, "Binary Codes For Non uniform Source" IEEE, pp.133- 142, 2005.
+    [11] Craig G. Nevill-Manning and Ian H. Witten,” Identifying hierarchical structure in sequences:A linear-time algorithm,” Journal of Artificial Intelligence Research, vol. 7, pp. 67-82,1997.
+    [12] Eman E. Saied, Ehab E.t Hassanien, and Mohamed El Sharkawi. :Improving the Compression of Inverted Index using Sequitur Algorithm. Proceedings of the 16th International Conference on Software Engineering and Data Engineering,SEDE-2007
+    [13] J. Zobel, A. Moffat, K. Ramamohanarao, “Inverted files versus signature files for text indexing”. Transactions on Database Systems,23(4), December 1998, p.453-490.
+    [14] D.Salomon “Data Compression: The Complete Reference”, Third Edition, Springer,2004.
+

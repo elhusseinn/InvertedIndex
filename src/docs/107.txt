@@ -1,0 +1,1968 @@
+                                               
+                 Cairo University                
+             Faculty of Computers and Information
+             Information Systems Department
+
+Supporting User Interface Design Using Patterns
+
+By
+
+Reham Adel Ali Abd-Elwahed
+Information Systems Department, Faculty of Computers and Information,
+Cairo University
+A Thesis Submitted to the
+Faculty of Computers and Information, Cairo University
+In Partial Fulfillment of the Requirements for the degree of
+Master of Science in Information Systems
+Under the Supervision of
+Dr. Galal Hassan Galal-Edeen
+                      Dr. Ehab Ezzat Hassanein
+Cairo University
+Faculty of Computers and Information
+Information Systems Department
+Cairo, Egypt
+May 2011
+
+Abstract
+Mobile devices are being widely and increasingly used by different types of people. Designing good user interfaces for mobile applications is difficult and there are several challenges that are facing designers, thus we need an effective and usable design tools to support design work. In this thesis a tool and a mobile user interface design patterns library which captures knowledge of good UI design was developed.
+	The theoretical part of this research starts with presenting mobile device interface issues, we proposed classification to these issues and we talk about the core activities in the process of mobile user interface design: user analysis, system prototyping and interface evaluation.
+Then we explained the idea of ​​using patterns in user interface design, a user interface design pattern is a document that describes a common user interface design problem and a good solution for that problem, in a way that the solution can be reused over and over again. The thesis also presents a review of currently available UI patterns collections.
+Using patterns in mobile user interface design is proposed and we described the methodology that is followed to build a library of mobile user interface design patterns. After we have a collection of patterns for mobile applications, we developed a tool called MMUIP (Management of Mobile User interface Patterns) to manage these patterns. Then we evaluated the collection of mobile user interface design patterns, the results showed that the library is considered useful and it makes UI design easier and more efficient.
+
+
+
+
+
+
+
+
+
+Chapter 1: Introduction
+1.1 Background and motivation
+Designing usable systems is difficult and designers need effective tools that are usable themselves. Effective design tools should be based on proven knowledge of design. Capturing knowledge about the successful design of usable systems is important for both novice and experienced designers and traditionally, this knowledge has largely been described in patterns (Welie et al, 2000). 
+A pattern is a format for describing a solution to a design problem. The concept of design patterns has been proposed as one step towards building more usable systems at a faster rate than would be the case if we start from scratch every time (Mahemoff and Johnston 1998). It originated in Architecture and was introduced by Christopher Alexander in the mid-70s. Alexander noticed that certain solutions always apply to the same recurring problems and developed patterns as a design knowledge documentation method (Granlund et al, 2001). Patterns focus on the context of a problem and solution thereby guiding the designer in using the design knowledge (Welie et al, 2000). 
+Design patterns are a way to recycle knowledge and experience instead of code and modules, it’s a method to develop and reuse frameworks (Carlsson, 2004). Now, this concept is on its way to change the way we design interfaces in applications. In other words, patterns are now used in Human Computer Interaction (HCI) to document knowledge of interface design (Carlsson, 2004). 
+            A design pattern can be defined as a written document that describes a general solution to a design problem that occurs repeatedly in many projects. The basic idea is of using patterns in architectural design is to document proven designs to recurring design problems, thus facilitating and speeding up the process of finding design solutions to problems. In UI design, resorting to this design paradigm design entails building up an inventory of valid solutions to common problems to help designers and usability engineers to resolve UI development problems that are common, difficult and frequently encountered (Granlund et al. 2001). User interface design patterns can improve communication among developers and bridge the gap between software engineering (SE) and human computer interaction (HCI).  Additionally, patterns can   support the reuse of valid and proven designs (Borchers 2000), albeit care must be taken when deciding which design solution may fit a particular design problems as each problem can be considered to be unique. The approach of using a user interface design patterns is already applied in desktop applications and we will see in coming chapters a lot of examples that describe it. But these patterns were presented either in a book or on a website without management to these patterns such as search, edit, create…
+ A pattern is commonly organized into a number of elements that characterize each pattern, these are:
+    • Pattern Name: Choosing a clear and descriptive name helps people find the suitable patterns and encourages clear communication between team members during design discussions. 
+    • Problem Statement: Written in user-centered language, this communicates what the user wants to achieve or what the challenge is to the end-user. 
+    • Context: The context is also focused on the user. What are the characteristics of the context of use, in terms of the tasks, users and environment for which the pattern can be applied?
+    • Solution: The solution should explain "how" to solve the problem, and may include prescriptive checklists, screenshots, or even short videos demonstrating the pattern in action. 
+    • Examples: Each example shows how the pattern has been successfully applied this is often accompanied by a screenshot and a short description.        
+1.2 Problem statement
+Mobile devices play an important role in these days. They are being used by people of all ages for various purposes. They can be used in many fields such as education, medicine, communication service, commerce, and so on. There are many limitations and benefits of mobile technology. This makes designing user interfaces and user interaction for mobile applications a very complex task. There is a need to find a way to document and communicate mobile user interface design knowledge to increase usability in applications. The second goal was to find an effective mechanism to speed up mobile user interface design and development by providing means to reuse this knowledge effectively.
+
+1.3 Solution statement
+A proposed solution to achieve these goals is to create mobile user interface design patterns that captures design knowledge and use it into reusable solutions, and develop a tool, a repository that provides users with powerful access and management to this information during the UI design and development process. The work of user interface design patterns for mobile applications is very different from desktop applications because the mobile has many limitations must be considered.
+
+1.4 Research Objectives
+    1. Establish the state of the art of user interface design patterns.
+    2. Establish the issues included in mobile user interface design.
+    3. Find a way to document and communicate mobile user interface design knowledge thus supporting the reuse of knowledge and experience of the designer. 
+    4. Developing a tool to provide an easy way to create, modify, search and view mobile user interface patterns.  
+    5. Evaluation of the collection of the mobile user interface design patterns.
+
+1.5 Research Plan
+        1. Survey the state of the art of the user interface design patterns.
+        2. Determining the mobile user interface design issues.  
+        3. Create mobile user interface design patterns that captures design knowledge 
+        4. Build a prototype tool to support the use of pattern in mobile user interface design.
+        5. Implementing the designed prototype.
+        6. Validating the mobile user interface design patterns.
+
+1.6 Research Outline
+Chapter (2) presents mobile device interface issues which can constitute obstacle for developers and designers. These issues can be generally classified as technology and user related. Technology issues can be further classified into device and communications related. Chapter (3) explains in detail the core activities in the process of user interface design: user analysis, system prototyping and interface evaluation. Chapter (4) presents the definition of the user interface design, demonstrates the usability goals that must be achieved in user interface design, overview of the issues that are facing user interface design process and explains the design principles that must be considered in the user interface design. Then the chapter explains the concept of patterns, the origin of Patterns, and how to use it in user interface design. Chapter (5) presents a proposal for using patterns in mobile user interface design, explains the methodology that is followed to build a library of mobile user interface design patterns and how to build a tool to manage these patterns. Chapter (6) presents the evaluation methodology used to evaluate the collection of mobile user interface design patterns, the results and discussion of the evaluation. Finally, chapter (7) presents conclusions, contributions and future work.
+
+
+
+
+
+
+
+
+
+
+Chapter (2)
+Mobile Device Interface Issues
+ 
+        2.1. Introduction 
+        2.2. Main differences between UIs on mobile and stationary equipment 
+        2.3. Mobile Devices Interface Issues 
+          2.3.1. Technology Constraints
+          2.3.2. User related Constraints
+
+Chapter 2: Mobile Devices Interface Issues
+
+2.1 Introduction
+Mobile devices are suffering from many limitations. These limitations can be generally classified as technology and user related. Technology constraints can be further classified into device and communications related. This chapter explains these limitations which can constitute obstacle for developers and designers.
+2.2 Main differences between UIs on mobile and stationary equipment 
+This section presents core differences between user interfaces on mobile and stationary equipment in general.  Designing user interfaces for mobile equipment is usually considered being problematic compared to designing user interfaces for stationary equipment. There are a number of reasons for this. The screen size is smaller, and the interaction mechanisms are less rich on mobile equipment, this includes number of available user interface components (e.g. keyboard is not available on many mobile units). The mobile equipment is used in more demanding environments (e.g. challenging light and sound environments), and in user situations where it is difficult to use computer equipment.	
+2.3 Mobile Devices Interface Issues
+Mobile devices are quite different from desktop computers. Desktop computers characterized by: wide range of interaction devices like keyboard, mouse, scanner, tracker ball, and touch screen. Large, high resolution displays and massive storage capacity, increasingly common conventions such as click right-click, drag and drop. Therefore many proven guidelines which are appropriate in the field of desktop computers and applications cannot be used in the field of mobile devices, some of them have to be altered and some new can be created (Gong and Tarasewich 2004).
+Mobile devices are suffering from many limitations such as limited screen size, Lack of familiarity and limited battery. Therefore, it is very essential for interface designers to make efforts to develop interactive mobile products that are effective to use and easy to learn (Huang 2009). Mobile devices are widely used by different types of people who have different goals. Designing applications for usable and useful mobile devices to meet the requirement of different types of interface users meet some of challenges. Users, designers, and developer should cooperate to overcome these challenges.  
+When the first mobile phones were created, the only function of the mobile was to make a call, so that there was no need for any special design. Nowadays, the mobile devices contain many functions such as games, web browser, camera and video camera etc. thus, there is need to special design.
+The user interface must be designed to facilitate the widespread and increased use of mobile content. Current user interface approaches in the computing domain such as windows, icons and menus are insufficient and inappropriate for mobile applications (Subramanya and Yi 2006). Mobile device constraints cause several user interface design challenges. The issues that are related to the user interface of the mobile devices can be generally classified as technology and user related. Technology constraints can be further classified into device and communications related (Subramanya and Yi 2006). Figure 2.1 presents the classification to explore the issues in designing applications for mobile devices, which will be described on the rest of this chapter.
+		
+
+
+
+	
+
+	
+	
+
+
+
+2.3.1 Technology constraints
+Technology constraints can be further classified into device and communications:
+2.3.1.1 Device limitation
+Device limitation includes limited input facilities, limited output facilities, and limited resources such as: small memory capacity, smaller sized and fewer buttons, and limited battery power.
+        ◦ Limited Input facilitates
+Of course, the mobile device user will not write any long documents, because this is not what handhelds are supposed to support. However, text input is very useful for writing notes, text messages, e-mails, and in all the cases when the user cannot be provided with a list of options. Designers have developed many interfaces for text input.
+There are three main input facilities for mobile devices that are on the market these days (Muhanna 2007), the first one, mostly used in mobile phones, is the keyboard, by which a user hits a key to perform a task or navigate through the mobile menu functionalities. The second one is the stylus with the touch screen; here, the user hits the screen to do the task, and third, is the scroll wheel, which can be scrolled and pushed to do a task and also navigate through the menus and submenus, like the Blackberry 8707g, shown in figure 2.1
+
+
+
+               Figure 2.2: the Blackberry 8707g (from www.rim.com)
+
+	In regard to mobile devices, a keyboard is often called a keypad .The design of keyboards for mobile devices have been a challenge because the space for key installation on a mobile device is limited. Mobile devices of greater size are often equipped with a keypad containing all letters. The smaller devices, usually mobile phones, do not have so much space and thus cannot afford this because the keys would be too small or too close to each other. In this case, one key of the keypad serves for inputting more than one letter and there exist several ways to determine which letter should be used.
+	Keyboards for mobile devices are limited in terms of the number of keys that can be installed on a mobile device. Several researchers have found this subject interesting and have worked on investigating the importance of such a limitation and finding alternatives. Traditional phone keypad include 12 keys (figure 2.2), several approaches have been developed over the years to reduce the multiple key presses traditionally required to disambiguate among letters appearing on the same key and design the devices that include a full QWERTY keyboard(figure 2.3)
+
+
+
+Figure 2.3: the assignment of letters to buttons for a standard phone keypad
+
+
+	
+
+
+Figure 2.4: a phone model with QWERTY keyboard
+
+The stylus and touch screen which are widely used in personal digital assistants and smartphones can be a good alternative for the keyboard in some cases. However, touch input would be difficult if the screen of a mobile device is small and that would lead a user’s fingers to occlude the graphical elements he wishes to work with(Huang 2009). A stylus is also used to point to a file, tap and drag files, highlight text, etc.
+Research has been conducted in this area to investigate the advantages and disadvantages of using a stylus as an input facility (Sears and Shneiderman, 2002). It has been found in different research studies that using the stylus while walking, for example, will not lead to an effective interaction in most situations. Using a stylus as an input facility requires an eye-contact between the user and the device. 
+	The scroll wheel can be a different solution as well to overcome the challenge of the limited input facilities in mobile devices. A scroll wheel can be used to navigate a mobile device menu in one direction, either horizontally or vertically (Sears and Zha 2003). It can also be used as a push button to do a specific task to support the use of one hand to interact with the mobile device.
+
+        ◦ Limited output facilities
+The small sized screen is the mainly and most commonly used output facility for mobile devices. Having a small screen in mobile devices is the most difficult challenge that should always be in interaction designers’ minds while building mobile software applications. This is a trade-off challenge that needs to be experimentally studied to find out which is the efficient and most effective size of the screen that can be used for the different types of mobile devices. On a desktop computer, the ability to open more than one window at a time allows for multi-tasking and for easy revert to a previous page. On mobile, only one page can be displayed at a time, and pages can only be viewed in the sequence they were originally accessed.
+The display of mobile devices is very small. Smaller screens mean less information can be displayed at once, so designers are faced with challenges in presenting and structuring information which makes the user is facing the problem of performing more navigation steps, which can increase overall interaction time. At the same time, reducing the space designated for buttons leads to several possible design tradeoffs: 1) buttons are removed and the ones that remain take on multiple roles, which increases users’ mental or visual demands, 2) buttons are shrunken and/or packed tighter, making them harder to hit reliably with thumbs and fingers, 3) buttons are hidden under a screen, so extra time must be taken to reveal them before use (Karlson 2007). 
+Small screen in the mobile led to software problems such as: Menus. Menus are widely used in desktop applications as one of the main interaction styles. Taking a successful design from a desktop and apply it to a mobile device without a clear understanding of the translation inputs and outputs can lead to an ineffective interaction design (Preece et al., 2002). This fact applies to menus; In order for a user to memorize the menu, the user should be able to understand the menu from own perspective and then look at as many items as possible (Jones and Marsden, 2006). Since this cannot happen in small size displays in mobile devices.
+        ◦  Limited resources
+To provide better portability and improve attractiveness, mobile devices are becoming smaller and lighter. However, such designs usually involve some trade-offs including low battery life, low computational power and smaller storage capacity(Taniar 2009). Users of mobile devices, unlike users of desktop computers, have to consider the charge level of the battery. The design of the user interface has a significant impact on how long the device stays alive after charging.
+A mobile device should not be only designed for the use while hooked up to a wall power outlet or even a car charger. It should also support the portability facility, which is the main feature behind a mobile device. This challenge should be recognized by application designers, mobile operating systems designers, and maybe software engineers, to design applications that will efficiently use the needed power energy also, limited amounts of memory, obliging developers to consider memory management most carefully when designing application objects (Taniar 2009).
+
+2.3.1.2 Communication limitation
+Although there are many systems supporting mobility and many solutions for wireless access, there is still a lot to be done in the field. The major issues influencing the performance of the various mobile systems are the following(Schiller 2002):
+    • Interference: Higher loss rates due to the fact that radio transmission cannot be protected against interference.
+    •  Low bandwidth: Although they are continuously increasing, transmission rates are still very low for wireless devices compared to fixed-wired networks. Local wireless systems reach some Mbit/sec while wide area systems only offer some 10s kbit/sec.
+    •  High delays, large delay variation: High delays of hundred milliseconds to seconds can occur.
+    •  Lower security, simpler to attack: The radio interface is prone to the danger of being attacked. Thus, wireless access always has to include encryption, authentication, and other security mechanisms (thus increasing complexity and delay).
+    •  Frequent disconnections: Cell interference, limited cell capacity or lack of network coverage can lead to frequent disconnections.
+
+
+2.3.2 User related constraints
+User related constraints include limited attention spans during mobility, changing locations and contexts (Subramanya and Yi 2006).
+From its name, a mobile device should be portable and easy to be hold by the user (Myers et al., 2004). This brings up the big challenge of designing for mobility. From the mobility perspective, a screen on a mobile device should support the different environments a user can use this device in. Environments may vary from a sunny day, cloudy day to a dark room, Different environments should be also analyzed and recognized for the use of audio output and speech recognition input facilities in a mobile device, taking into account the different noise levels and the different levels of privacy when a mobile device is used in a public place. A voice feedback message, for example, is not recommended in all situations or environments.
+Context of use
+While the contexts of computer applications used in the office, home, or similar settings are relatively stable, the context of a mobile device changes very quickly as the device is carried by the user. Environmental conditions such as: brightness, noise levels, weather) can change depending on location, time of day, and season. The usability or appropriateness of an application can change based on these different context factors (Gong and Tarasewich 2004). In addition, users may have one hand, or even both hands, occupied while using a mobile device (Karlson 2007). Therefore, for mobile devices it is important to know of the current context unlike any other devices. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter (3)
+Mobile User Interface Design Process
+
+        3.1. Introduction 
+        3.2. User Interface Design Process
+            3.2.1   User analysis
+            3.2.2   System Prototyping
+            3.2.3   Interface Evaluation
+        3.3. Considering Context
+        3.4. DECIDE: A Framework to Guide Evaluation  
+
+Chapter 3: Mobile User Interface Design Process
+3.1 Introduction
+This chapter explains in detail the core activities in the process of user interface design:     user analysis, system prototyping and interface evaluation. These phases also exist in the applications of mobile devices, but the difference within each phase. For example: prototyping will be done but in different manner because the mobile screen is small. Also mobile evaluation phase will be different because the mobile is used in different context.
+These differences will be clarified in each phase.
+
+3.2 User interface design Process
+User interface (UI) design is an iterative process where users interact with designers and interface prototypes to decide on the features, organization and the look and feel of the system user interface (Sommerville 2007). The overall UI design process is illustrated in Figure 3.1. There are three core activities in this process (Sommerville 2007):
+User analysis is the essential step to the design process of most interactive applications. This stage’s goal is to provide designers with data on how users work or act within their working environment and how a technological solution can improve that process.
+System prototyping representing a proposed user interface design in such a way that it can be demonstrated altered and discussed. User interface design and development is an iterative pro­cess. Although users may talk about the facilities they need from an interface, it is very difficult for them to be specific until they see something tangible. Therefore, designers have to develop prototype systems and expose them to users, who can then guide the evolution of the interface.
+Interface evaluation is the process of determining the usability and acceptability of the product or design that is measured in terms of a variety of criteria including the number of errors users make using it, how appealing it is, how well it matches the requirements, and so on (Preece, Rogers et al. 2002). Evaluation techniques identify the strengths and weaknesses of a design but can also lead the team to propose a completely different approach, discarding the current line of design thinking for a radical approach (Jones and Marsden 2006).
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 3.1: The User Interface Design Process after (Sommerville 2007)
+
+3.2.1 User analysis
+A critical UI design activity is the analysis of the user activities that are to be sup­ported by the computer system. If the designer doesn’t understand what users want to do with a system, then designer can’t design an effective user inter­face. To develop this understanding, the designer may use techniques such as task analysis, ethnographic studies, and user interviews. Task analysis and inter­viewing focus on the individual and the individual's work, whereas ethnography takes a broader perspective and looks at how people interact with each other, how they arrange their working environment and how they cooperate to solve problems (Sommerville 2007). Below we will describe each technique that are used in the process of user analysis.
+3.2.1.1 Task analysis
+Task analysis is used to study an existing situation, not to imagine new systems (Preece, Rogers et al. 2002) . It is used to analyze the purpose of what people are doing: what are they trying to achieve, why are they trying to achieve it, and how are they going about it? The information collected from task analysis establishes a foundation to design new tasks. Examples of task analysis techniques are HTA (hierarchical task analysis).
+HTA Hierarchical task analysis (HTA) entails breaking tasks into subtasks and then the subtasks into sub-subtasks and so on (Preece, Rogers et al. 2002). To illustrate how the task is performed in an actual situation, the tasks and subtasks are grouped into plans. HTA does not look at actions related to software or an interaction device at all, instead the physical and observable action is considered. HTA can be illustrated both in a graphical representation and with text, see Figure 3.2 and Figure 3.3 (Preece, Rogers et al. 2002).
+	The advantage of HTA over natural language scenarios is that it forces you to consider each of the tasks and to decide whether these should be decomposed. With natural language scenarios, it is easy to miss important tasks. Scenarios also become long and boring to read if you want to add a lot of detail to them. A disadvantage with task analysis is that it does not scale well (Fossum 2005). If the task has an enormous amount of subtasks it is impossible to cover them all.
+
+0. In order to borrow a book from the library
+1. Go to the library
+2. find the required book
+2.1 access library catalog
+2.2 access the search screen
+2.3 enter search criteria
+2.4 identify required book
+2.5 note location
+3. go to correct shelf and retrieve book
+4. take book to checkout counter
+Plan 0: do 1-3-4. If book isn't on the shelf expected, do 2-3-4.
+Plan 2: do 2.1 -2.4-2.5. If book not identified do 2.2-2.3-2.4-2.5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 3.3: A graphical representation of HTA for borrowing a book from (Preece, Rogers et al. 2002)
+
+
+3.2.1.2 Interviews
+Interviews are used to obtain personal opinions from representative users from a target audience, gathering information on needs, wishes and preferences. Interviews are generally preceded by the construction of a script and questionnaire that is presented and responded orally. through interviews designers can adjust, on-the-fly, their questions as the interview goes along, as well as to observe users’ reactions to specific questions but they are generally applied to a much smaller population. Given the time and resources that they require, it is difficult to interview as many target users as those that can be reached through questionnaires. Also, interviews can be biased and influenced by the interviewer’s input (Read et al., 2004). However, a major advantage is that they can be used with a varied type of population (Consolvo, Roessler et al. 2004). Still, they are very focused on user input and might provide little information regarding vital details that result from activities that users accomplish even without noticing (Sa, Carrico et al. 2008). To overcome some of these problems designers often conduct interviews in context while observing some of the user’s activities. This type of dynamic interview is called contextual inquiry (Sa, Carrico et al. 2008). With contextual inquiry the interview is conducted on the location where users work, with the usual settings, focusing activities that are taking place during that interview.
+
+3.2.1.3 Ethnographic studies
+As mentioned earlier, task analysis focuses on how individuals work but, of course, most work is actu­ally cooperative. People work together to achieve a goal, and users find it difficult to discuss how this cooperation actually takes place. Therefore, direct observation of how users work is an important additional tech­nique of user analysis (Sommerville 2007). One approach to direct observation that has been used in a wide variety of set­tings is ethnography (Hughes, O'Brien et al. 1997).
+Ethnographic studies focus on producing an account of what is going on in real situations by observing the moment-by-moment behavior of people interacting with others and their environment over extended periods of time (Jones and Marsden 2006).
+ The aim of an ethnographic study is to make the implicit explicit (Preece, Rogers et al. 2002). Those in the situation, the users in this case, are so familiar with their environment and their daily tasks that they often don't see the importance of familiar actions or happenings, and hence don't remark upon them in interviews or other data-gathering sessions (Preece, Rogers et al. 2002).
+
+3.2.2 Developing prototype designs
+This section begins by explaining the role and techniques of prototyping and then explains how prototypes may be used in the design process.
+Most of us find it difficult to think abstractly about a user interface and to explain exactly what we want. However, when we are presented with examples, it is easy to identify the characteristics that we like and dislike (Sommerville 2007). It’s easy to think you have a good idea, fully formed and clear, while it’s still just in your head. When you try to write it, you will often find it hard to express your ideas in a simple way. Drafting out a document can help you with your thinking and improve the way your ideas are expressed (Jones and Marsden 2006). Some people don’t like showing early drafts of their work to others; they want to perfect it before introducing it to an audience. But early and repeated feedback from others is an efficient way of working toward a better final document.
+Prototyping is like document drafting (Jones and Marsden 2006). The purpose of a prototype is to help the design team, to make them articulate their proposals in forms that can be used and reviewed by others. Prototypes are essential in driving the progress, in generating and improving ideas and in involving people. Indeed, Daniel Fallman argues that prototyping what he calls sketching is the core process that allows a designer to understand the problem and frame a solution (Fallman, 2003). Prototyping needs to start early in the design process and continue throughout. 
+ Users can't tell you what they want, but when they see something and get to use it, they soon know what they don't want (Preece, Rogers et al. 2002). Having collected information about work practices and views about what a system should and shouldn't do, we then need to try out our ideas by building prototypes and iterating through several versions. And the more iterations, the better the final product will be (Preece, Rogers et al. 2002). 
+	Prototypes are a useful aid when discussing ideas with stakeholders; they are a communication device among team members, and are an effective way to test different ideas. “A prototype is a limited representation of a design that allows users to interact with it and to explore its suitability” (Preece, Rogers et al. 2002). The activity of building prototypes encourages reflection in design, as described by Schon (1983) and as recognized by designers from many disciplines as an important aspect of the design process. Liddle (1996), talking about software design, recommends that prototyping should always precede any writing of code.  Prototypes allow designers to test their ideas and concepts with final users before the final product is completed (Beyer & Holtzblatt, 1998; Hanington, 2006; Mayhew, 1999).
+	Prototypes answer questions and support designers in choosing between alternatives. Hence, they serve a variety of purposes: for example, to test feasibility of an idea, to clarify some unclear requirements, to do some user testing and evaluation, or to check that a certain design direction is compatible with the rest of the system development.
+3.2.2.1 The types of Prototypes
+Prototypes can be either low-fidelity prototypes or high-fidelity prototypes. When designers are prototyping a user interface, they should implement a two stage prototyping process:
+    1. Very early in the process, you should develop paper prototypes and walk through these with users. (low-fidelity prototypes)
+    2. Designers then refine they design and develop increasingly sophisticated automated prototypes, then make them available to users for testing and activity simulation. (high-fidelity prototypes)
+Low-fidelity prototypes	          
+ A low-fidelity prototype is used in early stages of design and it does not seem like the final product (Preece, Rogers et al. 2002). For example, it uses materials that are very different from the intended final version, such as paper and cardboard rather than electronic screens and metal. Low-fidelity prototypes are useful because they tend to be simple, cheap, and quick to produce (Sommerville 2007). This also means that they are simple, cheap, and quick to modify so they support the exploration of alternative designs and ideas. This is particularly irnportant in early stages of development, because prototypes that are used for exploring ideas should be flexible and encourage rather than discourage exploration and modification. Low-fidelity prototypes are never intended to be kept and integrated into the final product. They are for exploration only (Preece, Rogers et al. 2002).
+In Frishberg (2006) explain that the importance of low-fidelity prototypes to drive design and evaluate ideas with low-cost. The author stresses the need to provide users with objects that reflect ideas, illustrating assumptions and concepts on a physical and tangible manner. Accordingly, the use of prototypes facilitates user interaction with design concepts and challenges users to provide input and generate ideas. As detailed in (Rosenberg 2006), low-fidelity prototypes provide a way for designers to assess user satisfaction at very early stages. They also provide a common reference point for all the design team members, improve the completeness of the product’s functional specification and substantially reduce the total development cost of the product. Accordingly, this type of easy to use and highly configurable prototypes is particularly interesting for early design stages since they can be quickly built using inexpensive material (Kangas and Kinnunen 2005).
+A much more common form of low-fidelity prototyping is sketching an interface. By committing ideas to paper, designers are able to see how their interface might look. Sketches must be drawn with the same size of the device’s screen using similar components and fonts to those available for a real device.
+As an alternative for sketching, the use of Post-it notes for each interface element, which can then be moved around without redrawing from scratch (Jones and Marsden 2006). Figure 3.4, showing the interface of a digital library system for mobile handsets by using Post-its on a whiteboard.
+
+
+Figure 3.4: Digital library interface using post-it notes on a whiteboard from            (Jones and Marsden 2006)
+
+Having sketched the layout of the interface, it’s time to give some consideration to how someone will interact with the device. For this, Scenarios allow designers to try their ideas on the paper sketches provided (Jones and Marsden 2006). In Figure 3.5, it is a prototype system that is used for one scenario in the digital library application, sliding the appropriate screen into position on the handset.
+
+Figure 3.5: A scenario being tested by moving the correct screen into position in
+                        response to user selection from (Jones and Marsden 2006)
+
+Working through scenarios is similar to a technique called storyboarding which is used in the movie industry. The basic idea is that a series of sketches are drawn to show the steps required in interacting with the interface design (Sommerville 2007).  Another tool used in Low-fidelity prototypes is a frame. A frame was created using a light wooden material with about the same weight and size of a mobile device (Sa, Carrico et al. 2008).
+ Figure 3.6 describes the frame. The frame had a small opening on the top, which allowed the sketched cards (screens) to be switched very easily. It took about forty minutes to build. Even so, it allowed users to have an accurate notion on the device and interaction techniques that they would use.
+
+
+
+ 
+
+
+Figure 3.7: The frame simulating a mobile device. The slot allows users to easily exchange cards/sketches from (Sa, Carrico et al. 2008)
+
+High-fidelity prototypes
+By the end of the low-fidelity prototypes stage listed above, the designer should have a clear idea of the basic design and he can determine which aspects of the design are critical and which are not. These critical aspects are then tested through high fidelity prototypes. 
+	A large part of prototyping is about deciding what to test and what not to test. If you tested everything, then you would be creating a final product and not a prototype. Prototyping, therefore, requires compromises to be made. One way to think about compromises is in terms of horizontal and vertical prototypes (Jones and Marsden 2006). Horizontal prototypes show as much of the functionality as possible, but none of the functions are active (Jones and Marsden 2006). Vertical prototypes, on the other hand, are designed to test one particular part of the functionality of the device (Jones and Marsden 2006).
+Prototypes for mobile devices create a challenges not found in other devices due to the close integration of software and hardware. Software prototypes for desktop computers can rely on the fact that the input and output hardware is fairly standard (monitor, screen, keyboard, etc.), allowing the designer to focus on software issues alone. With mobile devices, the hardware is often very specialist and optimized to the application. The simplest solution is to develop the software on a desktop PC using a software emulator. Many development systems come with a variety of emulators (see Figure 3.8). For programmers used to working in a tool such as Visual Studio, this can be a very easy and success.
+
+Figure 3.8: A screenshot of the PocketPC device emulator in Microsoft Visual Studio from (Sa, Carrico et al. 2008)
+
+For designers with limited programming experience, using Java or .net is not a viable option. Rather than using a programming tool, designers may choose to use more traditional prototyping tools, such as Flash, and create their own mobile prototype.
+The following table explains the advantages and disadvantages of the two types of prototyping:
+Type
+Advantages
+Disadvantages
+Low-fidelity prototype
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+High-fidelity prototyping
+
+    • Lower development cost
+    • Evaluate multiple design Poor detailed specification concepts.
+    • Useful communication device.
+    • Address screen layout issues.
+
+
+    • Complete functionality.
+    • Fully interactive
+    • Use for exploration and test
+    • Look and feel of final product.
+
+    • Limited error checking
+    • Limited usefulness for usability tests.
+    • Navigational and flow limitations.
+
+
+
+
+
+
+    • More expensive to develop
+    • Time-consuming to create
+
+Table 3.1 Advantages and disadvantages of the two types of prototyping 
+
+Rettig (2004) argues that more projects should use low-fidelity prototyping because of the inherent problems with high-fidelity prototyping. He identifies these problems as:
+    • They take too long to build.
+    • Reviewers and testers tend to comment on superficial aspects rather than content.
+    • Developers are reluctant to change something they have crafted for hours.
+    • A software prototype can set expectations too high.
+    • Just one bug in a high-fidelity prototype can bring the testing to a halt.
+High-fidelity prototyping is useful for selling ideas to people and for testing out technical issues (Preece, Rogers et al. 2002). However, the use of paper prototyping and other ideas should be actively encouraged for exploring issues of content and structure (Preece, Rogers et al. 2002).
+
+3.2.3 Interface Evaluation
+Prototypes, however simple, they must be judged. As design proposals emerge, they need to be assessed to see whether they achieve what they set out to achieve. Designing useful and attractive products requires skill and creativity. As products evolve from initial ideas through prototypes, iterative cycles of design and evaluation help to ensure that they meet users' needs. Evaluation is needed to check that users can use the product and like it.  Interaction designers must know what to evaluate, why it is important, and when to evaluate.
+	The role of evaluation is to make sure that this understanding occurs during all the stages of the product's development. Initial requirements get the design process started, understanding requirements happen by a process of negotiation between designers and users. As designers understand users' needs better, their designs reflect this understanding. The process is cyclical, with evaluation playing a key role in facilitating understanding between designers and users. Evaluation techniques according to (Jones and Marsden 2006) as follows:
+"Quick and dirty" evaluation
+A "quick and dirty" evaluation is a common practice in which designers informally get feedback from users or consultants to confirm that their ideas are in line with users' needs and are liked. "Quick and dirty" evaluations can be done at any stage and the emphasis is on fast input rather than carefully documented findings. This approach is often called "quick and dirty" because it is meant to be done in a short space of time
+Direct observation
+Another way to evaluate an interface is to watch people using it. The users must to express what they are thinking as they complete the tasks. One solution to this might be to ask the user to speak aloud what they are thinking throughout the period of the evaluation. This technique is called think-aloud and was developed by (Ericsson and Simon 1985). Designer must record observations through video to capture what they are doing on screen. Another approach to record events in an observational experiment is to use a pen and paper to take notes. This note consists of writing a description of what is happening as it happens. When designer make an experiment, he must not bias the experiment. He must attempt to hide his feelings and presented the evaluation in such a way as to give no clue about what is expected of the user
+Interview
+Interviewing is a common technique for getting users to reflect on their experience in their own words (Jones and Marsden 2006). This can be less expensive than ethnographic observation, as the design team need only record and review a few hours’ worth of interview material as opposed to what could be days’ worth of recorded observations. As with other forms of evaluation which require direct interaction with the user, the value of the session depends a lot on the quality of the interviewer.
+ A good interviewer will be able to put the interviewee at ease, let them express their point of view without being influenced, and be able to detect and follow up on any interesting points made in the course of conversation. Furthermore, a good interviewer can build trusted relationships with the subjects, thus easing the way to conduct further interviews. 
+Questionnaires
+Another popular technique for collecting user opinion is the questionnaire. This technique is popular as it has the potential to reach a very wide audience, is cheap to administer and can be analyzed rapidly. Of course, it can never be as flexible as an interview and requires a lot of effort to design, especially if the user is completing it with no external help. Once you know what you want to ask, you need to pose the questions in a way that is unambiguous to all possible respondents. This is no small task. There are a number of standard forms of questions that one might employ to help guard against ambiguity and increase the value of the data (Jones and Marsden 2006). These include:
+    • Open-ended, e.g. ‘‘did you enjoy using the system?’’
+These are the least formal and are an invitation for the respondent to give an unstructured opinion. The responses to this type of question can be interesting, but are obviously hard to analyze.
+    • Scalar, e.g. ‘‘I was able to enter text easily: Disagree 1 2 3 4 5 Agree’’
+ This is an example of a Likert scale, which offers a more quantitative way of assessing a respondent’s opinion or attitude than can be achieved through an open-ended question.
+ One form of scalar questions are semantic scales, which let a respondent decide where their opinion lies between two diametrically opposed views, e.g. Happy - - - - - - - - Sad
+
+    • Multi-choice, e.g. ‘‘who is making the Web standards? (Tick one):
+     Microsoft                               Mozilla                       the World Wide Web Consortium
+This is the simplest form of multi-choice where the user should select one option from a limited list. Of course, in some instances we may want more than one selection, e.g.
+Please select the courses that can you teaching for students by ticking appropriate boxes:
+  Web          DataBase            System analysis             Network           
+Sometimes, we may want to know more about the choices people select, in which case we can introduce ranking, e.g.
+‘‘Please select the courses that you prefer to teach by writing 1 in the box besides your favorite course, 2 beside your next-favorite, etc.:
+      Math              science               English              Art       
+  
+Heuristic Evaluation
+Heuristic Evaluation is a technique created by Jakob Nielsen (Nielsen and Mack 1994) as a way of structuring expert evaluation of an interface. The basic idea is that the experience of interface designers is distilled into a number of design heuristics against which the interface is evaluated by a usability expert. Nielsen proposed the following 10 general heuristics:
+Heuristic 1: Visibility of system status. The system should always keep users informed about what is going on, through appropriate feedback within a reasonable time.
+Heuristic 2: Match between system and real world. The system should speak the users’ language, with words, phrases and concepts familiar to the user, rather than system-oriented terms. Follow real-world conventions, making information appear in a natural and logical order.
+Heuristic 3: User control and freedom. Users often choose system functions by mistake and will need a clearly marked ‘emergency exit’ to leave the unwanted state without having to go through an extended dialog. Support undo and redo.
+Heuristic 4: Consistency and standards. Users should not have to wonder whether different words, situations, or actions mean the same thing. 
+Heuristic 5: Error prevention. Even better than good error messages is a careful design which prevents a problem from occurring in the first place.
+Heuristic 6: Recognition rather than recall. Make objects, actions, and options visible. The user should not have to remember information from one part of the dialog to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate.
+Heuristic 7: Flexibility and efficiency of use. Accelerators – unseen by the novice user – may often speed up the interaction for the expert user such that the system can cater for both inexperienced and experienced users. Allow users to tailor frequent actions.
+Heuristic 8: Esthetic and minimalist design. Dialogs should not contain information which is irrelevant or rarely needed. Every extra unit of information in a dialog competes with the relevant units of information and diminishes their relative visibility.
+Heuristic 9: Help users recognize, diagnose, and recover from errors. Error messages should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution.
+Heuristic 10: Help and documentation. Even though it is better if the system can be used without documentation, it may be necessary to provide help and documentation. Any such information should be easy to search, focused on the user’s task, list concrete steps to be carried out, and not be too large.
+One problem, noted by Preece et al. in their book, is that these general heuristics may not be appropriate for every class of interface. With the advent of a range of new interactive products (e.g., the web, mobiles, collaborative technologies), this original set of heuristics has been found insufficient. While some are still applicable, others are inappropriate. New sets of heuristics are also needed that are aimed at evaluating different classes of interactive products. In particular, specific heuristics are needed that are tailored to evaluating web-based products, mobile devices, collaborative technologies, computerized toys, etc.
+Bertini and his friends (Bertini, Gabrielli et al. 2006)  report an effort for realizing usability heuristics appropriate for mobile computing and he proposed all heuristic evaluation of the Nielsen except heuristic 3 and heuristic 10.  He also adds new heuristic evaluation: Ease of input and screen readability: Mobile systems should provide easy ways to input data, possibly reducing or avoiding the need for the user to use both hands. Screen content should be easy to read and navigate. 
+Experimental evaluation
+The aim of an experiment is to answer a question or to test a hypothesis that predicts a relationship between two or more events known as variables (Preece, Rogers et al. 2002)  For example, "Is the time to enter text being different if menu selection is used instead of keyboard?" Such hypotheses are tested by manipulating one or some of the variables involved. The variable that the researcher manipulates is known as the independent variable, because the conditions to test this variable are set up independently before the experiment starts. In the example above, the enter text methods (menu selection or keyboard) is the independent variable. The other variable, time to enter the text, is called the dependent variable because the time to enter the text depends on the way the experimenter manipulates the other variable, in this case which method to enter text is used. Now, there are two conditions:
+Condition 1 = enter text through menu selection
+Condition 2 = enter text through keyboard
+After determine the conditions, it is must to allocate participants to conditions. Three well-known approaches are used: different participants for all conditions, the same participants for all conditions, and matched pairs of participants. Below we will describe each one of these approaches.
+    • Different participants
+In different participant design a single group of participants is allocated randomly to each of the experimental conditions, so that different participants perform in different conditions.
+
+
+    • Same participants
+In same-participant design, all participants perform in all conditions so only half the number of participants is needed. However, it is important to ensure that the order in which participants perform tasks does not bias the results.
+    • Matched participants
+In matched participants design, participants are matched in pairs based on certain user characteristics such as expertise and gender. Each pair is then randomly allocated to each experimental condition.
+Data should be collected that measures user performance on the tasks set. These usually include response times, number of errors, and times to complete a task. Analyzing the data involves knowing what to look for. Do the data sets from the two conditions look different or similar? Are there any extreme atypical values? If so, what do they reflect? Displaying the results on a graph will also help reveal differences.
+
+3.3 Considering context 
+For mobile devices, the context will always be changing. This has profound consequences for evaluation, as the device should really be evaluated in each likely context of use (Jones and Marsden 2006).  For changing context, there is a need to overcome the problem of observing how the device is being used and, if we are able to observe, the associated problem of recording those observations. One way to overcome the problem of observing and recording observation is using The Mobile Device camera provided by Noldus (see Figure 3.9). Using technologies like these, designers can then deploy users in a particular physical context and see how well they are able to perform with the device.
+
+
+
+Figure 3.9:  The mobile device observation camera from (Jones and Marsden 2006)
+
+ A mobile video kit is another way was used (Sa, Carrico et al. 2008). The aim was to gather information without requiring a large amount of evaluators following each user around while filming. The inexpensive video kit was comprised by a webcam that the user carried on his/her shoulder. It also followed the user’s movement, providing information regarding the direction to which the user was moving and the objects that were in his/her way. However, taking advantage of the video and audio capturing capabilities of the kit, users could express their opinions orally and even during interaction with the application (e.g., think-aloud). Moreover, since the context and environment in which the user was navigating was automatically captured by the kit, it was no longer necessary to request the user to provide this information. Figure 3.10 explains a mobile video kit
+
+
+Figure 3.10:  Mobile video evaluation kit. The camera attached to the user’s shoulder capture video footage of his interaction with the application. From (Sa, Carrico et al. 2008)
+
+3.4 DECIDE: A framework to guide evaluation
+Little experienced designers can find doing their first evaluation daunting. They don’t know what works and what doesn't. DECIDE framework can help them to plan evaluation studies by using the following checklist (Preece, Rogers et al. 2002): 
+1. Determine the overall goals that the evaluation addresses.
+2. Explore the specific questions to be answered.
+3. Choose the evaluation techniques to answer the questions.
+4. Identify the practical issues that must be addressed, such as selecting participants.
+5. Decide how to deal with the ethical issues.
+6. Evaluate, interpret, and present the data.
+Below we will explain above checklist: 
+Determine the goals
+Goals should guide an evaluation, so determining what these goals are is the first step in planning an evaluation. For example, we can restate the general goal statements just mentioned more clearly as:
+    • Check that the evaluators have understood the users' needs.
+    • Check to ensure that the final interface is consistent.
+    • Investigate the degree to which technology influences working practices.
+    • Identify how the interface of an existing product could be engineered to improve its usability.
+Explore the questions
+To achieve these goals, questions that must be answered. The designers must determine these questions. 
+Choose the evaluation paradigm and techniques
+Having identified the goals and main questions, the next step is to choose the evaluation paradigm and techniques.
+Identify the practical issues
+There are many practical issues to consider when doing any kind of evaluation and it is important to identify them before starting. Some issues that should be considered include users, facilities and equipment, schedules and budgets, and evaluators' expertise.
+
+
+
+Decide how to deal with the ethical issues
+People’s privacy should be protected, which means that their name should not be associated with data collected about them unless they give permission. People give their time and their trust when they agree to participate in an evaluation study and both should be respected.
+Evaluate, interpret, and present the data
+In this step the designers must determine the method that is used to analyze the data and how to represent it.
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter (4)
+The Use of Patterns in User Interface Design
+4.1.          Introduction 
+4.2.        Defining the User Interface Design
+4.3.        Usability Goals
+4.4.        User Interface Design Issues
+4.5.        Principal of User Interface Design
+4.6.        The use of Patterns in User Interface Design
+                   4.6.1 The origin of Patterns
+                   4.6.2 Definition of User Interface Design Patterns
+4.6.3 Patterns as tool for solving User Interface Design Problems
+4.6.4 User Interface Design Patterns as an Alternative Design Tool to Guidelines
+4.6.5 From User Interface Design Patterns to Pattern Language 	
+4.6.6 Review of Currently Available UI Patterns Collections
+
+Chapter 4: the use of Patterns in User Interface Design
+
+4.1 Introduction
+This chapter presents the definition of the user interface design, demonstrates the usability goals that must be achieved in user interface design, overview of the issues that are facing user interface design and explains the design principles that must be considered in the user interface design. Then the chapter explains the concept of patterns, the origin of Patterns, and how to use it in user interface design.
+4.2 Defining the User Interface Design
+User interface design is a subset of a field of study called human-computer interaction (HCI). Human-computer interaction is the study, planning, and design of how people and computers work together so that a person’s needs are satisfied in the most effective way (Galitz 2007). HCI designers must consider a variety of factors: what people want and expect, what physical limitations and abilities people have and what people find enjoyable and attractive. Technical characteristics and limitations of the computer hardware and software must also be considered.
+	The user interface is the part of a computer and its software that people can see, hear, touch, talk to, or otherwise understand or direct. The user interface has two components: input and output. Input is how a person communicates his or her needs or desires to the computer. Output is how the computer presents the results of its computations and requirements to the user. Proper interface design will provide a mix of well-designed input and output mechanisms that satisfy the user’s needs, capabilities, and limitations in the most effective way possible (Galitz 2007). The best interface is one that permits the user to focus on the information and task at hand, not the mechanisms used to present the information and perform the task. The real standard is whether a user interface is good or bad in relation to its usability (Stone and Stone 2005). Next section demonstrates the meaning of usability and their goals.
+
+
+4.3 Usability goals
+Usability is a non-functional requirement of a system. If usability of a system is good, then it means that a user (Zub and Eessaar 2010):
+• can learn to use the system without any problems,
+• can quickly complete frequent tasks,
+• can easily recall how to use the system even if he/she has not used that for some period of time,
+• can quickly recover from the errors that occur during interacting with the system.
+According to Preece et al. (Preece, Rogers et al. 2002) usability means “ensuring that interactive products are easy to learn, effective to use, and enjoyable from the user’s perspective.”. Below six usability goals are presented (Preece, Rogers et al. 2002):
+    • Effective to use (effectiveness)
+    • Efficient to use (efficiency)
+    • Safe to use (safety)
+    • Have good utility (utility)
+    • Easy to learn (learnability)
+    • Easy to remember how to use (memorability)
+For each goal, there is more detail and provide a key question.
+Effectiveness is a very general goal and refers to how good a system is at doing what it is supposed to do.
+Question: Is the system capable of allowing people to learn well, carry out their work efficiently, and access the information they need, and so on?
+Efficiency refers to the way a system supports users in carrying out their tasks.
+Question: Once users have learned how to use a system to carry out their tasks, can they sustain a high level of productivity? 
+Safety involves protecting the user from dangerous conditions and undesirable situations. 
+ Question: Does the system prevent users from making serious errors and, if they do make an error, does it permit them to recover easily?
+Utility refers to the extent to which the system provides the right kind of functionality so that users can do what they need or want to do.
+Question: Does the system provide an appropriate set of functions that enable users to carry out all their tasks in the way they want to do them?
+Learnability refers to how easy a system is to learn to use. It is well known that people don't like spending a long time learning how to use a system. They want to get started straight away and become competent at carrying out tasks without too much effort.
+Question: How easy is it and how long does it take (i) to get started using a system to perform core tasks and (ii) to learn the range of operations to perform a wider set of tasks?
+Memorability refers to how easy a system is to remember how to use, once learned.
+Question: What kinds of interface support have been provided to help users remember how to carry out tasks, especially for systems and operations that are used infrequently?
+
+4.4 User Interface Design Issues
+A well designed interface and screen is important to the users. It is their window to view the capabilities of the system (Galitz 2007). A screen’s layout and appearance affect a person in a variety of ways. If they are confusing and inefficient, people will have greater difficulty in doing their jobs and will make more mistakes. Poor design makes some people leave a system. A poorly designed user interface means that users will be unable to access some of the system features, will make mistakes and will feel that the system hinders rather than helps them in achieving whatever they are using the system for.
+The biggest problem in user interface design was lack of resources and time (Lammi 2007). All products had tight schedule, and user interface design wasn’t considered very important compared to other tasks in a product. One reason for this was that customers don’t understand the importance of usability and they don’t want to pay for it. Also, in every product one person is responsible of user interface design, this person who design scenarios and storyboards, and he decide how the final user interface will work and look.
+Many software products are developed to replace customer’s existing system, and the customer wants the user interface to be exactly the same as in the old system. Convincing the customer to believe that different kind of UI design would make using it more efficient and intuitive, was considered hard.
+It was common that the customer wants to make changes to the user interface late in the software product, when the software was almost finished. Making these changes caused usually a lot of extra work and increased the software complexity, because these changes need to be integrated with the rest of the software.
+Sometimes implementing the software according to scenarios or other specifications caused problems because of technical issues (Lammi 2007). Analyst who usually designs the user interface does not necessary understand technical constraints and possibilities that affect user interface design. This can increase technical complexity and coding effort, or make it impossible to implement it as planned.
+Also, forgetting the user is the one of the most important reason that make the design poor; developers often design for what they know, not what the user knows. This is old problem that makes the user feel incapable of using the product. Good user interface should be designed to match the skills, experience and expectations of its users. Many user errors are caused by the fact that user interfaces do not consider the capabilities of real users and their working environment (Sommerville 2007). When making user interface design decisions, you should take into account the physical and mental capabilities of the people who use software.
+With today’s technology and tools, and the motivation to create really effective and usable interfaces and screens, there is continued to produce systems that are inefficient and confusing (Galitz 2007). May be the reason behind it is: the designers are don’t care; they don’t have common sense, don’t have the time and may be don’t know what really makes good design (Galitz 2007). There are many reasons that make a design is poor (Preece, Rogers et al. 2002), for example: The user interface is:
+    • Confusing
+    • Inefficient, requiring a number of steps for basic tasks.
+    • difficult to use 
+    •  Not obvious what to do: the instructions are provided by the system are ambiguous.
+In general the designer of a user interface to a computer is faced with two questions (Sommerville 2007):
+      • How should information from the user be provided to the computer system?
+      • How should information from the computer system be presented to the user?
+The next section explains the design principles that are derived from a mix of theory based knowledge, experience, and common sense. 
+
+4.5 Principles of User Interface Design
+Design principles suggesting to designer what to provide and what to avoid at the interface. More specifically, they are intended to help designers explain and improve the design (Thimbleby 1990). It acts like a set of reminders to designers, ensuring that they have provided certain things at the interface.
+A number of design principles have been promoted. The best known are concerned with how to determine what users should see and do when carrying out their tasks using an interactive product (Preece, Rogers et al. 2002). The most common ones: visibility, feedback, constraints, mapping, consistency, and affordances. Each of these has been written about extensively by Norman (1988) in his book: The Design of Everyday Things.
+Visibility The more visible functions are, the more likely users will be able to know what to do next. In contrast, when functions are "out of sight," it makes them more difficult to find and know how to use.
+Feedback is about sending back information about what action has been done and what has been accomplished, allowing the person to continue with the activity.
+Constraints The design concept of constraining refers to determining ways of restricting the kind of user interaction that can take place at a given moment. There are various ways this can be achieved. A common design practice in graphical user interfaces is to deactivate certain menu options by shading them thereby restricting the user to only actions permissible at that stage of the activity. One of the advantages of this form of constraining is it prevents the user from selecting incorrect options and thereby reduces the chance of making a mistake.
+Mapping Creates a clear relationship between what the users wants to do and the mechanism for doing it.
+Affordance Involves the perceived and actual properties of an object that suggest how the object is to be used.
+Consistency This refers to designing interfaces to have similar operations and use similar elements for achieving similar tasks.
+
+4.6 The use of Patterns in user interface Design	
+During the last few years, research on design patterns has developing. Because a lot of people have worked on the patterns, the same concept is known under different names, like user interface patterns, interaction patterns, usability patterns, web design patterns, and workflow patterns. Although there are some differences between them, they all provide good solutions to design problems in interaction and interface design. 
+
+4.6.1 The origin of Patterns
+The building architect Christopher Alexander first introduced the concept of design patterns in the late 1970s. In his two books (Alexander 1979) and (Alexander, Ishikawa et al. 1977), he discusses the capture and use of design knowledge in the format of patterns, and presents collections of pattern examples to help architects and engineers with the design of buildings and towns. Patterns are ways to describe best practices, explain good designs, and capture experience so that other people can reuse these solutions. Alexander said that “A pattern language is really nothing more than a precise way of describing someone’s experience of building”.
+All of Alexander's patterns address recurrent problems that designers face by providing a possible solution within a specific context. They follow a similar structure, and the presented information is organized into pattern attributes, such as Problem and Design Rationale. The specific pattern implementation is dependent on the design details and the designer's creativity (Dix, Finlay et al. 2004)
+	In addition, Alexander recognized that the design and construction of buildings required all stakeholders to make use of a common language for facilitating the implementation of the project from its very beginnings to completion. If organized properly, patterns acting as a communication tool for design. Alexander kept these observations using a format, known as a “design pattern”. Thus, a design pattern summarizes the context of a problem and its solution.
+	Design patterns have been brought from Architecture to Computer Science, to the field of Software Engineering (Janeiro, Barbosa et al. 2010). Alexander's pattern framework has been applied extensively to object-oriented programming, and inspired a different way of thinking in which design knowledge is captured and reused effectively. Alexander's influence is apparent in (Gamma, Helm et al. 1995) book, "Design Patterns: Elements of Reusable Object-Oriented Software". This book inspired the software engineering community to take a closer look at the concept of patterns as a problem solving discipline for object oriented design. Gamma et al have documented 23 design patterns in their book.
+User interface designers also noticed that certain design problems occurred over and over. These problems generally have known good solutions. However, there has been a problem communicating them. For this reason, there has been an increasing interest in patterns to document user-interface design solutions. The SIGCHI’97 workshop on patterns (Bayle, Bellamy et al. 1998) saw patterns as a way of dealing with the increasing complexity and diversity of HCI design.
+
+4.6.2 Definition of User Interface Design Patterns
+
+“User interface design patterns (UIDPs) are well-documented user interface and user-system interaction solutions for known and frequently occurring user interface problems. These solutions have been shown to benefit end users; they have already been implemented, evaluated, and proven successful” (Janeiro, Barbosa et al. 2010)
+The analogy of a pattern as a template is useful (Barker 2007). For example, consider using a word processor to write a memo. You could “start from scratch” and define all the design parameters of the memo, such as beginning with a blank document and adding a “To” field, “From” field, “Date” field, setting page margins, and specifying cosmetic attributes such as font size and style. Or, by using a template, you can simply write the memo using a pre-defined format for everything. A template
+        • allows you to focus on the content
+        • provides consistency to all memos you publish
+So, what are user interface design patterns? They are simply pre-pared designs which are planned to be reused to create other designs.
+A user interface design pattern is a document that describes a common user interface design problem and a good solution for that problem, in a way that the solution can be reused over and over again. Patterns explicitly focus on context and tell the designer when, how and why the solution can be applied (Welie and Veer 2003).
+User interface design pattern is a structured textual and graphical description of a proven solution to a recurring design problem. Patterns offer a powerful new way of focusing on design solutions in a specific context by telling the designer when, why, and how the solution can be applied successfully. An important goal of any design team is to capture the reasons for design decisions and the experience from past projects to create a corporate memory of design knowledge that can be easily accessed and contributed to new projects (Janeiro, Barbosa et al. 2010). Pattern frameworks vary from source to source. However, they commonly contain the following elements:
+    • Pattern Name: Choosing a clear and descriptive name helps people find the suitable patterns and encourages clear communication between team members during design discussions. 
+    • Problem Statement: Written in user-centered language, this communicates what the user wants to achieve or what the challenge is to the end-user. 
+    • Solution: The solution should explain "how" to solve the problem, and may include prescriptive checklists, screenshots, or even short videos demonstrating the pattern in action. 
+    • Context: is a critical component of the design pattern. This element helps people understand situations when the design pattern applies and when it does not. 
+    • Examples: Each example shows how the pattern has been successfully applied this is often accompanied by a screenshot and a short description.        
+However, not all of these elements are mandatory when writing a pattern. Only the problem and solution are required, and any other additional elements are optional (Badr and Hosny 2006). Since patterns are written in a specific format with a set of identified elements, they can easily be understood by designers from different disciplines and end users, thus providing effective communication facilities. The Site Map pattern example from Martijn van Welies’s Web Design Patterns collection (2008) in figure 4.1 describes the problem of user’s need to find a specific page when the site has more than two levels in the structure and many elements on each level.
+Site Map
+Problem
+The users need to find a specific page 
+Solution
+Show a map of the site. 
+
+From:  www.apple.com
+
+Use when
+Small to medium sized sites. Typically when the site has more than two levels in the structure and many elements on each level. For such sites, the sitemap functions as a navigation alternative. For very small sites the main navigation typically already resembles a sitemap. Don't use sitemaps for really large sites unless it is a catalog. Users want to see where they can go. Users know that a site is organized but they don't know how. Users want to see where they are. 
+How
+The sitemap shows a hierarchical structure of the site in one page. The structure is focused on the users' needs which could be the site's hierarchical structure or a different kind of structure. The map shows ALL elements of each level and at least two levels. Each level is labeled and possible color-coded to indicate a category. Color-coding can also be used to distinguish areas that are under restricted access. The layout of the map is basically a tree but other layouts are possible. The sitemap is accessible from every page in the web site. The page from which the sitemap is accessed is highlighted in the sitemap. 
+Why
+A sitemap is like a table of contents of a site. Showing a map with the sites structure and all the available pages gives the users complete information. It answers the question where they are and what is available. It also allows the users to reach that page in one action. 
+More Examples
+
+Figure 4.1: Example pattern for Site Map from Martijn van Welies’s Web Design Patterns collection (2008).
+
+
+
+4.6.3 Patterns as tool for solving user interface design problems
+
+It is possible to consider UI patterns as a tool for solving user interface design problems that have been mentioned in section 4.3. In this section we will see how to use UI patterns as a tool to solve these problems. It is possible to consider this view is the claim and we will prove or disprove it in the chapter of evaluation.
+One of the biggest problems in user interface design was lack of time. Patterns can make user interface design process more efficient in many ways and thus save time. During storyboarding and scenario writing process, the designer doesn’t have to describe the design patterns he uses, because the detailed descriptions can be found in the pattern library, and developers can look it up there. A designer uses patterns as tool to get ideas for the design, and to solve design problems. In addition, patterns can be used to communicate design ideas to others stakeholders to make other people understand what the designer means.
+	Convincing stakeholders or customers of other design solutions was sometimes considered hard. User interface patterns are based on proven knowledge of design and thus can be used as evidence to proof that selected design solutions are good in the context at hand. Patterns could also be effective tools for visualizing possible design solution to customers. Patterns can contain graphical examples of good design solutions, making them easy to understand and apply in the design.
+A pattern library with visual and familiar example solutions may serve as a learning tool for inexperienced designer. For more skilled designer it provides a common language for communicating with others in the team; pattern names can be used as a way of discussing ideas.
+Patterns work as a source of reused design knowledge which delivers the design solutions to designer and helps them to design consistent user interfaces and achieve the usability.
+When software developers receive the scenario, patterns with code examples guide the developer to implement the patterns applied in design. Reusing user interface code could shorten the translation time from design to implementation and thus minimize development costs and increase software reliability (Spool 2006).
+ 
+
+4.6.4 User interface design Patterns as an Alternative Design Tool to Guidelines
+Before user interface design patterns became popular, existing resources for user interface designers were scarce. Beside various databases and repositories of information, the main resources available to designers were Guidelines. Like patterns, guidelines aim to provide information about the design of interactive systems and to disseminate, or distribute, this information. They concentrate most often on the physical design attributes of the user interface. 
+Although guidelines are useful, they have a number of disadvantages (Javahery 2006): First, they are numerous, and it is therefore difficult to select the appropriate guideline to apply to the design problem in question. This is especial1y true for novice designers. Secondly, guidelines contradict each other. One guideline may indicate one approach, while another guideline is indicative of a different approach. Consequently, the designer may have to figure out the best solution by guessing, and in some cases, the design problem will not be solved. Thirdly, and most importantly, most guidelines give general information, and are not problem-oriented. In cases where guidelines are problem oriented, they do not promote reuse because they are too tailored to a particular toolkit or technology (Borchers 2001). It has often been reported that guideline have a number of problems when use (Dix, Finlay et al. 2004) and (Mahemoff and Johnston 1998). Some of the problems are:
+     • Guidelines are often too simplistic or too abstract
+     • Guidelines can be difficult to select
+     • Guidelines can be difficult to interpret
+     • Guidelines can be conflicting
+     • Guidelines often have authority issues concerning their validity
+According to Mariage, Vanderdonckt, and Pribeanu almost all guidelines require some interpretation because guidelines are usually delivered without context of use, preventing designer to know when and how to apply them. This activity may vary significantly from person to another, depending on her skills and knowledge of the intended context of use. Stated by Henninger (2001), guidelines often become a static document read only by usability professionals and used just to evaluate user interface conformance to usability standards. Guidelines are commonly used too late in the development process, after the user interface is implemented and making changes is hard. One of the reasons for lack of use of the guidelines is the used language in guidelines, which may be hard to understand by a software engineer, designer or other people who do not belong to HCI discipline (Mariage, Vanderdonckt et al. 2004) and (Vanderdonckt 1999). Another reason according to (Scapin, Vanderdonckt et al. 2000) is that there is no standardized way to categorize and organize guidelines, making it difficult to find an appropriate guideline from a guideline resource.
+Patterns improve many of the shortcomings associated with guidelines. A pattern is a reusable design module while guidelines are rules for designing (Welie, Veer et al. 2000). Guidelines are recommendations for design styles or conventions intended to aid designers and developers in their detailed design (Barker 2007). User interface design patterns are a good alternative to guidelines because they are problem-oriented, but not toolkit­ specific. They are more concrete and easier to use for novice designers. Guidelines can be quite abstract, whereas patterns are more structured and the knowledge is placed in a context. The designer is told when, how and why the solution can be applied. Since patterns are context-oriented, the solution is related to a specific activity. Furthermore, patterns promote reusability of design solutions for two reasons: (l) they are toolkit independent, and (2) they are presented in a specific format with defined attributes.
+Interest in pattern for user interface design continues to grow for several reasons: First, design patterns provide an accessible format to document design knowledge. Design patterns summarize a problem, context, examples, and solution in a format that is more accessible than a library of design books.
+Second, the format of design patterns facilitates communication with other participants of a design project. Because design is a distributed social process, effective communication plays an important role.
+Third, user interface design patterns serve as a tool to practice actual design. They help avoid repeating design errors from previous projects and promote reuse.
+Also, they can be used to train and educate less experienced designers or team members to the best practices of user interface.
+
+4.6.5 From user interface design Patterns to pattern Languages
+The basic assumption in the concept of a pattern language is that patterns are related to each other, forming a network of connected patterns (Welie and Veer 2003). These relationships create actual additional value over single patterns (Janeiro, Barbosa et al. 2010). In the patterns that are publicly available, there are already patterns that ‘link’ to another pattern in several different ways. A closer look reveals that there are some fundamental relationships distinguishable, resembling the types of relationships known from Object Oriented Modeling. Welies’s Web Design Patterns illustrate these relationships (Welie 2005). 
+The relationship types considered are: Aggregation, Specialization and Association. 
+Aggregation 
+An aggregation relationship exists when a pattern includes or aggregates another pattern Consider the shopping cart pattern. Using this pattern user can manage a list of items in a cart. The cart is actually a persistent list of items on which users can perform some operations such as delete, view, and change quantity. This basic behavior is covered by the list builder pattern. The shopping cart is a pattern that aggregates several other patterns. This is a form of a “has-a” relationship. The shopping cart has a list builder.
+
+Shopping Cart
+
+
+
+Specialization
+Patterns can also be specializations of other patterns. For example, the advanced search pattern is basically a simple search but with extended options. It “inherits” the basic idea from the simple search pattern and extends it with advanced scoping, term matching and output options. We call this a “is-a” relationship, one pattern is a more specific version of another pattern.
+
+
+
+
+
+
+
+Figure 4.3: Specialization relationship between Advanced Search pattern and Simple search pattern 
+Association 
+When you are designing the “shopping” experience for a particular site, there are several patterns that may also be of use. For example, when you construct a product comparison you could offer the possibility to purchase the item directly from there, using the shopping cart pattern. This is not a “has-a” or “is-a” relationship but simple a “related-to” relationship. A pattern may be associated to other patterns because they also often occur in the larger context of the design problem, or because the patterns are alternatives for the same kind of problems.
+
+
+
+         
+Figure 4.4: Association relationship between shopping Cart pattern and Product
+Comparison pattern
+Pattern languages aim to distribute the knowledge contained in patterns. They are a collection of interrelated patterns, and can be used as a lingua franca for design (Erickson 2000). There exist two essential criteria that have to be satisfied for a pattern language. First, the language has to contain a standard pattern definition. Second, a relationship must exist between patterns. Successful designs require individuals to communicate their concepts and ideas. As in any culture, the HCI community needs a common ground for such communication and dissemination of knowledge. Thomas Erickson proposes using pattern languages as a Lingua Franca for the design of interactive systems. There are many stakeholders, including users, who may be part of the design process. It is important to have a common language that all stakeholders can use to communicate ideas about design. A lingua franca can act as a communicative resource to facilitate discussion, presentation, and negotiation for the many different individuals who play a role in designing interactive systems.
+4.6.6 Review of currently available UI patterns collections
+Many groups have devoted themselves to the development of HCI pattern languages. This is a short summary of most HCI pattern languages found in the literature. This summary focuses in particular on the way the patterns are organized in the collection rather than their content.
+The Van Welie’s catalogue (Welie 2008) is a large catalogue which divides the patterns into three delivery methods: Web design patterns, GUI design patterns, and mobile design patterns. These patterns are written for professional interaction designers and developers. Within the web design patterns channel, the patterns are categorized into ten groups based on a mix of content and functional subjects. Figure 4.5 describes the classification method of the Welie in his collection of the patterns.
+
+
+
+
+
+
+
+Figure 4.5: Classification Map of Martin Welie’s Patterns
+
+The Tidwell’s catalogue (Tidwell 2006) is a collection of UI design patterns that can be used to deal with web applications or any other kind of interfaces. Unlike Welie, Tidwell does not take into account different delivery methods. The eight categories she does specify look to be based on functional subject areas only. Figure 4.6 describes the classification method of the Tidwell in her catalogue of the patterns. This collection is intended for UI designers with any kind of experience with desktop applications and web applications. UI design experience of the intended audience may range from little to frequent, but the book is not geared toward non-designers or those unfamiliar with basics.
+  
+
+ 
+
+Figure 4.6: Classification Map of Jennifer Tidwell’s patterns
+
+
+
+The Laakso’s catalogue (Laakso and Saura 2003) covers several kinds of web applications. Like Tidwell, Laakso does not differentiate between delivery methods; he bases all seven of his categories on functional subject areas. Figure 4.7 describes the classification method of the Laakso’s catalogue. 
+
+
+
+
+
+
+
+Figure 4.7: Classification Map of Sari Laakso’s patterns
+The Yahoo! Design Patterns Library (Leacock, Malone et al. 2005) is a web based repository for UI design patterns. It aims to find a way to communicate standards for interaction design to increase consistency, predictability, and usability across Yahoo. Also, increase the productivity of the design staff. If successful, other designers could reuse the solutions contained in the library, reducing development time. Yahoo! explicitly targets the developer community. The front web page of the yahoo design pattern library presents 12 most recent patterns with name, short description and an example image of the solution in use (Figure 4.8).
+
+Figure 4.8: Yahoo! Design Pattern Library front web page 
+The Design of Sites by (Duyne‏, Hong et al. 2002) covers the basics of building Web pages and customer-centered design. The book is written for anyone involved in the design and implementation of a Web site. They include Patterns for site types like educational sites, blogs, Web applications, and more. It shows ways to create navigation for Web sites, creating a powerful home page, Patterns for managing content include templates, modules, and personalized content and e-commerce patterns. The most extensive pattern collection of the four sampled, Design of Sites does not specify delivery methods, and, in some cases, the items presented could be regarded as design guidelines or principals rather than patterns. Twelve categories are presented with a mix of content and functional subjects. Figure 4.9 describes the classification method of the Duyne in his work.
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+The UI-patterns library by (Anders Toxboe 2010) is a web site contains large collection of design patterns for UI designers to gain inspiration from. The site allows users to keep sets of their own (publicly accessible to site visitors) so that you can see other UI design pattern collections. Figure 4.10 demonstrate the front web page of the UI-patterns library
+
+
+Figure 4.10: UI-patterns library front web page
+
+
+
+
+
+
+
+
+The Pattern Tap by (Matthew Smith and Chris Pollock 2009) is one of the most notorious UI pattern design libraries. Pattern Tap can mostly be described as a large gallery containing web-based User Interface designs. Pattern Tap also allows its users to upload their own patterns into their library, adding to the now over 7,000 UI patterns. This is a good resource and definitely a great place for inspiration. Figure 4.11 demonstrate the front web page of the pattern tap library
+
+Figure 4.11 demonstrate the front web page of the pattern tap library
+
+
+
+
+
+
+
+The Patternry library by (Lammi, Varjokallio et al. 2009) is a Web design pattern library where you can find solutions to your design challenges. It is also a tool for organizations to document, share, and collaborate on design patterns. Figure 4.12 demonstrate the front web page of the patternry library
+
+Figure 4.12 demonstrate the front web page of the Patternry library
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter (5)
+A Proposal for Using Patterns in Mobile User Interface Design
+5.1.         Introduction
+5.2.         Mobile User Interface Design Patterns
+               5.2.1. Collecting the Patterns
+               5.2.2. Classification of the Patterns
+ 5.2.3. Tool for Managing of Mobile User Interface  Patterns (MMUIP)
+5.3.       Implementation               
+
+Chapter 5: A proposal for using patterns in mobile user interface design
+
+5.1 Introduction
+This chapter presents a proposal for using patterns in mobile user interface design, explains the methodology that is followed to build a library of mobile user interface design patterns and how to build a tool to manage these patterns.
+
+5.2 Mobile user interface design patterns
+There are many limitations and benefits of mobile technology. This makes designing user interfaces and user interaction for mobile applications a very complex task. This complexity can be solved by proposing a user interface design patterns approach for mobile user interface design which integrates the usage of a mobile user interface design pattern library within the mobile user interface design process.
+Mobile applications and their design gain more importance. The task of designers here was to optimize applications in a way to gain performance. Nowadays, mobile devices are improved with more computing power, connectivity and interaction capability, then the focus in design moves from designing mobile applications which run only on a dedicated device towards providing tools that enable users to interact with their data stored on the device as well as on the internet and on their personal computer.
+ Because of the increasing complexity of such mobile applications, the task for the designer becomes more difficult because a number of additional requirements appearing through the mobile usage of the applications need to be regarded within the design and development process. This requires an improvement of the design process applied for designing mobile applications.  The approach of using a pattern library that holds already proven and up to date solutions for developing and designing mobile applications can help the designer to meet the evolving of the requirements.
+The design of applications for mobile devices covers a wide range of issues, ranging from mobile networking to user interface design. Considering all issues related to mobile devices, a designer might be overwhelmed. As a solution, using the mobile user interface patterns derived from successful mobile applications. They allow a designer to reuse design elements as building blocks in their own designs.
+	 The following section describes the methodology that is followed to build a library of mobile user interface design patterns: 
+ 
+5.2.1 Collecting the Patterns
+User interface design patterns are solutions that likely work across a wide range of applications and on different platforms, although some patterns are platform specific.
+In mobile devices, some user interface design patterns are identical to desktop design. Other patterns vary due to size of screen, cost of connectivity, input mechanism, technologies available, etc.
+So the methodology we are followed to collect patterns of mobile is: examining existing pattern collections of web and desktop applications then we choose the most suitable patterns can be applied for mobile devices, since not all patterns applied on desktop application can be applied to mobile application because mobile devices is suffering a lot of restrictions as we mentioned earlier. So choosing patterns of mobile is based on screen size and interaction mechanisms.
+The following diagram describes how to choose our patterns for mobile:
+
+
+
+
+
+                                       UI patterns  	selected 
+	Mobile patterns
+
+
+
+
+Figure 5.1: how to choose mobile user interface design patterns
+
+Examining existing pattern collections allowed us to determine what kinds of patterns other domain experts determined were important. We selected four user interface design pattern collections to analyze:
+
+    • Van Welie’s catalogue (Welie 2008)
+    • Designing Interfaces (Tidwell 2005)
+    • Yahoo! Design Patterns Library (Leacock et al  2005) 
+    • UI Patterns (Andres Toxboe  2010)
+I believe these four collections is the best because they offer many examples and offer patterns with explanation on how to use each pattern, also they are easy to read and understand.
+When analyzing these collections we focused on three major areas to help develop our patterns:
+1. Looking for common user interface patterns across all collections. By assessing which patterns appear most frequently across collections, we found patterns of type: Dealing with data and Navigation common to most collections. 
+2. Looking of how patterns were grouped together. How patterns were organized and grouped together varied. For example, the Tidwell collection organizes them by function. Yahoo! groups them by user problems and application problems. The Welie collection generally organizes patterns by function.
+3. Analyzing elements of a pattern. Any pattern must include, at least, the three key elements, which are Name, Problem, and Solution.
+As we mentioned earlier choosing patterns of mobile is based on screen size and interaction mechanism:
+
+5.2.1.1 Screen size
+Designing user interfaces for mobile equipment is usually considered being problematic compared to designing user interfaces for stationary equipment. There are a number of reasons for this. The screen size is smaller, of course this causes a number of restrictions on how much information it is possible to present on a mobile user interface. The consequences of this vary depending on the actual application or service which is to be designed. But generally, an actual dialog must either be simplified, or it must be divided into a number of smaller parts. Another common consequence of the restricted screen real estate available is that user interfaces on most mobile equipment do not offer the ability to have more than one dialog available at a time.
+
+5.2.1.2 Interaction mechanisms
+In addition to the screen size, the limited interaction mechanism is the most evident difference between stationary and mobile equipment. The absence of a physical keyboard makes it necessary to have different means for entering text. Usually, there is a choice between a software keyboard on the screen or a special area for writing single letters using special strokes. Some systems also let the user write whole words on the screen.
+	Either way is inconvenient to enter more than small amounts of text. This makes it important to design the mobile application so that it is not necessary to enter large amounts of text.
+	The most common mouse equivalent is to use a pen. In actual use, the differences between pen based and mouse based interaction are larger than they seem. 
+ In mouse-based user interfaces, mouse position is often used to inform the user through cursor changes. Movement is not recognized in a pen-based interface. Also, a mouse offers both mouse down and mouse up events and distinguishes between left and right mouse button and single- vs. double-click.
+
+5.2.2 Classification of Patterns
+Currently, there is no recognized standard for the classification of user interface patterns. From previous work there are two ways for pattern classification: by function or problem similarity.
+	Classification of patterns by function is that patterns are grouped according to their functions. Designers often need to make a decision about these functions and classified a set of patterns to that function. Functions may include navigation, searching, getting input and so on. Most existing pattern collections use this classification. As for the problem similarity classification, the idea here is that certain groups of patterns may all deal with a common problem and therefore grouped together. In the collection of mobile user interface design patterns, we choose to classify patterns by function. Because of most activities carried out by users on mobile device are not exceed the following functions: Navigation, Dealing with data, entering text and confirmation. Table1 describes the proposed classification of the mobile user interface design patterns collection and shows all patterns in each category:
+
+Navigation
+Dealing with Data
+Icon menu
+Accordion menu
+List menu
+Sub menu list
+Drop down menu
+Fly out menu
+Teaser menu
+Repeated menu
+Tap Navigation
+Breadcrumbs
+Site index
+Paging
+Searching
+Sorting
+Master-Detail
+Multi-selection  list
+Fisheye list
+Horizontal list
+Vertical list
+Scrolling
+Photo contact list
+Rating
+
+Feed back
+Getting input
+Alert
+Error Messages
+progress indicators
+Auto complete
+Predefined values
+Table 5.1: The proposed classification of the mobile user interface design patterns collection
+
+ 
+
+5.2.3 Tool for Managing of Mobile User Interface Patterns (MMUIP):
+Now, after demonstrating how to collect the patterns and how to classify these patterns by function, there is a need to build a tool to manage these patterns. This tool we developed, MMUIP (Management of Mobile User interface Patterns), has been designed to manage a repository of patterns to support two groups of users:
+    1. User interface pattern researcher: people who do their research to find out new patterns.
+    2. Pattern users: people who develop mobile applications. They can reuse user interfaces of previous applications, as well as store user interfaces they have designed. 
+5.2.3.1 Problems to be addressed
+The basic functions of our tool MMUIP (Management of Mobile User interface Patterns) are: creating, modifying and deleting patterns. In addition to these features, there are three problems that must be addressed when building a tool. These are discussed below.
+
+Searching Patterns
+Searching for existing patterns based:
+    • Keyword search: Authors can add a related keyword list to pattern specifications
+    • Full text search
+    • Advanced search: Restrict search to a set of elements within the pattern definitions (e.g. category, problem, etc.)
+
+Customizing Patterns
+This idea is taken from (Deng et al 2006). An existing pattern can be used as a template when creating a new but similar pattern. Using an existing pattern as a template is an efficient way to customize a pattern for either different audiences or for a specific domain. 
+
+Versioning Patterns
+This idea is taken from (Deng et al 2006). Pattern versioning allows people to keep track of the evolution of a pattern over time thereby keeping a history of a pattern’s development by recording modifications. Users can correct or add to a pattern in a new version without changing the original.
+Below figure describes the architecture model for the MMUIP (Management of Mobile User Interface Patterns)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+5.3 Implementation
+The tool of MMUIP (Management of Mobile User Interface Patterns) was implemented using Microsoft C# as the development language, Microsoft .NET Framework, and the relational DBMS SQL server 2005. MMUIP is client-server architecture; the user can access the web site through any web browser to download the UI pattern (through search) and manipulate it and re-upload it again to the server, this will let other users to access it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter (6)
+Evaluation
+
+6.1.         Introduction
+6.2.         Evaluation Methodology
+6.3.         Results and Discussion
+
+
+
+Chapter 6: Evaluation
+
+6.1 Introduction
+This chapter presents the evaluation methodology used to evaluate the collection of mobile user interface design patterns, the results and discussion of the evaluation.
+
+6.2 Evaluation Methodology
+I work teaching assistant at Misr University for Science and Technology (MUST), faculty of Information technology, Information System department which allowed me to do the evaluation through a group of students in the third year of Information System Department. I spent one section of 90 minutes altogether dealing with the use of user interface design patterns: the idea of patterns, their origin in architecture, the idea of using the concept of patterns in mobile user interface design, and copies of the mobile user interface design patterns collection handed out. Students then took about 15 minutes to study the collection, and then asked them to make a prototype exercise for the mobile application of their choice. 
+Then I meet them after one week and there were many reactions and then asked them to rate the following questions according to five-point Likert scale (1 = completely disagree, 2 = disagree, 3 = neither agree nor disagree, 4 = agree, 5 = completely agree) 
+Q1. Using the mobile patterns library is a waste of time
+Q2. Patterns make mobile UI design process easier and faster
+Q3. Patterns help me to improve my mobile UI design skills
+Q4. Patterns make communicating UI design ideas to other people easier
+Q5. The pattern description contains all the information I need to know when and how to use it in design     
+Q6. I was able to find problems and solutions for our own design project in the patterns collection given   
+Q7. I can imagine using this patterns collection in future design projects 
+Q8. I am very satisfied with the mobile design patterns library given
+
+Previous questions were selected based on claims that have been mentioned in chapter 4 section 4.5.3. Here we want to verify that the UI patterns can be used as a tool for solving user interface design problems. 
+The survey questionnaire is a good method for collecting subjective responses on different topics (Faulkner 2000). In this study, it was used to gather some quantitative data of opinions and attitudes about using patterns in mobile UI design and development process.
+
+6.3 Results and Discussion
+20 students answered the questions about patterns. The results are shown in the following tables and figures. 
+The following table describes the mean and the standard deviation for each question:
+Statistics
+
+
+Q1
+Q2
+Q3
+Q4
+Q5
+Q6
+Q7
+Q8
+
+Valid
+20
+20
+20
+20
+20
+20
+20
+20
+
+Missing
+0
+0
+0
+0
+0
+0
+0
+0
+             Mean
+1.7500
+4.0000
+4.1500
+2.8000
+4.3500
+4.3000
+3.9000
+3.9500
+        Std. Deviation
+.85070
+1.07606
+1.13671
+.61559
+.93330
+.97872
+.96791
+.94451
+
+Table 6.1: The mean and the standard deviation for each question
+
+
+
+
+
+
+
+
+
+
+
+The following tables describe the frequencies and the percent for each question:
+
+
+
+Frequency
+Percent
+
+1.00 (completely disagree)
+9
+45.0
+
+2.00 (disagree)
+8
+40.0
+
+3.00 (neither agree nor disagree)
+2
+10.0
+
+4.00 (agree)
+1
+5.0
+
+Total
+20
+100.0
+
+Table 6.2: Frequency table for question1: Using the mobile patterns library is a waste of   time
+
+
+
+
+
+
+
+
+
+Table 6.3: Frequency table for question2: Patterns make mobile UI design process easier and faster
+
+
+
+
+
+
+
+
+Frequency
+Percent
+
+1.00
+1
+5.0
+
+2.00
+1
+5.0
+
+3.00
+2
+10.0
+
+4.00
+6
+30.0
+
+5.00
+10
+50.0
+
+Total
+20
+100.0
+Table 6.4: Frequency table for question3: Patterns help me to improve my mobile UI design skills
+
+
+
+Frequency
+Percent
+
+1.00
+1
+5.0
+
+2.00
+3
+15.0
+
+3.00
+15
+75.0
+
+4.00
+1
+5.0
+
+Total
+20
+100.0
+Table 6.5: Frequency table for question4: Patterns make communicating UI design ideas to other people easier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Frequency
+Percent
+
+2.00
+1
+5.0
+
+3.00
+3
+15.0
+
+4.00
+4
+20.0
+
+5.00
+12
+60.0
+
+Total
+20
+100.0
+
+Table 6.6 Frequency table for question5: The pattern content contains all the information I need to know when and how to use it in design
+
+
+
+Frequency
+Percent
+
+2.00
+2
+10.0
+
+3.00
+1
+5.0
+
+4.00
+6
+30.0
+
+5.00
+11
+55.0
+
+Total
+20
+100.0
+
+Table 6.7 Frequency table for question6: I was able to find problems and solutions for our own design project in the patterns collection
+
+
+
+
+		
+
+
+
+
+
+
+Frequency
+Percent
+
+2.00
+2
+10.0
+
+3.00
+4
+20.0
+
+4.00
+8
+40.0
+
+5.00
+6
+30.0
+
+Total
+20
+100.0
+	
+Table 6.8: Frequency table for the question7: I can imagine using this patterns collection in future design projects
+
+
+
+
+Frequency
+Percent
+
+2.00
+2
+10.0
+
+3.00
+3
+15.0
+
+4.00
+9
+45.0
+
+5.00
+6
+30.0
+
+Total
+20
+100.0
+
+Table 6.9: Frequency table for question8: I am very satisfied with the mobile design patterns library
+
+
+
+
+
+	
+  Figure 6.2: Bar chart for question 2” Patterns make mobile UI design process easier and faster” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+
+Figure 6.3: Bar chart for question 3” Patterns help me to improve my mobile UI design skills” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+
+Figure 6.4: Bar chart for question 4” Patterns make communicating UI design ideas to other people easier” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+
+Figure 6.5: Bar chart for question 5” The pattern content contains all the information I need to know when and how to use it in design” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+
+Figure 6.6: Bar chart for question 6” I was able to find problems and solutions for our own design project in the patterns collection” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+
+Figure 6.7: Bar chart for question 7” I can imagine using this patterns collection in future design projects” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+
+Figure 6.8: Bar chart for question 8” I am very satisfied with the mobile design patterns library” showing how many students completely disagree, disagree, neither agree nor disagree, agree and completely agree
+To the first question “Using the mobile patterns library is a waste of time” (Mean = 1.7), which indicates that most students answers either completely disagree or disagree, 85% stated that the mobile patterns library is not a waste of time, which indicates that the use of UI patterns saves time rather than start from scratch and this was one of the claims that have been mentioned in chapter 4. Most of the students agreed patterns make mobile UI design process easier and faster (Mean = 4) which one of the most important goal of the mobile user interface patterns, this claim has been achieved by 80%. 
+ Another significant finding was that students either agreed or completely agreed that patterns help them to improve their mobile UI design skills (Mean = 4.1), with ratio 80%. This achieves what we have said previously that a pattern library with visual and familiar example solutions may serve as a learning tool for inexperienced designer and this lead to improve their UI design skills. On the patterns make communicating UI design ideas to other people easier (Mean= 2.8), which indicates that most answers neither agree nor disagree, the result was rather expected because each of them working alone not in a group. 
+ 80% of the students agreed or completely agreed pattern content contains all the information they need to know when and how to use it in design (Mean= 4.3), this shows that the elements necessary to characterize each pattern in mobile pattern library were completed. Usefulness for current project work was rated agreed or completely agreed (Mean= 4.3), 85% of the students found solutions to their problems; this indicates that the mobile patterns library includes a variety of problems and solutions.
+ The confidence that this pattern concept would be reused in future projects was high (Mean= 3.9) with ratio 70% of the students. Finally, 75% of the students (Mean = 3.9), was satisfied with the mobile design patterns library.
+There are many ideas of applications that the students do the user interface design to them by using mobile user interface design patterns collection, of these ideas: prototype for user interface design for booking railway tickets online. Patterns were used by the student are: Icon menu pattern to view the services provided by the application such as: book ticket, booked ticket history, enquiry, and logout. Icon menu pattern is a good idea because a user need to make a selection of a limited set of items and the space for the menu is limited. Also Predefined values pattern was used to enter inputs such as: from what station, to what station and determine the date of the trip. Predefined values pattern is a good idea in this context because the words that the user want to enter to the system is known and it is better to avoid the user to enter text because there is a difficulty to enter text to the mobile devices due to the limited interaction mechanism. In the same application Vertical list pattern was used to display the results of the available trips, Vertical lists are the most commonly used format on the mobile due to the typically narrow screen and the scrolling capabilities. Drop down menu pattern was used in the payment options.
+Also, one of the students has done a prototype for chat application on mobile. Accordion menu pattern was used to display online people and offline people. Accordion menu pattern is a good idea because the user needs to navigate quickly to the sub-menu items, as well as the option of going back to the main menu faster as well. The space to display many elements is limited. An accordion is useful for compressing many elements in a compact space. 
+   In the shopping application, one of the students uses a teaser menu to display products in a specific category. This context is appropriate for using this pattern because there are many products in each category and the space constraints pose a big challenge to the designer, as they want to show all or most of the content. A teaser menu is a form of menu where you show partial contents to the user letting them know at the same time that there is additional content available if the user so wishes to view them. The user can then click on the teaser menu link to get the secondary information which is not shown on the main page due to space constraints.
+Another student uses a Fisheye List pattern to display products. When a user focus on to a specific product, it will expand vertically with 2-3 lines of data such as price, brand, etc. and all other products having a single line. 
+    In all, these results and examples indicated that a pattern approach in mobile user interface design would be useful and convincing and brings value to mobile user interface design and development. It came obvious that patterns made mobile UI design process easier and faster. Furthermore, pattern library can be an efficient learning tool which will help students to improve their design skills.
+ Overall, the experience of using mobile UI design pattern library was positive and we can show that it is possible to use UI patterns as a tool for solving user interface design problems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter (7)
+Conclusions and Future Work
+
+7.1.         Introduction
+7.2.         Summary
+7.3.         Contributions
+7.4.         Future Work
+
+Chapter 7: Conclusion and future work
+
+7.1 Introduction
+This chapter presents the summary of the work, contributions of the thesis and future work.
+
+7.2 Summary
+User interface design pattern is a structured textual and graphical description of a proven solution to a recurring design problem. Patterns offer a powerful new way of focusing on design solutions in a specific context by telling the designer when, why, and how the solution can be applied successfully. Compared to the traditional design approach of using guidelines, patterns have emerged as a powerful tool for developing usable systems because:
+    (1) They are a good alternative to guidelines because they are problem oriented, yet not toolkit-specific.
+    (2) They are easier to use for novice designers, context-oriented, and promote reusability.
+    (3) Patterns can make user interface design process more efficient in many ways and thus save time.
+    (4) A designer uses patterns as tool to get ideas for the design, and to solve design problems.
+    (5) Patterns can be used to communicate design ideas to others stakeholders to make other people understand what the designer means.
+    (6) Patterns can contain graphical examples of good design solutions, making them easy to understand and apply in the design.
+    (7) A pattern library with visual and familiar example solutions may serve as a learning tool for inexperienced designer.
+    (8) Patterns work as a source of reused design knowledge which delivers the design solutions to designer and helps them to design consistent user interfaces and achieve the usability.
+
+
+    (9) Patterns with code examples guide the developer to implement the patterns applied in design. Reusing user interface code could shorten the translation time from design to implementation and thus minimize development costs.
+
+The aim of this research is:
+    (1) Using user interface design patterns to document and communicate mobile user interface design knowledge to increase usability in applications.
+    (2) Find an effective mechanism to speed up the process of mobile user interface design and development by providing means to reuse this knowledge effectively. 
+
+7.3 Contributions
+The contributions of this thesis are, in summary, as follows:
+    • Proposing classification for issues for mobile devices
+    • Describing the methodology that is followed to build a library of mobile user interface design patterns.
+    • Presenting a collection of mobile user interface design patterns.
+    • Developing a tool called MMUIP (Management of Mobile User interface Patterns) to manage these patterns collection.
+    • The patterns collection has been validated using a questionnaire.
+
+7.4 Future work
+Patterns always work together to solve design problems. This kind of collection of related patterns is called a pattern language. A study of existing pattern languages was conducted and it showed that they have several limitations and weaknesses, leaving room for improvements. None of the current pattern collections formed a comprehensive pattern language, although it is the biggest goal in pattern research. In the future work, we can research in this point and convert the collection of mobile user interface design patterns to pattern language for mobile applications.
+
+
+
+
+
+
+
+Appendix (A)
+A Collection of Mobile User Interface Patterns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1. Name: Icon menu
+Problem: Users need to make a selection of a limited set of items and the space for the menu is limited. Pictures are better than letters to express about these items but in mobile screen, there is very limited space for display anything so big pictures or images not make more sense.
+Solution: Icon menu allows users to select a menu item by selecting an image and then when image get focus it displays a relevant Label.
+Context: The space for the menu is limited and a set of items that are displayed is limited. 
+Example: 
+
+
+Figure A.1:  Icon menu (From: http://www.nokia.com)
+
+
+    2. Name: Accordion menu
+Problem: In mobile web application, the user needs to navigate quickly to the sub-menu items, as well as the option of going back to the main menu faster as well. The menu should not take too much space on the display and yet provide the user with what they are looking for. 
+Solution: Accordion menu is a form of menu where the options are stacked either vertically or horizontally, and the item in focus when clicked opens up displaying the sub-menu options related to the main menu item. The other menu items on the main menu are displayed in a collapsed fashion. The accordion thereby makes good use of the display space available to the user without compromising on the ease of use and look/feel aspect of the web page.
+Context: The space to display many elements is limited. An accordion is useful for compressing many elements in a compact space. 
+Example: 
+
+
+
+Figure A.2: Accordion menu (From: http://ui-patterns.com)
+
+
+
+    3. Name: List Menu
+Problem: Users need so make a selection of an unlimited set of items.
+Solution: A list menu is often used as a substitute for an icon menu when the numbers of items is more. 
+Context: list menu is useful when a user need to select from unlimited set of items.
+Example: 
+
+Figure A.3: List Menu (From http://www.nokia.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    4. Name: Drop-down menus
+Problem:  A user needs to select only one item from a list. The list are short, do not require scrolling and the text labels are equally short   
+Solution: Drop-down menus get their name from the common desktop usage in which the list displays downwards into the view. It saves space on small screens.
+Context: The space to display a list of items is limited, a list is short and user needs to select only one item from a list.
+Example: 
+
+
+Figure A.4: Drop-down menus (From http://www.nokia.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    5. Name: Sub menu list
+Problem: In mobile the menu contains only the main icons, each icon has details to ask user about some more options.
+Solution: Sub menu list is very important in mobile. Whenever we touch or click  on the main  icon or the menu a list of sub menu appear on the screen to ask user about some more options, e.g. copy, paste, edit etc. Sub menu is very important in mobile because menu contains only the main icons
+Context: screen space in mobile is limited so the menu contains only the main icons so we need a sub menu list to ask user about some more options.
+Example: 
+
+
+
+
+
+
+
+
+
+
+                           Figure A.5: Sub menu list (From http://www.evernote.com)
+
+
+
+
+
+
+
+
+
+    6. Name:  fly-out menu
+Problem: In mobile web application, users need to have direct access to sub-navigation but the amount of screen is limited.
+Solution: A list of clickable links or sub menu that appears when focus is on a particular menu item is known as a fly-out menu. A fly-out menu may be used to reduce the screen space occupied by the navigation. The fly out menu can be accomplished in a horizontal or vertical navigation bar.
+Context: This component of web design may be used on websites the end user has more navigation but limited screen space. A fly-out menu may be used to reduce the screen space occupied by the navigation bar/column.
+            Example:
+
+Figure A.6: fly-out menu (From http://www.welie.com)
+
+
+
+
+
+
+
+
+
+
+    7. Name: Teaser Menu
+Problem: While designing web pages with lot of content, the space constraints pose a big challenge to the designer, as they want to show all/most of the content. In such cases it is important to design the web page in such a way that the most important content gets displayed on the main page, while there is some mechanism of letting the user know that there is additional content available which they can view if they wish to. 
+Solution: A teaser menu is a form of menu where you show partial contents to the user letting them know at the same time that there is additional content available if the user so wishes to view them. The user can then click on the teaser menu link to get the secondary information which is not shown on the main page due to space constraints. 
+Context: Very full web pages with secondary navigation. You have the main menu but there are also other menus that do not fit with the main menu because the screen space is limited.
+            Example:
+
+Figure A.7: Teaser Menu (From http://welie.com)
+
+
+    8. Name: Repeated menu
+Problem: In a mobile, the web page is long to be displayed in a single screen. In such circumstances, the user needs to scroll down to see the complete content of the website. If users need to access the main navigation, he needs to scroll back to the top again. 
+
+Figure A.8: Long webpage (From:http://ui-patterns.com)
+
+
+
+Solution: whole web page can be accommodated in one screen. To provide the user the flexibility - not to scroll back to the top again, but to access navigation links from the bottom of the page, repeated menu is using.
+Context: This pattern is often used together with top navigation. Web pages are long and users will need to scroll down to see the entire page. In such cases, the main navigation is likely to be out of sight. This pattern makes the main navigation accessible again.
+Example: 
+
+Figure A.9: Repeated menu (From http://ui-patterns.com)
+
+
+
+
+
+
+
+    9. Name: Tap Navigation
+Problem: users need to arrange more controls than can fit on a single page.
+Solution: Tabs are a common mechanism used to arrange more controls than can fit on a single page. Restrict the number of tabs to that which will fit in one row on the screen.
+Context: when a user need to arrange more controls than can fit on a single page.
+Example: 
+
+Figure A.10: Tap Navigation (From http://www.welie.com)
+
+
+
+    10. Name: Breadcrumbs
+Problem: In mobile web application, the users need to know where they are in a hierarchical structure and navigate back to higher levels in the hierarchy.
+Solution: Show the hierarchical path from the top level to the current page and make each step clickable.
+Context: Sites with a large hierarchical information structure.
+Example: 
+
+
+
+
+
+Figure A.11: Breadcrumbs (From http://www.welie.com)
+
+
+
+
+
+
+
+
+    11. Name: Site index
+Problem: When a new web site is launched, the audience using the website may find it difficult to navigate as they are not acquainted with the hierarchy of the website.
+Solution: Show all pages in an alphabetical index or by topic, links of all the pages available on the website are available on a single page.
+Context: A large website with search and main navigation. Typically for beginning users those are not very familiar with the information architecture of the web site. 
+Example: 
+
+Figure A.12: Site index (From http://www.welie.com)
+
+
+
+
+
+
+    13. Name: Paging
+Problem: Many times the content of the web page is too long; the users need to look for something specific in a huge list of items. For example, search results, shopping items, etc were there are numerous results available. The user needs to scroll to see all the results. 
+Solution: arranging content of a long page over a number of numbered web pages. This arranging gives the users advance information of the quantity of the content and avoids the user to scroll. Due to less screen resolution resulting in less space, the page numbers tend to be very small. A special design which has links "Show next 10 results" and "Show previous 10 results" may be used.
+Context:  Many times the content of the page is too long. The users need to look for something specific in a huge list of items. For example, search results, available jobs, shopping items, etc were there are numerous results available. To avoid the user ever scrolling in such conditions the content is systematically classified according to relevance, name, type, price, etc. and presented to the user in the form of multiple web pages.
+Example: 
+
+
+Figure A.13: Paging (From http://handheld.softpedia.com)
+
+    14. Name: Searching
+Problem: Due to restrictions of mobile screen sizes some time it is very difficult to fit all data in one screen. User might need to do lot of scrolling of page to find the item he wants. 
+Solution: Offer a search. It is very effective when you need to search from a list of text based data, such as your Contacts. Generally you have one text input are where you type your search criteria and on basis of that list is being searched.
+Context: It is used when we need to search the required data from the contact list, mp3 list and from long paragraph. .
+Example:
+
+
+               Figure A.14: Searching (From http://www.nokia.com)   
+
+
+
+
+
+
+
+
+                      
+    15. Name: Sorting
+Problem: the user wants to increase findability of items within long lists. 
+Solution: offer a sort function to reorder a list based on a chosen parameter.
+Context: When a list contains a large number of items and a user wants to classify the items according to chosen parameter to increase findability of items within long lists.
+Example:
+
+ Figure A.15: Sorting (From http://www.nokia.com)
+
+
+
+
+
+
+
+
+
+
+
+
+    16. Name: Master Detail
+Problem: the user needs to show the details of the single item. The space constraints pose a big challenge to the designer.
+Solution: The Master Detail Design Pattern is a method to represent data by using two separate views: one to show the available items, and another to show the details of a single item.
+Context: This Design Pattern is useful in all those situations where a set of items must be represented, and each item contains detailed data that must be shown to the user.
+            Example: 
+
+Figure A.16: Master Detail (From http://www.nokia.com)
+
+
+
+
+
+    18. Name: multi selection list
+Problem: A user needs to select multiple items in any order to delete them or management of e-mail.
+Solution: use a multiple list whose purpose is to clearly emphasize and enable selection of multiple items in any order.
+Context: When the user is required to provide multiple parameters or data choices.
+Example: 
+
+           Figure A.17: multi selection list (From: http://www.nokia.com)
+    20. Name: Horizontal list
+Problem: the user has a small amount of list items and he wants to arrange these items.
+Solution: horizontal list is a good way to arrange short items because a screen size in a mobile is limited.
+Context: Best suited for lists containing small amounts of items. A common use is breadcrumbs which are typically short. Other common contexts of use are top navigation menus.
+Example:
+
+
+
+
+Figure A.18: Horizontal list (From http://www.welie.com)
+    19. Name: Vertical list
+Problem: the user has a large amount of list items and each item has an icon, the user wants to arrange these items.
+Solution: Vertical lists are the most commonly used format on the mobile due to the typically narrow screen and the scrolling capabilities.
+Context: when a list containing a large amount of list items and each item has an icon.
+Example: 
+
+Figure A.19: Vertical list (From: http://webscripts.softpedia.com)
+
+
+
+
+
+
+
+
+
+
+
+
+    20. Name: Fisheye List
+Problem: the user needs more content for the item in focus to show a snapshot of the complete information for the selected item and the screen space is limited. 
+Solution: In a Fisheye List, items not in focus appear exactly as they do in any other type of Vertical List. When a list item is in focus, but not selected, it will expand vertically with 2-3 lines of data, and all other item having a single line.
+Context: Fisheye can be used when the intention is to show more information for the selected item. The resultant fisheye view can be used to show a snapshot of the complete information for the selected item.
+Example: 
+ 
+Figure A.20: Fisheye List (From: http://4ourth.com)
+    21. Name: Continuous scrolling
+Problem: The user needs to select a text, images, videos, etc on a web page, application or a document, which cannot be fully shown on the screen at time. Also, the user wants to avoid a jump or discontinuous movement between the pages.
+Solution: Show the items on a continuous scrolling.
+Context: it is required when a user wants to scroll the page without jumping between the pages.   
+Example:
+
+
+
+
+
+
+
+
+
+
+
+    22. Name: Page by page scrolling
+Problem: The user needs to select a text, images, videos, etc on a webpage, application or a document, which cannot be fully shown on the screen at time. Also, the user wants to scroll quickly downwards or upward
+Solution: Show the items on a Page by page scrolling.
+Context: it is required when a user wants to scroll quickly downwards or upward.
+Example:
+
+Figure A.22: Page by page scrolling (From:http://ui-patterns.com)
+
+
+
+
+
+
+
+
+
+
+    23.  Name: Rating 
+Problem: In mobile web page, the users want to be allowed to vote application's content and share their opinion with other application's users
+Solution: allows users to easily rate the content of application, so giving users an instrument to promote his preferred content, allows users to view the votes (usually the average vote) that other users gave to specific content, so helping to promote high-quality content. 
+Context: This pattern is useful for all those scenarios where the users want to be allowed to vote application's content. Since this technique allows users to share their opinion with other application's users, it creates a social effect that involves users and promotes application usage.
+      Example:
+
+Figure A.23: Rating (From http://handheld.softpedia.com)
+
+
+
+
+
+
+    24. Name: Alert
+Problem: mobile have events like Call, SMS, e-mail and Bluetooth request, a user needs an efficient mechanism to fast and easy access to these events.  
+Solution: alert mechanism is an essential part for any mobile device. Alert can be flash message with confirmation, using menu, symbol to alert the user, it is generally shown on main screen of device. User can either service it or cancel it.
+Context: It is used by mobile by producing SMS, MMS, GPS, Email related news. . 
+Example: 
+
+                   Figure A.24: Alert (From http://www.j2mepolish.org)
+
+
+                    Figure A.25: Alert (From http://www.j2mepolish.org)
+
+    25. Name: Error Messages
+Problem: Users have entered input that could not be validated and they must be prompted to correct the input.
+Solution: Tell the users that there is a problem and how to solve the problem. Also tell the users where the problem occurred. 
+Context: Users have are trying to fill in form and one or more of the fields is syntactically invalid or missing. Usually, there two kinds of problems: a) the field has not been filled in at all, or b) the field contains data in the wrong format.
+Example:
+
+ Figure A.26:  Error messages (From http://design4mobile.com)
+
+
+
+
+
+
+
+
+
+
+    26. Name: definite progress indicator
+Problem: user needs to know status of an operation
+Solution: Use definite progress indicators when you can determine the duration of an operation. Definite progress indicators include a label to indicate what the operation is and a horizontal bar that fills from left to right as an operation progresses.
+Context: it is used when a system can calculate how far the task has progressed.
+Example:
+
+
+Figure A.27: Definite progress indicators (From: http:// www.j2mepolish.org)
+
+    27. Name: indefinite progress indicator
+Problem: user needs to know status of an operation
+Solution: Use an indefinite progress indicator when you cannot determine the duration of an operation. You can indicate progress using a status dialog box or by using an animated clock.
+Context: The most common use of this indicator on mobile is to indicate the loading of undetermined amounts of data from the network. 
+Example:
+
+
+Figure A.28: Indefinite progress indicators (From: http://www.j2mepolish.org)
+    28. Name: Auto complete
+Problem: When designing a mobile application where the user must enter some text, there is a problem: how to avoid that the user must enter text because there is a difficulty to enter text to the mobile devices due to the limited interaction mechanism. 
+Solution: using an auto complete mechanism that tries to guess what the user is about to write and suggests this by filling in the suggested text ahead of the writing of the user. This solution reduces the amount of repetitive typing. 
+Context: it is useful when the user enter words that are repeated over time.
+Example:
+
+
+
+       Figure A.29: Auto complete (From: http://www.weile.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    29. Name: Predefined values
+Problem: When designing a mobile application where the user must enter some text, there is a problem: how to avoid that the user must enter text because there is a difficulty to enter text to the mobile devices due to the limited interaction mechanism.
+Solution: Predefined values, by this we mean having a list of all (or the most common) texts to enter in a field, accessed from a menu or from a combo box
+Context: it is useful when there is a small set of words or phrases that are used more often than others.
+            Example:
+
+
+              Figure A.30: Predefined values (From: http://design4mobile.com)
+
+
+
+
+
+
+
+
+
+
+
+
+References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References
+
+Alexander, C., Ishikawa, S., and Silverstein, M. (1977). “A Pattern Language: Towns, Buildings, Construction”, New York: Oxford University Press.
+
+Alexander, C. (1979). “The Timeless Way of Building”, New York: Oxford University
+Press.		
+
+Badr, R. O. and Hosny, H. M. (2006). “An HCI Pattern Language”, In the Proceedings of the 10th lASTED International Conference “Software Engineering and applications” USA, pp. 371-376
+
+Barker, D. T. (2007). “User Interface Patterns: Reusable solutions for design”, In Human Factors International. Available at http://www.humanfactors.com/
+ (Visited on 8/5/2011)
+
+Bayle, E., Bellamy, R., Erickson, T., and Thomas, J. (1998). “Putting It All Together: Pattern Languages for Interaction Design” In the Proceedings of CHI98 workshop “the Human Factors in Computing Systems”. ACM SIGCHI Bulletin, Volume 30, pp. 17-23 
+
+Beale, R. and Bordbar, B. (2005).  “Using modeling to put HCI design patterns to work”, In the Proceedings of the 11th HCI International Conference on Human Computer Interaction, Las Vegas
+
+Bertini, E., Gabrielli, S., and Kimani, S. (2006). “Appropriating and Assessing Heuristics for Mobile Computing”, In the Proceedings of the working conference on Advanced Visual Interfaces, pp. 119-126, ACM New York, USA
+
+Borchers, J. O. (2001). “A pattern approach to interaction design”, In the Proceedings of the 3rd conference on Designing interactive systems: processes, practices, methods, and techniques, ACM New York, USA
+
+Borchers, J.O. (2002). “Teaching HCI Design Patterns: Experience From Two University Courses”, In Patterns in Practice: A Workshop for UI Designers (at CHI 2002 International Conference on Human Factors of Computing Systems). 2002:
+Minneapolis, MI.
+
+Carlsson, D. (2004). “A Categorization of HCI Patterns”, Master thesis, Department of Computing Science, Umea University, Sweden
+
+Consolvo, S., Roessler, P., Shelton, B., LaMarca, A. and Schilit, B. (2004). "Technology for Care Networks of Elders" In the Pervasive Computing, IEEE, volume 3, pp. 22-29 
+
+Deng, J., Kemp, E., and Todd, E.G. (2005). “Managing UI Pattern Collections”. In the Proceedings of the 6th ACM SIGCHI New Zealand Chapter's International Conference on Computer-Human Interaction: Making CHI Natural
+
+Deng, J., Kemp, E., and Todd, E.G. (2006). “Focusing on a standard pattern form: the development and evaluation of MUIP”, In the Proceedings of the 7th ACM SIGCHI New Zealand chapter's international conference on Computer-human interaction: design centered HCI  
+
+Dix, A., Finlay, J., and Abowd, G. D. (2004). “Human Computer Interaction”, Prentice Hall.
+
+Duyne, D. K. V., Hong, J. I., and Landay‏, J. A. (2002). “The design of sites: patterns for creating winning web sites”,  Addison Wesley.
+
+
+Ericsson, K. A. and Simon, H. A. (1985).  “Protocol Analysis: Verbal Reports as Data”, MIT Press.
+
+Erickson, T. (2005), The Interactions Design Patterns page.
+http://www.visi.com/~snowfall/InteractionPatterns.html Retrieved 8 May, 2011   
+
+Erickson, T. (2000). “Lingua Francas for design: sacred places and pattern languages”, In the Proceedings of the 3rd conference on Designing interactive systems: processes, practices, methods, and techniques, ACM New York, USA
+
+Folmer, E., Welie, M., and Bosch, J. (2006). “Bridging patterns: An approach to bridge gaps between SE and HCI”, In the Journal of Information & Software Technology – INFSOF Volume 48, pp.69-98
+
+Fossum, K. (2005). “Evaluation and Further Development of a Fire Control and Information GUI”, Master thesis, Department of Computing Science, Umea University
+
+Frishberg, L. (2006). “Presumptive design or cutting the looking-glass cake”, In the Magazine interactions, the art of prototyping, volume 13, ACM New York, USA
+
+Galitz, W. O. (2007). “The Essential Guide to User Interface Design”, John Wiley & Sons, Inc.
+
+Gamma, E., Helm, R., and Johnson, R (1995). Design Patterns: Elements of Reusable Object-Oriented Software, Addison Wesley
+
+Gong, J. and Tarasewich, P. (2004). “Guidelines for handheld mobile device interface design”, In the proceedings of  DSI Annual Meeting.
+
+Gong, J. and Tarasewich, P. (2005). “Alphabetically constrained keypad designs for text entry on mobile devices”, In the Proceedings of the Conference on Human Factors in
+Computing Systems (CHI '05), pp. 211-220, ACM Press
+
+Granlund, A., Lafreniere, D., and Carr, D. (2001). “A Pattern-Supported Approach to the User Interface Design Process”, In the Proceedings of HCI International 9th International Conference on Human-Computer Interaction, New Orleans, USA
+
+Huang, K.-Y. (2009). “Challenges in Human-Computer Interaction Design for Mobile Devices”, In the proceedings of the World Congress on Engineering and Computer Science (WECES) Conference,  San Francisco, USA
+
+Hughes, J. A., O'Brien, J., Rodden, T., Rouncefield, M. and Blythin, S. (1997). “Designing with ethnography: a presentation framework for design” In the Proceedings of the 2nd conference on Designing interactive systems: processes, practices, methods, and techniques (DIS '97), ACM New York, USA
+
+Janeiro, J., Barbosa, S. D. J., Springer, T., and Schill, A. (2009). “Retrieval of User Interface Templates Based on Tasks”, In the Proceedings of the12th IFIP TC 13 International Conference on Human-Computer Interaction: Part II, Springer-Verlag
+
+ Janeiro, J., Barbosa, S. D. J., Springer, T., and Schill, A. (2010). “A flexible model for improving the reuse of user interface design patterns”, In the Proceedings of the 28th ACM International Conference on Design of Communication (SIGDOC '10), ACM New York, USA
+
+Javahery, H., Sinnig, D., Seffah, A., Forbrig, P., and Radhakrishnan, T. (2006). “Pattern-based UI design: adding rigor with user and context variables”, In the Proceedings of the 5th international conference on Task models and diagrams for users interface design (TAMODIA'06), Springer-Verlag  
+
+Javahery, H. (2007). “Pattern-Oriented UI Design Based on User Experiences: A Method Supported by Empirical Evidence”, Degree of Doctor of Philosophy, Montrea, Concordia University 
+
+Jones, M. and G. Marsden (2006). “Mobile Interaction Design”, John Wiley & Sons Ltd, The Atrium, Southern Gate, Chichester, West Sussex PO19 8SQ, England.
+
+Kangas, E. and Kinnunen, T. (2005). “Applying user-centered design to mobile application development”, In the Designing for the mobile device Communications of the ACM
+
+Karlson, A. K. (2007). “Interface and Interaction Design for One-Handed Mobile 
+Computing”, Degree of Doctor of Philosophy, University of Maryland
+
+Laakso, K.-P. and A. Saura. (2003). “User Interface Design Patterns” Retrieved 8 may, 2011, from http://www.cs.helsinki.fi/u/salaakso/patterns/
+
+Lammi, J. (2007). “Developing a UI Design Pattern Library” Master thesis, Department of Computing Science and Engineering, Helsinki University of Technology
+ 
+Lammi, J., Varjokallio, M. and Hocksell, J. (2009). “Patternry” Retrieved 8 may, 2011, from http://patternry.com/
+
+Leacock, M., E. Malone, et al. (2005). "Yahoo! Design Patterns Library"   Retrieved 8 May, 2011, from http://developer.yahoo.com/ypatterns/.
+
+
+Mahemoff, M. and Johnston, L. (1998). “Pattern Languages for Usability”, In the Proceedings of the Asia Pacific Conference on Human Computer Interaction.
+
+
+Mahemoff, M. J. and Johnston L. J. (1998). “Principles for a Usability-Oriented Pattern Language”, In the proceedings of the Computer Human Interaction Conference Australasian, IEEEXplore.
+
+Mariage, C., Vanderdonckt, J. V, J. and Pribeanu, C. (2004). “State of the Art of Web Usability Guidelines”, The Handbook of Human Factors in Web Design.
+
+Muhanna, A. (2007). “Exploration of human-computer interaction challenges in  designing software for mobile devices”, Master thesis, University of Nevada, Reno, USA. 
+
+Myers, B. A., Nichols, J., Wobbrock, J. O., and Miller, R. C. (2004). “Taking Handheld Devices to the Next Level”. In the IEEE Computer Journal, Vol. 37, No.12, pp. 36-43.
+
+Nielsen, J. and Mack R. L. (1994). “Usability Inspection Methods”, John Wiley & Sons
+
+Preece, J., Rogers, Y., and Sharp, H. (2002). Interaction Design-Beyond Human- Computer Interaction, John Wiley & Sons
+
+Rettig, M. (1994). “Prototyping for tiny fingers”, In the Communications of the ACM volume 37
+
+Rosenberg, D. (2006). “Revisiting tangible speculation: 20 years of UI prototyping”, In the Magazine interactions - The art of prototyping, volume 13, ACM New York, USA
+
+Sa, M. d., Carrico, L., and Duarte, C. (2008). “Mobile Interaction Design: Techniques for Early Stage In-Situ Design, Human Computer Interaction: New Developments, InTech.
+
+Sa, M. d. and Carrico, L. (2009). “A mobile tool for in-situ prototyping”, In the proceedings of the 11th International Conference on Human Computer Interaction with Mobile Devices and Services (MobileHCI '09), ACM New York, USA 
+
+
+Scapin, D. L., Leulier, C., Bastien, J. M. C., Vanderdonckt, J., Mariage, C., Farenc, C. Palanque, P., Bastide, R. (2000). “Transferring Knowledge of User Interfaces Guidelines to the Web”, In the Workshop ERGO-IHM'2000: Tools For Working With Guidelines, Biarritz, France
+
+Sears, A. and Y. Zha (2003). "Data entry for mobile devices using soft keyboards: Understanding the effects of keyboard size and user tasks", In the International Journal of Human-Computer Interaction Volume 16, pp.163−184
+
+Seffah, A. and Javahery, H. (2002). “A Model for Usability Pattern-Oriented Designs”, In the Proceedings of the First International Workshop on Task Models and Diagrams for User Interface Design (TAMODIA '02), INFOREC Publishing House Bucharest
+
+Smith, M. and Pollock, C. (2009). “Pattern Tap” Retrieved 8 May, 2011, from http://patterntap.com/
+
+Sommerville, I. (2007). “Software Engineering”, Pearson Education Limited
+
+Spool, J. M. (2006). "The Elements of a Design Pattern.", Retrieved 8 May, 2010, from http://www.uie.com/articles/elements_of_a_design_pattern/.
+
+Stone, D. L. and D. Stone (2005). “User interface design and evaluation”, Elsevier, Inc.
+
+Subramanya, S. R.  and Byung K. Yi (2006). “User Interfaces for Mobile Content”, In the Journal Computer volume 39, IEEE Computer Society Press Los Alamitos, CA, USA
+
+Subramanya, S. R.  and  Byung K. Yi (2007). “Enhancing the User Experience in Mobile Phones”, In the Journal Computer volume 40, IEEE Computer Society Press Los Alamitos, CA, USA
+
+Taniar, D. (2009). “Mobile Computing: Concepts, Methodologies, Tools, and applications”. United States of America, Information Science Reference
+
+Thimbleby, H. (1990). “User interface design”, UK: Addison Wesley.
+
+Tidwell, J. (2006). “Designing Interfaces: Patterns for Effective Interaction Design”, O'Reilly Media, Inc.
+
+‏ Toxboe, A. (2010). “UI-patterns library” Retrieved 8 May, 2010, from
+  http://ui-patterns.com/
+  
+Tram, T. N. Q., Tai, C. G. T., Thuy, D. T. B. (2006). “User interface design pattern Management System Support for Building Information System”, In the Proceedings of the Digital Information Management, 1st International Conference pp.96-101
+, IEEEXplore  
+
+Vanderdonckt, J. (1999). "Development Milestones Towards a Tool for Working With Guidelines", In the Journal Interacting with Computers - IWC , volume 12, pp. 81-118
+
+Welie, M., Veer, G. C., and Eliëns, A. (1999). “Breaking Down Usability”, In the Proceedings of Interact 99, pp. 613-620, Edinburgh, Scotland.
+
+Welie, M., Veer, G. C., and Eliëns, A. (2000). “Patterns as Tools for User Interface Design”, In: International Workshop on Tools for Working with Guidelines, pp. 313-324 Biarritz France.
+
+Welie, M. and Traetteberg, H. (2000). “Interaction Patterns in User Interfaces”, In the proceedings of 7th Pattern Languages of Programs Conference (PLOP2000), Allerton Park Monticello, Illinois, USA. 
+
+Welie, M. (2008). "A Pattern Library for Interaction Design", Retrieved 8 May, 2011, from http://www.welie.com/patterns/index.html
+
+Welie, M. v. and Veer, G. C., (2003). “Pattern Languages in Interaction Design: Structure and Organization”. In the Proceedings of the Interact '03, Zürich, Switserland, Eds: Rauterberg, Menozzi, Wesson, pp.527-534, IOS Press, Amsterdam, The Netherlands IFIP Advances in Information and Communication Technology
+ 
+Wesson, J. (2001). “The Role of HCI Design Patterns in Software Development”, In the Proceedings of Journal of Research and Practice in Information Technology. pp. 42-53
+
+Zub, D., Eessaar, E. (2008). “Pattern-Based Usability Evaluation of E-Learning Systems”, In the proceedings of the Innovative Techniques in Instruction Technology, E-learning, E-assessment, and Education: International Conference on Engineering Education, Instructional Technology, Assessment, and E-learning (EIAE 07) pp.117-122, Springer Netherlands 
+
+Zub, D., Eessaar, E. (2010). Pattern-Based Usability Analysis: Comparison with a Case-Study, In the proceedings of the Technological Developments in Education and Automation: International Conference on Engineering Education, Instructional Technology, Assessment, and E-learning (EIAE 08) pp.225-230, Springer Netherlands.
+
+
+
+
+
+
+
+
+
+
+
+

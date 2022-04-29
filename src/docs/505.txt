@@ -1,0 +1,560 @@
+Governance & Management of Post-Construction Deployment Activities in 
+IS Development Projects
+(Case study in Egyptian environment)
+
+Esmat M.Abdelmoniem
+Information Systems Dept.
+Akhbar El Yom Academy, Egypt
+Email: esmat99@yahoo.com
+
+Sherif A. Mazen
+Information Systems Dept.
+Fac. of Computers & Information Cairo Univ., Egypt
+Email: smazen@eun.eg
+Ehab E. Hassanein
+Information Systems Dept.
+Fac. of Computers & Information Cairo Univ., Egypt
+Email: admin@drehab.net
+Abstract
+Researches continually show that many information systems (IS) development projects all over the world have difficulties to be completed on time or on budget or on scope, In fact many of them are cancelled before completion or are not implemented. Project success is affected by many factors such as project team, suppliers, Customers and stakeholders.
+
+So we developed and tested a governance model for management of successful IS development projects implementation, by governance of common Post-Construction activities in IS development Projects.
+The implementation of governance model covering factors can be divided into 4 categories (Management, Projects, Organizations, and Systems) to assess the influence of Critical Success Factors (CSF's) on the implementation of IS projects on large companies in Egypt. 
+Our main concern while performing this study was to collect the factors that could be more beneficial to a developing country setting like Egypt. 
+Data collection is done through an extensive literary review and many other interviews with IS project managers in some of Egyptian enterprises adopting software development and having previous experience in managing IS development projects.
+Keywords: 
+IS development project, Implementation, Success, failures, IS Governance, Critical Success Factors, Egypt. 
+1. Introduction
+Some of IS projects have a bad reputation for going over budget and schedule, not realizing expectations and for providing poor return on investment [1],[2],[3],[4],[5].Surveys and reports on the acceptability of new IS projects seem to highlight constantly the same problems and probable causes of failure large and small businesses, continue to make mistakes when attempting to improve information systems and often invest in inappropriate or unworkable changes without proper consideration of the likely risks.
+Some Information systems projects frequently fail. Depending upon published in academic studies the Failure rate of large projects is reported as being between 50%-80% [6]. This is due to the natural human tendency to hide bad 
+
+news; the real statistic may be even higher. This is a catastrophe.  
+It was reported that 75% of the ERP projects are classified as failures [7]. 51 % viewed their ERP implementation as not fully completed. Based on the ERP survey conducted by many researchers, the average cost of ERP ownership were $15 millions ranging from half millions to $300 millions [7]. The average cost per user per year could be as high as $20,000. However, there are also frequent reports of ERP failure: "between 50 percent and 75 percent of U.S. firms experience some degree of failure. 
+Our first aim in this work is to Studying the detailed tasks included in each activity of post construction phase (according to international standards, what are the causes of IS projects failure, The effect of IS Projects failure, what is the Most important ways to avoid IS projects failure and what are the Critical Factors toward achieving a successful IS projects implementation. 
+The second aim in this work is to explain the reasoning behind the development of a governance model for management successful implementation of IS development projects including the factors that achieve implementation success. 
+Last aim of this research to supporting IS projects to be completed successfully by applying Governance on the post-construction activities
+2- Background & literature review 
+2.1 Success and Failure of IS development Projects:
+IS development projects fail when they do not meet the criteria for success. Most of the IS projects run over budget or are terminated prematurely and those that reach completion often fall far short of meeting user expectations and business performance goals [8].
+Success and failure may vary over the life of a IS project and it is not always obvious when we should make a yes/no assessment [9]. 
+Furthermore it may be almost impossible to find agreement about whether a project succeed or failed. The notion that a project failed may mean that it did not meet certain people’s objectives or that it produced what were seen by some as undesirable outputs [10].
+According to the Standish Group research [11], IS projects category definitions are as follows:
+• Successful projects were completed on time and on budget, with all the features and functions that initially specified. 
+• Failed projects were cancelled before completion or never implemented.
+• Challenged projects were completed and operational, but over-budget, over the time estimate, and with fewer features. 
+The Standish Group research confirms that large projects are more likely to fail than small projects [11]. That is likely because large projects tend to be more complex. Although during the last years the success rates of IS projects increased, and failure rates of them decreased, but the numbers still indicate a problem. 
+Success and failure may vary over the life of a project and it is not always obvious when we should make a yes/no assessment. Furthermore it may be almost impossible to find agreement about whether a project succeed or failed. When trying to make sense of the ambiguity of notions of success and failure it may be useful to view them as being subjective judgments. 
+By using the definition of the IS projects, these projects fail when they do not meet the criteria for success [8]. According to the Standish Group [11],[12] , these studies present tables to indicate the project success factors, Project Challenged Factors  and the Project Impaired Factors.
+IS project success can be classified by four views [13] (the system, the users, the organization and the strategic view) of short-term and long-term objectives (Table [4]). Ewusi-Mensah [14] states that IS projects are unique in that they are conceptual in nature and require the intense collaboration of several different groups of stakeholders including IS staff, users and management.
+
+System
+User
+Organizational
+Strategic
+Short-term Objectives 
+
+Reliable (bug-free) system 
+
+Satisfying user needs 
+
+Improving the effectiveness of business operations
+Improving customer service
+Long-term Objectives
+
+Easily maintainable system
+Improving productivity of managers
+Generating operational benefits
+Enabling cooperative partnership
+Table [4]: A classification of short and long-term objectives
+3. IS post construction activities:
+We can classify Major phases of IS development projects into three phases:
+    1. Pre-construction / pre-development phase 
+    2. Construction / development phase
+    3. Post-construction / deployment phase 
+This research concentrates on (post-construction phase)
+We can divide the IS post Construction activities [15] into two categories 
+Construction activities or the IS deployment activity into two categories: 
+    • IS projects Deployment activities 
+    • IS projects closing activities 
+
+In this paper we will focus on the first part (IS projects Deployment activity that includes the following tasks: 
+    1. Security policy activity 
+    2. Installation Activity  
+    3. Integration activity 
+    4. Testing activity 
+    5. Implementation activity
+    6. Documentation activity
+3.1 Security policy activity:
+This policy refers to the integrity, availability, confidentiality, Non-repudiation, Risk management and accessibility of information and communications systems, software and associated data Information security means protecting information and information systems from unauthorized access, use, disclosure, disruption, modification or destruction 
+ISO 17799 defines a security policy as a document providing management direction and support for information security in accordance with business requirements and relevant laws and regulations. During the software development process it is important to use these policies as a guide for all security features that will be developed. 
+ISO 17799: The Key Components of the Standard: the Standard is divided into 2 parts:
+    • ISO 7799 Code of Practice for Information Security Management
+    • BS 7799 Part II Specifies requirements for establishing, implementing and documenting Information Security Management System (ISMS)
+The standard has 10 Domains, which address key areas of Information Security Management.
+3.1.1 Information Security Policy for the organization.
+This activity involves a thorough understanding of the organization business goals and its dependence on information security.
+3.1.2 Creation of information security infrastructure
+A management of the governance model needs to be established to initiate, implement and control information security within the organization. This needs proper procedures for approval of the information security policy, assigning of the security roles and coordination of security across the organization. 
+3.1.3 Asset classification and control
+One of the most laborious but essential task is to manage inventory of all the IT assets, which could be information assets, software assets, physical assets or other similar services. 
+3.1.4 Personnel Security
+Human errors, negligence and greed are responsible for most thefts, frauds or misuse of facilities. Various proactive measures that should be taken are, to make personnel screening policies, confidentiality agreements, terms and conditions of employment, and information security education and training. 
+3.1.5 Physical and Environmental Security
+Designing a secure physical environment to prevent unauthorized access, damage and interference to business premises and information is usually the beginning point of any security plan. 
+3.1.6 Communications and Operations Management
+Properly documented procedures for the management and operation of all information processing facilities should be established. This includes detailed operating instructions and incident response procedures. 
+3.1.7 Access control
+Access to information and business processes should be controlled on the business and security requirements. This will include defining access control policy and rules, user access management, user registration, privilege management, user password use and management, review of user access rights, network access controls, enforcing path from user terminal to computer, user authentication, node authentication, etc.
+3.1.8 System development and maintenance
+Security should ideally be built at the time of inception of a system. Hence security requirements should be identified and agreed prior to the development of information systems. 
+3.1.9 Business Continuity Management
+A business continuity management process should be designed, implemented and periodically tested to reduce the disruption caused by disasters and security failures.  
+3.1.10 Compliance
+It is essential that strict adherence is observed to the provision of national and international IT laws, pertaining to Intellectual Property Rights (IPR), software copyrights, safeguarding of organizational records, data protection.
+3.2 Installation Activity
+The installation activities represent the steady state of the software on the computer. Administrators want the software installed correctly on the users' computers to manage this steady state, software is:
+    • Installed: This includes copying the necessary files, initial configuration of the registry, and the creation of the desktop and Start menu shortcuts that allow users to find and use the software.
+    • Modified:  This involves adding or removing features after the initial installation.
+    • Repaired: This involves keeping the software in a working state without regard to what happens.
+    • Removed: This involves completely and safely removing the software from the computer when it is no longer needed, including the removal of all the files, registry entries, and shortcuts.
+3.3 Integration avtivity :
+Part of the Software Development Life Cycle (SDLC) the Testing and Integration Phase is when the various disparate components of the system are integrated together and systematically tested as a whole 
+Not only is the product tested by final end users to ensure the product meets the specified functional requirements, but it is also tested by the developers and Quality Assurance staff (Test Engineers) to ensure that it is resilient, and capable of sustaining the amount of projected use as specified in the requirements.
+	State the integration of developed and legacy systems: For customers who depend on legacy systems, must system deliver integration four ways: 
+Products: Providing innovative features and technologies such as managed data providers for other databases Bridge for host systems.
+Community: Working together with customers, partners, and competitors to develop cross-platform solutions that meet customers’ shared interoperability needs, promote technology innovation, and promote competition in the IT industry.  
+Access: Licensing technology assets to and from other companies and offering key technologies including Web services standards under the Open Specification Promise  
+Standards: Supporting industry and technical standards for data formats and messaging protocols and actively participating with leading standards-setting organizations to promote technology adoption
+3.4Test activity:
+The Test Phase is toward the end of the traditional waterfall development process. However, hopefully this is not the first time we have thought about testing. Depending on the characteristics of our IS project, we may already have created an initial. Testing strategy in the analysis phase and a testing Plan in the design phase. We would have already performed initial unit testing in the Construct Phase. Now, however, we are ready for the standalone testing process that belongs in the test phase. There are a number of specific tests that can be part of the testing process the specific ones our solution needs will be defined in our testing strategy and plan. The Testing Process including the following activity: [17]: 
+1- Validate Test Coverage
+2- Integration Testing
+3- System testing that includes: 
+
+    a. Performance Testing       
+
+    b.  Training Testing 
+
+    c. Stress Testing 
+
+    d.  Interface Testing 
+
+    e. 3-Security Testing 
+
+    f.  Disaster Recovery Testing 
+
+    g. Requirements Testing 
+
+    h.  Multi-Site Testing 
+
+    i. Usability Testing 
+
+    j.  Installation Testing 
+
+    k. Documentation Testing 
+
+
+
+4- Acceptance Testing
+5- Re-plan for the Remainder of the Project
+6- Obtain Approval to Proceed
+More Test activity including the following:
+    •  Resolving Bugs 
+    •  Testing Metrics 
+    •  Managing the Test Environment 
+    •  Regression Testing 
+    •  Automated Testing 
+    •  Managing Test Cases 
+3.5 Implementation activity: 
+Part of the Software Development Life Cycle (SDLC): after the system has been tested during the Testing Phase, and accepted by the user, the system is installed and made operational in a production environment, in accordance with the requirements.  Projects, especially software development projects, can be a challenge from start to finish [Error: Reference source not found].  We know the scenario at the beginning, we don’t like to take the time to plan well, and we rush through the business requirements since we already know what the client wants. We have fun initially with the design work, but then we discover the technical environment is more complex than we thought and we start to get a headache. 
+Implementation refers to the final process of moving the solution from development status to production status. Depending on our project, this process is often called deployment, go-live, or installation for the purposes of Lifecycle step, and all of these terms are synonymous with "implementation". 
+Depending on the size and nature of our project, the following areas should be considered:
+1- Prepare for Implementation
+2- Perform Training
+3- Convert Data
+3- Implement the Solution
+3-1 Pilot Test the Solution 
+5- Monitor the Solution
+6- Turnover to Support
+7- Obtain Final Approval
+8- Terminate the Project
+3.6 Documentation activity
+IS projects Documentation activity includes:   
+    • Project Management Documentation
+    • Quality Assurance Documentation  
+    • Configuration Management
+    • Documentation  Verification and Validation Documentation 
+    • Test Documentation
+    • Requirements Documentation 
+    • Design and Implementation Documentation 
+    • Reporting  
+Preparing and transmitting documents connected with final payment, the organization of operation and maintenance manuals, assembling record drawings, Contractor follow-up, Owner move-in or start-up, Contractor call-back, and Contractor close-out. 
+Project documentation may include many kinds of documents (e.g., plans, task reports, development products, problem reports, phase summary reports) [Error: Reference source not found].  Project size, criticality (i.e., the severity of the consequence of failure of the system), and complexity are some features that may affect the amount of documentation a project should need.  The purpose of this section is not to specify how many documents should be required. Rather, this section identifies the information content needed for any project and the timeliness of requirements so that the information can be used by the vendor, the utility, and the NRC (National Research Council) reviewers. Because the NRC reviewers cannot determine the characteristics of the software product without substantial technical specifications, project plans, and reports, NRC should specify the technical products of the vendor that the utility must provide NRC.  
+This report expands upon the documentation requirements in [ASMENQA2]. While minimum content requirements are provided for several documents (which include the [ASMENQA2] requirements), some documents may be presented together as a single document.  Each of the planning documents may be kept simple and short, but the basic information identified in the recommendations should be addressed. 
+3.6.1 Project management documentation The following recommendations for project management documentation are based on [IEEE1058] [Error: Reference source not found].
+Project Organization  
+    • Process Model Relationships between project activities Specification of timing of major milestones, baselines, reviews, work products, project deliverables, and sign-offs. Definition of project initiation and termination activities  
+    • Organization Structure  Description of the internal management structure including authority, responsibility, and communication  
+Organizational Boundaries and Interfaces Project boundaries with other entities (customer, subcontractors, other system components) Interfaces of SCM, SQA and SV&V  
+    • Project Responsibilities  Description of major project activities and who has responsibility for each activity  
+Managerial Process  
+    • Management Objectives and Priorities  The philosophy, goals, and priorities for management activities such as reporting mechanisms, priorities among requirements, schedule, and budget, risk management procedures, and, procedures relating to existing software  
+Technical Process  
+    • Methods, Tools and Techniques  Methods, tools, and techniques used to conduct project activities  References to standards, policies and procedures used  
+    • Software Documentation (may be included here or in SQAP) The documentation requirements, milestones, baselines, reviews, and sign-offs  
+    • Project Support Functions  Reference to (or include here) the SCMP, SQAP, and SVVP  Responsibilities, resource requirements, schedules, and budget for the SCM, SQA, and software verification and validation (SV&V)  
+Work Packages, Schedule and Budget  
+    • Work Packages  Description of the work packages (i.e., task grouping) for the project activities  
+    • Dependencies  Interdependencies among work packages and dependencies on external events  
+    • Resource Requirements  Estimates of project resources including numbers and types of personnel, computer time, support software, computer hardware, office and laboratory facilities, travel and maintenance requirements  
+    • Budget and Resource Allocation  
+    • Schedule  
+3.6.2 Software Quality Assurance Documentation (SQAP):
+ [ASMENQA2] and the IEEE standards are intended for specific projects, and therefore do not address a vendor's quality management program. A plan based on [ASMENQA2] may reference the vendor's general quality management program (e.g. one based on [ISO9000]) that indicate, Comparison of Requirements Project Management Error: Reference source not found],[Error: Reference source not found] .
+3.6.3 Configuration Management (SCM) Documentation
+There are several SCM documents that should be produced.  The SCMP should describe how the SCM activities (configuration identification, configuration control, status accounting) will be conducted and documented. The other documents report on the SCM activities. The Software Configuration Management Plan (SCMP) may exist as a generic plan which can be referenced by any project.  Even on a small project it is easy to lose track of the relationship between tested software modules and modules in which software units have been changed. The following recommendations for an SCMP are based on [IEEE828] are used not only because of its merits but also because it is serving as the base document for an international standard in ISO/IEC JTC1 SC7 on Software Engineering. Recommendations for the other SCM documents are available on [IEEE828] and Software Verification and Validation (SVVP) Documentation are available on [IEEE1012].  
+3.6.4 Testing Documentation
+Although test plans for component, integration, and system testing are usually separate documents, for small projects they may be presented together in one document.  In these cases, the document should contain separate, complete sections for each type of testing, since the objectives and test strategies for each type of testing will still differ. Such an arrangement should be specified in the SVVP. The following recommendations for Test documentation are based on [NASA2100], [DOD2167A], and [FUJII] and Recommendation for maintenance documents is available on [EWICS2] and [IEEEP1219]  
+3.6.5 Reporting
+The purpose of reporting is to communicate to others information on specific deficiencies in the software or to summarize specific tasks or groups of tasks performed during development (e.g., SQA activities and SV&V activities) These reports should be used during formal reviews that assess the current product and development activities, as well as to improve the development process for future projects. Reports should be generated as necessary (e.g., for each anomaly or at the completion of each major task) There is no set number of required reports, however, the vendor should avoid producing an overabundance of unnecessary reports. 
+4. Governance & Management of Post-Construction Deployment activities in IS Development Projects
+Based on the all the pervious frameworks as well as models [18], also through an extensive literary review, studying the CMMI , Waterfall and Agile methods ,in addition to interviews with IT managers having previous experience in managing IS projects implementation and a faculty member with a good background in this subject , Eighteen (18) Critical Success implementation factors were identified (figure [1]) .
+1- Management category factors
+F1: Senior Management Commitment
+F2: Leadership
+F3: Competence and BPR 
+F3: Software process Improvement (SPI) objectives and goals 
+2- Project category factors
+F5: Staff Involvement 
+F6: Experience Staff 
+F7: Return on investment (ROI)
+F8: SPI awareness and Implementation methodology 
+3- Organization category factors
+F9: Organizational Culture
+F10: Organizational Politics
+F11: Communication and Collaboration
+F12: Wide Commitment 
+F13: Resistance
+4- System category  factors
+F13: Allocation of Resources
+F15: Training and mentoring
+F16: Sustainability
+F17: Ease to use 
+F18: Minimal Customization 
+In this study ,we present Governance & Management model of successful IS development project implementation in Egypt, the final list of this model  included 18 factors whose reliability and validity are tested by using it with corresponding 108 questions, question one in each factor is divided into 7 sub question related to common post-construction activities. These questions were distributed as 6 question per each factor grouped into four categories (management, Project, Organization and System). After that we used this governance model for 23 projects at five big organizations in Egypt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure [1] the proposed governance model 
+After this we got statistical reports and Figures about the outcome of each factor corresponding to the five organizations under study and we got statistical reports and Figures about the outcome of the four categories (Management, Project, Organization and System) for all organizations under study indicating the average success rate for IS development project success implementation.
+4.1 Criteria for Success the Proposed Governanace Model 
+Along with a division of the known 18 factors into four categories (Management, Project, Organization and System) , our main concern while performing this study was to collect the factors that could be more beneficial to a developing country setting like Egypt. The final list included 18 factors, discussed later.  
+The responding organization should fulfill 67% percent of each factor (based on 6 questions per factor, three questions (governing questions) and at least four questions must be replied by (Yes) as a positive reply except factor 13 (resistance factor) must be replied by (No) to be a positive reply. First question in each factor is related to the post-construction activities and includes 7 sub questions which also must achieve 71% success rate (5 questions out 7 questions) to be considered matching the successful criteria. The result will be 67%. Which is the probability of success of the project .A text describing what the organization’s strengths and weaknesses will be described according to the different factors, along with a quick-list of possible future managerial actions to strengthen the identified weaknesses. 
+Data collection is done using a survey and interviews with major players of the large companies working in the Egyptian market, each company has number of IS development projects (total 23 IS development projects) . Findings show that certain factors have more significance in these organizations and their influences vary on the IS development projects implementation. 
+This research concentrated on practical testing of the model. This is mainly done through testing the reliability and validity of the model by using it with corresponding questions.  
+A description of the 18 factors with the corresponding four categories can be found in the following section: 
+Matrix of Eighteen (18) Critical Success implementation factors belong to the six Post-Construction Deployment Activities in IS Development Projects.
+CSF  / Activity 
+A1
+A2
+A3
+A4
+A5
+A6
+F1: Senior management Commitment
+
+
+
+
+
+
+F2: Leadership
+
+
+
+
+
+
+F3: Competence and BPR.
+
+
+
+
+
+
+F4: SPI objectives and goals  
+
+
+
+
+
+
+F5: Staff Involvement 
+
+
+
+
+
+
+F6: Experience Staff 
+
+
+
+
+
+
+F7: Return on investment (ROI)
+
+
+
+
+
+
+F8: SPI awareness and Implementation methodology 
+
+
+
+
+
+
+F9: Organizational Culture
+
+
+
+
+
+
+F10: Organizational Politics
+
+
+
+
+
+
+F11: Communication and Collaboration
+
+
+
+
+
+
+F12: Wide Commitment 
+
+
+
+
+
+
+F13 : Resistance
+
+
+
+
+
+
+F14: Allocation of Resources
+
+
+
+
+
+
+F15: Training and mentoring
+
+
+
+
+
+
+F16: Sustainability
+
+
+
+
+
+
+F17: Ease to use 
+
+
+
+
+
+
+F18: Minimal ustomization 
+
+
+
+
+
+
+Table [5] Critical Success implementation factors belong to the six Post-Construction Deployment Activities.
+Table [5] shows the Matrix of Eighteen (18) Critical Success implementation factors belong to the six Post-Construction Deployment Activities in IS Development Projects.
+5.2 Management category factors
+F1: Senior Management Commitment: 
+Senior management commitment is most cited factors in the most literatures [18]. Management commitment and support is one of the most important factors that can play a vital role in successful implementation of software process improvements (SPI) and initiative program. Without management support, progress cannot be granted. It is the level of commitment which higher management ensures to support at all the operating levels of the organization that sponsors the change in order for successful implementation of SPI assessment.
+F2: Leadership:
+The organization should have a strong and committed leadership that has the ability to motivate the employees to change [20][21].
+F3: Competence and Business process reengineering (BPR) 
+The organization should have individuals with a broad competence of IS Projects [22], BPR or other IT-related projects involved in both the steering committee and the entire project. BPR is the fundamental rethinking and radical redesign of business processes to achieve dramatic improvements in critical, contemporary measures of performance, such as cost, quality, service and speed" IS Projects are built on best practices that are followed in the industry  Implementing an IS Projects involves reengineering the existing business processes to align the best business standards  [23].
+F4 SPI objectives and goals 
+It is necessary for organization to set realistic & relevant objectives and goals for SPI. These objectives need to be crystal clear and, SPI managers need to communicate to all the actions groups within the organization. Establishing the realistic objectives means that goals seem to be achieved in the near future and its objectives and goals are not too ambitious. It demands that the expectations should be clear and the expected results need to be communicated at all the levels of the organization [18]. 
+5.3 Project category factors
+F5: Staff involvement 
+Staff involvement is among a key factor which helps to facilitate successful SPI program. This is agreed by many researchers such as [18], Authors explore different aspects of staff involvement CSF in their studies and provide some in-depth knowledge and idea about how the staff participation and involvement leads us to successful implementation of SPI and in the evaluation process, and assessment of its initiative in change management.  
+F6: Experience Staff:
+The number of researchers on the basis of their collected sample studies data, emphasis on how a software process skills, experience and staff expertise can play a key role in successful implementation of SPI program.  In experienced staffs, practitioners consider hurdle in SPI and emphasize to equip them with the necessary training that transfers the right SPI skills that enable them to mastery it in use. The main goal for this training should be to transfer the knowledge of SPI inter-related activities with business objective and organization goals [24], [18].  
+F7: Return On Investment (ROI)
+The organization should have an Achieving expected payoff (Return On Investment) Calculating return on investment, (ROI), which is based on comparing the costs of implementation to the benefits that you will receive by the integration of an ERP software package into your business structure. While the direct costs of the software itself, installation, training, and support can generally be quantified by the vendor, there are other indirect costs that will be generated within the business, such as reduced productivity during the integration process and training sessions. 
+F8: SPI awareness and Implementation methodology 
+According to “Critical Success Factors for Software Process Improvement Implementation: An Empirical Study” research 24] to fully understand the benefits of SPI, there is need to sponsor the SPI awareness program i.e. “ROI and impact”, practitioner belief that SPI implementation is basically taking on board the organization best practices.  Consequently, it is essential to address the SPI awareness activities and transfer the share knowledge among different groups who are actively engaged in process activities [18][24].
+5.4 Organization category factors
+F9: Organizational Culture 
+Culture difference exists between different countries that are not necessarily suited or accepted by people living in other countries.  Moreover, specific cultures adopt, without considerations of that organization, original values from these countries customs and practice. Organizations will continuously face problems in implementation and deploying of best practices, majority of these problems belong to “people, group, team and community culture and behavior” [18].
+F10: Organizational Politics
+Several researchers' consider politics as barrier in SPI implementation because SPI aim is to bring a change in the organization and people do often resist the change. This is because SPI initiatives goals may suit to one group’s goals but collide with other groups or teams goals.  The reason is that the organization comprises of different groups and they have different priorities and goals that do not match with the SPI initiatives goals and this leads to oppositions from those people  ”There are many factors that can trigger organization politics, such as reallocation of the resources, promotions opportunities, low trust, times pressure, and role ambiguity ” [18].
+F11: Communication and Collaboration
+Communication and Collaboration are considered to be amongst the most influential factors, which affect the SPI process. Some researchers [24] defined these factors as: “Degree to which communication efforts precede and accompany the improvement program (communication) and degree to which staff members from different teams and departments cooperate (collaboration)” 
+F12: Wide Commitment 
+The IS Projects should be enterprise wide i.e. it should integrate information and information based processes within and across all functional areas in an organization. It’s imperative to get support from all functional segments of the organization. (Every person and department is responsible for the overall system .Key users from different departments are ensured to commit to the project implementation without being called back to their prior functional job position frequently [25]. 
+F13: Resistance:
+The organization should have an IS Projects usually introduce large-scale changes that can cause resistance, which may in turn decrease the expected benefits of the system. Previous IS research has made substantial progress in understanding how resistance affect IS [18].
+5.5 System category factors
+F14: Allocation of Resources: 
+The management commitment can be determined by the degree to which management seem ready to make available the resources for SPI and it is considered one of the strong indicator of management commitment towards SPI [18], (Senior management sponsorship is essential for the assessment and recommendations, that means, higher management must show their strong commitments in developing, financing and implementing the actions plan.  
+
+F15 : Training and mentoring 
+The organization should have a clear educational strategy concerning the SPI implementation that involves routines for early hands on training for the employees [26], [27]
+F16: Sustainability
+What requirements/safeguards are there to ensure that an Monitoring & Evaluation system will be made sustainable (i.e.  Allowed to continue over time)?
+F17: Ease to use 	
+The organization should have a strategy to select the IS project ease of use .Ease of to use is the degree to which a particular system is perceived to be relatively free from physical and mental effort. Previous is Research found that ease of use has an impact on the intensions to use IS projects.
+F18: Minimal customization 
+Taming the package causes extra additional customization costs, inability to benefit from vendor software maintenance and upgrades, and inability to benefit from the standard best practices encapsulated in the package [25].
+12-Results of model  implementation:
+After Appling our model  about the Critical Success Factors (CSFs) that support IS Development Projects Implementation success on five big organizations in Egypt including 23 IS development projects, along with a division of the known 18 factors into four categories (Management, Project, Organization and System) we got the following results:
+    • Organization O1 achieved 80% average success rate for IS Development Project Implementation (4 success projects and one challenged out 5 projects).
+    • Organization O2 achieved 40% average success rate for IS Development Project Implementation (2 success projects out 5).
+    • Organization O3 achieved 50% average success rate for IS Development Project Implementation (2 success projects out 4 projects).
+    • Organization O4 achieved 75% average success rate for IS Development Project Implementation (3 success projects out 4).
+    • Organization O5 achieved 40% average success rate for IS Development Project Implementation (2 success projects out 5).
+    • IS development project success rate for all organizations under study is 57%  (13 success projects out 23) 
+6. Results of the application of  governance model 
+6-1 Results of IS development projects implementation at organization O1 in details 
+
+
+Fig. 2 shows that all categories meet the criteria for successful IS development project implementation framework, all categories achieve more than or equal 75% success rate indicates success P1 implementation at organization (O1).
+
+Fig. 3 shows that (11 factors out of 18) i.e. 61% achieved 83% success rate and three  factor achieved 100% , the remaining factors 22% (4 factors out of 18) achieved 67% success rate indicating the success of  IS Development project implementation (P1) at organization (O1) and this project meets the governance model success criteria. 
+Fig. 4 shows that all categories did not meet governance model success criteria, only organization and system categories achieved 50% but this percentage did not meet the criteria for success of the framework, that indicates the failure of IS Development project implementation P2 at Organization (O2).
+
+From the figure 5 we conclude that
+    • None of the factors achieved 100% or 83% success rate
+    • 33% of  the factors achieved 67% success rate (6 factors out of 18),
+    • 44% of  the factors achieved 50% success rate (8 factors out of 18),
+    • 6% of  the factors achieved 33% success rate (one  factor out of 18),
+    • 17% of  the factors achieved 17% success rate (3 factors out of 18),
+
+Fig. 6 shows that all related categories meet the    governance model success criteria that indicates the success of IS Development project implementation (P3) at organization (O1).
+
+Fig. 7 shows that 17% from the factors (3 factors out of 18) achieved 100% success rate and 39% from the factors (7 factors out of 18) achieved 83% success rate and the remaining factors 44% of them (8 factors out of 18) achieved 67% success rate, this indicates that this project (P3) at organization (O1) meet the governance model success criteria. 
+
+Fig. 8 shows that all categories meet the criteria for success of the governance model and we have management category  achieve  very good  success rate (83%) that indicates very high success rate of IS Development project implementation (P4) at organization (O1).
+
+Fig. 9 shows that that one factor achieved 100% success rate and 50% from the factors (9 factor out of 18) achieved 83% success rate and 44% from the factors (8 factor out 18) achieved 67% success rate indicating that this organization met the governance model success criteria and achieved good success rate of IS Development project Implementation (P4) in this Organization (O1).
+
+Fig. 10 shows that all categories meet the governance model success criteria, only the system category that achieve low success rate 70% but still meet the    governance model success criteria, that refers to the success IS Development project implementation (P5) in this Organization (O1).
+
+Fig. 11 shows that only one factor achieved 100% success rate and 39% of the factors (7 factors out of 18) achieved 83% success rate and the remaining factors 56% of them (10  factors out of 18) achieved 67% success rate, this indicates that this project (P5) at organization (O1) meet     governance model success criteria. 
+
+Fig. 12 shows the summary of all the pervious results according to our governance model for Critical Success Factors (CSFs) for IS development software implementation. 
+
+This figure shows that the known 18 factors are divided into four categories (Management, Project, Organization and System). Four projects (P1, P3, P4 and P5) achieved good success rate and met the governance model success Criteria at IS Development software implementation and one project (P2) did not meet the governance model success criteria (achieved only 50% success rate). On the other hand we find that the most successful IS development projects implementation usually got more than 75% success rate when implementing our framework.
+Fig. 13 shows that the management category plays very important role to achieve successful IS development projects implementation, although the Management category at project P2 achieved 59% but it did not meet the    governance model success Criteria at IS Development project implementation, its low success, has influenced the rest of categories' success so caused overall failure of the whole project (P2). 
+6.2 Results of IS development projects implementation at organization O2: 
+
+
+Fig. 13 shows the summary of the results of the application of the governance model on the organization O2 that includes five projects. This figure shows that the known 18 factors are divided into four categories (Management, Project, Organization and System). Two projects (P3, P4) met the governance model success criteria at IS development project implementation and project (P1, P2, P5) did not meet the  governance model success criteria,  project p1 achieved only 50% success rate and is considered as challenged project, projects (P2,P5) that achieved less than 50% success rate and are considered as failed projects. on the other hand we find that the most successful IS development projects implementation usually got more than 75% success rate when implementing our framework.
+Fig. 13 shows that the management category that achieved more than 80% in projects (P3, P4) plays very important role to achieve successful IS development projects implementation, and the Management category when achieved success rate less than 55% (low success rate) this caused overall failure of the whole project . 
+6.3 Results of IS development projects implementation at organization O3: 
+
+
+Fig. 14 shows the summary of the results of the application  governance model on the organization O3 that includes four projects. This figure shows that the known 18 factors are divided into four categories (Management, Project, Organization and System). Two projects (P3, P4) met the governance model success criteria at IS development project implementation and projects (P1,P2) did not meet the governance model success criteria,  project P1 achieved only 40% success rate and we is considered as failed project, projects P2 that achieved less than 52% success rate and is considered as challenged  project. On the other hand we find that the most successful IS development projects implementation usually got more than 75% success rate when implementing our framework.
+Fig. 14 shows that the management category that achieved more than 85% in projects (P3, P4) plays very important role to achieve successful IS development projects implementation, and the Management category when achieved success rate less than 65% (low success rate) this caused overall failure of the whole project . 
+
+
+6.4 Results of IS development projects implementation at organization O4: 
+
+
+Fig. 15 shows the summary of the results of the application    governance model on the organization O4 that includes four projects. This figure shows that the known 18 factors are divided into four categories (Management, Project, Organization and System). Three projects (P1, P3, P4) meet the governance model success criteria at IS development project implementation and project (P2) did not meet the    governance model success criteria, project P2 achieved only 45% success rate and is considered as failed project, on the other hand we find that the most successful IS development projects implementation usually got more than 75% success rate when implementing our governance model at organization O4.
+Fig. 14 shows that the management category that achieved more than 85% in projects (P3, P4) plays very important role to achieve successful IS development projects implementation, and the Management category when achieved success rate less than 45% (low success rate) this caused overall failure of the whole project . 
+6.5 Results of IS development projects implementation at organization O5: 
+
+Fig. 16 shows the summary of the results of the application of  the   governance model on the organization O5 that includes five projects. This figure shows that the known 18 factors that are divided into four categories (Management, Project, Organization and System). Two projects (P3, P4) met the governance model success criteria at IS development project implementation and two projects (P1, P2) did not meet the governance model success criteria and is considered as failed IS projects and last project (P5) also did not meet the governance model success criteria and is considered as challenged IS project since it achieved 53% success rate.
+Fig. 16 shows that the management category that achieved more than 82% in projects (P3, P4) plays very important role to achieve successful IS development projects implementation, and the Management category when achieved success rate less than or equal 54% (low success rate) this caused overall failure of the whole project . 
+
+7. Conclusion & Comparison between international and national results.
+Many surveys provide statistical data over the rate of failure of IS a development project over the last year. From all these studies we can summarize the statistical data for the rate of failure of IS development projects over the last 19 years (from year 1993 until year 2011) as follows:
+    • Average success IS development projects rate are 26.5%
+    • Average failed IS development projects rate are 23.5%
+    • Average challenged IS development projects rate are 40%
+The results shows that the rate of the IS development projects that failed and challenged is still very high. 
+By comparing the pervious results about international statistical data for the rate of failure of IS development projects over the last 15 years and our results after applying our governance model in five big organizations in Egypt that has 23 IS development projects, we find that 44% (10 projects out of 23) didn't meet the criteria for success of the    governance model for IS development projects implementation.
+From our pervious results we get that failed projects rates are nearly equal to the international percentage but the success project rate in Egypt is greater than the international percentage, this is because the organizations under study try to achieve the criteria for success by applying our    governance model for success of IS development project  implementation.
+Egypt's expenditure on IS projects and other enterprise systems is growing, and these systems can undoubtedly deliver benefits to organizations in developing countries [28], [29]. However, high failure rates continue to block the delivery of such benefits. Research to date, though, often appears partial, focusing on only some aspects of system outcome and/or focusing only on certain specific implementation factors.
+This research focuses on IS development software success implementation in Egypt .So we developed and tested a    governance model that investigates the pervious point in literature and Egyptian culture of organization.
+8.   Future Work 
+In terms of future research, we need to explain the remaining post construction activities (Technical and final post constructions activity) and apply them in our governance model to complete all post IS construction activities and apply full practical testing of the framework. 
+Due to the limited number of existing models for IS projects implementation, more research is still needed to investigate the correlation between the Critical Success Factors (CSFs) for IS projects. Also, we need to investigate the application of framework, described in this research on other industries, larger organizations, and technology driven IS projects investments.
+9.  References:
+    1. C.Clegg, C.Axtell, L. Damadoran,B.Farbey,R.Hull, R.Lloyd-Jones,J. Nicholls,R. Seell , AndC.Tomlinson , “Information Technology: A Study Of Performance And The Role Of Human And Organizational Factors,” Ergonomics Journal, Vol. 30, No  9, pp. 851-871,1997. 
+    2. M.Keil, P.Cule, K.Lyytenen And R.Schmidt,"A Framework For Identifying Software Project Risks", Communications Of The ACM, 31, 11, pp. 76-83,1998   
+    3. R.Fielding, "IT Projects Doomed to Failure", Computing, Vnunet Com, http://www.genecaresearchreports.com. November 2002, last accessed 25-5-2012. 
+    4. The Register, “IT Project Failure Is Rampant” – KPMG, Electric news Net, November 2002.
+    5. R. Jaques, "UK Wasting Billions On IT Projects", Computing, Vnunet Com, April 2003. 
+    6. P. Dorsey , President Of Dulcian, Inc , Oracle Consulting Firm That Specializes In Data Warehousing, Paul Is An Associate Editor Of SELECT Magazine And Is President Of The NY Oracle Users’ "Top 10 Reasons Why Systems Projects Fail " ,  April 2005.
+    7. T.L. Griffith, L. Zammuto,And L. Aiman-Smith, "Why New Technologies Fail?" Industrial Management: pp. 29-33, 1999. 
+    8. R.Kaur, J.Sengupta " Software Process Models And Analysis On Failure Of Software Development Projects" International Journal Of Scientific & Engineering Research Volume 2, Issue 2, February-2011 1 ISSN 2229-5518.
+    9. UK Passport Service Annual Report And Accounts, "Government IT Projects Summary ", Passport Service, HC969, POST Report 200 July 2003.
+    10. K.Lyytinen, And R.Hirschheim, 1987, “Information System Failures: A Survey And Classification Of The Empirical Literature”, In Oxford Surveys In Information Technology, Oxford University Press.
+    11. Standish Group International Inc (1999) Chaos: "A Recipe For Success", The Standish Group International Inc.
+    12. C. Tom , CHAOS, The Standish Group International, http://www.spinroot.com/spin/ Doc/course/ Standish_Survey.htm, 1995. Last accessed 5-5-2012.
+    13. D.K.Peterson, And C.S., 2000, “Information System Objectives: Effects Of Experience, Position Level And Education On Developers”, Journal Of Information Technology Management, Volume 11, ISSN #1032-1319. 
+    14. K. Ewusi-Mensah, "Critical Issues In Abandoned Information System Development Projects", Communications Of The ACM, Volume 30, 9 .1997.
+    15. International Standard [ISO/IEC 13763:2006 Software Engineering — Software Life Cycle Processes — Maintenance]. Http://Www.Iso.Org/Iso/Home.Htm,Last Reviewed 24-4-2012.
+    16. M. B., Stewart," Risk Estimation From Technology Project Failure", School Of Computing, University Of West Of Scotland, Paisley, 4th European Conference On Management Of Technology. PAGES 1-19, 2009.
+    17. Http://Www.Tenstep.Com.Br/Br/Lifecyclestep/Open/440.0.Htm Last Reviewed 25-4-2012.
+    18. Z.HABIB, 2009 ," The Critical Success Factors In Implementation Of Software Process Improvement Efforts", Master Thesis In Software Engineering And Management Report No  2009:056 ISSN: 1651-3769 .
+    19. R.Lahey, 2011 "A Framework for Developing an Effective Monitoring and Evaluation System in the Public Sector – Key Considerations from International Experience"   President REL Solutions Inc , Canada RELahey@rogers com.
+    20. S.Sarker & A.S.Lee, 2003  Using a case study to test the role of three key social enablers in ERP implementation, Information and management  In press Schneider, P  1999  Wanted: ERP People Skills  CIO March.
+    21. D.Whyte,& J.Fortune,  2002  "Current practice in project management – an empirical study".
+    22. M.Hammer and J. Champy  2001, ‘Reengineering the Corporation: A Manifesto for Business Revolution’, Harper Business, New York, NY, USA,work organization? Strategic Change, 11:263-270.
+    23. J.Magnusson, A.Nilsson &  F.Carlsson ,"Forecasting Erp Implementation Success –Towards A Grounded Framework" University Of Gothenburg, Department Of Informatics.
+    24. M.Niazi, D.Willson and D.Zowghi ,(2006) “Critical Success Factors for Software Process Improvement Implementation: An Empirical Study”, Software Process: Improvement and Practice Journal, Vol  11, Issue  2, pp  193-211. 
+    25. M.H. Rasmy, A.Tharwat And S.Ashraf "Enterprise Resource Planning (ERP) Implementation In The Egyptian Organizational", Cairo University, Egypt, 2005.
+    26. V.A.Mabert, A.Soni,  & M.A.Venkataramanan, 2001  Enterprise Resource Planning: Common Myths Versus Evolving Reality  Business Horizon, May-June  2001. 
+    27. P.Mandal& A.Gunasekaran, 2003  Issues in implementing ERP: A case study  European Journal of operational Research 136:273-283.
+    28. A.Hawari & R.Heeks ," Explaining ERP Failure in Developing Countries: A Jordanian Case Study ", Centre for Development Informatics, Working Paper 45 ,IDPM, University of Manchester, UK, 2010.
+    29.  M.R.Moohebat, A.Asemi1,M.D.Jazi "A Comparative Study of Critical Success Factors (CSFs) in Implementation of ERP in Developed and Developing Countries",  International Journal of Advancements in Computing Technology Volume 2, Number 5, December 2010.

@@ -1,0 +1,1651 @@
+
+Cairo University
+Faculty of Computers and Information
+Information Systems Department
+
+
+
+
+Methodology to convert specification to implementation in information systems
+
+
+A thesis submitted in partial fulfillment of the requirements for the degree of 
+Master of Science in Computers and Information Systems
+
+
+Submitted by
+Shaimaa Mohamed Galal
+
+
+
+
+Supervised by
+
+Dr. Ehab Ezzat Hassanein
+Lecturer of Information Systems
+Faculty of Computers and Information
+Cairo University
+Prof. Dr. Galal Hassan Galal-Edeen
+Professor of Information Systems
+Faculty of Computers and Information
+Cairo University
+
+
+
+
+
+Faculty of Computers and Information
+Cairo University - Egypt
+2012
+
+Abstract
+Agile development of database and application systems especially web based systems is highly productive activity; it reduces the time consumed, cost and effort invested in project development by producing parts of working software modules after each development iteration, but many agile projects do not apply agile practices to database development and still consider it in serial manner as heavyweight methodologies, while agile methodologies were introduced to overcome the problems experienced with the heavyweight methodologies, such as having overbuilt database schema that may contain a great deal of data fields that will not be used in the future, consequently causing performance degradation and increases the database schema complexity.
+On the other hand, although agile methodologies have replaced producing dozens of documents through the software development process to reduce the time consumed and cost via increasing the customer and the development team members’ interactions instead, this caused minimizing the amount of software documentation more than required, and thus caused a gap when it comes to maintenance and testing processes.
+This thesis provides a framework for generating final software product through automated process supporting agility in both directions of coding and data modeling as well, following such framework will provide high level of customer collaboration and help data professionals to work in an agile manner to avoid the problem of having overbuilt systems along with automatically generating parts of the software code based on the available modern software architecture models. A tool prototype –named iAgile- is also presented to help applying the proposed framework, thus producing the software generated code and database schema that are capable of evolving smoothly far in the future to adapt requirements changes during the project iterations. 
+In addition this framework provides a solution to speed up and facilitate the legacy systems migration process in order to migrate software products that were written in old programming languages to web services architecture, as it provides rapid agile development process in which the system analyst can place the extracted requirements from the legacy system and place it on iAgile while refactoring the database schema, hence iAgile automatically generates the main web services for this legacy system.
+Table of Contents
+List of Figures	6
+List of Tables	8
+List of Abbreviations	9
+Acknowledgements	10
+Chapter 1 : Introduction	11
+1.1.	Background and Motivation	12
+1.2.	Problem Statement	12
+1.3.	Aim and Objectives	14
+I.	Aim	14
+II.	Objectives	14
+1.4.	Methodology and Limitation	14
+1.5.	Thesis Structure	16
+Chapter 2 : Trends in Software Development	18
+2.1.	Software Development Trends	19
+2.2.	Heavyweight Software Development Models (Traditional Software Development Models)	20
+2.3.	Lightweight Software Development Models (Agile Software Development Models)	21
+2.3.1.	Closer Look to Agile Methods	24
+2.3.1.1.	Extreme Programming (XP)	24
+I.	Extreme programming process	24
+II.	Extreme programming roles and responsibilities	26
+III.	Extreme programming practices	27
+IV.	Extreme programming scope of use	28
+2.3.1.2.	Scrum	30
+I.	Scrum process	30
+II.	Scrum roles and responsibilities	31
+III.	Scrum practices	32
+IV.	Scrum scope of use	33
+2.3.1.3.	Software Development Model Suitability	33
+2.3.1.4.	A Closer Look to Agile Practices	33
+I.	Test first programming practice	34
+II.	Code refactoring practice	35
+2.3.2.	Software Development between Agility and Prototyping	36
+Chapter 3 : The Enhanced Early User Interface Development Practice’s Framework	38
+3.1.	Introduction to Agile Development Environment	39
+3.2.	Related Work	39
+3.2.1.	WebRatio	40
+3.2.2.	iRise	40
+3.3.	The “Early User Interface Development” Practice	41
+3.4.	Towards a Framework for Evolutionary Database Development	44
+3.4.1.	The Enhanced Early User Interface Development Framework	44
+3.4.1.1.	The EEUID Framework’s Components	45
+3.4.1.2.	The EEUID Process	47
+3.4.1.3.	The EEUID Framework Outputs’ Software Architecture Models	49
+3.4.1.4.	The EEUID Framework’s Primarily Outputs	53
+1)	Database Schema	53
+2)	Data Access Layer	55
+3)	Agile Documentation Templates	56
+3.4.2.	The EEUID benefits	61
+Chapter 4 : Case Study	63
+4.1.	Foreword	64
+4.2.	iAgile Overview	64
+4.2.1.	iAgile Advantages and Disadvantages	64
+4.2.2.	iAgile in Action	66
+	How iAgile works?	67
+	Can all agile methods make use of iAgile?	68
+	Which projects can use iAgile?	69
+	How to construct system screens and generate the expected outputs using iAgile?	69
+	What about the database refactoring?	70
+	iAgile support for EUID practice’s components	71
+4.3.	The "EMR application" Case Study	72
+4.3.1.	Functional Requirements	72
+4.3.2.	Project Development using iAgile	74
+4.3.2.1.	First Iteration	74
+I.	First screen development details	74
+II.	Second screen development details	77
+III.	Third screen development details	78
+IV.	Forth screen development details	79
+V.	Fifth screen development details	79
+VI.	Sixth screen development details	80
+4.3.2.2.	Second Iteration	90
+I.	First screen development details	91
+II.	Second screen development details	93
+4.3.2.3.	Third Iteration	94
+I.	First screen development details	94
+II.	Second screen development details	96
+4.3.3.	Applying the Bidirectionality of the EEUID	97
+4.3.4.	iAgile Software Architecture’s Design	98
+	The “XML class description” file’s structure:	99
+	The “XML behavior” file’s structure:	100
+4.4.	Conclusion	102
+Chapter 5 : The Enhanced Early User Interface Development Evaluation	103
+5.1.	The EEUID Framework’s Theoretical Feasibility	104
+5.2.	The EEUID Framework’s Technical Feasibility	105
+5.3.	The EEUID Framework’s Evaluation	105
+Chapter 6 : Conclusion and Future Work	107
+8.1.	Conclusion	108
+8.2.	Future Work	109
+Publications Arising from This Research	110
+References	111
+Appendix A: Countries Factory Class Implementation	117
+
+List of Figures
+Figure ‎1.1: The research methodology	15
+Figure ‎2.1: The Extreme Programming process, adapted from (Abrahamsson, et al. 2002)	25
+Figure ‎2.2: Extreme programming set of values, adapted from (Holcombe 2008)	28
+Figure ‎2.3: The Scrum process, adapted from (Cohen, Lindvall and Costa 2004)	31
+Figure ‎3.1: EUID process, adapted from (Labib, Hassanein and Hegazy 2009)	42
+Figure ‎3.2: The EEUID Framework’s Components	46
+Figure ‎3.3: The EEUID Process	47
+Figure ‎3.4: The Available Modern Software Architecture Models, adapted from (Doroshenko and Romanenko 2004)	50
+Figure ‎4.1: EEUID process	66
+Figure ‎4.2: iAgile Layout and Content Editor	70
+Figure ‎4.3: Countries screen	74
+Figure ‎4.4: Onerecord_Insert component class settings	75
+Figure ‎4.5: Multirecord_View component class settings	76
+Figure ‎4.6: Countries screen after building using iAgile	76
+Figure ‎4.7: Cities screen	77
+Figure ‎4.8: Actions part in iAgile	77
+Figure ‎4.9: Dynamic data loading action input details	78
+Figure ‎4.10: Dynamic data loading action output details	78
+Figure ‎4.11: Clinics screen	79
+Figure ‎4.12: Clinic Services screen	79
+Figure ‎4.13: Scientific degree screen	79
+Figure ‎4.14: Specialties screen	80
+Figure ‎4.15: First iteration generated class diagram	81
+Figure ‎4.16: Generated physical database diagram	82
+Figure ‎4.17: iAgile database generation screen	82
+Figure ‎4.18: Countries domain class	83
+Figure ‎4.19: Countries hbm file	84
+Figure ‎4.20: Physical database driver configuration	85
+Figure ‎4.21: Manage quality document template screen	85
+Figure ‎4.22: the functional requirements document template main sections	87
+Figure ‎4.23: Suggested list of data elements for the “patient name” field	89
+Figure ‎4.24: iAgile generated detailed design document	89
+Figure ‎4.25: Data dictionary sample	90
+Figure ‎4.26: Patient regesteration screen	91
+Figure ‎4.27: The search button's inputs	92
+Figure ‎4.28: The search button's outputs	93
+Figure ‎4.29:  Doctor registeration screen	94
+Figure ‎4.30: Patient visits screen	95
+Figure ‎4.31: Patient visits' class details	95
+Figure ‎4.32: Patient visits search screen	96
+Figure ‎4.33: The search component input details	97
+Figure ‎4.34: The search component output details	97
+Figure ‎4.35: iAgile software architecture’s component diagram	98
+Figure ‎4.36: XML class description file's structure	100
+Figure ‎4.37: XML behavior file's structures	101
+Figure ‎4.38: iAgile UML sequence diagram	102
+
+
+List of Tables
+Table ‎4.1: System’s functional requirements	72
+Table ‎4.2: Project iterations’ tasks	74
+Table ‎4.3: XML class description file mapping schema	99
+
+List of Abbreviations
+
+BPMN		Business Process Modeling notation
+CLASSOID	Class Object Identifier
+DB		Database
+DBMS		Database Management System
+EEUID		Enhanced Early User Interface Development
+EMR		Electronical Medical Record
+ERD		Entity Relationship Diagram
+EUID		Early User Interface Development
+GUI		Graphical User Interface
+HTML		Hypertext Markup Language
+LCM		Lifecycle Model
+NHDD		National Health Data Dictionary
+OOPL		Object Oriented Programming Language
+OQL		Object Query Language
+ORDB		Object Relational Database
+ORDBMS	Object Relational Database Management System
+ORM		Object Relational Model
+RDB		Relational Database
+RE		Requirements Elicitation
+SQL		Structured Query Language
+TDD		Test Driven Development
+UDT		User Defined Datatype
+UML		Unified Modeling Language
+VSS		Visual Source Safe
+WebML		Web Modeling Language
+XML		Extensible Markup Language
+XP		Extreme Programming
+
+
+
+Acknowledgements
+Working on the master has been an overwhelming experience.  I am deeply grateful to my supervisors Dr. Ehab Ezzat Hassanein, and Dr. Galal Hassan Galal E-deen who both supported and influenced my personal character and career. Moreover, i am deeply grateful to my husband who encouraged me all the time and helped me to finalize this work.
+
+
+
+
+
+
+
+
+
+    Chapter 1 : Introduction
+
+
+        1.1.  Background and Motivation
+        1.2.  Problem Statement
+        1.3.  Aim and Objectives
+        1.4.  Methodology and Limitation
+        1.5.  Thesis Structure
+
+
+        1.1.  Background and Motivation
+Modern software development processes, are mostly evolutionary in nature, via working iteratively and incrementally following what is called “Agile methodologies”. Consequently, the information system project is divided into several iterations by distributing the main project’s requirements to those iterations. Through each iteration, a part of each project development activity is performed to satisfy the current iteration functional requirements such as modeling, development, testing, or deployment at a time, then move to the next iteration[ CITATION Sco \l 2057  ].
+Agile methodologies are software engineering methodologies that exist to allow functional requirements’ changes through the entire project’s lifecycle via working iteratively and applying some of software engineering practices that cope with the project’s circumstances and constraints [ CITATION Pau02 \l 1033  ].
+Development of information systems involves the development of both software application and database system. The evolutionary database development, such as the evolutionary development of software systems, contributes significantly to schema quality, correctness and adaptability. Research and experience in both commercial software development and academic projects have demonstrated the reasonableness and efficacy of this approach[ CITATION Mor \l 1033  ].
+A data oriented technique is a way for building the database schema; most of data-oriented techniques are being implemented in serial manner that results in building a mostly detailed database schema before the development process starts;  this database schema is baselined and few changes are allowed to be implemented to keep the system stable (Scott. W. Ambler, 2006). Consequently, the concept of agile data modeling has been introduced to adopt the evolutionary approach while building the database schema to increase the system’s database schema quality.
+        1.2.  Problem Statement
+    • Agile methodologies have arisen to solve some of the traditional software methodologies’ problems in which that they do not cope with rapid requirements and technology changes. Many projects failed to use traditional software development methodologies and some projects stopped at the end of producing the huge required documentation before the coding process starts [ CITATION Lin \l 1033  ]; thus agile methodologies have demonstrated great success as being highly productive activity as the customer is not required to wait till the end of the project to have a running software system, instead each phase or few phases can produce a part of the system that can be placed on the customer production server; Meanwhile many agile projects do not apply agile practices to database development and still consider it in sequential manner via producing almost complete database schema before starting the coding process, exactly as the traditional software development life cycle models, using such combination made the enterprise data professionals, including both data architects and data administrators frustrated, as project developers within the same teams ignore their advice, standards and guidelines. Developers will be also frustrated as they hardly are allowed to implement changes on the database schema in order to cope with their written code [ CITATION Sco \l 2057  ].
+    • Another problem is that as agile methodologies are not documentation centered, most of the important documents needed after the software development completion are not produced during the software development process. In Agile, documentation is mostly limited to source code and a set of user stories or UML diagrams; developers consider the well organized code is the best documentation can be created; meanwhile testers and developers need more than documented code. Although reducing the amount of documentation can increase productivity and save time, it causes risk and may increase the project costs, as documentation is considered crucial when transitioning the project to a maintenance team as it serves as a domain knowledge repository for maintenance and testing purposes [ CITATION Lin02 \m Cor05 \l 2057  ].
+    • Finally, there is a gap between business requirements and IT goals in which customers always need to apply their changes in a glance to cope with new business changes and IT goals are to provide applications in standard environment that is affordable, scalable and securable along with reducing the development and maintenance cost.
+        1.3.  Aim and Objectives
+            I. Aim
+This thesis aims to cover the gap between applying agile software process models to the software development process and the database development process, by applying evolutionary approaches to database development that will in turn cover the gap between enterprise data professionals and software developers. 
+Another aim is to increase the level of documentation when using agile methodologies that will give competitive advantage just as traditional software development methodologies.
+And the final aim is to bridge the gap between business requirements and IT goals by generating the application code in which will reduce development and maintenance cost while delivering running application to the customers in the shortest time.
+            II. Objectives
+This thesis objectives are to provide a framework for generating a final software product through automated process supporting agility in both directions of coding and data modeling as well, following such framework will provide high level of customer collaboration and help data professionals to work in an agile manner to avoid the problem of having overbuilt systems along with automatically generating portions of the software code based on the available modern software architecture models. 
+This thesis also presents a software tool that will help in the software generation process by generating the database schema, the data access layer and the possible associated quality documents that will reduce waste, rework, and cost; moreover it will build database schema that is capable of evolving smoothly far in the future to adapt requirements’ changes during the project iterations.
+        1.4.  Methodology and Limitation
+    • Research Methodology:
+Firstly a literature review for software development methodologies is held to give a demonstration for its advantages and disadvantages, focusing on the two software development methodologies' categories that are: the traditional (sequential) software development methodologies, and the lightweight software development methodologies. Secondly, a conclusion showing some existing problems in agile methodologies. Thirdly, a framework –the enhanced early user interface development practice's framework- is proposed to solve some issues related to agile methodologies usage. Finally, a software tool is proposed to automate the enhanced early user interface development process during the software development process along with illustrating a case study to present how this software tool can be used to automate this proposed framework. Figure 1.1 depicts this research methodology.
+
+Figure ‎1.1: The research methodology
+    • Research limitation:
+There have been few issues that are considered limitations to this research that are:
+    1. Normalization: by following the EEUID framework normalization cannot be performed during the database design phase through different iterations, as the database is being built in accumulative and incremental way, this leads to losing the normalization benefits for optimizing the database schema quality.
+    2. Distributed systems: the EEUID offers a fertile environment to develop one unit software system. Distributed systems cannot be developed using the EEUID framework.
+    3. Development team limitation:
+    • Team size: The proposed tool with the EEUID framework -iAgile- is a single user application prototype; this made a limitation to the team size. During the system analysis phase only one user is allowed to build the user interface screens through iAgile. Another choice is that two system analysts can use iAgile at the same time to build the user interface screens as one system analyst make the user interface design and the other will be considered as his/her peer review. Thus, only the system analyst is one or two persons but there is no limitation to the developer, testers or the system implementers.
+    • Distributed team: iAgile does not allow distributed working environment which places a limitation that the development team should exists in one place.
+    • Team skills: For teams following the proposed practice in this research, the team should be self-managed with highly communication skills as the project manager's role in teams following agile methods is to coach the team to reach the targeted goals not just assigning tasks, thus each team member should be keen to reach his own targets and finish his/her tasks. 
+    4. The developed system complexity:
+iAgile is most suitable for “database applications”; those are applications that depend on the famous database operations e.g. operations for adding, deleting, updating and searching for information from the database.
+Other applications with highly business requirements complexity such as calculating salaries based on wages, vacations, and overtime days is not recommended to follow the proposed practice.
+        1.5. Thesis Structure		
+This thesis is organized as follow:
+Chapter 1- Introduction: Introduction that acts as an entry point to the whole thesis helping readers to understand the motivation of this work and benefit from it.
+Chapter 2– Trends in software developments: This chapter holds a demonstration for the different software development life cycle models presenting strength points and drawbacks from using it; moreover it provides a closer look to the insights of agile practices, and at last provides a demonstration for the prototyping and rapid application development techniques.
+Chapter 3 – The Enhanced early graphical user interface framework: This chapter holds a demonstration for the proposed framework that helps solving some agile methodologies’ problems.
+Chapter 4- Case Study: This chapter holds a demonstration for a proposed software tool to automate the enhanced early development of graphical user interface practice’s process.
+Chapter 5- The Enhanced Early User Interface Development Practice’s Framework Evaluation: This chapter holds a theoretical and technical evaluation for the EEUID practice’s framework.
+Chapter 6- Conclusion and future work: This chapter holds a conclusion that includes the results extracted from this thesis along with any future work suggestions.
+
+
+
+
+
+
+
+    Chapter 2 : Trends in Software Development
+
+
+    1. 
+    2. 
+        2.1.  Software Development Trends
+        2.2.  Heavyweight Software Development Models (Traditional Software development Models)
+        2.3.  Lightweight Software Development Models (Agile Software Development Models)
+
+
+
+
+    2. 
+        2.1.  Software Development Trends
+Software development has been part of the society from decades. It has been started as a chaos activity called “Code and Fix” that is dependent on building the software without much planning in the beginning, and system design was not mature enough for further features’ improvements. This style of working worked fine in small systems; but approved inefficiency for bigger systems; consequently, a new style of development called “Methodology” has been introduced to the world[ CITATION Awa05 \l 1033  ]. Earlier methodologies called “Traditional methodologies”; their lifecycle models were dependent on sequentially working via four phases: requirements gathering, designing, developing the software, and testing the results; once each phase has been finished it is not possible to return to it. This type of working has proved inefficiency in many projects, as formal requirements definition addressed the problem of that requirements were incomplete or/and did not reflect exactly the customer’s needs; Formal design before implementation addressed the code reuse problem and thus reducing rework; moreover, there were dozens of documentation that must be done before any code being written or producing a deliverable to the customer.
+There is no doubt that this type of software development has accomplished a great rate of success in some projects; meanwhile the additional process steps, roles, and artifacts caused many projects to fail attempting to use the same techniques, and others got lost in the documents and never implemented any code, while others did not leave enough time at the end for implementation and testing, and delivered systems inconsistent with the documents and designs on which most of the project time was spent [ CITATION Lin \l 1033  ]. The nature of heavy aspects of the traditional software development activities caused it to be called “Heavyweight software development models”. 
+Consequently, a new school of software development models called the “Lightweight software development models” have arisen with the view that production teams should start with simple, knowable approximations to the final requirements, and then continue to increment the detail of these requirements throughout the life of the development[ CITATION Ree02 \l 1033  ].
+Thus, up till now there are two schools of software development models, the “heavyweight” software development lifecycle models’ school that requires the comprehensive planning, thorough documentation, and expansive design, and the “lightweight” software development lifecycle models’ school (agile) which subsumes individuals over processes, working software over documentation, collaboration over negotiation, and responding to change over following a plan [ CITATION Pre09 \l 1033  ].
+In this chapter an insight for the lightweight and heavyweight lifecycle models will be illustrated.
+        2.2.  Heavyweight Software Development Models (Traditional Software Development Models)
+The traditional software development lifecycle models (LCMs) were called “Heavyweight LCMs” due to the heavy aspects of the process activities, those LCMs depend on planning out a large part of a project in a great detail over a long span of time. Project managers tend to predict every possible project milestone in order to foresee every technical detail to ensure project success. This leads managers to demand all types of specifications, plans, reports, checkpoints and schedules[ CITATION Whi04 \l 1033  ]. Examples of those LCMs are: waterfall model, spiral model, incremental model, and the V-model (Sommerville 2011).
+
+        2.3. Lightweight Software Development Models (Agile Software Development Models)
+The lightweight LCMs have arisen as solution to the heavyweight LCMs. The term “agile” appeared in February 2001 by a group of leading lightweight methodologies’ developers such as Kent Beck, Jim Highsmith, Martine Fowler and others [ CITATION Ala05 \l 1033  ]. From that time the term “agile” has been populated stating four important issues, which are:
+    1. An agreement has been held to substitute the term ”lightweight” with the “Agile” term, as there was a need for software development models that accepts changing requirements during the software development process.
+    2. The Agile manifesto: “We are uncovering better ways of developing software by doing it and helping others to do it. Through this work we have come to value:
+    • Individuals and interactions over processes and tools 
+    • Working software over comprehensive documentation 
+    • Customer collaboration over contract negotiation 
+    • Responding to change over following a plan 
+That is, while there is a value in the items on the right, we value the items on the left more [ CITATION Bec01 \l 1033 ] ”.
+    3. There are twelve core principles to comply with, when an agile method is introduced.
+    4. Some actions are left to each methodology to decide on, in order to facilitate this methodology’s road and helps towards producing the software to be developed e.g. many agile practices exist on agile methodology’s ground such as pair programming and test first programming, each methodology applies a collection of those principles during the development time to help the development process to reach its goals quicker and easily. 
+
+    • Agile core principles
+Agile methods exhibit twelve principles that are considered the main advantages for it, that are [ CITATION Ala05 \m ElS08 \l 1033  ]: 
+    1. Agile methods merits reside in the twelve principles behind it. Agile methods avoid the long time that the customer should wait to start working on the required system, this is by producing the system in iterations and each iteration produces a valuable part of the system that can be placed on the customer’s production server for real usage. Each iteration produces a functionality increment to the system that must integrate without any problems with the previous produced functionality increments; Koch stated the first principle as “Our highest priority is to satisfy the customer through early and continuous delivery of valuable software” [ CITATION Ala05 \l 1033  ].
+    2. The main difference between traditional software development models and agile methods is that in the first once all requirements have been approved, it cannot be changed till the project ends, conversely agile methods welcome changes during all the software development lifecycle. The main reason for requirements’ changes is that the customer may not be able to fully identify his requirements at the beginning of the project, but once he starts to see a part of the system, he can identify what has been missing. Working in iterations helps to avoid huge changes to apply the customer’s modifications and continue building the software on what the customer actually needs; Koch stated the second principle as “Welcome changing requirements, even late in development” [ CITATION Ala05 \l 1033  ].
+    3. Agile method’s iterations are highly recommended to be short periods in order to deliver functionality increments to the customer as fast as possible, the iteration period should last from couple of weeks to couple of months; Koch stated the third principle as “Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter time scale” [ CITATION Ala05 \l 1033  ].
+    4. Customer involvement is a crucial factor to all agile methods for continual review and testing for the system requirements from the customer side; Koch stated the forth principle as “Business people and developers must work together daily throughout the project” [ CITATION Ala05 \l 1033  ].
+    5. The project manager’s job in agile methods is limited for coaching the team members and directs them to reach their goal, rather than the conventional project manager’s role that is known to specify each team member what to do. This entails that the team members must be efficient and self-motivated to help the project move in the appropriate drawn road for it; Koch stated the fifth principle as “Build projects around motivated individuals. Give them the environment and support their needs, then trust them to get the job done” [ CITATION Ala05 \l 1033  ].
+    6. Agile methods focus on producing working software as fast as possible; face-to-face interaction reduced the amount of documents that should be produced and thus shortened the project development’s time; Koch stated the sixth principle as “The most efficient and effective method of convoying information to and within a development team is face-to-face conversation” [ CITATION Ala05 \l 1033  ].
+    7. Agile methods’ main goal is producing working software and it is considered the main measure of project progress; Koch stated the seventh principle as “Working software is the primary measure of progress” [ CITATION Ala05 \l 1033  ].
+    8. Agile methods impose working in sustainable manner. Mostly forty hours per week – eight hours per day rule is applied; Koch stated the eighth principle as “Agile processes promote sustainable development. The sponsors, developers and users should be able to maintain a constant pace indefinitely” [ CITATION Ala05 \l 1033  ].
+    9. Agile methods perform continuous validation and verification; this enhances the produced software quality and design; Koch stated the ninth principle as “Continuous attention to technical excellence and good design enhances agility” [ CITATION Ala05 \l 1033  ].
+    10. One of the core principles of agile methods is to keep the functionality as simple as possible; this accelerates the development process and only targets the needed functionality instead of producing a huge system in which users get lost; Koch stated the tenth principle as “Simplicity – the art of maximizing the amount of work not done – is essential” [ CITATION Ala05 \l 1033  ].
+    11. Management role in agile methods has different meaning other than the one used in other traditional methods. Management’s role in agile methods moves towards coaching and leading the team members to reach their goals, meanwhile controlled management is applied when using traditional software development models; Koch stated the eleventh principle as “The best architectures, requirements, and designs emerge from self-organizing teams” [ CITATION Ala05 \l 1033  ].
+    12. In agile methods, breakpoints are placed to review the feedbacks and learn from it, this helps to enhance the software design and the team capabilities as well; Koch stated the twelfth principle as “At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly” [ CITATION Ala05 \l 1033  ].
+            2.3.1. Closer Look to Agile Methods
+There are many agile methods presented since 1995; each one of them has different processes, roles and responsibilities, practices, and scope of use [ CITATION Abr02 \l 1033  ]. In this thesis, a demonstration for the extreme programming and the scrum methods will be viewed. 
+                2.3.1.1. Extreme Programming (XP)
+Extreme programming method is considered the most famous agile software development method, it was popularized by Kent Beck in 2000[ CITATION Bec00 \t  \l 1033  ]. The word “Extreme” came from taking the method’s practices and principles to the extreme levels, examples of those are [ CITATION Bec00 \t  \l 1033  ]:
+    • Code review is a good activity; extreme programming review code all the time via the pair programming practice.
+    • Testing is a good activity; all stakeholders will perform unit tests all the time via the unit testing practice.
+    • Design is a good activity; it will be part from the entire developers’ daily job via the refactoring practice.
+    • Architecture is a crucial activity; all stakeholders will define and refine the architecture all the time via the metaphor practice.
+    • Integration testing is a crucial activity; integration and integration testing will be done several times a day via the continuous integration practice.
+    • Short iterations are good; extreme programming exposes truly short iterations, may be in minutes and hours via planning the game practice.
+            I. Extreme programming process
+Early requirement is a simple place to start, and successive portions of requirements can be added for implementation consequently through a set of iterations. Projects attempted to gather all the customer requirements at the beginning of the project, faced errors and long development process [ CITATION Tom02 \l 1033  ]. This was the initial place extreme programming started from to perform the job on subsequent iterations, through those iterations a set of processes took place that are:
+    1. The exploration phase: Through this phase requirements are written down in the form of story cards, each story card describes the features to be added to the software as well as choosing the software architecture to be used for the project development. The most usual items appearing in any story card are [ CITATION Ree02 \l 1033  ]: 
+    • User story number or ID.
+    • User story title.
+    • Person responsible for the story, typically a customer.
+    • Date.
+    • Estimate of implementation time, typically in days.
+    • Risk level of the technology used.
+    • User story description.
+    • Other optional information includes: unit test description, user interface needs.
+    • Other related story numbers.
+However, in practice each development team decides on their own set of fields that best suits their requirements representation [ CITATION Ree02 \l 1033  ]. 
+
+
+Figure ‎2.2: The Extreme Programming process, adapted from[ CITATION Abr02 \l 1033  ]
+
+    2. The planning phase: Through this phase, story cards are prioritized and time estimates are decided for each story card. A schedule is prepared for the work being done and a plan is being produced for the first iteration to produce the first software component release.
+    3. The iterations to release phase: Several iterations before the first release take place. Schedule that has been created in the planning phase is broken down into several iterations, and the customer decides on the story cards to be selected for each iteration. The first iteration includes building the system architecture as a whole and contains the main building blocks of the system as a whole.
+    4. The product ionizing phase: Testing and system performance checks are being performed before releasing the whole system to the customer; meanwhile changes can be received from the customer even through this phase for further adjustments.
+    5. The maintenance phase: Through this phase, a new member from the customer side joins the development team to be trained, and the development team maintains the system to meet the final customer needs.
+    6. The death phase: A project reaches a death phase when it meets the customer requirements and there are no more stories to implement, or when the project is not producing the desired outputs, or even if the project cost will exceed the limits if the development team performed further development.
+            II.  Extreme programming roles and responsibilities 
+According to agile concepts of performing projects in self-managed team, there are certain roles in this methodology, and each role has a set of certain responsibilities, which are [ CITATION Abr02 \l 1033  ]:
+    a. The programmer: Is responsible for running the functional tests and writing the code in a way that keeps it as simple as possible.
+    b. The customer: Writes the functional tests, prioritizes the story cards, and decides on whether the implemented story card is accepted or not.
+    c. The tester: Helps the customer in writing the functional tests, runs the functional tests, and broadcasts the testing results to the development team.
+    d. Tracker: This is a similar kind to the project manager role, he\she tracks the iteration progress and whether it reached its milestones or not. Give feedback to the programmers on whether they are following the implementation schedule or not.
+    e. The coach: As the XP team must be self-managed; the project manager role has turned into a coach role that guides the whole team of how to work instead of producing orders to the team members.
+    f. The consultant: Is a consultant for the used technology and guides the team through problems.
+    g. The manager (Big boss): Some of the decision must be taken by single person to move the team towards the success road; the manager is the responsible one for this type of decisions.
+            III. Extreme programming practices 
+XP method has decided on twelve practices to follow, in order to achieve the method goals that are [ CITATION Abr02 \m Coh04 \l 1033  ]:
+• The planning game: The development team decides on the story cards time estimates for implementation, and the customer decides on which stories to be selected for each iteration, and the releases timing.
+• Small releases: The initial release is produced rapidly, and then subsequent releases are being produced on small periods to reflect new story cards.
+• Metaphor: A metaphor is placed by the entire stakeholders to describe how the system works.
+• Simple design: Simplicity is a must when applying the XP method, any extra complex features or extra code is being removed from the system.
+• Tests: The development is test driven, a set of functional tests and acceptance tests are written by the customer and developers must be committed to it during the development process.
+• Refactoring: Is a form of restructuring for the system to remove complex features and maintain the code simplicity.
+• Pair programming: Two programmers are committed for one machine, one of them writes the code and the other reviews what is written, and this ensures keeping the system code as simple as possible while performing the functional tests all the time.
+• Continuous integration: When developers integrate the new added or the modified stories with the rest parts of the system, the acceptance tests must be passed to maintain the system integrity.
+• Collective ownership: Any developer can modify any part of the system, the code is owned by all the developers. 
+• On-site customer: A customer representative is preferably to work with the development team to ensure that requirements are correctly implemented, perform acceptance tests, and answer the development team questions.
+• 40-hour weeks: The extreme programming considers the human extreme working capacity as well, the working capacity for any worker is eight hours per day and average of five days per week, extra overtime hours are not accepted while applying the XP.
+• Open workspace: An open area is the best room structure for the whole team to be able to collaborate easily.
+            IV. Extreme programming scope of use
+Practitioners that had put the baselines for the XP method had put as well the conditions that make such method succeed to reach its planned goals, which are [ CITATION Coh04 \l 1033  ]: 
+Team size: XP imposes that the working team is co-located in a single room, for this to succeed and does not turn into a mess, the team size should be from two to ten.
+Iteration length: The recommended shortest iteration is not less than two weeks.
+Support for distributed teams: The XP team should be co-located for communication purposes, and this does not work with distributed teams.
+System criticality: There is no limit on systems criticality being developed with the XP method.
+Moreover, the extreme programming method initiated five crucial values to give and insight on how this method can achieve success when being used; the five values are as shown in figure 2.3 [ CITATION Hol08 \m Bec00 \t  \l 1033  ]:
+
+
+    1. Communication
+Communication is the most important factor in agile methodologies; it keeps all stakeholders up to date with the project plans, objectives, schedules and even project changes. It was the part that replaced some certain documents following other traditional software development models.
+
+    2. Feedback
+Communication and feedback are two sides for one coin, up to date feedback from the customer ensures that the project is going on the adequate track and a truly progress is being done towards the main joint project objectives.
+
+    3. Simplicity
+Extreme programming always emphasizes on providing the simplest features; many existing software projects may expose features that are not needed for the user and only have been built to reach some goal in the used technology. Those extra unneeded features make the system more complex rather than it is a threat to the project success especially if the deadline is approaching.
+
+    4. Courage
+There are two types of people: People that are adventurous and people that are not adventurous. Extreme programming moves its members to be adventurous in applying the customer’s needed changes through anytime in the project development process. Extreme programming stakeholders should promote their courage to be able to do so taking a complete responsibility to reach stable state after performing such changes.
+
+    5. Respect
+All stakeholders are involved during the whole phases of the project development lifecycle; a mutual respect must exist between the entire stakeholders for the XP projects, in order to reach a calm reasonable environment that targets doing a successful job mainly as project members here fall under the self-management not the controlled management.
+                2.3.1.2. Scrum
+Scrum method was populated by Ken Schwaber [ CITATION Sch02 \l 1033  ]. The name “scrum” is taken from the “rugby” game in which all the team members work in parallel lines towards the main goal and all team members should keep themselves updated with the other members status in order to cover gaps on the field ground, this is exactly what should the scrum method does, working towards the main goal and when requirements changes appear (that is most likely to happen)	 all the team members should work to cover the gaps created by that change. This requires a high level of team unity in order to perform scrum properly.		
+Scrum is based on flexibility, adaptability and productivity; flexibility to handle project changes, adaptability to apply those changes and productivity to work in an efficient way to quickly and smoothly manipulate those changes [ CITATION Abr03 \l 1033  ].
+Scrum is adequate for small projects because of the less emphasis on the process driven framework that is needed for large projects, and also the central command structure can cause power struggles in large teams [ CITATION Rup10 \l 1033  ]. On contrary to XP, scrum can be applied to projects of distributed teams across the countries [ CITATION Sut07 \l 1033  ].
+            I. Scrum process
+As shown in figure 2.5, the main idea for the scrum method is built on creating the release backlog at the beginning of the project, that contains all the customer requirements from a high level point of view, the iteration occurs during the development process; at each iteration a set of requirements is selected to be put in the sprint backlog (the iteration requirements log), hence the team starts the development process to implement the requirements in the sprint backlog. At end of each iteration, a set of new requirements or modified requirements may appear, and the development team revises the release backlog and starts new iteration till there are no left items in the release backlog. At the same time a fifteen minutes meeting takes place every day during the development process to discuss what have been done and what obstacles might faced the team members, and also what should be reviewed in the next day meeting [ CITATION Abr02 \m Coh04 \l 1033  ].
+Scrum process is divided into three phases that are [ CITATION Abr02 \l 1033  ]:
+    1. Pre-game phase: through this phase the release backlog is built and decisions regarding the team members selecting, technology selection and risk management plans are taken.
+    2. Development phase: this phase cycles with a new sprint backlog each time to be implemented.
+    3. Post-game phase: this phase is reached when there are no items left in the release backlog, consequently activities related to releasing begins from here such as system integration, testing and documentation.
+
+
+
+Figure ‎2.4: The Scrum process, adapted from [ CITATION Coh04 \l 1033  ]
+
+            II. Scrum roles and responsibilities
+There are different roles and responsibilities in teams following the scrum method that are [ CITATION Abr02 \l 1033  ]:
+    1. Scrum master: It is a new management role presented by scrum to keep the team members on the scrum track during the whole project lifecycle. Scrum master ensures that the team members are following the scrum practices, values and rules properly. And he/she is responsible for tuning the team working behavior to get a higher productivity as much as possible.
+    2. Product owner: Is elected by the customer, the management and the scrum master as well to control the release backlog.
+    3. Scrum team: Is the development team responsible for implementing the sprint backlog. The sprint creation, tasks time estimates and suggesting issues related to the release backlog are from the scrum team responsibilities.
+    4. Customer: Ensures that requirements are implemented as requested and runs acceptance tests.
+    5. Management: Makes the final decisions for the project, and shares in building the release backlog.
+            III. Scrum practices
+Scrum does not impose a specific set of practices per-se; meanwhile it imposes only a set of management practices to help scrum reach its main goals that are [ CITATION Abr02 \l 1033  ]:
+Product backlog: it is one of the most important scrum practices, it relates to creating and managing the product backlog. The product backlog is backlog for the project tasks issues such as bug fixes, what have been implemented and what should be implemented, solution to current project problems. The product owner is the one responsible for maintaining the product backlog.
+Effort Estimation: Through each development iteration, a time estimate is placed for current iteration tasks in the product backlog.
+Sprint: It is the procedure of planning to change an environmental variable such as time, requirements, technology. Sprint planning meeting is held to create a new sprint at every thirty days.
+Sprint planning meeting: It is a two stages meeting, the first stage decides the new sprint main functionalities and goals; the customer, users, top management and the product owner participate in this meeting. The second stage includes the scrum master and the scrum team to decide on how this sprint will be technically implemented.
+Sprint backlog: It is a subset of the product backlog contains the next development iteration main tasks. This backlog lasts for thirty days.
+Daily scrum meeting: It is a daily meeting that takes around fifteen minutes to discuss what have been done through the last working day and what will be done the same day. It also discusses the difficulties faced the scrum team and proposed solutions for it.
+Sprint review meeting: It is a meeting that should be held in the last day of each sprint, to review the final sprint results and the work has been done to the product owner, top management, users and the customer. This meeting may produce changes to the product backlog to be handled through the next iterations.
+            IV. Scrum scope of use
+Scrum method works successfully for the small teams of less than nine or ten engineers [[ CITATION Abr02 \l 1033  ]], the team should include at least a developer, quality assurance engineer, and a documenter[ CITATION Coh04 \l 1033  ].
+                2.3.1.3. Software Development Model Suitability
+As presented previously in this thesis, there are numerous software development models. Each one of them suits certain projects[ CITATION Jia08 \l 1033  ]. This leads the reader to the fact that there is no best software development model, but there is a suitable software development model that copes with the project circumstances; hence at the beginning of each project, a study should be done to assess the project circumstances and which software development model that is suitable for those circumstances. This may lead an organization to coexist agile and traditional software development models within the same development organization as some projects are successfully development via agile software development models and others are successfully developed via the traditional software development models[ CITATION Vin06 \l 1033  ].
+                2.3.1.4. A Closer Look to Agile Practices
+Agile practices exist to facilitate the software development process and help agile method to reach its main goals. Each agile method can be applied in the real life using a variety of practices that best suits the development team and the project circumstances. This section will provide a detailed illustration for agile practices that will be used in the enhanced early development of graphical user interface practice’s framework that are: the test first programming and code refactoring practices.
+            I. Test first programming practice
+A test is an application for a system functionality given specified inputs in a specific context to produce an output. The test first programming practice depends on writing the system functionalities’ tests before any coding can take place; this approach replaces the requirements and design documents in the traditional approaches [ CITATION Hol08 \l 1033  ].
+Most of agile methods depend on a common set of practices that helps promoting the produced code quality. Those include refactoring and the test first programming (Ambler 2005). The test driven development helps developers to:
+    • Reduce code bugs before writing any line of the code.
+    • Focus on the business problem’s solution that leads to the expected outputs, this approach avoids over-written code by writing only the needed code segments.
+    •  Facilitate the maintenance process by providing a test suite that can be checked at anytime there is a modification or new system functionality, to assure that the new or the modified code did not break the code integrity[ CITATION Coh04 \m Lan07 \l 1033  ]. 
+This led the software engineers to produce what is called “acceptance test”, which is a set of tests that if the code passed it, then the code would be considered complete for this functionality [ CITATION Amb07 \t  \l 1033  ]. Meanwhile formulating those tests is a complicated process as any person can write a test, but only qualified software engineers can provide high quality tests[ CITATION Hol08 \l 1033  ].
+The tests formulation process should be done by the customer and the development team; the customer provides the basic functionality work flow; while the development team provides the computer related issues’ tests. An example, if there is a process that inserts a new patient to a hospital list; the customer would suggest a test input of entering a patient name “x patient” then the system should record this person if it has not been recorded before in the system, otherwise it should retrieve the old patient’s data. In contrast, a developer should suggest some tests to validate the patient name by considering the following examples of data inputs (supposing that the patient name maximum length is 20 characters) [ CITATION Bec00 \t  \l 1033  ]:
+    a) Empty string.
+    b) One-character string.
+    c) String of 21 characters.
+    d) Strings containing one character that is “illegal”.
+In addition the tests should cover all code paths in the program, an example of this: if there is a “view patients’ data screen” with Add, Save, Delete and Exit buttons, some paths may be: 
+    a) ViewPatients; ClickDelete ; ClickCancel on the confirmation message box.
+    b) ViewPatients; ClickDelete ; ClickSave on the confirmation message box; ClickExit
+    c) ViewPatients; ClickAdd ; ClickCancel on the confirmation message box
+    d) ViewPatients; ClickAdd ; ClickSave on the confirmation message box; ClickExit
+            II. Code refactoring practice
+Code refactoring according to Martin Fowler: “Refactoring is the process of improving the design of code without affecting its external behavior. We refactor so that our code is kept as simple as possible, ready for any change that comes along”. Code refactoring provides many benefits that are [ CITATION Ast02 \m Coh04 \l 1033  ]:
+    • Speeding up the software.
+    • Improving the software code design.
+    • Making the code easier to understand.
+    • Helping to find code problems.
+    • Facilitating the maintenance process.
+Refactoring does not add a new functionality, it improves the design of existing functionality only, an example of code refactoring is to rename the method of GetPersons() to GetPatients() in a health care software. The refactoring process is cohesively coupled with the unit testing process, as the refactoring cannot be completed successfully until the code runs again as before without any logic changes, this process needs what is called “Regression test”, which is a complete unit tests for the software to ensure that the code has not been broken.
+There are two types of refactoring:
+    1. Code refactoring: That has been introduced by Martin Fowler to improve the design of the software code itself.
+    2. Database refactoring: That has been introduced by Scott Ambler (Ambler 2003) to improve the design of the database, database refactoring relates to changes that intend improving data quality such as imposing a constraint to certain column or improving the structural database design such as renaming a column, changing a stored procedure to a view, splitting a table into two tables; database refactoring in more complicated process than code refactoring because of that many sources depend on this database schema such as the basic application source code, other applications dealing with this database source code, data loads source code, data extracts source code, testing code and the documentation (Ambler 2003). 
+There are a set of existing commercials tools supports code refactoring such as ProjectAnalyzer to refactor visual basic code [ CITATION Placeholder2 \l 1033  ] and Visustin that supports many of object oriented programming languages [ CITATION Vis12 \t  \l 1033  ]; meanwhile those kinds of tools help developers to perform a small scale granularity of refactoring such as renaming a method, finding a repeated pieces of code, and hiding methods that are not used in global scope by making it private or split complex code into smaller functions. The large scale granularity of refactoring still needs to be done manually on behalf of the developer himself.
+To facilitate the refactoring process, the best way is to apply the needed changes in small increments, this will keep the developer on the track to reach his goals and bugs that appears due to these changes can be easily contained[ CITATION Bec00 \t  \l 1033  ].
+            2.3.2.  Software Development between Agility and Prototyping
+Confusion between the agile methods and the prototyping approach may take place because both of them are based on producing part of the software product at certain point of time; meanwhile there is a significant variation between both of them.
+Prototyping is a technique to generate early working prototypes for a part of a software product that will be developed in the future [ CITATION Lic94 \l 1033  ].
+The prototype plays several roles in the software development process, some of them are [ CITATION Chu10 \l 1033  ]: Experimentation and learning, testing and proofing, communication and interaction, and synthesis and integration. To construct a prototype, there are two techniques:
+    • Horizontal prototyping: In this type of prototyping, only certain layer of the system is produced, for example the graphical users interface layer or the business logic layer for a certain module to demonstrate the module logic.
+    • Vertical prototyping: In this type, a selected part of the system is implemented completely; mostly this type of prototyping is used to test an implementation option or a specific technology [ CITATION Lic94 \l 1033  ].
+Meanwhile agile methods work iteratively to build a software product, through each iteration a functionality increment is being added to the system till reaching a complete software product that satisfies all the customer’s requirements. By contrast a prototype is built to demonstrate a part of the system that is implementing a set of non-completed features or a technology option as a proof of concept .For example before the development process takes place, some of those prototypes are thrown away and some of them are used during the development process later as part of the software code after the prototyping process ends and the development process starts. 
+The prototyping technique demonstrated many advantages thus it is being applied to some of the agile methodologies to validate a given set of requirements and sometimes for calculating the new projects risks [ CITATION Lic94 \l 1033  ]; a famous example is the dynamic system development methodology uses a set of prototypes during the project lifecycle for different goals that are:
+    1. Business prototypes: They demonstrate the system functionalities to give an insight for what the system is required to do and how will the system perform it.
+    2. Usability prototypes: They demonstrate and review the user interface.
+    3. Performance and capacity prototypes: They check that the system will perform appropriately on different users’ access capacity.
+    4. Capability prototypes: They are used to demonstrate different implementation techniques and different technology choices to aid in the decision making process to select a technical option for the system to be built.
+
+
+
+
+
+
+
+    Chapter 3 : The Enhanced Early User Interface Development Practice’s Framework
+
+
+    1. 
+    2. 
+    3. 
+        3.1.  Introduction to Agile Development Environment
+        3.2.  Related Work
+        3.3.  The “Early User Interface Development“ Practice
+        3.4.  Towards a Framework for Evolutionary Database Development
+
+
+
+    3. 
+        3.1.  Introduction to Agile Development Environment
+Early in this thesis, there was a preview for some traditional software development models and some other agile methods. It was concluded that many agile projects do not apply agile practices to database development and still consider it in serial manner exactly as the traditional software development techniques by building the whole detailed data model at the project beginning. 
+Another problem is that agile methods are not documentation centered. In agile, developers consider the well-organized code is the best documentation can be created. Despite of the fact that reducing the amount of documentation can increase productivity, it does come at some risk and cost as documentation is considered crucial when transitioning the project to a maintenance team as it serves as a domain knowledge repository for maintenance and testing purposes [ CITATION Lin02 \m Cor05 \l 2057  ]. 
+Finally, there is a gap between business requirements and IT goals in which customers always need to apply their changes in a glance to cope with new business changes and IT goals is to provide applications in standard environment that is affordable, scalable and securable along with reducing the development and maintenance cost. 
+Through this chapter, a proposed framework will be illustrated to solve these three issues through:
+    1. Formulating the database schema automatically in an iterative manner guided by GUI to finally produce the exact required database schema instead of having overbuilt schema that will in turn increase the schema quality. 
+    2. Automatically generating documentation for quality purposes.
+    3. Providing a fertile environment to generate the application needed code based on modern architecture models that are considered affordable, securable and scalable.
+        3.2.  Related Work
+Many efforts have invested in the IT field to cover the previously mentioned issues to some extent; examples of those are WebRatio and iRise. Next sections will provide more illustration for those examples.
+            3.2.1. WebRatio
+WebRatio is an innovative model-driven development environment for building custom enterprise applications in a Web/SOA environment. The tool allows capturing requirements in abstract models and automatically generating a full-featured, and industrial-strength, business application. The models are based on the BPMN (Business Process Modeling Notation) standard and the WebML modeling language. The result is a standard Java Web application. WebRatio allows process analysts and application functional analysts to work together with web designers and developers, thus optimizing collaboration within the work team. WebRatio works in three steps to produce the application by first model the functional requirements, second customize the rules and start to build pages based on these models, finally produce the application[ CITATION htt11 \l 2057  ].
+Although WebRatio is a fertile development environment, it did not solve the mentioned problems all together, it only produces working application but still depends on UML and models for capturing requirements from the customer, that have proven not to be the optimum method to validate customer requirements, as customers have no idea about the UML and requirements validation process comes after building the application web pages, which consumes more time. Another issue is that still there is not any documentation for the generated application. 
+            3.2.2. iRise
+iRise is a product for building high fidelity prototypes. A high fidelity prototype is a prototype that gives the stakeholders realistic prototype that simulates the real application to validate requirements with customers before any investments in the project are done. iRise builds prototypes through three levels of modeling: high-level page flow, screen design and text view. The high-level page flow modeling is more similar to storyboards in which it provides the pages interaction with each other, screen design allows system analysts and semi-technical users to build user interfaces of the prototype through designing the web pages using the standard set of controls provided by current available development environment such as Text boxes, and Combo boxes. Text view modeling is a textual description for the main application functionalities. [ CITATION Mem07 \l 2057  ].
+iRise helps in building running prototypes guided by user interface, which is considered a very effective method to validate requirements as it closes the picture to the customers by giving an insight of what the application will look like and how it will behave. Meanwhile, it does not produce a generated code or generated database schema, also in spite of having the text view modeling level, it does not produce any documentation for the product.
+        3.3.  The “Early User Interface Development” Practice
+The requirement Elicitation (RE) process is the first step in any agile method; meanwhile each method does not impose using a specific RE technique per-se otherwise each company selects the most adequate set of agile practices to achieve the agile principles[ CITATION Pae03 \l 1033  ]. Still there are preferred set of practices for each method’s requirements elicitation process, examples of these are: story cards for extreme programming method[ CITATION Pae03 \m Ric01 \l 1033  ], backlog, sprints, and daily scrums for scrum method [ CITATION CRK11 \m Pae03 \l 1033  ], project mission, constraints, objectives, project organization and system requirements for adaptive software development method [ CITATION Pae03 \l 1033  ], feasibility study and business study dynamic system development method[ CITATION Pae03 \l 1033  ] and domain model for feature driven development method [ CITATION Pae03 \l 1033  ].
+All agile methods mentioned above use either UML diagrams or textual descriptions to represent system requirements, while Graphical User Interface (GUI) is one of the most successful ways to represent requirements for customers as they are not experts in UML diagrams and mostly forget details when textual description is used, this is compliant to Albert Einstein say “If I can’t picture it, I can’t understand it”.
+There is a practice recently introduced – Early User Interface Development practice (“EUID” practice for short) – this practice is used to represent and validate user requirements through the formulation of the screens user interfaces in order to validate requirements before any new iteration begins [ CITATION Lab08 \t  \l 1033  ].
+As shown in figure 3.1, the system analyst gathers the requirements from the customer at the beginning of each iteration to develop the user interface prototype and validate it with the customer to obtain feedbacks till having an approved user interface for the current iteration, then begin the software development phase to produce an iteration release [ CITATION Lab08 \t  \l 1033  ].
+
+Figure ‎3.5: EUID process, adapted from [ CITATION Lab08 \t  \l 1033  ]
+
+The EUID practice offered a set of common components used generally in the most of the web applications. This set of components is [ CITATION Lab09 \t  \l 1033  ]:
+
+    1. Search component 
+	One important task in information system applications is to allow the users to search for certain data. This may come in different forms, for example a combobox or a set of editable controls with a button. There are three templates for this component; which are:
+    • Button_search template: In this template, the user is given a set of user controls and a button to perform the search operation.
+    • Combobox_search template: In this template, the user is given a combobox filled with data and upon selection of any value in that combobox, the search action is performed; for example filling another combobox with data according to the selected value or display a record of data based on this selection.
+    • Tree_search template: This type of template has been used for desktop applications and presented recently to web applications. It allows the user to explore hierarchal data such as table of contents of a book. When the user clicks any node, its descendant appears or related information for that node is displayed. 
+
+    2. One record component
+	Another important component that can be found in almost all information systems applications, is the “one record” component that is responsible for adding, editing, or viewing a one record data. One famous form for that component is a set of controls in columnar representation. There are three templates for this component, which are:
+    • View_onerecord template: This type is used to display data records one by one. Through this type, the user is not allowed to edit or delete any data and a navigation panel is provided for data navigation purposes.
+    • Edit_onerecord template: This type is used to view and/or edit data records one by one.
+    • Insert_onerecord template: In this type, the user inserts data records in columnar representation.
+    3. Multi record component
+	The Datagrid is the standard format for the “multi record “component, where data is represented in tabular form. It can be used to view, edit or delete an existing set of data. The most famous form for editing or deleting records in that component is through adding link buttons in the datagrid. There are three templates for this component; that are:
+    • View_multirecord template: This type is used to view data in the form of datagrid and does not allow the user to edit its records.
+    • Edit_multirecord template: This type is used to view and/or edit data records in the datagrid.
+    4. Navigator component
+	It is used to trigger several events on any web page; for example a link that moves the user to another page or make changes on the same page. The “navigator” component can come in the form of a word, sentence, paragraph, picture or even a button on the page.
+        3.4.   Towards a Framework for Evolutionary Database Development
+In the EUID practice, automation level stops at the point of generating the GUI structure in HTML format associated with the behavior file that contains textual description for the given events for each page in the application.
+This section proposes a framework for the EUID practice –the Enhanced Early User Interface Development- in order to reach a final product that is based on n-tier architecture along with system detailed design documents. One extreme importance of the proposed framework is generating the database schema at the end of the development process to avoid overbuilt databases and illustrate a new insight for the agile data modeling.
+            3.4.1.  The Enhanced Early User Interface Development Framework
+As illustrated before in this thesis, the main agile development environment’s problems are:
+    1. Many agile projects do not apply agile practices to database development and still consider it in serial manner.
+    2. Agile methods are not documentation centered.
+    3.  The gap between business requirements and IT goals.
+The “Enhanced Early User Interface Development” (EEUID framework for short) practice framework has come to provide a solution to those problems.
+This framework works in an evolutionary manner, at each iteration beginning, the system analyst should arrange meetings with the customer representatives to acquire full system requirements in short. Through those meeting the system analyst will distribute the main project modules into iterations according to their priorities defined by the customer. 
+Hence at each project development process’s iteration beginning, the system analyst should acquire the current iteration’s requirements details, and begin to construct the system screens in front of the customer representatives for requirements validation purposes. At the meeting closure, the system analyst will have an output represented in the form of constructed web pages’ GUI. At this stage, the framework will be able to generate the class diagram for this iteration, the GUI files and the expected behavior of the system screens. Consequently, development tasks can be delegated to developers to start the development process, and produce an iteration release that is demonstrated to the customer for having new and/or modified requirements in order to produce a final iteration release that the customer can put into production as a working part of the system, then proceed to next iteration till producing the whole system. 
+                3.4.1.1. The EEUID Framework’s Components
+The EEUID framework proposed three components in order to automate the previously illustrated process, as shown in figure 5.2, these components are:
+    1. The EEUID generator:
+The framework starting point is the EEUID generator which is an enhanced version for the EUID generator illustrated in section 3.3, this is an engine used to formulate the system screens’ user interface through the usage of the templates presented by the EUID practice, at the end of each iteration this component will be able to generate this iteration class diagram as it is from the crucial UML diagrams that should exist for every system, also it will be used to generate the database schema that contains only the required data fields of the system to avoid having overbuilt database schema.
+The EEUID generator produces three types of outputs:
+    I. GUI files: Those are set of ASP.NET files representing the screens GUI.
+    II. The XML behavior files: Those are set of XML files storing the main functionalities of each screen in the system; those are used to formulate the system class diagram in later stage. 
+    III. The XML class diagram description files: Those are set of files each class properties, operations and relationships to other classes in the system. 
+
+Figure ‎3.6: The EEUID Framework’s Components
+
+                                                
+    2. The UML Diagram Generator: 
+UML (Unified Modeling Language) is a visual language helps to understand the structure and the dynamic behavior or action for the business or the various systems. Moreover, object-oriented design by UML promotes modularization effectively. The UML class diagram has been chosen as a method of representation for this framework because of the considerable relevance between a class and each screen GUI for the application development; the UML Diagram Generator generates the class diagram from the given XML class diagrams’ description files directly as it contains full class definition. The class diagram will be used later to generate the database schema through each project development iteration.
+    3. The UML Transformer: 
+After generating the UML diagram, the UML transformer component will utilize it in producing the main framework outputs, which are:
+    • The database schema.
+    • The data access layer files.
+    • The available agile document templates for the system.
+Each output will be considered closely in the next sections.
+                3.4.1.2. The EEUID Process
+A question comes to mind when the user thinks about applying the EEUID framework that is “How the EEUID can be applied utilizing the proposed components?” the answer is depicted in figure 3.3. 
+
+Figure ‎3.7: The EEUID Process
+                
+
+As shown in figure 3.3, the framework works in an evolutionary manner; at each iteration beginning, requirements acquired from the customer, then GUI is developed using the EEUID generator producing this component outputs, hence the class diagram is generated using the UML diagram generator. From this point, the framework will automatically generate the data access layer, DB schema and detailed design documents needed for this iteration. Consequently, developers can start the development process and produce an iteration release that is unit tested. For each successive iteration, a complete regression test should be applied for this iteration release to assure that the new iteration release did not break the code integrity. If the regression test passed, refactoring should be done to produce optimized code design. Hence, an iteration release is presented to the customer for feedback, and then proceeds to the next iteration upon customer approval.
+
+Utilizing the test driven development and acceptance tests in the EEUID practice’s framework:
+Test Driven Development (TDD) is a software development practice that focuses on software design by first writing unit-tests followed by production code in short that passes those unit-tests, then iterate till reaching a final code that passes all the given unit-tests. TDD focuses the developer’s attention on software’s interface and behavior, while growing the software architecture smoothly [ CITATION Jan05 \l 1033  ]. Those unit tests for a given functionality should formulate the functionality’s acceptance test that is assigned to the customer role. Acceptance tests reflect the system functionality that is in the customer mind [ CITATION Ara07 \l 1033  ], following this practice in the software development process is considered beneficial from several points of views[ CITATION Ara07 \m Geo03 \m Erd \l 1033  ]:
+    • Maintain the system integrity: each time there is a modified, new business requirement or a new module –part of the system- is released, after modifications are performed a regression test can be run to assure that modifications did not breach the code integrity.
+    • System scope completeness: Guarantee customer's project scope is attended fully and correctly.
+    • Functionality: Avoid overbuilt functionality in which programmers unintentionally develop more functionalities than are actually needed.
+    • Work assessment: Make developers have a basic idea of how much implementation is still unfinished.
+    • Feedback: Tests provide the programmer with instant feedback as to whether new functionality has been implemented as intended and whether it interferes with old functionality.
+    • Task-orientation: Tests drive the coding activity, encouraging the programmer to decompose the problem into manageable, formalized programming tasks, helping to maintain focus and providing steady, measurable progress.
+    • Quality assurance: Having up-to-date tests in place ensures a certain level of quality, maintained by frequently running the tests.
+    • Time optimization: Practical experiments have proved that, programmers used to code using the test driven development code faster than developers who use waterfall-like development.
+
+How the test-first and acceptance test practices utilized in the EEUID framework?
+From the benefits illustrated above, it was very useful to include the test first and acceptance test practices in our framework. Although the EEUID provides the system analyst with a predefined set of actions that is used widely in the current web applications such as inserting, saving, deleting data or simple math calculations on the page; meanwhile definitely the customer will need more functionality in the system. For those unknown functionalities, the customer will provide the system analyst with the set of tests for this functionality that will formulate the “acceptance test” for this function. This is done by providing textual descriptions and the system analyst transforms it later to the developers in an adequate format in the development phase. Using the test first development practice will help to evolve the code smoothly without breaking the integrity of the code classes.
+                3.4.1.3. The EEUID Framework Outputs’ Software Architecture Models
+The main target from the proposed framework is to automatically generate the database schema, the data access files and the system detailed design documents; meanwhile the framework goal is to provide better both application architecture and business process for the agile methodologies. 
+The classical architecture for applications is client-server architecture which later proved deficiency in many areas, the most successful architecture for nowadays application is the n-tier architecture. The greatest competitive advantage of this architecture is that it easily separates the different coding layers in the application. For example, an application can be composed of a GUI tier that exposes the screens graphical user interface, a data access tier that exposes the functionalities for the GUI tier and a database tier that holds the main data fields that is considered the application repository. 
+The EEUID framework generated application architecture will be based on three tiers architecture as a baseline, and more tiers can be added smoothly later to handle further functionalities such as the security tier.
+
+
+Figure ‎3.8: The Available Modern Software Architecture Models, adapted from [ CITATION Dor04 \l 1033 ]
+
+As shown in figure 3.4, the available modern software architecture models demonstrated by the EEUID are four models [ CITATION Dor04 \l 1033  ]:
+    1) GUI layer and relational data access layer above relational database
+This model biggest problem is that 35% - 55% of the object oriented application resources were wasted on rework generated by changes to the relational database for the changing business environment. The EEUID framework has solved this problem via following the framework’s evolutionary approach which reduces customer’s changing requirements after the whole product release by dividing the project to several parts and providing several releases. Meanwhile, this model still suffers from the famous impedance mismatch problem [ CITATION Zha01 \l 1033  ], that is performing the task of mapping complex object structures and navigational data processing at the object oriented programming layer to the set-oriented, and descriptive query language such as the structured query language, which supports just a simple, flat data model. Despite of this considerable mapping overhead, mature RDBMS technology contributes to keep the overall system performance acceptable and it is still the most widely used model for object oriented applications.
+
+    2) GUI layer and object relational data access layer above relational database
+Before discussing the advantages and disadvantages of this model, an illustration for the Object Relational Mapping (ORM for short) will be reviewed. 
+What is the Object Relational Mapping?
+It is a modern technique for solving the problem of impedance mismatch by persisting objects to flat data that is database tables, and retrieve data from flat pattern then form it in objects pattern. Such type of technology has encouraged developers to think in terms of objects rather than thinking how to transform objects data to and from the database tables that is necessary for object oriented languages [ CITATION Obj \l 1033  ]. Many ORM tools exist in market by now such as Hibernate/NHibernate (18), Entity Framework[ CITATION Mic11 \l 1033  ], Subsonic[ CITATION Sub11 \l 1033  ], Light [ CITATION Bus11 \l 1033  ], Data Objects.Net[ CITATION Dat11 \l 1033  ], and Hera Framework[ CITATION Her11 \l 1033  ]. These tools work via adding the ORM engine to the application as an ORM layer and providing mostly mapping files for mapping the classes to objects, this helps developers to perform methods regardless of how the database organized, an example is that if an application has a patient class and patient visits class where each patient has one or several patient visits; the developer can then update a patient visit information using the patient object regardless of how to apply this to the database; the developer will only issue a (patient.visitsUpdate(….)) command and the query will be performed on the developer behalf. This is similar to the database SQL language (structured query language), when the user writes (Select … From … Where …) the DBMS retrieves the result without the need to provide a procedure of how the DBMS should perform this task.
+Consequently, the great benefit from the ORM layer is to provide developers with one environment to work on that is the objects environments, which exists in all current object oriented programming languages and also saving the developer’s time to think of how to perform those database queries by querying objects directly.
+ Much effort has been invested recently in software architectures based on ORM tools due to the benefits gained from using relational databases, which are:
+    1. Most of nowadays applications built on relational databases.
+    2. Relational database management systems (RDBMS) existing commercial systems are mature and stable.
+    3. National data standards are built for relational databases which made data integration and translation a feasible accurate process, as data integration and translation have become a problem facing many organizations that wish to utilize data from heterogeneous sources. For example the National Health Data Dictionary (NHDD) is used in many countries to collect patients’ information and perform health care statistics that save much money and effort. The idea of national data standards encourages software companies to follow a specific data formats for the data fields. For example if there is an application for patient’s registration, a patient address should be of data type text of 180 characters.
+Moreover the NHDD provides minimum data sets for health care application, for example, if there is an application for patient’s registration, it is a must to provide the patient address, phone, and name.[ CITATION AIHNa \l 1033  ].
+In addition to benefits gained from using the relational database, there are benefits from using the object-relational DB-technology which are:
+    1. It solves the famous problem of impedance mismatch.
+    2. It supports both Object Query Language (OQL) and standard SQL.
+    3. ORM tools provide performance optimization techniques as well in order to speed up the software performance such as object indexes, lazy and eager loading, and cashing[ CITATION Zyl09 \l 1033  ].
+
+    3) GUI layer and object relational access layer above object relational DB
+Object relational databases are the next generation of the relational databases, but till now it supports objects via User Defined Data types (UDT) that does not support multiple inheritance and cause unsatisfactory system performance. Besides, it is by no means clear how a given object oriented design can be mapped to a given ORDB efficiently. In addition, if a complex data type has been stored in ORDBMS, the developer will have to issue several queries from the Object Oriented Programming Language (OOPL) to get simple fragments and later rebuild complex object structure at the OOPL that is time consuming.  
+
+    4) GUI layer and object access layer above object oriented database
+Object oriented databases are best suited for complex database applications these applications generally involve highly interrelated data such as product definition, and bills of materials, and/or data that is not easily accommodated in the built-in relational data types such as images, multimedia, and documents. Such complex data cause unsatisfactory performance in relational databases, but still object oriented databases do not have stable or mature commercial products. 
+                3.4.1.4. The EEUID Framework’s Primarily Outputs
+This section will illustrate the EEUID framework main outputs in details that are:
+    1) Database Schema 
+ 	According to figure 3.4, there are three types of database schemas (relational database schema, object relational database schema, and object oriented database schema). The EEUID framework is proposed to generate the different three types of schemas.
+For the object relational database schema and object oriented database schema; this can be directly generated as the system already represents the system screens in the form of classes, this thesis will only demonstrate an insight for the relational database schema due to the importance of using this type of databases previously highlighted.
+For relational database the case is different, to store an object in a relational database the developer need to flatten it, that is create a data representation of the object. To retrieve the object the data should be read from the database and then create the object — often referred to as restoring the object — based on that data (Ambler 2003). There are existing approaches to generate the relational database (RDB) schema from a given class diagram (Ambler 2003, Ambler 2000), but still it is complicated task as mappings can be done in several ways, and choices for which mapping way to use should be defined. From the previous generated class diagram the RDB schema can be extracted smoothly according to the following mapping choices:
+    1. Mapping Meta-data: Class properties are mapped to table columns.
+    2. Inheritance Relationships: Are best mapped by mapping each class to table, due to the simplicity in implementation and understanding.
+    3. Relationships between classes: Will be maintained in relational databases through the use of foreign keys. 
+    4. Object Identifiers: Will be maintained in relational databases through the use of primary keys.
+
+Database schema mapping rules:
+There are existing techniques to extract the database schema from a given class diagram (Ambler 2000, Vara, et al. 2007). The technique chosen in this thesis is the demonstrated one by Scott W. Ambler. 
+The fundamental mapping options required to successfully map objects into relational databases are:
+    I. Mapping class attributes to columns:
+A class attribute will map to either zero or a number of columns in a relational database. It is essential to remember that not all attributes are persistent (exist in the database). For example, a patient class may have an age attribute that is used by its instances for calculation purposes, but this will not be saved in the database. The important thing is that this is a recursive definition: at some point, the attribute will be mapped to zero or more columns. It is also possible that several attributes could map to a single column in a table. For example, a class representing a “Patient vital signs” may have three attributes (body temperature, pulse rate and the blood pressure); each one represents part of the vital signs but all of them can be stored in one column in the database table. 
+    II. Mapping classes relationships and classes references:
+The table schema uses keys whereas the object schema indicates references. Rows in database tables are uniquely identified through primary keys and relationships are maintained through foreign keys. To map a class instance or to uniquely identify a class instance, this will be done through using additional information “shadow information”, by adding a “class object identifier” -OID for short- to each class to uniquely identifies its objects, and this will be mapped to a primary key in the database schema; and thus to foreign keys in related tables. For example if there is a “Patients” class, it will have a “POID” class attributes (which is Patient Object Identifier), this will be mapped to primary key in the main “Patients” table in the database, and if there is a “Patient vital signs” class references the “Patients” table, the “POID” will be mapped to foreign key in that class.
+    III. Mapping different data types from classes to database schema:
+A dictionary for the different data types’ mappings should be maintained to facilitate the mapping process. For example a currency class stereo type can be mapped to float data type in the database.
+    IV. Mapping classes to tables:
+Building the tables in this framework is the most straightforward step, as all referencing details are provided through building the classes. Each class will be mapped to a single table, with one column per business attributes and adding the needed additional information such as shadow information.
+    V. Mapping inherited classes to relational tables:
+The parent class and the children classes each will be represented as a single data table, with one column per business attributes and adding the needed additional information such as shadow information
+
+    2) Data Access Layer
+According to figure 5.4, there are three types of data access layers (relational data access layer, object relational data access layer, and the object data access layer). The EEUID framework is proposed to generate the different three types of schemas.
+For the relational data access layer, this is the classical approach used nowadays containing SQL statements to perform database operations. For the object data access layer, this will contain OQL statements to perform database operations, both types mentioned previously are straightforward generated without any kind of transformation.
+The object relational data access layer is a new generation of data access layers, in which it covers the gap between the object oriented programming languages that is based on the objects concepts, and the relational database management systems that are based on the set operations[ CITATION Zha01 \l 1033  ]. In addition, this type of data access layer promotes performance comparing to other types of data access layers where all ORM tools cashes the object’s data on the server and this reduces the amount of database server access times, as only the initial result set from any query is fetched from the database, and further elaboration on the result set would then be done by traditional traversing on the object model.
+This type of data access layer always uses an object relational mapping tool (ORM tool) that automates the object querying process and translates object queries into relational statements. The Hibernate/NHibernate ORM tool has been chosen to be applied through the EEUID framework due to its popularity and supporting both C# and java object oriented programming languages.
+For the EEUID framework to automatically generate the object relational access layer fits for relational database schema using the NHibernate engine, the following file should be generated as well:
+    • Domain object (classes) – contains class properties getters and setters and main class operation.
+    • Hibernate/NHibernate hbm files – these files represent Mapping Metadata between objects properties and relational table columns.
+    • Physical database driver configuration – necessary pieces of information in order to connect to data source.
+    3) Agile Documentation Templates
+Before presenting the EEUID framework’s third output, some critical questions regarding agile documentation will be presented.
+    • Why documentation is needed in agile projects?
+Documentation provides the ultimate benefits during the software development lifecycle for many reasons, some extreme points of it are:
+    • Documentation is important for contracting purposes [ CITATION Amb \t  \l 1033  ].
+    • When transitioning the project to the maintenance team, documentation serves as a domain knowledge repository and is necessary to retain critical information over time [ CITATION Lin02 \m deS05 \t  \l 1033   \m Cor05].
+    • Avoid losing project critical information when some of the team members leave in the middle or even at the end of the project[ CITATION Rup03 \l 1033 ].
+    • Agile methods are built on communication, while some team members may be introverted. Documents help people to clear issues that might have not been fully described during the meetings. Moreover, people vary in grasping information at different speeds; documentation helps to go back to material when they need [ CITATION Rup03 \l 1033 ].
+    • Agile documentation provides project higher scalability by allowing working in distributed teams [ CITATION Rup03 \l 1033 ].
+
+    • Do agile projects need documentation? 
+The Oxford paper book dictionary defines Agile as: Agile adj. nimble, and for a project development to be nimble, traditional documentation may be bypassed because it will be thrown away eventually, for example all current web forums, content management systems and most of the web application that contains few issues for the application members, like managing  job offers. Those types of projects just require minimum documentation for requirements specifications, detailed design documents, test specification and installation manual[ CITATION Hun05 \l 1033 ]. For bigger projects another kinds of documentation should be considered to be produced for long-time availability. 
+
+    • What kind of documents should be produced in order to document agile projects?
+There is no standard answer for this question, an ultimate effort has been made in this field to reach a standardized set of documents, but the result was always that there is not a perfect set of documents that should be produced, rather than there is a suitable set of documents can be produced for each agile project. This is based on many factors such as the stakeholders’ needs, the project scale, and the project environment and sometimes on the development team itself. Consequently, there are almost no guidelines for incorporating into agile documentation. Some of the leaders commented on this issue as follows:
+    • Thomas and Tilley stated that “no one really knows what sort of documentation is truly useful to software engineers to aid system understanding” [ CITATION Tho01 \l 1033 ].
+    • Scott Ambler commented “document your system effectively, but not so much that it becomes a burden” [ CITATION Amb055 \t  \l 1033  ]	.
+    • Additionally Alistair Cockburn agrees with that as well, as he recommends that “documentation be ‘light but sufficient’ “and also commented by “The correct amount of documentation is exactly that needed for the receiver to make her next move in the game [ CITATION Coc02 \l 1033 ]. 
+This made documentation a mean, but not an end per-se.
+To determine the needed documentation for an agile project, break down the project’s needs based on [ CITATION Rup03 \l 1033 ]:
+• The stakeholders’ needs.
+• The amount of documentation needed for the team members to communicate.
+• The amount of documentation the project will need in a later stage like the testing process.
+• The amount of documentation a follow-up project will probably need.
+Thus to guarantee that each produced document will have a real value thus it must target a certain reader from the stakeholders and address a need for this reader as well. To ensure that each produced document is a high quality document, this can be done through the targeted reader involvement to validate this document.
+A recommended practice is that the development organization standardizes a documentation portfolio that is necessary for various types of projects depending on several factors such as the project scope, the project size, and the team size[ CITATION Rup03 \l 1033 ]. The development organization must also review the produced documents quality, this is according to Gerald Weinberg’s say “The value of documentation is only to be realized if the documentation is well done. If it is poorly done, it will be worse than no documentation at all”.
+
+
+    • What are the agile documentation problems?
+The most important problem that agile documentation suffers from, are:
+    1. Nonexistent or poor quality[ CITATION deS06 \t  \l 1033   \m Bri03]: agile documentation is left on behalf of the developers, while developers have the belief that the source code is the most important document in the project and hardly pay attention to any other type of documentation.
+    2. Outdated documentation [ CITATION deS06 \t  \m For02 \l 1033  ]: According to changing agile projects environment, documents have to be updated continually to be kept up to date. This process might take much time which is against the agile manifesto principle of focusing on producing effective software over taking care of documentation, thus mostly this process is ignored as Scott Ambler commented that documentation becomes out of date and updated only “when it hurts”[ CITATION Lin02 \l 1033 ].
+    3. Difficult to access[ CITATION deS06 \t  \l 1033  ]: Agile documentation often exists on scattered places (different computers) and in different formats such as text documents, and UML diagrams. Typically, this is because there are no guidelines to follow when producing documentation in agile projects.
+Few solutions have been presented to solve those problems. The first problem is related to the organizational standards imposed on the developers. A documentation portfolio is the most appropriate solution for this problem to produce higher quality documentation that preserves the high quality via following the document templates provided by the development organization’s quality assurance department, also producing the minimum amount of documentation depending on the project nature.
+The second problem can be solved via choosing the best time to document. The third problem is solved via using one shared place for storing documents that is easily accessible by the project team members, a famous product facilitating this process, is Microsoft Visual Source safe [ CITATION VSS12 \l 1033  ], where it places all documents on one main server that is accessible by all the team members and even can be accessed online. In addition it is a versioning control system and this will be beneficiary while keeping the software products versions of documents till all documents get stabilized.
+
+    • When should Agile Projects start the Documenting Process?
+Agile documentation can be categorized into two categories:
+    1. Formal documentation: That has to be read from start till end to get a thorough understanding for the whole software product such as the functional requirements document.
+    2. Occasional documentation: That is needed in special occasions such as detailed design documents.
+There are two approaches to solve the famous problem of “outdated” agile documentation, which are:
+    1. Incremental documentation [ CITATION The03 \l 1033 ]: Formal documentation must start from the project beginning, and being updated either during the development process or as late as possible to avoid consuming much time in the updating process.
+This incremental documentation encourages the usage of documentation generators that extract documents from the source code like JavaDoc, or from the software requirements such as Accompa. Consequently, preserving the software documentation up to date and reflect the real nature of the software.
+    2. Document late [ CITATION Amb12 \l 1033  ]: This practice has been introduced to postpone the creation of all documents as much as possible, it depends on creating the documents when needed, an example is to write support documentation towards the development process end to avoid updates. By following this practice, the cost will be reduced by avoiding wasting time in documents updating and risk of having outdated documents will be reduced as well.
+    • Does the Documentation Layout and Typography matter?
+A well-organized document is an ultimate importance for easing the reading process of that document, this allows people to grasp information more quickly and avoid getting lost into too much unneeded details; meanwhile most readers are unaware of what makes a document more readable.
+A good looking document imposes two issues:
+    1. Organizing the document structure per-se that is what information should be contained in that document. The document structure can be identified in the document template for the organization documentation portfolio to ensure having a specified structure. Make the document template drives its writer, and never let the writer drive the document. This eventually will lead to non frustrating useful documentation.
+    2. Establishing a document layout helps in having more readable document such as page spacing, line width, text spacing, and text colors; guidelines help to produce more readable documents especially for people suffering from visual impairments. Andreas in the book of “Agile documentation – a pattern guide to producing lightweight documents for software projects” recommended document layout guidelines for this purpose[ CITATION Rup03 \l 1033 ].  
+
+From the few questions that have been illustrated in this section, it was very useful to include generating the detailed design documents in the EEUID framework; this will help to have more documentation that assists agile methodologies with competitive advantage as it is a written description for the software product’s screens that a system analyst writes in order to give the software development team and maintenance team an overall guidance of the structure of the software’s screens. Practically, a design document is required to coordinate a large team under a single vision that outlines all the screens of the software and how they will work.
+Data included in the design documents exist in the prototype generator files, such as HTML page, XML behavior file, XML class diagram description, RDB schema and test first file used for testing.
+            3.4.2. The EEUID benefits
+The EEUID practice provides the following benefits:
+    • Developers will focus on application business problems.
+    • Having database schema that has exactly data fields representing the real need of the application instead of overbuilt database schema.
+    • Code refactoring can be done easily as the product architecture is n-tier, where GUI is separated from the business logic and the DB as well. 
+    • Having automatically generated system documentation is a competitive advantage for any agile methodology as agile is not documentation centered in itself according to the agile manifesto [ CITATION Fow01 \m Kel03 \l 1033  ].
+    • Reducing time consumed, effort done and budget invested in the project[ CITATION Kel03 \l 1033  ].
+    • Through the given product architecture developers can freely and easily build reusable artifacts, where it has been a limitation on agile methods [ CITATION Fra02 \l 1033  ]. 
+ 
+
+
+
+
+
+    Chapter 4 : Case Study
+
+
+    1. 
+    2. 
+    3. 
+    4. 
+        4.1.  Foreword
+        4.2.  iAglie Overview
+        4.3.  Case Study
+        4.4.  Conclusion
+
+
+    4. 
+        4.1.  Foreword
+Agile data modeling allows data professionals to adopt evolutionary approaches to all aspects of their work[ CITATION Sco \t  \l 1033  ]. The proposed framework of the enhanced early user interface development practice was presented to provide data professionals with an agile data modeling technique that supports agility in both directions of coding and data modeling as well. Applying such framework is impossible task to be done manually; therefore, a proposed case tool will be illustrated through this chapter to put the EEUID in action. A case study for pilot software will be conducted as well using this tool, to illustrate how system analysts can reach the final expected results from applying such framework, which in turn will provide the whole development team members with many benefits that will be illustrated through the chapter too.
+        4.2.  iAgile Overview
+iAgile is a software case tool proposed to apply the EEUID practice framework during the software development process, in order to support agility in both directions of coding and data modeling as well, it is used to quickly assemble working previews of business software to produce the look, feel and behavior of the final product. iAgile helps stakeholders interact with the business software before any coding being done, which eliminates confusion about what to build, cuts project cost and accelerates delivery.
+            4.2.1. iAgile Advantages and Disadvantages
+The iAgile software tool provides the following advantages:
+    I. Avoiding the problem of having overbuilt databases and generates the only needed structures in the database schema; thus it removes the frustration that happens during the development process, as developers ignore data professionals’ advice, standards, guidelines, and enterprise models, while developers often do not even know about these people and things in the first place.
+    II. Accelerating the development process by automatically generating code portions that formulate essential parts of the system.
+    III. Increasing the documentation level for agile methods which is considered a competitive advantage, as it generates different temples of documentation needed for maintenance and testing purposes.
+    IV. Reducing the project budget, as it cuts off the planned time for the developed project by supporting rapid development.
+    V. Fewer defects in the final product, as some of the essential parts of the software architecture is automatically generated, not manually coded.
+    VI. Fewer “surprises” (scope changes) as iAgile helps analysts apply changes in the business software and regenerates the outputs again by a button click only.
+    VII. Providing higher level of customer collaboration as customers are highly involved during the development process.
+
+Although iAgile provides several competitive advantages, it also suffers from potentially several disadvantages, which are:
+    I. When changes come through project iterations, new project layers must be regenerated to reflect those changes in the generated code, which in turn will not comply with the past used layer’s files, as not all functionalities are generated through iAgile that represents the complicated business functions. Those are only included as set of instructions to the developers to be implemented provided with Test-First cases. Such differences between different versions of code must be refactored to put each change in its accurate place, which is not an easy task and need to be done very carefully to avoid time slipping in performing this task.
+    II. Only limited set of documentation types can be generated using iAgile according to the stored information during the GUI building process; thus it can never reach the same level of documentation as the heavyweight software development models; nevertheless it can get close to its level and provide the most important documentation needed for maintenance and testing purposes.
+    III. iAgile lacks the advanced GUI components part, as it should be integrated with additional application of a picture editing tool, such as the one used for sketching UI widgets. When more sophisticated UI behavior is necessary, embeddable objects such as Adobe Flash need to be generated separately. iAgile only helps to model ordinary UIs, but otherwise needs to become part of an interrelated tool-chain.
+            4.2.2. iAgile in Action
+The EEUID process works in an evolutionary manner as shown in figure 4.1.
+
+
+Figure ‎4.9: EEUID process
+
+At each iteration beginning, partial requirements acquired from the customer, then GUI will be developed using the enhanced EUID generator producing three outputs (GUI structure, XML behavior file, XML class diagram description), hence class diagram is generated using UML diagram generator. From this point, the framework automatically generates the data access layer, DB schema and the needed agile documentation templates for this iteration, and then developers can start the development process and produce release for this iteration. For each successive iteration a complete regression test should be applied for the iteration release if it fails, changes should be made to fix the software code. If it passes, code refactoring should be done to maintain the code design simplicity; hence an iteration release is presented to the customer for feedback, hence proceeding to next iteration. 
+The main target from the previous illustrated process is to generate the main three outputs of data access layer, DB schema and agile documentation templates. Through iAgile rest of generated files from this process are considered meta-data for the tool and will not be generated such as XML behavior file and XML class diagram description; consequently, using iAgile will make the analysis and design processes shorter for system analysts which make it more easier to apply.
+    1. 
+    2. 
+    3. 
+    4. 
+    5. 
+    6. 
+        6.1. 
+        6.2. 
+            6.2.1. 
+            6.2.2. 
+    Chapter 1 -  
+    • How iAgile works?
+For developing a new project using iAgile, a set of predefined steps should be followed precisely in order to reach the accurate final results, the iAgile automates the EEUID practice framework, according to the framework explained in previous chapter, those steps are:
+Step 1: Partial requirements elicitation
+Upon starting a new project, partial requirements elicitation process is done first, each agile method has its own set of practices for the requirements elicitation phase, for those methods which will flow the EEUID framework, then requirements elicitation phase target will be to determine the iteration screens and full detailed description for its functionalities.
+Step 2: Plan project iteration main functionalities and set its priorities
+A list of the iteration functionalities and screens is listed in this step using any type of simple agile practices such as using post-it notes, writing on whiteboards or writing on papers and put a priority order for each screen.
+Step 3: Develop the screens’ GUI using iAgile
+During this step the system analyst should start designing the screens user interface using iAgile set of tools, which will make each screen constructed from a set of the EUID components that can be modified thorough project iterations and reflect those changes on the generated components.
+Step 4: Generate the iteration database schema, data access layer and detailed design documents.
+Upon completion of the screens GUI development process, iAgile will be ready to generate its outputs to complete the rest of functionalities that were not generated via iAgile. The generated output will be based on the generated class diagram resulted from each iteration.
+Step 5: Assess the rest of tasks to be done that were not generated by iAgile.
+A set of not coded functionalities then appear, the project manager starts to assign those tasks to developers in order to produce an iteration release.
+Step 6: Start development process.
+Developers can start developing the not coded functionalities making use of the test first examples generated from iAgile to produce the iteration release.
+Step 7: Perform regression test and produce iteration release.
+After producing the iteration release, a regression test must be done to assure maintaining the code integrity, if the new release passes the regression test, then an iteration release can be installed on the customer production environment, if the release did not pass the regression test, code changes must be done till the new release passes the regression test, finally code refactoring may be performed to enhance the software code quality.
+Step 8: Consider customer feedback.
+Customer feedback is a crucial step in this practice, as it is the main step that will determine modifications for current release and/or initiate the next iteration requirements.
+Step 9: loop starting from step two, if there are successive iterations.
+After finishing the current iteration successfully and there is still new requirements to implement, process will start over from step two till all requirements are fulfilled.
+    • Can all agile methods make use of iAgile? 
+All agile methods use either UML diagrams or textual descriptions to represent system requirements; replacing any of these preferred practices to use the EUID practice is possible and will not affect how each method works, consequently, making use of iAgile will be beneficially if applied under the right circumstances of the project.
+    • Which projects can use iAgile? 
+iAgile is most suitable for “database applications”; those are applications that depend on the famous database operations e.g. operations for adding, deleting, updating and searching for information from the database. 
+    • How to construct system screens and generate the expected outputs using iAgile? 
+According to the iAgile layout and content editor displayed in figure 4.2, the visual specification of the project pages is constructed through three sets of controls:
+    1. The Early User Interface Development practice components (EUID components for short): Which are components of several types that are used to build main parts of the web page. In the next section, more details for this set of components will be explained.
+    2. Typical Web Development Controls: Examples including Textboxes, Comboboxes and images are used for further addition/modification of the web page controls. Meanwhile, when a user drags and drops any of these, it must be attached to a particular page component, then events can be added to different types of controls. The tool offers a set of specified predefined actions such as saving, searching, adding, deleting data or moving to other page as an initial set of most used actions. For further actions, the system analyst should write the Test First examples that will be implemented manually in the iteration development phase.
+    3. iAgile Studio Tools: Help to build more interactions on the page, such as simple math calculator that is used to produce an output in a field from performing simple math calculations on other inputs of the same page, such as calculating a person’s age from his\her date of birth.
+
+
+Figure ‎4.10: iAgile Layout and Content Editor
+
+At the beginning of each project iteration, the system analyst should start to construct the web pages GUI through the previously mentioned sets of tools; upon completion of this step, the tool will be able to generate the system accumulated class diagram up to this project iteration making use of the generated XML behavior file and XML class diagram description file. From this point, the system analyst can generate the database schema, the data access layer and agile documentation templates for this iteration according to the chosen software architecture model; consequently, further development should start to complete the not coded functionalities guided by the test first examples generated from iAgile. Finally, system analyst can proceed to next iteration after considering the customer feedback.
+    • What about the database refactoring?
+The database refactoring process: is the process of improving the database design without affecting its behavioral and informational semantics. As mentioned earlier in this thesis one of the most important deficiencies for the EEUID practice is "Incapability to perform database normalization", this can be mitigated if a database refactoring process has been performed after building the user interface screens at each iteration, this will help to improve the current database design and applying changes before the iteration coding phase starts, thus increasing the database schema quality. 
+    • iAgile support for EUID practice’s components
+	According to similarities between information systems’ web applications, the EUID components were proposed as essential constructs for each web page applying the EUID practice, there are four types of these components, which are[ CITATION Lab08 \t  \m Lab09 \t  \l 1033  ]:
+    1. Search component: It allows users to search for certain data. This may come in different forms. For example, a combobox or a set of editable controls with a search button. 
+    2. One record component: It is responsible for adding, editing, or viewing a one record data. One famous form for that component is a set of controls in columnar representation.
+    3. Multi record component: The Multi record component can be referenced to be a datagrid where data is represented in tabular form. It can be used for viewing data only or for editing or deleting. The most famous form for editing or deleting records in that component is through adding links for each record in the datagrid. 
+    4. Navigator component: There are several actions occur when a link is clicked. For example, on clicking a link the user can move to another page or make changes on the same page.
+	iAgile supports these types of components via the idea of that for every screen there is at least a conceptual master class and potential set of dependant classes. The properties of each class will be added from every screen to those classes in order to form the final class definition. 
+
+        4.3.  The "EMR application" Case Study
+In this section a case study will be demonstrated to verify iAgile usage, and illustrate how systems analysts can work using this tool, the case study issues a simple Electronic Medical Record (EMR), which is a computerized medical record created in an organization that delivers information about patient’s health history and progress. Paper based records were and still the most common method of recording patient information for most hospitals. However, it is easier for the doctor to record medical data at the point of care, and be able to retrieve and view this information anywhere, at any time. This type of applications is recommended to use the EEUID framework, as this type of applications is intensive input\output manipulation applications and changes in screens’ fields are expected during the whole development process.
+            4.3.1. Functional Requirements
+
+In the considered case study, after passing the requirements’ elicitation step, the system analyst considers the main functional requirements in system’s screens as stated in table 4.1.
+
+Table ‎4.1: System’s functional requirements
+
+
+Screen
+Main features
+Setup screens
+1
+Countries
+    • Add, delete, update and print.
+2
+Cities
+    • Add, delete, update and print.
+3
+Clinics
+    • Add, delete, update and print.
+4
+Clinic services
+    • Add, delete, update and print.
+5
+Scientific degree
+    • Add, delete, update and print.
+6
+Specialty
+    • Add, delete, update and print.
+Main system screens
+7
+Patient registration
+    • Add, delete, update and print.
+    • Search by all fields.
+    • View patient visits.
+8
+Doctor registration
+    • Add, delete, update and print.
+    • Search by all fields.
+9
+Patient’s visits
+    • Search patient’s visits.
+    • Add new visit.
+    • Transfer patient’s case to another doctor (send the patient’s case details by mail to another doctor).
+10
+Patient’s visit details
+    • Save the visit.
+
+
+            4.3.2. Project Development using iAgile
+
+According to previously stated functional requirements, assume that the project has been split into three iterations; iterations’ tasks stated in table 4.2.
+
+Table ‎4.2: Project iterations’ tasks
+
+Iteration number
+Main tasks
+Iteration 1
+Develop countries screen
+Develop cities screen
+Develop clinics screen
+Develop clinic services screen
+Develop scientific degree screen
+Develop specialty screen
+Iteration 2
+Develop patient registration
+Develop doctor registration
+Iteration 3
+Develop patient’s visits
+Develop patient’s visit details
+
+                4.3.2.1. First Iteration
+
+Through this iteration six screens of the basic setup data for the EMR application will be developed.
+            I. First screen development details
+The first screen (countries screen) shown in figure 4.3.
+
+
+Figure ‎4.11: Countries screen
+To build any screen using iAgile, the system analyst has to decide which components should be used to construct the page; to consider the countries screen, the screen will have two components OneRecord_Insert and Multirecord_View as shown in figure 4.3, when using any type of EUID components, the user must determine the class type for that component, it is either master class or dependant class, also it can be either new class or existing class that has shown up before in previously developed screen.
+For the first component, the user will drag the “OneRecord_Insert” component to the working area, a screen will appear to get more details about the used class for the first component, and screen details are included in figure 4.4.
+
+Figure ‎4.12: Onerecord_Insert component class settings
+
+For more usability, iAgile offers “filter condition tab” in the settings screen to enable data filtration for datagrids in multi record components and for one record components, this if the user has chosen to add a navigation button to navigate back and forward in records upon checking the “add navigation buttons checkbox”.
+For the countries screen, the screen does not need to have an object identifier for the class, which is “Country ID”, therefore if the user added class to the system and did not include any object identifier for the class objects, the tool includes an automatic object identifier which is kept hidden in the screens and used later to identify objects for the designed screens. In this case, the user will add only one field for the “Country” name, details of adding such field illustrated in figure 6.4. For the second component, the user will drag the “Multirecord_View” component to the working area, a screen will appear to get more details about the used class for the second component, and screen details are included in figure 4.5.
+
+
+Figure ‎4.13: Multirecord_View component class settings
+
+
+After adding the two components to iAgile working area, the page is constructed as shown in figure 4.6.
+
+
+Figure ‎4.14: Countries screen after building using iAgile
+
+            II. Second screen development details
+The second screen (cities screen) is shown in figure 4.7.
+
+
+Figure ‎4.15: Cities screen
+
+To build the cities screen, the screen will have two components OneRecord_Insert and Multirecord_View as shown in figure 6.7. Meanwhile, this screen has an extra functionality to be added, which is “Loading dynamic data in the countries combobox”. iAgile offers few predefined extra functionality for controls’ events, this can be done after constructing the page via the actions part at the most bottom section of the tool, this will enable system analysts to add different extra functionalities to existing components’ controls. If the user wants to present another functionality that is not predefined via iAgile, the user should add his test-first examples and their descriptions in order to guide developers while coding the missing functionalities during the development phase. The actions part is shown in figure 4.8.
+
+
+
+Figure ‎4.16: Actions part in iAgile
+To dynamically load the countries data in the countries combobox, the system analyst will select the combobox and set its action from the action panel, in order to appropriately doing this, the user must define the inputs and outputs for this action as follows:
+    • Input: As the goal is to display all the countries data without filtration, the user should check the “Match all radio button” in the action panel as shown in figure 4.9.
+
+
+Figure ‎4.17: Dynamic data loading action input details
+
+    • Output: As the goal is to retrieve data from the countries class in the countries combobox, the user should set the output details in action panel as shown in figure 4.10.
+
+
+Figure ‎4.18: Dynamic data loading action output details
+
+            III. Third screen development details
+The third screen (clinics screen) will have two components OneRecord_Insert and Multirecord_View as shown in figure 6.11. 
+
+
+Figure ‎4.19: Clinics screen
+            IV. Forth screen development details
+The forth screen (clinic services screen) will have two components OneRecord_Insert and Multirecord_View as shown in figure 4.12.
+The user should add “On_Load” action to the clinics combobox, in order to retrieve all clinic names in the combobox after the page loading event. 
+
+            
+Figure ‎4.20: Clinic Services screen
+            V. Fifth screen development details
+The fifth screen (scientific degrees screen) will have two components OneRecord_Insert and Multirecord_View as shown in figure 6.13.
+             
+Figure ‎4.21: Scientific degree screen
+            VI. Sixth screen development details
+The sixth screen (specialties screen) will have two components OneRecord_Insert and Multirecord_View as shown in figure 4.14.
+
+
+Figure ‎4.22: Specialties screen
+
+    • Generate the class diagram, the database schema, the data access files and the detailed design documentation
+After finishing the project pages’ UI formulation, iAgile is ready to move to next step and start generating the following outputs:
+    1) Class Diagram
+iAgile will generate the class diagram in the first iteration and apply changes to it during the successive iterations according to new/modified iterations’ requirements. The generated class diagram for the case study is shown in figure 4.15. The generated class diagram has been formulated through the project pages’ UI construction step, via storing screens’ details in iAgile metadata files then processing them to produce this class diagram.  For each class, the class properties are stored directly from the page controls and the user has set each control data type during the previous step. The class operations are divided into four categories:
+    1. Class properties getters and setters: For later use of the NHibernate tool, to enable the object persistence process, for example in the “countries” class, there is a class property “country”, therefore the class must contain GetCountry() and SetCountry(String) methods.
+    2. Child classes getters and setters: This enables modifying related data stored in dependant classes, for example the “Countries” class has an association relationship with the “Cities” class, therefore the “Countries” class must contain GetCities() and RemoveCity(City); in addition, the dependant class must have methods for accessing the countries class as well, the “Cities” class must have GetCountry() and SetCountry(Country).
+    3. iAgile predefind actions: These are predefined actions in which the implementation code will be generated in the data access layer. These are the famous CRUD actions such as insert, update, search, and delete an object from a class.
+    4. Unknown actions: These actions are not from the iAgile predefind set of actions and exhibit a specific behavior for the page. For such actions, the user should provide the function description and a set of Test-First examples for later development.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure ‎4.23: First iteration generated class diagram
+    2) Database schema
+After generating the UML class diagram successfully, iAgile becomes ready to generate the database schema according to the transformation rules discussed in section 3.4.1. A sample of database schema produced from this iteration is shown in figure 4.16. 
+
+
+Figure ‎4.24: Generated physical database diagram
+
+iAgile generates SQL statements for creating the generated database at the first time and this can be done on different database engines such as SQL server, oracle or Sybase and for different database types such as  Relational database, as shown in the generation screen in figure 4.17. It also generates SQL modifications statements for successive iterations to upgrade the database schema.
+
+Figure ‎4.25: iAgile database generation screen
+    3) Data access layer
+Class methods in the generated UML class diagram are further transformed to functions in the data access layer, iAgile can generate different types of data access layers, which are: relational data access layer, object relational data access layer and object data access layer. In this case study, iAgile will generate the object relational access layer. To generate this model, three types of files should be generated:
+    1) Domain object (classes):
+They contain class properties getters and setters. Each class in the UML class diagram must have only one corresponding domain object class, for example in countries class iAgile will generate Countries.cs as shown in figure 4.18. Each class property will have getter and setter method in the class, for example the class property “CountryOID” will have one method “CountryOID” that has getter and setter for the class property inside it.
+
+
+Figure ‎4.26: Countries domain class
+
+    2) Factory classes:
+They contain the main class’s methods. Each class in the UML class diagram must have only one corresponding factory class, for example for countries class, iAgile will generate CountriesFactory.cs as shown in appendix A, the code provided will contain a method for every predefined action in the page UI, for example the “DeleteCountries” method implements the delete operation for the country object.  
+    3) Hibernate/NHibernate hbm files:
+These files represent Mapping Metadata between objects properties and relational table columns along with relationships between classes. Each class in the UML class diagram must have only one corresponding factory class e.g. for the countries class, iAgile will generate Countries.hbm as shown in figure 4.19. It is an XML file that contains two parts, the first part for mapping class properties to table columns and the second part contains the relationships to other classes in the project.
+
+
+Figure ‎4.27: Countries hbm file
+
+
+    4) Physical database driver configuration:
+That contains necessary pieces of information in order to connect to data source. For any project, there is one file for the database driver configuration as shown in figure 4.20.
+
+Figure ‎4.28: Physical database driver configuration
+
+    4) Agile documentation
+iAgile presents iAgile Documentation Builder as shown in figure 4.21 to build quality document templates, hence the user can formulate his/her own documentation templates for later generation. iAgile produces agile documentation through two phases:
+Phase 1: building the document structure to be generated.
+Phase 2: generating the needed documents through different project development’s phases. 
+
+
+Figure ‎4.29: Manage quality document template screen
+
+Phase 1: Building the document structure to be generated
+While building the software screens, a set of information is being captured from the system analyst such as the screen name, the components description in each page, the test first examples for controls triggering events, events within each component, the events inputs and outputs, the pages transition scenario description. That information can be used for constructing the document templates needed for the software documentation.
+iAgile generates three types of documents that are extremely important when building any software product the system functional requirements document, the detailed designed documents, and the database schema’s data dictionary.
+    • The functional requirements document:
+This is a form of the formal documentation type that has to be read from the start to end to have an insight of what the software does. The functional requirements are being extracted from the events of each component on the constructed system screen, as the system events are the primary components of the functional requirements.
+    • The detailed design documents: 
+This is a from the occasional documentation type that are needed in special occasions. These are technical documents for describing the screen behavior via stating the expected inputs and outputs from that screen.
+    • The data dictionary document: 
+Data dictionary is a centralized repository of information about data such as meaning, relationships to other data, usage, and format. It is prepared by a systems architect or data professional once the project scope is finalized.
+
+Moreover, iAgile documentation builder allows the user to control the template layout for more readability, such as allowing iAgile users to select the appropriate font name, font sizes for different sections, adding graphs, and choosing the numbering system.
+
+Phase 2: Generating the needed documents through different project development’s phases
+iAgile leaves the “documentation timing” to the user decision, at any time, the previously captured information can be generated upon the user decision to generate the chosen documentation template; meanwhile the practice of “document late” is an appropriate practice to be followed in this situation, but “document upon needed” is the most appropriate action to do as only generate documentation when it is needed, this saves the time being spent to update and maintain those documents.
+
+A Closer Look to iAgile Proposed Quality Document Templates
+    [1] The functional requirements document template
+iAgile proposes a template for producing the functional requirements document; some of its sections are being generated automatically and others have to be filled after generating the document.
+
+
+Figure ‎4.30: the functional requirements document template main sections
+
+As shown in figure 4.22. The functional requirement document template main sections are as follows:
+    1. Introduction: This section and its subsections are filled by the user after the generation process and it is mostly preferable to fill such sections when information stabilized.
+    2. Overview of the system operating modules: This section contains the following subsections:
+            i. System platform and interfaces: this part is to be filled by the user to describe the technologies used during the software development process, the used database management system and whether the system will be desktop or online application. 
+            ii. Website layout and screens design: this part is being generated on behalf of iAgile in the form of detailed design documents for each screen in the system and it also produces the pages scenario according to the transition events that have been placed in the system screens.
+            iii. Home page layout: This part is to be filled by the user to describe the home page nature, as it contains many links and buttons that access the rest of the system screens.
+            iv. System administration: This part is to be filled by the user to describe the system users’ security policy.
+    3. Data description and organization: this contains the  following subsections:
+    a.  Data structures: This part is generated on behalf of iAgile in the form of the system ERD that is built basically from the system class diagram. This part includes a suggested data elements from the national data dictionary used in the system field, based on the “word similarity” between the captured “classes properties” and the “national data dictionary” data elements.
+Example: If there is a screen contains two fields of “patient name” and “patient address”, hence to construct this screen using iAgile tools, it will contain one “Onrecord_Insert” component. This should create a class named “patients” with two class properties “patient name” and “patient address”. The National Health Data Dictionary (NHDD) has been presented to standardize the health care applications’ data formats [ CITATION AIHNa \l 1033  ]; also many fields now are constructing their own national data dictionaries for numerous reasons.  iAgile will compare the “class property” name to others in the used data dictionary to provide a suggested list of data elements’ data structures and the user can decide on the appropriate data elements to use. This helps iAgile users to follow the national data dictionaries by narrowing the scope to them and apply this as well to the generated database schema; a sample of suggested list of data elements for the patient name is shown in figure 4.23.
+
+Figure ‎4.31: Suggested list of data elements for the “patient name” field
+
+    b.  Data management and maintenance: This part is to be filled by the user to describe the data maintenance plan after delivering the project.
+    c.  System maintenance: This part is to be filled by the user to describe the system maintenance plan after delivering the project.
+
+    [1] 
+    [2] The detailed design document template
+These are technical documents for describing the screen behavior, stating expected inputs and outputs from this screen. A detailed design document for the “Countries” screen is shown in figure 4.24.
+
+
+Figure ‎4.32: iAgile generated detailed design document
+
+The proposed detailed design document template contains two main sections; the first section provides general information for the screen such as the web page name, the creation date, the project iteration number, and the database engine type. The second section explains page events by stating each control on the screen that causes an event and full details for inputs, outputs, mapping to database, description and associated test first cases. For example in “countries” screen, there will be two controls causing events, the “save button” and “datagrid”. As shown in figure 4.24, for the “save button”, the triggering event is “OnClick”, the inputs field is represented in the country text box and the outputs field is none as it stores only the country in the database, the mapping to the database field represents the tables used in the database, which is the “countries” table.
+The first iteration has not any special requirements to be developed manually; therefore, pages are demonstrated to the user for requirements verifications, and then move to next iteration. 
+    [3] The data dictionary document
+Data dictionary sample is previewed in figure 4.25; the data dictionary sample presented by iAgile contains the attribute name, data type, field length, key, and description for each table in the system.
+
+
+Figure ‎4.33: Data dictionary sample
+                4.3.2.2. Second Iteration
+Through this iteration two screens will be developed; patient registration screen and doctor registration screen, they will be the same as the first iteration process. 
+            I. First screen development details
+The seventh screen (patient registration screen) will have two components OneRecord_Insert and Multirecord_Edit as shown in figure 4.26. 
+
+
+Figure ‎4.34: Patient regesteration screen
+
+After adding the two components, actions should be added to “Country” and “City” fields following the same process as in “Countries” screen to load the countries and cities data during the page load in the comboboxes. 
+To add the “Search” button, the user will add a button and attach it to the first component on the screen, name it “Search”, and then the user will add an action for the button from iAgile action panel, and start to provide the action inputs and outputs’ details.
+As shown in figure 4.26, the action inputs will build the settings for the “get action” to formulate the data retrieval filter condition. It should be selected as follows:
+    • Master class  Patients, class property  Name, operator like, input component component1, input control  txt_name.
+    • Master class  Patients, class property  SSN, operator  =, input component component1, input control  txt_SSN.
+    • Master class  Patients, class property  Dateofbirth, operator  =, input component component1, input control  txt_Dateofbirth.
+    • Master class  Patients, class property  Accountno, operator  =, input component component1, input control  txt_ Accountno.
+    • Master class  Patients, class property  Phone, operator  like, input component component1, input control  txt_ Phone.
+    • Master class  Patients, class property  Address, operator  like, input component component1, input control  txt_ Address.
+    • Master class  Patients, class property  Country, operator  =, input component component1, input control  txt_ Country.
+    • Master class  Patients, class property  City, operator  =, input component component1, input control  txt_ City.
+
+
+Figure ‎4.35: The search button's inputs
+
+As shown in figure 4.27, the action’s outputs will build the settings for the “get action” to output the resulted data in the appropriate controls on the screen. It should be set as follows:
+    • Class name  Patients, Class property  Name, Output component  component2, Output control  Datagrid1_name.
+    • Class name  Patients, Class property  SSN, Output component  component2, Output control  Datagrid1_SSN.
+    • Class name  Patients, Class property  Dateofbirth, Output component  component2, Output control  Datagrid1_ Dateofbirth.
+    • Class name  Patients, Class property  Accountno, Output component  component2, Output control  Datagrid1_ Accountno.
+    • Class name  Patients, Class property  Phone, Output component  component2, Output control  Datagrid1_Phone.
+    • Class name  Patients, Class property  Address, Output component  component2, Output control  Datagrid1_Address.
+    • Class name  Patients, Class property  Country, Output component  component2, Output control  Datagrid1_Country.
+    • Class name  Patients, Class property  City, Output component  component2, Output control  Datagrid1_City.
+
+
+Figure ‎4.36: The search button's outputs
+
+            II. Second screen development details
+The eighth screen (doctor registration screen) will have two components; OneRecord_Insert and Multirecord_Edit as shown in figure 4.28. To build this screen, the user should follow the same process flow as in “patient registration screen”.
+By the end of this iteration, the class diagram will accumulate the added classes through this iteration to the previous iteration to include the new requirements. Consequently, the generated database schema will accumulate the new requirements as well.
+
+Figure ‎4.37:  Doctor registeration screen
+
+                4.3.2.3. Third Iteration
+Through this iteration, three screens will be developed, patient visits screen, patient visit details screen and clinic reservation screen. 
+            I. First screen development details
+The ninth screen (Patient visit details screen) is different from the previous screens, it represents dependant class on the “patients” class. 
+In iAgile dependant classes can be constructed through two ways:
+    • Inserting comboboxes in the page UI that dynamically loads data from other classes, as in the “Cities” page.
+    • Using components of dependant classes directly and determining its master classes during adding components to the page, like this screen. 
+To construct the “patient visit details” screen, the screen will have one component OneRecord_Edit as shown in figure 4.30. To build this page using iAgile, the user will add the OneRecord_Edit component to the page; a screen will pop up to fill in the screen’s associated class details. It should be filled as shown in figure 4.31. Navigation buttons will be added as well to the screen by checking the “Add navigation buttons” check box.
+
+Figure ‎4.38: Patient visits screen
+
+
+Figure ‎4.39: Patient visits' class details
+            II. Second screen development details
+The tenth screen (Patient visits search screen) will have two component, Search_Combobox and Multirecord_View as shown in figure 4.32. To build this screen, the user will add the Multirecord_View component first, and then the Search_Combobox component will be added. The Search_Combobox class details should be as shown in figure 4.33.
+The main “Search” components’ details are the search process inputs and outputs, in this screen the search component inputs are: patient ID, patient name and visit date. The search component outputs will be as shown in figure 4.34. By this, the user will be able to select any combination from the three provided controls in (component1) and press the search button to view the result in the datagrid in (component2).
+There is an extra button on the screen – the “Transfer case” button- that does not exist in iAgile predefined actions’ collection. The user will then have to set its test first examples for later development.
+
+      
+Figure ‎4.40: Patient visits search screen
+
+
+Figure ‎4.41: The search component input details
+
+
+Figure ‎4.42: The search component output details
+
+            4.3.3. Applying the Bidirectionality of the EEUID
+
+The EEUID framework works in bidirectional ways, it supports working in forward direction where moving from objects to database tables as shown previously in building the case study’s screens, and it supports working in backward direction (reverse direction) where the process can be reversed to move from database tables to objects and consequently to be reflected on the screens’ user interface. For example, the “Transfer case” button in the “Patient visits search” screen, is used to send the electronical medical record for the displayed patient to another doctor via mail. In order to apply this feature, the system must record the doctor’s mail addresses; meanwhile if the “Doctors registration screen” has been considered closely, the “doctor’s email address” will not be found as a field on the screen. Thus, the database administrator can add the “Email Address” column to the “Doctors table” in the physical database, and then recompile the whole project to reflect such changes on the screen GUI. 
+            4.3.4. iAgile Software Architecture’s Design
+
+One extreme importance is illustrating the relationship between engineering principles and architectural view; this section will illustrate a number of insights into what iAgile software architecture might be. Figure 4.35 demonstrates the component diagram of iAgile architecture, which implements the EEUID framework.
+
+
+Figure ‎4.43: iAgile software architecture’s component diagram
+
+The software architecture is composed of:
+    1. The Enhanced Early User Interface Development designer package: It is designed for designing the pages’ UI via constructing each page of the system in the form of one or several components and it stores the classes’ details associated with each screen. This package will generate the pages’ user interface in the form of HTML, the XML class description files and the XML behavior files.
+    • The “XML class description” file’s structure:
+This is one of iAgile metadata files; this set of files contains details of the system classes by storing the classes’ properties and methods and provides the relationships with other classes in the system. Table 4.3 depicts the mapping schema used to produce the XML class description file.
+
+Table ‎4.3: XML class description file mapping schema
+Class Name
+Web page name
+Class Identifier
+The analyst selects it from one of the controls on the web page if exists, otherwise the generation tool generates automatic ClassOID for each class.
+Class Properties
+The analyst selects them from the collection of the web page controls that only stated in input or output of the active_events in the XML behavior file.
+Class Operations
+There are three types of generated operations:
+    • Getters and setters for each class property, for object persistence purposes.
+    • Active event stated with the predefined components, this will have complete automatic code generation as the system can fix this operation type from the selected component such as insert, search, delete, and update a certain data record.
+    • Active events stated in extra controls not relevant to components, e.g. extra buttons, this type of operations will have only operation definition along with its Test-First tests.
+Classes Relationships
+The analyst sets the relationships between classes.
+
+Each class has only one XML class description file; as shown in figure 4.36, the main class is represented by the “masterclass” tag and each property in this class represented by a “property” tag, the class operations are represented by the “classoperations” tag providing the operation name, the operation’s inputs and outputs. Each dependant class for this class is represented by the “dependantclasses” tag.
+
+
+Figure ‎4.44: XML class description file's structure
+
+    • The “XML behavior” file’s structure:
+This is the other iAgile metadata file; this set of files contains details for the system screens behavior. Each screen has only one behavior file. As shown in figure 4.37, each screen consists of set of “component” tags, and for each component, there is a set of active events, each active event is represented by the “active_event” tag providing which control caused triggering the event and the control action; a set of “input” and “output” tags are used to determine input and output controls for this event; a “description” tag is used to give description of what the event should do.
+
+
+Figure ‎4.45: XML behavior file's structures
+
+    2. The UML diagram generator component: It process the “XML class description files” in order to generate the current system class diagram that is crucial part of the system, which will be used primarily to generate the database schema.
+    3. The UML transformer package: It will use the class diagram and XML behavior file to generate the final expected outputs of the system.
+
+A UML sequence diagram is shown in figure 4.38 to illustrate iAgile process sequence. First, the system analyst starts to design the system pages, each time a component is added in any page, a class description for this page must be provided to indicate whether this class is master or dependant class and whether it has been used previously in other page or not, this is the most critical task to be done as all later steps will depend on this major step. Once the pages for this project iteration are completed, the system will be able to generate the final three outputs. All successive iterations are done the same way and modified outputs for the previous iteration will be generated smoothly.
+
+
+
+Figure ‎4.46: iAgile UML sequence diagram
+
+        4.4.  Conclusion
+
+Through this chapter, a proposed tool “iAgile” has been demonstrated to implement the EEUID framework, starting first by providing the tool advantages and disadvantages, which agile methods can fit in using iAgile, what project types are suitable for using this tool and how can iAgile works. This has been followed by a case study showing how to use iAgile to develop a software project and finally a closer look to iAgile’s software architecture was illustrated. 
+
+
+
+
+
+
+
+
+
+    Chapter 5 : The Enhanced Early User Interface Development Evaluation
+
+
+    1. 
+    2. 
+    3. 
+    4. 
+    5. 
+        5.1.  The EEUID Framework’s Theoretical Feasibility
+        5.2.  The EEUID Framework’s Technical Feasibility
+        5.3.  The EEUID Framework's Evaluation 
+
+
+
+    1. 
+    2. 
+    3. 
+    4. 
+    5. 
+    Chapter 1 
+    Chapter 2 
+    Chapter 3 
+    Chapter 4 
+    Chapter 5 
+    5. 
+        5.1.   The EEUID Framework’s Theoretical Feasibility
+Agile methods have proven success, since it had been introduced to the world; meanwhile it suffered from several drawbacks. Some of those drawbacks are:
+    1. Applying agile practices to the software’s code development process, via building the software modules in iterations; meanwhile most of agile projects do not build the database schema in the same way. This caused a gap between data professionals and software developers as developers tend to add database changes through the software development process while data professionals hinder those changes. On the other hand it causes the overbuilt databases problem, consequently causing systems performance degradation.
+    2. Agile methods have replaced a huge part of the system’s documentation by face-to-face interactions between customer’s representatives and software developers, thus causing a problem of non-existent or poor quality, and outdated documentation.
+    3. A gap between IT goals and business demands in which the first always seeks to produce a software product in affordable, scalable, and securable environment, and business demands seeks to apply every single requirements’ change that shows up any time through or after the software development process. 
+The EEUID framework presented through this thesis solved the three issues stated above through automatically generating:
+    1. The database schema via the “UML transformer” component and provided a competitive advantage by generating the three available models of current database schemas that are: relational database schema, object relational database schema, and the object oriented database schema. Consequently, building the database schema on iterations and avoiding the overbuilt database schema problem.
+    2. Different templates of agile documentation when it is needed, and regenerates it later if changes appeared to solve the outdated documentation problem. Moreover building the agile documentation templates solved the problem of poor quality documentation as it builds the document template according to the software development organization’s standard and does not leave it for the developer’s talent to create his\her own document template.
+    3. The data access layer accelerates the software development process, thus reducing the development cost and time along with producing a modern software architecture that can be extended smoothly for the IT Side, and provide a fast running software solutions to customers from another side, thus reducing the requirement’s changes via providing quick visibility for what the software is able to do.
+The EEUID framework has been reviewed theoretically with Scott W. Ambler who works as chief methodologist for agile and lean within IBM Corporation; he works in the IT field since 1980 and he is a fellow of the International Association of software architects. Scott Ambler commented that it is interesting thought and should be posted to agile development online groups for further inspection.
+  
+        5.2.  The EEUID Framework’s Technical Feasibility
+The EEUID framework’s has reached the targeted outputs via iAgile (the proposed software tool that implements the EEUID framework), and this have been proved technically through the case study chapter by developing part of electronic medical record system.
+        5.3.  The EEUID Framework’s Evaluation
+The EEUID practice's framework is considered suitable for applications that have intensive input/output data operations that do not expose complex business problems. The application generated by iAgile is centralized application. Moreover, an important factor that helps this practice to succeed is that the tool user must be a business analyst or a system analyst with business analyst as his\her peer review in order to guarantee that business requirements are adequately and correctly represented; one of the most huge risk when acquiring business requirements from the customer is to assure that he/she is correctly stating the actual business requirements not only his/her point of view, thus the presence of a business analyst is considered a must to help the EEUID practice reaching its main goals and remove this risk.
+There have been few issues that are considered limitations to this research that are:
+    5. Normalization: by following the EEUID framework normalization cannot be performed during the database design phase through different iterations, as the database is being built in accumulative and incremental way, this leads to losing the normalization benefits for optimizing the database schema quality.
+    6. Distributed systems: the EEUID offers a fertile environment to develop one unit software system. Distributed systems cannot be developed using the EEUID framework.
+    7. Development team limitation:
+    • Team size: The proposed tool with the EEUID framework -iAgile- is a single user application prototype; this made a limitation to the team size. During the system analysis phase only one user is allowed to build the user interface screens through iAgile. Another choice is that two system analysts can use iAgile at the same time to build the user interface screens as one system analyst make the user interface design and the other will be considered as his/her peer review. Thus, only the system analyst is one or two persons but there is no limitation to the developer, testers or the system implementers.
+    • Distributed team: iAgile does not allow distributed working environment which places a limitation that the development team should exists in one place.
+    • Team skills: For teams following the proposed practice in this research, the team should be self-managed with highly communication skills as the project manager's role in teams following agile methods is to coach the team to reach the targeted goals not just assigning tasks, thus each team member should be keen to reach his own targets and finish his/her tasks. 
+    8. The developed system complexity:
+iAgile is most suitable for “database applications”; those are applications that depend on the famous database operations, e.g. operations for adding, deleting, updating and searching for information from the database.
+Other applications with highly business requirements complexity such as calculating salaries based on wages, vacations, and overtime days is not recommended to follow the proposed practice.
+
+
+
+
+
+
+
+    Chapter 6 : Conclusion and Future Work
+
+
+    6. 
+        6.1.  Conclusion
+        6.2.  Future work
+
+    7. 
+    8. 
+        8.1.  Conclusion
+Agile practices have been utilized in the agile world for many years and proved efficiency aiding the agile methods to reach its goals when applied under the suitable circumstances; it also leads to higher productivity and producing higher quality software products.
+Agile methods are iterative in nature as they handle the software development process in iterations, but they still handle the database development process in serial manner by building it before any coding takes place; this led to producing overbuilt database schemas and frustrating the developers as they hardly allowed to apply change to the database schema in order to keep the previously written code running safely. Additionally, data professionals will be frustrated as the developers mostly ignore their standards.
+Another issue is that the agile documentation has proven an ultimate importance when it comes to software testing and maintenance processes. Meanwhile, it has been over passed to save the development time as much as possible, and focused on the agile methodologies’ main goals, which are producing effective software in changing environment and cut off the project development time as much as possible 
+A new practice –The Early User Interface Development (EUID) - was presented to generate running software’s graphical user interface in order to extract accurate requirements from the system owners and users.
+This thesis proposed an enhanced version from the EUID practice (The Enhanced Early User Interface Development) and provided a framework for applying this practice to facilitate the software development process. Moreover, a proposed tool – iAgile – was presented to automatically apply the EEUID framework that will produce a generated database schema, software codes that are based on the available robust modern software architecture models, and generated agile documentation for this software product. Developers can later update the generated outputs to finalize the needed product through several iterations; this will lead to even more productivity and speed up the project delivery time.
+iAgile provided solution for the minimum agile documentation via introducing iAgile documentation builder that automates the process of documentation generation to some extent, in order to increase the documentation edge when applying the agile methodologies and keep the development time reduced as well. iAgile documentation builder presented two template documents (the functional requirements document and the detailed design document), as a sample of how to automate documentation using iAgile documentation builder. Those two templates are from the most important documents that have to be produced during the software development to demonstrate an insight of what the software do and how it has been built.
+        8.2.  Future Work
+Future work should include the following items to enhance iAgile for better software development process:
+    a. Generation of the rest software architecture models as for any project there is not something called “best architecture model”, but there is “adequate architecture model” according to the project circumstances.
+    b. Generation of different documentation templates used for quality and testing purposes that can be formulated from the iAgile studio meta-data files.
+    c. Supporting the bidirectionality of the EEUID framework.
+    d. It is highly recommended integrating the tool with other automated testing tools as NUnit (NUnit 2007) and JUnit (JUnit 2011); this will lead the agile family to gain more competitive advantages.
+    e. Enhancing the GUI generation part by integrating it with additional application of a picture editing tool, such as those tools used for sketching UI widgets. When more sophisticated UI behavior is necessary, embeddable objects such as Adobe Flash need to be generated separately. iAgile will help to model ordinary UIs, but otherwise needs to become part of an interrelated tool-chain.
+    f. Finally, integrating the tool with task management systems will allow easier project planning and task assignments for the project managers, as after finishing each iteration GUI design, the project manager can assess how much work still need to be done and start assigning missing functionalities to developers.
+
+    1. Publications Arising from This Research
+
+    1. Galal Shaimaa, Hassanein E. Ehab. “Applying Agile Methodology on Database Generation Guided by Graphical User Interface”. The 3rd international conference on computational intelligence and software engineering (CiSE 2011)”, Whan, China. 2011: 1382-1387.
+    2. Galal Shaimaa, Hassanein E. Ehab. “iAgile: A Tool for Database Generation Guided by Graphical User Interface”. IJCSI International Journal of Computer Science Issues 8, Issue 6, no. 1(2011): 292-298.
+
+
+
+
+
+References
+
+Abrahamsson, Pekka, Outi Salo, Jussi Ronkainen, and Juhani Warsta (2002). "Agile software development methods, review and analysis." Technical Report, Publication 478. VTT technical research center of Finland.
+
+Abrahamssona, Pekka, Juhani Warstab, Mikko T. Siponenb, and Jussi Ronkainena (2003). "New Directions on Agile Methods: A Comparative Analysis." Proceedings of the 25th International Conference on Software Engineering. Portland, OR, USA. 244 - 254.
+
+Ambler, Scott W. (2000). Mapping objects to relational databases - What you need to know and why. www.ibm.com/developerworks/library/ws-mapping-to-rdb/ (accessed January 2012).
+
+Ambler, Scott W. (2002)"Agile Modeling: Effective Practices for Extreme Programming and the Unified Process." Wiley and Son Inc., 2002.
+
+Ambler, Scott W. (2003). Agile Database Techniques : Effective Strategies for the Agile Software Developer. New York, USA: John Wiley & Sons.
+
+Ambler, Scott W. (2005). "Quality in Agile World." Software Quality Professional Journal 7, no. 4 : 34 - 40.
+
+Ambler, Scott W. , and Pramod J. Sadalage (2006). "Refactoring Databases: Evolutionary Database Design." Chapter: Evolutionary Database Development, 1-2. Addison-Wesley Professional.
+
+Ambler, Scott W. (2011). Agile Documentation. http://www.agilemodeling.com/essays/agileDocumentation.htm. (accessed December 1, 2011).
+
+Ambysoft Inc. (2010). Agile Best Practice: Document Late. 2010. http://www.agilemodeling.com/essays/documentLate.htm (accessed January 1, 2012).
+
+Araújo, Bruno C., Anne Caroline Rocha, Arthur Xavier, Ana Isabella Muniz, and Francilene P. Garcia (2007). "Web-based tool for automatic acceptance test execution and scripting for programmers and customers." Euro American conference on Telematics and Information systems. Portugal. Article no. 56.  
+
+Astels, Dave (2002). "Refactoring with UML." International conference of eXtreme Programming and Flexible Processes in Software Engineering. 67-70.
+Australian Institute of Health and Welfare, AIHW (2010). National Health Data Dictionary, Version 15. http://www.aihw.gov.au/publication-detail/?id=6442468385&tab=2 (accessed 12 1, 2011).
+
+Awad, M. A. (2005). "A Comparison between Agile and Traditional Software Development Methodologies." Honours program thesis. University of Western Australia.
+
+Beck, Kent (2000). Extreme Programming Explained: embrace change . Addison-Wesley Longman Publishing Company.
+
+Beck, Kent, et al. (2001). Manifesto for Agile Software Development. http://www.agilemanifesto.org/ (accessed January 1, 2012).
+
+Briand, Lionel C. (2003). "Software documentation: How much is enough." Proceedings of the Seventh European Conference on Software Maintenance and Reengineering. Benevento, Italy, 13-15.
+
+Busel, Sergey (2007). Light ORM Library for .NET . http://www.codeproject.com/KB/database/LightORMLibrary.aspx (accessed 12 1, 2011).
+
+C.R, Kavitha, and Sunitha Mary Thomas (2011). "Requirement Gathering for small Projects using Agile Methods." International Juornal of Computer Applications (IJCA). no. 3 article 7 : pp. 122-128.
+
+Chua, C K, K F Leong, and C S Lim (2010). Rapid Prototyping: Priciples and Applications. World Scientific Publishing Company .
+
+Cockburn, Alistair (2002). Agile Software Development. Addison-Wesley Longman Publishing Company .
+
+Cohen, David, Mikael Lindvall, and Patricia Costa (2004). An Introduction to Agile Methods. El sevier Incorporation.
+
+Coram, Michael, and Shawn Bohner. "The Impact of Agile Methods on Software Project Management (2005)." Proceedings of the 12th IEEE International Conference and Workshops on Engineering of Computer-Based Systems. Virginia, 363 - 370.
+
+DataObjects.NET. (2012). http://dataobjects.net/ (accessed 12 1, 2011).
+
+De Souza, Sergio Cozzetti B., Nicolas Anquetil, and Káthia M. de Oliveira. "A Study of the Documentation Essential to Software maintenance (2005)." Proceedings of the 23rd annual international conference on Design of communication: documenting & designing for pervasive information. Coventry, United Kingdom, 68 - 75.
+
+De Souza, Sergio Cozzetti B., Nicolas Anquetil, and Káthia M. de Oliveira. (2006). "Which Documentation for Software Maintenance?" Journal of the Brazilian Computer Society vol. 12, no. 3. pp. 31 - 44.
+
+Doroshenko, Anatoliy, and Vlad Romanenko (2004). "Object-Relational Mapping Techniques for .Net." 3rd International Conference ISTA. Salt Lake City, Utah, USA. 81-92.
+
+Duncan, Richard (2001). "The Quality of Requirements in Extreme Programming." Cross Talk journal 31 : 19-22.
+
+El-Said, Shady Mohammed (2008). "Agile Software Development Methodologies: A Comparative Study. Information Systems." Master Thesis. Helwan University.
+
+Erdogmus, Hakan  (2005). "On the Effectiveness of Test-first Approach to Programming." IEEE Transactions on Software Engineering journal, v.31 n.3, p.226-237 31.
+
+Forward, Andrew, and Timothy C. Lethbridge (2002). "The Relevance of Software Documentation, Tools and Technologies: A Survey." Proceedings of the 2002 ACM symposium on Document engineering. McLean, VA, USA. 26 - 33.
+
+Fowler, Martin, and Jim Highsmith (2001). "The Agile Manifesto." Software Development Journal. 28-32.
+
+France, Dan Turk Robert, and Bernhard Rumpe (2002). "Limitations of Agile Software Processes." Third International Conference on eXtreme Programming and Agile Processes in Software engineering. Italy.
+
+Galal-Edeen, Galal Hassan (2008). "Information Systems Architecting." Egyptian Computer Science journal: 30, no. 1. pp. 76 -89.
+
+George, Boby, and Laurie Williams (2004). "A structured experiment of test-driven development." Information and Software Technology. vol. 46, no. 5: 337–342.
+
+Hera Application Framework (2006). http://www.cronos.be/hera-application-framework (accessed 12 1, 2011).
+
+Holcombe, Mike (2008). Running an agile software development project. Joun Wiley & Sons, Incorporation.
+
+Hunt, John (2005). Agile software construction. Springer-Verlag.
+
+Janzen, David S. (2005). "Software Architecture Improvement through Test Driven Development." The annual ACM SIGPLAN conference on Object-oriented programming, systems, languages, and applications conference. San Diego, CA, USA. Pages 240-241.
+
+Jiang, Li, and Armin Eberlein (2008). "Towards A Framework for Understanding the Relationships between Classical Software Engineering and Agile Methodologies." International workshop on Scrutinizing agile practices or shoot-out at the agile corral. New York, USA. 9-14.
+
+JUnit (2011). JUnit home. http://www.junit.org/ (accessed November 10,2012).
+
+Kelter, Udo, Marc Monecke, and Markus Schild (2003). "Do We Need 'Agile' Software Development Tools?" International Conference NetObjectDays on Objects, Components, Architectures, Services, and Applications for a Networked World. London, UK. Pages 412-430 .
+
+Koch, Alan S. (2005). Agile Software Development, Evaluating the Methods for Your Organization. London: Artech House.
+
+Labib, Caroline, Ehab Ezzat Hassanein, and Osman Hegazy (2009). "Early Development of Graphical User Interface (GUI) in Agile Methodologies." Journal of Computational Methods in Sciences and Engineering 9, no. 1: Pages 239-249.
+
+Labib, Caroline, Ehab Ezzat Hassanein, and Osman Hegazy (2010). "Early Development of Graphical User Interface (GUI) in Agile Methodologies." Informatics and systems conference. Giza - Egypt. pp. 1 - 8.
+
+Landre, Einar, Harald Wesenberg, and Jørn Ølmheim (2007). "Agile Enterprise Software Development Using Domain-Driven Design and Test First." Companion to the 22nd ACM SIGPLAN conference on Object-oriented programming systems and applications companion. Montreal - Canada. pp. 983-993 .
+
+Lichter, Horst, Matthias Schneider-Hufschmidt, and Heinz Zullighoven (1994). "Prototyping in Industrial Software Projects-Bridging the Gap Between Theory and Practice." IEEE Transactions on Software Engineering Journal 20, no. 11: 825 - 832.
+
+Lindstrom, Lowell, and Ron Jeffries (2004). "Extreme Programming and Agile Software Development Methodologies." Information Systems Management 21, no. 3: 41–60.
+
+Lindvall, Mikael, et al. (2002). "Empirical Findings in Agile Methods." Proceedings of the Second XP Universe and First Agile Universe Conference on Extreme Programming and Agile Methods - XP/Agile Universe. London, UK. 197-207 .
+
+Memmel, Thomas, Fredrik Gundelsweiler, and Harald Reiterer (2007). "Prototyping Corporate User Interfaces - Towards a Visual Specification of Interactive Systems." Proceedings of the Second IASTED International Conference on Human Computer Interaction. CA - USA. 177-182.
+
+Microsoft (2006). The ADO.NET Entity Framework Overview. http://msdn.microsoft.com/en-us/library/aa697427(v=vs.80).aspx (accessed December 1, 2011).
+
+Morien, Roy (2005). "Agile Development of the Database: A Focal Entity Prototyping Approach." Proceedings of the Agile Development Conference. Denver - colorado. 103 - 110.
+
+NUnit (2007). NUnit home. http://www.nunit.org/ (accessed November 10,2012).
+O'Neil, Elizabeth J. (2008). "Object/Relational Mapping 2008: Hibernate and The Entity Data Model (edm)." ACM SIGMOD international conference. Indianapolis, IN, USA. pp. 1351-1356. 
+
+Paetsch, Frauke, Armin Eberlein, and Frank Maurer (2003). "Requirements Engineering and Agile Software Development." Proceedings of the Twelfth International Workshop on Enabling Technologies: Infrastructure for Collaborative Enterprises conference. Linz, Austria. Page 308.
+
+Paulk, Mark C. (2002). "Agile Methodologies and Process Discipline." Cross talk. pp. 15 - 18.
+
+Pressman, Roger S. (2001). Software Engineering: A Practitioner’s Approach. Seventh Edition. McGrawHill.
+
+Rees, Michael J. (2002). "A Feasible User Story Tool for Agile Software Development?" Proceedings of the Ninth Asia-Pacific Software Engineering Conference. Washington, USA. page 22.
+
+Ruparelia, Nayan B. (2010). "Software Development Lifecycle Models." ACM SIGSOFT Software Engineering Notes journal 35, no. 3: 8-13 .
+
+Ruping, Andreas (2003). Agile Documentation: A Pattern Guide to Producing Lightweight Documents for Software Projects. John Wiley & Sons, Incorporation.
+
+Schwaber, Ken, and Mike Beedle (2002). Agile Software Development with scrum. Prentice-Hall.
+
+Sommerville, Ian (2011). Software Engineering. Ninth edition. Addison Wesley.
+
+Subsonic (2007). Subsonic V2. http://subsonicproject.com/ (accessed December 1, 2011).
+
+Sutherland, Jeff, Anton Viktorov, Jack Blount, and Nikolai Puntikov (2007). "Distributed Scrum: Agile Project Management with Outsourced Development Teams." The 40th Annual Hawaii International Conference on System Sciences. Page 274a.
+
+Theunissen, W. H. Morkel, Derrick G. Kourie, and Bruce W. Watson (2003). "Standards and Agile Software Development." Proceedings of the 2003 annual research conference of the South African institute of computer scientists and information technologists on Enablement through technology. South African Institute for Computer Scientists and Information Technologists, Republic of South Africa. 178 - 188.
+
+Thomas, Bill, and Scott Tilley (2001). "Documentation for software engineers: what is needed to aid system understanding?" Proceedings of the 19th annual international conference on Computer documentation. Santa Fe, NM, USA. 235 - 236 .
+
+Tomayko, James E. (2002). "Engineering of Unstable Requirements Using Agile Methods." International workshop on Time Constraint Requirement Engineering. Essen, Germany. 2002.
+
+ProjectAnalyzer[9] (2008). Refactoring tools. http://www.aivosto.com/project/project.html (accessed January 1, 2012).
+
+Vara, Juan M., Belen Vela, Jose Mª Cavero, and Esperanza Marcos (2007). "Model Transformation for Object-Relational Database Development." ACM symposium on Applied computing conference. Seoul, Republic of Korea. 1012 - 1019.
+
+Vinekar, Vishnu, Craig W. Slinkman, and Sridhar Ner (2006). "Can Agile and Traditional systems developmentapproaches coexist? an ambidextrous view." Information Systems Management. vol. 23 no. 3: pp. 31 - 42.
+
+Visustin (2010). Refactoring Tools. http://www.aivosto.com/vbtips/refactoring.html (accessed January 1, 2012).
+
+Microsoft[VSS] (2005). Introducing Visual Source Safe. http://msdn.microsoft.com/en-US/library/3h0544kx(v=VS.80).aspx (accessed January 1, 2012).
+
+WebRatio[6.1] (2011). WebRatio. http://www.webratio.com (accessed November 13, 2011).
+
+Whitten, Jeffrey L., Lonnie D. Bently, and Kevin Dittman (2004). System analysis and design methods. Sixth edition. McGraw Hill.
+
+Zhang, Weiping, and Norbert Ritter (2001). "The Real Benefits of Object-Relational DB-Technology for Object-Oriented Software Development." Proceedings of the eightenth British National Conference on Databases: Advances in Databases.UK. 89-104.
+
+Zyl, Pieter Van, Derrick G. Kourie, Louis Coetzee, and Andrew Boake (2009). "The Influence of Optimisations on The Performance of An Object Relational Mapping Tool." Proceedings of the 2009 Annual Research Conference of the South African Institute of Computer Scientists and Information Technologists. Vaal River, South Africa. 150-159.
+
+	
+	
+
+    2. Appendix A: Countries Factory Class Implementation
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Expression;
+using WebNHibernator.BLL;
+
+namespace WebNHibernator.DLL
+{
+    public class CountryFactory
+    {
+        Configuration config;
+        ISessionFactory factory;
+        ISession session;
+
+        public CountryFactory()
+        {
+            config = new Configuration();
+            IDictionary props = new Hashtable();
+
+props["hibernate.connection.provider"] = "NHibernate.Connection.DriverConnectionProvider";
+props["hibernate.dialect"] = "NHibernate.Dialect.MsSql2000Dialect";
+props["hibernate.connection.driver_class"] = "NHibernate.Driver.SqlClientDriver";
+            props["hibernate.connection.connection_string"] = 
+            @"Data Source=.\SQL2005;Initial Catalog=EMRDB;Integrated Security=True";
+
+            foreach (DictionaryEntry de in props)
+            {
+                config.SetProperty(de.Key.ToString(), de.Value.ToString());
+            }
+
+            config.AddAssembly("WebNHibernator");
+            factory = config.BuildSessionFactory();
+            session = factory.OpenSession();
+        }
+
+        /// <summary>
+        /// Make sure we clean up session etc.
+        /// </summary>
+        public void Dispose()
+        {
+            session.Dispose();
+            factory.Close();
+        }
+
+        public IList GetCountries()
+        {
+            IList Countries = null;
+            ITransaction tx = null;
+
+            try
+            {
+                if (!session.IsConnected)
+                {
+                    session.Reconnect();
+                }
+                tx = session.BeginTransaction();
+                Countries = session.CreateCriteria(typeof(Countries)).List(); ;
+                session.Disconnect();
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                tx.Rollback();
+                session.Disconnect();
+                // handle exception. 
+            }
+            return Countries;
+        }
+
+        public IList Get()
+        {
+            IList Countries = null;
+            ITransaction tx = null;
+
+            try
+            {
+                if (!session.IsConnected)
+                {
+                    session.Reconnect();
+                }
+                tx = session.BeginTransaction();
+                Countries = session.CreateQuery("FROM  Countries, Cities  " +
+                                          "WHERE  CountryOID = :CountryOID")
+                          .List();
+                session.Disconnect();
+            }
+            catch (Exception ex)
+            {
+
+                Console.Write(ex);
+                tx.Rollback();
+                session.Disconnect();
+                // handle exception. 
+            }
+            return Countries;
+        }
+
+        public IList GetCountries(string CountryOID)
+        {
+            IList Countries = null;
+            ITransaction tx = null;
+
+            try
+            {
+                if (!session.IsConnected)
+                {
+                    session.Reconnect();
+                }
+                tx = session.BeginTransaction();
+                Countries = session.CreateQuery("FROM   Countries  " +
+                             "WHERE  COUNTRYOID = : CountryOID")
+                           .SetParameter("COUNTRYOID", CountryOID)
+                          .List();
+                session.Disconnect();
+            }
+            catch (Exception ex)
+            {
+
+                Console.Write(ex);
+                tx.Rollback();
+                session.Disconnect();
+                // handle exception. 
+            }
+            return Countries;
+        }
+
+        public void UpdateCountry(Countries Country)
+        {
+            ITransaction tx = null;
+            try
+            {
+                if (!session.IsConnected)
+                {
+                    session.Reconnect();
+                }
+
+                tx = session.BeginTransaction();
+                session.SaveOrUpdate(Country);
+                tx.Commit();
+                session.Disconnect();
+
+            }
+            catch (Exception ex)
+            {
+                tx.Rollback();
+                session.Disconnect();
+                // handle exception
+            }
+        }
+
+        public void DeleteCountries(Countries Country)
+        {
+            ITransaction tx = null;
+            try
+            {
+                if (!session.IsConnected)
+                {
+                    session.Reconnect();
+                }
+
+                tx = session.BeginTransaction();
+                session.Delete(Country);
+                tx.Commit();
+                session.Disconnect();
+
+            }
+            catch (Exception ex)
+            {
+                tx.Rollback();
+                session.Disconnect();
+                // handle exception
+            }
+        }
+
+
+    }
+}

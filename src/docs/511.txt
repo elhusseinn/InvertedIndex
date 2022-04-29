@@ -1,0 +1,500 @@
+
+The Role of the Pre-development Activities in Information Systems Projects’ Failure
+Mohamed A. Hamada(1)                   Sherif A. Mazen(2)               Ehab E. Hassanein(3)
+   
+   Abstract
+Information systems (IS) development projects have high failure rates, lots of researches discussed IS projects failures and listed a huge number of failure reasons, despite that IS projects still have considerably high failure rates. This research looks for the sources of the failures as a new approach to decrease the failure probability of IS projects. Through investigating the failure reasons of IS projects, it has been detected that, most of failure reasons are attributed to the pre-development activities, which begin with the System Service Request (SSR) to initiate the projects and end with developing the project plan to represent a road map to explain how the project will progress through all its phases. Pre-development activities are focal points which have ability to improve IS projects success. So, an avoidance strategy includes many critical success factors for each pre-development activity is introduced as a swift solution for the research problem.
+Keywords: Failures of IS projects, Pre-development activities, Project planning, Avoidance Strategy,  
+1. Introduction:
+Information systems development is a complex process and comprises many challenges and difficulties in all development activities with high risks of such projects end in failure [22]. There is a significant body of evidence that many information systems (IS) implementation projects end in failure, the failure rate for major systems appears to linger around 70% [28]. Projects failures can take many forms and have consistently been defined in terms of projects that could not be completed on time or within budget or that did not meet stakeholders’ expectations or that were cancelled [39].
+High failure rate of IS projects is considered a major problem because the occurrence of enormous costs and losses [40]. Recent studies of IS project failure reveal a number of interesting themes, for instance, failure could be caused by multiple factors, such as unrealistic expectations, lack of resources, uncooperative customers, and weak management of contractors. Failure could also be caused by the political rivalry in organizations; other themes also encompass the technical aspects of the system, such as failure in meeting predefined design objectives. Nevertheless, many IS studies indicate that failure is largely due to organizational and social, rather than technical factors [28]. Lots of researches investigated the failure of IS project and listed a huge number of projects failure reasons, but the IS projects still fail and have high failure rate. This problem creates an obligation case to search for the origins of the failure as a new approach to decrease the failure probability of IS projects and improve the percentage of IS projects success. 
+The objective of this paper is to clarify the role of the pre-development activities in the failure of IS projects through analyzing the recent statistics and researches that demonstrate the failure reasons of IS projects, also shed light on the pre-development activities and setting an avoidance strategy for each pre-development activity as a swift solution to decrease the failure of IS projects. This paper is organized as follows: section two exposes the main  failure reasons which have a relation with the pre-development activities, section three describes the research methodology, Section four investigates the pre-development activities and illustrates the correlation between them and the projects failure reasons, Section five introduces the analysis of FBI case study to explain the importance of the pre-development activities in projects success achievement, Section six explains the main factors of the avoidance strategy for each pre-development activity as solution to decrease IS Projects failure, Section seven conclusions with suggestions for the future research. 
+2. Why Information Systems Projects Fail?
+In general Information systems projects have a high failure rate, completing projects on time, within budget, and with quality is a major challenge [20]. Standish Group survey proved that 65% of IS projects which started in 2006 were failed [5], Another study conducted in the UK by Oxford University and Computer Weekly in 2003 reported, strikingly, that only16% of the IS projects reviewed were considered successful. Projects failure reasons have been attributed to technological difficulties, organizational and functional problems, managerial issues, and many other reasons. IS project failure is defined as any project that was set to support the operations of an organization by exploiting the resources of information technology that fails to deliver the intended output within the originally allocated cost, time schedule, and accepted level of quality, as well as fails to satisfying the stakeholders and being accepted by the end users [1].
+Normally, IS projects are often difficult to estimate and manage, some projects are canceled or reduced in scope because of overruns in cost and time or failure to produce anticipated benefits [31], It's widely recognized that poor project planning plays a major role as one of the significant causes of project failure [14].The fundamental focus of project management has been to deliver projects on time, on budget and meet specifications with all required functions and features initially specified. However, many major projects still fail to meet these targets, especially on cost and schedule. The reasons for failure have often been blamed on poor project definition, incomplete information, poor productivity, inadequate communications, uncertainties around labor and material costs, and the failure to use timely and appropriate project management practices and controls [36]. So, IS projects are considered success if they achieved the following issues:-
+    1- If they accomplish its business objectives (strategic, technical and operational).
+    2- If they are satisfy and profitable for the sponsor/owner and contractors.
+    3- If they meet its expectation requirements and objectives with a reasonable quality. 
+    4- If they are produced to specification, within budget and on time.
+Lots of researches listed a large number of failure reasons for IS projects [14], [15], [34], [1], [5], [19], but this research initiates an effort to look for the origins of the IS projects failure. It's important recognize that, there is no project suffered from just one failure reason, but all projects had multiple troubles and the failure reasons are related to each other. Overlaps between the projects failure reasons are evidential through examining the following statistics in (Table1) that published in (2008) by the two famous independent research organizations for IS/IT projects [29], and (Table 2) wherever Cerpa and Verner in (2009) demonstrated  the failure reasons of seventy failed projects developed in house at U.S., Australia, and Chile[5]. Symbol column is added for both two tables to indicate the failure reasons at the residual sections of this research.
+Table: 1, Failure Reasons Statistics for IS Projects (Source: PM Hut, 2008)
+Symbol
+The Standish Group Statistics
+Percentage
+A1
+Lack of User Involvement 
+12.4%
+A2
+Lack of Resources 
+10.6%
+A3
+Unrealistic Expectations 
+9.9%
+A4
+Lack of Executive Support 
+9.3%
+A5
+Changing Requirements & Specifications 
+8.7%
+A6
+Lack of Planning 
+8.1%
+A7
+Didn’t Need It Any Longer 
+7.5%
+A8
+Lack of IT Management 
+6.2%
+A9
+Technology Illiteracy 
+4.3%
+A10
+Incomplete Requirements 
+13.1%
+A11
+Other 
+9.9%
+Symbol
+Bull Survey Statistics
+B1
+Bad Communications 
+57%
+B2
+Lack of Planning 
+39%
+B3
+Poor Quality Control 
+35%
+B4
+Missing Interim Deliverables 
+34%
+B5
+Poor Budget Management 
+29%
+B6
+Poor Project Management 
+20%
+
+     Table: 2, Failure reasons for seventy failed projects, (Source: Cerpa and Verner, 2009)
+Symbol
+Failure reasons
+Percentage
+C1
+Delivery date impacted the development process 
+93.9%
+C2
+Project under-estimated 
+83.7%
+C3
+Risks were not re-assessed, controlled, or managed through the project
+73.4%
+C4
+Staff were not rewarded for working long hours 
+81.6%
+C5
+Delivery decision made without adequate requirements information
+83.7%
+C6
+Staff had an unpleasant experience working on the project 
+83.7%
+C7
+Customers/                 
+69.4%
+C8
+Risk not incorporated into the project plan 
+65.3%
+C9
+Change control not monitored, nor dealt with effectively 
+63.3%
+C10
+Customer/Users had unrealistic expectations 
+69.4%
+C11
+Process did not have reviews at the end of each phase 
+75.5%
+C12
+Development Methodology was inappropriate for the project 
+71.4%
+C13
+Aggressive schedule affected team motivation 
+69.4%
+C14
+Scope changed during the project 
+67.3%
+C15
+Schedule had a negative effect on team member’s life 
+71.4%
+C16
+Project had inadequate staff to meet the schedule 
+63.3%
+C17
+Staff added late to meet an aggressive schedule 
+61.2%
+C18
+Users did not make adequate time available for requirements gathering
+61.2%
+
+3. Research Methodology
+A quantitative research methodology was followed to seek illumination and understanding through extrapolation of the findings at hand, this methodology was selected to gain an in-depth understanding. The research methodology based on extrapolation the literature review supported with a quantitative survey for the previous researches that investigated the failure and success of information systems projects. Therefore, statistics of the failure reasons for IS projects are examined in order to explore the origins of the failures for IS projects, this with shed light and focus on the pre-development activities as a critical success factors for IS projects which begin with the System Service Request (SSR) to initiate the projects and end with the developing the Project Plan. The research methodology is used to explain and prove many issues in this research; the first issue, there is no project suffered from just one failure reason. The second issue, most of all IS project failure reasons are originated from the pre-development activities. The third issue, it is very important to highlight and focus on the pre-development activities to decrease the failure probability for IS projects. Fourth, an avoidance strategy can be taken as a swift solution to improve the IS project success.          
+4. Pre-development Activities for IS projects:
+Pre-development activities are derived from the initiation and planning phases for IS projects development. They are the main critical success factors for IS projects, If these activities are implemented accurately, the projects will achieve success in high percentages [17]. They begin with the System Service Request (SSR) to initiate the projects and end with developing the project plan which represents a road map to explain how the project will progress through all project phases and outlined objectives. High risk of the pre-development activities comes from the certainty of projects fail if these activities missed the accuracy and are performed in improper form, furthermore IS project will lose the great benefits from the optimal pre-project planning which yielding the following features; Fewer scope changes, Increased predictability of cost and schedule, Improved operational performance, Better achievement of business goals, and Better definition of risks [12]. 
+In the fact, the previous researches in the area of IS projects didn’t collect the pre-development activities as an integrated framework but they discussed it in many scattered areas [2], [24], [35], [16], [39], [32], [7], [11], [38]. In this research, the pre-development activities will be grouped and classified to prove the great relation between the failures of IS projects and the way in which these activities are implemented. In the context of surveying the pre-development activities which play an important role to determine the fate of the IS projects success or failure, it concluded with extracting Fifteen critical pre-development activities as the following:-
+4.1-System Service Request (SSR)
+Most IS projects are initiated in response to a request from a client or manager who has an idea or need [24], System Service Request (SSR) is a standard form for requesting development or maintenance of an information system within an organization, it includes the contact person, a problem statement, a service request statement, and the relational contact information [16]. 
+
+4.2-Project Scope Definition
+Project scope definition is the process by which projects are defined and prepared for execution; Poor specification can lead to numerous requirement changes and scope creep [40]. Unclear and incomplete objectives have been shown to contribute to the perception of project failure [3]. Project Management Institute (PMP) listed the main features to define the project scope; Project justification, Project product, Project deliverables, and Project objectives [30]. 
+4.3- Project Feasibility
+Feasibility study determines whether the requested information system makes economic and operational sense for an organization or not, it considers a crucial matter to determine the project proceeding which includes five feasibility tests; Economic feasibility, Technical feasibility, Operational feasibility, Schedule feasibility, Legal and Political feasibility [16], [38], basic data for the feasibility study is obtained from the client through a series of queries, questions, and meetings, wherein the client provides some of the research, other data and facts need to be gained from a variety of sources. 
+4.4- Commercial Off-The–Shelf (COTS)
+COTS have the ability to reduce time and cost of IS project development, they enable software buyers to acquire software made up of components which have been tested many times by other users; hence ensuring improved software quality. In order to realize the benefits which COTS bring to software development, it is imperative that the “right” COTS is selected for a project, because selecting inappropriate COTS may result in increased time and cost of software development. A COTS product can consist of one or many components so, the selection process of COTS is a complex decision-making [37]. It can cause many problems for IS project through the following reasons that must be avoided as a failure reasons; 
+    1. Uncertainty: There is uncertainty about the requirements of the software under development, about the correctness of the available information, and about the impact of the COTS on the quality of the system.
+    2. Complexity of the decision-making problem: COTS selection decisions are multileveled, different decisions are required to be made at different stages of the COTS selection process
+    3. The use of commercial-off-the-shelf (COTS) products creates a software integration problem: whether a single COTS software component is being integrated into a software system
+    4. Multiple Stakeholders: The COTS selection process usually involves multiple stakeholders, each with a set of needs, preferences, and constraints, which may be in conflict with those of other stakeholders, thus leading to a negotiations problem. 
+    5. Multiple Objectives: The process COTS selection is carried out with a variety of objectives. These objectives are a result of the need to evaluate products in various non-comparable aspects such as cost, quality, and viability of vendor.
+4.5- Determine Project Requirements Elicitation (High level Requirements)
+Initial Project’s requirements are vital because it defines not only the project product, but also it supports the estimation of a project’s budget, resources, and schedule. Resources of initial project requirements are preliminary ideas, documents providing a complete overview of the project components and functionalities are written. Such documentation, also called informal requirements, consists of natural language documents, possibly garnished with tables, algorithms, finite state machines, and even sometimes implementation considerations [10]. 
+4.6- Project Process Management 
+Project process management includes methods and tools to undertake the main project processes and activities; initiating, planning, executing, control, and project closure. It interested with assigning the following; 
+    1- Identify the project team organization 
+    2- Identify project standard and procedures 
+    3- Identify project Change management  
+    4- Choose the project development methodology  
+Any defect within the project process management creates a great threat for IS project success [30]. 
+4.7-Develop Statement of Work (SOW)
+SOW is a formal document captures and defines the work activities, deliverables, timeline and time estimates for IS project [16]. It is a narrative description of the deliverables or services required to fulfill a contract, this is accompanied by specifies project requirements in a high-level [30], it comprises, Scope of project, Location, Period of Performance, Reporting, Deliverables Schedule, Applicable standards, and Acceptance criteria. 
+4.8- Project Work Breakdown Structure (WBS)
+Work breakdown structure (WBS), is the process of breakdown a project into manageable chunks that can be effectively estimated and supervised in a way that helps organize and define the total work scope of the project [33], WBS consists of three different structures “Project Control Work Breakdown Structure” (PCWBS), “Functional Work Breakdown Structure” (FWBS), and “Relational Work Breakdown Structure” (RWBS) [9]. 
+4.9- Project Cost Estimation 
+Permanently, cost estimations play a critical role to influence success or failure of the project, Constructive Cost Model (COCOMO) is the famous analytical method to estimate the project cost estimation which uses parameters that are derived from initial projects [42], Estimates of a project’s budget, resources, and schedule which represent the outputs need to be updated periodically as more and more information about a project’s cost-drivers which represent the inputs [23]. There are four basic steps in project cost estimation; Estimate the size of the development product; which ends up in either Lines of Code (LOC) or Function Points (FP), Estimate the effort in person-months or person-hours, Estimate the schedule in calendar months and Estimate the project cost in dollars (or local currency). 
+4.10- Project Schedule
+Scheduling and sequencing is concerned with the optimal allocation of scarce resources to activities over time, main project scheduling problem involves the scheduling of project activities subject to precedence and/or resource constraints [15], Program evaluation and review technique (PERT) and critical path methods (CPM) techniques are very common and widely adopted management tool being used in project schedule [27], main outlines of the project schedule includes:-
+    • Identify all the resources that will be necessary to the project and select them in a way that they will be available to perform the projects activities
+    • Estimate time and resources required for project tasks and activities to complete each task
+    • Organize tasks concurrently to make optimal use of workforce
+    • Minimize task dependencies to avoid delays caused by one task waiting for another to complete
+4.11-Risk Management
+Risk management, is the process of identifying and controlling any activity or event that can negatively influence the IS project success, wherever the risks are all issues that may affect the delivery of benefits to be gained from the IS projects [6]. A Systematic process of risk management is normally divided into three activities Risk identification, Risk analysis, and Risk reduction [25]. In table (3) Han and Huang summarized the main problems with its risk dimensions which cause the project failure when assessing the project Risks management [13].
+Table: 3, Main dimensions with their probability Risks of IS projects (Source: Han and Huang, 2007)
+   Risk Dimension
+IS project risk
+Users
+Resistant to change
+Conflict between users
+Users with negative attitudes toward the project
+Users not committed to the project
+Lack of cooperation from users
+Requirement
+Continually changing system requirements
+System requirements not adequately identified
+Unclear system requirements
+Incorrect system requirements
+Project complexity
+Project involved the use of new technology
+High level of technical complexity
+Immature technology
+Project involves use of technology that has not been used in prior projects
+Planning & Control
+Lack of an effective project management methodology
+Project progress not monitored closely enough
+Inadequate estimation of required resources
+Poor project planning
+Project milestones not clearly defined
+Inexperienced project manager
+Ineffective communication
+Team
+Inexperienced team members
+Inadequately trained development team members
+Team members lack specialized skills required by the project
+Organizational environment
+Change in organizational management during the project
+Corporate politics with negative effect on project
+Unstable organizational environment
+Organization undergoing restructuring during the project
+
+4.12-Project Contract
+Project contract is an agreement between two or more parties to create mutual business relations or legal obligations. It defines a set of activities to be performed by different parties satisfying a set of terms and conditions [18]. IS Project Contract Model decides the relations among IS project owners, contractors, managers/consultants and subcontractors, It should be considered that, IS project contract model should be designed to meet the following requirements [41]. 
+    1. Requirements regarding the characteristics of IS project and the owner’s situation.
+    2. Fulfill the aim of IS project construction and IS project maintenance that are inseparable.
+    3. Requirement of IS project risk management.
+    4. Fulfill the interface management during IS project construction.
+4.13- Develop Communication Plan
+Efficient and clear communication builds trust between different parties and participants of IS projects that lead to improved collaboration, better team spirit and eventually better results [17]. Communication needs to be written and verbal, and that it needs to be formal and informal, Communication plan takes into consideration all the dimensions of the communication between the project participants. The contents of the plan could include the communication inside and outside the project environment, risks in communication, and how to prepare for them. Also the methods and interval of communication should be included in the plan, e.g. weekly meetings. At the same time the communications plan should include work authorization and deliverable approval methods [34]. 
+4.14- Project Charter 
+Project charter is a simple, signed agreement between a project team and a representative for those who will use the output (customer). A charter forces the project team and champion to develop a common understanding about the project and creates enough visibility that if a project approach is not sound, the project can be cancelled before it progresses any further [34]. Their format varies from organization to another, but generally it contains a brief scope statement describing the project, how the project supports the strategic goals of the organization, who the project manager is, and finally, if possible, the project’s priority within the company. A good project charter should include clear objectives and measurable goals, as well as important assumptions and constraints to guide the project, the lack of a clear project charter increases uncertainty (lack of information), ambiguity (the absence of clarity), and confusion in a project [21]. 
+4.15- Project plan 
+Project plan is a formal and approved document (based on the project requirements and the established estimates), used to manage and control the execution of the project. It describes the work to be done, the resources required, the methods to be used, the procedures to be followed, the schedules to be met, and the way that the project will be organized. It is a road map to how the project will progress through all project phases and outlined objectives, metrics, and milestones, It includes the follow Specific Practices; [30], [4].
+    • Document the assumptions, constraints, and alternatives
+    • Set project scope, cost, and schedule baselines for progress measurement and control
+    • Provide a tool to communicate with stakeholders
+    • Establish project milestones and deliverables
+    • Establish the budget and schedule.
+    • Identify project risks.
+    • Plan for data management and project resources.
+    • Identify functional responsibilities.
+    • Work Breakdown structure (WBS)
+    • Plan for needed knowledge and skills.
+    • Plan stakeholder involvement.
+After investigating the critical pre-development activities, it can prove the relation between them and the failure reasons of IS projects. As shown in Table (4) the failure reasons are classified according to each related pre-development activity as evidential correlation. This consequence is based on the statistics in tables (1), (2) and the common failure reasons that listed in the previous researches [13], [14], [32], [1], [5], [18]. This correlation confirms, the most of project failure reasons are attributed and derived from the pre-development activities which deserve our interested. Also, there is a necessity to highlight and focus on the pre-development activities as focal points to decrease the failure probability of IS projects; this can be attained if these activities are given the sufficient time and efforts to be completed in accurate form. Surely, interested in the pre-development activities will contribute to improve the IS projects success. 
+Table: 4, Correlation between the pre-development activities and the failure reasons of IS projects
+Pre-development Activities
+Related Failure Reasons
+System Service Request (SSR)
+Poor project specification 
+Project problem is not clarified 
+Project Scope Definition.
+A3, C10, C14,
+Scope, objectives unclear 
+Failure to manage changes 
+Project Feasibility.
+A9,C6,
+Projects are started for the wrong reasons
+Custom-building or Commercial Off-The-Shelf (COTS)
+Software integration problem
+Wrong evaluation and selection of COTS
+Project Requirements Elicitation
+A1, A5, A10, C18.
+Project process management 
+A2, A4, B3,B6,C9,C11,C12,
+Poor planning processes
+Develop a Statement of Work (SOW).
+SOW doesn't accordance the extend of the project scope
+Poor project documentation 
+Insufficient resources.
+Work Breakdown Structure (WBS).
+A8, C16,
+Conflict between departments
+Lack of required team knowledge / skills
+Project Cost Estimation 
+B5,C2, C4,
+Poor estimation efforts
+Project under-estimated 
+Project Schedule 
+A7,B4,C1,C7, C13,C15,
+Too long or unrealistic schedules
+Project Risk Management.
+C3,C8,
+Risks were not re-assessed, controlled, or managed through the project.
+Project Contract
+C5,
+Poor contract management
+Deadlines and resources not adjusted accordingly
+Develop a Communication Plan.
+B1,
+Failure to communicate and act as a team
+Lack of proper communication
+Develop a Project Charter.
+Unclear charter for project
+Failure to adequately identify, project document, and track requirements.
+Develop a Project Plan.
+A6,B2,C17,
+Risks not incorporated into the project plan 
+Failure to manage to the project plan 
+Inaccurate project plan.
+5- Case study, Virtual Case File Project for the United States Federal Bureau of Investigation (FBI)
+ The Virtual Case File had been delivered by Science Application International Corporation [8] and it was aimed at facilitating case file management by integrating data from older system, including the Automated Case support system, and eventually replacing them. The FBI had admitted that, the Virtual Case File Technology project had failed to meet the bureau’s requirements and that: 
+    • Five years of development and
+    • $US 170 million in cost had been lost (National Research Council, 2004)
+Case study analysis 
+At the report of The National Research Council [26] “Review of the FBI’s Trilogy Information Technology Modernization Program”, The National Research Council saw no evidence that backup and contingency plans had been formalized, the transition plan did not include the availability of the Automated Case Support system after the cut over to the Virtual Case File. Also it found that the requirements for the FBI mission were not included in the Virtual Case File design. Science Application International Corporation said it delivered the first phase of the project ahead of schedule and under budget, but the requirements for the software changed more than one time after the September 11, at the USA. The office of the inspector general found that FBI was still defining the requirements after two years since the start of the project. It also said that the communication with FBI was difficult because of the high turnover of top IT managers.
+Through examining the previous project, it can determine the main reasons that cause the project failure and prevent FBI requirements to be met. 
+    1- Backup and contingency plans had been formalized
+    2- The transition plan did not include the availability of the Automated Case after cut over
+    3- Requirements for the FBI mission were not completed 
+    4- Requirements for the software changed more than one time
+    5- At the first phase of project ahead of schedule and under budget
+    6- FBI was still defining the requirements after two years since the start of the project
+    7- Communication with FBI was difficult because of the high turnover of top IT managers
+In the fact, the previous failure reasons are attributed to the following pre-development activities in table (5) this confirms the research objective, the necessity of giving more concern and focus to the pre-development activities which are the main source of projects failure. If these activities are completed accurately, the percentages of IS projects success will be improved.
+Table: 5, Failure reasons with the attributed pre-development activity of FBI case study
+Failure Reasons
+Pre-development Activity
+Backup and contingency plans had been formalized
+Develop Project Plan
+Project Risk Management
+The transition plan did not include the availability of the Automated Case 
+Develop Project Plan
+Requirements for the FBI mission were not completed
+Project Requirements Elicitation
+Requirements for the software changed more than one time
+Project Requirements Elicitation
+At the first phase of project ahead of schedule and under budget
+Project Cost Estimation 
+Project schedule
+FBI was still defining the requirements after two years 
+Project Requirements Elicitation
+Communication was difficult because of the high turnover of top IT managers
+Develop Communication Plan
+6- Avoidance Strategy as Solution to Decrease IS Projects Failure 
+In the context of introducing solutions contribute to decrease the projects failure rates, an avoidance strategy is adopted as a swift solution to avoid the project failure defects through installing a set of corrective guidelines and controls. The purposed strategy is based on many critical success factors that must be considered and embedded in each pre-development activity during the project development execution. Table (6) explains the avoidance strategy to enhance IS project success through eliminating the faults within each pre-development activity and comprises the following guidelines:-
+Table: 6, Avoidance strategy’ factors to enhance IS project success
+  Pre-development Activities
+Avoidance Strategy Factors
+System Service Request (SSR)
+    • Objectives of the request must be clarified completely 
+    • SSR must be described in details 
+    • Change in request should be authorized from the head of the department
+    • Problem for the request system must be clarified
+    • Sufficient analysis and study of the request should be performed 
+    • Head of the department should signing and issue the SSR 
+Project Scope Definition
+    • The project definition must be accurate and completed
+    • Identify clearly the project boundaries and edges 
+    • Project goals and objectives must be described completely 
+    • Changes in user expectations should be controlled and expected
+    • Scope must be defined completely. 
+    • Take care for the project scope creep
+    • Get users involved as early as possible
+    • Found an opportunity to reevaluate or adjust the scope of the project.
+Project Feasibility
+    • Assure that the  projects start upon the right reasons and needs
+    • The project costs must accordance the budget.
+    • Estimate the gap between technology and ability
+    • Eliminate  poor competencies (and skill shortages)
+    • Avoid the higher cost of capital with existing the ability to provide investment capital 
+    • Perfect use of financial resources with proper financial management
+    • The margin between the costs and benefits should be explicitly identified
+    • Calculate the qualitative costs and benefits when evaluate the economic feasibility
+    • Ability to determine the technical and operational needs for the projects 
+    • Don’t afraid from project cancelation, if it isn’t viable 
+Commercial Off-The–Shelf (COTS)
+    • Certainty about the requirements of the software under development, about the correctness of the available information, and about the impact of the COTS on the quality of the system.
+    • Different decisions are required to be made at different stages of COTS selection process because COTS selection decisions are multileveled
+    • Integrate COTS software component into software system
+    • Coordinate Multiple Stakeholders, each with a set of needs, preferences, and constraints, which may be in conflict with those of other stakeholders. 
+    • Balance Multiple Objectives: The process COTS selection is carried out with a variety of objectives. These objectives are a result of the need to evaluate products in various non-comparable aspects such as cost, quality, and viability of vendor.
+Project Requirements Elicitation
+    • Eliminate Inadequate or vague requirements
+    • Users should be involved with the managing of their expectations. 
+    • Don't Change the system to support critical new requirements discovered during final development
+    • Assure that no wrong business requirements have been addressed
+    • proper defined of system requirements
+    • Understanding of the main project’s requirements completely
+    • Make Project Sponsors write their own requirements
+Project Process Management
+    • It's important to select the appropriate development methodology 
+    • Use of mature technology 
+    • Abundant of executive support with good project management 
+    • Exist the ability to handle the project's complexity 
+    • avoid Inadequate or misused methods
+    • setting  proper  development practices
+    • setting change management
+    • Don't Use a specific development methodology
+Develop Statement of Work (SOW)
+    • Adequate  reporting of the project's status
+    • Clear objectives of the project must be stated  
+    • All changes in SOW must be performed upon mutually agree
+    • SOW must accordance the extend of the project scope 
+Project Work Breakdown Structure (WBS)
+
+    • Setting a clear WBS Dictionary 
+    • Included All  tasks and activities in WBS 
+    • Flexibility of  WBS decomposition and update 
+    • WBS must accordance  with other structured lists
+    • Eliminate Interrelated conflict  between tasks and activities 
+    • Consistent between WBS and the project activities 
+Project Cost Estimation
+    • Use more than one cost estimation methodology to verify the accurate of estimated cost   
+    • The organization has a historical database for organizing and retaining the estimation data 
+    • Assure the estimation of supplemental project activities 
+    • Allow enough time to do a proper project estimate
+    • Included the cost of project risks into cost estimation 
+    • Tasks to be estimated are clearly identified
+    • Estimate the project efforts according to accurate sizing 
+    • As much as possible Use at least one software estimation tool
+    • Building cost estimation upon gathering sufficient requirements 
+Project Schedule
+    • Fit estimation of time and resources 
+    • Don't Using linear approximation when estimating schedule
+    • Estimates for schedule must be correct
+    • Eliminate Unrealistic/Long timescales for the project schedule
+    • Decrease the  Pressure of fast delivery to avoid missed deadline and inferior results 
+    • Project should have  adequate staff to meet the schedule
+    • Optimistic schedules and budgets
+    • Assuming that the time on task equals duration with interruptions
+Risk Management
+    • Project managers must have the requisite experience to be aware of all relevant risk factors
+    • Eliminate conflict between project department and functions  
+    • Depend on qualitative and quantitive risk analysis techniques
+    • Accurate risk identification which is the most critical step in risk management.
+    • Effective use of strategies for recruiting and retaining specialized technical personnel for the project staff 
+    • Awareness with the system software specifications
+    • Good expectation of risk probability and estimation 
+    • Apply suitable risk response strategy  
+    • continue to risk evaluation during the project life phases
+Project Contract
+    • Projects should be launched with an agreed contractual completion date  
+    • Capability of contractor key person and Effective  contract management
+    • If Projects take add requirements, deadlines and resources often should be adjusted accordingly.  
+- Develop Communication Plan
+
+    • Eliminate  communication breakdowns
+    • Coordinate communication among customers, developers, and users
+    • Adequate communication, including progress tracking and reporting
+    • proper  team collaboration & communication
+    • Make delegation and decision making
+Project Charter
+    • Clear charter for project
+    • Sufficient planning
+    • Accessible and relevant documentation for the project
+    • Using  simple and flexible documentation 
+    • Complete the project documentation
+    • Adequate definitions of roles and responsibilities
+Project plan
+    • Risk should be incorporated into the project plan
+    • Metrics are sufficient to assess the quality of software.
+    • Proper plans and planning processes
+    • Contingency plans for handling problems that arise during the project development 
+    • Adequacy of plan and specifications 
+    • Strong project plan using documentation support
+    • A project plan should be in sequence form
+    • Complete constructed and just enough time and effort spent on project planning
+7. Conclusions and Future Work  
+An exploration study was conducted for the purpose of surveying the pre-development activities which begin with the System Service Request (SSR) to initiate the projects and end with developing the project plan. Also, investigating the relation between the pre-development activities and the failure reasons of IS projects. Lots of results are concluded in this research (1) there is no IS project suffered from just one failure reason, but all projects had multiple problems and the failure reasons are related to each other, (2) the majority of all project failure reasons are derived from the defects of the pre-development activities (3) Pre-development activities can play an important role to enhance IS project success if these activities executed in proper aspects with sufficient time and efforts to be completed accurately. 
+Furthermore, this research introduces an avoidance strategy which includes many critical success factors that must be considered for each pre-development activity during the project execution, as a swift solution to decrease the IS projects failure rates. Without doubt, in the case of giving the pre-development activities the reasonable interest, this will contribute to improve the IS projects success.
+Governance of the pre-development activities is the future work to enhance the probability of IS projects success and decreases the projects failure rate. It can present many benefits in the area of IS projects, these benefits reflect the necessity of adopting such of this technique as a solution for the failures of IS projects. Governance the pre-development activities shouldn't be restricted in embedded the governance controls only such as (PRINCE2, COBIT, 6-Sigma, and CMMI ) but it must be incorporated with installing the mixture of governance mechanisms such as (Arrangements, Structures, Best practices, Metrics, Strategies, Controls, Rules, Relationship, Protocols, Architectures, Guidelines and Standards). 
+8. References:
+    1. Al-Ahmad Walid, Al-Fagih Khalid, Khanfar Khalid, Alsamara Khalid, Abuleil Saleem, Abu-Salem Hani, “A Taxonomy of an IT Project Failure: Root Causes” International Management Review, Vol. 5, No. 1, pp:93-104, 2009.
+    2. Bachy G., Hameri A., “What to be implemented at the early stage of a large-scale project” International Journal of Project Management, Vol., 15, Issue 4, pp: 211-18, 1997.
+    3. Barclay Corlane, Osei-Bryson Kweku-Muata “Project performance development framework: An approach for developing performance criteria & measures for information systems (IS) projects” International Journal of Production Economics Vol.,124 pp: 272–292, 2010.  
+    4. Calvo-Manzano J. A., Cuevas G., Mejia J., Munoz M. A., San Feliu T., “How is CMMI-DEV applying when using TSPi project planning” IEEE, Electronics, Robotics and Automotive Mechanics Conference, Digital Object Identifier:10.1109/CERMA.2009.53, pp:143 – 148, 2009.
+    5. Cerpa Narciso ,  Verner  M. June “ Why Did Your Project Fail?” Communications of the ACM, vol., 52, No. 12, pp: 130-134, 2009.
+    6. Elkington, P., Smallman, C., “Managing project risks: a case study from the utilities sector” International Journal of Project Management”, Vol., 20, pp: 49–57, 2002.
+    7. Finnveden Goran, Hauschild Z.Michael, and Ekvall Tomas, “Recent developments in Life Cycle Assessment” Journal of Environmental Management, Vol., 91, Issue 1, pp: 1-21, 2009.
+    8. Friden, Terry, “FBI wasted millions on Virtual Case File” CNN Washington Bureau, 4 February, 2005, http://www.cnn.com/2005/US/02/03/fbi.computers
+    9. Golpayegani S. Alireza Hashemi, Emamizadeh Bahram, “Designing Work Breakdown Structures Using Modular Neural Networks” Decision Support Systems Journal, Vol., 44, pp: 202–222, 2007.
+    10. Gorse N., Belanger P., Chureau A., Aboulhamid E.M., Savaria Y., “A high-level requirements engineering methodology for electronic system-level design” Journal of Computers and Electrical Engineering Vol.,33 pp: 249–268, 2007.
+    11. Greer D., Conradi R., “Software project initiation and planning – an empirical study” Journal of IET Software, Vol. 3, Iss., 5, pp: 356–368, 2009.
+    12. Griffith A. F, Gibson G. E.,  “Alignment During Pre-project Planning” Journal of Management in Engineering ,Vol. 17, No. 2, pp: 69-76, 2001.
+    13. Han Wen-Ming, Huang Sun-Jen, “An empirical analysis of risk components and performance on software projects” The Journal of Systems and Software, Vol., 80, pp: 42–50, 2007.
+    14. Hartman, F., Ashrafi, R.A., “Development of the SMART Project Planning framework”, International Journal of Project Management  Vol., 22, pp:499–510, 2004.
+    15. Herroelen Willy, “Project Scheduling—Theory and Practice” Production and Operations Management Journal, Vol., 14, No., 4, pp: 413–432, 2005.
+    16. Jeffrey A. Hoffer, Joey F. George, Joseph S. Valacich, “Modern Systems Analysis and Design”, Prentice Hall, ISBN-10: 0132240769, pp: 45-125, 2007.
+    17. Katainen Tommi, Nahar Nazmun, “Using Methods and IT Tools Innovatively for the Management of International IS Development Projects” IEEE, Portland International Conference Management of Engineering & Technology, pp:1851-1863, 2008.
+    18. Krishna P. Radha, Karlapalem K., Chiu D.K.W., “An ER framework for e-contract modeling, enactment and monitoring” journal of Data & Knowledge Engineering vol., 51, pp: 31–58, 2004.
+    19. Lepage Darren “Driving Success in Substation Control and Information System Projects” Utility Automation and Engineering journal, pp:34-42, February 2009, www.utility-automation.com.  
+    20. Mahaney C. Robert, Lederer L. Albert, “The role of monitoring and shirking in information systems project management” International Journal of Project Management, Vol., 28 pp: 14–25, 2010.
+    21. Mahring Magnus, Keil Mark, “Information Technology Project Escalation: A Process Model” Decision Sciences journal, Vol., 39, No., 2, pp:239-272, 2008.
+    22. Mahring Magnus, Mathiassen Lars,Keil Mark, Pries-Heje Jan "Making IT Project De-Escalation Happen: An Exploration into Key Roles" Journal of the Association for Information Systems, Vol. 9 Issue 8, pp:463 462-496, 2008.
+    23. Malik A. Afzal, Boehm Barry  “Quantifying requirements elaboration to improve early software cost estimation” Information Sciences Journal, http://dx.doi.org/10.1016/j.ins.2009.12.002
+    24. Malkinson J. Terrance “A "toolkit" for information technology proposal and project documentation” IEEE, Professional Communication Conference, IPCC 2001, pp: 205-220, 2001.
+    25. Mojtahedi S. Mohammad, Mousavi S. Meysam, Makui Ahmad “Project Risk Identification and Assessment Simultaneously Using Multi-Attribute Group Decision Making Technique” Safety Science Journal, Vol., 48, pp: 499–507, 2010.
+    26. NRC, National Research Council, “A Review of the FBI’s Trilogy Information Technology Modernization Program”, Computer Science and Telecommunication Board, National Academies Press, Washington D.C., 2004, http://www.nationalacademies.org/nrc/.
+    27. Omar Anwar, “Uncertainty in Project Scheduling, Its Use in PERT/CPM Conventional Techniques” Cost Engineering Journal, Vol. 51, No. 7, pp: 30-34, 2009.
+    28. Pan Gary, Hackney Ray, Pan Shan “Information Systems implementation failure: Insights from prism” International Journal of Information Management, Vol., 28, pp: 259–269, 2008.
+    29. PM Hut (Project Management Hut),"Project Failure Statistics and Facts", http://www.pmhut.com/project-failure-statistics-and-facts, http://www.standishgroup.com/, September, 2008, 
+    30. Project Management Institute “A guide to the Project Management Body of Knowledge PMBOK Guide”, An American National Standard, Fourth Edition, PA 19073-3299, 2008.
+    31. Ram L. Kumar “Managing risks in IT projects: an options perspective”, Information & Management Journal, Vol., 40 pp: 63–74, 2002.
+    32. Rodney A. Stewart, “A framework for the life cycle management of information technology projects: Project IT”, International Journal of Project Management, Vol., 26, Issue 2, pp: 203-212, 2008.
+    33. Scasso R. Heredia, Larenas G. Santana “Project-breakdown structure: the tool for representing the project system in project management”, International Journal of Project Management, Vol., 9, Issue 3, pp:157-161, 1991.
+    34. Tesch Debbie, Kloppenborg Timothy, Frolick Mark “IT Project Risk Factors: The Project Management Professionals Perspective” Journal of Computer Information Systems, pp: 61-69, Summer 2007.
+    35. Uher E.Thomas, Toakley A. Ray, “Risk management in the conceptual phase of a project” International Journal of Project Management, Vol., 17, Issue 3, pp: 161-169, 1999.
+    36. Uppal Kul B., “Project Management, Cost Engineering, Project Definition, Action Plans or What?” AACE International Transactions, PM.01.1, 2008.
+    37. Wanyama Tom, Far B. Homayoun, “Towards Providing Decision Support for COTS Selection” IEEE, Canadian Conference on Electrical and Computer Engineering, pp: 908-911, 2005.
+    38. Whitten, Jeffrey Bentley L., Lonnie D., “Systems Analysis and Design for the Global Enterprise”, MCGRAW HILL, ISBN  9780071107662, 2007.  
+    39. Yan B., Benslimane Y., Yang Z., “IS Development Activities and Methodologies in Practice: A Survey of the IT Sector in China” IEEE, Issue Date: 8-11 Dec., 2009, Print ISBN: 978-1-4244-4869-2, pp: 598 – 602, 2009. 
+    40. Zhang G. Peter, Keil Mark , Rai Arun, Mann Joan, “Predicting information technology project escalation: A neural network approach” European Journal of Operational Research Vol.,146 pp: 115–129, 2003.
+    41. Zheng Chan,  Feng  Jingchun, Li Ming, “Research on IT Project Contract Model” IEEE, Second International Conference on Intelligent Computation Technology and Automation, ICICTA, Vol., 2, pp: 172 – 175, 2009.
+    42. Zheng-Wei Huang, “Cost Estimation of Software Project Development by Using Case-Based Reasoning Technology with Clustering Index Mechanism” IEEE, Fourth International Conference on Innovative Computing Information and Control (ICICIC), pp: 1049 – 1052, 2009. 
+

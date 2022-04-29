@@ -1,0 +1,19 @@
+A Novel Distributed Approach for Frequent Subgraphs
+Mining Across Cloud Computing System (DistFsm)
+M. Elshrkawey 1 , Hosam E. Refaat 1,∗ and Hanan H. Amin 2
+1 Dept.
+2 Dept.
+of Information System, Faculty of Computers and Informatics, Suez Canal University, Egypt.
+of Computer Science, Faculty of Computers and Informatics, Sohag University, Egypt.
+Received: 2 Aug. 2019, Revised: 12 Oct. 2019, Accepted: 25 Oct. 2019
+Published online: 1 Mar. 2020
+Abstract: In this paper, a novel approach known as DistFSM presented for the FSM on a single graph. The DistFSM operation
+performed on a cloud computing system that framed on a set of heterogeneous clusters. Each cluster is a set of homogenous nodes. The
+input graph converted into a sparse matrix. This matrix partitioned horizontally into a sequence of non-equivalents chunks. Each chunk
+size is computed to be appropriate to the available worker-resources in one of the clusters. In each cluster, the chunk is partitioned
+vertically into equivalent tasks. Each task assigned to one of the worker nodes. The proposed partitioning method defined as the Hori-
+Vertical partition and aims to accomplish the load balancing among the different nodes in the different clusters. Each node performs its
+operation individually without any communication with other nodes. The non-equivalent chunks assigned to the different clusters allow
+them to finish their operation simultaneously. This strategy increases the resource usage by prohibiting or reducing the waiting time of
+the high-performance clusters. Finally, the results of all clusters are summarized and submitted to a distributed shared memory of the
+orchestration node to perform the required aggregation operations.

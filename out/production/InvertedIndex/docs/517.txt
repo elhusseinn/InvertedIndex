@@ -1,0 +1,4097 @@
+
+
+
+
+Chapter 1 Introduction
+
+1.1 Introduction
+Project management is the discipline of planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals. A project is a temporary endeavor with a defined beginning and end usually time-constrained and often constrained by funding or deliverables[1][2]. Software project management is the art and science of planning and leading software projects [3]. Software projects Management It’s a sub-discipline of project management in which software projects are planned, monitored and controlled. The Software development methodologies, approaches ,and researches which developed till now almost Interested in the SW project outcomes as a final product, even in development phases of the software project;discussed only the steps of analysis, design, implementation, and testing  . There is no comprehensive study or methodology especially for managing technical people in the software projects; so in this research we will concentrate in human aspects in SW projects. The most significant success factor in any Software Project is the Human Resource; so managing, organizing, and utilizing technical human resources are very important issues for projects success. Researches continually show that companies have some difficulties for completing software projects on time and on budget[4]. In fact many projects are cancelled before completion or not totally implemented. Business environments these days are characterized by complexity, and acceleration of everything from communication to production methods. IT has been one of the major drivers of this complexity and acceleration. So, failures in software projects need to be analyzed in order to suggest solutions. The project team, suppliers, customers and the other stakeholders can all present a source of failure, but the most common source for project failure are rooted in the project management process itself. So, in our research we are looking forward to develop a framework for better management of the technical HR working in the software projects.
+
+
+
+
+
+
+
+
+
+
+
+1.2 Motivations 
+    • According to many published researches in software engineeringarea; the most significant success factor in software engineering projects is the human factor’, so the researcher will try to contribute in this area in order to help succession of software projects.
+
+    • Most software projects fail because HR problems such as: high turnover in staff and project team, correlating skills and tasks assignment, and workload distribution between team members. 
+
+    • Required technical skills and competencies are too different from one project team and another. So the tasks and assignments allocation should be done in a right and optimal way so this leads to project success. The competences of the workforce have been nowadays recognized as strategic assets of paramount importance in the achievement of competitive advantage.
+    • The urgent need to better management of human aspects in software projects
+
+1.3 Research Scope
+This research focuses in project management specifically in software project management, and contributes some points and aspects in technical team management this research done for building a new framework which will solve some problems in area of technical team management in software projects management. 
+
+Figure 1.1: Research Scope
+
+
+
+
+
+1.4  Problem Definition
+
+1.4.1 General Problem Definition
+    • Recently with increasing the amount of researches and studiesin the software projects management, although the software development methodologies, approaches, and researches which developed till now only Interested in the Software project outcomes as a final product, even in development phases discussed only the steps of analysis, design, implementation, and testing, other phases of software project itself, so there is no enough interest in human perspectives; and there are a lot of human problems in software projects; which may the main causes of project failures. 
+
+1.4.2 Specific Problem Definition(research question)
+ How can we overcome some management problems related to human factor in software projects? These problems related to team selection, team evaluation, tasks allocations and distribution; how we can enhance the technical people management in SW Projects and overcome the mentioned problems?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.5  Research Methodology & Structure 
+In this research we start to survey the area of software projects management; and concentrate in the problems related to human management, or team management, and then we have divided our thesis into two parts; practical and theoretical part.
+Theoretical part:
+Referencing to the problems related to team management we have introduce and develop a new framework to enhance team management, the framework boundaries are the software project life cycle we tried to study in deep all phases and stages of life cycle; because we know that all management activities extended cross the project life cycle model starting from project initiation to delivering and maintenance, and  we proposed set of rules and recommendations in each phase; these rules absolutely help to enhance the team management and lead to project success, and then we have verified, and evaluated the proposed framework through a practical part which will described in the next section. 
+Practical part:
+In order to evaluate the proposed framework; this done by a four cases studies in a real SW projects in Egypt.The case studies conclude that the more applying of the proposed framework, the more leading to project success.
+
+
+Figure1.2  Research Methodology
+
+
+
+CHAPTER 2
+Literature Review
+
+Outline
+
+        2.1. Introduction
+        2.2. Project Management 
+        2.3. Software Development Phase
+        2.4. Information Systems Project Life Cycle
+        2.5. Team Management in Software projects
+        2.6.  Project Management Knowledge Areas
+        2.7. Agile Software Development
+        2.8. Scrum Framework approach
+        2.9. Extreme Programming
+        2.10. Dynamic system development method
+        2.11. Feature driven development 
+        2.12. Capability Maturity Model Integration CMM and CMMI
+        2.13. People Capability Maturity Model P-CMM
+
+
+
+
+
+
+Chapter 2 Literature Review
+
+    2.1 Introduction 
+
+In this chapter we will introduce a review about project management, human management, and software development methodologies; during these sections we will discusses some related works to our research subject; like Agile Methodology, scrum framework, and other published studies and researches in the human management area. In this chapter we will explain all topics and definitions which related to our research. We notice that most of software development methodologies and approaches interested in the software project as a final product, and the processes related to the development and execution; and not give enough interest in a human management. So in the proposed framework will introduce a guide for human management which will help to lead to project success. So in the following chapter you will find most related works and literatures about the research subject.
+
+    2.2 Project Management
+
+What’s a project?
+Here are some of the project characteristics[5]:
+    • Projects are different from ordinary work; projects have a timeframe with a beginning and an end. Projects have to be planned, projects use resources and need a budget, Projects require evaluation – the criteria for evaluation need to be established from the beginning
+    • Projects have an outcome, which is not necessarily known at the outset  the outcome is very often a “product” of some kind at the end of a project, decisions need to be taken about whether to use or institutionalize the outcome
+    •  Projects involve people, Projects don’t just happen; they need to be planned. They usually come in addition to normal work or in a limited period where the project participants are released from their usual duties. They need to be completed within set deadlines and have limited budgets.
+As the industry has matured, analysis of software project management failures has shown that the following are the most common causes of project failures[6]:
+    • Unrealistic or unarticulated project goals
+    • Inaccurate estimates of needed resources
+    • Badly defined system requirements
+    • Poor reporting of the project's status
+    • Unmanaged risks
+    • Poor communication among customers, developers, and users
+    • Use of immature technology
+    • Inability to handle the project's complexity
+    • Sloppy development practices
+    • Poor project management
+    • Stakeholder politics
+    • Commercial pressures
+
+What is a Project Management?   Project Management is a body of knowledge that many people spend their entire careers mastering.
+Some of the basic steps towards ensuring that project work unfold smoothly and that desired results are achieved on time[5].
+
+Software project management is the art and science of planning and leading software projects. Is a sub-discipline of project management in which software projects are planned, implemented, monitored and controlled[3].
+
+
+Figure 2.1 Management Cycles [5]
+
+
+    2.3 Project Management Phases 
+
+Project Management Institute (PMI) defines project management as the application of knowledge, skills, tools and techniques to a broad range of activities in order to meet the requirements of a particular project [7]. Project management has three important factors time, cost and scope. This means the project must be within cost and should be delivered on time, within scope and it should meet the customer quality requirements.The process of directing and controlling a project from start to finish is divided into six basic phases. These phases maybe describes as follows[4]:
+    • Project Initiation:The initiation phase is the beginning of the project. In this phase, the project team will examine and determine the benefits of the project before work can start. During this phase, a decision making team will identify if the project can be completed. In addition, decisions are made concerning who is to carry out the project, which party will be involved and whether the project has an adequate base of support among those who are involved. Examples of this type of project proposal include business plans and grant applications.
+
+    • Project Definition:After the project plan has been approved, the project enters the definition phase. In this phase, the requirements that are associated with a project result are specified as clearly as possible. This involves identifying the expectations that all of the involved parties have with regard to the project result.
+    • Project Planning:The project plan and the project scope maybe put in writing , during this phase the team should priorities the project , calculate the budget ,and determined what resource are needed.
+    • Project Execution:Resources’ tasks are distributed and teams are informed of responsibilities. This is a good time to bring up important project related information. During this phase the team works to deliver the product, service or desired outcome.
+    • Project Monitoring & Control: During this phase the project managers will compare project status and progress to the actual plan, as resources perform the scheduled work. During this phase also the project managers may need to adjust schedules or do what is necessary to keep the project on track. 
+    • Project closure:This phase includes the formal acceptance of the deliverables and disbanding of all the elements that were required to run the project.
+    2.4  Information Systems Project Life Cycle 
+    2.1 Project planning:
+Project planning is an aspect of Project Management, which comprises of various processes. The aim of these processes is to ensure that various Project tasks are well coordinated and they meet the various project objectives including timely completion of the project[8].
+Project Planning is an aspect of Project Management that focuses a lot on Project Integration. The project plan reflects the current status of all project activities and is used to monitor and control the project.
+The Project Planning tasks ensure that various elements of the Project are coordinated and therefore guide the project execution.
+Project Planning helps in facilitating communication, monitoring/measuring the project progress, and Provides overall documentation of assumptions/planning decisions.
+The Project Planning Phases can be broadly classified as follows: 	
+    •  Development of the Project Plan Execution of the Project Plan 
+    • Change Control and Corrective Actions 
+    • Project Planning is an ongoing effort throughout the Project Lifecycle.
+“If you fail to plan, you plan to fail.” Project planning is crucial to the success of the Project. Careful planning right from the beginning of the project can help to avoid costly mistakes. It provides an assurance that the project execution will accomplish its goals on schedule and within budget.
+
+
+
+
+
+What are the steps in Project Planning?
+Project Planning spans across the various aspects of the Project. Generally Project Planning is considered to be a process of estimating, scheduling and assigning the projects resources in order to deliver an end product of suitable quality. However it is much more as it can assume a very strategic role, which can determine the very success of the project. A Project Plan is one of the crucial steps in Project Planning in General[7].
+Typically Project Planning can include the following types of project Planning[7]: 
+    •  Project Scope Definition and Scope Planning 
+    •  Project Activity Definition and Activity Sequencing 
+    • Time, Effort and Resource Estimation
+    •  Risk Factors Identification 
+    • Cost Estimation and Budgeting 
+    • Organizational and Resource Planning 
+    • Schedule Development 
+    • Quality Planning 
+    • Risk Management Planning 
+    • Project Plan Development and Execution 
+    • Performance Reporting 
+    • Planning Change Management 
+    • Project Rollout Planning
+We now briefly examine each of the above steps:
+    1. Project Scope Definition and Scope Planning:
+In this step we document the project work that would help us achieve the project goal. We document the assumptions, constraints, user expectations, Business Requirements, Technical requirements, project deliverables, project objectives and everything that defines the final product requirements. This is the foundation for a successful project completion[7].
+    2. Quality Planning: 
+The relevant quality standards are determined for the project. This is an important aspect of Project Planning. Based on the inputs captured in the previous steps such as the Project Scope, Requirements, deliverables, etc. various factors influencing the quality of the final product are determined. The processes required to deliver the Product as promised and as per the standards are defined[7]..
+
+
+    3. Project Activity Definition and Activity Sequencing: 
+In this step we define all the specific activities that must be performed to deliver the product by producing the various product deliverables. The Project Activity sequencing identifies the interdependence of all the activities defined[7].
+    4. Time, Effort and Resource Estimation: 
+Once the Scope, Activities and Activity interdependence is clearly defined and documented, the next crucial step is to determine the effort required to complete each of the activities. See the article on “Software Cost Estimation” for more details. The Effort can be calculated using one of the many techniques available such as Function Points, Lines of Code, Complexity of Code, Benchmarks, etc. This step clearly estimates and documents the time, effort and resource required for each activity[7].
+    5. Risk Factors Identification: 
+“Expecting the unexpected and facing it” 
+It is important to identify and document the risk factors associated with the project based on the assumptions, constraints, user expectations, specific circumstances, etc.[7].
+    6. Schedule Development: 
+The time schedule for the project can be arrived at based on the activities, interdependence and effort required for each of them. The schedule may influence the cost estimates, the cost benefit analysis and so on.Project Scheduling is one of the most important task of Project Planning and also the most difficult tasks. In very large projects it is possible that several teams work on developing the project. They may work on it in parallel. However their work may be interdependent[7].
+    7. Cost Estimation and Budgeting: 
+Based on the information collected in all the previous steps it is possible to estimate the cost involved in executing and implementing the project. See the article on "Software Cost Estimation" for more details. A Cost Benefit Analysis can be arrived at for the project. Based on the Cost Estimates Budget allocation is done for the project[7].
+    8. Organizational and Resource Planning 
+Based on the activities identified, schedule and budget allocation resource types and resources are identified. One of the primary goals of Resource planning is to ensure that the project is run efficiently. This can only be achieved by keeping all the project resources fully utilized as possible. The success depends on the accuracy in predicting the resource demands that will be placed on the project. Resource planning is an iterative process and necessary to optimize the use of resources throughout the project life cycle thus making the project execution more efficient. There are various types of resources – Equipment, Personnel, Facilities, and Money[7]. 
+
+
+
+    9. Risk Management Planning: 
+Risk Management is a process of identifying, analyzing and responding to a risk. Based on the Risk factors Identified a Risk resolution Plan is created. The plan analyses each of the risk factors and their impact on the project. The possible responses for each of them can be planned. Throughout the lifetime of the project these risk factors are monitored and acted upon as necessary[7].
+    10. Project Plan Development and Execution: 
+Project Plan Development uses the inputs gathered from all the other planning processes such as Scope definition, Activity identification, Activity sequencing, Quality Management Planning, etc. A detailed Work Break down structure comprising of all the activities identified is used. The tasks are scheduled based on the inputs captured in the steps previously described. The Project Plan documents all the assumptions, activities, schedule, and timelines and drives the project. Each of the Project tasks and activities are periodically monitored. The team and the stakeholders are informed of the progress. This serves as an excellent communication mechanism. Any delays are analyzed and the project plan may be adjusted accordingly[7]. 
+    11. Performance Reporting: 
+As described above the progress of each of the tasks/activities described in the Project plan is monitored. The progress is compared with the schedule and timelines documented in the Project Plan. Various techniques are used to measure and report the project performance such as EVM (Earned Value Management) A wide variety of tools can be used to report the performance of the project such as PERT Charts, GANTT charts, Logical Bar Charts, Histograms, Pie Charts, etc.[7].
+
+
+Figure 2.3  Project Management Process Group[7]
+
+
+
+
+Software Engineering 
+    • Software engineering is an engineering discipline that is concerned with all aspects of software production[3].
+    • Software is not just a program or programs but also includes documentation. Essential software product attributes are maintainability, dependability, security, efficiency, and acceptability[3].
+    • The software process includes all of the activities involved in software development.
+    • The high-level activities of specification, development, validation, and evolution are part of all software processes[3].
+    • The fundamental notions of software engineering are universally applicable to all types of system development. These fundamentals include software processes, dependability, security, requirements, and reuse[3].
+    • There are many different types of systems and each requires appropriate software engineering tools and techniques for their development. There are few, if any, specific design and implementation techniques that are applicable to all kinds of systems[3].
+
+    2.5 Team Management in Software projects
+Software project management means that the skillful integration of software technology, economics and human relations in the specific context of a software project is not an easy task. In a globally technical team’s environment, project management could be complex task to undertake than it is in any other projects[5]. 
+A team is a group of people who work interdependently, who are committed to common goals, and who produce high quality results[9]
+To summarize, the team has many definitions that are desirable from a computer science standpoint. The team is massively people united and its functioning is truly to reach the goals. Previously working together and produce results on time, using a variety of tools and mechanisms in the software systems. Each team use these tools and technologies in slightly different ways, so any team members can enjoy the software projects and use  the technology tools can be consider as a technical member and this according to his knowledge or major interest in the software development , he maybe a designer or programmer etc.
+A study of communication and cooperation in distributed software project presents the results and conclusions from a study of communication and cooperation practices on a range of distributed commercial software projects teamshas clarify that the software development is no longer the preserve of individual designers and programmers, but is a team-based activity. Indeed, development has always involved a wide variety of stakeholders (customers, designers, programmers, maintainers, end-users) making the need for communication and cooperation an inherent characteristic. Changes in support technology, economic factors and globalization of software development and maintenance are increasingly resulting in the geographical separation of personnel. Where such distribution of personnel occurs, it is clearly important that there is high quality communication and cooperation. [10]
+Teams can also be developed through team building activities - which can also be used simply to build relationships where team members lack cohesion due to organizational structure or physical distance. Project managers may approach team management with a focus on structure, communications and standardized practices [11].
+
+
+Team leadership
+Working in teams brings some advantages such as increased creativity, productive competition and accelerated information spreading. Although teams have to be created, guided and decisions have to be made[12].
+ Team leadership includes:
+    • Project member selection
+    • Encouragement of goal acceptance, development and cooperation of the team members (motivation, coaching, dealing with conflicts within the team)
+    • Initiating changes and advancement of working conditions
+    • Precipitating decisions
+Yoshimura developed a project selection algorithm for choosing the set of projects that maximizes the total estimated profit and then presented a human resources allocation algorithm for optimally placing human resources among the selected projects. A genetic algorithm is used to obtain a Pareto solution set from which the optimal solution is selected. The process for discarding unsuitable solutions is based on setting lower limit constraints for each objective considered; therefore the authors do not suggest any formalized tool for this phase of the optimization procedure [13]
+Wu and Sun developed a mixed nonlinear program for multi-project R&D scheduling and staff allocation problems, which considers the staff learning effect. The goal is to minimize outsourcing costs, assuming the need to turn to outsourcing strategy whenever a task cannot be completed before its due date. A genetic algorithm (GA) is proposed to solve the problem[14].
+    2.6 The Project Management Knowledge Areas
+The project manager and team members are involved in all aspects of the project; therefore, one of the most important things a project manager and team members can do is understand in the project's knowledge areas. An area of project management defined by its knowledge requirements and described in terms of its associated process, practices, inputs, outputs, tools and techniques. The knowledge areas help the team members to document and standardize generally accepted project management information and practices. Each knowledge area covers its own important part of the project. A knowledge area can cover several phases or process groups of the project. The nine areas are described below in some detail[4].
+Human Resource Management
+Human resources management is an important knowledge area, which describes how the people can be managed in a project. It aims to assign the roles and responsibilities for the team members. This area is also important for knowing how project team is acquired and what a management plan is undertaken to the project.
+ Referring to the human resource management it is crucial to make the most effective use of the people involved with the project. This process of the human resource management includes[4]:
+
+    1. Human resource planning: This step includes identifying and documenting the project roles and responsibilities and also reporting relationships as well as making the staff.
+    2. Acquire the project team who are needed to complete the project: This includes the staffing management plan, staff acquisition, calendars and staff release.
+    3. Develop the project team: improving the competencies and the interaction of team members to enhance project performance.
+    4. Manage the project team:  This process is to manage the project team members in a standard way and tracking the team performance, also providing a feedback is also an important issue discussed in this management process. This process includes resolving issues .and coordinating change to enhance the project performance. The human resource management process interact with others knowledge areas[4]
+
+    2.7 Agile Software Development Methodology
+            2.7.1 Introduction to Agile
+Agile methods are software development techniques that enhance teamwork in small empowered teams and support active customer involvement[1] . Therefore agile means a fundamental of change when we are managing our software projects.  In the field of the modern software development methodologies agile was developed in 2001 by a group of software developers including the creators of scrum, they interested in further promotion of quick and easy techniques, and created a movement opposed to classic linear Waterfall method. They formed an Agile Alliance and wrote an Agile Manifesto [15].Since then, Agile has been awaking high interest among Software   companies. Applying Agile Methodologies to develop software has been   widely used in   the software industry, because the agile development has brought a different way of managing software development teams and projects.. Furthermore this approach is known to put a new focus on the question of how to share knowledge among team members of software development, some teams came across it accidentally; some were intentionally searching for a new strategy. Both ways, Agile brings success if adapted properly on the other hand; the agile software development enhances the team work management more than any software project methodology. It had a core values and principles described as follow [16].
+    • Individual and their interaction: this is very critical in order to perform teams, teams also should understand the project goals and commit to it, they should like and respect each other’s, agile teams are self-organizing and motivations are very important on agile development. Interaction among team members such as co-location and pair programming are also critical on agile development. Because it allow for sharing the knowledge between the team members.
+    • Working software  over comprehensive documentation : this is one of the very biggest differences that the agile brings , the team  should  have DOD (Definition of done ) which means the team should be sure when to finish one functionality including all its features after it passed all test and the team can operate it to the end user. Working software will be more useful and welcome than just presenting documents to clients in meetings.
+    • Responding to change:  agile methodologies focused on the response of change and seek the customer feedback through the project so they can incorporate feedback and new information as the product is being developed, 
+Customer collaboration over contract negotiation: the agile methodologies foster this value by having a customer advocate work hand-in-hand with the development team. , Scrum master for example can select a customer proxy, called a product owner, to represent management and sales and client services etc.  Collaborating with customer on the daily project working is one of the reasons why industry companies looking for agile.   Despite the fact that there is a lot of research on the agility has been done, it is pretty clear that the problems proved the success of agile depends heavily on the agile teams. But agile methodology is still facing some problems such as the project size, the team is usually small, also the lack of skilled people sometimes, lack of support management[15].
+Agile software development has put a new focus on the question of how to share knowledge among members of software development teams. In contrast to heavy-weight, document-centric approaches, agile approaches rely on face-to-face communication for knowledge transfer. Pair programming is one such practice with the idea to share the work specific knowledge across the development teams through pair rotation. This paper introduces work on developing a framework for capturing the tacit knowledge shared among the practitioners of agile software development methodologies. This approach facilitates the organizational learning process by capturing and maintaining the necessary knowledge.
+The following are the People Factors in Agile[17]:
+    • Competency:
+Competency means whether one has real-world experience in the technology domain, has built similar systems in the past, and possesses good interpersonal & communication skills
+    • Communication and Negotiation:
+Communication plays an important role in the implementation of agile methodologies in a software development project.
+    • Team composition:
+It’s an important factor responsible for the success of agile methodologies.
+    • Personal characteristics 
+
+
+
+
+
+
+            2.7.2 Comparing agile methodology with the traditional software development
+There are several different majors between agile and traditional software development. The major difference depends on the project size and the uses approach and on the documentation when it returns to the investment. Agile uses adaptive approach, project size is small, documentation is low and return on investment is early in project. Whereas traditional software development uses predictive approach, project size is large, documentation is heavy and return on investment is at the end of project. Therefore for small projects agile software development is best. But for complex (big) project traditional system development method is used [18]. Agile development is most used and available in the new market because it struggles on the teams factor more than the process, the teams can get the result they want with suitable cost and saved money.. when we need to change some requirement on the project agile can adapt that while the old traditional methodologies only focus on analyzing and planning in the future in details.
+Traditional methodologies require calculating function points, the measure of the technical effort or complexity of completing the software, which are required to develop the whole system. We turn function points into lines of code, and then turn those lines of code into man hours, and then we finally estimate the cost. It ensures that the development of software is technically correct, but it takes a huge amount of time and effort, and it doesn’t take into account the various bug fixes and feature changes that will inevitably come up at the end of the project Agile methodology allows the teams to save time and money, allows for more innovations and creativity within the software development life cycle. The agile process involves features, prioritizing each feature to ensure that the integrity of the product is maintained, and then start development. The teams used to develop software system in the traditional methodologies spend most of the time and maybe waste it when planning the project and gathering requirement, heavy documentations[18].
+A sound framework   presented by agile methodology called scrum. This scrum is based on new technology tools and application which can be used to manage the teams work. The key idea of the scrum was to take advantage of different roles and responsibilities and provide some activities and tools for different purposes. In addition, this framework also involves learning, innovations. Surprising, emphasizes taking the results of the product and the efficacy of current practices and then adapt the product goals and process the practices.
+            2.7.3 Individual techniques on agile 
+The new wave of project management tools and techniques put an emphasis on collaboration and increase the team’s productivity. These tools and techniques go hand in hand with modern practices like collective intelligence and emerging structures that empower agile team’s management[15].
+
+            2.7.4 Pair programming
+Pair programming is a technique where two programmers sit together to write the code, sitting on pair to do the programming work is fast and safer, the code must be lower defects. This way of programming increase the communication within a project team, improving the quality of the code and supporting shared knowledge especially for the programmer who has not experience on programming languages. The pair programming   cost is unknown but it is useful for training a new person[15].
+            2.7.5 Agile User Participating 
+The user participating is an important major that agile defined because it is assume to improve the communication and the collaboration between the customer and the team members , on the other hand it will enable the developers to create a software system that will satisfy the customer The benefits of the user participating is that it enhance the quality of the system and it may lead to find solutions or let the development avoid unacceptable solutions, it increase the customer satisfaction[11].
+            2.7.6 People factor on Agile Development
+ Half of the agile manifesto values deal with human factors “Individuals and interactions” and “Customer collaboration” [15]. Even NASA has concluded that technology and training are not the big factors, “The most effective practice is leveraging human potential”. Having skill and experienced people in a team is a key factor for agile methodologies. Encouraging domain experts to be part of the team gives developers rapid feedback on the implications to the user of their design choices. Customer adaptability is another great factor, the customer gets the power to check the progress and change the direction of the software development in all iterations. Gaining this level of commitment from the customer makes agile methodology a more attractive process than heavyweight.  The biggest challenge of agile methodologies is how they handle larger teams. Cockburn and Highsmith both conclude that “Agile development is more difficult for larger team.as size grows coordinating interfaces become a dominant issue,”[16]. Both Larry Constantine and Martin Fowler also believe that agile with face-to-face communication breaks down and becomes more difficult and complex with developers more than 20[17]. In contrast, heavyweight and plan-driven methods scale better to large projects.  People factor on agile on an issue that   the management of the technical teams on agile project are needed in order to success[11].
+
+            2.7.7 Communications on agile method
+Gallivan, and Keil have identified a common theme in the literature of the software development team communication and they believed that communication is most important in achieving successful results[17]. Communications process must be effective for the team members to be effective too. The developer or the manager of the team should create environment where the user feel free to share their concern. It is a big belief among agile process proponents that people can respond quicker and transfer ideas more rapidly when talking face-to-face than they can in heavyweight methodologies when reading or writing documentation. When developers talk with customers and sponsors, they could work out difficulties, adjust priorities, and examine alternate paths forward in ways not possible when they are not working together. Hewlett-Packard and IBM[9]. were early to observe the effectiveness of informal meeting places, but now it’s part of the industry to have an effective design environment actively encourage and permit ad hoc meetings of small groups  Communication  is the heart beat of the project , it happens every day between the technical people and the manager and customer , on agile methodology the team talk face to face conversation and meet every day and discuss what to do and empower the technical people , many agile teams communicate every day for example the scrum meeting and the standup meetings , they communicate with the product owner and the scrum master and customer and everyone has role for who can speak on the meetings , scrum also has roles and core responsibility for everyone .the core responsibility of the technical teams such as designer and programmer [19].
+    2.8 Scrum Framework approach
+Scrum is being widely used in many famous companies such as Google and yahoo and Siemens and so on, because it brings enhancement to the team work. The simplicity of the scrum and its powerful tools has made it famous and let modern companies apply it on their software production this major framework was developed. and  considered long in  the world of the software development  Review article on the practices associated with  successful product  development  groups, in this paper  the term scrum was introduced  relating successful  development  to the game  of  rugby in which a self–organizing (self-managing team moves together down  the field of  product development[20]. The first scrum team was created at Easel Corporation in 1993 by Dr. Jeff Sutherland and the scrum framework was formalized in 1995 by Ken Schwaber the creators of the Scrum  recommended it as a team based activity which means to get the team started on  very fast maybe within two or three days.  Scrum itself follows a set of activities that can give more value to the customer and this framework is based on agile values and principles. Scrum also can help managing the team members and deliver the values on time. By scrum activities the customer also can get the opportunities to review, guide and influence the team member’s work on progress. Scrum can be defined as a framework for running software projects that is based on agile principles and values [21].  It defines a set of activities that can help our teams to deliver more value to the   customer and in a very fast way this means that within this framework we can employ various processes and techniques to build the software products. And this increases the productivity of the team members and makes it more active than any other traditional software development.
+
+
+Figure 2.3: Scrum Framework [21]
+
+
+
+
+    2.9 Extreme Programming 
+One of the major methods of agile development is the Extreme Programming which was initiallystarted on March 6, 1996[4]. Extreme Programming is one of several popular agile processes. It is successful for many companies of all different sizes and industries world wide 
+
+Figure 2.4 Extreme programming life cycles [4]
+The lifecycle of an XP project, shown in Figure 2.4 is divided into six phases: Exploration, Planning, Iterations to release, Production, Maintenance and Death. 
+In the Exploration phase, the customer writes out the story cards they wish to be included in their program. This leads to Planning phase where a priority order is set to each user story and a schedule of the first release is developed. Next in the Iterations to Release phase, the development team first iteration is to create a system with the architecture of the whole system then continuously integrating and testing their code. Extra testing and checking of the performance of the system before the system can be released to the customer is done in the Production phase. Postponed ideas and suggestions found at this phase are documented for later implementation in the updated releases made at the Maintenance phase. Finally the Death Phase is near when the customer have no more stories to be implemented and all the necessary documentation of the system is written as no more changes to the architecture, design or code is made .Extreme Programming improves a software project in five essential ways; communication, simplicity, feedback, respect, and courage. Extreme Programmers constantly communicate with their customers and fellow programmers. They keep their design simple and clean. They get feedback by testing their software starting on day one. They deliver the system to the customers as early as possible and implement changes as suggested. Every small success deepens their respect for the unique contributions of each and every team member. With this foundation Extreme Programmers are able to courageously respond to changing requirements and technology[4]. 
+
+
+
+
+
+    2.10 Dynamic system development method 
+Dynamic Systems Development Method (DSDM) is an agile project delivery framework, primarily used as a software development method. The DSDM framework can be implemented for agile and traditional development processes [4].One key aspect that distinguishes the DSDM approach is that it fixes time and resources first and then adjusts the amount of functionality accordingly. This resources-first process consists of five phases: Feasibility Study, Business Study, Functional Model Iteration, Design and Build Iteration, and Implementation. The last three phases are iterative and incremental – restricting iterations within time-boxes (pre-defined periods of time, where the iteration must end within the time-box). In the Feasibility Study phase, the project is assessed, and the decision on whether or not DSDM is appropriate for the effort. A feasibility report and a development plan are produced over a few weeks.   In the business study phase, key characteristics of the business and technology are assessed culminating in a system architecture definition and an outline prototyping plan. The architecture definition is the initial version of the system definition and it may change as the project proceeds. The prototyping plan outlines the prototyping strategy and the configuration management approach.  During the functional model iteration phase, the project evolves through functional iterations where each iteration involves some enhancements and the increments are directed toward the final system. This phase entails four products that reflect the process: prioritized list of functions, functional prototype(s) review documents, non-functional requirements and risk analysis of further development .The design and build iteration produces the system that meets the minimum set of requirements and iterate the system based on the customer’s comments. Systematically, through a series of iterations and increments, the software is elaborated and refined in a consumable form for the customer to review. In the implementation phase the system is formally transferred to the actual product. The system is delivered to the customer and any subsequent increments are planned[4].
+ The team work is one of the success factors that DSDM brings. This team has to be composed of skillful members that form a stable union. An important issue is the empowerment of the project team. This means that the team (or one or more of its members) has to possess the power and possibility to make important decisions regarding the project without having to write formal proposals to higher management, which can be very time-consuming. In order for the project team to be able to run a successful project, they also need the right technology to conduct the project. This means a development environment, project management tools [16].
+
+
+
+
+
+
+
+
+
+    2.11 Feature driven development 
+Feature driven development is focused only in design and implementation and it need supporting from other approaches. There are five steps in the FDD including the process, the object oriented components and the features based development.
+
+
+Figure 2.5 Feature driven developments
+FDD consists of five sequential steps as the figure show. 
+    • Develop an Overall Model - A high level walkthrough of the system scope and its context is performed by the domain expertto the team members and chief architect. Documented requirements such as use cases or functional specifications are developed. 
+    •  Build a Features List - A categorized list of features to support the requirements is produced 
+    •  Plan by Feature - The development team orders the feature sets according to their priority and dependencies and assigned to chief programmers. Furthermore, the classes identified in the first phase are assigned to class owners (individual developers). Also schedule and milestones are set for the feature sets. 
+    • Design by Feature & Build by Feature - Features is selected from the feature set and feature teams needed to develop these features are chosen by the class owners. The design by feature and build by feature are iterative procedures during which the team produces the sequence diagrams for the assigned features. These diagrams are passed on to the developers who implement the items necessary to support the design for a particular feature. There can be multiple feature teams concurrently designing and building their own set of features. The code developed is then unit tested and inspected. After a successful iteration, the completed features are promoted to the main build. 
+
+
+
+
+
+    2.12 Capability Maturity Model Integration CMM and CMMI
+The U.S. Software Engineering Institute (SEI) was established to improve the capabilities of the American software industry. In the mid-1980s, the SEI initiated a study of ways to assess the capabilities of software contractors. The outcome of this capability assessment was the SEI Software Capability Maturity Model (CMM)[3].This has been tremendously influential in convincing the software engineering community to take process improvement seriously. The Capability Maturity Model (CMM) is a reference model of mature practices in a specified discipline, used to improve and appraise a group’s capability to perform that discipline[22]. The Software CMM was followed by a range of other capability maturity models, including the People Capability Maturity Model (P-CMM) and the Systems Engineering Capability Model. 
+In an attempt to integrate the plethora of capability models based on the notion of process maturity (including its own models), the SEI embarked on a new program to develop an integrated capability model (CMMI). The CMMI framework supersedes the Software and Systems Engineering CMMs and integrates other capability maturity models. It has two instantiations, staged and continuous, and addresses some of the reported weaknesses in the Software CMM[22].
+The Capability Maturity Model Integration (CMMI) plays various roles[23]: a process improvement approach[24]; a way to describe the characteristics of effective processes[25].   Acollection of the essential elements of effective processes for one or more bodies of knowledge; a process capability maturity model which aids in the definition and understanding of an organization’s processes, and more. In some texts it is referred to as “the CMMI model”, while some others use “a CMMI model”. This diversity of interpretations can be viewed as a manifestation of the dual role that this concept plays: a conceptual framework for describing characteristics of business processes vs. a characterization of the business process of a specific organization
+    2.13 People Capability Maturity Model P-CMM[[26]
+The People Capability Maturity Model (People CMM) is a proven set of human capital management practices that provides an organizational change model through an evolutionary framework based on a system of workforce practices. It is designed on the premise that improved workforce practices will not survive unless an organization’s behavior changes to support them. The People CMM provides a roadmap for transforming an organization by steadily improving its workforce practices. As do all Capability Maturity Models, the People CMM consists of five maturity levels, or evolutionary stages, through which an organization’s workforce practices and processes evolve. At each maturity level, a new system of practices is added to those implemented at earlier levels. Each overlay of practices raises the level of sophistication through which the organization develops its workforce. Within this environment individuals experience greater opportunity to develop and are more motivated to align their performance with the objectives of the organization.
+
+
+
+
+
+
+
+
+The Capability Levels of CMMI:
+5 Optimizing
+4 Quantitatively Managed
+3 Defined
+2 Managed
+1 Performed
+0 Incomplete
+
+
+Figure 2.6 Abstract view of CMMI
+
+2.14 Conclusion:
+This chapter we tried to overview in all related works and studies of Project Management, Human Resources management, and software development methodologies that Interested in human factors in software projects like Agile Software Development Methodology and Scrum framework; during our review in the literature of Human Resources management in IS projects we notice that the people management in SW projects need additional efforts and studies to enhance this area of study and contribute for enhancement of people management; so after we have study the related works of this topics notice that we need to  survey in the SW market to address some problems; and go to enhance and contribute in the area of human management and trying to overcome some problems like; team selection processes, team evaluation, tasks allocation and distribution between the team members; after the survey will be done in the next chapter you will see the proposed framework in the chapter 4.
+
+
+
+
+
+CHAPTER 3
+
+
+Human Problems in IS Projects (Survey)
+
+
+
+Outline
+
+
+
+        3.1 Introduction
+        3.2 People Management in Software Project 
+        3.3 Ten mistakes regarding Time Management
+        3.4 Common Causes of ProjectsFailure
+        3.5 101 Common Causes of Project Failure 
+        3.6 Data & Information Gathering from the market (Questionnaire)
+        3.7 Questionnaire Results
+        3.8 Conclusion 
+
+
+
+
+
+
+
+Chapter 3Human Problems in IS Projects(Survey)
+        3.1 Introduction
+
+In the first part of this chapter we will survey and collect the most important problems which lead and cause project failure. The human factor is the most important contributor in the project success; so we need to study all human aspects and related problems.
+And in the second part of this chapter after we survey in most problems and causes of project failure we will design questionnaire to realize and ensure that all problems are significant. The questionnaire aims to build the proposed framework and develop framework components to overcome these problems as can as possible.
+The questionnaire cove around thirty experts in the fields of human resources, and projects management. The targeted areas are human resources, projects management, and software engineering. The questionnaire divided into some coherent sections, every section contains some of questions  
+
+        3.2 People Management in Software Project 
+Software engineering curricula typically focus on process and technology yet give little or no attention to teaching the “soft skills” of managing technical people. While teaching the art of managing people is indeed difficult, it is paramount in today’s global working and learning environments[27]. Software engineering involves the engineering of complex software systems through the use of process, technology, and people in a well-balanced approach. Taught in universities in the undergraduate and graduate level, most academic programs focus more on the technical and process-related areas, failing to address issues of people management as part of their curricula. With the growing complexity of software projects and the current state of the practice, described by the Standish Group[27].
+
+Human Aspects of Software Engineering
+The importance of the human aspects of software engineering becomes acknowledged recently. For example, many failures of software systems can be explained by human factors. Taking into the consideration the complexity of the topic, the course described in this article focuses on social and cognitive aspects of software engineering, and addresses topics such as teamwork, customer – software engineer interaction, and learning processes in software development. Since the agile approach  in general and Extreme Programming (XP) in particular are about humankind, we find it appropriate to illustrate human aspects of software engineering by the agile approach in general and XP in particular. The next two sections describe the rationale for the course and how some of its main messages are illustrated by XP [13].
+
+Teams’ Relations
+Teams’ relational capital refers to the level of mutual trust, reciprocity, and thecloseness of relationships between team members. Higher levels of mutual trust among the team members reduce the fear of opportunistic behavior from their colleagues, and improve the confidence that everyone will meet their commitment to one another, and to the project.Trusting team members are more willing to share their individual know-how and skills, as well as the knowledge they absorb from external sources. This may positively influence teams’ external as well as internal knowledge integration[28].
+Team Time Management Problems
+How well do you manage your time? If you're like many people, your answer may not be completely positive! Perhaps you feel overloaded, and you often have to work late to hit your deadlines. Or maybe your days seem to go from one crisis to another, and this is stressful and demoralizing. Many of us know that we could be managing our time more effectively; but it can be difficult to identify the mistakes that we're making, and to know how we could improve. When we do manage our time well, however, we're exceptionally productive at work, and our stress levels drop. We can devote time to the interesting, high-reward projects that can make a real difference to a career. In short, we're happier![29]
+In this part we looking at ten of the most common time management mistakes, as well as identifying strategies and tips that you can use to overcome them. 
+        3.3 Ten mistakes regarding Time Management:
+
+Mistake # Failing to Keep a To-Do List
+Do you ever have that nagging feeling that you've forgotten to do an important piece of work? If so, you probably don't use a To-Do List to keep on top of things. (Or, if you do, you might not be using it effectively!)
+The trick with using To-Do Lists   effectively lies in prioritizing the tasks on your list. Many people use an A – F coding system (A for high priority items, F for very low priorities). Alternatively, you can simplify this by using A through D, or by using numbers.
+If you have large projects on your list, then, unless you're careful, the entries for these can be vague and ineffective. For instance, you may have written down "Start on budget proposal." But what does this entail? The lack of specifics here might cause you to procrastinate, or miss key steps. So make sure that you break large tasks or projects down into specific, actionable steps – then you won't overlook something important[29].
+You can also use Action Programs   to manage your work when you have many large projects happening at once. (Action Programs are "industrial strength" versions of To-Do Lists.
+
+Mistake #2 Not Setting Personal Goals
+Do you know where you'd like to be in six months? What about this time next year, or even 10 years from now? If not, it's time to set some personal goals[29].
+Personal goal setting   is essential to managing your time well, because goals give you a destination and vision to work toward. When you know where you want to go, you can manage your priorities, time, and resources to get there. Goals also help you decide what's worth spending your time on, and what just a distraction is.
+To learn how to set SMART, effective goals, read up on Locke's Goal Setting Theory  . Here, you'll learn how to set clearly defined goals that will keep you motivated.
+You might also enjoy our Book Insight into Long Fuse, Big Bang by Eric Haseltine. This book teaches you how to focus on your long-term goals without overlooking your short term priorities.
+Mistake #3Not Prioritizing
+Your assistant has just walked in with a crisis that she needs you to deal with right now, but you're in the middle of brainstorming ideas for a new client. You're sure that you've almost come up with a brilliant idea for their marketing campaign, but now you risk losing the thread of your thinking because of this "emergency."
+Sometimes, it's hard to know how to prioritize  , especially when you're facing a flood of seemingly-urgent tasks. However, it's essential to learn how to prioritize tasks effectively if you want to manage your time better.
+One tool that will help you prioritize effectively is the Urgent/Important Matrix  . This helps you understand the difference between urgent activities, and important activities. You'll also learn how to overcome the tendency to focus on the urgent.
+The Action Priority Matrix   is another useful tool, which will help you determine if a task is high-yield and high-priority, or low-value, "fill in" work. You'll manage your time much better during the day if you know the difference.
+You might also want to go through our Bite-Sized Training session How to Prioritize, to further enhance your skills[29].
+
+Mistake #4 Failing to Manage Distractions
+Do you know that some of us can lose as much as two hours a day to distractions? Think how much you could get done if you had that time back!
+Whether they come from emails, IM chats, colleagues in a crisis, or phone calls from clients, distractions prevent us from achieving flow  , which is the satisfying and seemingly effortless work that we do when we're 100 percent engaged in a task.
+If you want to gain control of your day and do your best work, it's vital to know how to minimize distractions   and manage interruptions   effectively. For instance, turn off your IM chat when you need to focus, and let people know if they're distracting you too often. You should also learn how to improve your concentration  , even when you're faced with distractions.
+Additionally, our article on managing email effectively   teaches you how to gain control of your email, so that it doesn't eat up your entire day[29].
+
+Mistake #5 Procrastination
+Procrastination occurs when you put off tasks that you should be focusing on right now. When you procrastinate, you feel guilty that you haven't started; you come to dread doing the task; and, eventually, everything catches up with you when you fail to complete the work on time. Start by taking our procrastination quiz   to find out if procrastination is a problem in your life. If it is, then learn the strategies you need to beat procrastination  .
+For instance, one useful strategy is to tell yourself that you're only going to start on a project for ten minutes. Often, procrastinators feel that they have to complete a task from start to finish, and this high expectation makes them feel overwhelmed and anxious. Instead, focus on devoting a small amount of time to starting. That's all!
+You might also find it helpful to use Action Plans  . These help you break large projects down into manageable steps, so that it's easy to see everything that you need to get done, and so that you can complete small chunks at a time. 
+
+Mistake #7Thriving on "Busy"
+Some people get a rush from being busy. The narrowly-met deadlines, the endless emails, the piles of files needing attention on the desk, the frantic race to the meeting... What an adrenaline buzz!
+The problem is that an "addiction to busyness" rarely means that you're effective, and it can lead to stress.
+Instead, try to slow down, and learn to manage your time better.
+Tip: "Do More Great Work", by Michael BungayStanier, is full of ideas and tips to reduce the "busywork" that you're doing, so that you're more excited and engaged in the work that matters. Click here for our Book Insight on it.
+
+Mistake #8Multitasking
+To get on top of her workload, Linda regularly writes emails while she chats on the phone to her clients. However, while Linda thinks that this is a good use of her time, the truth is that it can take 20-40 percent more time to finish a list of jobs when you multitask, compared with completing the same list of tasks in sequence. The result is also that she does both tasks poorly – her emails are full of errors, and her clients are frustrated by her lack of concentration.
+So, the best thing is to forget about multitasking  , and, instead, focus on one task at a time. That way, you'll produce higher quality work.
+Our Expert Interview with Dave Crenshaw, looking at The Myth of Multitasking, will give you an enlightening look at multitasking, and will help you explore how you can manage simultaneous projects more effectively.
+Mistake #9Not Taking Breaks
+It's nice to think that you can work for 8-10 hours straight, especially when you're working to a deadline. But it's impossible for anyone to focus and produce really high-quality work without giving their brains some time to rest and recharge.
+So, don't dismiss breaks as "wasting time." They provide valuable down-time, which will enable you to think creatively and work effectively. If it's hard for you to stop working, then schedule breaks for yourself, or set an alarm as a reminder. Go for a quick walk, grab a cup of coffee, or just sit and meditate   at your desk. Try to take a five minute break every hour or two. And make sure that you give yourself ample time for lunch – you won't produce top quality work if you're hungry[29].
+Mistake #10 Ineffectively Scheduling Tasks
+Are you a morning person? Or do you find your energy picking up once the sun begins to set in the evening? All of us have different rhythms, that is, different times of day when we feel most productive and energetic. You can make best use of your time by scheduling high-value work during your peak time, and low-energy work (like returning phone calls and checking email), during your "down" time. Our article, Is This a Morning Task?   will teach you how to do this[29].
+
+        3.4 Common causes of project failure
+If any of the answers to the following questions are unsatisfactory, an acquisition-based project should not be allowed to proceed until the appropriate assurances are obtained[30].
+    3.4.1 Lack of clear link between the project and the organization’s key strategic priorities, including agreed measures of success.
+    • Do we know how the priority of this project compares and aligns with our other delivery and operational activities?
+    • Have we defined the critical success factors (CSFs) for the project? 
+    • Have the CSFs been agreed with suppliers and key stakeholders?
+    • Do we have a clear project plan that covers the full period of the planned delivery and all business change required, and indicates the means of benefits realization?
+    • Is the project founded upon realistic timescales, taking account of statutory lead times, and showing critical dependencies such that any delays can be handled?
+    • Are the lessons learnt from relevant projects being applied?
+    • Has an analysis been undertaken of the effects of any slippage in time, cost, scope or quality? In the event of a problem/conflict at least one must be sacrificed.
+    3.4.2 Lack of clear senior management and Ministerial ownership and leadership[29].
+    • Does the project management team have a clear view of the interdependencies between projects, the benefits, and the criteria against which success will be judged?
+    • If the project traverses organizational boundaries, are there clear governance arrangements to ensure sustainable alignment with the business objectives of all organizations involved?
+    • Are all proposed commitments and announcements first checked for delivery implications?
+    • Are decisions taken early, decisively, and adhered to, in order to facilitate successful delivery?
+    • Does the project have the necessary approval to proceed from its nominated Minister either directly or through delegated authority to a designated SRO?
+    • Does the Senior Responsible Owner (SRO) have the ability, responsibility and authority to ensure that the business change and business benefits are delivered?
+    • Does the SRO have a suitable track record of delivery? Where necessary, is this being optimized through training?
+    • 
+    3.4.3 Lack of effective engagement with stakeholders[29].
+    • Have we identified the right stakeholders?
+    • In so doing, have we as intelligent customers, identified the rationale for doing so (e.g. the why, the what, the who, the where, the when and the how)?
+    • Have we secured a common understanding and agreement of stakeholder requirements?
+    • Does the business case take account of the views of all stakeholders including users?
+    • Do we understand how we will manage stakeholders e.g. ensure buy-in, overcome resistance to change, allocate risk to the party best able to manage it?
+    • Has sufficient account been taken of the subsisting organizational culture? 
+    • Whilst ensuring that there is clear accountability, how can we resolve any conflicting priorities?
+    3.4.4 Lack of skills and proven approach to project management and risk management[29].
+    • Is there a skilled and experienced project team with clearly defined roles and responsibilities? If not, is there access to expertise, which can benefit those fulfilling the requisite roles? 
+    • Are the major risks identified, weighted and treated by the SRO, the Director, and Project Manager and/or project team?
+    • Has sufficient resourcing, financial and otherwise, been allocated to the project, including an allowance for risk?
+    • Do we have adequate approaches for estimating, monitoring and controlling the total expenditure on projects?
+    • Do we have effective systems for measuring and tracking the realization of benefits in the business case?
+    • Are the governance arrangements robust enough to ensure that “bad news” is not filtered out of progress reports to senior managers?
+    • If external consultants are used, are they accountable and committed to help ensure successful and timely delivery?
+
+    3.4.5 Too little attention to breaking development and implementation into manageable steps[29]. 
+    • Has the approach been tested to ensure it is not ‘big-bang’ for example in IT-enabled projects?
+    • Has sufficient time been built in to allow for planning applications in Property & Construction projects for example?
+    • Have we done our best to keep delivery timescales short so that change during development is avoided?
+    • Have enough review points been built in so that the project can be stopped, if changing circumstances mean that the business benefits are no longer achievable or no longer represent value for money?
+    • Is there a business continuity plan in the event of the project delivering late or failing to deliver at all?
+
+
+
+    3.4.6 Evaluation of proposals driven by initial price rather than long-term value for money (especially securing delivery of business benefits).
+    • Is the evaluation based on whole-life value for money, taking account of capital, maintenance and service costs?
+    • Do we have a proposed evaluation approach that allows us to balance financial factors against quality and security of delivery?
+    • Does the evaluation approach take account of business criticality and affordability?
+    • Is the evaluation approach business driven?
+
+    3.4.7 Lack of understanding of and contact with the supply industry at senior levels in the organization.
+    • Have we tested that the supply industry understands our approach and agrees that it is achievable?
+    • Have we asked suppliers to state any assumptions they are making against their proposals? 
+    • Have we checked that the project will attract sufficient competitive interest?
+    • Are senior management sufficiently engaged with the industry to be able assess supply-side risks?
+    • Do we have a clear strategy for engaging with the industry or are we making sourcing decisions on a piecemeal basis?
+    • Are the processes in place to ensure that all parties have a clear understanding of their roles and responsibilities, and a shared understanding of desired outcomes, key terms and deadlines?
+    • Do we understand the dynamics of industry to determine whether our acquisition requirements can be met given potentially competing pressures in other sectors of the economy?
+
+
+
+
+    3.4.8 Lack of effective project team integration between clients, the supplier team and the supply chain. 
+    • Has a market evaluation been undertaken to test market responsiveness to the requirements being sought?
+    • Are the procurement routes that allow integration of the project team being used?
+    • Is there early supplier involvement to help determine and validate what outputs and outcomes are sought for the project? 
+    • Has a shared risk register been established?
+    • Have arrangements for sharing efficiency gains throughout the supply team been established?
+
+        3.5 101 Common Causes of Project Failure 
+Based on reviews of the projects in the Catalogue of Catastrophe[31]  and discussion with more than 500 people involved in real life projects, the following list documents 101 of the most common mistakes that lead to, or contribute to, the failure of projects [32]:
+There are many causes of project failure and every failed project will have its own set of issues. Sometimes it is a single trigger event that leads to failure, but more often than not, it is a complex entwined set of problems that combine and cumulatively result in failure. Generally these issues fall into two categories. Things the team did do (but did poorly) or things the team failed to do.
+Goal and vision[31]
+    1. Failure to understand the why behind the what results in a project delivering something that fails to meet the real needs of the organization (i.e. failure to ask or answer the question “what are we really trying to achieve?”)
+    2. Failure to document the “why” into a succinct and clear vision that can be used to communicate the project’s goal to the organization and as a focal point for planning
+    3. Project objectives are misaligned with the overall business goals and strategy of the organization as a whole (e.g. Sponsor has their own private agenda that is not aligned with the organization’s stated goals)
+    4. Project defines its vision and goals, but the document is put on a shelf and never used as a guide for subsequent decision making
+    5. Lack of coordination between multiple projects spread throughout the organization results in different projects being misaligned or potentially in conflict with each other.
+
+Leadership and governance[31]
+    1. Failure to establish a governance structure appropriate to the needs of the project 
+    2. Appointing a Sponsor who fails to take ownership of the project seriously or who feels that the Project Manager is the only person responsible for making the project a success
+    3. Appointing a Sponsor who lacks the experience, seniority, time or training to perform the role effectively
+    4. Failure to establish effective leadership in one or more of the three leadership domains i.e. business, technical and organizational
+    5. The Project Manager lacks the interpersonal or organizational skills to bring people together and make things happen
+    6. Failure to find the right level of project oversight (e.g. either the Project Manager micromanages the project causing the team to become de-motivated or they fail to track things sufficiently closely allowing the project to run out of control).
+Stakeholder engagement issues[31]
+    1. Failure to identify or engage the stakeholders 
+    2. Failing to view the project through the eyes of the stakeholders results in a failure to appreciate how the project will impact the stakeholders or how they will react to the project
+    3. Imposing a solution or decision on stakeholders and failing to get their buy-in
+    4. Allowing one stakeholder group to dominate the project while ignoring the needs of other less vocal groups
+    5. Failure to include appropriate “change management” type activities into the scope of the project to ensure stakeholders are able to transition from old ways of working to the new ways introduced by the project
+    6. Failure to establish effective communications between individuals, groups or organizations involved in the project.
+
+
+Team issues[31]
+    1. Lack of clear roles and responsibilities result in confusion, errors and omissions
+    2. There are insufficient team members to complete the work that has been committed to
+    3. Projects are done “off the side of the desk” (i.e. team members are expected to perform full time operational jobs while also meeting project milestones)
+    4. The team lacks the Subject Matter Expertise needed to complete the project successfully
+    5. Selecting the first available person to fill a role rather than waiting for the person who is best qualified
+    6. Failure to provide team with appropriate training in either the technology in use, the processes the team will be using or the business domain in which the system will function
+    7. Lack of feedback processes allows discontent in the team to simmer under the surface
+    8. The Project Manager’s failure to address poor team dynamics or obvious non-performance of an individual team member results in the rest of the team becoming disengaged
+    9. Practices that undermine team motivation
+    10. Pushing a team that is already exhausted into doing even more overtime
+    11. Adding more resources to an already late project causes addition strain on the leadership team resulting in even lower team performance.
+
+Requirements Issues[31]
+    1. Lack of formality in the scope definition process results in vagueness and different people having different understandings of what is in and what is out of scope
+    2. Vague or open ended requirements (such as requirements that end with “etc.”)
+    3. Failure to address excessive scope volatility or uncontrolled scope creep
+    4. Failure to fully understand the operational context in which the product being produced needs to function once the project is over 
+    5. Requirements are defined by an intermediary without directly consulting or involving those who will eventually use the product being produced (see also lack of stakeholder engagement above)
+    6. Individual requirements are never vetted against the project’s overall objectives to ensure each requirement supports the project’s objective and has a reasonable Return on Investment (ROI)
+    7. The project requirements are written based on the assumption that everything will work as planned. Requirements to handle potential problems or more challenging situations that might occur are never considered
+    8. Failure to broker agreement between stakeholders with differing perspectives or requirements.
+Estimation[31]
+    1. Those who will actually perform the work are excluded from the estimating process
+    2. Estimates are arbitrarily cut in order to secure a contract or make a project more attractive
+    3. Allowing a manager, sales agent or customer to bully the team into making unrealistic commitments
+    4. Estimates are provided without a corresponding statement of scope
+    5. Estimation is done based on insufficient information or analysis (rapid off-the-cuff estimates become firm commitments)
+    6. Commitments are made to firm estimates, rather than using a range of values that encapsulate the unknowns in the estimate
+    7. The assumptions used for estimating are never documented, discussed or validated
+    8. Big ticket items are estimated, but because they are less visible, the smaller scale activities (the peanut list) are omitted
+    9. Estimation is done without referring back to a repository of performance data culled from prior projects
+    10. Failure to build in contingency to handle unknowns
+    11. Assuming a new tool, process or system being used by the team will deliver instant productivity improvements.
+
+Planning[31]
+    1. Failure to plan – diving into the performance and execution of work without first slowing down to think
+    2. The underestimation of complexity 
+    3. Working under constant and excessive schedule pressure
+    4. Assuming effort estimates can be directly equated to elapsed task durations without any buffers or room for non-productive time
+    5. Failure to manage management or customer expectations
+    6. Planning is seen as the Project Manager’s responsibility rather than a team activity
+    7. Failure to break a large scale master plan into more manageable pieces that can be delivered incrementally
+    8. Team commitments themselves to a schedule without first getting corresponding commitments from other groups and stakeholders who also have to commit to the schedule (aka schedule suicide)
+    9. Unclear roles and responsibilities led to confusion and gaps
+    10. Some team members are allowed to become overloaded resulting in degraded performance in critical areas of the project while others are underutilized
+    11. Requirements are never prioritized resulting in team focusing energies on lower priority items instead of high priority work
+    12. Failure to include appropriate culture change activities as part of the project plan 
+    13. Failure to provide sufficient user training when deploying the product produced by the project into its operational environment 
+    14. Failure to build training or ramp up time into the plan
+    15. Change requests are handled informally without assessing their implications or agreeing to changes in schedule and budget.
+
+
+
+
+
+
+Risk management[31]
+    1. Failure to think ahead and to foresee and address potential problems 
+    2. Risk management is seen as an independent activity rather than an integral part of the planning process
+    3. Risk, problems and issues become confused as a result team isn’t really doing risk management. 
+Architecture and design[31]
+    1. Allowing a pet idea to become the chosen solution without considering if other solutions might better meet the project’s overall goal
+    2. Teams starts developing individual components without first thinking through an overall architecture or how the different components will be integrated together. That lack of architecture then results in duplication of effort, gaps, unexpected integration costs and other inefficiencies
+    3. Failure to take into account non-functional requirements when designing a product, system or process (especially performance requirements) results in a deliverable that is operationally unusable
+    4. Poor architecture results in a system that is difficult to debug and maintain
+    5. Being seduced into using leading edge technology where it is not needed or inappropriate
+    6. Developer “gold plating” (developers implement the Rolls Royce version of a product when a Chevy was all that was needed)
+    7. Trying to solve all problems with a specific tool simply because it is well understood rather than because it is well suited to the job in hand
+    8. New tools are used by the project team without providing the team with adequate training or arranging for appropriate vendor support. 
+Configuration and information management[31]
+    1. Failure to maintain control over document or component versions results in confusion over which is current, compatibility problems and other issues that disrupt progress
+    2. Failure to put in place appropriate tools for organizing and managing information results in a loss of key information and/or a loss of control.
+
+Quality[31]
+    1. Quality requirements are never discussed, thereby allowing different people to have different expectations of what is being produced and the standards to be achieved
+    2. Failure to plan into the project appropriate reviews, tests or checkpoints at which quality can be verified
+    3. Reviews of documents and design papers focus on spelling and grammar rather than on substantive issues
+    4. Quality is viewed simply in terms of testing rather than a culture of working
+    5. The team developing the project’s deliverables sees quality as the responsibility of the Quality Assurance group rather than a shared responsibility (the so called “throw it over the wall” mentality)
+    6. Testing focuses on the simple test cases while ignore the more complex situations such as error and recovery handling when things go wrong
+    7. Integration and testing of the individual components created in the project is left until all development activities are complete rather than doing ongoing incremental ingratiation and verification to find and fix problems early
+    8. Testing in a test environment that is configured differently from the target production, or operational environment in which the project’s deliverables will be used.
+
+
+Project tracking and management[31]
+    1. Believing that although the team is behind schedule, they will catch up later
+    2. The project plan is published but there is insufficient follow up or tracking to allow issues to be surfaced and addressed early. Those failures result in delays and other knock-on problems
+    3. Bad news is glossed over when presenting to customers, managers and stakeholders 
+    4. Dismissing information that might show that the project is running into difficulties 
+    5. Schedule and budget become the driving force, as a result corners are cut and quality is compromised (pressure to mark a task as complete results in quality problems remaining undetected or being ignored)
+    6. Project is tracked based on large work items rather than smaller increments
+    7. Failure to monitor sub-contractor or vendor performance on a regular basis
+    8. Believing that a task reported by a team member as 90% done really is 90% done (note often that last 10% takes as long in calendar time as the first 90%)
+    9. Believing that because a person was told something once (weeks or months ago), they will remember what they were asked to do and when they were supposed to do it (failure to put in place a system that ensures people are reminded of upcoming activities and commitments).
+Decision making problems[31]
+    1. Key decisions (strategic, structural or architectural type decisions) are made by people who lack the subject matter expertise to be making the decision
+    2. When making critical decisions expert advice is either ignored or simply never solicited
+    3. Lack of “situational awareness” results in ineffective decisions being made
+    4. Failure to bring closure to a critical decision results in wheel-spin and inaction over extended periods of time
+    5. Team avoids the difficult decisions because some stakeholders maybe unhappy with the outcome
+    6. Group decisions are made at the lowest common denominator rather than facilitating group decision making towards the best possible answer
+    7. Key decisions are made without identifying or considering alternatives.
+
+    8. Decision fragments are left unanswered (parts of the who, why, when, where and how components of a decision are made, but others are never finalized) resulting in confusion
+    9. Failure to establish clear ownership of decisions or the process by which key decisions will be made results in indecision and confusion.
+
+        3.6  Data & Information Gathering from the market
+We are carrying out the second step to gather the human problems from the software market; by designing a questionnaire to take in hand most human related problems.
+            3.1.1 Questionnaire Overview
+The objective of the designed questionnaire is to survey on the human problems in software projects. The designed questionnaire built to cover. The questionnaire contains 26 questions to cover most aspects and points in team management. The questionnaire targeted the IS projects area, and HR management:
+
+   Targeted Companies/Organizations
+    • Software Companies in Egypt 
+    • Consultation and Software Services Companies in Egypt 
+    • Any organization, or company which has an IS project.
+
+
+Targeted People:
+    • IS Project Managers/Leaders
+    • IS/IT Department Managers/Directors
+    • Human Resources Directors/Managers/ Heads
+    • Projects Management Experts and Consultants
+
+            3.1.2 Data Collection Method
+The questionnaire was designed according to some factors we need to evaluate and measure the problems coming from the deviation from applying some concepts in team management.
+    • Evaluation Factors:
+        1. Team Involvement
+        2. Team Selection 
+        3. Team Evaluation
+        4. Team Communication
+        5. Meeting Organization
+        6. Team Performance Management
+You can see more details about the questionnaire in the appendix A at the end of this thesis
+            3.1.3 Data Analysis 
+According to the mentioned factors we designed some questions to survey and collect information regarding each factor. The questions structured based on multiple choice questions and there is an open question at the end of the questionnaire; the open questions help to give any other recommendations in team management; cross all phases of software development life cycle. The answers divide into 5 types of answers as the following table show:
+Ans. Type
+Answer Text
+Grade 
+Percentage %
+A
+Strongly Agree
+5
+100%
+B
+Agree
+4
+75%
+C
+Neither Agree, Nor Disagree 
+3
+50%
+D
+Disagree
+2
+25%
+E
+Strongly Disagree
+1
+0%
+Table 3.1 Questionnaire Answer Structure
+
+
+
+
+
+
+
+
+
+
+Evaluation Factors
+
+Means of Question Grades 
+Percentage
+ Team Involvement
+3.5
+0.7
+%70
+Team Selection 
+4.5
+0.9
+%90
+Team Evaluation
+4
+0.8
+%80
+Team Communication
+5
+1
+%100
+Meeting Organization
+4
+0.8
+%80
+Team Performance Management
+
+3.5
+0.7
+%70
+Total Grade 
+24.5
+4.9
+490
+
+24.5/(6*5)= 0.8166
+4.9/6 = 0.8166
+490/ 600 = 0.8166
+Percentage of Problems Relevance 
+81.7%
+According to the experts answers the grades appears like the following:
+    1. Factor 1: Team Involvement; the number of related questions are four questions, the answers of 32 experts distributed like the following table:
+Expert
+Question
+Answer /Grade
+Expert
+Answer
+Grade
+
+
+E1
+Q1
+Q2
+Q3
+Q4
+Total
+A/5
+B/4
+B/4
+A/5
+18/20 = 90%
+E8
+
+
+E2
+Q1
+Q2
+Q3
+Q4
+Total
+B/4
+C/3
+B/4
+A/5
+16/20 = 80%
+E9
+
+
+E3
+
+
+….
+
+
+E7
+
+
+E32
+
+
+Table 3.2 Questionnaire Answers Example
+
+So according to the above example we can see that 4*32=128 Questions and we know the grade from 1 to 5, and then we accumulate the total grade of this factor like:Relevance Percentage = ((sum (grades)) / (128*5)) %.
+The above table below an example explains how the values calculated.
+Table 3.3 Questionnaire results summary
+
+
+
+
+
+
+
+
+
+
+3.7 Questionnaire Result Summary
+The results indicate that the six factors are relevant to the project success with the following grades as shown in the below graph, so we should take in account all aspects included behind these factors and build the framework which should contains recommendations and rules regarding this factors; for example if don’t select a qualified and skilled people to the project team (Team Selection); then the project may be fail, or delayed at least.
+
+
+Figure 3.1: Questionnaire Factors & it effects on the Project
+        3.8  Conclusion
+Through the reading and surveying in Human problems in projects management and according to the questionnaire outcomes we decided to contribute and build the proposed framework to overcome some problems and enhance human management in software projects. The data analysis of outcomes of questionnaires and interview we notice that if we build a guide or framework to overcome these problems and defects; this framework will be helpful and enhance the human management, and lead to project success. The inputs of our proposed framework come through questionnaire, human problems survey. 
+
+
+		Figure 3.2: Input for Framework Building Process 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    4.1 Introduction
+In this chapter we will build the proposed framework as a guide for project managers; to help them to lead the projects and success; this guide will help to enhance the management activities of technical people in software projects, and leads to project success. The management activities of software projects extended along the Life Cycle Model LCM; so we will start from initiation phase to closing phase and we will try to introduce a recommendations and rules to enhance the management of technical people. The framework components, contains a set of components; the framework can be considered as an added value for the human management in general. We will evaluate and test this framework in set of companies in the market. The evaluation processes will be using a questionnaire and survey in human resources and IS market. 
+
+    4.2 Proposed framework Abstract view
+The following graph is an abstract view of proposed framework component which will explain later in this chapter.
+
+
+    4.3 Initiation & Planning:
+
+
+        a) Goals and Objectives Setting
+
+In this step you will go to set project goals and objectives; setting goals and working toward them can help reach to your requirements. Goals are things you set to accomplish either in a long period of time or a short period of time. Project goals can be a short term goals; these are goals that you can accomplish within a short period of time, or long term goals; these are goals that you can accomplish within a long period of time[33].
+
+Steps to Determine Goals and Objectives:
+    1. Become clear on the outcome you want to achieve: The more defined your vision, the easier it will be set goals and objectives. This will also help you stay focused on the things that will help you achieve your goals[29].
+
+    2. Write down your goals: Take time to write out all the goals you have for yourself. If you have personal and business goals, write them out separately. You may wish to work on one area at a time so that you do not become overwhelmed. People are often unable to achieve goals because they become overwhelmed with the tasks and feel they will not be able to accomplish them all. By breaking things into smaller areas, chances of success increase.
+
+    3. Determine the objectives for each goal. Objectives break each goal down into smaller steps. By working on one step at a time, you are able to achieve your goals more easily and there is more clarity about the tasks you are undertaking.
+
+    4. Put your goals and objectives into time frames: Look at your overall list and figure out what goals need to be accomplished first in order for you to achieve larger goals.
+
+
+    5. Review your goals: Read each goal and objective and visualize what it will feel like to achieve it.
+
+    6. Put your list in a place that is easily accessible: You may wish to have a copy on your computer or carry a copy with you in a goals and objectives notebook. This notebook can be a journal you keep as you work to achieve your goals.
+
+    7. Return to your lists after each time frame: Take time to sit and review what goals and objectives you were able to reach and which ones you missed. For those you were not able to accomplish, think of what steps you could take differently and set goals again for that task.
+All goals and objectives must be SMART.
+SMART is an acronym for:
+Specific, Measurable, Achievable or attainable, Realistic or relevant, Timely and traceable[34].
+
+Specific
+Is the objective precise and well defined?
+Is it clear?
+Can everyone understand it?
+
+Measurable
+How will you know when the task has been completed?
+What evidence is needed to confirm the completion?
+Have you stated how you will judge whether it has been completed or not?
+
+Achievable
+Is it within your capabilities to complete?
+Are there sufficient resources available to enable this to happen?
+Have you relied on someone else or some other
+thing to occur before you can complete the objective?
+Can the objective be completed at all?
+
+Realistic
+Is it possible for you to perform the objective?
+How sensible is the objective in the current business context?
+How does it fit into your overall pattern of work?
+
+Timely
+Is there a deadline?
+Is it feasible to meet this deadline?
+Is it appropriate to do this work now?
+Are there review dates?
+
+Table 4.1: SMART Objectives [33]
+
+
+
+
+
+
+
+
+        b) Work Breakdown Structure (WBS) 
+The WBS is a view into the project which shows what work the project encompasses.  It is a tool which helps to easily communicate the work and processes involved to execute the project.  The Project Manager and project team use the WBS to develop the project schedule, resource requirements and costs.  There are many ways you can present the WBS for your project. Regarding to team management the WBS will help to divide the project into manageable tasks which will assigned later to suitable team member[29].
+How to Create a Work Breakdown Structure
+Creating a work breakdown structure (WBS) helps you be both comprehensive and specific when managing a project: Thinking in detail is critical when planning your project, but you also need to consider the big picture. If you fail to identify a major part of your project’s work, you won’t have the chance to detail it. A work breakdown structure is key.
+The diagram here shows that the entire project, represented as a Level 1 component, can be subdivided into Level 2 components, and some or all Level 2 components can be subdivided into Level 3 components.
+You can continue to subdivide all the components in the same manner until you reach a point at which you think the components you defined are sufficiently detailed for planning and management purposes. At this point, you now have Level “n” components, where n is the number of the lowest-level component in a particular WBS branch. Level “n” components are called work packages.
+
+Figure4.2: Work breakdown structure and, the hierarchy of a project [35]
+
+
+
+
+
+
+
+
+
+        c) Job Needs Analysis 
+The managing ofany work needs to determine what work needs to be done. Job analysis is a key part of this need.Job analysis concentrates on what job holders are expected to do. It provides the basis for a job description, which in turn influences decisions taken on recruitment, training, performance appraisal and reward systems[36].
+What is contained in a job analysis?
+A job analysis would typically contain:
+Job purpose
+What is the job meant to do - and how does this related to other parts of the business?
+Job content
+Duties and responsibilities
+Accountabilities
+What results / outputs is the job holder responsible for?
+Performance criteria
+How will the job holder's performance be measured?
+Resource requirements
+E.g. equipment, location
+Table 4.2:  Job Analysis [36]
+How is a job analysis carried out?
+Several techniques should be used to complete an effective job analysis:
+    • Research business documents - e.g. procedures manuals
+    • Ask relevant managers about the requirements and purpose of the job; what are the key activities; what relationships does the job have with other posts. Develop a comprehensive profile through these discussions
+    • Interview the existing job holder (if the job already exists) -e.g. ask store managers in retail stores and build a profile from asking those who actually do the job
+    • Observe the job holders to see what they really do
+The key information that needs to be collected includes:
+    • Job title
+    • Main duties and tasks
+    • Targets and performance standards that the job holder is required to achieve
+    • The amount of supervision that is normally given / freedom of decision-making in the job
+    • Skills and/or qualifications needed for the job (including personal skills)
+
+
+
+
+
+
+
+
+        d) Structure Building 
+The way a project team is structured can play a major role in how it functions. Different styles of team will have different characteristics. For example, do we wish to encourage discussion with the business representatives or to keep them at arm's length so the developers can make good progress? Careful consideration of team composition and reporting relationships can make a big difference to the results.
+The various roles in the team will depend on the nature of the project. As well as the main team roles, consider the other participants and how they fit into the picture. Project roles and resources will have been identified as part of the planning, estimating and resourcing process. Note that the resources and optimum way of working will normally change during the project. Often an initial high-powered team will define the business solution, followed by a much broader team to deliver it, and then a line management and operational team to operate it. The will be a core team who remain fully involved throughout the project, but others will need to be brought in as required.
+Team structure will probably be adjusted at each stage to meet the evolving nature of the project. The right structure for a small, high-powered, business-design team is unlikely to work for a large applications development team[4].
+Styles of team
+There are two main structural dimensions to the project team:
+    • What type of resource?
+    • What are they delivering?
+For example, a website designer might be working with business managers and network specialists to create a storefront whilst another website designer is working with different business managers but maybe the same network specialist on an Intranet application for presenting internal management information on sales - both as part of the same project. 
+
+Figure4.3: Goals and Required Resources
+
+
+Basic rules that may help you decide how to structure the teams:
+    • People working together in a team usually see their teammates as "being on their side". They will normally work together and help each other to achieve their collective goals.
+    • Placing people in the same team generates collaboration, knowledge sharing and skills transfer - for example, between the specialists in a software package and the key future users of that package.
+    • Building a good, effective team is vital - team structure will influence the way the team behaves. Aim to create a collaborative team, where individuals share knowledge, co-operate, support each other and are motivated to achieve the team's goals.
+    • Interaction between team members is the best way to get a balanced view of all perspectives, e.g. business needs, practicality, technical feasibility, efficiency, performance.
+    • The understanding, knowledge, and capabilities of people working in other teams are rarely exploited to the full.
+    • People working in other teams are often viewed as a nuisance - they interfere with our team's progress.
+    • According to the complexity theory, putting a large number of people into a single team creates more interplay than progress.
+
+Building the Team
+There are a myriad of issues to consider in the evaluation and selection of software – and the quality of the decisions made along the way are improved by having multiple people involved. Who should be included on the team? First identify the key users of the system in your organization and the general stakeholders (e.g. chief executives/general managers, board members, and donors). It is important to include a cross-section of your institution as part of the team, representing different users at all levels in the organization that regularly interact with the system, as well as others, internally or externally, who will need reports derived from it. From the very beginning of the process you should include at least one member, either from your staff or an outside person, who is knowledgeable about information technology. Make sure that you also have appropriate management representation so that as costs for the project are developed during the analysis process, you will not find yourself in a situation of delivering "surprising" news to senior management. Chosen technology and budget decisions should be fully supported by all stakeholders. Most organizations use a team approach to manage the software selection process in order to reflect the diversity of needs throughout the institution and give the process the high-level attention required for success. Depending on the pace of the project, a minimum of monthly (preferably weekly) team meetings are strongly recommended. Communication and having a project champion from senior management are critical to success for any initiative of this magnitude. Identify someone who is well-respected to be the project champion, and the voice to the organization about the new system. This person doesn't have to be involved in the day-to-day activities of the project, but must believe in the project and be able to convey that confidence to the rest of the organization. It is important to bring staff along with you through the process to ensure
+
+
+        e) Task Skills Matrix Application
+After we have built team structure and decompose the project goals into some objectives which will also divided into small manageable tasks or deliverables we must ensure and review our team members using a new component we have added it to this framework (Task- skill(s) needed Matrix) we will explain it in the following part the propose of this matrix that will detect a lack of knowledge, and weakness of our team members, and help us to assign the right task to right member:
+
+
+
+
+
+
+
+
+
+        a) Recruitment cycle 
+
+The recruitment cycle started from position vacancy to hiring. Recruiting and selecting the right people is of paramount importance to the project success. the Recruitment and Selection Policy sets out how to ensure, as far as possible, that the best people are recruited.
+The Division of Human Resources will administer the recruitment Program and efforts to ensure that Rensselaer has a ready pool of qualified candidates available for open positions [14].
+Recruitment and selection decisions significantly affect the project’s ability to meet its business planning needs and strategic objectives. A Project’s strength is built on the quality of its team members. As such, HR is playing an increasingly important role in businesses today, our central concern is to recruit the right candidate for the right job. As soon as an employee enters an organization, everything from signing their contract to paying their wages and catering for their training needs is facilitated by the HR functions [37].
+
+
+
+
+Recruitment Process Overview 
+    • Preparing to Recruit 
+    • Assess Strategic Requirements 
+    • Job Analysis - Position Description - Person Specification 
+    • Approval 
+    • Recruitment and Selection 
+    • Advertise/Search Process 
+What goes in an advertisement?
+        ◦ Title and job description
+        ◦ Job status and salary
+        ◦ Required skills and knowledge
+        ◦ Contact details
+        ◦ Application closing dates
+    • Appointment Committee Membership 
+    • Exchange Information 
+    • Reference Checks 
+    • The Interview and Selection Decision 
+  E- Recruitment through Project, or company site to automate recruitment process cycle 	starting from vacancy to hiring will include the following activities:
+    • Cv’s Screening, ranking, Selection, evaluation, profile matchup.
+    • Suggest the suitable applicants
+    • Send invitation to attend interview
+
+Figure 10  Recruitment Cycle[38]
+
+
+
+
+
+
+        b) Skills Criteria Matrix Application
+Skills and Competencies Determination
+How we can determine and recognize tam member’s skills? The answer of this question is very important because we can’t assign and allocate the tasks to right persons if we not sure this person has the required skills to complete, and finish  this task; so we need to follow a guide to help us to determine the team member’s skills based on some Evaluation criteria’s.
+In our proposed framework we develop a (Skill-Criteria’ Matrix) this matrix listed a two dimension the first one set of skills, recognized by asset of criteria’s e.g. a person has a skill “fix bugs which appears in integration test stage” this member skill detected or evaluated by some criteria’s like years of Experience in this role” Integration test”, standard certifications in Software testing, number of projects he/she has done, etc. So the skills- criteria matrix evaluation will be very helpful to ensure the task assignment will be well done and the right task assigned to right person, that is will explained as the following table show: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        c) Profile Matrix Application
+This matrix will help the project manager to recognize, and measure the competencies and skills available in his/her team, so the project manager can compares the skills needed in skills catalogue with the available skills in team profile for everyone. This matrix will help in the profile much up process which used in team selection.
+
+
+
+
+
+
+Table 4.5: Team Profile Matrix
+    4.4 Project Execution:
+
+
+    a) Team members Profile Matchup 
+In this step we should compare the profile of each candidate with the required skills of candidate job. We will use the output of Profile-Matrix, job-tasks Matrix, and task-skills matrix, this the output of the comparison will conclude that’ this person has the following skills {s1, s2, s3,.sn.}; and this job need the following skills {s1, s2, s3,.sn.}. so the matching will conclude that this person completely suitable for this job or still need some training.
+
+
+
+
+
+
+Figure 4.5:  Profile matchup[38]
+
+
+
+    b) Training Needs Analysis (TNA)
+TNA is referring to the training needs of individuals to enable them to reach the required standard of performance in their current or future jobs. It may also an examination of an organization’s present and expected operations and the workforce necessary to carry them out, in order to identify the numbers and categories of employee needing to be trained or re trained.
+The training needs analysis processes explained in the following flowchart the input of the process is project team (profile matrices), Tasks Catalog of the project, and skills, and competencies required (Task-Skills Matrix). When we matching the skills required with available skills the output will be a training proposal for unavailable skills in our team.
+
+
+
+
+
+Figure 12: Training Need Analysis
+    c) Training Proposal
+Training proposal contains suggested courses, sessions; workshops in different topics according to the nature of the project, the training proposal should include a list of required topics with a schedule and time plan. According to the nature of the project and the knowledge availabilities the training will be an internal, and external training; the internal training like a knowledge share between team members. Almost the training programs task a time in booking, rebooking, change, and cancelation. The project manager should follow the training programs and ensure that the evaluation done correctly before and after the training done.
+Training proposal will be as showed in the following:
+Training Topic
+Trainee
+Duration
+
+Soft Skills Course
+
+Trainee1
+
+3 weeks
+
+Trainee2
+
+
+Graphics Course
+
+Trainee3
+
+4 weeks
+
+Trainee4
+
+Table 4.6:  Training Proposal example
+
+
+
+
+
+
+
+    a) Booking Training Programs  
+The input of this step is the training proposal; the project manager should use training proposal to arrange and start the training programs according to the training schedule and plan. Trips and Travel arrangements required if there are external training courses.
+
+
+
+
+
+
+Figure 4.7:  Booking Training Programs
+    b) Training Monitoring and Follow up 
+During the training courses the project manager should monitoring the progress and receive a feedback frequently, about what is going good and what is going bad; the feedback will help to tune and change training programs to right tack; for example if the training course not cover the expected knowledge, or the instructor not good;  this is will affect the in the output of the training, so the project manager should take care and monitor the training progress to take a right decision and save time.  
+    c) Post-Training Evaluation
+After the training programs finished we should evaluate all trainees to ensure the expected knowledge acquired. The post-training evaluation will do through different ways: Trainees Test, Standard Certification exam of the training topic if available, and demo or pilot project.
+The training provider must proof us that our trainees passed the training test which guarantee the trainees acquired the expected knowledge. If there is some trainees still weak and not ready to assigned to the project team we must take into account to assign them in a suitable tasks, or retrain them if they are urgently and mandatory to perform the planned tasks. 
+
+
+
+
+
+
+
+    a) Tasks Catalog 
+After the project structure built, and the project decompose to number of manageable tasks these tasks will construct the project task catalog as the example follow:
+Goal
+Objective
+Activity
+Task
+Required Skills
+Automate the organization management of the company
+    • Build an organization structure.
+
+
+
+    • A1
+
+
+    • T1
+
+
+    • S1
+
+    • 
+
+
+    • S2
+
+    • 
+
+
+    • S3
+
+    • 
+
+
+    • S4
+
+    • 
+
+    • T2
+………
+
+    • 
+
+    • T3
+
+
+    • 
+
+    • T4
+
+
+    • 
+    • A2
+………
+
+
+    • 
+    • A3
+
+
+
+    • All Organization objects stored and processed computer base system
+
+
+
+
+
+
+    • 
+
+
+
+
+    • 
+
+
+
+
+    • 
+
+
+
+
+    • 
+
+
+
+
+    • 
+
+
+
+……….
+……..
+…….
+………
+………..
+Table 4.7: Tasks Catalog
+The task catalog will be a stack for the required skills column after duplicate skills removed, the skills catalog will help in tasks allocation by marching the profile matrix with task catalog.
+
+Figure 4.8: Goal Decomposition
+
+
+
+    b) Profile Matrix Application
+
+In this step we will apply the profile matrix after the team was built and the training done for all team members, then the profile result will used in tasks allocation and distribution.
+
+
+
+
+
+
+
+
+Table 4.8: Person - Skills Matrix
+
+    a) Person-Role Assignment 
+Job  assignment based on the skills and desired criteria is the best way to ensure the project success and all tasks performed perfectly  as the following table show the profile matrix used to construct team profile that will used in tasks allocation and distribution.
+
+
+
+
+
+
+
+
+Table 4.9: Team-role Matrix
+
+
+
+
+
+
+
+    b) Individuals Action Plan
+
+To finished projects, tasks, or any activity we should develop an action plan contains a time lines and resources needed. The action plan of the project used to follow up the progress and the status of the project. 
+
+The component of Action Plan:
+    • Activity column 
+    • Tasks column
+    • Start Date
+    • Finish Date
+    • Human Resources (Participants)
+    • Notes , or reminders for each task
+Action Plan Example:
+Activity
+Task
+Start Date
+Finished Date
+Participants
+Notes
+
+
+A1
+
+
+T1
+dd.mm.yyyy
+dd.mm.yyyy
+Person1, 2,..n
+xxxxx
+
+T2
+dd.mm.yyyy
+dd.mm.yyyy
+Person3, 4,..m
+xxxxx
+
+…..
+……
+……
+……
+…….
+
+
+
+
+
+
+
+
+
+
+
+
+…..
+
+
+
+
+
+Table 4.10: Action Plan Example
+The action plan will help to monitor and follow up the progress, which leads to deliver the project in the planned deadline. Also periodically all team members must write a status report, the status report will help to determine where are we? Where are from the target? , what are the problems and challenges? Determine if we need to reset the goals and objectives? 
+
+
+
+
+
+
+
+
+
+
+
+    a) Progress Follow up  
+
+The concepts of monitoring, progress flow up, and evaluation are usually approached together, as a function of project management, which provides a real perspective upon the stage of the financed project, in order to make all the adjustments necessary in the project implementation process. Monitoring and evaluation are regarded as core tools for enhancing the quality of project management, taking into account that in short and medium run managing complex projects will involve corresponding strategies from the financial point of view, which are supposed to respect the criteria of effectiveness, sustainability and durability[39] . Monitoring activity supports both project managers and staff in the process of understanding whether the projects are progressing on schedule or meet their objectives, inputs, activities and deadlines [40]
+
+
+
+
+    Yes
+
+
+                                                        No
+
+	      Resetting  		
+Figure 4.9: Progress follow up process
+
+
+
+
+
+
+
+
+    b) Status Evaluation
+
+In this step the project managers should evaluate the status, and monitor the progress of the project. We will use a Result based Management in this step to evaluate the status; Results-based management (RBM) is an approach that has been adopted by many international organizations.RBM supports better performance and greater accountability by applying a clear, logical framework to plan, manage and measure an intervention with a focus on the results you want to achieve. By identifying in advance the intended results of a project and how we can measure their progress, we can better manage a project and determine whether a difference has genuinely been made for the people concerned. Monitoring and evaluation (M&E) is a critical part of RBM. It forms the basis for clear and accurate reporting on the results achieved by an intervention (project or program). In this way, information reporting is no longer a headache, but becomes an opportunity for critical analysis and organizational learning, informing decision-making and impact assessment. Monitoring is the routine collection and analysis of information to track the project progress. It helps to identify the trends and patterns, adapt strategies and inform decisions for project management [41].
+
+
+Figure 4.10:  Monitoring questions [41]
+
+
+
+
+
+
+    c) Retention Activities 
+
+Retaining your best staff is essential to your project’s performance [42]. Team retention refer to policies and practices that an organization uses to satisfy the diverse needs of employees and create an environment that encourages them to stay with the organization
+Seven main reasons for staff turnover [43]
+    1. Employees feel the job or workplace is not what they expected, 
+    2. There is a mismatch between the job and person, 
+    3. There is too little coaching and feedback, 
+    4. There are too few growth and advancement opportunities, 
+    5. Employees feel devalued and unrecognized, 
+    6. Employees feel stress from overwork and have a work/life Imbalance.
+    7. There is a loss of trust and confidence in senior leaders.
+
+Examples for retention activities:
+    • Monitor job satisfaction 
+    1. Meet the needs and expectations of employees. 
+    2. Do employees enjoy their work? What keeps longer-tenured employees? 
+    3. Ask questions like: Why did you come to work here? Why have you stayed? What would make you leave? What are your non-negotiable issues? What about your managers? What would you change or improve? 
+    4. Use the information, it is very important. 
+    5. Use exit interviews on resigning employees. 
+    6. Modify office policies and procedures. 
+
+    • Offer training to upgrade skills in the work
+    • Meet expectations in terms of salary and conditions
+    • Health problems, family related issues, children education and social status.
+    • Provide a conducive work environment 
+    • Embrace and respect cultural differences: 
+    • Strong relationships with employees build trust. 
+    • Control of work motivates. 
+    • Clear delegation of work empowers. 
+    • Enable employees to handle tasks and deliver as per expectations
+    • Company Events, and employee’s gifts and rewards also retain them.
+
+
+
+
+
+
+    d) Meeting Organization
+
+During the project management activities there is a different communication methods; one of these methods the meetings that held during the project started from a kick off meeting to closing meeting.
+
+    • Kick off Meeting: this is the first meeting held in project initiation phase; in the kick off meeting the project teams discuss the project scope, requirements, equipments needed, benefits, and all project basic aspects. 
+
+    • Monthly / weekly meeting.
+
+    • Closing Meeting.
+
+    • Deliverable Meeting.
+
+    • Go live Meeting.
+
+    • Ad hoc / Urgent Meeting.
+
+Some rules followed in Meeting organization:
+    • Meeting appointment/Time should be agreed by all members; this agreement and confirmation help to reduce the number of absents people.
+    • All meeting Agendas must be send to all participants 
+    • Meetings should handle by events management process in the organization; this action will guarantee the places available.
+
+    e) Project Documentations, and Data Management 
+
+Build a repository of documentations is very important activity in the project. For each phase of the project and for each deliverable there are number of documents delivered. It’s helpful in some projects to use a data management system, or data management tools to manage all data and information repositories in the project. 
+
+
+
+
+
+
+    a) KPI’s Metric Application 
+
+Performance management is one of the core ideas and methods of human resources management. It is so effective that not only can help the enterprise realize its strategic objectives, but also improve management capacity and operational efficiency[44]. 
+A performance indicator or key performance indicator (KPI) is a type of performance measurement[45]. An organization may use KPIs to evaluate its success, or to evaluate the success of a particular activity in which it is engaged. Sometimes success is defined in terms of making progress toward strategic goals, but often success is simply the repeated, periodic achievement of some level of operational goal (e.g. zero defects, 10/10 customer satisfaction, etc.). Accordingly, choosing the right KPIs relies upon a good understanding of what is important to the organization. 'What is important' often depends on the department measuring the performance - e.g. the KPIs useful to finance will be quite different than the KPIs assigned to sales. Since there is a need to well understand what is important (to an organization), various techniques to assess the present state of the business, and its key activities, are associated with the selection of performance indicators. These assessments often lead to the identification of potential improvements, so performance indicators are routinely associated with 'performance improvement' initiatives. A very common way to choose KPIs is to apply a management framework such as the balanced scorecard.
+The Human Resource Key Performance Indicators (KPI’s) have been designed to provide information and analysis on key staffing-related themes for the Trust[46]. The purpose of introducing Human Resource KPI’s: 
+            ▪ To provide a framework for monitoring and analyzing standard staff-related data within the Trust. 
+            ▪ To set benchmarks and measure performance against these, at both a local and Trust-wide level. 
+            ▪ To identify and analyze trends which will help us to plan targeted action.
+In this step we should use a KPI’s Matrix to assign goals and objectives for each team member and follow, and monitor the performance.  
+    b) Objectives Re-Setting, and Tasks Re-Allocation
+In this step we will reset some objectives and do a necessary changes in tasks distribution and resources allocation, this step will done only if any deviation or changes needed.
+Objectives are those specific steps that enable you to accomplish a goal. Setting objectives involves a continuous process of research, decision making, evaluation, measurement, and realignment. Knowledge of yourself and your team is a vital starting point in setting objectives. Managers are required to get specific tasks done by their team. To do this effectively, the team members must understand their individual contributions to the activity. This means that each individual has to have his or her own specific objectives and how these objectives assist in supporting the team to meet its objectives [34]. 
+
+As a manager and as an employee, it is important to set SMART objectives. Each objective must be easily understood by all so that there can be no ambiguity when discussing performance. The key question to ask anyone at goal setting time is: “How will we know that you have been successful? What will we see, hear, touch, find, use that assures us that you have achieved this objective?" The duties and tasks outlined in the job description and the team objectives set by upper management should form the basis for your objectives. You will probably need to consolidate some of these into larger categories, and add measurement criteria to define your expectations. 
+
+Management starts the process by setting organizational objectives that are then used to develop team objectives. The team objectives are then used by individuals to develop their individual objectives. The project manager should ask each team member to make a first start with setting his/her objectives, meeting with project manager to determine the alignment and accuracy of these objectives, making any changes as a collaborative effort [34].
+
+
+
+                                                                                       Yes                                                                                                
+
+
+  Resetting  		  No
+
+Figure 4.11:  Objectives re-setting
+
+
+    c) Team Rewards and Compensate 
+
+We should pay and compensate our team members for their performance and achievements. There are different types of compensations and payments methods explained in the following[10]: 
+Compensation: encompasses all forms of financial returns and tangible services and benefits received by employees as part of their employment.
+Base Pay is compensation based on time worked, such as an annual salary or an hourly wage and it does not include pay benefits, overtime or incentive pay Performance Pay is a monetary onetime payment made to an employee, team or the whole organization for achieving results established at the beginning of a performance cycle
+Merit Pay is a monetary reward given in recognition of outstanding performance which increases base pay. It may be paid in a lump-sum or added incrementally to base pay.
+Indirect Pay is part of an employee’s total compensation package, non-cash items or services provided to employees in return for their contribution to the organization (i.e., health benefits, paid time off). Sometimes the costs for the items are shared by the employees.
+Compensation Mix may include a part of base pay and/or performance pay and/or indirect pay or a relative proportion of each.
+Salary is direct compensation/pay calculated at an annual or monthly rate rather than by hour. 
+Wages are direct compensation/pay calculated by the hour
+TOTAL Compensation Practices: 
+One CEO said, "If we don't pay for performance to grow our business, what do you suggest we pay for?" 
+Nineteen of the 20 surveyed companies reported they pay for performance or results one described it as paying for creativity and innovation that generate business results. Three reported paying strongly for performance/results, with three encouraging poor performers to leave. Figure 5 summarizes the surveyed companies' compensation and benefits practices. Survey participants typically said they have an integrated view of their pay and rewards programs. The majority described their most successful program as an integrated program either total compensation or total cash compensation. One-fourth of the companies said none of their pay and rewards programs did not work, likely because these companies view individual compensation programs as contributing to an integrated rewards and retention program[47]. 
+Pay Competitiveness 
+Competitive base pay is seen as a core element but not the whole picture. It is important, along with career opportunities, to recruit key talent. Adjectives surveyed companies added in front of competitive base pay include "reasonable," "fair," "fully" and "remaining." Fourteen of the 20 companies pay above market for their key talent.
+Variable Pay 
+All but one of the surveyed companies has some form of short-term and/or long-term variable pay (excluding recognition programs). Eighteen of the 20 companies have variable pay of some form for the professional workforce. Depending on the company, incentive opportunity may have significant upside to reward the high-performing key talent.
+
+
+
+
+
+
+
+    4.5 Project Closure:
+
+
+    a) Project Outcomes & Deliverables 
+In each step or stage in the project we expect to deliver something ; so in the project closing the project outcomes will be a set of components and deliverables integrated in on unit which represent the whole project. 
+IS Project Deliverables:
+    • Project Documentation 
+        ◦ Business blueprint or business processes Documentation
+        ◦ Technical Documentation
+        ◦ User Manual, or Material Guides 
+    • Hardware & infrastructure building 
+    • Prototypes or pilot test version from the expected outcomes
+    • System units which represent some related functional requirements
+    • Whole Project after the final test and integration 
+According to the mentioned project deliverables we should take into account the expected outcomes and deliverable in tasks allocation and distribution in order to deliver the project as planned as possible.
+    b) Supporting Roles 
+After the project submitted we need to be ready with a supporting plan internally in our team in the project; some of the project team members will assigned to supporting roles and jobs.
+The success of the project not only when passed the final test but also  the real live work in the company after delivered and GOLIVE; so we need to be on-time in any support request from our customer.
+    c) Close Meetings
+The purpose of the closing phase in the project management lifecycle is to confirm completion of project deliverables to the satisfaction of the project sponsor, and to communicate final project disposition and status to all participants and stakeholders.
+At the end of the project we should arrange closing meetings as following:
+    • Closing meeting with presentation for project customer (project owner and his/her staff).
+    • Closing meeting and presentation for project team members:
+This meeting should discuss:
+    • Challenges 
+    • Opportunities
+    • Learned lessons 
+    • Future Recommendations and suggestion
+    • Mistakes and failures  points and causes 
+    • Needed skills and resources shortage
+
+    • Also in project closing phase we recommend to consider the following activities:
+    • Determine the communicate way with our customer in the future 
+    • Identify remaining work
+    • Deliver released software 
+    • Make sure to get customer approvals 
+    • Publish released documentation
+    • Perform personnel evaluations 
+    • Perform Post-Performance Analysis 
+    • Hold closure event
+    • Close outstanding work orders
+    • Review final configuration management
+    • Return or release vendor or customer materials 
+    • Return consultant security access cards 
+    • Return all borrowed equipment’s
+    • Publish final report 
+    • Publish collected metrics
+    • Archive collected metrics 
+
+    d) Team Rewards, and Compensation
+At the end of the project we should reward our team and give them amount of money for their special efforts.
+Although the idea of rewarding workers beyond their pay and benefits package seems obvious, some leaders avoid the practice, perhaps because they feel that showing appreciation undermines their authority, perhaps because they want to avoid stirring up jealousy in other members of the team, perhaps because they feel they don't have the time to do it, or perhaps because they feel embarrassed praising people openly.
+Appropriately rewarding team members for something they've done takes some effort on your part. If you don't put much thought into what you're doing, then you may just upset the people you're trying to thank. This is why you should sit down with your team and find out how they'd really like to be rewarded[48].
+For example, if your team is about to start a major project, find out:
+    • Which team achievements would people like to be rewarded for?
+    • What kind of reward would they like, as individuals and as a team?
+    • Would they rather celebrate with several milestones along the way, or have one big celebration when they hit the goal?
+Learning how your team would like to be recognized, and how you can show your appreciation, is a vital step toward making sure that your efforts will be appropriate.
+Leader need to say "thank you" regularly. Your team members will likely work much harder if they feel that what they're doing really makes a difference, and that their efforts are noticed by those with "power." 
+Thank-you gifts don't have to be extravagant or costly. Small gestures are often remembered longer than financial bonuses. These small, entertaining rewards can also help promote a sense of fun in the workplace, which may go a long way toward helping you retain key talent [48].
+    e) Work shop for Challenges, Learned Lessons 
+
+At the end of the project we should invite all team members to prepare to attend a workshop to discuss the learned lessons ,opportunities, challenges, problems, and discuss deeply and document suggested and recommended solutions for the next projects and future 
+
+Purpose: To identify the some things that most contributed to the success to the project and the some things that could have gone better.  And also to identify some things that contribute to the failure of the project.
+Participants:
+ For a small project, all stakeholders involved in the project can attend including project sponsor, project leaders, and individual contributors to the project, etc.  
+For a larger project, a subset of the project can be selected, perhaps those members who routinely participated in the project tracking meetings.  It is up to the project leaders and sponsor's discretion about whether to include customers, functional partners, and consultants.  Considerations to think about are the types of problems that arose during the project and whether divisional learning will be hindered or helped by the participation of those outside of the division.
+
+    f) Ongoing Support activates 
+The support team is a critical part of our future success, and we are looking for absolutely and only the best people out there. We take the success of our customers incredibly seriously. We feel their joy. We feel their pain. Are you up for the challenge?
+Support team should deliver effective technical customer support to our customer, delivering solutions to both technical and non-technical end users while also supporting a wide range of technologies. Support team may be required to be on-call on a rotating basis throughout the year. The support team should take the ownership of technical issues, working with our development group to resolve more advanced issues when necessary, documenting troubleshooting and problem resolution steps, and participation in providing training to customers as required 
+
+
+Figure 4.12: Ongoing Support Team
+
+
+
+
+CHAPTER 5
+Framework Evaluation
+
+Outline
+
+
+        5.1 Introduction
+        5.2 Framework Evaluation by Case Studies 
+            5.2.1 Case Studies Overview
+            5.2.2 Impact Factors
+            5.2.3 Data & Information Collection Method
+            5.2.4 Case Study Result
+            5.2.5 Results Discussion
+        5.3 Conclusion 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter 5Framework Evaluation
+
+ Introduction
+Through this research we have developed two evaluation and assessment methods the first one is a questionnaire to collect a data and information from the IS , and HR experts in the market; to evaluate the proposed framework and realize some recommendations and proposed points and apply it in a real projects by asking an experts in the market. We make this study as an iterative questionnaire to enhance more and more the proposed frame work; and take all recommendation and suggestions in account.
+The study outcomes shown that the experts and targeted people in the study totally agreed our proposed framework and said it will be helpful and good guidance in team management in IS projects. During our research according to an interviews, and questionnaires done to evaluation the proposed framework the percentage of acceptability and applicability of the new added rules and components of our proposed framework is 81%. 
+
+The second evaluation method is an application study on four live projects in the market. The case study divided the framework into a lot of concepts behind all activities and rules in the framework; then we have studied whether these concepts applied or not, and what is the percentage of applying or not applying of this frameworks part? Also studied what are the effects of deviation from framework application on some selected impact factors.
+The case study was concluding the percentage of framework concepts application and the impacts on the project, the results of the case study conclude that the more applying of the proposed framework, the more leading to project success.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        5.1 Framework Case Studies
+
+            5.2.1 Case Study Overview
+
+This study is the second step of framework evaluation where we have applied this framework on four live projects in the market, and measured the added values in this proposal, and its impact on the project as a whole. The measurement would be based on different factors that are more significant in all framework components. 
+The project management activities are divided into three phases (Project Initiation and planning, Project Execution, and Project Closure); in the framework there are a set of components which contain a number of activities, recommendations, and procedures for team management in the project.                            
+During this case study we will evaluate and measure the impact size of the application of our proposed framework. Each component in the framework measured by a number of related measurements (Factors); these factors will be affected by following or not following our proposed framework.
+Project 1 (Elsaeed  Talent Management IS Project )
+Elsaeed For Inv. Co. (different fields of investments)
+Elsaeed is one of the leading companies in Egypt in different fields of investment, like trading, distribution, and real estate, Elaseed Company currently in the implementation of a Talent Management Software to manage the employee and automate all HR business processes.
+Project 2 (Hi Pack Group Witron System Implementation)
+Hi Pack Group (industrial groups in Egypt in field of packing materials)
+Hi Pack Group is one of the leading industrial groups in Egypt in field of Packing materials, Hi Pack Group consists of Hi-Pack, Ce-Pack , and El Almen Companies, the Witron Project is  an IS project; implemented to automate the business processes in the group.
+Project 3 (Arma SAP ERP Implementation)
+Arma Group of Companies (Oil, Food, Soap Industrial) 
+Arma was established as a result of HSA Group vast experience for more than 25 years in the manufacturing of vegetable ghee, edible oils, soap and detergents.Arma is one of the leading industrial groups in Egypt, which offers reputable high quality products in the Middle East, Africa and several other regions. Arma initial business was focused on producing vegetable ghee, edible oils, soap and detergent, soap noodles and sulphonic acid products for the world market. Arma Group consists of Arma Food Industries (AFI), Arma Oil Industries (AOI), and Arma Soap and Detergents (ASD). The SAP ERP Information System was implemented in our companies to enhance our business processes, there were few factors to ensure the success of this investment in the most important business project the group ever considered.
+
+Project 4 (Human Resources IS Project)
+Global Inter-Trade Company (Trading: Import, Export Goods)
+Global Inter-Trade Co. is a member and sole global business arm of HayelSaeedAnam (H.S.A) Group of manufacturing companies. Global Inter-trade’s inception in 1999 was a result of the Groups’ intent to consolidate all the export business of its various members under one roof, in order to expand our markets and more effectively serve our customers, in addition to trading in commodities.
+            5.2.2 Impact Factors
+Impact Factors on the project 
+Impact %
+i1:Project Cost
+
+i2:   Project Duration
+
+i3:   Manpower size
+
+i4:   Team Turnover 
+
+i5:   Quality of Deliverables 
+
+i6:   Managerial Issues 
+
+i7:   Technical Issues 
+
+i8:   Business Issues 
+
+i9:   Resources Utilization 
+
+i10: Responsibilities Interference 
+
+i11: Team moral, personal Satisfaction
+
+i12: Lack of Skills 
+
+Table 5.1: Measurements and Impact factors
+
+            5.2.3 Data & Information Collection Method
+We have drilled down in the details all components, activities, and tasks; in the proposed framework as the following sample of data collection:
+Project Initiation& Planning(Component1: Team Structuring)
+
+In this component we will study each activity and the application percentage of the framework component, and its impact on the project outcomes and result, whether positively or negatively, through the mentioned impact factors in (table 13). The experts and project managers have been questioned in each part of all the following factors: whether they applied or not, and how theireffect in the project regarding the impact factors in (table 13):
+
+
+
+
+Activity
+Factors
+Applied %
+Impact on Project (-0+) %
+Goals, Objectives Setting
+
+
+Are your objectives precise and well defined?
+
+i1
+i2
+i3
+i4
+i5
+i6
+i7
+i8
+i9
+i10
+i11
+i12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Have you determined all project outcomes you want to achieve?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    • Project objectives, and outcomes clearness
+
+Have you determined time schedules for each objective?
+Is there a deadline for each objective?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    • Project objectives time scheduling measurement 
+
+Is it feasible to meet all objective deadlines?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    • Project objectives time feasibility measurement 
+
+Have you determined the starting time of theproject as a whole?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    • Time management perspective measurement
+
+Are there review dates for achievement of each objective?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    • Objectives follow up perspective measurement
+Table 5.2: Case study impact factors samples
+
+
+
+
+
+
+
+
+Component              %
+Activity%
+Factor%
+Impact %
+
+
+
+i1
+i2
+i3
+i4
+i5
+i6
+i7
+i8
+i9
+i10
+i11
+i12
+
+
+
+
+
+
+
+
+          C1
+
+
+
+
+
+
+
+
+
+A1
+
+
+
+
+91%
+F1
+92%
+1
+1
+1
+1
+0
+0
+0
+1
+0
+0
+0
+1
+
+
+
+F2
+95%
+1
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+
+
+
+F3
+80%
+1
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+
+
+F4
+95%
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+1
+
+
+
+F5
+90%
+0
+1
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+
+
+
+F6
+90%
+1
+1
+1
+1
+1
+0
+1
+0
+0
+1
+0
+1
+
+
+
+F7
+95%
+0
+1
+0
+0
+0
+1
+1
+0
+0
+0
+0
+0
+
+
+
+91.1 %
+71.4%
+71.4%
+28.6%
+28.6%
+28.6%
+42.8%
+28.6%
+14.2%
+0%
+14.2
+0
+42.8
+
+
+A2
+
+90%
+F8
+90%
+0
+0
+1
+0
+1
+0
+1
+0
+0
+1
+0
+0
+
+
+
+F9
+85%
+0
+0
+0
+0
+1
+1
+1
+0
+1
+1
+0
+1
+
+
+
+90 %
+0%
+0%
+50%
+0%
+100%
+50%
+100%
+0%
+50
+100
+0
+50
+
+
+
+A3
+
+
+
+95%
+F10
+95%
+0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+
+1
+
+
+
+F11
+95%
+0
+0
+1
+1
+0
+1
+1
+0
+1
+1
+1
+1
+
+
+
+F12
+95%
+1
+0
+0
+0
+1
+1
+1
+0
+0
+0
+1
+0
+
+
+
+F13
+95%
+0
+0
+1
+1
+0
+1
+0
+0
+1
+1
+0
+1
+
+
+
+95%
+25%
+0%
+50%
+50%
+25%
+75%
+50%
+0%
+.75
+.75
+.50
+75%
+
+
+A4
+
+96.6%
+F14
+95%
+0
+0
+1
+1
+1
+0
+0
+0
+1
+0
+0
+1
+
+
+
+F15
+100%
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+
+
+F16
+95%
+0
+0
+0
+0
+0
+1
+0
+0
+0
+1
+0
+0
+
+
+
+96.67%
+0%
+0%
+33.3%
+33.3%
+33.3%
+33.3%
+0%
+0%
+.333
+.333
+0%
+.333
+
+
+A5
+
+
+
+83.3%
+F17
+90%
+0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+1
+0
+
+
+
+F18
+80%
+0
+0
+1
+1
+0
+0
+1
+0
+1
+0
+0
+1
+
+
+
+F19
+80%
+0
+0
+1
+1
+0
+0
+1
+0
+1
+0
+0
+1
+
+
+
+83.3%
+0%
+0%
+66.7%
+66.7%
+0%
+0%
+66.7
+0%
+100
+33.3
+33.3
+66.7
+          91.81%
+
+21.05%
+31.58%
+42.11%
+36.84%
+31.58%
+42.11%
+42.11%
+5.26%
+42.11%
+42.11%
+15.79%
+52.63%
+
+
+
+          C2
+
+
+A1
+
+65%
+F20
+70%
+1
+1
+0
+0
+0
+1
+1
+0
+0
+1
+0
+1
+
+
+
+F21
+60%
+1
+1
+1
+1
+0
+1
+1
+0
+1
+0
+0
+1
+
+
+
+65%
+100%
+100%
+50%
+50%
+0%
+100%
+100%
+0%
+50%
+.50
+0%
+.100
+
+
+A2
+
+85%
+F22
+80%
+0
+0
+0
+0
+0
+1
+1
+1
+0
+0
+0
+1
+
+
+
+F23
+90%
+0
+0
+0
+1
+0
+0
+1
+0
+0
+1
+0
+1
+
+
+
+85%
+0%
+0%
+0%
+50%
+0%
+50%
+100%
+50%
+0%
+.50
+0%
+.100
+
+
+A3
+
+87.5%
+F24
+90%
+0
+0
+0
+0
+0
+1
+1
+1
+0
+1
+0
+0
+
+
+
+F25
+85%
+1
+0
+1
+0
+0
+0
+0
+0
+1
+1
+0
+1
+
+
+
+87.5%
+50%
+0%
+50%
+0%
+0%
+50%
+50%
+50%
+50%
+.100
+0%
+.50
+        79.16 %
+
+50%
+33%
+33%
+33%
+0%
+66.7%
+66.7%
+33%
+33%
+66.7%
+0%
+83.3%
+
+
+
+           C3
+
+
+
+A1
+
+85%
+F26
+90%
+1
+1
+0
+0
+1
+0
+1
+0
+1
+1
+0
+1
+
+
+
+F27
+80%
+1
+1
+0
+0
+1
+1
+1
+0
+1
+0
+1
+1
+
+
+
+85%
+100%
+100%
+0%
+0%
+100%
+50%
+100%
+0%
+.100
+.50
+.50
+.100
+
+A2
+
+90%
+F28
+90%
+1
+1
+1
+1
+0
+0
+0
+0
+1
+0
+1
+1
+
+
+
+90%
+100%
+100%
+100%
+100%
+0%
+0%
+0%
+0%
+.100
+.0
+.100
+.100
+
+
+A3
+
+82.5%
+F29
+80%
+1
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+1
+
+
+
+F30
+85%
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+0
+1
+
+
+
+82.5%
+50%
+100%
+0%
+0%
+0%
+0%
+0%
+0%
+.100
+0%
+.50
+.100
+          85.83 %
+
+80%
+
+100%
+
+20%
+
+20%
+
+40%
+
+20%
+
+40%
+
+0%
+
+100%
+20%
+60%
+100%
+
+         
+          C4
+
+
+A1
+
+85%
+F31
+90%
+1
+1
+0
+0
+1
+1
+1
+0
+0
+0
+1
+1
+
+
+
+F32
+80%
+1
+1
+0
+0
+1
+1
+0
+0
+0
+0
+1
+1
+
+
+
+85%
+100%
+100%
+0%
+0%
+100%
+100%
+50%
+0%
+0%
+0%
+.100
+.100
+
+A2
+50%
+F33
+50%
+1
+1
+0
+0
+1
+1
+0
+0
+0
+0
+1
+1
+
+
+
+50%
+100%
+100%
+0%
+0%
+100%
+100%
+0%
+0%
+0%
+0%
+.100
+.100
+
+A3
+
+0%
+F34
+0%
+1
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+1
+
+
+
+F35
+0
+1
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+1
+
+
+
+0%
+100%
+100%
+0%
+0%
+0%
+0%
+100%
+0%
+0%
+0%
+0%
+.100
+           45%
+
+100%
+100%
+0%
+0%
+60%
+60%
+60%
+0%
+0%
+0%
+0.60
+0.100
+Sample from Framework Elements Application and its Impact on the project
+Component %
+Activity%
+Factor%
+Impact %
+
+
+
+i1
+i2
+i3
+i4
+i5
+i6
+i7
+i8
+i9
+i10
+i11
+i12
+
+
+
+          C5
+A1
+80%
+F36
+80%
+1
+1
+1
+0
+0
+0
+0
+0
+0
+0
+0
+1
+
+
+
+80%
+100%
+100%
+100%
+0%
+0%
+0%
+0%
+0%
+0%
+0%
+0%
+0.100
+
+
+A2
+
+92.5%
+F37
+90%
+1
+1
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+
+
+
+F38
+95%
+0
+0
+0
+0
+0
+0
+1
+0
+1
+1
+1
+0
+
+
+
+92.5%
+50%
+50%
+50%
+0%
+0%
+0%
+50%
+0%
+.100
+.50
+.50
+.50
+
+A3
+95%
+F39
+95%
+1
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+0
+
+
+
+95%
+100%
+100%
+0%
+0%
+0%
+100%
+0%
+0%
+.100
+.100
+0%
+0%
+         89.16 %
+
+75%
+75%
+50%
+0%
+0%
+50%
+25%
+0%
+75%
+.50
+.25
+.25
+
+
+
+          C6
+
+
+
+
+A1
+
+
+92%
+F40
+95%
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+
+
+F41
+95%
+1
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+
+
+F42
+90%
+1
+1
+0
+0
+1
+1
+1
+1
+1
+0
+0
+0
+
+
+
+F43
+90%
+0
+1
+0
+0
+1
+0
+1
+0
+1
+0
+0
+0
+
+
+
+F44
+90%
+0
+1
+0
+0
+0
+1
+1
+1
+1
+0
+1
+0
+
+
+
+
+40%
+100%
+0%
+0%
+40%
+40%
+60%
+40%
+60%
+0%
+.20
+0%
+
+A2
+
+70%
+F45
+80%
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+
+
+
+F46
+60%
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+
+
+
+
+0%
+0%
+0%
+50%
+0%
+0%
+0%
+0%
+0%
+0%
+100
+0%
+
+
+A3
+
+78%
+
+F47
+95%
+0
+1
+0
+0
+0
+1
+0
+0
+1
+1
+1
+0
+
+
+
+F48
+90%
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+
+
+
+F49
+50%
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+
+
+
+
+0%
+67%
+0%
+0%
+33%
+33%
+0%
+33%
+33%
+.33
+.67
+0%
+          80%
+
+20%
+70%
+0%
+10%
+30%
+30%
+30%
+30%
+.40
+.10
+50
+0%
+
+
+         C7
+
+A1
+90%
+F50
+90%
+1
+1
+0
+1
+1
+1
+1
+1
+1
+0
+1
+0
+
+
+
+
+100%
+100%
+0%
+100%
+100%
+100%
+100%
+100%
+.100
+0%
+.100
+0%
+
+A2
+85%
+F51
+85%
+1
+1
+1
+0
+0
+0
+0
+1
+0
+0
+1
+0
+
+
+
+
+100%
+100%
+100%
+0%
+0%
+0%
+0%
+100%
+0%
+0%
+.100
+0%
+
+A3
+80%
+F52
+80%
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+1
+
+
+
+
+100%
+0%
+0%
+100%
+0%
+0%
+0%
+0%
+0%
+0%
+.100
+.100
+         85%
+
+100%
+67%
+33%
+67%
+33%
+33%
+33%
+33%
+33%
+0%
+.100
+33%
+
+
+
+
+
+         C8
+
+
+
+
+A1
+
+91.7%
+F53
+90%
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+1
+0
+
+
+
+F54
+95%
+1
+1
+0
+0
+1
+0
+0
+0
+0
+1
+0
+0
+
+
+
+F55
+90%
+1
+1
+0
+0
+1
+0
+1
+0
+0
+0
+0
+1
+
+
+
+
+67%
+67%
+0%
+0%
+100%
+0%
+33%
+33%
+0%
+.33
+.33
+.33
+
+A2
+80%
+F56
+80%
+0
+0
+0
+0
+1
+0
+1
+1
+1
+1
+1
+1
+
+
+
+
+0%
+0%
+0%
+0%
+100%
+0%
+100%
+100%
+.100
+.100
+.100
+.100
+
+
+A3
+
+
+95%
+F57
+95%
+0
+1
+0
+0
+1
+1
+1
+1
+0
+0
+0
+0
+
+
+
+F58
+100%
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+
+
+F59
+95%
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+
+
+
+F60
+90%
+1
+0
+0
+1
+1
+0
+0
+0
+0
+0
+1
+0
+
+
+
+
+25%
+25%
+0%
+25%
+50%
+25%
+25%
+25%
+25%
+0%
+.50
+0%
+
+
+A4
+
+83.3%
+F61
+80%
+0
+0
+0
+0
+1
+0
+0
+0
+1
+1
+1
+0
+
+
+
+F62
+80%
+0
+0
+0
+0
+1
+0
+0
+0
+1
+1
+1
+0
+
+
+
+F63
+90%
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+
+
+
+
+0%
+0%
+0%
+0%
+67%
+0%
+0%
+0%
+67%
+.67
+.100
+0%
+        87.5%
+
+27%
+27%
+0%
+9%
+73%
+9%
+27%
+27%
+.36
+.36
+.64
+18%
+            5.2.4 Case Studies Results
+
+
+Framework Application Result:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Summary resultsof case Study projectsdeviation impact on the projects
+
+
+
+
+
+
+
+
+
+
+Framework Application with Impact factors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Framework Application and Deviation Impact on the Projects:
+
+Project
+Framework  Application %
+ Deviation Impact 
+Project 1
+60.0%
+35.7%
+Project 2
+75.0%
+28.6%
+Project 3
+79.8%
+22.5%
+Project 4
+70.0%
+35.4%
+All Projects (Case Study) 
+71.2%
+30.6%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Also during the case study we notice that the project#3 less deviation and problems human problems than others.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            5.2.5 Case Studies Results and Discussion 
+
+Through these studies which applied on four live projects in different companies in Egypt, we examined by these studies, the extent of the application and the applied concepts behind  the proposed framework, as well as the possibility of applying some of the concepts and the proportion of their impact on the important factors in the projects, such as:
+Impact Factors on the project 
+Project Cost
+Project Duration
+Manpower size
+Team Turnover 
+Quality of Deliverables 
+Managerial Issues 
+Technical Issues 
+Business Issues 
+Resources Utilization 
+Responsibilities Interference 
+Team moral, personal Satisfaction
+Lack of Skills 
+Table 5.9: Impact Factors on the project
+Through the mentioned studies on four live software projects shown that the proposed framework improves some important points you will see in the following section. On the case studies we can comparing between two cases the first whether the concepts of proposed framework applied, and the second case whether some concepts behind the proposed framework not applied. From this study we will clearly illustrated the importance of proposed framework.
+Framework Components:
+In this discussion we will show in details whether the recommended activities in the proposed framework applied and followed in the case studies and show bad impacts on the projects in case these activities and rules not applied in each project.
+    1- Component 1: Team Structuring
+This component contains some activities and rules which should be followed in order to enhance the software project management and overcome some problems which may appear during the project. The activities in this component as mentioned in chapter 4 (proposed framework):
+    • Goals and Objectives Setting
+    • Work Breakdown Structure (WBS) 
+    • Job Needs Analysis , Structure Building 
+    • Task Skills Matrix Application
+
+
+
+
+
+We will explain the impact of applying of first component activities in each project:
+    • Goals and Objectives Setting:
+We noticed the in the project third project the concepts behind the proposed framework relatively applied more than other projects; so that’s lead to good impact on the factors that we have studied and mentioned impact factor Table. 
+In the goals and objective setting activities there are a lot of tasks that should be done during the project like, set a SMART objectives[33], and objectives should be précises and clearly defined; we observed during our case studies that ; in the project No. 1,2,4 there was a uncertainty in the business requirements, and what they want exactly. So the uncertainty in the project objectives and output caused problems such as lake of skills to implement exceptional requirements, shortage in resources, increasing in cost, time. So the applying and following of proposed framework lead to overcome important problems. You should note that the proposed framework built base on the Projects management science, HR Science, and problems in a real life projects; we just organize the work and complaining the concepts and added some suggestions and recommendations which also evaluated and applied in a real life and proven that is helpful.
+    • Work Breakdown Structure (WBS) 
+This activity is very important in SWE fields which mean that; we should decompose our work and divided it into manageable and measurable parts named task[49]
+In the applied case studies in this research we observed that in the project No.3; that the project was divided into manageable, and related measurable parts, e.g. there was a person responsible for documentation management so the output was good and more organized than other three projects.
+    • Job Needs Analysis , Structure Building 
+The management of a business needs to determine what work needs to be done. Job need analysis is a key part of this need. Job analysis concentrates on what job holders are expected to do. It provides the basis for a job description, which in turn influences decisions taken on recruitment, training, performance appraisal and reward systems [36]. During the case studies, and from discussion with projects staff they confirmed and agree our recommendation that say; the job analysis should done after project break down in order to bring and select the right persons to hold the different positions in the project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In order to investigate our proposed framework we decided to apply our framework in a four real Software projects in Egypt. The researcher has developed a sixty three impact factors which reflect the concepts behind our framework components and activities as we can see in the sample (Table 14). Then we met managers, larders, and key parsons in each project. Then asked them to answer the questionnaire, the questionnaire covered all the sixty three impact factors of our proposed frame work as see in the table (Table 14). The answers collected a summarized as see in the above tables (16, 17), and figures (20 to 24).
+The results indicate that:
+    • Framework Application Percentage in all projects:
+
+Project
+Framework  Application %
+ Deviation Impact 
+Project 1
+60.0%
+35.7%
+Project 2
+75.0%
+28.6%
+Project 3
+79.8%
+22.5%
+Project 4
+70.0%
+35.4%
+
+
+
+
+The results of the case studies indicate that 60% from the concepts behind the proposed framework applied during the different phases of the project. The deviation is 40% (not applied) as we said in the proposed framework; this leads to deviation impact results as you can see in (Table 16) so according to the case study; this deviation affected on the project by 35.7%, look in (Table 16) in all impact factors as in (Table 13).We can observe through the applied study in all four projects; the more applying of the framework concepts the more leading to success.
+
+Conclusion
+
+According to the case study results which conclude that the more applying of the proposed framework concepts, the more leading to success; also this is clear from the result the fewest negative impact in the project factors it is the project with the highest value of framework application(79.8%).
+Also during the case study we notice that the project 3 is the smallest deviation and problems related to human factor.  
+
+
+
+
+
+
+
+CHAPTER 6
+
+Conclusion & Future Works
+
+
+Outline
+
+
+        6.1 Research Conclusion 
+        6.2 Future Works
+        6.3 Glossary 
+        6.4 Appendix 
+
+
+
+
+
+
+
+
+    6.1 Conclusion
+.
+
+This research introduces a proposed framework to enhance the technical team management in IS projects. Because the poor management of technical people sometimes may be the main causes of project failure. the proposed framework that we have developed in this research enhance the management of technical teams by a set of rules and guidance that project manager or team leader if they follow this guide  it will be helpful and contribute in IS project success 
+
+The proposed framework contains a set of components which described by a set of guides and rules recommended to followed in technical people management. The proposed framework evaluated by a data collection method ‘questionnaires’, and   interview made with more than 30 IS expert, project management, HR experts, and IS Project Manager’s; they shown that this framework can help, and enhance the technical team management because it addresses a very important points in human management in IS projects. 
+
+This research provides an additional insight into the link between management of teams and IS project life cycle as whole and indicates that there is a strong link between human Management and IS project success. From a practitioners’ perspective this research highlights to IS projects managers in how they can manage their team in right manner and guide the project to success. 
+
+The proposed framework is helpful for project managers, and leads to project success, and delivered within planned time, budget, and acceptable quality. The proposed framework has introduced a set of components which may help to enhance the human management in software projects. Most of published studies in the area of IS projects have shown that; the technical team can be one from the most causes of the project failures, so we are trying to contribute in this area of IS projects management. In this research we had started to survey in IS projects management, then focused on technical team problems, such as team selection, team evaluation, tasks allocation,  and study how the published researches were tried to provide solutions.
+
+The proposed framework evaluation done through four case studies in a real four live IS projects in Egypt; the results of the case study conclude that the more applying of the proposed framework, the more leading to project success.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    6.2   Future Works 
+
+In the future, we plan to strengthen our results by Appling the proposed framework in various organizations, different type projects and environment with live projects from the beginning to the end of the project.
+In the future work also we may develop a maturity model for people skills and competencies evaluation and measurements to help in team selection, and evaluation.
+Also we may focus more in a technical team management and will try to develop an expert tool to use as a simulator to team management based on IS project criteria’s like project type, and size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    6.3 Glossary 
+A
+Acceptance Criteria – The list of requirements that must be satisfied prior to the customer accepting delivery of the product.
+Action Plan - A plan that describes what needs to be done and when it needs to be completed. Project Management Plans are action plans.
+Activity - A specific project task, or group of tasks, that require resources and time to complete.
+Adaptive System – Describes software that has flexibility as the primary design point.
+Application – Generic term for a program, or system, that handles a specific business function.
+Approval Cycle – Process of gaining funding and management approval prior to project initiation. 
+Assessment – A general term for the formal management review of a process.
+Audit - A formal and detailed examination of the progress, costs, operations, results, or some other aspect of a project or system performed by an independent party.
+Availability – The portion of time that a system that is scheduled to operate actually can be used as expected.
+B
+Baseline – A specification, or product, that has been formally agreed upon which serves as the starting point against which progress will be judged. 
+C
+Change Management – The formal process of recording, analyzing, estimating, tracking and reporting of changes to the project baseline business functional requirements. 
+Control - A process for assuring that reality, or actual performance, meets expectations or plans.
+Cost / Benefit Analysis – A formal study in which the development, execution, and maintenance costs for a project are matched against the anticipated value of the product.
+Critical Activity - A task, activity, or event that, if delayed, will delay another important event - probably the completion of the project or a major milestone in the project. 
+Customer - The individual or organization that specifies and accepts the project deliverables. 
+D
+Data – Describes the numbers, text, graphics, images, and voice stored in a form that can be used by a computer.
+Deliverable– A tangible, physical object that is the output of a software development task.
+Design – The tasks associated with specifying and sketching the features and functions of a new application prior to coding.
+Development Project – The sum of all tasks and activities necessary to build a software product.
+Documentation – The printed and displayed materials that explain an application to a user.
+Duration - The period of time over which a task takes place. Duration establishes the schedule for a project.
+E
+Effectiveness - A measure of the quality of attainment in meeting objectives.
+Efficiency - A measure of the volume of output received for the input used.
+Effort - The amount of work or labor (in hours or workdays) required to complete a task.
+Environment – The set of tools and physical surroundings in which software is developed.
+Estimate – A predicted total of expenditures required to complete a task, activity, or project.
+Exit Criteria – The set of conditions that must be met prior to completing a project phase or application.
+F
+Feasibility Project – A project designed to prove, or disprove, the appropriateness of the technology solution under existing constraints (sometimes called “proof-of-concept” project).
+Function - An activity that spans the entire duration of a software project (e.g., status reporting, quality assurance, verification and validation).
+H
+Hardware – Physical equipment used to process, store, or transmit computer program data.
+I
+Information – The meaningful interpretation of data.
+Integration – Describes the work, or device, required to connect two different systems that were not originally designed to work together.
+Integration Test – Testing in which software components, hardware components, or both are combined and tested to evaluate the interaction between them.
+Interface – A connection between two devices or systems.
+Interoperability – The ability to have applications and computers from different vendors work together on a network.
+Issue – A problem to be solved or a decision that has not been made. 
+M
+Maintenance – Refers to the ongoing activity that keeps software functioning in a technical and business environment (production).
+Methodology – A set of formal protocols followed when performing a task.
+Milestone – A major checkpoint in the activities involved in a project. A clearly defined point in a project that summarized the completion of a related set of tasks.
+Model - A way of looking at reality, usually for the purpose of abstracting and simplifying it to make it understandable in a particular context.
+P
+Phases – The divisions of a software development life cycle into discrete stages (e.g., requirements, design, code, test, etc.).
+Planning Project – A project intended to gather, or predict, the sequence of activities and resources needed to complete a work effort.
+Precedence - When one task must be completed before another task can be started, the first task is said to have precedence over the other.
+Process – The step-by-step sequence of activities (systematic approach) that must be carried out to complete a project. 
+Project – The combined resources (people, machines, materials), processes, and activities that are dedicated to building and delivering a product to a customer.
+Project Duration - The time it takes to complete the entire project.
+Project Management - The combination of systems, techniques, and people required to successfully complete a project on time and within budget.
+Project Manager – The senior person responsible for the entire project.
+Project Management Plan – A formal document that describes the technical and management approach to be followed for a project.
+Q 
+Quality  (Product) - Conformance to business functional requirements with defect-free products. Quality reflects both the completeness of software or system features and functions, and error-free operation.
+Quality  (Process) – Verification and validation to established policies, standards, procedures and guidelines for software development.
+R 
+Requirements – The statement of needs by a user that triggers the development of a program, system, or project. May be called business functional requirements or requirement specifications.
+Risk – The probability that a project will experience undesirable events, which may create, cost overruns, schedule delays, or project cancellation. The identification, mitigation, tracking, and management of those elements creating the risk situation.
+S
+Scope - The magnitude of the effort required to complete a project.
+Software – Computer programs, systems, and the associated documentation that describes them.
+SDLC - Software Development Life Cycle – The period of time that begins with the decision to develop a software product and ends when the software is delivered.
+Software Development Process – The process by which user needs are translated into a software product.
+Specifications – General term for the wide variety of paper-based descriptions of a program or system.
+Stakeholders - People who have a personal or agency interest in the end results of a project.
+System – A linked collection of programs, or components, that perform a generic business or technical function.
+SDLC - System Development Life Cycle  - The complex of tasks and deliverables that are organized toward developing software systems.
+T
+Task - A cohesive unit of work on a project (usually 40 to 80 hours of effort).
+Task Description - A description that defines all the work required to complete a project task or activity including input, output, expected results, and quality specifications.
+Testing – The set of defect removal tasks that include execution of all, or part, of an application on a computer.
+W
+Work Breakdown Structure (WBS) – A formal analysis of the activities, tasks, and sub-tasks that must be accomplished to build a software project. A product or activity oriented hierarchy tree depicting the elements of work that need to be accomplished in order to deliver a product.
+Work Package - A specification for the work to be accomplished in completing an activity or task.
+Work Product - Any tangible item that results from a project function, activity, or task.
+
+* Definitions were extracted from Assessment and Control of Software Risks by Capers Jones (1994); Managing Software Development Projects (Second edition) by Neal Whitten (1995); IEEE Standards Collection: Software Engineering (1997 Edition); Best Practices in IT Architecture Planning and Implementation by Larry DeBoever; Essential Client/Server Survival Guide by Robert Orfali; and TheComplete Idiot's Guide to Project Management by Sunny and Kim Baker.
+
+
+
+
+
+
+
+
+Appendix A
+
+Some Temples:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References
+
+[1]	D. E. S. New Zealand "agile methods :an analytical comparison of five agile methods and an investigation of their target environment," University of Massey,, 2005.
+[2]	e. Many. (2010). Business Process Manager Job Description. Available: http://www.ehow.com/facts_6756069_business-process-manager-job-description.html
+[3]	I. Sommerville. (2011). Software engineering (Ninth Edition ed.). 
+[4]	A Guide To The Project Management Body Of Knowledge (PMBOK Guides): Project Management Institute, 2004.
+[5]	F. Heyworth and E. C. f. M. Languages, A Guide to Project Management: Council of Europe Publishing, 2002.
+[6]	I. m. article. (2012) "Why Software Fails". IEEE. Available: http://spectrum.ieee.org/computing/software/why-software-fails/3
+[7]	I. Nutek, "Project Management Body of Knowledge " PMI, Project Management Institute, vol. ISBN: 1-880410-23-0(2000 Edition).
+[8]	I. Sommerville, SOFTWARE ENGINEERING. Addison-Wesley: Pearson Education, Inc.,, 2011.
+[9]	D. E. New Zealand "analytical comparison of five agile methods and an investigation of their target environment " university of Massey, 2005.
+[10]	A. D. Cassandro Hamel, Sandra Safran , Andrée Clément, "compensation guide:A manual on compensation Practice & ¬theory," vol. N 978-0-9680721-7-2 March, 2008.
+[11]	A. Cockburn, "Characterizing People as Non-Linear, First-Order Components in Software Development," ed, 2005.
+[12]	R. P. Institute. (2008). Human Resource Policy  Guidelines. 
+[13]	O. Hazzan and J. Tomayko, "Human Aspects of Software Engineering: The Case of Extreme Programming," in Extreme Programming and Agile Processes in Software Engineering. vol. 3092, J. Eckstein and H. Baumeister, Eds., ed: Springer Berlin Heidelberg, 2004, pp. 303-311.
+[14]	Rensse, "Human Resources Policy Guidelines," 2008.
+[15]	J. H. a. A. Cockburn, "Agile Software Development: The People Factor," IEEE, 2005.
+[16]	M. Awad, "A comparison between agile and traditional software development methodologies," University of Western Australia, 2005.
+[17]	V. K. Subhas C. Misra, and Uma Kumar,  and Ottawa, "Success Factors of Agile Software Development," Carleton University, 2009.
+[18]	M. Awad, "Comparison between Agile and Traditional Software Development Methodologies," 2006.
+[19]	D. E. Strode, The Agile Methods: An Analytical Comparison of Five Agile Methods and an Investigation of Their Target Environment : a Thesis Presented in Partial Fulfillment of the Requirements for the Degree of Master of Information Sciences in Information Systems at Massey University, Palmerston North, New Zealand: Massey University, Palmerston North, 2005.
+[20]	A. Cockburn, "Characterizing People as Non-Linear, First-Order Components in Software Development," 2005.
+[21]	L. S. W. Microsoft, "MSF for agile software development " 2010.
+[22]	A. S. C. Marcal, F. S. F. Soares, and A. D. Belchior, "Mapping CMMI Project Management Process Areas to SCRUM Practices," presented at the Proceedings of the 31st IEEE Software Engineering Workshop, 2007.
+[23]	M. K. a. S. S. M. B. Chrissis, "CMMI: Guidelines for Process Integration and Product Improvement," Wesley, Boston, vol. 3rd Edition, 2011.
+[24]	C. M. S. E. Institute, "What Is CMMI," sei, 2008.
+[25]	C. M. S. E. Institute, "The CMMI Version 1.2 Overview presentation," 2008.
+[26]	Bill Curtis, Bill Hefley, and S. Miller, "People Capablitiy Maturity Model " July 2009.
+[27]	G. Taran, "Managing Technical People: Creatively Teaching the Skills of Human Interaction in Today's Diverse Classrooms," in Software Engineering Education and Training, 2008. CSEET '08. IEEE 21st Conference on, 2008, pp. 93-100.
+[28]	N. Mehta, "KNOWLEDGE INTEGRATION IN SOFTWARE TEAMS: AN ANALYSIS OF
+TEAM, PROJECT, AND IT-RELATED ISSUES," PhD, Auburn University
+Auburn University, 2006.
+[29]	MindTools.com. 10 Common Time Management Mistakes
+Avoiding Common Pitfalls
+Available: http://www.mindtools.com/pages/article/time-management-mistakes.htm#sthash.vmkpaYa6.dpuf
+[30]	CabinetOffice. (Date of issue: January 2012). Review guidance: Common causes of programme/project failure. 
+[31]	D. o. H. a. H. S. USA. ( Oct 2013). Health insurance marketplace. Available: http://calleam.com/WTPF/?page_id=3
+[32]	l. C. Ltd. (2013). Why Projects Fail Available: http://calleam.com/WTPF/?page_id=2338
+[33]	wikihow. (2013). Set-Goals-and-Objectives. Available: http://www.wikihow.com/Set-Goals-and-Objectives
+[34]	I. Bridge Span, "Setting Objectives," Leader Guide,  Rev, 8/27/2003.
+[35]	P. M. Institute, "Guide to the Project Management Body of Knowledge (PMBOK Guide)," Newtown Square, PA: PMI, 2000.
+[36]	M. Robinson, " "What is Job Analysis?"," Institute of Work Psychology, 2012.
+[37]	michaelpage.com. (2013
+05,2013). Human Resources Recruitment. Available: http://www.michaelpage.com/content/203-human-resources-recruitment.html#.UdyESvk3D6c
+[38]	SAP, Management & Adminstration, THR12 vol. THR12 ,HCM, 2011.
+[39]	C. Dobrea, N. & Tipa, "Investments Characteristics in Infrastructure Industry, Economia," Seria Management, , vol. 13(1), 204-210, 2010.
+[40]	P. Y. Solomon, "Performance Based-Earned Value," Ltd Publishing House, San Francisco, 2007.
+[41]	I. f. o. R. C. a. R. C. Societies, "SavinSaving lives, changing minds, “Project/program monitoring and evaluation (M&E) guideg lives, changing minds, “Project/program monitoring and evaluation (M&E) guide," 2011.
+[42]	SAP, REDUCING RECRUITMENT BY INCREASING RETENTION, 2010.
+[43]	S. K. Yazinski. (2009). a Stratiges for Retaining Employees and Minimizing Turnover. Available: http://hr.blr.com/
+[44]	G. Liu, K. Yu, C. Wang, and P. Yu, "A Study of Enterprise Performance Management System Based on KPI +BSC," in Information Management, Innovation Management and Industrial Engineering (ICIII), 2010 International Conference on, 2010, pp. 468-472.
+[45]	C. T. Fitz-Gibbon, "Performance indicators," BERA    Dialogues vol. ISBN 978-1-85359-092-4, 1999.
+[46]	P. C. T. Sheffield, "Resources Key Performance Indicators and Workforce Information Report," 2007.
+[47]	J. R. S. Patricia K. Zingheim, and Marvin G. Dertien, "Compensation, Reward and Retention Practices in Fast-Growth Companies," WorldatWork Journal, vol. second quarter, Volume 18 No. 2, pages 22-39, 2009.
+[48]	MindTools.com. (2012). Rewarding Your Team. Available: http://www.mindtools.com/pages/article/ newTMM_54.htm 
+[49]	I. Sommerville, Software Engineering (7th Edition): Pearson Addison Wesley, 2004.
+
+
