@@ -131,6 +131,7 @@ class Index2 {
         int doc1 = 0, doc2 = 0;
 
         if(operator.toLowerCase().equals("and")){
+
             if (pL1itr.hasNext()) {
                 doc1 = pL1itr.next(); // assigning doc 1 to the 1st value in posting list 1
             }
@@ -326,6 +327,113 @@ class Index2 {
         System.out.println(" (*) Find_04 optimized intersect elapsed = " + estimatedTime+" ms.");
         System.out.println(" result = " + result);
     }
+
+    public String JacSim(String phrase , List<String> Doc1 , List<String> Doc2){
+        String[] words = phrase.split("\\W+");
+        ArrayList<Double> Result = new ArrayList<Double>();
+        HashSet<String> res = new HashSet<String>();
+        List<String> Query = new ArrayList<>(Arrays.asList(words));
+        Double nemo =0.0;
+        for (int i = 0; i < Doc1.size(); i++) {
+            String thisword = Doc1.get(i);
+            if (Query.contains(thisword.toLowerCase())){
+                nemo++;
+            }res.add(Doc1.get(i).toLowerCase());
+        }
+        res.addAll(Query);
+        int y = res.size();
+        Double coef = (Double) (nemo)/y;
+        Result.add(coef);
+        nemo=0.0;
+        res.clear();
+        for (int i = 0; i < Doc2.size(); i++) {
+            String thisword = Doc2.get(i);
+            if (Query.contains(thisword.toLowerCase())){
+                Query.remove(Query.indexOf(thisword.toLowerCase()));
+                nemo++;
+            }res.add(Doc2.get(i).toLowerCase());
+        }
+        res.addAll(Query);
+        y = res.size();
+        coef = (Double) (nemo)/y;
+        Result.add(coef);
+        Collections.sort(Result , Collections.reverseOrder());
+        for (int i = 1; i < Result.size()+1; i++) {
+            System.out.print("Doc"+ i+" = ");
+            float final_ = Result.get(i-1).floatValue();
+            System.out.println(final_);
+        }
+
+        return "Done";
+    }
+
+    public double jacquardCof(String phrase,String doc){
+        /*algorithm (calculate jacquard similarity of a phrase on a certain document)
+        * get the document and process it as a list of words
+        * process the phrase query as list of words
+        * get the intersection between the 2 lists (how many words in common)
+        * get the union between the 2 lists
+        * return the division value of the intersection and union
+        * */
+        try (BufferedReader file = new BufferedReader(new FileReader(doc))) { // process the document and get "words" var holds the values
+            String ln;
+            ArrayList<String> documentWords = new ArrayList<String>(); // holds all the terms of the document
+             while ((ln = file.readLine()) != null) { // reads each line in the file (Doc)
+                String [] Words = ln.split("\\W+"); // splits the words using regular expression and store in arr {tokenization}
+                for (String word : Words) {
+                    word = word.toLowerCase(); // normalization
+                    documentWords.add(word);
+                }
+            }
+
+            String[] query = phrase.split("\\W+");
+            ArrayList<String> queryWords = new ArrayList<String>();
+             for(String word : query){
+                 queryWords.add(word.toLowerCase());
+             }
+
+
+            // intersection algorithm
+            double intersectVal = 0.0;
+            for(int i= 0; i <documentWords.size(); i++){
+                if(queryWords.contains(documentWords.get(i).toLowerCase())){
+                    intersectVal++;
+                    queryWords.remove(documentWords.get(i));
+                }
+            }
+            double unionVal = 0.0;
+            Set<String> unionSet = new HashSet<String>();
+            for(String word:query){
+                unionSet.add(word.toLowerCase());
+            }
+            unionSet.addAll(documentWords);
+            unionVal = unionSet.size();
+
+            System.out.println(intersectVal/unionVal);
+
+            return (intersectVal/unionVal);
+
+
+        } catch (IOException e) {
+            System.out.println("File " + doc + " not found. Skip it");
+        }
+        return 0.0;
+    }
+
+
+    public String findPhraseJacquardSim(String phrase){
+        /* algorithm
+        * query on the phrase with 'OR' operator
+        * retrieve all the documents containing words of phrase
+        * calculate Jacquard similarity for each document against the phrase
+        * sort the list of (related) documents on the Jacquard value
+        * print the list to the user
+        * KABOOM! (10/10)
+        * */
+
+
+        return " ";
+    }
 }
 
 //=====================================================================
@@ -335,25 +443,27 @@ public class InvertedIndex002 {
         Index2 index = new Index2();
         String phrase = "";
 
-        index.buildIndex(new String[]{
-                "src/docs/100.txt", // change it to your path e.g. "c:\\tmp\\100.txt"
-                "src/docs/101.txt",
-                "src/docs/102.txt",
-                "src/docs/103.txt",
-                "src/docs/104.txt",
-                "src/docs/105.txt",
-                "src/docs/106.txt",
-                "src/docs/107.txt",
-                "src/docs/108.txt",
-                "src/docs/109.txt"
-        });
+//        index.buildIndex(new String[]{
+//                "src/docs/100.txt", // change it to your path e.g. "c:\\tmp\\100.txt"
+//                "src/docs/101.txt",
+//                "src/docs/102.txt",
+//                "src/docs/103.txt",
+//                "src/docs/104.txt",
+//                "src/docs/105.txt",
+//                "src/docs/106.txt",
+//                "src/docs/107.txt",
+//                "src/docs/108.txt",
+//                "src/docs/109.txt"
+//        });
 
         // index.compare("different");
-        do {
-            System.out.println("Print search phrase: ");
-            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-            phrase = in.readLine();
-            System.out.println(index.find_03(phrase));
-        } while (!phrase.isEmpty());
+//        do {
+//            System.out.println("Print search phrase: ");
+//            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+//            phrase = in.readLine();
+//            System.out.println(index.find_03(phrase));
+//        } while (!phrase.isEmpty());
+
+        index.jacquardCof("of", "src/docs/100.txt");
     }
 }
