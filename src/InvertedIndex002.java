@@ -409,7 +409,9 @@ class Index2 {
             unionSet.addAll(documentWords);
             unionVal = unionSet.size();
 
-            System.out.println(intersectVal/unionVal);
+
+
+//            System.out.println(intersectVal/unionVal);
 
             return (intersectVal/unionVal);
 
@@ -431,9 +433,33 @@ class Index2 {
         * KABOOM! (10/10)
         * */
 
+        String[] words = phrase.split("\\W+"); // splits on whiteSpace
+        HashSet<Integer> PL = new HashSet<Integer>(index.get(words[0].toLowerCase()).postingList);
+        for(int i =0 ; i < words.length; i++){
+            PL = intersect(PL, index.get(words[i].toLowerCase()).postingList, "or");
+        }
+        Map<Double, String> doc_jaccard = new TreeMap<Double, String>(Collections.reverseOrder());
 
-        return " ";
+        for(int num : PL){
+         //   {{sources.get(num);}}  gets the name of the document using the ID's mentioned in the posting list
+            doc_jaccard.put(jacquardCof(phrase, sources.get(num)),sources.get(num));
+
+        }
+
+
+        String result = "";
+        for (Map.Entry m  : doc_jaccard.entrySet()) {
+            //System.out.println("\t" + sources.get(num));
+            result += "\t" + m.getValue() + ", jaccard coefficient: " + m.getKey() + "\n";
+        }
+
+
+
+
+
+        return result;
     }
+
 }
 
 //=====================================================================
@@ -443,9 +469,9 @@ public class InvertedIndex002 {
         Index2 index = new Index2();
         String phrase = "";
 
-//        index.buildIndex(new String[]{
-//                "src/docs/100.txt", // change it to your path e.g. "c:\\tmp\\100.txt"
-//                "src/docs/101.txt",
+        index.buildIndex(new String[]{
+                "src/docs/100.txt", // change it to your path e.g. "c:\\tmp\\100.txt"
+                "src/docs/101.txt",
 //                "src/docs/102.txt",
 //                "src/docs/103.txt",
 //                "src/docs/104.txt",
@@ -454,16 +480,18 @@ public class InvertedIndex002 {
 //                "src/docs/107.txt",
 //                "src/docs/108.txt",
 //                "src/docs/109.txt"
-//        });
+        });
 
-        // index.compare("different");
+        System.out.println(index.findPhraseJacquardSim("idea of March"));
+
+
 //        do {
 //            System.out.println("Print search phrase: ");
 //            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 //            phrase = in.readLine();
-//            System.out.println(index.find_03(phrase));
+//            System.out.println("//////////////////////");
 //        } while (!phrase.isEmpty());
 
-        index.jacquardCof("of", "src/docs/100.txt");
+//        System.out.println(index.jacquardCof("tdd", "src/docs/100.txt"));;
     }
 }
