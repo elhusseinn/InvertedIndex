@@ -1,5 +1,3 @@
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -370,16 +368,16 @@ class Index2 {
 
     public double jacquardCof(String phrase,String doc){
         /*algorithm (calculate jacquard similarity of a phrase on a certain document)
-        * get the document and process it as a list of words
-        * process the phrase query as list of words
-        * get the intersection between the 2 lists (how many words in common)
-        * get the union between the 2 lists
-        * return the division value of the intersection and union
-        * */
+         * get the document and process it as a list of words
+         * process the phrase query as list of words
+         * get the intersection between the 2 lists (how many words in common)
+         * get the union between the 2 lists
+         * return the division value of the intersection and union
+         * */
         try (BufferedReader file = new BufferedReader(new FileReader(doc))) { // process the document and get "words" var holds the values
             String ln;
             ArrayList<String> documentWords = new ArrayList<String>(); // holds all the terms of the document
-             while ((ln = file.readLine()) != null) { // reads each line in the file (Doc)
+            while ((ln = file.readLine()) != null) { // reads each line in the file (Doc)
                 String [] Words = ln.split("\\W+"); // splits the words using regular expression and store in arr {tokenization}
                 for (String word : Words) {
                     word = word.toLowerCase(); // normalization
@@ -389,9 +387,9 @@ class Index2 {
 
             String[] query = phrase.split("\\W+");
             ArrayList<String> queryWords = new ArrayList<String>();
-             for(String word : query){
-                 queryWords.add(word.toLowerCase());
-             }
+            for(String word : query){
+                queryWords.add(word.toLowerCase());
+            }
 
 
             // intersection algorithm
@@ -410,8 +408,6 @@ class Index2 {
             unionSet.addAll(documentWords);
             unionVal = unionSet.size();
 
-
-
 //            System.out.println(intersectVal/unionVal);
 
             return (intersectVal/unionVal);
@@ -426,16 +422,15 @@ class Index2 {
 
     public String findPhraseJacquardSim(String phrase){
         /* algorithm
-        * query on the phrase with 'OR' operator
-        * retrieve all the documents containing words of phrase
-        * calculate Jacquard similarity for each document against the phrase
-        * sort the list of (related) documents on the Jacquard value
-        * print the list to the user
-        * KABOOM! (10/10)
-        * */
+         * query on the phrase with 'OR' operator
+         * retrieve all the documents containing words of phrase
+         * calculate Jacquard similarity for each document against the phrase
+         * sort the list of (related) documents on the Jacquard value
+         * print the list to the user
+         * KABOOM! (10/10)
+         * */
 
         String[] words = phrase.split("\\W+"); // splits on whiteSpace
-        NullPointerException e = new NullPointerException();
         HashSet<Integer> PL = new HashSet<Integer>();
         if(index.containsKey(words[0].toLowerCase())){
             PL = new HashSet<Integer>(index.get(words[0].toLowerCase()).postingList); // error when the first word doesn't exist
@@ -450,24 +445,44 @@ class Index2 {
             }
 
         }
-        Map<Double, String> doc_jaccard = new TreeMap<Double, String>(Collections.reverseOrder());
+//        Map<Double, String> doc_jaccard = new TreeMap<Double, String>(Collections.reverseOrder());
+        class Doc{
+            double coef;
+            String name;
+        }
+        List<Doc> Sortedlist=new ArrayList<>();
 
         for(int num : PL){
-         //   {{sources.get(num);}}  gets the name of the document using the ID's mentioned in the posting list
-            doc_jaccard.put(jacquardCof(phrase, sources.get(num)),sources.get(num));
+            //   {{sources.get(num);}}  gets the name of the document using the ID's mentioned in the posting list
+            Doc doc = new Doc();
+
+//            doc_jaccard.put(jacquardCof(phrase, sources.get(num)),sources.get(num));
+            doc.coef=jacquardCof(phrase, sources.get(num));
+            doc.name = sources.get(num);
+            Sortedlist.add(doc);
 
         }
+        for (int i=0;i<Sortedlist.size();++i){ // sorting algorithm "bubble"
 
+            for(int j=0;j<Sortedlist.size()-i-1; ++j){
 
+                if(Sortedlist.get(j+1).coef>Sortedlist.get(j).coef){
+
+                    double swap = Sortedlist.get(j).coef;
+                    String swap_name = Sortedlist.get(j).name;
+                    Sortedlist.get(j).coef = Sortedlist.get(j+1).coef;
+                    Sortedlist.get(j).name = Sortedlist.get(j+1).name;
+                    Sortedlist.get(j+1).coef = swap;
+                    Sortedlist.get(j+1).name = swap_name;
+
+                }
+            }
+        }
         String result = "";
-        for (Map.Entry m  : doc_jaccard.entrySet()) {
-            //System.out.println("\t" + sources.get(num));
-            result += "\t" + m.getValue() + ", jaccard coefficient: " + m.getKey() + "\n";
+        for (int i = 0; i < Sortedlist.size(); i++) {
+            result+=Sortedlist.get(i).name + ", jaccard coefficient: " + Sortedlist.get(i).coef + "\n";
+
         }
-
-
-
-
 
         return result;
     }
@@ -491,10 +506,12 @@ public class InvertedIndex002 {
                 "src/docs/106.txt",
                 "src/docs/107.txt",
                 "src/docs/108.txt",
-                "src/docs/109.txt"
+                "src/docs/109.txt",
+                "src/docs/900.txt",
+                "src/docs/901.txt",
         });
 
-        System.out.println(index.findPhraseJacquardSim("satisfy limited"));
+        System.out.println(index.findPhraseJacquardSim("elhussein loay"));
 
 
 //        do {
