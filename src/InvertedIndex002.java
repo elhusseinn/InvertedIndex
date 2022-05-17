@@ -106,6 +106,7 @@ class Index2 {
     public String find(String phrase) {
         String[] words = phrase.split("\\W+");  // splits the argument phrase into words and saves into arr
         HashSet<Integer> res = new HashSet<Integer>(index.get(words[0].toLowerCase()).postingList); // res === posting list of 1st word
+
         for (String word : words) {
             res.retainAll(index.get(word).postingList); // remove elements in res that not exist in word.postingList (MERGING)
         }
@@ -328,7 +329,7 @@ class Index2 {
         System.out.println(" result = " + result);
     }
 
-    public String JacSim(String phrase , List<String> Doc1 , List<String> Doc2){
+   /* public String JacSim(String phrase , List<String> Doc1 , List<String> Doc2){
         String[] words = phrase.split("\\W+");
         ArrayList<Double> Result = new ArrayList<Double>();
         HashSet<String> res = new HashSet<String>();
@@ -365,7 +366,7 @@ class Index2 {
         }
 
         return "Done";
-    }
+    } */
 
     public double jacquardCof(String phrase,String doc){
         /*algorithm (calculate jacquard similarity of a phrase on a certain document)
@@ -434,9 +435,20 @@ class Index2 {
         * */
 
         String[] words = phrase.split("\\W+"); // splits on whiteSpace
-        HashSet<Integer> PL = new HashSet<Integer>(index.get(words[0].toLowerCase()).postingList);
+        NullPointerException e = new NullPointerException();
+        HashSet<Integer> PL = new HashSet<Integer>();
+        if(index.containsKey(words[0].toLowerCase())){
+            PL = new HashSet<Integer>(index.get(words[0].toLowerCase()).postingList); // error when the first word doesn't exist
+            System.out.print("");
+        }
         for(int i =0 ; i < words.length; i++){
-            PL = intersect(PL, index.get(words[i].toLowerCase()).postingList, "or");
+            if(!index.containsKey(words[i].toLowerCase())){
+                continue;
+            }
+            else{
+                PL = intersect(PL, index.get(words[i].toLowerCase()).postingList, "or");
+            }
+
         }
         Map<Double, String> doc_jaccard = new TreeMap<Double, String>(Collections.reverseOrder());
 
@@ -472,17 +484,17 @@ public class InvertedIndex002 {
         index.buildIndex(new String[]{
                 "src/docs/100.txt", // change it to your path e.g. "c:\\tmp\\100.txt"
                 "src/docs/101.txt",
-//                "src/docs/102.txt",
-//                "src/docs/103.txt",
-//                "src/docs/104.txt",
-//                "src/docs/105.txt",
-//                "src/docs/106.txt",
-//                "src/docs/107.txt",
-//                "src/docs/108.txt",
-//                "src/docs/109.txt"
+                "src/docs/102.txt",
+                "src/docs/103.txt",
+                "src/docs/104.txt",
+                "src/docs/105.txt",
+                "src/docs/106.txt",
+                "src/docs/107.txt",
+                "src/docs/108.txt",
+                "src/docs/109.txt"
         });
 
-        System.out.println(index.findPhraseJacquardSim("idea of March"));
+        System.out.println(index.findPhraseJacquardSim("satisfy limited"));
 
 
 //        do {
