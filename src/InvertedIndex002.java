@@ -19,6 +19,7 @@
  */
 import java.io.*;
 import java.util.*;
+import java.lang.Math.*;
 
 //=====================================================================
 class DictEntry2 { // dictionary part
@@ -366,6 +367,77 @@ class Index2 {
         return "Done";
     } */
 
+    public void cosineSim(String doc1, String doc2){
+        String [] Doc1;
+        String [] Doc2;
+        ArrayList<String> Doc1Words =  new ArrayList<>();
+        ArrayList<String> Doc2Words = new ArrayList<>();
+        HashSet<String> Words = new HashSet<String>(); // holds the union of words in the 2 documents
+        try (BufferedReader file = new BufferedReader(new FileReader(doc1))) { // process the document and get "Doc1Words" var holds the values
+            String ln;
+            while ((ln = file.readLine()) != null) { // reads each line in the file (Doc1)
+                Doc1 = ln.split("\\W+"); // splits the words using regular expression and store in arr {tokenization}
+                for (String word : Doc1) {
+                    word = word.toLowerCase(); // normalization
+                    Doc1Words.add(word);
+                    Words.add(word);
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("File " + doc1 + " not found");
+        }
+
+        try (BufferedReader file = new BufferedReader(new FileReader(doc2))) { // process the document and get "Doc2Words" var holds the values
+            String ln;
+            while ((ln = file.readLine()) != null) { // reads each line in the file (Doc2)
+                Doc2 = ln.split("\\W+"); // splits the words using regular expression and store in arr {tokenization}
+                for (String word : Doc2) {
+                    word = word.toLowerCase(); // normalization
+                    Doc2Words.add(word);
+                    Words.add(word);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("File " + doc2 + " not found");
+        }
+
+        ArrayList<Integer> Doc1Vector = new ArrayList<Integer>();
+        ArrayList<Integer> Doc2Vector = new ArrayList<Integer>();
+
+        for (String word : Words) { // fill the vectors with values
+            if (Doc1Words.contains(word)) {
+                Doc1Vector.add(1);
+            }
+            if(!(Doc1Words.contains(word))){
+                Doc1Vector.add(0);
+            }
+            if (Doc2Words.contains(word)){
+                Doc2Vector.add(1);
+            }
+            if(!(Doc2Words.contains(word))){
+                Doc2Vector.add(0);
+            }
+        }
+        int dotProduct = 0;
+        for(int i= 0; i < Doc1Vector.size(); i++){
+            dotProduct += Doc1Vector.get(i) * Doc2Vector.get(i);
+        }
+        int SquaredNormDoc1 = 0;
+        int SquaredNormDoc2 = 0;
+        for(int num: Doc1Vector){
+            SquaredNormDoc1 += (num*num);
+        }
+        for(int num: Doc2Vector){
+            SquaredNormDoc2 += (num*num);
+        }
+       double result = dotProduct/((Math.sqrt(SquaredNormDoc1))*(Math.sqrt(SquaredNormDoc2)));
+
+        System.out.println("Cosine Similarity: "+result);
+        System.out.println("angle: "+ Math.acos(result)* (180/Math.PI));
+
+
+    }
     public double jacquardCof(String phrase,String doc){
         /*algorithm (calculate jacquard similarity of a phrase on a certain document)
          * get the document and process it as a list of words
@@ -509,9 +581,11 @@ public class InvertedIndex002 {
                 "src/docs/109.txt",
                 "src/docs/900.txt",
                 "src/docs/901.txt",
+                "src/docs/902.txt",
+                "src/docs/903.txt",
         });
 
-        System.out.println(index.findPhraseJacquardSim("elhussein loay"));
+        index.cosineSim("src/docs/900.txt","src/docs/901.txt");
 
 
 //        do {
